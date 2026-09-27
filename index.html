@@ -46,6 +46,7 @@ td.num,th.num{text-align:right;font-family:"IBM Plex Mono",monospace;font-varian
 .ml{display:inline-block;font:500 .68rem/1 "IBM Plex Mono",monospace;padding:3px 7px;border-radius:5px;border:1.5px solid var(--mlO);color:var(--ink);white-space:nowrap} .ml-T{border-color:var(--mlT)} .ml-S{border-color:var(--mlS)} .ml-R{border-color:var(--mlR)} .ml.prim{background:var(--mlbg)}
 :root{--mlT:var(--s2);--mlS:var(--s7);--mlR:var(--s1);--mlO:var(--s0);--mlbg:var(--accent-soft)}
 .exlink{font:500 .74rem/1.9 "IBM Plex Mono",monospace;color:var(--accent);text-decoration:underline;text-underline-offset:2px;cursor:pointer;white-space:nowrap;margin-right:6px} .exlink:hover{background:var(--accent-soft)}
+.cpbtn{font:inherit;font-size:.82rem;padding:5px 12px;border-radius:6px;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer} .cpbtn.sec{background:transparent;color:var(--accent)}
 .labelbar{display:flex;flex-wrap:wrap;gap:6px 6px;align-items:center;margin-top:-4px}
 .labelbar select{font:inherit;font-size:.8rem;padding:4px 6px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink)}
 .lbc{cursor:pointer;background:var(--surface);font-size:.7rem;padding:4px 8px} .lbc[data-state="1"]{background:var(--good);border-color:var(--good);color:#fff} .lbc[data-state="1"]::before{content:"✓ "}
@@ -259,6 +260,7 @@ function fullfile(d){
   const rec=f.failures?`<div class="cap" style="margin-top:8px">recorded Dafny result (rack 33, run T24, ${esc(f.cls)}/)</div><pre class="out">${esc(f.failures)}</pre>`:'';
   return `<details id="fulld"><summary>whole Dafny file · ${esc(d.thm)}.dfy · ${lines.length} lines · ${fl.size} failing line${fl.size===1?'':'s'} marked</summary>
     <div class="note" style="margin:6px 0">yellow = this line; tinted = the other failing lines of this file. <a href="#" onclick="document.getElementById('L${d.line}').scrollIntoView({block:'center'});return false">jump to line ${d.line}</a></div>
+    <div class="bar" style="display:flex;gap:8px;align-items:center;margin:0 0 6px"><button type="button" class="cpbtn" data-copy="${esc(d.thm)}">Copy whole file</button><button type="button" class="cpbtn sec" data-dl="${esc(d.thm)}">Download .dfy</button><span class="note" id="cpmsg"></span></div>
     <pre class="full">${body}</pre>${rec}</details>`;
 }
 function runner(d){
@@ -324,6 +326,14 @@ function go(id,scroll){
     const row2=document.querySelector(`#idx tr[data-id="${CSS.escape(id)}"]`); if(row2) row2.scrollIntoView({block:'nearest'});
   }
 }
+async function copyText(t){
+  try{ await navigator.clipboard.writeText(t); return true; }catch(e){}
+  try{ const ta=document.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); const ok=document.execCommand('copy'); ta.remove(); return ok; }catch(e){ return false; }
+}
+document.addEventListener('click',async e=>{
+  const c=e.target.closest('[data-copy]'); if(c){ const f=F[c.dataset.copy]; const ok=await copyText(f.src); const m=$('cpmsg'); if(m) m.textContent=ok?`copied ${f.src.split('\n').length} lines`:'copy blocked here — use Download'; return; }
+  const d=e.target.closest('[data-dl]'); if(d){ const f=F[d.dataset.dl]; const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([f.src],{type:'text/plain'})); a.download=d.dataset.dl+'.dfy'; document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href); a.remove();},500); return; }
+});
 document.addEventListener('click',e=>{const a=e.target.closest('[data-go]'); if(!a) return; e.preventDefault(); go(a.dataset.go);});
 window.addEventListener('hashchange',()=>detail(location.hash.slice(1)));
 filters.forEach(f=>$(f).addEventListener('input',renderIndex));
