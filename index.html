@@ -46,6 +46,11 @@ td.num,th.num{text-align:right;font-family:"IBM Plex Mono",monospace;font-varian
 .ml{display:inline-block;font:500 .68rem/1 "IBM Plex Mono",monospace;padding:3px 7px;border-radius:5px;border:1.5px solid var(--mlO);color:var(--ink);white-space:nowrap} .ml-T{border-color:var(--mlT)} .ml-S{border-color:var(--mlS)} .ml-R{border-color:var(--mlR)} .ml.prim{background:var(--mlbg)}
 :root{--mlT:var(--s2);--mlS:var(--s7);--mlR:var(--s1);--mlO:var(--s0);--mlbg:var(--accent-soft)}
 .exlink{font:500 .74rem/1.9 "IBM Plex Mono",monospace;color:var(--accent);text-decoration:underline;text-underline-offset:2px;cursor:pointer;white-space:nowrap;margin-right:6px} .exlink:hover{background:var(--accent-soft)}
+.labelbar{display:flex;flex-wrap:wrap;gap:6px 6px;align-items:center;margin-top:-4px}
+.labelbar select{font:inherit;font-size:.8rem;padding:4px 6px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink)}
+.lbc{cursor:pointer;background:var(--surface);font-size:.7rem;padding:4px 8px} .lbc[data-state="1"]{background:var(--good);border-color:var(--good);color:#fff} .lbc[data-state="1"]::before{content:"✓ "}
+.lbc[data-state="-1"]{background:var(--s2);border-color:var(--s2);color:#fff;text-decoration:line-through} .lbc[data-state="-1"]::before{content:"✕ "}
+.labelbar b.inc{color:var(--good)} .labelbar b.exc{color:var(--s2)} .lbclear{font:inherit;font-size:.8rem;padding:4px 10px;border:1px solid var(--rule);border-radius:6px;background:transparent;color:var(--accent);cursor:pointer}
 .heat{background:color-mix(in srgb,var(--s1) calc(var(--a)*70%),transparent)}
 .catbox{display:flex;flex-direction:column;gap:6px} .catrow{display:grid;grid-template-columns:150px 1fr 70px;gap:8px;align-items:center;font-size:.82rem}
 .catrow .bars{display:flex;flex-direction:column;gap:2px} .catrow .b1,.catrow .b2{height:7px;border-radius:0 3px 3px 0;min-width:1px} .catrow .b2{opacity:.35}
@@ -173,11 +178,17 @@ footer{border-top:1px solid var(--rule);padding-top:14px;font-size:.82rem;color:
     <select id="f-verdict"><option value="">any verdict</option><option value="VERIFIES">verifies</option><option value="TRUE">true</option><option value="TRUE_FROM_LIBRARY">true (library)</option><option value="CANDIDATE">candidate</option><option value="UNKNOWN">undecided</option></select>
     <label class="note" style="display:inline-flex;gap:5px;align-items:center"><input type="checkbox" id="f-ex"> examples only</label>
     <select id="f-nl" aria-label="missing Lean lines"><option value="">any # missing Lean lines</option><option value="1">1 missing line</option><option value="2–3">2–3 missing lines</option><option value="4–7">4–7 missing lines</option><option value="8–15">8–15 missing lines</option><option value="16+">16+ missing lines</option></select>
-    <select id="f-ml"><option value="">any deep label</option><option value="T-FAITHFUL">T-FAITHFUL</option><option value="T-SORT">T-SORT</option><option value="T-BACKWARD">T-BACKWARD</option><option value="T-CITE">T-CITE</option><option value="T-LIBRARY">T-LIBRARY</option><option value="S-RELEVANCE">S-RELEVANCE</option><option value="S-INSTANTIATE">S-INSTANTIATE</option><option value="S-COMPUTE">S-COMPUTE</option><option value="R-NONLINEAR">R-NONLINEAR</option><option value="R-FIELD">R-FIELD</option><option value="R-TRANSCENDENTAL">R-TRANSCENDENTAL</option><option value="R-BINDER">R-BINDER</option><option value="R-INDUCTION">R-INDUCTION</option><option value="R-CASES">R-CASES</option></select>
     <select id="f-mlp"><option value="">any primary label</option><option value="T-FAITHFUL">T-FAITHFUL</option><option value="T-SORT">T-SORT</option><option value="T-BACKWARD">T-BACKWARD</option><option value="T-CITE">T-CITE</option><option value="T-LIBRARY">T-LIBRARY</option><option value="S-RELEVANCE">S-RELEVANCE</option><option value="S-INSTANTIATE">S-INSTANTIATE</option><option value="S-COMPUTE">S-COMPUTE</option><option value="R-NONLINEAR">R-NONLINEAR</option><option value="R-FIELD">R-FIELD</option><option value="R-BINDER">R-BINDER</option><option value="R-CASES">R-CASES</option></select>
     <select id="f-gap" hidden><option value=""></option></select>
     <input id="f-q" type="search" placeholder="search Dafny / Lean text" aria-label="search">
     <span class="note" id="count"></span>
+  </div>
+  <div class="labelbar" id="lb" role="group" aria-label="filter by labels">
+    <span class="note">labels — click: <b class="inc">has</b> → <b class="exc">has not</b> → off</span>
+    <button type="button" class="ml ml-T lbc" data-lb="T-FAITHFUL" aria-pressed="false" title="the Dafny says something other than the Lean, or lost context/structure the step needs (dropped have, flattened induction/cases, helper without ambient haves, injected unproved assert)">T-FAITHFUL</button><button type="button" class="ml ml-T lbc" data-lb="T-SORT" aria-pressed="false" title="ℕ/ℤ/ℝ confusion or one term rendered two ways (real-sorted cite on an Int.pow goal, cast, tsub, Int.pow(k,2) vs k*k)">T-SORT</button><button type="button" class="ml ml-T lbc" data-lb="T-BACKWARD" aria-pressed="false" title="a goal-directed Lean step (apply, Eq.symm, .mpr, inline side goal) rendered as a forward call whose precondition is the goal, or a guard that never fires">T-BACKWARD</button><button type="button" class="ml ml-T lbc" data-lb="T-CITE" aria-pressed="false" title="the needed lemma exists in the Dafny library but is not called here">T-CITE</button><button type="button" class="ml ml-T lbc" data-lb="T-LIBRARY" aria-pressed="false" title="the needed Mathlib fact has no usable library counterpart (missing, or only a set&lt;int&gt; / exists-form version)">T-LIBRARY</button><button type="button" class="ml ml-S lbc" data-lb="S-RELEVANCE" aria-pressed="false" title="facts are in scope and the step is easy alone, but the procedure&#x27;s context / resource budget swamps it">S-RELEVANCE</button><button type="button" class="ml ml-S lbc" data-lb="S-INSTANTIATE" aria-pressed="false" title="an instance of a ∀-fact or an ∃-witness Z3&#x27;s E-matching does not produce (trigger-less quantifier, witness left as a comment)">S-INSTANTIATE</button><button type="button" class="ml ml-S lbc" data-lb="S-COMPUTE" aria-pressed="false" title="evaluation SMT does not do: recursive function beyond fuel, or unbounded unfolding (the pow matching loop), finite enumeration">S-COMPUTE</button><button type="button" class="ml ml-R lbc" data-lb="R-NONLINEAR" aria-pressed="false" title="polynomial / multiplicative reasoning: nlinarith products, multiplying or cancelling by a non-literal factor, SOS identities, nonlinear mod">R-NONLINEAR</button><button type="button" class="ml ml-R lbc" data-lb="R-FIELD" aria-pressed="false" title="division: clearing denominators, nonzero-denominator facts">R-FIELD</button><button type="button" class="ml ml-R lbc" data-lb="R-TRANSCENDENTAL" aria-pressed="false" title="identities/bounds of sqrt, trig, log, exp, rpow, floor that must come from axioms and be instantiated">R-TRANSCENDENTAL</button><button type="button" class="ml ml-R lbc" data-lb="R-BINDER" aria-pressed="false" title="reasoning under binders: Finset sums/products with lambdas, sum_congr, peeling, set extensionality">R-BINDER</button><button type="button" class="ml ml-R lbc" data-lb="R-INDUCTION" aria-pressed="false" title="needs induction or a recursive helper">R-INDUCTION</button><button type="button" class="ml ml-R lbc" data-lb="R-CASES" aria-pressed="false" title="needs a case split or a contradiction (vacuous by_contra branch, rcases, parity cases)">R-CASES</button>
+    <select id="lb-mode" aria-label="how to combine 'has' labels"><option value="all">has ALL of the ✓</option><option value="any">has ANY of the ✓</option></select>
+    <select id="lb-role" aria-label="which role counts"><option value="any">in any role</option><option value="primary">✓ as primary only</option></select>
+    <button type="button" class="lbclear" id="lb-clear">clear</button>
   </div>
   <details class="card" id="catd" open><summary>categories of the lines shown <span class="note" id="catn"></span></summary><div class="catbox" id="cats"></div>
     <div class="note">solid = lines where it is the primary label · faint = lines where it appears in any role · click a label to filter by it</div></details>
@@ -199,11 +210,21 @@ const VL = {"VERIFIES": "verifies", "TRUE": "true", "TRUE_FROM_LIBRARY": "true (
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const byId = Object.fromEntries(D.map(d => [d.id, d]));
 const $ = id => document.getElementById(id);
-const filters = ['f-thm','f-kind','f-rel','f-bucket','f-verdict','f-ex','f-nl','f-ml','f-mlp','f-gap','f-q'];
+const filters = ['f-thm','f-kind','f-rel','f-bucket','f-verdict','f-ex','f-nl','f-mlp','f-gap','f-q','lb-mode','lb-role'];
+const LB={};
+function lbHas(d,l,primaryOnly){ return primaryOnly? d.mlp===l : d.ml.some(e=>e.label===l); }
+function lbPass(d){
+  const inc=Object.keys(LB).filter(l=>LB[l]===1), exc=Object.keys(LB).filter(l=>LB[l]===-1);
+  const po=$('lb-role').value==='primary';
+  const okInc=!inc.length||($('lb-mode').value==='any'?inc.some(l=>lbHas(d,l,po)):inc.every(l=>lbHas(d,l,po)));
+  return okInc&&exc.every(l=>!lbHas(d,l,false));
+}
+function exPass(d,mp){ const inc=Object.keys(LB).filter(l=>LB[l]===1); const want=mp?[mp]:inc; return want.length?want.some(l=>d.ex.includes(l)):d.ex.length>0; }
+function lbPaint(){ document.querySelectorAll('.lbc').forEach(b=>{const v=LB[b.dataset.lb]||0; b.dataset.state=v; b.setAttribute('aria-pressed',v===1?'true':v===-1?'mixed':'false');}); }
 function pill(v){ return `<span class="pill v-${v}">${esc(VL[v]||v)}</span>`; }
 function visible(){
-  const t=$('f-thm').value,k=$('f-kind').value,r=$('f-rel').value,b=$('f-bucket').value,v=$('f-verdict').value,g=$('f-gap').value,ml=$('f-ml').value,mp=$('f-mlp').value,nl=$('f-nl').value,ex=$('f-ex').checked,q=$('f-q').value.toLowerCase();
-  return D.filter(d => (!t||d.thm===t)&&(!k||d.kind===k)&&(!r||d.rel===r)&&(!b||d.bucket===b)&&(!v||d.verdict===v)&&(!g||d.gap===g)&&(!ml||d.ml.some(e=>e.label===ml))&&(!mp||d.mlp===mp)&&(!nl||d.nlb===nl)&&(!ex||(ml||mp?d.ex.includes(ml||mp):d.ex.length>0))&&
+  const t=$('f-thm').value,k=$('f-kind').value,r=$('f-rel').value,b=$('f-bucket').value,v=$('f-verdict').value,g=$('f-gap').value,mp=$('f-mlp').value,nl=$('f-nl').value,ex=$('f-ex').checked,q=$('f-q').value.toLowerCase();
+  return D.filter(d => (!t||d.thm===t)&&(!k||d.kind===k)&&(!r||d.rel===r)&&(!b||d.bucket===b)&&(!v||d.verdict===v)&&(!g||d.gap===g)&&lbPass(d)&&(!mp||d.mlp===mp)&&(!nl||d.nlb===nl)&&(!ex||exPass(d,mp))&&
     (!q||(d.code+' '+d.ann.map(a=>a[0]).join(' ')+' '+d.thm+' '+(d.have||'')).toLowerCase().includes(q)));
 }
 const MLO=["T-FAITHFUL", "T-SORT", "T-BACKWARD", "T-CITE", "T-LIBRARY", "S-RELEVANCE", "S-INSTANTIATE", "S-COMPUTE", "R-NONLINEAR", "R-FIELD", "R-TRANSCENDENTAL", "R-BINDER", "R-INDUCTION", "R-CASES", "OTHER"];
@@ -298,7 +319,7 @@ function go(id,scroll){
   detail(id); renderIndex();
   const row=document.querySelector(`#idx tr[data-id="${CSS.escape(id)}"]`);
   if(scroll!==false){
-    if(!row){ ['f-thm','f-kind','f-rel','f-bucket','f-verdict','f-nl','f-ml','f-mlp','f-gap','f-q'].forEach(f=>{const el=$(f); if(el) el.value='';}); $('f-ex').checked=false; renderIndex(); }
+    if(!row){ ['f-thm','f-kind','f-rel','f-bucket','f-verdict','f-nl','f-mlp','f-gap','f-q'].forEach(f=>{const el=$(f); if(el) el.value='';}); $('f-ex').checked=false; Object.keys(LB).forEach(k=>delete LB[k]); lbPaint(); renderIndex(); }
     const d=$('detail'); const r=d.getBoundingClientRect(); if(r.top<0||r.top>window.innerHeight*0.5) d.scrollIntoView({block:'start',behavior:'smooth'});
     const row2=document.querySelector(`#idx tr[data-id="${CSS.escape(id)}"]`); if(row2) row2.scrollIntoView({block:'nearest'});
   }
@@ -306,6 +327,8 @@ function go(id,scroll){
 document.addEventListener('click',e=>{const a=e.target.closest('[data-go]'); if(!a) return; e.preventDefault(); go(a.dataset.go);});
 window.addEventListener('hashchange',()=>detail(location.hash.slice(1)));
 filters.forEach(f=>$(f).addEventListener('input',renderIndex));
-$('cats').addEventListener('click',e=>{const a=e.target.closest('[data-ml]'); if(!a) return; e.preventDefault(); $('f-ml').value=($('f-ml').value===a.dataset.ml?'':a.dataset.ml); renderIndex();});
+$('cats').addEventListener('click',e=>{const a=e.target.closest('[data-ml]'); if(!a) return; e.preventDefault(); const l=a.dataset.ml; if(LB[l]===1) delete LB[l]; else LB[l]=1; lbPaint(); renderIndex();});
+$('lb').addEventListener('click',e=>{const b=e.target.closest('[data-lb]'); if(!b) return; const l=b.dataset.lb; const v=LB[l]||0; const nv=v===0?1:v===1?-1:0; if(nv) LB[l]=nv; else delete LB[l]; lbPaint(); renderIndex();});
+$('lb-clear').addEventListener('click',()=>{Object.keys(LB).forEach(k=>delete LB[k]); lbPaint(); renderIndex();});
 renderIndex(); if(location.hash) detail(location.hash.slice(1));
 </script>
