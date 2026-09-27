@@ -332,7 +332,15 @@ async function copyText(t){
 }
 document.addEventListener('click',async e=>{
   const c=e.target.closest('[data-copy]'); if(c){ const f=F[c.dataset.copy]; const ok=await copyText(f.src); const m=$('cpmsg'); if(m) m.textContent=ok?`copied ${f.src.split('\n').length} lines`:'copy blocked here — use Download'; return; }
-  const d=e.target.closest('[data-dl]'); if(d){ const f=F[d.dataset.dl]; const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([f.src],{type:'text/plain'})); a.download=d.dataset.dl+'.dfy'; document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href); a.remove();},500); return; }
+  const d=e.target.closest('[data-dl]'); if(d){ const f=F[d.dataset.dl];
+    if(window.claude&&window.claude.use){   // inside the claude.ai artifact viewer: the downloads capability (.dfy is not an allowed extension there)
+      const dl=await window.claude.use('downloads'); const m=$('cpmsg');
+      if(!dl){ if(m) m.textContent='download not available here — use Copy'; return; }
+      try{ await dl.save({filename:d.dataset.dl+'.dfy.txt', data:f.src}); if(m) m.textContent='saved as .dfy.txt (rename to .dfy)'; }
+      catch(err){ if(m) m.textContent=(err&&err.code==='declined')?'download cancelled':'download not available here — use Copy'; }
+      return;
+    }
+    const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([f.src],{type:'text/plain'})); a.download=d.dataset.dl+'.dfy'; document.body.appendChild(a); a.click(); setTimeout(()=>{URL.revokeObjectURL(a.href); a.remove();},500); return; }
 });
 document.addEventListener('click',e=>{const a=e.target.closest('[data-go]'); if(!a) return; e.preventDefault(); go(a.dataset.go);});
 window.addEventListener('hashchange',()=>detail(location.hash.slice(1)));
