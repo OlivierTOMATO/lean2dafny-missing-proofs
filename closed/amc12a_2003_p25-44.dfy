@@ -1,9 +1,9 @@
-// NOT CLOSED — failing line amc12a_2003_p25-44: theorem amc12a_2003_p25, Dafny line 44 (ERR: assertion might not hold)
+// CLOSED — failing line amc12a_2003_p25-44: theorem amc12a_2003_p25, Dafny line 44 (ERR: assertion might not hold)
 // failing Dafny line: assert (exists x: real :: (((a * (x * x)) + (b * x)) == 1.0));
 // Lean step: simp at h₄ h₅ h₆ h₇ h₈
 // hypotheses: 14 facts Z3 had at the line; nothing assumed beyond the facts in scope
-// not closed: tried H0=failed, K1=failed, K3=failed, K1b=failed; this file is the honest base attempt
-// Dafny: finished with 0 verified, 1 error  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: pass2 — contradiction: the facts in scope contain `true == (exists x :: Real.sqrt(a*(x*x)+b*x) == 0.0 - 1.0)` (Lean h₆); a `forall y ensures 0.0 <= Real.sqrt(y) { RealSqrtNonneg(y); }` statement lets Z3 match the skolem √-term and derive false (the same Real.sqrt_nonneg contradiction Lean's final nlinarith uses); the ∃ goal itself is not instantiable (arithmetic-only / √-of-arithmetic bodies admit no trigger; even an identical ∃ hypothesis cannot re-prove it)  (pass1: not closed: tried H0=failed, K1=failed, K3=failed, K1b=failed; this file is the honest base attempt)
+// Dafny: finished with 3 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/amc12a_2003_p25.dfy"
 lemma {:induction false} vc_amc12a_2003_p25_L44(a: real, b: real, f: real -> real, x_14: real, x_15: real, x_1_11: real, y_4: real)
@@ -22,5 +22,7 @@ lemma {:induction false} vc_amc12a_2003_p25_L44(a: real, b: real, f: real -> rea
   requires true == (exists x_29: real :: Real.sqrt(a * (x_29 * x_29) + b * x_29) == 0.0 - 2.0)
   requires exists x_31: real :: Real.sqrt(a * (x_31 * x_31) + b * x_31) == 0.0
   ensures   exists x_33: real :: a * (x_33 * x_33) + b * x_33 == 1.0
-{ }
-
+{
+  forall y: real ensures 0.0 <= Real.sqrt(y) { RealSqrtNonneg(y); }  // [ADDED]
+  assert false;  // [ADDED]
+}

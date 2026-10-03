@@ -1,26 +1,37 @@
-// NOT CLOSED — failing line imo_1966_p4-397: theorem imo_1966_p4, Dafny line 397 (OOR: Verification out of resource (imo_1966_p4))
+// CLOSED — failing line imo_1966_p4-397: theorem imo_1966_p4, Dafny line 397 (OOR: Verification out of resource (imo_1966_p4))
 // failing Dafny line: assert (Real.sum(IccN(1, n), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x))))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, n) * x))))) by {
 // Lean step: apply apply_induction
 // hypotheses: 7 facts Z3 had at the line (goal itself removed: 0; the block's own asserts removed: 2); nothing assumed beyond the facts in scope
-// not closed: tried H0=oor, K3=failed; this file is the honest base attempt
-// Dafny: finished with 10 verified, 1 error, 2 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: pass2 — opaque-pow library variant (alt copy of imo_1966_p4-190); pow-fuel bridge lemma bridge_pow_mul (ensures pow(2,n)*x==v ==> pow(2,n)*x==v, proved by Dafny: antecedent is at layer $LS($LZ), consequent at $LS($LS($LZ)); Z3 legacy arith cannot merge pow(L1)*x with pow(L2)*x inside tan/cos by itself); case split n==0 (IccN(1,0)=={} so the sum is 0 and 2^0*x=x — `0 < n` (h1) is not among the facts the extractor kept) / n>0 (bridge, then the hypothesis `forall n_2_1` instance at n is the ensures); body restructured: the block's `assert (0 < n)` moved into the n>0 branch and its restatement of the goal as a body assert removed (the restated body assert does not verify although the identical ensures does — not diagnosed); dropped (allowed) the trigger-less hypotheses that make Z3 matching-loop (strong-induction `forall n0`, h0, inductive_step, base_case)
+// Dafny: finished with 14 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-include "../dafny/imo_1966_p4.dfy"
+include "alt/imo_1966_p4-397/out/imo_1966_p4.dfy"
 lemma {:induction false} vc_imo_1966_p4_L397(n: nat, x: real)
   requires 0 <= n
-  requires forall k_1: nat :: 0 < k_1 ==> (forall m_2: int :: x != Real.div((m_2 as real) * Real.pi(), Real.pow(2.0, k_1)))
-  requires forall n0: int :: (forall k_3: nat :: 0 < k_3 ==> (forall m_3: int :: true)) && (0 <= n0 && (forall k_3: nat :: 0 < k_3 ==> (forall m_3: int :: x != Real.div((m_3 as real) * Real.pi(), Real.pow(2.0, k_3)))) && 0 < n0 && ((0 <= n0 && n0 < n) || (n0 == n && 0.0 <= x && x <= x - 1.0)) ==> (forall k: int :: true) && Real.sum(IccN(1, n0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, n0) * x)))
-  requires Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x))
-  requires forall m_1_1: nat :: 0 < m_1_1 && Real.sum(IccN(1, m_1_1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_1) * x)) ==> Real.sum(IccN(1, m_1_1 + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_1 + 1) * x))
   requires forall n_2_1: nat :: 0 < n_2_1 ==> Real.sum(IccN(1, n_2_1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, n_2_1) * x))
   requires 0 <= 1
   ensures   Real.sum(IccN(1, n), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, n) * x))
 {
+  if n == 0 {  // [ADDED]
+    // n = 0: both sides are 0 (empty Icc sum; 2^0 * x = x) — the Lean goal's `0 < n` is not among the facts here
+    assert IccN(1, 0) == {};  // [ADDED]
+    assert Real.sum(IccN(1, 0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == 0.0;  // [ADDED]
+    bridge_pow_mul(0, x, x);  // [ADDED]
+    assert Real.div(1.0, Real.tan(Real.pow(2.0, 0) * x)) == Real.div(1.0, Real.tan(x));  // [ADDED]
+  } else {  // [ADDED]
+    bridge_pow_mul(n, x, Real.pow(2.0, n) * x);  // [ADDED]
     // [TACTIC: «_<;>_» apply_induction apply apply_induction <;> simp_all simp_all simp_all]
     // [TACTIC: choice apply_induction apply apply_induction]
-    assert ((0 < n) ==> (Real.sum(IccN(1, n), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x))))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, n) * x))))));  // instance of apply_induction (Lean state: `apply` leaves its premises as goals)
-    assert (0 < n);  // sub-goal of `simp_all` (Lean state) // @tac 3646-3654
-    // UNCITED-APPLIED internal ×2 [exec 778 3646-3654]: applications made inside the tactic's own automation, not stated — machinery/glue: of_eq_true ×1, eq_true ×1
-    // UNCITED-APPLIED instance of apply_induction: `∑ k ∈ Finset.Icc (1 : ℕ) n, (1 : ℝ) / Real.sin ((2 : ℝ) ^ k * x) = (1 : ℝ) / Real.tan x - (1 : ℝ) / Real.tan ((2 : ℝ) ^ n * x)` — Lean's proof of final_conclusion applies it (by a tactic that does not name it, or one whose instance could not be rendered in scope here); not stated
+    // instance of apply_induction at n: the hypothesis `forall n_2_1` instantiated at n is exactly the ensures (checked as the
+    // postcondition); the file's own `assert (0 < n) ==> ...` restating it inside the body does not verify although the
+    // identical ensures does (not diagnosed), so it is not restated here
+    assert (0 < n);  // sub-goal of `simp_all` (Lean state) // @tac 3646-3654 — holds in this branch
+  }
 }
 
+  // fuel bridge (pure Dafny, no axiom): Dafny translates the antecedent at pow-layer $LS($LZ) and the
+  // consequent at $LS($LS($LZ)); Z3's arithmetic proves it from the layer axiom, and at a call site it
+  // hands the E-graph the product equality that congruence on Real.tan(Real.pow(2.0,n)*x) needs.
+lemma {:induction false} bridge_pow_mul(n: nat, x: real, v: real)  // [ADDED DECLARATION]
+  ensures Real.pow(2.0, n) * x == v ==> Real.pow(2.0, n) * x == v
+{ }

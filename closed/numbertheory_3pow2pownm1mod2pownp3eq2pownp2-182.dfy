@@ -1,9 +1,9 @@
-// NOT CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-182: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 182 (OOR: Verification out of resource (induction_helper_1))
+// CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-182: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 182 (OOR: Verification out of resource (induction_helper_1))
 // failing Dafny line: assert (if ((Int.pow(2, ((2 * n) + 5)) as int)) == 0 then ((((2 * k) * Int.pow(2, ((2 * n) + 5))) as int)) == 0 else ((((2 * k) * Int.pow(2, ((2 * n) + 5))) as int)) % ((Int.pow(2, ((2 * n) + 5)) as i
 // Lean step: h₁₂
 // hypotheses: 35 facts Z3 had at the line; nothing assumed beyond the facts in scope
-// not closed: tried H0=oor; this file is the honest base attempt
-// Dafny: finished with 60 verified, 0 errors, 1 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: pass2 — IntModEqZero(2k*2^(2n+5), 2^(2n+5)) + the witness equation (as closed sibling L319) (all hyps kept)
+// Dafny: finished with 67 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L182(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
@@ -43,5 +43,7 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L182(k_1
   requires Int.pow(2, 2 * n + 5) != 0
   requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
   ensures   2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) % Int.pow(2, 2 * n + 5) == 0
-{ }
-
+{
+  IntModEqZero(2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, 2 * n + 5));  // Dvd.intro witness q = 2k (Lean ⟨2 * k, _⟩); m > 0 from Int.pow's b > 0 ==> p > 0  // [ADDED]
+  assert 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) == Int.pow(2, 2 * n + 5) * (2 * k_1_0_2_0);  // instance q := 2k (the Lean `by ring` sub-goal, already a requires)  // [ADDED]
+}

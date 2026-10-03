@@ -1,9 +1,9 @@
-// NOT CLOSED — failing line imo_1974_p5-1035: theorem imo_1974_p5, Dafny line 1035 (ERR: a postcondition could not be proved on this return path)
+// CLOSED — failing line imo_1974_p5-1035: theorem imo_1974_p5, Dafny line 1035 (ERR: a postcondition could not be proved on this return path)
 // failing Dafny line: {
 // Lean step: upper_bound
 // hypotheses: 2 facts Z3 had at the line (goal itself removed: 1; facts derived inside the helper lemma's own body removed: 0); nothing assumed beyond the facts in scope
-// not closed: tried H0=failed; this file is the honest base attempt
-// Dafny: finished with 2 verified, 1 error  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: pass2 — same var-binding of the MulPos arguments (var x,y; MulPos(x,y); assert 0<x*y; assert x*y == goal product)
+// Dafny: finished with 5 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/imo_1974_p5.dfy"
 lemma {:induction false} vc_imo_1974_p5_L1035(a: real, b: real, c: real)
@@ -11,6 +11,10 @@ lemma {:induction false} vc_imo_1974_p5_L1035(a: real, b: real, c: real)
   requires 0.0 < b * c
   ensures   0.0 < a * b * (b * c)
 {
-  MulPos((a * b), (b * c));
+  var x := (a * b);  // [ADDED]
+  var y := (b * c);  // [ADDED]
+  MulPos(x, y);  // [ADDED]
+  assert 0.0 < x * y;  // [ADDED]
+  assert x * y == a * b * (b * c);  // [ADDED]
 }
 

@@ -1,9 +1,9 @@
-// NOT CLOSED — failing line numbertheory_2pownm1prime_nprime-284: theorem numbertheory_2pownm1prime_nprime, Dafny line 284 (OOR: Verification out of resource (numbertheory_2pownm1prime_nprime))
+// CLOSED — failing line numbertheory_2pownm1prime_nprime-284: theorem numbertheory_2pownm1prime_nprime, Dafny line 284 (OOR: Verification out of resource (numbertheory_2pownm1prime_nprime))
 // failing Dafny line: assert exists k: nat :: (n) == (m) * k by {
 // Lean step: h₁₁
 // hypotheses: 23 facts Z3 had at the line; nothing assumed beyond the facts in scope
-// not closed: tried H0=failed, K3=failed; this file is the honest base attempt
-// Dafny: finished with 9 verified, 2 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: pass2 — witness n / m_1_0_0_5_0 for the existential (base body used the unconstrained rename m_1_0_0_1_2_5 instead of the destructured m_1_0_0_5_0); asserts m_1_0_0_5_0 != 0 and n == m_1_0_0_5_0 * (n / m_1_0_0_5_0) from the branch hypothesis
+// Dafny: Dafny program verifier finished with 15 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/numbertheory_2pownm1prime_nprime.dfy"
 lemma {:induction false} vc_numbertheory_2pownm1prime_nprime_L284(k_1_0_0_2_2_0: int, k_1_0_0_2_2_3: int, m_1_0_0_1_2_5: int, m_1_0_0_2: nat, m_1_0_0_3: nat, m_1_0_0_5: int, m_1_0_0_5_0: nat, m_1_0_0_6: nat, n: nat)
@@ -32,7 +32,12 @@ lemma {:induction false} vc_numbertheory_2pownm1prime_nprime_L284(k_1_0_0_2_2_0:
   requires ((m_1_0_0_5_0 == 0) && (n == m_1_0_0_5_0 * 0) && ((0 <= k_1_0_0_2_2_0) || (k_1_0_0_2_2_0 < 0))) || ((m_1_0_0_5_0 != 0) && (n == m_1_0_0_5_0 * (n / m_1_0_0_5_0)) && ((0 <= k_1_0_0_2_2_0) || (k_1_0_0_2_2_0 < 0)))
   ensures   exists k_1_0_0_2_2_1: nat :: n == m_1_0_0_5_0 * k_1_0_0_2_2_1
 {
-              if (m_1_0_0_1_2_5) == 0 { assert (n) == (m_1_0_0_1_2_5) * 0; }
-              else { assert (n) == (m_1_0_0_1_2_5) * ((n) / (m_1_0_0_1_2_5)); }
+  // the base body named the witness m_1_0_0_1_2_5 (unconstrained); the destructured divisor is m_1_0_0_5_0 (>= 2, so the
+  // second branch of the last hypothesis gives n == m_1_0_0_5_0 * (n / m_1_0_0_5_0))
+  assert m_1_0_0_5_0 != 0;  // [ADDED]
+  assert n == m_1_0_0_5_0 * (n / m_1_0_0_5_0);  // [ADDED]
+  assert exists k_1_0_0_2_2_1: nat :: n == m_1_0_0_5_0 * k_1_0_0_2_2_1 by {  // [ADDED]
+    var w: nat := n / m_1_0_0_5_0;  // [ADDED]
+    assert n == m_1_0_0_5_0 * w;  // [ADDED]
+  }
 }
-

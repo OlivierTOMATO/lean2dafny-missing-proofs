@@ -1,9 +1,9 @@
-// NOT CLOSED — failing line imo_1984_p2-64: theorem imo_1984_p2, Dafny line 64 (OOR: Verification out of resource (contrapose_helper_1))
+// CLOSED — failing line imo_1984_p2-64: theorem imo_1984_p2, Dafny line 64 (OOR: Verification out of resource (contrapose_helper_1))
 // failing Dafny line: assert !(IntDvd(Int.pow(7, 7), (7 * (((((((a * a * a * a * a * a) * b) + ((3 * (a * a * a * a * a)) * (b * b))) + ((5 * (a * a * a * a)) * (b * b * b))) + ((5 * (a * a * a)) * (b * b * b * b))) + ((3 
 // Lean step: have h₉ : a + b ≤ 18 := by linarith
 // hypotheses: 12 facts Z3 had at the line (goal itself removed: 0; the block's own asserts removed: 5); nothing assumed beyond the facts in scope
-// not closed: tried H0=oor, K2=error, K2pow=error, K2split2=error, K2split=error; this file is the honest base attempt
-// Dafny: finished with 25 verified, 0 errors, 1 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: pass2 — assert Int.pow(7,7) == 823543; 17-way chain on a (a in 1..17 from a,b>=1, a+b<19) calling proved helpers Enum64_k(a,b) (requires a==k, 1<=b, a+b<19, 7-non-divisibility; body: if/else-if chain on b so Z3 evaluates 7*Q(k,b) % 823543 != 0 per leaf; Enum64_7/14 vacuous)
+// Dafny: finished with 210 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/imo_1984_p2.dfy"
 lemma {:induction false} vc_imo_1984_p2_L64(a: int, b: int)
@@ -1121,5 +1121,344 @@ lemma {:induction false} vc_imo_1984_p2_L64(a: int, b: int)
     // UNCITED-APPLIED internal ×5 [exec 1622 2744-2764]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, eq_false ×1, Mathlib.Meta.NormNum.isNat_lt_false ×1, Mathlib.Meta.NormNum.isNat_add ×1
     // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
     // UNCITED-APPLIED internal ×40 [exec 644 2723-2739]: applications made inside the tactic's own automation, not stated — le_antisymm ×8, Int.le_sub_one_of_not_le ×8; machinery/glue: Eq.symm ×18, Mathlib.Meta.NormNum.IsNat.to_raw_eq ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2, Mathlib.Tactic.IntervalCases.of_le_right ×1 (+1 more heads, ×1)
+  assert Int.pow(7, 7) == 823543;  // [ADDED]
+  if a == 1 {  // [ADDED]
+    Enum64_1(a, b);  // [ADDED]
+  } else if a == 2 {  // [ADDED]
+    Enum64_2(a, b);  // [ADDED]
+  } else if a == 3 {  // [ADDED]
+    Enum64_3(a, b);  // [ADDED]
+  } else if a == 4 {  // [ADDED]
+    Enum64_4(a, b);  // [ADDED]
+  } else if a == 5 {  // [ADDED]
+    Enum64_5(a, b);  // [ADDED]
+  } else if a == 6 {  // [ADDED]
+    Enum64_6(a, b);  // [ADDED]
+  } else if a == 7 {  // [ADDED]
+    Enum64_7(a, b);  // [ADDED]
+  } else if a == 8 {  // [ADDED]
+    Enum64_8(a, b);  // [ADDED]
+  } else if a == 9 {  // [ADDED]
+    Enum64_9(a, b);  // [ADDED]
+  } else if a == 10 {  // [ADDED]
+    Enum64_10(a, b);  // [ADDED]
+  } else if a == 11 {  // [ADDED]
+    Enum64_11(a, b);  // [ADDED]
+  } else if a == 12 {  // [ADDED]
+    Enum64_12(a, b);  // [ADDED]
+  } else if a == 13 {  // [ADDED]
+    Enum64_13(a, b);  // [ADDED]
+  } else if a == 14 {  // [ADDED]
+    Enum64_14(a, b);  // [ADDED]
+  } else if a == 15 {  // [ADDED]
+    Enum64_15(a, b);  // [ADDED]
+  } else if a == 16 {  // [ADDED]
+    Enum64_16(a, b);  // [ADDED]
+  } else if a == 17 {  // [ADDED]
+    Enum64_17(a, b);  // [ADDED]
+  } else {  // [ADDED]
+    assert false;  // [ADDED]
+  }
 }
 
+lemma Enum64_1(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 1 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 18
+  } else if b == 2 {  // Q = 294
+  } else if b == 3 {  // Q = 2028
+  } else if b == 4 {  // Q = 8820
+  } else if b == 5 {  // Q = 28830
+  } else if b == 6 {  // Q = 77658
+  } else if b == 7 {  // Q = 181944
+  } else if b == 8 {  // Q = 383688
+  } else if b == 9 {  // Q = 745290
+  } else if b == 10 {  // Q = 1355310
+  } else if b == 11 {  // Q = 2334948
+  } else if b == 12 {  // Q = 3845244
+  } else if b == 13 {  // Q = 6094998
+  } else if b == 14 {  // Q = 9349410
+  } else if b == 15 {  // Q = 13939440
+  } else if b == 16 {  // Q = 20271888
+  } else if b == 17 {  // Q = 28840194
+  } else {
+    assert false;
+  }
+}
+
+lemma Enum64_2(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 2 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 294
+  } else if b == 2 {  // Q = 2304
+  } else if b == 3 {  // Q = 10830
+  } else if b == 4 {  // Q = 37632
+  } else if b == 5 {  // Q = 106470
+  } else if b == 6 {  // Q = 259584
+  } else if b == 7 {  // Q = 565614
+  } else if b == 8 {  // Q = 1128960
+  } else if b == 9 {  // Q = 2100582
+  } else if b == 10 {  // Q = 3690240
+  } else if b == 11 {  // Q = 6180174
+  } else if b == 12 {  // Q = 9940224
+  } else if b == 13 {  // Q = 15444390
+  } else if b == 14 {  // Q = 23288832
+  } else if b == 15 {  // Q = 34211310
+  } else if b == 16 {  // Q = 49112064
+  } else {
+    assert false;
+  }
+}
+
+lemma Enum64_3(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 3 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 2028
+  } else if b == 2 {  // Q = 10830
+  } else if b == 3 {  // Q = 39366
+  } else if b == 4 {  // Q = 114996
+  } else if b == 5 {  // Q = 288120
+  } else if b == 6 {  // Q = 642978
+  } else if b == 7 {  // Q = 1310610
+  } else if b == 8 {  // Q = 2483976
+  } else if b == 9 {  // Q = 4435236
+  } else if b == 10 {  // Q = 7535190
+  } else if b == 11 {  // Q = 12274878
+  } else if b == 12 {  // Q = 19289340
+  } else if b == 13 {  // Q = 29383536
+  } else if b == 14 {  // Q = 43560426
+  } else if b == 15 {  // Q = 63051210
+  } else {
+    assert false;
+  }
+}
+
+lemma Enum64_4(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 4 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 8820
+  } else if b == 2 {  // Q = 37632
+  } else if b == 3 {  // Q = 114996
+  } else if b == 4 {  // Q = 294912
+  } else if b == 5 {  // Q = 669780
+  } else if b == 6 {  // Q = 1386240
+  } else if b == 7 {  // Q = 2663892
+  } else if b == 8 {  // Q = 4816896
+  } else if b == 9 {  // Q = 8278452
+  } else if b == 10 {  // Q = 13628160
+  } else if b == 11 {  // Q = 21622260
+  } else if b == 12 {  // Q = 33226752
+  } else if b == 13 {  // Q = 49653396
+  } else if b == 14 {  // Q = 72398592
+  } else {
+    assert false;
+  }
+}
+
+lemma Enum64_5(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 5 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 28830
+  } else if b == 2 {  // Q = 106470
+  } else if b == 3 {  // Q = 288120
+  } else if b == 4 {  // Q = 669780
+  } else if b == 5 {  // Q = 1406250
+  } else if b == 6 {  // Q = 2732730
+  } else if b == 7 {  // Q = 4990020
+  } else if b == 8 {  // Q = 8653320
+  } else if b == 9 {  // Q = 14364630
+  } else if b == 10 {  // Q = 22968750
+  } else if b == 11 {  // Q = 35552880
+  } else if b == 12 {  // Q = 53489820
+  } else if b == 13 {  // Q = 78484770
+  } else {
+    assert false;
+  }
+}
+
+lemma Enum64_6(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 6 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 77658
+  } else if b == 2 {  // Q = 259584
+  } else if b == 3 {  // Q = 642978
+  } else if b == 4 {  // Q = 1386240
+  } else if b == 5 {  // Q = 2732730
+  } else if b == 6 {  // Q = 5038848
+  } else if b == 7 {  // Q = 8806434
+  } else if b == 8 {  // Q = 14719488
+  } else if b == 9 {  // Q = 23685210
+  } else if b == 10 {  // Q = 36879360
+  } else if b == 11 {  // Q = 55795938
+  } else if b == 12 {  // Q = 82301184
+  } else {
+    assert false;
+  }
+}
+
+lemma Enum64_7(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 7 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  // vacuous: 7 | a contradicts !IntDvd(7, a)
+}
+
+lemma Enum64_8(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 8 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 383688
+  } else if b == 2 {  // Q = 1128960
+  } else if b == 3 {  // Q = 2483976
+  } else if b == 4 {  // Q = 4816896
+  } else if b == 5 {  // Q = 8653320
+  } else if b == 6 {  // Q = 14719488
+  } else if b == 7 {  // Q = 23991240
+  } else if b == 8 {  // Q = 37748736
+  } else if b == 9 {  // Q = 57636936
+  } else if b == 10 {  // Q = 85731840
+  } else {
+    assert false;
+  }
+}
+
+lemma Enum64_9(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 9 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 745290
+  } else if b == 2 {  // Q = 2100582
+  } else if b == 3 {  // Q = 4435236
+  } else if b == 4 {  // Q = 8278452
+  } else if b == 5 {  // Q = 14364630
+  } else if b == 6 {  // Q = 23685210
+  } else if b == 7 {  // Q = 37546992
+  } else if b == 8 {  // Q = 57636936
+  } else if b == 9 {  // Q = 86093442
+  } else {
+    assert false;
+  }
+}
+
+lemma Enum64_10(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 10 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 1355310
+  } else if b == 2 {  // Q = 3690240
+  } else if b == 3 {  // Q = 7535190
+  } else if b == 4 {  // Q = 13628160
+  } else if b == 5 {  // Q = 22968750
+  } else if b == 6 {  // Q = 36879360
+  } else if b == 7 {  // Q = 57073590
+  } else if b == 8 {  // Q = 85731840
+  } else {
+    assert false;
+  }
+}
+
+lemma Enum64_11(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 11 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 2334948
+  } else if b == 2 {  // Q = 6180174
+  } else if b == 3 {  // Q = 12274878
+  } else if b == 4 {  // Q = 21622260
+  } else if b == 5 {  // Q = 35552880
+  } else if b == 6 {  // Q = 55795938
+  } else if b == 7 {  // Q = 84558474
+  } else {
+    assert false;
+  }
+}
+
+lemma Enum64_12(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 12 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 3845244
+  } else if b == 2 {  // Q = 9940224
+  } else if b == 3 {  // Q = 19289340
+  } else if b == 4 {  // Q = 33226752
+  } else if b == 5 {  // Q = 53489820
+  } else if b == 6 {  // Q = 82301184
+  } else {
+    assert false;
+  }
+}
+
+lemma Enum64_13(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 13 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 6094998
+  } else if b == 2 {  // Q = 15444390
+  } else if b == 3 {  // Q = 29383536
+  } else if b == 4 {  // Q = 49653396
+  } else if b == 5 {  // Q = 78484770
+  } else {
+    assert false;
+  }
+}
+
+lemma Enum64_14(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 14 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  // vacuous: 7 | a contradicts !IntDvd(7, a)
+}
+
+lemma Enum64_15(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 15 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 13939440
+  } else if b == 2 {  // Q = 34211310
+  } else if b == 3 {  // Q = 63051210
+  } else {
+    assert false;
+  }
+}
+
+lemma Enum64_16(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 16 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 20271888
+  } else if b == 2 {  // Q = 49112064
+  } else {
+    assert false;
+  }
+}
+
+lemma Enum64_17(a: int, b: int)  // [ADDED DECLARATION]
+  requires a == 17 && 1 <= b && a + b < 19 && !IntDvd(7, a) && !IntDvd(7, b) && !IntDvd(7, a + b)
+  ensures !IntDvd(Int.pow(7, 7), 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b)))
+{
+  assert Int.pow(7, 7) == 823543;
+  if b == 1 {  // Q = 28840194
+  } else {
+    assert false;
+  }
+}

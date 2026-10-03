@@ -1,11 +1,21 @@
-// NOT CLOSED — failing line imo_1974_p5-1567: theorem imo_1974_p5, Dafny line 1567 (ERR: assertion might not hold)
+// CLOSED — failing line imo_1974_p5-1567: theorem imo_1974_p5, Dafny line 1567 (ERR: assertion might not hold)
 // failing Dafny line: assert (1.0 < s) by {
 // Lean step: have h₂ : 0 < a + b + d := by linarith
 // hypotheses: 16 facts Z3 had at the line (goal itself removed: 0; the block's own asserts removed: 6); nothing assumed beyond the facts in scope
-// not closed: tried H0=failed, K2=error, K5=error, K3=error; this file is the honest base attempt
-// Dafny: finished with 108 verified, 2 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: pass2 — (1) reordered: the LtOfSubPosReal precondition assert + call now come AFTER the assert-by block that proves 0 < Real.div(N,D)-1; (2) inside that block after D<N: MulPos(D3,a+c+d), LtDivIff(1,N,D), assert 1<Real.div(N,D); (3) at the end a var-bound fraction chain with a proved helper lemma DivAddFrac (p/x+q/y == (p*y+q*x)/(x*y)) giving s == Real.div(N,D)
+// Dafny: finished with 158 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/imo_1974_p5.dfy"
+// helper (proved, not an axiom): adding two fractions over nonzero denominators
+lemma DivAddFrac(p: real, q: real, x: real, y: real)  // [ADDED DECLARATION]
+  requires x != 0.0
+  requires y != 0.0
+  ensures p / x + q / y == (p * y + q * x) / (x * y)
+{
+  assert p / x == (p * y) / (x * y);
+  assert q / y == (q * x) / (x * y);
+}
+
 lemma {:induction false} vc_imo_1974_p5_L1567(a: real, b: real, c: real, d: real, s: real)
   requires 0.0 < a
   requires 0.0 < b
@@ -86,8 +96,6 @@ lemma {:induction false} vc_imo_1974_p5_L1567(a: real, b: real, c: real, d: real
     // UNCITED-APPLIED internal ×30 [exec 1131 5656-5703]: applications made inside the tactic's own automation, not stated — ne_of_gt ×6, add_div' ×3, div_mul_eq_mul_div ×3, div_add' ×3, div_div ×3; machinery/glue: Eq.trans ×6, congrArg ×6 (cited in this block, not counted here: mul_pos [Lean recorded ×2])
     assert (1.0 < Real.div(((((((a * ((a + b) + c)) + (b * ((a + b) + d))) * ((b + c) + d)) + (c * (((a + b) + d) * ((a + b) + c)))) * ((a + c) + d)) + (d * ((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)))), (((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)) * ((a + c) + d)))) by {  // sub-goal before `refine'` (Lean state) // @tac 5708-5731
       // [TACTIC: refine' lt_of_sub_pos _]
-      assert (0.0 < (Real.div(((((((a * ((a + b) + c)) + (b * ((a + b) + d))) * ((b + c) + d)) + (c * (((a + b) + d) * ((a + b) + c)))) * ((a + c) + d)) + (d * ((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)))), (((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)) * ((a + c) + d)))) - (1.0));  // precondition of LtOfSubPosReal (Lean: lt_of_sub_pos)
-      LtOfSubPosReal(Real.div(((((((a * ((a + b) + c)) + (b * ((a + b) + d))) * ((b + c) + d)) + (c * (((a + b) + d) * ((a + b) + c)))) * ((a + c) + d)) + (d * ((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)))), (((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)) * ((a + c) + d))), 1.0);  // cite: lt_of_sub_pos
       assert (0.0 < (Real.div(((((((a * ((a + b) + c)) + (b * ((a + b) + d))) * ((b + c) + d)) + (c * (((a + b) + d) * ((a + b) + c)))) * ((a + c) + d)) + (d * ((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)))), (((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)) * ((a + c) + d))) - 1.0)) by {  // sub-goal before `field_simp` (Lean state) // @tac 5736-5746
         // [TACTIC: «Field_simp[_]At___»]
         if (0.0 < (((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)))) && (0.0 < (((a + c) + d))) { MulPos(((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)), ((a + c) + d)); }  // cite: mul_pos [applied by the tactic, not named in it]
@@ -186,7 +194,32 @@ lemma {:induction false} vc_imo_1974_p5_L1567(a: real, b: real, c: real, d: real
             MulPos(c, d);  // cite: mul_pos
           }
         }
+        MulPos((a + b + d) * (a + b + c) * (b + c + d), (a + c + d));  // [ADDED]
+        LtDivIff(1.0, ((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d)), (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d));  // [ADDED]
+        assert 1.0 < Real.div(((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d)), (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d));  // [ADDED]
+        assert 0.0 < Real.div(((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d)), (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d)) - 1.0;  // [ADDED]
       }
+      assert (0.0 < (Real.div(((((((a * ((a + b) + c)) + (b * ((a + b) + d))) * ((b + c) + d)) + (c * (((a + b) + d) * ((a + b) + c)))) * ((a + c) + d)) + (d * ((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)))), (((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)) * ((a + c) + d)))) - (1.0));  // precondition of LtOfSubPosReal (Lean: lt_of_sub_pos)
+      LtOfSubPosReal(Real.div(((((((a * ((a + b) + c)) + (b * ((a + b) + d))) * ((b + c) + d)) + (c * (((a + b) + d) * ((a + b) + c)))) * ((a + c) + d)) + (d * ((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)))), (((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)) * ((a + c) + d))), 1.0);  // cite: lt_of_sub_pos
     }
+    var x1 := a + b + d; var y1 := a + b + c; var z1 := b + c + d; var w1 := a + c + d;  // [ADDED]
+    assert Real.div(a, a + b + d) == a / x1;  // [ADDED]
+    assert Real.div(b, a + b + c) == b / y1;  // [ADDED]
+    assert Real.div(c, b + c + d) == c / z1;  // [ADDED]
+    assert Real.div(d, a + c + d) == d / w1;  // [ADDED]
+    DivAddFrac(a, b, x1, y1);  // [ADDED]
+    var p2 := a * y1 + b * x1; var d2 := x1 * y1;  // [ADDED]
+    assert a / x1 + b / y1 == p2 / d2;  // [ADDED]
+    DivAddFrac(p2, c, d2, z1);  // [ADDED]
+    var p3 := p2 * z1 + c * d2; var d3 := d2 * z1;  // [ADDED]
+    assert p2 / d2 + c / z1 == p3 / d3;  // [ADDED]
+    DivAddFrac(p3, d, d3, w1);  // [ADDED]
+    var p4 := p3 * w1 + d * d3; var d4 := d3 * w1;  // [ADDED]
+    assert p3 / d3 + d / w1 == p4 / d4;  // [ADDED]
+    assert s == p4 / d4;  // [ADDED]
+    assert p4 == ((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d));  // [ADDED]
+    assert d4 == (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d);  // [ADDED]
+    assert Real.div(((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d)), (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d)) == p4 / d4;  // [ADDED]
+    assert s == Real.div(((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d)), (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d));  // [ADDED]
 }
 

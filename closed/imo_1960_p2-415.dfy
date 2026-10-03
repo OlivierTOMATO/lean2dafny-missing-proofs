@@ -1,9 +1,9 @@
-// NOT CLOSED — failing line imo_1960_p2-415: theorem imo_1960_p2, Dafny line 415 (ERR: assertion might not hold)
+// CLOSED — failing line imo_1960_p2-415: theorem imo_1960_p2, Dafny line 415 (ERR: assertion might not hold)
 // failing Dafny line: assert (Real.div((4.0 * (x * x)), ((Real.sqrt((1.0 + (2.0 * x))) - 1.0) * (Real.sqrt((1.0 + (2.0 * x))) - 1.0))) >= ((2.0 * x) + 9.0)) by {
 // Lean step: have h₁₂ : x = ((Real.sqrt (1 + 2 * x)) ^ 2 - 1) / 2 := by
 // hypotheses: 12 facts Z3 had at the line (goal itself removed: 0; the block's own asserts removed: 2); nothing assumed beyond the facts in scope
-// not closed: tried H0=failed, K1=failed, K3=failed, K1b=failed, K1c=failed; this file is the honest base attempt
-// Dafny: finished with 36 verified, 1 error  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: pass2 — restructured the body: dropped the rw[h₁₂]-substituted intermediate goal (x replaced by (√(1+2x)²-1)/2 inside the nested sqrt — a congruence Z3 cannot undo) and stated the file's own inner proof block (h₁₃, h₁₄, field_simp/positivity, le_div_iff, nlinarith certificate) directly as `assert (2x+9) <= Real.div(4x², (√(1+2x)-1)²) by {...}`, which is the ensures itself; no step added or removed inside the block
+// Dafny: finished with 32 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s; 2.5 s)
 
 include "../dafny/imo_1960_p2.dfy"
 lemma {:induction false} vc_imo_1960_p2_L415(x: real)
@@ -59,7 +59,9 @@ lemma {:induction false} vc_imo_1960_p2_L415(x: real)
                   }
                   // [TACTIC: rwSeq [ h₁₂ ]]
                   // UNCITED-APPLIED congrArg(x, (√((1 : ℝ) + (2 : ℝ) * x) ^ (2 : ℕ) - (1 : ℝ)) / (2 : ℝ), fun (_a : ℝ) => (4 : ℝ) * _a ^ (2 : ℕ) / (√((1 : ℝ) + (2 : ℝ) * _a) -…): no library counterpart (not stated) [exec 568 2082-2094]
-                  assert (Real.div((4.0 * ((((Real.sqrt((1.0 + (2.0 * x))) * Real.sqrt((1.0 + (2.0 * x)))) - 1.0) / 2.0) * (((Real.sqrt((1.0 + (2.0 * x))) * Real.sqrt((1.0 + (2.0 * x)))) - 1.0) / 2.0))), ((Real.sqrt((1.0 + (2.0 * (((Real.sqrt((1.0 + (2.0 * x))) * Real.sqrt((1.0 + (2.0 * x)))) - 1.0) / 2.0)))) - 1.0) * (Real.sqrt((1.0 + (2.0 * (((Real.sqrt((1.0 + (2.0 * x))) * Real.sqrt((1.0 + (2.0 * x)))) - 1.0) / 2.0)))) - 1.0))) >= ((2.0 * (((Real.sqrt((1.0 + (2.0 * x))) * Real.sqrt((1.0 + (2.0 * x)))) - 1.0) / 2.0)) + 9.0)) by {  // sub-goal before `have` (Lean state) // @tac 2105-2243 // @tac 2254-2320 // @tac 2331-2355
+                  // pass2: Lean's `rw [h₁₂]` only rewrote the goal's x into (√(1+2x)^2-1)/2 (a congruence Dafny cannot undo through the nested sqrt);
+                  // the block below is the file's own proof of that goal, stated directly in x (the form its last step `le_div_iff` + nlinarith establishes).
+                  assert (((2.0 * x) + 9.0) <= Real.div((4.0 * (x * x)), ((Real.sqrt((1.0 + (2.0 * x))) - 1.0) * (Real.sqrt((1.0 + (2.0 * x))) - 1.0)))) by {  // pass2: the goal itself, in x; proof = the file's own block (unchanged)
                     // have h₁₃ : 0 < Real.sqrt ( ( 1 + 2 * x ) ) - 1  [type from Lean state]
                     assert (0.0 < (Real.sqrt((1.0 + (2.0 * x))) - 1.0)) by { // @tac 2156-2243
                       assert (0.0 <= (1.0 + (2.0 * x))) by {  // sub-goal of `by` (Lean state) // @tac 2214-2223

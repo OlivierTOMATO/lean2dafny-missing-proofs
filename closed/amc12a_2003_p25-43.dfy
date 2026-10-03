@@ -1,9 +1,9 @@
-// NOT CLOSED — failing line amc12a_2003_p25-43: theorem amc12a_2003_p25, Dafny line 43 (ERR: assertion might not hold)
+// CLOSED — failing line amc12a_2003_p25-43: theorem amc12a_2003_p25, Dafny line 43 (ERR: assertion might not hold)
 // failing Dafny line: assert (exists x: real :: (Real.sqrt(((a * (x * x)) + (b * x))) == 0.0));
 // Lean step: simp at h₄ h₅ h₆ h₇ h₈
 // hypotheses: 13 facts Z3 had at the line; nothing assumed beyond the facts in scope
-// not closed: tried H0=failed, K1=failed, K3=failed, D_obt=failed, K1b=failed, D_trigA=failed; this file is the honest base attempt
-// Dafny: finished with 0 verified, 1 error  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: pass2 — derived the ∃ directly from h₂ at 0 (as for line 28): 0 ∈ {x | 0 ≤ f x} (RealSqrtNonneg), witness w :| 0 ≤ f w ∧ 0 = f w, f w = √(a·w²+b·w) by h₁
+// Dafny: finished with 5 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/amc12a_2003_p25.dfy"
 lemma {:induction false} vc_amc12a_2003_p25_L43(a: real, b: real, f: real -> real, x_14: real, x_15: real, x_1_11: real, y_4: real)
@@ -21,5 +21,13 @@ lemma {:induction false} vc_amc12a_2003_p25_L43(a: real, b: real, f: real -> rea
   requires true == (exists x_27: real :: Real.sqrt(a * (x_27 * x_27) + b * x_27) == 2.0)
   requires true == (exists x_29: real :: Real.sqrt(a * (x_29 * x_29) + b * x_29) == 0.0 - 2.0)
   ensures   exists x_31: real :: Real.sqrt(a * (x_31 * x_31) + b * x_31) == 0.0
-{ }
-
+{
+  // pass2: Lean uses h₃ c (h₃ = h₂ after Set.ext_iff/mem_image); here derived directly from h₂ at c:
+  // c ∈ {x | 0 ≤ f x} (Real.sqrt_nonneg), so c ∈ f '' {x | 0 ≤ f x}: a witness w with f w = c, and f w = √(a w² + b w) by h₁
+  var c: real := 0.0;  // [ADDED]
+  RealSqrtNonneg(a * (c * c) + b * c);  // cite: Real.sqrt_nonneg  // [ADDED]
+  assert 0.0 <= f(c);  // [ADDED]
+  assert c in (iset y_2: real | 0.0 <= f(y_2));  // [ADDED]
+  var w: real :| 0.0 <= f(w) && c == f(w);  // Set.mem_image witness (from h₂)  // [ADDED]
+  assert f(w) == Real.sqrt(a * (w * w) + b * w);  // h₁ at w  // [ADDED]
+}

@@ -1,0 +1,4 @@
+# diff -r $V/library closed2/alt/mathd_numbertheory_175-79/library  (standard -> variant: the Int.pow recursive ensures is removed)
+diff -r /home/changjie/lean2dafny_research/review_integ5/library/MathPrelude.dfy /home/changjie/lean2dafny_research/review_integ5/closed2/alt/mathd_numbertheory_175-79/library/MathPrelude.dfy
+91d90
+<       ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)

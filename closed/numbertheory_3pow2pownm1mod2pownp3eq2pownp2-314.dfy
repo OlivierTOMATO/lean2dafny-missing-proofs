@@ -1,9 +1,9 @@
-// NOT CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-314: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 314 (OOR: Verification out of resource (induction_helper_1))
+// CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-314: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 314 (OOR: Verification out of resource (induction_helper_1))
 // failing Dafny line: assert NatDvd(Int.pow(2, ((2 * n) + 5)), ((2 * k) * Int.pow(2, ((2 * n) + 5)))) by {
 // Lean step: exact ⟨2 * k, by ring⟩
 // hypotheses: 37 facts Z3 had at the line; nothing assumed beyond the facts in scope
-// not closed: tried H0=oor, K2pow=oor, K4=oor, K3=oor; this file is the honest base attempt
-// Dafny: finished with 90 verified, 0 errors, 2 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: pass2 — IntMulNonneg(2k, 2^(2n+5)) (mul_nonneg) — the ensures is only the nat-cast nonneg side-goal; the OOR `if..%..` asserts removed (all hyps kept)
+// Dafny: finished with 85 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L314(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
@@ -46,11 +46,5 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L314(k_1
   requires ((0 <= k_1_0_0) && (0 <= k_1_0_3) && (Int.pow(2, 2 * n + 5) == 0)) || ((0 <= k_1_0_0) && (0 <= k_1_0_3) && (Int.pow(2, 2 * n + 5) != 0)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0) && (Int.pow(2, 2 * n + 5) == 0)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0) && (Int.pow(2, 2 * n + 5) != 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3) && (Int.pow(2, 2 * n + 5) == 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3) && (Int.pow(2, 2 * n + 5) != 0)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0) && (Int.pow(2, 2 * n + 5) == 0)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0) && (Int.pow(2, 2 * n + 5) != 0))
   ensures   0 <= 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
 {
-                        assert (((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) == (Int.pow(2, ((2 * n) + 5)) * (2 * k_1_0_0))) by {  // sub-goal of `by` (Lean state) // @tac 5959-5963
-                          // [TACTIC: Ring]
-                        }
-                        // [TACTIC: exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩]
-                        assert (if ((Int.pow(2, ((2 * n) + 5)) as int)) == 0 then ((((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) as int)) == 0 else ((((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) as int)) % ((Int.pow(2, ((2 * n) + 5)) as int)) == 0);  // goal closed by `exact ⟨…⟩` (Lean state)
-                        // UNCITED-APPLIED internal ×72 [exec 863 5940-5966]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_mul ×6, Mathlib.Tactic.Ring.mul_add ×6, Mathlib.Tactic.Ring.zero_mul ×6, Mathlib.Tactic.Ring.mul_pf_right ×5 (+25 more heads, ×49)
+  IntMulNonneg(2 * k_1_0_2_0, Int.pow(2, 2 * n + 5));  // mul_nonneg: the goal is only the ℕ-cast well-formedness 0 <= 2k * 2^(2n+5)  // [ADDED]
 }
-

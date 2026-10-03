@@ -1,11 +1,13 @@
-// NOT CLOSED — failing line imo_1964_p1_1-20: theorem imo_1964_p1_1, Dafny line 20 (OOR: Verification out of resource (imo_1964_p1_1))
+// CLOSED — failing line imo_1964_p1_1-20: theorem imo_1964_p1_1, Dafny line 20 (OOR: Verification out of resource (imo_1964_p1_1))
 // failing Dafny line: assert ((Int.pow(2, n) % 7) == (1 % 7)) by {
 // Lean step: rw [← Int.coe_nat_dvd] at h₀
 // hypotheses: 8 facts Z3 had at the line (goal itself removed: 0; the block's own asserts removed: 2); nothing assumed beyond the facts in scope
-// not closed: tried H0=oor; this file is the honest base attempt
-// Dafny: finished with 27 verified, 0 errors, 2 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: pass2 — proved helper lemma over an abstract nat p (`p >= 1 && tsub(p, 1) % 7 == 0 ==> p % 7 == 1 % 7`, closed by Z3's linear int/mod reasoning) called with p := Int.pow(2, n) (p >= 1 from Int.pow's own ensures b > 0 ==> p > 0; tsub(2^n,1) % 7 == 0 is the in-scope hypothesis); replaces the nested rw/norm_num/omega block whose cites (NatCastPowInt, IntCoeNatDvd) made Z3 run out of resource
+// Dafny: finished with 25 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s; 1.8 s)
 
 include "../dafny/imo_1964_p1_1.dfy"
+// pass2 helper: abstract the power as an int/nat atom so Z3 only needs linear mod arithmetic
+lemma Step20(p: nat) requires p >= 1 requires tsub(p, 1) % 7 == 0 ensures p % 7 == 1 % 7 { }  // [ADDED DECLARATION]
 lemma {:induction false} vc_imo_1964_p1_1_L20(n: nat)
   requires 0 <= n
   requires NatDvd(7, tsub(Int.pow(2, n), 1))
@@ -17,19 +19,5 @@ lemma {:induction false} vc_imo_1964_p1_1_L20(n: nat)
   requires 7 != 0
   ensures   Int.pow(2, n) % 7 == 1 % 7
 {
-      // [TACTIC: rwSeq [ ← Int.coe_nat_dvd ] at h₀]
-      // UNCITED Int.coe_nat_dvd: named here, no record of its application here; the harvest has no application record for this execution at all (its proof term was not captured), so whether Lean applied it here is unknown: not stated
-      assert IntDvd((7 as int), (tsub(Int.pow(2, n), 1) as int));  // hypothesis h₀ after `rw` (Lean state) // @tac-hyp 473-505
-      // [TACTIC: «Norm_num[_]At___» at h₀ ⊢]
-      // UNCITED-APPLIED internal ×6 [exec 82 566-586]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, congrArg ×1, Mathlib.Meta.NormNum.IsNat.to_eq ×1, Mathlib.Meta.NormNum.isInt_emod ×1 (+1 more heads, ×1)
-      assert IntDvd(7, (Int.pow(2, n) - 1));  // hypothesis h₀ after `norm_num` (Lean state) // @tac-hyp 566-586
-      assert ((Int.pow(2, n) % 7) == 1) by {  // sub-goal before `omega` (Lean state) // @tac 658-663
-        // [TACTIC: omega]
-        // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
-        // SORT_GAP: Nat.cast_zero is used at carrier nat; library NatCastZero/NatCastZeroInt/NatCastZeroRat is not over nat (no faithful counterpart, not cited)
-        NatCastPowInt(2, n);  // cite: Nat.cast_pow [applied by the tactic, not named in it]
-        IntCoeNatDvd(7, tsub(Int.pow(2, n), 1));  // cite: Int.coe_nat_dvd [applied by the tactic, not named in it]
-        // UNCITED-APPLIED internal ×101 [exec 83 658-663]: applications made inside the tactic's own automation, not stated — le_of_le_of_eq ×4, Int.sub_nonneg_of_le ×4, Int.add_one_le_of_lt ×3, Int.emod_def ×2, Int.lt_or_gt_of_ne ×1, Int.emod_eq_zero_of_dvd ×1, Nat.cast_pred ×1, Nat.cast_zero ×1, Int.mul_ediv_self_le ×1, Int.lt_mul_ediv_self_add ×1; machinery/glue: Eq.symm ×16, Eq.trans ×7, Lean.Omega.Int.sub_congr ×6, Lean.Omega.LinearCombo.sub_eval ×6 (+23 more heads, ×47) (cited in this block, not counted here: Int.coe_nat_dvd [Lean recorded ×1], Nat.cast_pow [Lean recorded ×1])
-      }
+  Step20(Int.pow(2, n));  // pass2: p := 2^n (Int.pow(2, n) > 0 by Int.pow's ensures); hypothesis tsub(Int.pow(2, n), 1) % 7 == 0 is the helper's requires  // [ADDED]
 }
-

@@ -1,9 +1,9 @@
-// NOT CLOSED — failing line imo_1961_p1-447: theorem imo_1961_p1, Dafny line 447 (ERR: assertion might not hold)
+// CLOSED — failing line imo_1961_p1-447: theorem imo_1961_p1, Dafny line 447 (ERR: assertion might not hold)
 // failing Dafny line: assert (0.0 < ((x - y) * (x - y))) by {
 // Lean step: h₁₂
 // hypotheses: 13 facts Z3 had at the line (goal itself removed: 1; the block's own asserts removed: 2); nothing assumed beyond the facts in scope
-// not closed: tried H0=failed; this file is the honest base attempt
-// Dafny: finished with 4 verified, 1 error  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: pass2 — forall-statement over a real variable d (d != 0.0 ==> 0.0 < Real.pow(d, 2) && Real.pow(d, 2) == d * d, proved by library SqPosOfNeZero(d) at the variable) + assert 0.0 < Real.pow(x - y, 2): E-matching on Real.pow instantiates d := the goal's factor textually, so the square in the ensures is obtained syntactically (a direct SqPosOfNeZero/MulPos call with the compound factor binds a fresh variable and Z3's nonlinear core cannot equate the two products)
+// Dafny: finished with 14 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s; 1.6 s)
 
 include "../dafny/imo_1961_p1.dfy"
 lemma {:induction false} vc_imo_1961_p1_L447(a: real, b: real, x: real, y: real, z: real)
@@ -27,5 +27,8 @@ lemma {:induction false} vc_imo_1961_p1_L447(a: real, b: real, x: real, y: real,
       SubNeZeroOfNe(x, y);  // cite: sub_ne_zero_of_ne
       assert (((x - y)) != 0.0);  // precondition of SqPosOfNeZero (Lean: sq_pos_of_ne_zero)
       SqPosOfNeZero((x - y));  // cite: sq_pos_of_ne_zero
+  // pass2: square positivity obtained syntactically via E-matching on Real.pow (see header)
+  forall d: real | d != 0.0 ensures 0.0 < Real.pow(d, 2) && Real.pow(d, 2) == d * d  // [ADDED]
+  { SqPosOfNeZero(d); assert Real.pow(d, 1) == d; }  // [ADDED]
+  assert 0.0 < Real.pow(x - y, 2);  // [ADDED]
 }
-

@@ -1,9 +1,9 @@
-// NOT CLOSED — failing line amc12a_2003_p25-60: theorem amc12a_2003_p25, Dafny line 60 (ERR: assertion might not hold)
+// CLOSED — failing line amc12a_2003_p25-60: theorem amc12a_2003_p25, Dafny line 60 (ERR: assertion might not hold)
 // failing Dafny line: assert (exists x: real :: (Real.sqrt(((a * (x * x)) + (b * x))) == -(1.0)));
 // Lean step: h₁₀
 // hypotheses: 11 facts Z3 had at the line; nothing assumed beyond the facts in scope
-// not closed: tried H0=failed; this file is the honest base attempt
-// Dafny: finished with 0 verified, 1 error  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: pass2 — contradiction: the facts in scope contain `true == (exists x :: Real.sqrt(a*(x*x)+b*x) == 0.0 - 1.0)` (Lean h₆); a `forall y ensures 0.0 <= Real.sqrt(y) { RealSqrtNonneg(y); }` statement lets Z3 match the skolem √-term and derive false (the same Real.sqrt_nonneg contradiction Lean's final nlinarith uses); (the goal here is literally `ensures false`; the ∃ goals of lines 44-46 is not instantiable (arithmetic-only / √-of-arithmetic bodies admit no trigger; even an identical ∃ hypothesis cannot re-prove it))  (pass1: not closed: tried H0=failed; this file is the honest base attempt)
+// Dafny: finished with 3 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/amc12a_2003_p25.dfy"
 lemma {:induction false} vc_amc12a_2003_p25_L60(a: real, b: real, f: real -> real, x_14: real, x_15: real, x_1_11: real, y_4: real)
@@ -19,5 +19,7 @@ lemma {:induction false} vc_amc12a_2003_p25_L60(a: real, b: real, f: real -> rea
   requires true == (exists x_23: real :: Real.sqrt(a * (x_23 * x_23) + b * x_23) == 1.0)
   requires true == (exists x_25: real :: Real.sqrt(a * (x_25 * x_25) + b * x_25) == 0.0 - 1.0)
   ensures   false /*VC_GAP*/
-{ }
-
+{
+  forall y: real ensures 0.0 <= Real.sqrt(y) { RealSqrtNonneg(y); }  // [ADDED]
+  assert false;  // [ADDED]
+}
