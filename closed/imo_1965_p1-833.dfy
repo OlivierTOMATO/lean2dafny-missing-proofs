@@ -60,17 +60,17 @@ lemma {:induction false} vc_imo_1965_p1_L833(x: real)
   requires 0.0 - 10.0 * (Real.sqrt(1.0 + Real.sin(2.0 * x)) * Real.sqrt(1.0 + Real.sin(2.0 * x)) - (1.0 + Real.sin(2.0 * x))) + (0.0 - 2.0 * (Real.sqrt(1.0 - Real.sin(2.0 * x)) * Real.sqrt(1.0 - Real.sin(2.0 * x)) - (1.0 - Real.sin(2.0 * x)))) + 4.0 * (Real.cos(2.0 * x) * Real.cos(2.0 * x) + Real.sin(2.0 * x) * Real.sin(2.0 * x) - 1.0) + Real.sqrt(1.0 - Real.sin(2.0 * x)) * Real.sqrt(1.0 - Real.sin(2.0 * x)) * (Real.sqrt(1.0 + Real.sin(2.0 * x)) * Real.sqrt(1.0 + Real.sin(2.0 * x)) - (1.0 + Real.sin(2.0 * x))) + Real.sqrt(1.0 - Real.sin(2.0 * x)) * Real.sqrt(1.0 - Real.sin(2.0 * x)) * (Real.sqrt(1.0 - Real.sin(2.0 * x)) * Real.sqrt(1.0 - Real.sin(2.0 * x)) - (1.0 - Real.sin(2.0 * x))) + 5.0 * (Real.sqrt(1.0 + Real.sin(2.0 * x)) * Real.sqrt(1.0 + Real.sin(2.0 * x)) * (Real.sqrt(1.0 + Real.sin(2.0 * x)) * Real.sqrt(1.0 + Real.sin(2.0 * x)) - (1.0 + Real.sin(2.0 * x)))) + (0.0 - 3.0 * (Real.sqrt(1.0 + Real.sin(2.0 * x)) * Real.sqrt(1.0 + Real.sin(2.0 * x)) * (Real.sqrt(1.0 - Real.sin(2.0 * x)) * Real.sqrt(1.0 - Real.sin(2.0 * x)) - (1.0 - Real.sin(2.0 * x))))) + 4.0 * (Real.sqrt(1.0 + Real.sin(2.0 * x)) * Real.sqrt(1.0 - Real.sin(2.0 * x)) * (2.0 - 2.0 * Real.cos(2.0 * x) - (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) * (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))))) + 4.0 * (Real.cos(2.0 * x) * (Real.sqrt(1.0 + Real.sin(2.0 * x)) * Real.sqrt(1.0 + Real.sin(2.0 * x)) - (1.0 + Real.sin(2.0 * x)))) + 4.0 * (Real.cos(2.0 * x) * (Real.sqrt(1.0 - Real.sin(2.0 * x)) * Real.sqrt(1.0 - Real.sin(2.0 * x)) - (1.0 - Real.sin(2.0 * x)))) + (0.0 - (2.0 - 2.0 * Real.cos(2.0 * x) - (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) * (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)))) * (2.0 - 2.0 * Real.cos(2.0 * x) - (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) * (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))))) + (0.0 - 4.0 * ((Real.sqrt(1.0 + Real.sin(2.0 * x)) * Real.sqrt(1.0 + Real.sin(2.0 * x)) - (1.0 + Real.sin(2.0 * x))) * (Real.sqrt(1.0 + Real.sin(2.0 * x)) * Real.sqrt(1.0 + Real.sin(2.0 * x)) - (1.0 + Real.sin(2.0 * x))))) == 0.0
   ensures   (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) * (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) == 2.0 - 2.0 * Real.cos(2.0 * x)
 {
-  var P := Real.sqrt(1.0 + Real.sin(2.0 * x)); var M := Real.sqrt(1.0 - Real.sin(2.0 * x)); var c := Real.cos(2.0 * x); var s := Real.sin(2.0 * x);
+  var P := Real.sqrt(1.0 + Real.sin(2.0 * x)); var M := Real.sqrt(1.0 - Real.sin(2.0 * x)); var c := Real.cos(2.0 * x); var s := Real.sin(2.0 * x);  // [ADDED]
   // K2: ring normal form + computed values (each a checked assert)
-  assert (P - M) * (P - M) == P * P + M * M - 2.0 * (P * M);
-  assert P * P + M * M == 2.0;
-  assert (P * M) * (P * M) == (P * P) * (M * M);
-  assert (P * P) * (M * M) == 1.0 - s * s;
-  assert (P * M) * (P * M) == c * c;
+  assert (P - M) * (P - M) == P * P + M * M - 2.0 * (P * M);  // [ADDED]
+  assert P * P + M * M == 2.0;  // [ADDED]
+  assert (P * M) * (P * M) == (P * P) * (M * M);  // [ADDED]
+  assert (P * P) * (M * M) == 1.0 - s * s;  // [ADDED]
+  assert (P * M) * (P * M) == c * c;  // [ADDED]
   // sign step: PM>=0, c>=0, (PM)^2 == c^2  ==> PM == c
-  assert (P * M - c) * (P * M + c) == 0.0;
-  EqZeroOrEqZeroOfMulEqZero(P * M - c, P * M + c);  // Mathlib mul_eq_zero (library lemma)
-  assert P * M == c;
+  assert (P * M - c) * (P * M + c) == 0.0;  // [ADDED]
+  EqZeroOrEqZeroOfMulEqZero(P * M - c, P * M + c);  // Mathlib mul_eq_zero (library lemma)  // [ADDED]
+  assert P * M == c;  // [ADDED]
           assert (0.0 <= (1.0 + Real.sin((2.0 * x)))) by {  // sub-goal of `by` (Lean state) // @tac 1383-1447
             // [TACTIC: «Nlinarith[_]At___» [ Real.sin_le_one ( 2 * x ) , Real.neg_one_le_sin ( 2 * x ) ]]
             // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 1383-1447 exec 127)

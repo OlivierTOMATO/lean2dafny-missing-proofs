@@ -37,7 +37,7 @@ lemma {:induction false} vc_imo_1964_p1_2_L33(n: int, n_1_0: int, n_1_0_0: nat)
 
 // side checks at the same line (not the reported failure): 3 check(s)
 // side check: divisor is always non-zero.
-lemma {:induction false} vc_imo_1964_p1_2_L33_side1(n: int, n_1_0: int, n_1_0_0: nat)
+lemma {:induction false} vc_imo_1964_p1_2_L33_side1(n: int, n_1_0: int, n_1_0_0: nat)  // [ADDED DECLARATION]
   requires 0 <= n
   requires 0 <= n_1_0
   requires forall n0: nat :: true && 0 <= n0 && n0 < n ==> Int.pow(2, n0) % 7 == 1 || Int.pow(2, n0) % 7 == 2 || Int.pow(2, n0) % 7 == 4

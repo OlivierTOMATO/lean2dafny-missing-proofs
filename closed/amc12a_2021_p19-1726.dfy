@@ -22,6 +22,6 @@ lemma {:induction false} vc_amc12a_2021_p19_L1726(S: set<real>, x_0_0_0_0: real)
   requires Real.cos(Real.pi() / 2.0) == 0.0
   ensures   Real.sin(Real.pi() / 2.0) == 1.0
 {
-  RealSinPiDivTwo();  // Mathlib Real.sin_pi_div_two (simp set)
+  RealSinPiDivTwo();  // Mathlib Real.sin_pi_div_two (simp set)  // [ADDED]
 }
 

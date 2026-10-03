@@ -20,8 +20,8 @@ lemma {:induction false} vc_numbertheory_2pownm1prime_nprime_L104(k_1_0_0_2_2_3:
   requires ((0 <= m_1_0_0_1_2_0) && (NatDvd(m_1_0_0_1_2_0, n)) && (2 <= m_1_0_0_1_2_0)) || ((0 <= m_1_0_0_1_2_0) && (NatDvd(m_1_0_0_1_2_0, n)) && (m_1_0_0_1_2_0 < 2)) || ((0 <= m_1_0_0_1_2_0) && (!NatDvd(m_1_0_0_1_2_0, n))) || (m_1_0_0_1_2_0 < 0) || ((n < 2) && (0 <= m_1_0_0_1_2_0) && (NatDvd(m_1_0_0_1_2_0, n)) && (2 <= m_1_0_0_1_2_0)) || ((n < 2) && (0 <= m_1_0_0_1_2_0) && (NatDvd(m_1_0_0_1_2_0, n)) && (m_1_0_0_1_2_0 < 2)) || ((n < 2) && (0 <= m_1_0_0_1_2_0) && (!NatDvd(m_1_0_0_1_2_0, n))) || ((n < 2) && (m_1_0_0_1_2_0 < 0))
   ensures   exists m_1_0_0_1_2_1: nat :: NatDvd(m_1_0_0_1_2_1, n) && 2 <= m_1_0_0_1_2_1 && m_1_0_0_1_2_1 < n
 {
-  var w: nat :| 2 <= w && w < n && n % w == 0;  // obtain the witness of h54 (Lean: obtain ⟨m, hm₁, hm₂⟩ := h₅₄)
-  assert NatDvd(w, n);
+  var w: nat :| 2 <= w && w < n && n % w == 0;  // obtain the witness of h54 (Lean: obtain ⟨m, hm₁, hm₂⟩ := h₅₄)  // [ADDED]
+  assert NatDvd(w, n);  // [ADDED]
               assert 2 <= (n) && !prime(n);  // precondition of ExistsDvdOfNotPrime2 (Lean: Nat.exists_dvd_of_not_prime2)
               ExistsDvdOfNotPrime2(n);  // cite: Nat.exists_dvd_of_not_prime2 (proof term)
               assert (n >= 2) by {  // sub-goal of `by` (Lean state) // @tac 1174-1179

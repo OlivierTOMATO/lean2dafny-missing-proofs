@@ -14,7 +14,7 @@ lemma {:induction false} vc_algebra_9onxpypzleqsum2onxpy_L471(x: real, y: real, 
   requires 0.0 < (x + y) * (y + z) * (z + x)
   ensures   2.0 * (x + y + z) * (Real.div(1.0, x + y) + Real.div(1.0, y + z) + Real.div(1.0, z + x)) >= 9.0
 {
-  assert 2.0 * (x + y + z) * (Real.div(1.0, x + y) + Real.div(1.0, y + z) + Real.div(1.0, z + x)) == Real.div(2.0 * (x + y + z) * ((y + z + (x + y)) * (z + x) + (x + y) * (y + z)), (x + y) * (y + z) * (z + x));  // K2: field_simp normal form (before-goal LHS == after-goal LHS), checked
+  assert 2.0 * (x + y + z) * (Real.div(1.0, x + y) + Real.div(1.0, y + z) + Real.div(1.0, z + x)) == Real.div(2.0 * (x + y + z) * ((y + z + (x + y)) * (z + x) + (x + y) * (y + z)), (x + y) * (y + z) * (z + x));  // K2: field_simp normal form (before-goal LHS == after-goal LHS), checked  // [ADDED]
     // have h₉₁ : 0 < x + y  [type from Lean state]
     assert (0.0 < (x + y)) by { // @tac 871-879
       // [TACTIC: «Linarith[_]At___»]

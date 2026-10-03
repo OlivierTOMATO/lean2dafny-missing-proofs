@@ -6,7 +6,7 @@
 // Dafny: finished with 23 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/amc12a_2021_p14.dfy"
-lemma s018_Step197()
+lemma s018_Step197()  // [ADDED DECLARATION]
   ensures Real.sum(IccN(1, 20), ((v_1_0_0_1_2_k: nat) => Real.logb(5.0, 3.0) * (v_1_0_0_1_2_k as real))) == Real.logb(5.0, 3.0) * Real.sum(IccN(1, 20), ((v_1_22_k: nat) => (v_1_22_k as real)))
 {
   FinsetMulSumPointwise(IccN(1, 20), ((v_1_22_k: nat) => (v_1_22_k as real)), ((v_1_0_0_1_2_k: nat) => Real.logb(5.0, 3.0) * (v_1_0_0_1_2_k as real)), Real.logb(5.0, 3.0));  // Finset.mul_sum at Lean args
@@ -19,7 +19,7 @@ lemma {:induction false} vc_amc12a_2021_p14_L197()
   requires Real.sum(IccN(1, 20), ((k: nat) => Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2))))) == Real.sum(IccN(1, 20), ((v_22_k: nat) => (v_22_k as real) * Real.logb(5.0, 3.0)))
   ensures   Real.sum(IccN(1, 20), ((v_1_0_0_1_2_k: nat) => Real.logb(5.0, 3.0) * (v_1_0_0_1_2_k as real))) == Real.logb(5.0, 3.0) * Real.sum(IccN(1, 20), ((v_1_22_k: nat) => (v_1_22_k as real)))
 {
-  s018_Step197();
+  s018_Step197();  // [ADDED]
               // [TACTIC: «_<;>_» [ Finset.mul_sum ] rw [ Finset.mul_sum ] <;> simp [ mul_comm ] simp [ mul_comm ] simp [ mul_comm ]]
               // [TACTIC: rwSeq [ Finset.mul_sum ]]
               // UNCITED Finset.mul_sum: recorded instance not expressible here (sort/type/scope), not guessed

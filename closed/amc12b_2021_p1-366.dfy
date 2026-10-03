@@ -14,6 +14,6 @@ lemma {:induction false} vc_amc12b_2021_p1_L366(S: set<int>)
   ensures   |Icc(0 - 9, 9)| == 19
 {
   // K5: Int.card_Icc (applied inside Lean's norm_num, exec 681, args a=-9, b=9)
-  IntIccCard(-9, 9, Icc(-9, 9));
+  IntIccCard(-9, 9, Icc(-9, 9));  // [ADDED]
 }
 

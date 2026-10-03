@@ -7,17 +7,17 @@
 // NOTE: uses a MODIFIED library copy: see alt/amc12a_2009_p15-183/LIBRARY_CHANGES.diff
 
 include "alt/amc12a_2009_p15-183/out/amc12a_2009_p15.dfy"
-lemma {:axiom} K5_ComplexOnePow(n: nat)
+lemma {:axiom} K5_ComplexOnePow(n: nat)  // [ADDED DECLARATION]
   ensures Complex.pow(Complex.of_real(1.0), n) == Complex.of_real(1.0)
-lemma IP4v(i: Complex.complex) requires i == Complex.Complex(0.0, 1.0)
+lemma IP4v(i: Complex.complex) requires i == Complex.Complex(0.0, 1.0)  // [ADDED DECLARATION]
   ensures Complex.pow(i, 4) == Complex.of_real(1.0)
 { reveal Complex.pow();
   assert Complex.pow(i, 1) == i;
   assert Complex.pow(i, 2) == Complex.Complex(-1.0, 0.0);
   assert Complex.pow(i, 3) == Complex.Complex(0.0, -1.0); }
-lemma IP4() ensures Complex.pow(Complex.I(), 4) == Complex.of_real(1.0)
+lemma IP4() ensures Complex.pow(Complex.I(), 4) == Complex.of_real(1.0)  // [ADDED DECLARATION]
 { IP4v(Complex.I()); }
-lemma S_L183(r: nat, q: nat)
+lemma S_L183(r: nat, q: nat)  // [ADDED DECLARATION]
   requires r < 4
   ensures Complex.pow(Complex.I(), r + 4 * q) == Complex.pow(Complex.I(), (r + 4 * q) % 4)
 {
@@ -57,7 +57,7 @@ lemma {:induction false} vc_amc12a_2009_p15_L183(k_0_0: int, m_11: int, m_3_0_2:
   requires Complex.pow(Complex.I(), (n_0_0_0 % 4 + 4 * (n_0_0_0 / 4)) % 4).Complex?
   ensures   Complex.pow(Complex.I(), n_0_0_0 % 4 + 4 * (n_0_0_0 / 4)) == Complex.pow(Complex.I(), (n_0_0_0 % 4 + 4 * (n_0_0_0 / 4)) % 4)
 {
-  S_L183(n_0_0_0 % 4, n_0_0_0 / 4);
+  S_L183(n_0_0_0 % 4, n_0_0_0 / 4);  // [ADDED]
         // [TACTIC: simp [ pow_add , pow_mul , Complex.I_mul_I , mul_assoc , mul_comm , mul_left_comm ]]
         ComplexPowAdd(Complex.I(), (n % 4), (4 * (n / 4)));  // cite: pow_add
         ComplexPowMul(Complex.I(), 4, (n / 4));  // cite: pow_mul
@@ -71,7 +71,7 @@ lemma {:induction false} vc_amc12a_2009_p15_L183(k_0_0: int, m_11: int, m_3_0_2:
 
 // side checks at the same line (not the reported failure): 7 check(s)
 // side check: divisor is always non-zero.
-lemma {:induction false} vc_amc12a_2009_p15_L183_side1(k_0_0: int, m_11: int, m_3_0_2: int, m_4_0_2: int, m_7_2: int, n: int, n_0_0_0: int)
+lemma {:induction false} vc_amc12a_2009_p15_L183_side1(k_0_0: int, m_11: int, m_3_0_2: int, m_4_0_2: int, m_7_2: int, n: int, n_0_0_0: int)  // [ADDED DECLARATION]
   requires 0 <= n
   requires 0 <= m_3_0_2
   requires 0 <= m_4_0_2
@@ -96,7 +96,7 @@ lemma {:induction false} vc_amc12a_2009_p15_L183_side1(k_0_0: int, m_11: int, m_
 { }
 
 // side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_amc12a_2009_p15_L183_side2(k_0_0: int, m_11: int, m_3_0_2: int, m_4_0_2: int, m_7_2: int, n: int, n_0_0_0: int)
+lemma {:induction false} vc_amc12a_2009_p15_L183_side2(k_0_0: int, m_11: int, m_3_0_2: int, m_4_0_2: int, m_7_2: int, n: int, n_0_0_0: int)  // [ADDED DECLARATION]
   requires 0 <= n
   requires 0 <= m_3_0_2
   requires 0 <= m_4_0_2
@@ -121,7 +121,7 @@ lemma {:induction false} vc_amc12a_2009_p15_L183_side2(k_0_0: int, m_11: int, m_
 { }
 
 // side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_amc12a_2009_p15_L183_side3(k_0_0: int, m_11: int, m_3_0_2: int, m_4_0_2: int, m_7_2: int, n: int, n_0_0_0: int)
+lemma {:induction false} vc_amc12a_2009_p15_L183_side3(k_0_0: int, m_11: int, m_3_0_2: int, m_4_0_2: int, m_7_2: int, n: int, n_0_0_0: int)  // [ADDED DECLARATION]
   requires 0 <= n
   requires 0 <= m_3_0_2
   requires 0 <= m_4_0_2

@@ -9,14 +9,14 @@ include "../dafny/amc12a_2009_p15.dfy"
 lemma {:induction false} vc_amc12a_2009_p15_L32(m: int, n: int)
   ensures   Complex.sum(IccN(1, 4 * 0), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.sub(Complex.mul(Complex.of_real(2.0), Complex.of_real(0.0)), Complex.mul(Complex.mul(Complex.of_real(2.0), Complex.of_real(0.0)), Complex.I()))
 {
-  assert IccN(1, 4 * 0) == {};
-  ComplexSumOfEmpty(IccN(1, 4 * 0), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k))));
-  assert Complex.mul(Complex.of_real(2.0), Complex.of_real(0.0)) == Complex.Complex(0.0, 0.0);
+  assert IccN(1, 4 * 0) == {};  // [ADDED]
+  ComplexSumOfEmpty(IccN(1, 4 * 0), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k))));  // [ADDED]
+  assert Complex.mul(Complex.of_real(2.0), Complex.of_real(0.0)) == Complex.Complex(0.0, 0.0);  // [ADDED]
 }
 
 // side checks at the same line (not the reported failure): 2 check(s)
 // side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_amc12a_2009_p15_L32_side1(m: int, n: int)
+lemma {:induction false} vc_amc12a_2009_p15_L32_side1(m: int, n: int)  // [ADDED DECLARATION]
   requires 0 <= n
   requires 0 <= m
   requires 0 < n
@@ -39,7 +39,7 @@ lemma {:induction false} vc_amc12a_2009_p15_L32_side1(m: int, n: int)
 { }
 
 // side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_amc12a_2009_p15_L32_side2(m: int, n: int)
+lemma {:induction false} vc_amc12a_2009_p15_L32_side2(m: int, n: int)  // [ADDED DECLARATION]
   requires 0 <= n
   requires 0 <= m
   requires 0 < n
@@ -65,6 +65,6 @@ lemma {:induction false} vc_amc12a_2009_p15_L32_side2(m: int, n: int)
 
 
 // work copy: exact Mathlib Finset.sum_empty stated for any finset equal to ∅ (Lean: Finset.Icc_eq_empty_of_lt then sum_empty, exec 354)
-lemma {:axiom} ComplexSumOfEmpty(s: set<nat>, f: nat -> Complex.complex)
+lemma {:axiom} ComplexSumOfEmpty(s: set<nat>, f: nat -> Complex.complex)  // [ADDED DECLARATION]
   requires s == {}
   ensures Complex.sum(s, f) == Complex.of_real(0.0)

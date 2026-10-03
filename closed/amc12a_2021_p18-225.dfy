@@ -24,6 +24,6 @@ lemma {:induction false} vc_amc12a_2021_p18_L225(f: Rat.rat -> real)
   requires f(Rat.mul(Rat.div(Rat.of_int(25), Rat.of_int(11)), Rat.of_int(11))) == f(Rat.div(Rat.of_int(25), Rat.of_int(11))) + f(Rat.of_int(11))
   ensures   f(Rat.mul(Rat.div(Rat.of_int(25), Rat.of_int(11)), Rat.of_int(11))) == f(Rat.of_int(25))
 {
-  RatMulDivOfIntCancel(25, 11);
+  RatMulDivOfIntCancel(25, 11);  // [ADDED]
 }
 

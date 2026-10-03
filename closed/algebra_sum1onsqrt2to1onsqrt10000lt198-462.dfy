@@ -31,7 +31,7 @@ lemma {:induction false} vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462(k_0_0: i
   requires Real.div(1.0, Real.sqrt((k_0_0 as real))) < Real.div(2.0, Real.sqrt((k_0_0 as real)) + Real.sqrt((k_0_0 as real) - 1.0))
   ensures   Real.div(1.0, Real.sqrt((k_0_0 as real))) < 2.0 * Real.div(1.0, Real.sqrt((k_0_0 as real)) + Real.sqrt((k_0_0 as real) - 1.0))
 {
-  assert 2.0 * Real.div(1.0, (Real.sqrt((k_0_0 as real)) + Real.sqrt((k_0_0 as real) - 1.0))) == Real.div(2.0, (Real.sqrt((k_0_0 as real)) + Real.sqrt((k_0_0 as real) - 1.0)));  // field_simp before/after (exec 480)
+  assert 2.0 * Real.div(1.0, (Real.sqrt((k_0_0 as real)) + Real.sqrt((k_0_0 as real) - 1.0))) == Real.div(2.0, (Real.sqrt((k_0_0 as real)) + Real.sqrt((k_0_0 as real) - 1.0)));  // field_simp before/after (exec 480)  // [ADDED]
                 // have h₁₁₁ : 0 < Real.sqrt ( k ) + Real.sqrt ( (  - 1 ) )  [type from Lean state]
                 assert (0.0 < (Real.sqrt((k_0_0 as real)) + Real.sqrt(((k_0_0 as real) - 1.0)))) by { // @tac 3028-3038
                   // [TACTIC: Positivity]

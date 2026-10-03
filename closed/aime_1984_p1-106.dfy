@@ -7,14 +7,14 @@
 // NOTE: uses a MODIFIED library copy: see alt/aime_1984_p1-106/LIBRARY_CHANGES.diff
 
 include "alt/aime_1984_p1-106/out/aime_1984_p1.dfy"
-lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)
+lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)  // [ADDED DECLARATION]
   requires a.to_real() == b.to_real()
   ensures a == b
 
 lemma {:induction false} vc_aime_1984_p1_L106(u: nat -> Rat.rat)
   ensures   Rat.add(Rat.sub(Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.of_int(4851)), Rat.of_int(137)), Rat.mul(Rat.of_int(2), Rat.sub(Rat.neg(Rat.mul(Rat.of_int(1), Rat.of_int(2357))), Rat.mul(Rat.of_int(49), u(0))))) == Rat.of_int(0)
 {
-  assert (Rat.add(Rat.sub(Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.of_int(4851)), Rat.of_int(137)), Rat.mul(Rat.of_int(2), Rat.sub(Rat.neg(Rat.mul(Rat.of_int(1), Rat.of_int(2357))), Rat.mul(Rat.of_int(49), u(0)))))).to_real() == 0.0;
-  RatCastInjective(Rat.add(Rat.sub(Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.of_int(4851)), Rat.of_int(137)), Rat.mul(Rat.of_int(2), Rat.sub(Rat.neg(Rat.mul(Rat.of_int(1), Rat.of_int(2357))), Rat.mul(Rat.of_int(49), u(0))))), Rat.of_int(0));
+  assert (Rat.add(Rat.sub(Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.of_int(4851)), Rat.of_int(137)), Rat.mul(Rat.of_int(2), Rat.sub(Rat.neg(Rat.mul(Rat.of_int(1), Rat.of_int(2357))), Rat.mul(Rat.of_int(49), u(0)))))).to_real() == 0.0;  // [ADDED]
+  RatCastInjective(Rat.add(Rat.sub(Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.of_int(4851)), Rat.of_int(137)), Rat.mul(Rat.of_int(2), Rat.sub(Rat.neg(Rat.mul(Rat.of_int(1), Rat.of_int(2357))), Rat.mul(Rat.of_int(49), u(0))))), Rat.of_int(0));  // [ADDED]
 }
 

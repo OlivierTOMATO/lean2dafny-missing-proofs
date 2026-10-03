@@ -6,7 +6,7 @@
 // Dafny: finished with 44 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/aime_1984_p1.dfy"
-lemma {:axiom} NsmulEqMulRat(n: nat, a: Rat.rat)
+lemma {:axiom} NsmulEqMulRat(n: nat, a: Rat.rat)  // [ADDED DECLARATION]
   ensures Rat.nsmul(n, a) == Rat.mul(Rat.of_int(n), a)
 
 lemma {:induction false} vc_aime_1984_p1_L180(u: nat -> Rat.rat)
@@ -32,7 +32,7 @@ lemma {:induction false} vc_aime_1984_p1_L180(u: nat -> Rat.rat)
   requires Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.sum(range(98), ((v_102_k: nat) => Rat.add(Rat.of_int(v_102_k), Rat.of_int(1))))).Rational?
   ensures   Rat.add(Rat.sum(range(98), ((v_1_0_47_k: nat) => u(0))), Rat.sum(range(98), ((v_102_k: nat) => Rat.add(Rat.of_int(v_102_k), Rat.of_int(1))))) == Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.sum(range(98), ((v_102_k: nat) => Rat.add(Rat.of_int(v_102_k), Rat.of_int(1)))))
 {
-  NsmulEqMulRat(98, u(0));  // Lean simp internal: nsmul_eq_mul
+  NsmulEqMulRat(98, u(0));  // Lean simp internal: nsmul_eq_mul  // [ADDED]
         // [TACTIC: «_<;>_» [ Finset.sum_const , Finset.card_range ] simp [ Finset.sum_const , Finset.card_range ] simp [ Finset.sum_const , Finset.card_range ] <;> ring <;> field_simp field_simp <;> ring]
         // [TACTIC: simp [ Finset.sum_const , Finset.card_range ]]
         FinsetSumConstRat(range(98), u(0));  // cite: Finset.sum_const

@@ -62,7 +62,7 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L390(k_1
 
 // side checks at the same line (not the reported failure): 2 check(s)
 // side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L390_side1(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
+lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L390_side1(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)  // [ADDED DECLARATION]
   requires 0 <= n
   requires 0 <= k_1_0_2
   requires n != 0
@@ -116,7 +116,7 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L390_sid
 { }
 
 // side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L390_side2(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
+lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L390_side2(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)  // [ADDED DECLARATION]
   requires 0 <= n
   requires 0 <= k_1_0_2
   requires n != 0

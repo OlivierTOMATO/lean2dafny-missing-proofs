@@ -15,6 +15,6 @@ lemma {:induction false} vc_aime_1987_p5_L594(x: int, y: int)
   requires 0 < 507
   ensures   exists k_2_2_0_1_1_1_1: int :: 507 == (3 * (x * x) + 1) * k_2_2_0_1_1_1_1
 {
-  IntDvdIffEmodEqZero(3 * (x * x) + 1, 507);  // K4: Lean ∣ on ℤ is ∃ c by definition; h passed directly to Int.le_of_dvd
+  IntDvdIffEmodEqZero(3 * (x * x) + 1, 507);  // K4: Lean ∣ on ℤ is ∃ c by definition; h passed directly to Int.le_of_dvd  // [ADDED]
 }
 

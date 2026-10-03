@@ -46,13 +46,13 @@ lemma {:induction false} vc_imo_1964_p1_2_L78(n: nat)
 
 // side checks at the same line (not the reported failure): 2 check(s)
 // side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_imo_1964_p1_2_L78_side1(n: int)
+lemma {:induction false} vc_imo_1964_p1_2_L78_side1(n: int)  // [ADDED DECLARATION]
   requires 0 <= n
   ensures  0 <= 7
 { }
 
 // side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_imo_1964_p1_2_L78_side2(n: nat)
+lemma {:induction false} vc_imo_1964_p1_2_L78_side2(n: nat)  // [ADDED DECLARATION]
   requires 0 <= n
   requires 0 <= 7
   ensures  0 <= Int.pow(2, n) + 1

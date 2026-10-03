@@ -26,8 +26,8 @@ lemma {:induction false} vc_mathd_algebra_342_L130(a: real, d: real)
   requires 0 <= 5
   ensures   Real.sum(range(5), ((k: nat) => a + (k as real) * d)) == 5.0 * a + 10.0 * d
 {
-  FinsetSumRangeSucc(0, ((k: nat) => a + (k as real) * d));
-  FinsetSumRangeZero(((k: nat) => a + (k as real) * d));
+  FinsetSumRangeSucc(0, ((k: nat) => a + (k as real) * d));  // [ADDED]
+  FinsetSumRangeZero(((k: nat) => a + (k as real) * d));  // [ADDED]
       // [TACTIC: «_<;>_» [ Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ ] norm_num [ Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ ] <;> ring_nf ring_nf <;> norm_num norm_num <;> linarith linarith]
       // [TACTIC: choice [ Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ ] norm_num [ Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ ]]
       FinsetSumRangeSucc(4, ((x: nat) => (a + ((x as real) * d))));  // cite: Finset.sum_range_succ

@@ -38,7 +38,7 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L129(k_1
   requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
   ensures   k_1_0_2_0 * Int.pow(2, n + 4) % Int.pow(2, n + 4) == 0
 {
-  IntModEqZero(k_1_0_2_0 * Int.pow(2, n + 4), Int.pow(2, n + 4));
-  assert k_1_0_2_0 * Int.pow(2, n + 4) == Int.pow(2, n + 4) * k_1_0_2_0;
+  IntModEqZero(k_1_0_2_0 * Int.pow(2, n + 4), Int.pow(2, n + 4));  // [ADDED]
+  assert k_1_0_2_0 * Int.pow(2, n + 4) == Int.pow(2, n + 4) * k_1_0_2_0;  // [ADDED]
 }
 

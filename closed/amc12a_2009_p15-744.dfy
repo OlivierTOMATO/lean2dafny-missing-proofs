@@ -12,13 +12,13 @@ lemma {:induction false} vc_amc12a_2009_p15_L744(a_7_1_0_3__arg: Complex.complex
   ensures   forall m_7_1_0_5: nat :: (1 + m_7_1_0_5 * 4 == 0 || Complex.Re(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) == 0.0) && ((0 - m_7_1_0_5 * 2) as real) + (m_7_1_0_5 as real) * Complex.Im(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) * 4.0 + Complex.Im(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) == ((1 + m_7_1_0_5 * 2) as real)
 {
   // SC: the step as its own lemma over only the hypothesis norm_cast rewrote (K3), with the instance (K1) and cast facts (K4)
-  forall m_7_1_0_5: nat
-    ensures (1 + m_7_1_0_5 * 4 == 0 || Complex.Re(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) == 0.0) && ((0 - m_7_1_0_5 * 2) as real) + (m_7_1_0_5 as real) * Complex.Im(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) * 4.0 + Complex.Im(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) == ((1 + m_7_1_0_5 * 2) as real)
+  forall m_7_1_0_5: nat  // [ADDED]
+    ensures (1 + m_7_1_0_5 * 4 == 0 || Complex.Re(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) == 0.0) && ((0 - m_7_1_0_5 * 2) as real) + (m_7_1_0_5 as real) * Complex.Im(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) * 4.0 + Complex.Im(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) == ((1 + m_7_1_0_5 * 2) as real)  // [ADDED]
   {
-    assert (1.0 + (m_7_1_0_5 as real) * 4.0 == 0.0 || Complex.Re(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) == 0.0) && 0.0 - (m_7_1_0_5 as real) * 2.0 + (m_7_1_0_5 as real) * Complex.Im(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) * 4.0 + Complex.Im(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) == 1.0 + (m_7_1_0_5 as real) * 2.0;
-    assert (1 + m_7_1_0_5 * 4 == 0) == (1.0 + (m_7_1_0_5 as real) * 4.0 == 0.0);
-    assert ((0 - m_7_1_0_5 * 2) as real) == 0.0 - (m_7_1_0_5 as real) * 2.0;
-    assert ((1 + m_7_1_0_5 * 2) as real) == 1.0 + (m_7_1_0_5 as real) * 2.0;
+    assert (1.0 + (m_7_1_0_5 as real) * 4.0 == 0.0 || Complex.Re(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) == 0.0) && 0.0 - (m_7_1_0_5 as real) * 2.0 + (m_7_1_0_5 as real) * Complex.Im(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) * 4.0 + Complex.Im(Complex.mul(Complex.I(), Complex.pow(Complex.I(), m_7_1_0_5 * 4))) == 1.0 + (m_7_1_0_5 as real) * 2.0;  // [ADDED]
+    assert (1 + m_7_1_0_5 * 4 == 0) == (1.0 + (m_7_1_0_5 as real) * 4.0 == 0.0);  // [ADDED]
+    assert ((0 - m_7_1_0_5 * 2) as real) == 0.0 - (m_7_1_0_5 as real) * 2.0;  // [ADDED]
+    assert ((1 + m_7_1_0_5 * 2) as real) == 1.0 + (m_7_1_0_5 as real) * 2.0;  // [ADDED]
   }
 }
 

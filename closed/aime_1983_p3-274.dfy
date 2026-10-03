@@ -13,8 +13,8 @@ lemma {:induction false} vc_aime_1983_p3_L274(f: real -> real, h1_set: set<real>
   requires forall x_3: real :: (x_3 in h1_set) == (f(x_3) == 0.0)
   ensures   f(0.0 - 9.0 + Real.sqrt(61.0)) == (0.0 - 9.0 + Real.sqrt(61.0)) * (0.0 - 9.0 + Real.sqrt(61.0)) + (18.0 * (0.0 - 9.0 + Real.sqrt(61.0)) + 30.0) - 2.0 * Real.sqrt((0.0 - 9.0 + Real.sqrt(61.0)) * (0.0 - 9.0 + Real.sqrt(61.0)) + (18.0 * (0.0 - 9.0 + Real.sqrt(61.0)) + 45.0))
 {
-  var t := 0.0 - 9.0 + Real.sqrt(61.0);  // K1: Lean rw [h0] instance at t
-  assert f(t) == t * t + (18.0 * t + 30.0) - 2.0 * Real.sqrt(t * t + (18.0 * t + 45.0));
-  assert t * t + (18.0 * t + 45.0) == (0.0 - 9.0 + Real.sqrt(61.0)) * (0.0 - 9.0 + Real.sqrt(61.0)) + (18.0 * (0.0 - 9.0 + Real.sqrt(61.0)) + 45.0);  // argument of sqrt, syntactic substitution (checked)
+  var t := 0.0 - 9.0 + Real.sqrt(61.0);  // K1: Lean rw [h0] instance at t  // [ADDED]
+  assert f(t) == t * t + (18.0 * t + 30.0) - 2.0 * Real.sqrt(t * t + (18.0 * t + 45.0));  // [ADDED]
+  assert t * t + (18.0 * t + 45.0) == (0.0 - 9.0 + Real.sqrt(61.0)) * (0.0 - 9.0 + Real.sqrt(61.0)) + (18.0 * (0.0 - 9.0 + Real.sqrt(61.0)) + 45.0);  // argument of sqrt, syntactic substitution (checked)  // [ADDED]
 }
 

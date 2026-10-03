@@ -14,6 +14,6 @@ lemma {:induction false} vc_mathd_numbertheory_175_L71()
   requires Int.pow(2, 2010) == Int.pow(2 * 2 * 2 * 2, 502) * (2 * 2)
   ensures   Int.pow(2 * 2 * 2 * 2, 502) * (2 * 2) % 10 == Int.pow(2 * 2 * 2 * 2, 502) % 10 * (2 * 2 % 10) % 10
 {
-  NatMulMod(Int.pow(2 * 2 * 2 * 2, 502), 2 * 2, 10);
+  NatMulMod(Int.pow(2 * 2 * 2 * 2, 502), 2 * 2, 10);  // [ADDED]
 }
 

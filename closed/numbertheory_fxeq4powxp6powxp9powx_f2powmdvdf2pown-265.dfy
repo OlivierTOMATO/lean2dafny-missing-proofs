@@ -38,7 +38,7 @@ lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L
   requires Int.pow(k_0_0, 1) == k_0_0
   ensures   Int.pow(2, k_0_0) * Int.pow(3, k_0_0) * (Int.pow(2, k_0_0) * Int.pow(2, k_0_0) + Int.pow(3, k_0_0) * Int.pow(3, k_0_0)) + Int.pow(2, k_0_0) * Int.pow(2, k_0_0) * (Int.pow(3, k_0_0) * Int.pow(3, k_0_0)) == Int.pow(2, k_0_0) * Int.pow(3, k_0_0) * (Int.pow(2, k_0_0) * Int.pow(2, k_0_0) + Int.pow(2, k_0_0) * Int.pow(3, k_0_0) + Int.pow(3, k_0_0) * Int.pow(3, k_0_0))
 {
-  RingId(Int.pow(2, k_0_0), Int.pow(3, k_0_0));
+  RingId(Int.pow(2, k_0_0), Int.pow(3, k_0_0));  // [ADDED]
                     // [TACTIC: «_<;>_» ring_nf <;> nlinarith [ pow_pos ( by norm_num norm_num : 0 < ( 2 : ℕ ) ) k , pow_pos ( by norm_num norm_num : 0 < ( 3 : ℕ ) ) k ] nlinarith [ pow_pos ( by norm_num norm_num : 0 < ( 2 : ℕ ) ) k , pow_pos ( by norm_num norm_num : 0 < ( 3 : ℕ ) ) k ]]
                     // [TACTIC: Ring_nfAt]
                     NatPowOne(k_0_0);  // cite: pow_one [applied by the tactic, not named in it]
@@ -49,6 +49,6 @@ lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L
                     // UNCITED-APPLIED internal ×120 [exec 1120 3842-3849]: applications made inside the tactic's own automation, not stated — mul_one ×4, add_zero ×3; machinery/glue: congr ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_add ×8, Mathlib.Tactic.Ring.add_pf_add_zero ×8 (+29 more heads, ×81) (cited in this block, not counted here: pow_one [Lean recorded ×1])
 }
 
-lemma RingId(a: int, b: int)
+lemma RingId(a: int, b: int)  // [ADDED DECLARATION]
   ensures a * b * (a * a + b * b) + a * a * (b * b) == a * b * (a * a + a * b + b * b)
 { }

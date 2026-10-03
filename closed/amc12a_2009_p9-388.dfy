@@ -26,10 +26,10 @@ lemma {:induction false} vc_amc12a_2009_p9_L388(a: real, b: real, c: real, f: re
   ensures   3.0 * 6.0 + b == 7.0
 {
   // K1: linarith hint terms h₅ 0, h₅ 1, h₅ 2, h₅ 3 (exec 286)
-  assert 0.0 * 0.0 * 3.0 + 0.0 * (3.0 * 6.0 + b) + (3.0 * 9.0 + b * 3.0 + c) == 0.0 * 0.0 * 3.0 + 0.0 * 7.0 + 4.0;  // h₅ 0
-  assert 1.0 * 1.0 * 3.0 + 1.0 * (3.0 * 6.0 + b) + (3.0 * 9.0 + b * 3.0 + c) == 1.0 * 1.0 * 3.0 + 1.0 * 7.0 + 4.0;  // h₅ 1
-  assert 2.0 * 2.0 * 3.0 + 2.0 * (3.0 * 6.0 + b) + (3.0 * 9.0 + b * 3.0 + c) == 2.0 * 2.0 * 3.0 + 2.0 * 7.0 + 4.0;  // h₅ 2
-  assert 3.0 * 3.0 * 3.0 + 3.0 * (3.0 * 6.0 + b) + (3.0 * 9.0 + b * 3.0 + c) == 3.0 * 3.0 * 3.0 + 3.0 * 7.0 + 4.0;  // h₅ 3
+  assert 0.0 * 0.0 * 3.0 + 0.0 * (3.0 * 6.0 + b) + (3.0 * 9.0 + b * 3.0 + c) == 0.0 * 0.0 * 3.0 + 0.0 * 7.0 + 4.0;  // h₅ 0  // [ADDED]
+  assert 1.0 * 1.0 * 3.0 + 1.0 * (3.0 * 6.0 + b) + (3.0 * 9.0 + b * 3.0 + c) == 1.0 * 1.0 * 3.0 + 1.0 * 7.0 + 4.0;  // h₅ 1  // [ADDED]
+  assert 2.0 * 2.0 * 3.0 + 2.0 * (3.0 * 6.0 + b) + (3.0 * 9.0 + b * 3.0 + c) == 2.0 * 2.0 * 3.0 + 2.0 * 7.0 + 4.0;  // h₅ 2  // [ADDED]
+  assert 3.0 * 3.0 * 3.0 + 3.0 * (3.0 * 6.0 + b) + (3.0 * 9.0 + b * 3.0 + c) == 3.0 * 3.0 * 3.0 + 3.0 * 7.0 + 4.0;  // h₅ 3  // [ADDED]
       // [TACTIC: «Linarith[_]At___» [ h₅ 0 , h₅ 1 , h₅ 2 , h₅ 3 ]]
       // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 2069-2110 exec 286)
       // UNCITED-APPLIED Linarith.lt_of_lt_of_eq ×2: certificate sums not stated: partial sums (subterms of a larger recorded sum of this certificate), e.g. `(7 : ℝ) - ((3 : ℝ) * (6 : ℝ) + b) + -((0 : ℝ) ^ (2 : ℕ) * (3 : ℝ) + (0 : ℝ) * ((3 : ℝ) * (6 : ℝ) + b) + ((3 : ℝ) * (9 :…`

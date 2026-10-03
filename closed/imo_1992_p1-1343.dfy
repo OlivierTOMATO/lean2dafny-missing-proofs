@@ -10,10 +10,10 @@ include "alt/imo_1992_p1-1343/out/imo_1992_p1.dfy"
 lemma {:induction false} vc_imo_1992_p1_L1343(p: int, q: int, r: int)
   ensures   0 - 12 * 1 + 5 * (1 + 1 - p) + (p * q * r - 1 - 2 * ((p - 1) * (q - 1) * (r - 1))) + (2 * 3 - p * q) + (2 * 4 - p * r) + 2 * (3 * 4 - q * r) + (p * q * r + 1 - 2 * 3 * 4) + (0 - 2 * ((1 + 1 - p) * (1 + 1 - p))) + (0 - 2 * ((1 + 1 - p) * (p + 1 - q))) + (0 - (1 + 1 - p) * (q + 1 - r)) == 0
 {
-  assert 2 * ((p - 1) * (q - 1) * (r - 1)) == 2 * p * q * r + -2 * p * q + -2 * p * r + 2 * p + -2 * q * r + 2 * q + 2 * r + -2;
-  assert 2 * (3 * 4 - q * r) == -2 * q * r + 24;
-  assert 2 * ((1 + 1 - p) * (1 + 1 - p)) == 2 * p * p + -8 * p + 8;
-  assert 2 * ((1 + 1 - p) * (p + 1 - q)) == -2 * p * p + 2 * p * q + 2 * p + -4 * q + 4;
-  assert (1 + 1 - p) * (q + 1 - r) == (0 - p * q) + p * r - (p) + 2 * q + -2 * r + 2;
+  assert 2 * ((p - 1) * (q - 1) * (r - 1)) == 2 * p * q * r + -2 * p * q + -2 * p * r + 2 * p + -2 * q * r + 2 * q + 2 * r + -2;  // [ADDED]
+  assert 2 * (3 * 4 - q * r) == -2 * q * r + 24;  // [ADDED]
+  assert 2 * ((1 + 1 - p) * (1 + 1 - p)) == 2 * p * p + -8 * p + 8;  // [ADDED]
+  assert 2 * ((1 + 1 - p) * (p + 1 - q)) == -2 * p * p + 2 * p * q + 2 * p + -4 * q + 4;  // [ADDED]
+  assert (1 + 1 - p) * (q + 1 - r) == (0 - p * q) + p * r - (p) + 2 * q + -2 * r + 2;  // [ADDED]
 }
 

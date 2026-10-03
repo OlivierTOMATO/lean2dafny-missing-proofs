@@ -12,10 +12,10 @@ lemma {:induction false} vc_amc12a_2009_p9_L181(a: real, b: real, c: real, f: re
   ensures   forall x_0_2: real :: a * ((x_0_2 + 3.0) * (x_0_2 + 3.0)) + b * (x_0_2 + 3.0) + c == 3.0 * (x_0_2 * x_0_2) + 7.0 * x_0_2 + 4.0
 {
   // K1: the instance Lean's `simp only [h₁] at h₀` used: h₁ at x + 3 (rewriting f (x+3) inside h₀)
-  forall x_0_2: real
-    ensures a * ((x_0_2 + 3.0) * (x_0_2 + 3.0)) + b * (x_0_2 + 3.0) + c == 3.0 * (x_0_2 * x_0_2) + 7.0 * x_0_2 + 4.0
+  forall x_0_2: real  // [ADDED]
+    ensures a * ((x_0_2 + 3.0) * (x_0_2 + 3.0)) + b * (x_0_2 + 3.0) + c == 3.0 * (x_0_2 * x_0_2) + 7.0 * x_0_2 + 4.0  // [ADDED]
   {
-    assert f(x_0_2 + 3.0) == a * ((x_0_2 + 3.0) * (x_0_2 + 3.0)) + b * (x_0_2 + 3.0) + c;
+    assert f(x_0_2 + 3.0) == a * ((x_0_2 + 3.0) * (x_0_2 + 3.0)) + b * (x_0_2 + 3.0) + c;  // [ADDED]
   }
 }
 

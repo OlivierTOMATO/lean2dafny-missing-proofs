@@ -25,7 +25,7 @@ lemma {:induction false} vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192(a: real
   requires (x * x + y_5_0 * y_5_0) / 2.0 - Real.sqrt(x * x * (y_5_0 * y_5_0)) == (x - y_5_0) * (x - y_5_0) / 2.0
   ensures   (a + b) / 2.0 - Real.sqrt(a * b) == (x - y_5_0) * (x - y_5_0) / 2.0
 {
-  assert a * b == x * x * (y_5_0 * y_5_0);
+  assert a * b == x * x * (y_5_0 * y_5_0);  // [ADDED]
         // have h₁₀₁ : a == x ^ 2  [type from Lean state]
         assert (a == (x * x)) by { // @tac 899-955 // @tac 899-936
           // [TACTIC: «_<;>_» [ ← Real.sq_sqrt ( le_of_lt h₂ ) ] rw [ ← Real.sq_sqrt ( le_of_lt h₂ ) ] <;> simp [ x ] simp [ x ] simp [ x ]]

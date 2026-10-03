@@ -6,7 +6,7 @@
 // Dafny: finished with 4 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/amc12b_2021_p9.dfy"
-lemma {:axiom} DivSubDivSame(a: real, b: real, c: real)
+lemma {:axiom} DivSubDivSame(a: real, b: real, c: real)  // [ADDED DECLARATION]
   ensures Real.div(a, c) - Real.div(b, c) == Real.div(a - b, c)
 
 lemma {:induction false} vc_amc12b_2021_p9_L546()
@@ -23,7 +23,7 @@ lemma {:induction false} vc_amc12b_2021_p9_L546()
   requires ((0.0 < Real.log(2.0)) && (0 <= 2) && (0.0 < Real.pow(Real.log(2.0), 2))) || (Real.log(2.0) <= 0.0)
   ensures   Real.div(Real.log(80.0) * Real.log(40.0), Real.log(2.0) * Real.log(2.0)) - Real.div(Real.log(160.0) * Real.log(20.0), Real.log(2.0) * Real.log(2.0)) == Real.div(Real.log(80.0) * Real.log(40.0) - Real.log(160.0) * Real.log(20.0), Real.log(2.0) * Real.log(2.0))
 {
-  DivSubDivSame((Real.log(80.0) * Real.log(40.0)), (Real.log(160.0) * Real.log(20.0)), (Real.log(2.0) * Real.log(2.0)));
+  DivSubDivSame((Real.log(80.0) * Real.log(40.0)), (Real.log(160.0) * Real.log(20.0)), (Real.log(2.0) * Real.log(2.0)));  // [ADDED]
           // [TACTIC: «_<;>_» [ h₇₅ ] field_simp [ h₇₅ ] <;> ring_nf ring_nf]
           // [TACTIC: «Field_simp[_]At___» [ h₇₅ ]]
           if (0.0 < (Real.log(2.0))) { PowPos(Real.log(2.0), 2); }  // cite: pow_pos [applied by the tactic, not named in it]

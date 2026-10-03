@@ -6,7 +6,7 @@
 // Dafny: finished with 27 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
-lemma DvdMulSelf(a: nat, w: nat) requires a != 0 ensures (a * w) % a == 0 { NatDvdMulOfDvdRight(a, a, w); assert NatDvd(a, w * a); }  // step as its own lemma over atoms, via existing NatDvdMulOfDvdRight
+lemma DvdMulSelf(a: nat, w: nat) requires a != 0 ensures (a * w) % a == 0 { NatDvdMulOfDvdRight(a, a, w); assert NatDvd(a, w * a); }  // step as its own lemma over atoms, via existing NatDvdMulOfDvdRight  // [ADDED DECLARATION]
 
 lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390(f: nat -> nat, k_0_2_3_2_1_0: int, k_1_0: nat, k_1_1_0_1_0: int, m: int, n: int, t_3_5: int)
   requires 0 <= m
@@ -32,6 +32,6 @@ lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L
   requires f(k_1_0) != 0 ==> f.requires(k_1_0) && f.requires(k_1_0) && f.requires(k_1_0)
   ensures   f(k_1_0) * tsub(f(k_1_0), 2 * Int.pow(6, k_1_0)) % f(k_1_0) == 0
 {
-  DvdMulSelf(f(k_1_0), tsub(f(k_1_0), 2 * Int.pow(6, k_1_0)));
+  DvdMulSelf(f(k_1_0), tsub(f(k_1_0), 2 * Int.pow(6, k_1_0)));  // [ADDED]
 }
 

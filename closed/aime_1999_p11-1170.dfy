@@ -7,7 +7,7 @@
 // NOTE: uses a MODIFIED library copy: see alt/aime_1999_p11-1170/LIBRARY_CHANGES.diff
 
 include "alt/aime_1999_p11-1170/out/aime_1999_p11.dfy"
-lemma {:axiom} RatCastInj(a: Rat.rat, b: Rat.rat)
+lemma {:axiom} RatCastInj(a: Rat.rat, b: Rat.rat)  // [ADDED DECLARATION]
   ensures a.to_real() == b.to_real() <==> a == b
 
 lemma {:induction false} vc_aime_1999_p11_L1170(m: Rat.rat)
@@ -33,6 +33,6 @@ lemma {:induction false} vc_aime_1999_p11_L1170(m: Rat.rat)
   requires Rat.of_int(175).Rational?
   ensures   Rat.mul(m, Rat.of_int(2)) == Rat.of_int(175)
 {
-  RatCastInj(Rat.mul(m, Rat.of_int(2)), Rat.of_int(175));  // K4: Rat.cast_inj (norm_cast at h₃)
+  RatCastInj(Rat.mul(m, Rat.of_int(2)), Rat.of_int(175));  // K4: Rat.cast_inj (norm_cast at h₃)  // [ADDED]
 }
 

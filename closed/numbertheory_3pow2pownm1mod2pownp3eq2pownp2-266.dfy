@@ -40,9 +40,9 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L266(k_1
   requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
   ensures   k_1_0_2_0 * Int.pow(2, n + 4) % Int.pow(2, n + 4) == 0
 {
-  IntMulNonneg(k_1_0_2_0, Int.pow(2, n + 4));
-  NatDvdIffModEqZero(Int.pow(2, n + 4), k_1_0_2_0 * Int.pow(2, n + 4));  // Nat.dvd_iff_mod_eq_zero
-  ghost var q: nat := k_1_0_2_0;  // Lean witness k
-  assert k_1_0_2_0 * Int.pow(2, n + 4) == Int.pow(2, n + 4) * q;  // Lean `by ring` sub-goal (already in requires)
+  IntMulNonneg(k_1_0_2_0, Int.pow(2, n + 4));  // [ADDED]
+  NatDvdIffModEqZero(Int.pow(2, n + 4), k_1_0_2_0 * Int.pow(2, n + 4));  // Nat.dvd_iff_mod_eq_zero  // [ADDED]
+  ghost var q: nat := k_1_0_2_0;  // Lean witness k  // [ADDED]
+  assert k_1_0_2_0 * Int.pow(2, n + 4) == Int.pow(2, n + 4) * q;  // Lean `by ring` sub-goal (already in requires)  // [ADDED]
 }
 

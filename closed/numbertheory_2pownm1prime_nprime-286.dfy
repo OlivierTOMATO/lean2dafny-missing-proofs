@@ -32,8 +32,8 @@ lemma {:induction false} vc_numbertheory_2pownm1prime_nprime_L286(k_1_0_0_2_2_3:
   requires m_1_0_0_5_0 != 0
   ensures   n == m_1_0_0_5_0 * (n / m_1_0_0_5_0)
 {
-  NatDvdIffModEqZero(m_1_0_0_5_0, n);
-  var q: nat :| n == m_1_0_0_5_0 * q;  // Lean obtain ⟨k, hk⟩ : n = m * k
-  NatMulDivCancelLeft(m_1_0_0_5_0, q);
+  NatDvdIffModEqZero(m_1_0_0_5_0, n);  // [ADDED]
+  var q: nat :| n == m_1_0_0_5_0 * q;  // Lean obtain ⟨k, hk⟩ : n = m * k  // [ADDED]
+  NatMulDivCancelLeft(m_1_0_0_5_0, q);  // [ADDED]
 }
 

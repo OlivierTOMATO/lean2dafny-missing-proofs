@@ -36,7 +36,7 @@ lemma {:induction false} vc_aime_1983_p1_L1057(w: int, x: int, y: int, z: int)
   requires ((0.0 < 2.0) && (0.0 < 2.0) && (0.0 < Real.log((x as real))) && (0.0 < 2.0) && (0.0 < 2.0 * Real.log((x as real)))) || ((0.0 < 2.0) && (!(0.0 < 2.0 && 0.0 < Real.log((x as real))))) || ((!(0.0 < 2.0)) && (0.0 < 2.0) && (0.0 < Real.log((x as real))) && (0.0 < 2.0) && (0.0 < 2.0 * Real.log((x as real)))) || ((!(0.0 < 2.0)) && (!(0.0 < 2.0 && 0.0 < Real.log((x as real)))))
   ensures   Real.div(24.0 * Real.log((x as real)), 2.0 / 5.0 * Real.log((x as real))) == 60.0
 {
-  DivEqIffReal(24.0 * Real.log((x as real)), 2.0 / 5.0 * Real.log((x as real)), 60.0);  // K5: field_simp lemma div_eq_iff (Mathlib)
+  DivEqIffReal(24.0 * Real.log((x as real)), 2.0 / 5.0 * Real.log((x as real)), 60.0);  // K5: field_simp lemma div_eq_iff (Mathlib)  // [ADDED]
       // have h₅ : Real.log != 0  [type from Lean state]
       assert (Real.log((x as real)) != 0.0) by { // @tac 7171-7187
         // [TACTIC: «Linarith[_]At___» [ hlogx ]]
@@ -60,7 +60,7 @@ lemma {:induction false} vc_aime_1983_p1_L1057(w: int, x: int, y: int, z: int)
 
 // side checks at the same line (not the reported failure): 1 check(s)
 // side check: divisor is always non-zero.
-lemma {:induction false} vc_aime_1983_p1_L1057_side1(w: int, x: int, y: int, z: int)
+lemma {:induction false} vc_aime_1983_p1_L1057_side1(w: int, x: int, y: int, z: int)  // [ADDED DECLARATION]
   requires 0 <= x
   requires 0 <= y
   requires 0 <= z
@@ -95,6 +95,6 @@ lemma {:induction false} vc_aime_1983_p1_L1057_side1(w: int, x: int, y: int, z: 
 
 
 // Mathlib div_eq_iff (hc : c ≠ 0) : a / c = b ↔ a = b * c  [added to work copy]
-lemma {:axiom} DivEqIffReal(a: real, c: real, b: real)
+lemma {:axiom} DivEqIffReal(a: real, c: real, b: real)  // [ADDED DECLARATION]
   requires c != 0.0
   ensures a / c == b <==> a == b * c

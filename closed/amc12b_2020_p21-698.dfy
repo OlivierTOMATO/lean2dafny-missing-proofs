@@ -29,6 +29,6 @@ lemma {:induction false} vc_amc12b_2020_p21_L698(S: set<nat>, k_0_0_0_0_0_0_0_0_
   ensures   n_0_0_0_0 < (k_0_0_0_0_0_0_0_0_5_0 + 16) * (k_0_0_0_0_0_0_0_0_5_0 + 16)
 {
   // K4: Nat.cast_mul / Nat.cast_add / Nat.cast_ofNat (push_cast form used by norm_cast)
-  assert (((k_0_0_0_0_0_0_0_0_5_0 + 16) * (k_0_0_0_0_0_0_0_0_5_0 + 16)) as real) == ((k_0_0_0_0_0_0_0_0_5_0 as real) + 16.0) * ((k_0_0_0_0_0_0_0_0_5_0 as real) + 16.0);
+  assert (((k_0_0_0_0_0_0_0_0_5_0 + 16) * (k_0_0_0_0_0_0_0_0_5_0 + 16)) as real) == ((k_0_0_0_0_0_0_0_0_5_0 as real) + 16.0) * ((k_0_0_0_0_0_0_0_0_5_0 as real) + 16.0);  // [ADDED]
 }
 

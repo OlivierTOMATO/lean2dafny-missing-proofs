@@ -7,13 +7,13 @@
 // NOTE: uses a MODIFIED library copy: see alt/aime_1984_p1-90/LIBRARY_CHANGES.diff
 
 include "alt/aime_1984_p1-90/out/aime_1984_p1.dfy"
-lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)
+lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)  // [ADDED DECLARATION]
   requires a.to_real() == b.to_real()
   ensures a == b
 
 lemma {:induction false} vc_aime_1984_p1_L90(u: nat -> Rat.rat)
   ensures   Rat.add(Rat.sub(Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.of_int(4851)), Rat.of_int(137)), Rat.sub(Rat.of_int(137), Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.of_int(4851)))) == Rat.of_int(0)
 {
-  RatCastInjective(Rat.add(Rat.sub(Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.of_int(4851)), Rat.of_int(137)), Rat.sub(Rat.of_int(137), Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.of_int(4851)))), Rat.of_int(0));  // K4: ℚ is a normalised structure (cast injective)
+  RatCastInjective(Rat.add(Rat.sub(Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.of_int(4851)), Rat.of_int(137)), Rat.sub(Rat.of_int(137), Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.of_int(4851)))), Rat.of_int(0));  // K4: ℚ is a normalised structure (cast injective)  // [ADDED]
 }
 

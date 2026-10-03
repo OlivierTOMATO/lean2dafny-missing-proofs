@@ -20,6 +20,6 @@ lemma {:induction false} vc_amc12a_2017_p7_L28(f: nat -> real, n: int, n_1_0: in
   requires 0 <= 0 + 1 + 1
   ensures   f(0 + 1 + 1) == ((0 + 1 + 1) as real) + 1.0
 {
-  assert f(2) == f(tsub(2, 1)) + 1.0;
+  assert f(2) == f(tsub(2, 1)) + 1.0;  // [ADDED]
 }
 

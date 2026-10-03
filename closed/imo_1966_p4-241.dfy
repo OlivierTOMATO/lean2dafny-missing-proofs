@@ -30,9 +30,9 @@ lemma {:induction false} vc_imo_1966_p4_L241(m_1_0: nat, n: int, x: real)
   requires Real.sin(Real.pow(2.0, m_1_0 + 1) * x) == 0.0
   ensures   Real.div(1.0, Real.cos(Real.pow(2.0, m_1_0) * x)) * (Real.div(1.0, Real.sin(Real.pow(2.0, m_1_0) * x)) * (1.0 / 2.0)) == Real.div(Real.cos(Real.pow(2.0, m_1_0) * x), Real.sin(Real.pow(2.0, m_1_0) * x)) - Real.div(2.0 * (Real.cos(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)) - 1.0, 2.0 * (Real.sin(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)))
 {
-  assert Real.div(1.0, Real.cos(Real.pow(2.0, m_1_0) * x)) == 0.0;  // field_simp/simp: hcos, inv_eq_one_div, div_zero
-  assert Real.div(Real.cos(Real.pow(2.0, m_1_0) * x), Real.sin(Real.pow(2.0, m_1_0) * x)) == 0.0;  // zero_div (numerator cos = 0)
-  assert 2.0 * (Real.sin(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)) == 0.0;  // mul_zero (hcos)
-  assert Real.div(2.0 * (Real.cos(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)) - 1.0, 2.0 * (Real.sin(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x))) == 0.0;  // div_zero
+  assert Real.div(1.0, Real.cos(Real.pow(2.0, m_1_0) * x)) == 0.0;  // field_simp/simp: hcos, inv_eq_one_div, div_zero  // [ADDED]
+  assert Real.div(Real.cos(Real.pow(2.0, m_1_0) * x), Real.sin(Real.pow(2.0, m_1_0) * x)) == 0.0;  // zero_div (numerator cos = 0)  // [ADDED]
+  assert 2.0 * (Real.sin(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)) == 0.0;  // mul_zero (hcos)  // [ADDED]
+  assert Real.div(2.0 * (Real.cos(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)) - 1.0, 2.0 * (Real.sin(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x))) == 0.0;  // div_zero  // [ADDED]
 }
 

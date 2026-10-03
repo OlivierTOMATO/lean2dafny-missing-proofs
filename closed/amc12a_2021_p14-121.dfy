@@ -6,7 +6,7 @@
 // Dafny: finished with 22 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/amc12a_2021_p14.dfy"
-lemma s018_Step121(k: nat)
+lemma s018_Step121(k: nat)  // [ADDED DECLARATION]
   requires (k as real) != 0.0
   requires (k as real) * (k as real) * Real.log(3.0) * Real.log(5.0) == (k as real) * Real.log(3.0) * ((k as real) * Real.log(5.0))
   ensures Real.div((k as real) * (k as real) * Real.log(3.0), (k as real) * Real.log(5.0)) == (k as real) * Real.div(Real.log(3.0), Real.log(5.0))
@@ -31,7 +31,7 @@ lemma {:induction false} vc_amc12a_2021_p14_L121(k_0_0: nat)
   requires ((0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0))) || ((0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0)) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0)))) || ((0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0)) && ((k_0_0 as real) <= 0.0)) || ((0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0)) && ((k_0_0 as real) <= 0.0) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0)))) || ((0.0 < (k_0_0 as real)) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0))) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0))) || ((0.0 < (k_0_0 as real)) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0)))) || ((0.0 < (k_0_0 as real)) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0))) && ((k_0_0 as real) <= 0.0) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0))) || ((0.0 < (k_0_0 as real)) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0))) && ((k_0_0 as real) <= 0.0)) || (((k_0_0 as real) <= 0.0) && (0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0))) || (((k_0_0 as real) <= 0.0) && (0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0)) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0)))) || (((k_0_0 as real) <= 0.0) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0))) && (0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0))) || (((k_0_0 as real) <= 0.0) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0))) && (0.0 < (k_0_0 as real))) || (((k_0_0 as real) <= 0.0) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0))))
   ensures   Real.div((k_0_0 as real) * (k_0_0 as real) * Real.log(3.0), (k_0_0 as real) * Real.log(5.0)) == (k_0_0 as real) * Real.div(Real.log(3.0), Real.log(5.0))
 {
-  s018_Step121(k_0_0);
+  s018_Step121(k_0_0);  // [ADDED]
             // have h₅₅₁ :  != 0  [type from Lean state]
             assert ((k_0_0 as real) != 0.0) by { // @tac 2056-2094 // @tac 2056-2074
               // [TACTIC: «_<;>_» at hk ⊢ <;> omega omega]

@@ -28,6 +28,6 @@ lemma {:induction false} vc_aime_1999_p11_L1192(m: Rat.rat)
   requires m == Rat.div(Rat.of_int(175), Rat.of_int(2))
   ensures   m.num == 175
 {
-  RatNumDivEqOfCoprime(175, 2);  // K5: norm_num hint Rat.num_div_eq_of_coprime
+  RatNumDivEqOfCoprime(175, 2);  // K5: norm_num hint Rat.num_div_eq_of_coprime  // [ADDED]
 }
 

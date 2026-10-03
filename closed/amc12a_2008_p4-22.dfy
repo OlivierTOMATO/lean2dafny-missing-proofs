@@ -18,8 +18,8 @@ lemma {:induction false} vc_amc12a_2008_p4_L22()
   requires Rat.div(Rat.of_int(Int.prod(IccN(1, 501), ((v_1_2_i: nat) => 4 * v_1_2_i + 4))), Rat.of_int(Int.prod(IccN(1, 501), ((v_1_12_i: nat) => 4 * v_1_12_i)))) == Rat.of_int(502)
   ensures   Real.div(Real.prod(IccN(1, 501), ((x: nat) => Rat.of_int(4).to_real() * (x as real) + Rat.of_int(4).to_real())), Real.prod(IccN(1, 501), ((x: nat) => Rat.of_int(4).to_real() * (x as real)))) == 502.0
 {
-  NatCastProdReal(IccN(1, 501), ((v_1_2_i: nat) => 4 * v_1_2_i + 4), ((x: nat) => Rat.of_int(4).to_real() * (x as real) + Rat.of_int(4).to_real()));
-  NatCastProdReal(IccN(1, 501), ((v_1_12_i: nat) => 4 * v_1_12_i), ((x: nat) => Rat.of_int(4).to_real() * (x as real)));
+  NatCastProdReal(IccN(1, 501), ((v_1_2_i: nat) => 4 * v_1_2_i + 4), ((x: nat) => Rat.of_int(4).to_real() * (x as real) + Rat.of_int(4).to_real()));  // [ADDED]
+  NatCastProdReal(IccN(1, 501), ((v_1_12_i: nat) => 4 * v_1_12_i), ((x: nat) => Rat.of_int(4).to_real() * (x as real)));  // [ADDED]
       // UNCITED-APPLIED Eq.symm(Rat.of_int(Int.prod(IccN(1, 501), ((i: nat) => ((4 * i) + 4)))), Rat.prod(IccN(1, 501), ((x: nat) => Rat.add(Rat.mul(Rat.of_int(4), Rat.of_int(x)), Rat.of…): its premise is not established here and its conclusion is the same Dafny fact (== is symmetric): a guarded call would state nothing
       // UNCITED-APPLIED Eq.symm((Rat.of_int(502)).to_real(), 502.0): its premise is not established here and its conclusion is the same Dafny fact (== is symmetric): a guarded call would state nothing
       // UNCITED-APPLIED Eq.symm: 1 more recorded instance (↑↑x, ↑x) not expressible here (sort/type/scope), not guessed
@@ -31,7 +31,7 @@ lemma {:induction false} vc_amc12a_2008_p4_L22()
 
 // side checks at the same line (not the reported failure): 4 check(s)
 // side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_amc12a_2008_p4_L22_side1()
+lemma {:induction false} vc_amc12a_2008_p4_L22_side1()  // [ADDED DECLARATION]
   requires Rat.of_int(4).Rational?
   requires 4.0 == Rat.of_int(4).to_real()
   requires 0 <= 1
@@ -45,7 +45,7 @@ lemma {:induction false} vc_amc12a_2008_p4_L22_side1()
 { }
 
 // side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_amc12a_2008_p4_L22_side2()
+lemma {:induction false} vc_amc12a_2008_p4_L22_side2()  // [ADDED DECLARATION]
   requires Rat.of_int(4).Rational?
   requires 4.0 == Rat.of_int(4).to_real()
   requires 0 <= 1
@@ -62,7 +62,7 @@ lemma {:induction false} vc_amc12a_2008_p4_L22_side2()
 // K4 (work copy only): exact Mathlib Nat.cast_prod / Finset.prod_natCast (↑(∏ i ∈ s, f i) = ∏ i ∈ s, ↑(f i)),
 // with Finset.prod_congr folded in (h agrees pointwise with the cast of f: Nat.cast_add/Nat.cast_mul/Rat.cast_ofNat).
 // All recorded at Lean exec 347 (norm_cast).
-lemma {:axiom} NatCastProdReal(s: set<nat>, f: nat -> int, h: nat -> real)
+lemma {:axiom} NatCastProdReal(s: set<nat>, f: nat -> int, h: nat -> real)  // [ADDED DECLARATION]
   requires forall x :: x in s ==> f(x) >= 0
   requires forall x :: x in s ==> h(x) == f(x) as real
   ensures Real.prod(s, h) == Int.prod(s, f) as real

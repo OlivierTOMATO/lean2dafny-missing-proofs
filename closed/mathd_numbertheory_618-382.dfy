@@ -13,8 +13,8 @@ lemma {:induction false} vc_mathd_numbertheory_618_L382(n: int, n_0_0_0_1_0: int
   requires 1 < gcd(p(n), 2 * n)
   ensures   false
 {
-  assert 37 * 37 == 1369;  // K2: isNat_pow 37^2 = 1369 (exec 512)
-  assert tsub(1369, 37) == 1332;  // K2: isNat_natSub 1369 - 37 = 1332 (exec 512)
-  assert gcd(1373, 74) == 1;  // K2: isNat_gcd gcd 1373 74 = 1 (exec 512)
+  assert 37 * 37 == 1369;  // K2: isNat_pow 37^2 = 1369 (exec 512)  // [ADDED]
+  assert tsub(1369, 37) == 1332;  // K2: isNat_natSub 1369 - 37 = 1332 (exec 512)  // [ADDED]
+  assert gcd(1373, 74) == 1;  // K2: isNat_gcd gcd 1373 74 = 1 (exec 512)  // [ADDED]
 }
 

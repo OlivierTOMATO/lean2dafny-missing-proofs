@@ -14,6 +14,6 @@ lemma {:induction false} vc_mathd_algebra_756_L438(a: real, b: real)
   requires b == 3.0
   ensures   Real.rpow(3.0, 5.0) == 243.0
 {
-  RealRpowNatCast(3.0, 5);
+  RealRpowNatCast(3.0, 5);  // [ADDED]
 }
 

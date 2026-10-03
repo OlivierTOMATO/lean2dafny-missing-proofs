@@ -17,7 +17,7 @@ lemma {:induction false} vc_amc12b_2020_p13_L530()
   requires Real.sqrt(Real.pow(Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0))), 2)) == Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0)))
   ensures   Real.sqrt((Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0)))) * (Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0))))) == Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0)))
 {
-  assert Real.pow(Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0))), 2) == (Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0)))) * (Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0))));  // K2: Lean's s ^ 2 normal form (checked)
+  assert Real.pow(Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0))), 2) == (Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0)))) * (Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0))));  // K2: Lean's s ^ 2 normal form (checked)  // [ADDED]
           assert (0.0 <= (Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0))))) by {  // sub-goal of `by` (Lean state) // @tac 6345-6355
             // [TACTIC: Positivity]
             // positivity proof: the lemma applications Lean's positivity proof is built from (Lean execution 6345-6355 exec 1086)

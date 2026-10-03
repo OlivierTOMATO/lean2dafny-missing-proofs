@@ -19,6 +19,6 @@ lemma {:induction false} vc_amc12a_2021_p18_L160(f: Rat.rat -> real)
   requires Rat.mul(Rat.of_int(5), Rat.of_int(5)).Rational?
   ensures   f(Rat.of_int(25)) == f(Rat.mul(Rat.of_int(5), Rat.of_int(5)))
 {
-  RatMulOfIntOfInt(5, 5);
+  RatMulOfIntOfInt(5, 5);  // [ADDED]
 }
 

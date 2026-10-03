@@ -28,7 +28,7 @@ lemma {:induction false} vc_amc12a_2003_p25_L49(a: real, b: real, f: real -> rea
   requires exists x_1_1: real :: a * (x_1_1 * x_1_1) + b * x_1_1 == 1.0
   ensures   exists x_41: real :: a * (x_41 * x_41) + b * x_41 == 1.0
 {
-  forall t: real ensures 0.0 <= Real.sqrt(t) { RealSqrtNonneg(t); }  // K5: Mathlib Real.sqrt_nonneg (named in Lean simp only set, line 15; used by nlinarith)
+  forall t: real ensures 0.0 <= Real.sqrt(t) { RealSqrtNonneg(t); }  // K5: Mathlib Real.sqrt_nonneg (named in Lean simp only set, line 15; used by nlinarith)  // [ADDED]
     // [TACTIC: exact h₅]
     assert (exists x_14: real :: (((a * (x_14 * x_14)) + (b * x_14)) == 1.0));  // hypothesis h₅ at `exact` (Lean state)
     // UNCITED-APPLIED funext(fun (x : ℝ) => Prop, fun (x : ℝ) => True ∧ √(a * x ^ (2 : ℕ) + b * x) = (1 : ℝ), fun (x : ℝ) => a * x ^ (2 : ℕ) + b * x = (1 : ℝ)): no library counterpart (not stated) [exec 87 984-1001]

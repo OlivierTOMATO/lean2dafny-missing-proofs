@@ -17,6 +17,6 @@ lemma {:induction false} vc_algebra_others_exirrpowirrrat_L198()
   requires Rat.of_int(2).to_real() == 2.0
   ensures   false
 {
-  NotIrrationalNatCast(2);
+  NotIrrationalNatCast(2);  // [ADDED]
 }
 

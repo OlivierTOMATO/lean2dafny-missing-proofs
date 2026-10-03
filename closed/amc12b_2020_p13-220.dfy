@@ -6,7 +6,7 @@
 // Dafny: finished with 9 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/amc12b_2020_p13.dfy"
-lemma {:axiom} AddDivPrime(a: real, b: real, c: real)
+lemma {:axiom} AddDivPrime(a: real, b: real, c: real)  // [ADDED DECLARATION]
   requires c != 0.0
   ensures b + Real.div(a, c) == Real.div(b * c + a, c)
 
@@ -18,7 +18,7 @@ lemma {:induction false} vc_amc12b_2020_p13_L220()
   requires Real.log(3.0) != 0.0
   ensures   Real.div(Real.log(2.0) + Real.log(3.0), Real.log(3.0)) == 1.0 + Real.div(Real.log(2.0), Real.log(3.0))
 {
-  AddDivPrime(Real.log(2.0), 1.0, Real.log(3.0));  // K5: add_div' (internal cite of field_simp exec)
+  AddDivPrime(Real.log(2.0), 1.0, Real.log(3.0));  // K5: add_div' (internal cite of field_simp exec)  // [ADDED]
         assert (0.0 < 3.0) by {  // sub-goal of `by` (Lean state) // @tac 1558-1566
           // [TACTIC: «Norm_num[_]At___»]
         }

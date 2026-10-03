@@ -18,6 +18,6 @@ lemma {:induction false} vc_amc12a_2021_p14_L79(k_0_0: nat)
   requires 0 <= Int.pow(k_0_0, 2)
   ensures   Real.logb(Real.pow(5.0, k_0_0), Real.pow(3.0, Int.pow(k_0_0, 2))) == Real.div(Real.log(Real.pow(3.0, Int.pow(k_0_0, 2))), Real.log(Real.pow(5.0, k_0_0)))
 {
-  RealLogbUnfold(Real.pow(5.0, k_0_0), Real.pow(3.0, Int.pow(k_0_0, 2)));  // Lean rw [Real.logb] = Real.logb.eq_1 at Lean's recorded args
+  RealLogbUnfold(Real.pow(5.0, k_0_0), Real.pow(3.0, Int.pow(k_0_0, 2)));  // Lean rw [Real.logb] = Real.logb.eq_1 at Lean's recorded args  // [ADDED]
 }
 

@@ -16,6 +16,6 @@ lemma {:induction false} vc_amc12a_2021_p18_L105(f: Rat.rat -> real)
   requires f(Rat.mul(Rat.of_int(1), Rat.of_int(1))) == f(Rat.of_int(1)) + f(Rat.of_int(1))
   ensures   f(Rat.mul(Rat.of_int(1), Rat.of_int(1))) == f(Rat.of_int(1))
 {
-  RatMulOfIntOfInt(1, 1);
+  RatMulOfIntOfInt(1, 1);  // [ADDED]
 }
 

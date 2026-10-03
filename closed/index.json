@@ -25,7 +25,8 @@
 }
 ],
 "file": "closed/aime_1983_p1-507.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1983_p1-1057",
@@ -67,7 +68,9 @@
 }
 ],
 "file": "closed/aime_1983_p1-1057.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "aime_1983_p3-274",
@@ -130,7 +133,9 @@
 }
 ],
 "file": "closed/aime_1983_p3-274.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 3,
+"dropped_lines": 1
 },
 {
 "id": "aime_1983_p3-387",
@@ -207,7 +212,8 @@
 }
 ],
 "file": "closed/aime_1983_p3-387.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1983_p3-507",
@@ -249,7 +255,9 @@
 }
 ],
 "file": "closed/aime_1983_p3-507.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "aime_1983_p3-856",
@@ -284,7 +292,8 @@
 }
 ],
 "file": "closed/aime_1983_p3-856.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1984_p1-15",
@@ -340,7 +349,8 @@
 }
 ],
 "file": "closed/aime_1984_p1-15.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1984_p1-22",
@@ -396,7 +406,8 @@
 }
 ],
 "file": "closed/aime_1984_p1-22.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1984_p1-35",
@@ -431,7 +442,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-35.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "aime_1984_p1-62",
@@ -466,7 +479,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-62.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "aime_1984_p1-82",
@@ -515,7 +530,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-82.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 2,
+"dropped_lines": 1
 },
 {
 "id": "aime_1984_p1-90",
@@ -557,7 +574,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-90.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "aime_1984_p1-98",
@@ -620,7 +639,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-98.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 3,
+"dropped_lines": 1
 },
 {
 "id": "aime_1984_p1-106",
@@ -669,7 +690,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-106.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 2,
+"dropped_lines": 1
 },
 {
 "id": "aime_1984_p1-114",
@@ -732,7 +755,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-114.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 3,
+"dropped_lines": 1
 },
 {
 "id": "aime_1984_p1-123",
@@ -781,7 +806,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-123.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 2,
+"dropped_lines": 1
 },
 {
 "id": "aime_1984_p1-175",
@@ -837,7 +864,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-175.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "aime_1984_p1-180",
@@ -879,7 +908,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-180.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "aime_1984_p1-192",
@@ -935,7 +966,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-192.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 2,
+"dropped_lines": 1
 },
 {
 "id": "aime_1984_p1-408",
@@ -991,7 +1024,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-408.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 2,
+"dropped_lines": 0
 },
 {
 "id": "aime_1984_p1-466",
@@ -1047,7 +1082,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-466.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "aime_1984_p1-471",
@@ -1089,7 +1126,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-471.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "aime_1984_p1-484",
@@ -1152,7 +1191,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-484.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 2,
+"dropped_lines": 1
 },
 {
 "id": "aime_1984_p1-596",
@@ -1208,7 +1249,9 @@
 }
 ],
 "file": "closed/aime_1984_p1-596.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 2,
+"dropped_lines": 0
 },
 {
 "id": "aime_1987_p5-452",
@@ -1236,7 +1279,8 @@
 }
 ],
 "file": "closed/aime_1987_p5-452.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1987_p5-495",
@@ -1264,7 +1308,8 @@
 }
 ],
 "file": "closed/aime_1987_p5-495.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1987_p5-594",
@@ -1299,7 +1344,9 @@
 }
 ],
 "file": "closed/aime_1987_p5-594.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "aime_1987_p5-641",
@@ -1327,7 +1374,8 @@
 }
 ],
 "file": "closed/aime_1987_p5-641.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1990_p4-205",
@@ -1355,7 +1403,8 @@
 }
 ],
 "file": "closed/aime_1990_p4-205.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1999_p11-177",
@@ -1383,7 +1432,8 @@
 }
 ],
 "file": "closed/aime_1999_p11-177.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1999_p11-187",
@@ -1411,7 +1461,8 @@
 }
 ],
 "file": "closed/aime_1999_p11-187.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1999_p11-224",
@@ -1446,7 +1497,9 @@
 }
 ],
 "file": "closed/aime_1999_p11-224.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "aime_1999_p11-335",
@@ -1488,7 +1541,8 @@
 }
 ],
 "file": "closed/aime_1999_p11-335.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1999_p11-346",
@@ -1518,7 +1572,8 @@
 }
 ],
 "file": "closed/aime_1999_p11-346.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1999_p11-938",
@@ -1567,7 +1622,8 @@
 }
 ],
 "file": "closed/aime_1999_p11-938.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1999_p11-1161",
@@ -1623,7 +1679,8 @@
 }
 ],
 "file": "closed/aime_1999_p11-1161.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "aime_1999_p11-1170",
@@ -1658,7 +1715,9 @@
 }
 ],
 "file": "closed/aime_1999_p11-1170.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "aime_1999_p11-1192",
@@ -1700,7 +1759,9 @@
 }
 ],
 "file": "closed/aime_1999_p11-1192.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "algebra_9onxpypzleqsum2onxpy-471",
@@ -1735,7 +1796,9 @@
 }
 ],
 "file": "closed/algebra_9onxpypzleqsum2onxpy-471.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-40",
@@ -1763,7 +1826,8 @@
 }
 ],
 "file": "closed/algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-40.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-51",
@@ -1791,7 +1855,8 @@
 }
 ],
 "file": "closed/algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-51.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-62",
@@ -1819,7 +1884,8 @@
 }
 ],
 "file": "closed/algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-62.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-945",
@@ -1864,7 +1930,9 @@
 }
 ],
 "file": "closed/algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-945.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-949",
@@ -1895,7 +1963,8 @@
 }
 ],
 "file": "closed/algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-949.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-1550",
@@ -1965,7 +2034,8 @@
 }
 ],
 "file": "closed/algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-1550.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-1620",
@@ -1993,7 +2063,8 @@
 }
 ],
 "file": "closed/algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-1620.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-1725",
@@ -2021,7 +2092,8 @@
 }
 ],
 "file": "closed/algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-1725.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_absapbon1pabsapbleqsumabsaon1pabsa-312",
@@ -2063,7 +2135,8 @@
 }
 ],
 "file": "closed/algebra_absapbon1pabsapbleqsumabsaon1pabsa-312.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_amgm_sumasqdivbgeqsuma-803",
@@ -2112,7 +2185,9 @@
 }
 ],
 "file": "closed/algebra_amgm_sumasqdivbgeqsuma-803.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "algebra_amgm_sumasqdivbgeqsuma-845",
@@ -2140,7 +2215,8 @@
 }
 ],
 "file": "closed/algebra_amgm_sumasqdivbgeqsuma-845.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_apbon2pownleqapownpbpowon2-91",
@@ -2168,7 +2244,8 @@
 }
 ],
 "file": "closed/algebra_apbon2pownleqapownpbpowon2-91.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_apbon2pownleqapownpbpowon2-142",
@@ -2196,7 +2273,8 @@
 }
 ],
 "file": "closed/algebra_apbon2pownleqapownpbpowon2-142.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_apbon2pownleqapownpbpowon2-243",
@@ -2231,7 +2309,8 @@
 }
 ],
 "file": "closed/algebra_apbon2pownleqapownpbpowon2-243.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_apbon2pownleqapownpbpowon2-272",
@@ -2259,7 +2338,8 @@
 }
 ],
 "file": "closed/algebra_apbon2pownleqapownpbpowon2-272.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_apbon2pownleqapownpbpowon2-274",
@@ -2287,7 +2367,8 @@
 }
 ],
 "file": "closed/algebra_apbon2pownleqapownpbpowon2-274.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_apbon2pownleqapownpbpowon2-302",
@@ -2315,7 +2396,8 @@
 }
 ],
 "file": "closed/algebra_apbon2pownleqapownpbpowon2-302.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_apbon2pownleqapownpbpowon2-360",
@@ -2343,7 +2425,8 @@
 }
 ],
 "file": "closed/algebra_apbon2pownleqapownpbpowon2-360.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_apbon2pownleqapownpbpowon2-648",
@@ -2378,7 +2461,8 @@
 }
 ],
 "file": "closed/algebra_apbon2pownleqapownpbpowon2-648.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3-799",
@@ -2406,7 +2490,8 @@
 }
 ],
 "file": "closed/algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3-799.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3-1502",
@@ -2434,7 +2519,8 @@
 }
 ],
 "file": "closed/algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3-1502.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_bleqa_apbon2msqrtableqambsqon8b-33",
@@ -2462,7 +2548,8 @@
 }
 ],
 "file": "closed/algebra_bleqa_apbon2msqrtableqambsqon8b-33.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_bleqa_apbon2msqrtableqambsqon8b-192",
@@ -2499,7 +2586,9 @@
 }
 ],
 "file": "closed/algebra_bleqa_apbon2msqrtableqambsqon8b-192.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "algebra_bleqa_apbon2msqrtableqambsqon8b-222",
@@ -2543,7 +2632,9 @@
 }
 ],
 "file": "closed/algebra_bleqa_apbon2msqrtableqambsqon8b-222.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "algebra_bleqa_apbon2msqrtableqambsqon8b-231",
@@ -2571,7 +2662,8 @@
 }
 ],
 "file": "closed/algebra_bleqa_apbon2msqrtableqambsqon8b-231.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_bleqa_apbon2msqrtableqambsqon8b-329",
@@ -2599,7 +2691,8 @@
 }
 ],
 "file": "closed/algebra_bleqa_apbon2msqrtableqambsqon8b-329.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_others_exirrpowirrrat-198",
@@ -2641,7 +2734,9 @@
 }
 ],
 "file": "closed/algebra_others_exirrpowirrrat-198.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "algebra_sum1onsqrt2to1onsqrt10000lt198-167",
@@ -2683,7 +2778,8 @@
 }
 ],
 "file": "closed/algebra_sum1onsqrt2to1onsqrt10000lt198-167.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_sum1onsqrt2to1onsqrt10000lt198-212",
@@ -2718,7 +2814,9 @@
 }
 ],
 "file": "closed/algebra_sum1onsqrt2to1onsqrt10000lt198-212.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 3,
+"dropped_lines": 1
 },
 {
 "id": "algebra_sum1onsqrt2to1onsqrt10000lt198-213",
@@ -2760,7 +2858,8 @@
 }
 ],
 "file": "closed/algebra_sum1onsqrt2to1onsqrt10000lt198-213.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "algebra_sum1onsqrt2to1onsqrt10000lt198-462",
@@ -2797,7 +2896,9 @@
 }
 ],
 "file": "closed/algebra_sum1onsqrt2to1onsqrt10000lt198-462.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12_2000_p20-483",
@@ -2825,7 +2926,8 @@
 }
 ],
 "file": "closed/amc12_2000_p20-483.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12_2000_p20-493",
@@ -2853,7 +2955,8 @@
 }
 ],
 "file": "closed/amc12_2000_p20-493.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12_2001_p5-11",
@@ -2881,7 +2984,8 @@
 }
 ],
 "file": "closed/amc12_2001_p5-11.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12_2001_p5-18",
@@ -2909,7 +3013,8 @@
 }
 ],
 "file": "closed/amc12_2001_p5-18.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12_2001_p5-31",
@@ -2939,7 +3044,8 @@
 }
 ],
 "file": "closed/amc12_2001_p5-31.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12_2001_p5-38",
@@ -2967,7 +3073,8 @@
 }
 ],
 "file": "closed/amc12_2001_p5-38.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12_2001_p5-53",
@@ -2995,7 +3102,8 @@
 }
 ],
 "file": "closed/amc12_2001_p5-53.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2003_p25-26",
@@ -3051,7 +3159,8 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-26.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2003_p25-28",
@@ -3093,7 +3202,8 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-28.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2003_p25-31",
@@ -3135,7 +3245,8 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-31.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2003_p25-34",
@@ -3177,7 +3288,8 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-34.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2003_p25-37",
@@ -3219,7 +3331,8 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-37.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2003_p25-40",
@@ -3261,7 +3374,8 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-40.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2003_p25-43",
@@ -3324,7 +3438,8 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-43.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2003_p25-44",
@@ -3373,7 +3488,8 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-44.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2003_p25-45",
@@ -3422,7 +3538,8 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-45.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2003_p25-46",
@@ -3471,7 +3588,8 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-46.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2003_p25-47",
@@ -3513,7 +3631,9 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-47.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2003_p25-49",
@@ -3557,7 +3677,9 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-49.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2003_p25-51",
@@ -3599,7 +3721,9 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-51.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2003_p25-58",
@@ -3643,7 +3767,9 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-58.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2003_p25-60",
@@ -3671,7 +3797,8 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-60.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2003_p25-72",
@@ -3713,7 +3840,9 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-72.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2003_p25-81",
@@ -3755,7 +3884,9 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-81.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2003_p25-82",
@@ -3797,7 +3928,9 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-82.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2003_p25-90",
@@ -3839,7 +3972,9 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-90.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2003_p25-91",
@@ -3881,7 +4016,9 @@
 }
 ],
 "file": "closed/amc12a_2003_p25-91.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2008_p4-12",
@@ -3916,7 +4053,8 @@
 }
 ],
 "file": "closed/amc12a_2008_p4-12.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2008_p4-22",
@@ -3951,7 +4089,9 @@
 }
 ],
 "file": "closed/amc12a_2008_p4-22.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 2,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2008_p4-28",
@@ -4007,7 +4147,9 @@
 }
 ],
 "file": "closed/amc12a_2008_p4-28.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 2,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2009_p15-18",
@@ -4063,7 +4205,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-18.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-32",
@@ -4126,7 +4269,9 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-32.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 3,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2009_p15-45",
@@ -4154,7 +4299,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-45.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-96",
@@ -4182,7 +4328,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-96.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-98",
@@ -4210,7 +4357,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-98.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-99",
@@ -4238,7 +4386,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-99.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-100",
@@ -4266,7 +4415,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-100.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-106",
@@ -4336,7 +4486,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-106.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-107",
@@ -4364,7 +4515,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-107.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-175",
@@ -4395,7 +4547,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-175.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-183",
@@ -4486,7 +4639,9 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-183.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2009_p15-201",
@@ -4573,7 +4728,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-201.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-241",
@@ -4601,7 +4757,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-241.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-242",
@@ -4629,7 +4786,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-242.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-282",
@@ -4657,7 +4815,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-282.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-287",
@@ -4685,7 +4844,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-287.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-292",
@@ -4713,7 +4873,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-292.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-297",
@@ -4741,7 +4902,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-297.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-302",
@@ -4776,7 +4938,9 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-302.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 2,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2009_p15-323",
@@ -4846,7 +5010,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-323.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-325",
@@ -4874,7 +5039,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-325.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-496",
@@ -4944,7 +5110,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-496.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-537",
@@ -5014,7 +5181,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-537.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-586",
@@ -5074,7 +5242,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-586.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-597",
@@ -5102,7 +5271,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-597.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-607",
@@ -5130,7 +5300,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-607.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-612",
@@ -5158,7 +5329,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-612.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-617",
@@ -5186,7 +5358,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-617.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-693",
@@ -5214,7 +5387,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-693.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-694",
@@ -5242,7 +5416,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-694.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-696",
@@ -5270,7 +5445,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-696.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-727",
@@ -5298,7 +5474,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-727.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-728",
@@ -5326,7 +5503,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-728.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-729",
@@ -5354,7 +5532,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-729.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-731",
@@ -5382,7 +5561,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-731.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-732",
@@ -5410,7 +5590,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-732.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-735",
@@ -5487,7 +5668,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-735.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-737",
@@ -5515,7 +5697,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-737.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-741",
@@ -5578,7 +5761,9 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-741.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 7,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2009_p15-742",
@@ -5634,7 +5819,9 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-742.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2009_p15-743",
@@ -5662,7 +5849,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-743.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p15-744",
@@ -5725,7 +5913,9 @@
 }
 ],
 "file": "closed/amc12a_2009_p15-744.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 6,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2009_p2-20",
@@ -5767,7 +5957,9 @@
 }
 ],
 "file": "closed/amc12a_2009_p2-20.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2009_p2-26",
@@ -5809,7 +6001,9 @@
 }
 ],
 "file": "closed/amc12a_2009_p2-26.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2009_p6-28",
@@ -5837,7 +6031,8 @@
 }
 ],
 "file": "closed/amc12a_2009_p6-28.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2009_p6-137",
@@ -5872,7 +6067,9 @@
 }
 ],
 "file": "closed/amc12a_2009_p6-137.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 2,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2009_p9-181",
@@ -5907,7 +6104,9 @@
 }
 ],
 "file": "closed/amc12a_2009_p9-181.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 3,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2009_p9-388",
@@ -5942,7 +6141,9 @@
 }
 ],
 "file": "closed/amc12a_2009_p9-388.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 4,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2013_p4-15",
@@ -5977,7 +6178,9 @@
 }
 ],
 "file": "closed/amc12a_2013_p4-15.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 19,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2013_p4-75",
@@ -6012,7 +6215,9 @@
 }
 ],
 "file": "closed/amc12a_2013_p4-75.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 18,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2017_p7-28",
@@ -6047,7 +6252,9 @@
 }
 ],
 "file": "closed/amc12a_2017_p7-28.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2017_p7-48",
@@ -6082,7 +6289,9 @@
 }
 ],
 "file": "closed/amc12a_2017_p7-48.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2017_p7-54",
@@ -6117,7 +6326,9 @@
 }
 ],
 "file": "closed/amc12a_2017_p7-54.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2017_p7-67",
@@ -6152,7 +6363,9 @@
 }
 ],
 "file": "closed/amc12a_2017_p7-67.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2017_p7-74",
@@ -6187,7 +6400,9 @@
 }
 ],
 "file": "closed/amc12a_2017_p7-74.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2019_p21-18",
@@ -6236,7 +6451,9 @@
 }
 ],
 "file": "closed/amc12a_2019_p21-18.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 6,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2019_p21-29",
@@ -6271,7 +6488,8 @@
 }
 ],
 "file": "closed/amc12a_2019_p21-29.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2019_p21-41",
@@ -6327,7 +6545,9 @@
 }
 ],
 "file": "closed/amc12a_2019_p21-41.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 28,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2019_p21-67",
@@ -6369,7 +6589,9 @@
 }
 ],
 "file": "closed/amc12a_2019_p21-67.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 52,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2019_p21-76",
@@ -6446,7 +6668,8 @@
 }
 ],
 "file": "closed/amc12a_2019_p21-76.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2021_p14-79",
@@ -6481,7 +6704,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-79.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p14-90",
@@ -6518,7 +6743,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-90.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2021_p14-95",
@@ -6555,7 +6782,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-95.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2021_p14-113",
@@ -6590,7 +6819,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-113.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p14-121",
@@ -6662,7 +6893,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-121.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2021_p14-168",
@@ -6704,7 +6937,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-168.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p14-197",
@@ -6760,7 +6995,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-197.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2021_p14-219",
@@ -6816,7 +7053,8 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-219.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2021_p14-280",
@@ -6851,7 +7089,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-280.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p14-309",
@@ -6895,7 +7135,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-309.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2021_p14-357",
@@ -6953,7 +7195,8 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-357.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2021_p14-467",
@@ -7030,7 +7273,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-467.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2021_p14-482",
@@ -7058,7 +7303,8 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-482.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2021_p14-484",
@@ -7093,7 +7339,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-484.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p14-492",
@@ -7128,7 +7376,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-492.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p14-502",
@@ -7177,7 +7427,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-502.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2021_p14-542",
@@ -7226,7 +7478,8 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-542.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2021_p14-548",
@@ -7275,7 +7528,8 @@
 }
 ],
 "file": "closed/amc12a_2021_p14-548.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2021_p18-105",
@@ -7324,7 +7578,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p18-105.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p18-140",
@@ -7359,7 +7615,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p18-140.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p18-160",
@@ -7408,7 +7666,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p18-160.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p18-192",
@@ -7443,7 +7703,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p18-192.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p18-225",
@@ -7492,7 +7754,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p18-225.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p19-599",
@@ -7541,7 +7805,8 @@
 }
 ],
 "file": "closed/amc12a_2021_p19-599.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2021_p19-855",
@@ -7578,7 +7843,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p19-855.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2021_p19-1063",
@@ -7606,7 +7873,8 @@
 }
 ],
 "file": "closed/amc12a_2021_p19-1063.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2021_p19-1344",
@@ -7641,7 +7909,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p19-1344.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p19-1348",
@@ -7676,7 +7946,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p19-1348.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p19-1352",
@@ -7713,7 +7985,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p19-1352.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2021_p19-1556",
@@ -7748,7 +8022,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p19-1556.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p19-1560",
@@ -7783,7 +8059,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p19-1560.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p19-1564",
@@ -7820,7 +8098,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p19-1564.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12a_2021_p19-1668",
@@ -7855,7 +8135,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p19-1668.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p19-1722",
@@ -7890,7 +8172,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p19-1722.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p19-1726",
@@ -7925,7 +8209,9 @@
 }
 ],
 "file": "closed/amc12a_2021_p19-1726.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12a_2021_p19-1733",
@@ -7953,7 +8239,8 @@
 }
 ],
 "file": "closed/amc12a_2021_p19-1733.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2021_p22-496",
@@ -7981,7 +8268,8 @@
 }
 ],
 "file": "closed/amc12a_2021_p22-496.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2021_p22-507",
@@ -8009,7 +8297,8 @@
 }
 ],
 "file": "closed/amc12a_2021_p22-507.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2021_p22-1857",
@@ -8037,7 +8326,8 @@
 }
 ],
 "file": "closed/amc12a_2021_p22-1857.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2021_p22-1858",
@@ -8065,7 +8355,8 @@
 }
 ],
 "file": "closed/amc12a_2021_p22-1858.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12a_2021_p22-1859",
@@ -8093,7 +8384,8 @@
 }
 ],
 "file": "closed/amc12a_2021_p22-1859.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12b_2003_p17-101",
@@ -8163,7 +8455,8 @@
 }
 ],
 "file": "closed/amc12b_2003_p17-101.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12b_2003_p17-102",
@@ -8233,7 +8526,8 @@
 }
 ],
 "file": "closed/amc12b_2003_p17-102.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12b_2020_p13-197",
@@ -8268,7 +8562,9 @@
 }
 ],
 "file": "closed/amc12b_2020_p13-197.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12b_2020_p13-220",
@@ -8303,7 +8599,9 @@
 }
 ],
 "file": "closed/amc12b_2020_p13-220.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12b_2020_p13-452",
@@ -8331,7 +8629,8 @@
 }
 ],
 "file": "closed/amc12b_2020_p13-452.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12b_2020_p13-530",
@@ -8366,7 +8665,9 @@
 }
 ],
 "file": "closed/amc12b_2020_p13-530.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12b_2020_p21-569",
@@ -8397,7 +8698,8 @@
 }
 ],
 "file": "closed/amc12b_2020_p21-569.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12b_2020_p21-656",
@@ -8428,7 +8730,8 @@
 }
 ],
 "file": "closed/amc12b_2020_p21-656.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12b_2020_p21-698",
@@ -8463,7 +8766,9 @@
 }
 ],
 "file": "closed/amc12b_2020_p21-698.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12b_2020_p21-1245",
@@ -8512,7 +8817,9 @@
 }
 ],
 "file": "closed/amc12b_2020_p21-1245.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12b_2020_p21-1289",
@@ -8561,7 +8868,9 @@
 }
 ],
 "file": "closed/amc12b_2020_p21-1289.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12b_2020_p21-1338",
@@ -8610,7 +8919,9 @@
 }
 ],
 "file": "closed/amc12b_2020_p21-1338.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12b_2020_p21-1387",
@@ -8659,7 +8970,9 @@
 }
 ],
 "file": "closed/amc12b_2020_p21-1387.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12b_2020_p21-1436",
@@ -8708,7 +9021,9 @@
 }
 ],
 "file": "closed/amc12b_2020_p21-1436.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12b_2020_p21-1485",
@@ -8736,7 +9051,8 @@
 }
 ],
 "file": "closed/amc12b_2020_p21-1485.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12b_2020_p22-25",
@@ -8764,7 +9080,8 @@
 }
 ],
 "file": "closed/amc12b_2020_p22-25.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12b_2020_p22-233",
@@ -8806,7 +9123,8 @@
 }
 ],
 "file": "closed/amc12b_2020_p22-233.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12b_2021_p1-366",
@@ -8848,7 +9166,9 @@
 }
 ],
 "file": "closed/amc12b_2021_p1-366.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "amc12b_2021_p18-31",
@@ -8876,7 +9196,8 @@
 }
 ],
 "file": "closed/amc12b_2021_p18-31.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12b_2021_p18-41",
@@ -8904,7 +9225,8 @@
 }
 ],
 "file": "closed/amc12b_2021_p18-41.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12b_2021_p18-91",
@@ -8932,7 +9254,8 @@
 }
 ],
 "file": "closed/amc12b_2021_p18-91.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12b_2021_p18-101",
@@ -8960,7 +9283,8 @@
 }
 ],
 "file": "closed/amc12b_2021_p18-101.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "amc12b_2021_p9-412",
@@ -9009,7 +9333,9 @@
 }
 ],
 "file": "closed/amc12b_2021_p9-412.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "amc12b_2021_p9-488",
@@ -9058,7 +9384,9 @@
 }
 ],
 "file": "closed/amc12b_2021_p9-488.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "amc12b_2021_p9-546",
@@ -9107,7 +9435,9 @@
 }
 ],
 "file": "closed/amc12b_2021_p9-546.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "amc12b_2021_p9-562",
@@ -9135,7 +9465,8 @@
 }
 ],
 "file": "closed/amc12b_2021_p9-562.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1959_p1-32",
@@ -9177,7 +9508,9 @@
 }
 ],
 "file": "closed/imo_1959_p1-32.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 2,
+"dropped_lines": 0
 },
 {
 "id": "imo_1959_p1-61",
@@ -9219,7 +9552,9 @@
 }
 ],
 "file": "closed/imo_1959_p1-61.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 5,
+"dropped_lines": 0
 },
 {
 "id": "imo_1960_p2-415",
@@ -9275,7 +9610,8 @@
 }
 ],
 "file": "closed/imo_1960_p2-415.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1961_p1-447",
@@ -9303,7 +9639,8 @@
 }
 ],
 "file": "closed/imo_1961_p1-447.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1961_p1-455",
@@ -9331,7 +9668,8 @@
 }
 ],
 "file": "closed/imo_1961_p1-455.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1961_p1-463",
@@ -9359,7 +9697,8 @@
 }
 ],
 "file": "closed/imo_1961_p1-463.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1964_p1_1-20",
@@ -9387,7 +9726,8 @@
 }
 ],
 "file": "closed/imo_1964_p1_1-20.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1964_p1_1-27",
@@ -9415,7 +9755,8 @@
 }
 ],
 "file": "closed/imo_1964_p1_1-27.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1964_p1_1-40",
@@ -9445,7 +9786,8 @@
 }
 ],
 "file": "closed/imo_1964_p1_1-40.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1964_p1_1-45",
@@ -9473,7 +9815,8 @@
 }
 ],
 "file": "closed/imo_1964_p1_1-45.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1964_p1_1-80",
@@ -9501,7 +9844,8 @@
 }
 ],
 "file": "closed/imo_1964_p1_1-80.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1964_p1_1-87",
@@ -9529,7 +9873,8 @@
 }
 ],
 "file": "closed/imo_1964_p1_1-87.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1964_p1_1-121",
@@ -9557,7 +9902,8 @@
 }
 ],
 "file": "closed/imo_1964_p1_1-121.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1964_p1_1-152",
@@ -9585,7 +9931,8 @@
 }
 ],
 "file": "closed/imo_1964_p1_1-152.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1964_p1_2-33",
@@ -9627,7 +9974,9 @@
 }
 ],
 "file": "closed/imo_1964_p1_2-33.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "imo_1964_p1_2-48",
@@ -9669,7 +10018,9 @@
 }
 ],
 "file": "closed/imo_1964_p1_2-48.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "imo_1964_p1_2-61",
@@ -9711,7 +10062,9 @@
 }
 ],
 "file": "closed/imo_1964_p1_2-61.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "imo_1964_p1_2-78",
@@ -9746,7 +10099,9 @@
 }
 ],
 "file": "closed/imo_1964_p1_2-78.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "imo_1964_p1_2-84",
@@ -9774,7 +10129,8 @@
 }
 ],
 "file": "closed/imo_1964_p1_2-84.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1964_p1_2-95",
@@ -9816,7 +10172,9 @@
 }
 ],
 "file": "closed/imo_1964_p1_2-95.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "imo_1964_p1_2-101",
@@ -9858,7 +10216,9 @@
 }
 ],
 "file": "closed/imo_1964_p1_2-101.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "imo_1964_p1_2-107",
@@ -9900,7 +10260,9 @@
 }
 ],
 "file": "closed/imo_1964_p1_2-107.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "imo_1965_p1-363",
@@ -9928,7 +10290,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-363.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-833",
@@ -9984,7 +10347,9 @@
 }
 ],
 "file": "closed/imo_1965_p1-833.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 9,
+"dropped_lines": 0
 },
 {
 "id": "imo_1965_p1-885",
@@ -10012,7 +10377,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-885.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-893",
@@ -10040,7 +10406,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-893.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-903",
@@ -10068,7 +10435,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-903.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-961",
@@ -10131,7 +10499,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-961.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1011",
@@ -10159,7 +10528,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1011.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1013",
@@ -10187,7 +10557,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1013.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1021",
@@ -10215,7 +10586,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1021.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1093",
@@ -10250,7 +10622,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1093.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1136",
@@ -10278,7 +10651,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1136.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1143",
@@ -10306,7 +10680,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1143.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1146",
@@ -10334,7 +10709,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1146.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1148",
@@ -10362,7 +10738,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1148.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1153",
@@ -10390,7 +10767,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1153.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1161",
@@ -10418,7 +10796,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1161.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1163",
@@ -10446,7 +10825,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1163.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1222",
@@ -10488,7 +10868,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1222.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1269",
@@ -10516,7 +10897,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1269.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1274",
@@ -10544,7 +10926,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1274.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1277",
@@ -10572,7 +10955,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1277.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1282",
@@ -10600,7 +10984,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1282.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1290",
@@ -10628,7 +11013,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1290.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1965_p1-1292",
@@ -10656,7 +11042,8 @@
 }
 ],
 "file": "closed/imo_1965_p1-1292.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-27",
@@ -10733,7 +11120,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-27.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-37",
@@ -10761,7 +11149,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-37.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-54",
@@ -10789,7 +11178,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-54.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-73",
@@ -10859,7 +11249,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-73.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-77",
@@ -10929,7 +11320,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-77.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-86",
@@ -10957,7 +11349,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-86.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-156",
@@ -10987,7 +11380,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-156.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-174",
@@ -11045,7 +11439,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-174.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-187",
@@ -11075,7 +11470,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-187.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-189",
@@ -11126,7 +11522,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-189.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-190",
@@ -11210,7 +11607,9 @@
 }
 ],
 "file": "closed/imo_1966_p4-190.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "imo_1966_p4-196",
@@ -11296,7 +11695,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-196.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-204",
@@ -11347,7 +11747,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-204.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-212",
@@ -11375,7 +11776,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-212.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-220",
@@ -11403,7 +11805,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-220.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-225",
@@ -11466,7 +11869,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-225.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-230",
@@ -11494,7 +11898,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-230.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-233",
@@ -11522,7 +11927,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-233.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-235",
@@ -11592,7 +11998,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-235.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-241",
@@ -11627,7 +12034,9 @@
 }
 ],
 "file": "closed/imo_1966_p4-241.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 4,
+"dropped_lines": 1
 },
 {
 "id": "imo_1966_p4-246",
@@ -11669,7 +12078,9 @@
 }
 ],
 "file": "closed/imo_1966_p4-246.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "imo_1966_p4-254",
@@ -11711,7 +12122,9 @@
 }
 ],
 "file": "closed/imo_1966_p4-254.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "imo_1966_p4-259",
@@ -11739,7 +12152,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-259.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-262",
@@ -11767,7 +12181,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-262.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-264",
@@ -11802,7 +12217,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-264.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-266",
@@ -11830,7 +12246,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-266.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-273",
@@ -11872,7 +12289,9 @@
 }
 ],
 "file": "closed/imo_1966_p4-273.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "imo_1966_p4-278",
@@ -11900,7 +12319,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-278.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-281",
@@ -11928,7 +12348,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-281.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-286",
@@ -11998,7 +12419,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-286.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-291",
@@ -12040,7 +12462,9 @@
 }
 ],
 "file": "closed/imo_1966_p4-291.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 1
 },
 {
 "id": "imo_1966_p4-294",
@@ -12068,7 +12492,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-294.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-296",
@@ -12096,7 +12521,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-296.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-313",
@@ -12124,7 +12550,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-313.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-329",
@@ -12194,7 +12621,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-329.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-332",
@@ -12222,7 +12650,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-332.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-348",
@@ -12264,7 +12693,9 @@
 }
 ],
 "file": "closed/imo_1966_p4-348.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 1
 },
 {
 "id": "imo_1966_p4-364",
@@ -12383,7 +12814,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-364.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-367",
@@ -12411,7 +12843,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-367.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-369",
@@ -12439,7 +12872,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-369.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-371",
@@ -12467,7 +12901,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-371.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-394",
@@ -12516,7 +12951,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-394.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-397",
@@ -12551,7 +12987,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-397.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-400",
@@ -12600,7 +13037,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-400.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p4-424",
@@ -12635,7 +13073,8 @@
 }
 ],
 "file": "closed/imo_1966_p4-424.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p5-1764",
@@ -12691,7 +13130,8 @@
 }
 ],
 "file": "closed/imo_1966_p5-1764.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1966_p5-1775",
@@ -12747,7 +13187,8 @@
 }
 ],
 "file": "closed/imo_1966_p5-1775.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1973_p3-512",
@@ -12775,7 +13216,8 @@
 }
 ],
 "file": "closed/imo_1973_p3-512.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1973_p3-524",
@@ -12810,7 +13252,9 @@
 }
 ],
 "file": "closed/imo_1973_p3-524.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "imo_1973_p3-531",
@@ -12845,7 +13289,9 @@
 }
 ],
 "file": "closed/imo_1973_p3-531.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "imo_1973_p3-564",
@@ -12882,7 +13328,8 @@
 }
 ],
 "file": "closed/imo_1973_p3-564.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1973_p3-591",
@@ -12924,7 +13371,9 @@
 }
 ],
 "file": "closed/imo_1973_p3-591.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0,
+"dropped_lines": 1
 },
 {
 "id": "imo_1973_p3-601",
@@ -12952,7 +13401,8 @@
 }
 ],
 "file": "closed/imo_1973_p3-601.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1973_p3-606",
@@ -12980,7 +13430,8 @@
 }
 ],
 "file": "closed/imo_1973_p3-606.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1974_p5-383",
@@ -13008,7 +13459,8 @@
 }
 ],
 "file": "closed/imo_1974_p5-383.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1974_p5-636",
@@ -13036,7 +13488,8 @@
 }
 ],
 "file": "closed/imo_1974_p5-636.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1974_p5-717",
@@ -13064,7 +13517,8 @@
 }
 ],
 "file": "closed/imo_1974_p5-717.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1974_p5-1013",
@@ -13092,7 +13546,8 @@
 }
 ],
 "file": "closed/imo_1974_p5-1013.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1974_p5-1024",
@@ -13120,7 +13575,8 @@
 }
 ],
 "file": "closed/imo_1974_p5-1024.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1974_p5-1035",
@@ -13148,7 +13604,8 @@
 }
 ],
 "file": "closed/imo_1974_p5-1035.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1974_p5-1046",
@@ -13176,7 +13633,8 @@
 }
 ],
 "file": "closed/imo_1974_p5-1046.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1974_p5-1057",
@@ -13204,7 +13662,8 @@
 }
 ],
 "file": "closed/imo_1974_p5-1057.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1974_p5-1567",
@@ -13253,7 +13712,8 @@
 }
 ],
 "file": "closed/imo_1974_p5-1567.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1974_p5-1629",
@@ -13302,7 +13762,8 @@
 }
 ],
 "file": "closed/imo_1974_p5-1629.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1974_p5-1801",
@@ -13337,7 +13798,9 @@
 }
 ],
 "file": "closed/imo_1974_p5-1801.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "imo_1974_p5-1803",
@@ -13393,7 +13856,8 @@
 }
 ],
 "file": "closed/imo_1974_p5-1803.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1983_p6-268",
@@ -13421,7 +13885,8 @@
 }
 ],
 "file": "closed/imo_1983_p6-268.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1984_p2-64",
@@ -13477,7 +13942,8 @@
 }
 ],
 "file": "closed/imo_1984_p2-64.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1984_p2-1685",
@@ -13505,7 +13971,8 @@
 }
 ],
 "file": "closed/imo_1984_p2-1685.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1984_p2-1713",
@@ -13561,7 +14028,8 @@
 }
 ],
 "file": "closed/imo_1984_p2-1713.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1984_p2-1725",
@@ -13617,7 +14085,8 @@
 }
 ],
 "file": "closed/imo_1984_p2-1725.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "imo_1992_p1-780",
@@ -13652,7 +14121,9 @@
 }
 ],
 "file": "closed/imo_1992_p1-780.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 8,
+"dropped_lines": 1
 },
 {
 "id": "imo_1992_p1-960",
@@ -13701,7 +14172,9 @@
 }
 ],
 "file": "closed/imo_1992_p1-960.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "imo_1992_p1-1145",
@@ -13750,7 +14223,9 @@
 }
 ],
 "file": "closed/imo_1992_p1-1145.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "imo_1992_p1-1303",
@@ -13785,7 +14260,9 @@
 }
 ],
 "file": "closed/imo_1992_p1-1303.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 5,
+"dropped_lines": 1
 },
 {
 "id": "imo_1992_p1-1343",
@@ -13820,7 +14297,9 @@
 }
 ],
 "file": "closed/imo_1992_p1-1343.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 5,
+"dropped_lines": 1
 },
 {
 "id": "imo_1992_p1-1593",
@@ -13876,7 +14355,9 @@
 }
 ],
 "file": "closed/imo_1992_p1-1593.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "imo_1992_p1-5471",
@@ -13911,7 +14392,9 @@
 }
 ],
 "file": "closed/imo_1992_p1-5471.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "mathd_algebra_156-251",
@@ -13946,7 +14429,9 @@
 }
 ],
 "file": "closed/mathd_algebra_156-251.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "mathd_algebra_156-313",
@@ -13981,7 +14466,9 @@
 }
 ],
 "file": "closed/mathd_algebra_156-313.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "mathd_algebra_170-285",
@@ -14016,7 +14503,9 @@
 }
 ],
 "file": "closed/mathd_algebra_170-285.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "mathd_algebra_342-130",
@@ -14058,7 +14547,9 @@
 }
 ],
 "file": "closed/mathd_algebra_342-130.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 2,
+"dropped_lines": 0
 },
 {
 "id": "mathd_algebra_362-217",
@@ -14086,7 +14577,8 @@
 }
 ],
 "file": "closed/mathd_algebra_362-217.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_algebra_598-542",
@@ -14142,7 +14634,9 @@
 }
 ],
 "file": "closed/mathd_algebra_598-542.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "mathd_algebra_756-231",
@@ -14177,7 +14671,9 @@
 }
 ],
 "file": "closed/mathd_algebra_756-231.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "mathd_algebra_756-438",
@@ -14219,7 +14715,9 @@
 }
 ],
 "file": "closed/mathd_algebra_756-438.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "mathd_numbertheory_175-27",
@@ -14261,7 +14759,9 @@
 }
 ],
 "file": "closed/mathd_numbertheory_175-27.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 1
 },
 {
 "id": "mathd_numbertheory_175-54",
@@ -14324,7 +14824,9 @@
 }
 ],
 "file": "closed/mathd_numbertheory_175-54.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 4,
+"dropped_lines": 1
 },
 {
 "id": "mathd_numbertheory_175-71",
@@ -14373,7 +14875,9 @@
 }
 ],
 "file": "closed/mathd_numbertheory_175-71.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "mathd_numbertheory_175-79",
@@ -14436,7 +14940,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_175-79.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_175-93",
@@ -14485,7 +14990,9 @@
 }
 ],
 "file": "closed/mathd_numbertheory_175-93.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "mathd_numbertheory_175-107",
@@ -14520,7 +15027,9 @@
 }
 ],
 "file": "closed/mathd_numbertheory_175-107.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 1
 },
 {
 "id": "mathd_numbertheory_618-114",
@@ -14555,7 +15064,9 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-114.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-139",
@@ -14583,7 +15094,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-139.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-177",
@@ -14618,7 +15130,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-177.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-183",
@@ -14646,7 +15159,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-183.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-189",
@@ -14674,7 +15188,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-189.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-195",
@@ -14702,7 +15217,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-195.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-201",
@@ -14730,7 +15246,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-201.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-219",
@@ -14758,7 +15275,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-219.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-225",
@@ -14786,7 +15304,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-225.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-231",
@@ -14842,7 +15361,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-231.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-237",
@@ -14898,7 +15418,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-237.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-243",
@@ -14954,7 +15475,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-243.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-249",
@@ -15010,7 +15532,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-249.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-255",
@@ -15066,7 +15589,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-255.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-261",
@@ -15122,7 +15646,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-261.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-267",
@@ -15178,7 +15703,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-267.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-279",
@@ -15234,7 +15760,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-279.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-285",
@@ -15290,7 +15817,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-285.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-291",
@@ -15318,7 +15846,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-291.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-297",
@@ -15381,7 +15910,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-297.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-303",
@@ -15423,7 +15953,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-303.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-309",
@@ -15465,7 +15996,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-309.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-315",
@@ -15493,7 +16025,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-315.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-321",
@@ -15521,7 +16054,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-321.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-327",
@@ -15584,7 +16118,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-327.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-333",
@@ -15626,7 +16161,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-333.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-345",
@@ -15668,7 +16204,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-345.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-351",
@@ -15724,7 +16261,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-351.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-357",
@@ -15780,7 +16318,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-357.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-363",
@@ -15836,7 +16375,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-363.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-369",
@@ -15906,7 +16446,9 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-369.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 3,
+"dropped_lines": 1
 },
 {
 "id": "mathd_numbertheory_618-382",
@@ -15976,7 +16518,9 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-382.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 3,
+"dropped_lines": 1
 },
 {
 "id": "mathd_numbertheory_618-389",
@@ -16032,7 +16576,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-389.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_618-396",
@@ -16088,7 +16633,8 @@
 }
 ],
 "file": "closed/mathd_numbertheory_618-396.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "mathd_numbertheory_84-26",
@@ -16137,7 +16683,9 @@
 }
 ],
 "file": "closed/mathd_numbertheory_84-26.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_2pownm1prime_nprime-104",
@@ -16172,7 +16720,9 @@
 }
 ],
 "file": "closed/numbertheory_2pownm1prime_nprime-104.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 2,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_2pownm1prime_nprime-284",
@@ -16209,7 +16759,8 @@
 }
 ],
 "file": "closed/numbertheory_2pownm1prime_nprime-284.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_2pownm1prime_nprime-286",
@@ -16244,7 +16795,9 @@
 }
 ],
 "file": "closed/numbertheory_2pownm1prime_nprime-286.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 3,
+"dropped_lines": 1
 },
 {
 "id": "numbertheory_2pownm1prime_nprime-324",
@@ -16272,7 +16825,8 @@
 }
 ],
 "file": "closed/numbertheory_2pownm1prime_nprime-324.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_2pownm1prime_nprime-333",
@@ -16300,7 +16854,8 @@
 }
 ],
 "file": "closed/numbertheory_2pownm1prime_nprime-333.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_2pownm1prime_nprime-338",
@@ -16328,7 +16883,8 @@
 }
 ],
 "file": "closed/numbertheory_2pownm1prime_nprime-338.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_2pownm1prime_nprime-380",
@@ -16356,7 +16912,8 @@
 }
 ],
 "file": "closed/numbertheory_2pownm1prime_nprime-380.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_2pownm1prime_nprime-393",
@@ -16384,7 +16941,8 @@
 }
 ],
 "file": "closed/numbertheory_2pownm1prime_nprime-393.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-40",
@@ -16414,7 +16972,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-40.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-57",
@@ -16444,7 +17003,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-57.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-59",
@@ -16474,7 +17034,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-59.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-88",
@@ -16560,7 +17121,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-88.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-98",
@@ -16588,7 +17150,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-98.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-109",
@@ -16618,7 +17181,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-109.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-111",
@@ -16648,7 +17212,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-111.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-113",
@@ -16676,7 +17241,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-113.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-124",
@@ -16727,7 +17293,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-124.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-129",
@@ -16762,7 +17329,9 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-129.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 2,
+"dropped_lines": 1
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-146",
@@ -16792,7 +17361,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-146.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-150",
@@ -16820,7 +17390,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-150.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-176",
@@ -16850,7 +17421,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-176.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-177",
@@ -16880,7 +17452,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-177.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-182",
@@ -16908,7 +17481,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-182.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-195",
@@ -16938,7 +17512,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-195.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-220",
@@ -16966,7 +17541,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-220.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-221",
@@ -16994,7 +17570,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-221.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-222",
@@ -17022,7 +17599,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-222.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-223",
@@ -17050,7 +17628,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-223.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-226",
@@ -17094,7 +17673,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-226.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-233",
@@ -17138,7 +17718,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-233.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-240",
@@ -17173,7 +17754,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-240.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-243",
@@ -17208,7 +17790,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-243.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-246",
@@ -17252,7 +17835,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-246.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-250",
@@ -17280,7 +17864,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-250.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-261",
@@ -17331,7 +17916,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-261.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-266",
@@ -17394,7 +17980,9 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-266.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 4,
+"dropped_lines": 1
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-283",
@@ -17431,7 +18019,9 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-283.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-287",
@@ -17466,7 +18056,9 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-287.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-313",
@@ -17517,7 +18109,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-313.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-314",
@@ -17568,7 +18161,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-314.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-319",
@@ -17603,7 +18197,9 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-319.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 2,
+"dropped_lines": 1
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-335",
@@ -17631,7 +18227,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-335.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-336",
@@ -17659,7 +18256,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-336.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-337",
@@ -17687,7 +18285,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-337.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-338",
@@ -17715,7 +18314,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-338.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-341",
@@ -17745,7 +18345,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-341.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-348",
@@ -17775,7 +18376,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-348.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-355",
@@ -17803,7 +18405,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-355.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-358",
@@ -17831,7 +18434,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-358.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-361",
@@ -17861,7 +18465,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-361.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-389",
@@ -17889,7 +18494,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-389.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-390",
@@ -17938,7 +18544,9 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-390.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-391",
@@ -17968,7 +18576,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-391.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-394",
@@ -18010,7 +18619,9 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-394.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-396",
@@ -18087,7 +18698,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-396.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-397",
@@ -18164,7 +18776,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-397.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-398",
@@ -18194,7 +18807,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-398.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-453",
@@ -18224,7 +18838,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-453.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-460",
@@ -18287,7 +18902,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-460.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-483",
@@ -18322,7 +18938,9 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-483.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 1
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-508",
@@ -18352,7 +18970,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-508.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-510",
@@ -18382,7 +19001,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-510.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-512",
@@ -18412,7 +19032,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-512.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-516",
@@ -18456,7 +19077,9 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-516.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-528",
@@ -18486,7 +19109,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-528.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-535",
@@ -18537,7 +19161,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-535.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-545",
@@ -18579,7 +19204,9 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-545.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 3,
+"dropped_lines": 1
 },
 {
 "id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-555",
@@ -18607,7 +19234,8 @@
 }
 ],
 "file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-555.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_aoddbdiv4asqpbsqmod8eq1-184",
@@ -18651,7 +19279,8 @@
 }
 ],
 "file": "closed/numbertheory_aoddbdiv4asqpbsqmod8eq1-184.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-18",
@@ -18721,7 +19350,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-18.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-60",
@@ -18749,7 +19379,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-60.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-77",
@@ -18794,7 +19425,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-77.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-95",
@@ -18824,7 +19456,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-95.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-97",
@@ -18868,7 +19501,9 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-97.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-113",
@@ -18912,7 +19547,9 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-113.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-129",
@@ -18956,7 +19593,9 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-129.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-148",
@@ -19000,7 +19639,9 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-148.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-150",
@@ -19044,7 +19685,9 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-150.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-164",
@@ -19074,7 +19717,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-164.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-170",
@@ -19104,7 +19748,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-170.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-189",
@@ -19134,7 +19779,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-189.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-227",
@@ -19164,7 +19810,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-227.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-229",
@@ -19194,7 +19841,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-229.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-231",
@@ -19238,7 +19886,9 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-231.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-247",
@@ -19282,7 +19932,9 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-247.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-265",
@@ -19347,7 +19999,9 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-265.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 1,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-293",
@@ -19377,7 +20031,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-293.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-306",
@@ -19412,7 +20067,9 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-306.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-317",
@@ -19440,7 +20097,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-317.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-318",
@@ -19468,7 +20126,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-318.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-319",
@@ -19498,7 +20157,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-319.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-324",
@@ -19526,7 +20186,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-324.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-390",
@@ -19589,7 +20250,9 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-390.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 1,
+"dropped_lines": 1
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-407",
@@ -19638,7 +20301,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-407.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-408",
@@ -19666,7 +20330,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-408.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-413",
@@ -19715,7 +20380,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-413.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-442",
@@ -19757,7 +20423,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-442.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-447",
@@ -19785,7 +20452,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-447.dfy",
-"alt_library": false
+"alt_library": false,
+"added_lines": 0
 },
 {
 "id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-450",
@@ -19855,6 +20523,8 @@
 }
 ],
 "file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-450.dfy",
-"alt_library": true
+"alt_library": true,
+"added_lines": 0,
+"dropped_lines": 1
 }
 ]

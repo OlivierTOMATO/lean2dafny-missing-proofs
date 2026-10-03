@@ -6,7 +6,7 @@
 // Dafny: finished with 2 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/imo_1973_p3.dfy"
-lemma {:axiom} LinarithZeroMulEq(a: real, b: real)
+lemma {:axiom} LinarithZeroMulEq(a: real, b: real)  // [ADDED DECLARATION]
   requires a == 0.0
   ensures a * b == 0.0
 
@@ -49,6 +49,6 @@ lemma {:induction false} vc_imo_1973_p3_L531(a: real, b: real, y_2: real, y_2_0:
   requires ((0.0 <= y_2_2 * y_2_2) && (5.0 * (1.0 * a * (1.0 * a)) + 5.0 * (1.0 * b * (1.0 * b)) - 1.0 * 4.0 <= 0.0) && (y_2_2 * y_2_2 * (5.0 * (1.0 * a * (1.0 * a)) + 5.0 * (1.0 * b * (1.0 * b)) - 1.0 * 4.0) <= 0.0)) || (!(0.0 <= y_2_2 * y_2_2 && 5.0 * (1.0 * a * (1.0 * a)) + 5.0 * (1.0 * b * (1.0 * b)) - 1.0 * 4.0 <= 0.0))
   ensures   (y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0)) * (y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0)) == 0.0
 {
-  LinarithZeroMulEq((y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0)), (y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0)));
+  LinarithZeroMulEq((y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0)), (y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0)));  // [ADDED]
 }
 

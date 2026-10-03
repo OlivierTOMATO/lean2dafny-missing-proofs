@@ -13,11 +13,11 @@ lemma {:induction false} vc_amc12a_2019_p21_L18(z: Complex.complex)
   requires Complex.of_real(1.0).Complex?
   ensures   Complex.pow(z, 8) == Complex.of_real(1.0)
 {
-  assert Real.sqrt(2.0) * Real.sqrt(2.0) == 2.0;
-  assert Complex.normSq(Complex.of_real(Real.sqrt(2.0))) == 2.0;
-  assert z == Complex.Complex(Real.sqrt(2.0) / 2.0, Real.sqrt(2.0) / 2.0);
-  assert Complex.pow(z, 2) == Complex.I() by { ComplexPowTwo(z); }
-  assert Complex.pow(z, 4) == Complex.of_real(-1.0) by { ComplexPowMul(z, 2, 2); ComplexPowTwo(Complex.pow(z, 2)); ComplexIMulI(); }
-  assert Complex.pow(z, 8) == Complex.of_real(1.0) by { ComplexPowMul(z, 4, 2); ComplexPowTwo(Complex.pow(z, 4)); }
+  assert Real.sqrt(2.0) * Real.sqrt(2.0) == 2.0;  // [ADDED]
+  assert Complex.normSq(Complex.of_real(Real.sqrt(2.0))) == 2.0;  // [ADDED]
+  assert z == Complex.Complex(Real.sqrt(2.0) / 2.0, Real.sqrt(2.0) / 2.0);  // [ADDED]
+  assert Complex.pow(z, 2) == Complex.I() by { ComplexPowTwo(z); }  // [ADDED]
+  assert Complex.pow(z, 4) == Complex.of_real(-1.0) by { ComplexPowMul(z, 2, 2); ComplexPowTwo(Complex.pow(z, 2)); ComplexIMulI(); }  // [ADDED]
+  assert Complex.pow(z, 8) == Complex.of_real(1.0) by { ComplexPowMul(z, 4, 2); ComplexPowTwo(Complex.pow(z, 4)); }  // [ADDED]
 }
 

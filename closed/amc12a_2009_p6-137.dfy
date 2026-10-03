@@ -25,8 +25,8 @@ lemma {:induction false} vc_amc12a_2009_p6_L137(m: real, n: real, p: real, q: re
   ensures   Real.rpow(2.0, (2 as real) * (m * n)) == Real.rpow(2.0, 2.0 * (m * n))
 {
   // K2: ring_nf normal form of the rpow exponent (exec 885: both sides normalised to m * n * 2)
-  assert (2 as real) * (m * n) == m * n * 2.0;
-  assert 2.0 * (m * n) == m * n * 2.0;
+  assert (2 as real) * (m * n) == m * n * 2.0;  // [ADDED]
+  assert 2.0 * (m * n) == m * n * 2.0;  // [ADDED]
                       PowOne(m);  // cite: pow_one [applied by the tactic, not named in it]
                       PowOne(n);  // cite: pow_one [applied by the tactic, not named in it]
                       PowOne(Real.rpow(2.0, ((m * n) * 2.0)));  // cite: pow_one [applied by the tactic, not named in it]

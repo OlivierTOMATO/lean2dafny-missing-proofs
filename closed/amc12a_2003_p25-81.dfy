@@ -32,6 +32,6 @@ lemma {:induction false} vc_amc12a_2003_p25_L81(a: real, b: real, f: real -> rea
   requires Real.sqrt(a * (x_48 * x_48) + b * x_48) == 0.0
   ensures   exists x_1_3_1: real :: Real.sqrt(a * (x_1_3_1 * x_1_3_1) + b * x_1_3_1) == 2.0
 {
-  forall t: real ensures 0.0 <= Real.sqrt(t) { RealSqrtNonneg(t); }  // K5: Mathlib Real.sqrt_nonneg (named in Lean simp only set, line 15; used by nlinarith)
+  forall t: real ensures 0.0 <= Real.sqrt(t) { RealSqrtNonneg(t); }  // K5: Mathlib Real.sqrt_nonneg (named in Lean simp only set, line 15; used by nlinarith)  // [ADDED]
 }
 

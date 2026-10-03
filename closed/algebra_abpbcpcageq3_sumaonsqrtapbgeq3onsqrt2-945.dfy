@@ -23,7 +23,7 @@ lemma {:induction false} vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L945(a
   requires x_1_0 + y_1_0 <= Real.div((x_1_0 + y_1_0 + 2.0) * (x_1_0 + y_1_0 + 2.0), 2.0 * Real.sqrt(2.0) * (2.0 * Real.sqrt(2.0)))
   ensures   x_1_0 + y_1_0 <= Real.div(x_1_0 + y_1_0 + 2.0, 2.0 * Real.sqrt(2.0)) * Real.div(x_1_0 + y_1_0 + 2.0, 2.0 * Real.sqrt(2.0))
 {
-  assert Real.div((x_1_0 + y_1_0 + 2.0), (2.0 * Real.sqrt(2.0))) * Real.div((x_1_0 + y_1_0 + 2.0), (2.0 * Real.sqrt(2.0))) == Real.div((x_1_0 + y_1_0 + 2.0) * (x_1_0 + y_1_0 + 2.0), (2.0 * Real.sqrt(2.0)) * (2.0 * Real.sqrt(2.0)));  // field_simp before/after goals: (N/D)^2 = N^2/D^2 (checked)
+  assert Real.div((x_1_0 + y_1_0 + 2.0), (2.0 * Real.sqrt(2.0))) * Real.div((x_1_0 + y_1_0 + 2.0), (2.0 * Real.sqrt(2.0))) == Real.div((x_1_0 + y_1_0 + 2.0) * (x_1_0 + y_1_0 + 2.0), (2.0 * Real.sqrt(2.0)) * (2.0 * Real.sqrt(2.0)));  // field_simp before/after goals: (N/D)^2 = N^2/D^2 (checked)  // [ADDED]
           // [TACTIC: «Field_simp[_]At___» [ h₅.ne' ]]
           // UNCITED h₅.ne': a projection of the local hypothesis h₅ handed to the tactic; its fact is not stated here
           // UNCITED-APPLIED internal ×2 [exec 267 1515-1536]: applications made inside the tactic's own automation, not stated — div_pow ×1; machinery/glue: congrArg ×1

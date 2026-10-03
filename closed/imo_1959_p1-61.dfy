@@ -6,11 +6,11 @@
 // Dafny: finished with 36 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/imo_1959_p1.dfy"
-lemma {:axiom} NatGcdMulRightAddRight(m: nat, n: nat, k: nat)
+lemma {:axiom} NatGcdMulRightAddRight(m: nat, n: nat, k: nat)  // [ADDED DECLARATION]
   ensures gcd(m, k * m + n) == gcd(m, n)
-lemma {:axiom} NatGcdAddSelfRight(m: nat, n: nat)
+lemma {:axiom} NatGcdAddSelfRight(m: nat, n: nat)  // [ADDED DECLARATION]
   ensures gcd(m, n + m) == gcd(m, n)
-lemma {:axiom} NatGcdOneLeft(n: nat)
+lemma {:axiom} NatGcdOneLeft(n: nat)  // [ADDED DECLARATION]
   ensures gcd(1, n) == 1
 
 lemma {:induction false} vc_imo_1959_p1_L61(n: int)
@@ -28,11 +28,11 @@ lemma {:induction false} vc_imo_1959_p1_L61(n: int)
   requires gcd(7 * n + 1, 1) == gcd(1, 7 * n + 1)
   ensures   gcd(2 * (7 * n + 1) + 1, 7 * n + 1) == gcd(7 * n + 1, 1)
 {
-  NatGcdComm(2 * (7 * n + 1) + 1, 7 * n + 1);
-  NatGcdMulRightAddRight(7 * n + 1, 1, 2);
-  NatGcdComm(7 * n + 1, 1);
-  NatGcdAddSelfRight(1, 7 * n);
-  NatGcdOneLeft(7 * n);
+  NatGcdComm(2 * (7 * n + 1) + 1, 7 * n + 1);  // [ADDED]
+  NatGcdMulRightAddRight(7 * n + 1, 1, 2);  // [ADDED]
+  NatGcdComm(7 * n + 1, 1);  // [ADDED]
+  NatGcdAddSelfRight(1, 7 * n);  // [ADDED]
+  NatGcdOneLeft(7 * n);  // [ADDED]
           NatGcdComm(((2 * ((7 * n) + 1)) + 1), ((7 * n) + 1));  // cite: Nat.gcd_comm
           NatGcdComm(((7 * n) + 1), 1);  // cite: Nat.gcd_comm
           // UNCITED Nat.gcd_add_mul_right_right: no Lean instance recorded (arguments unknown), not guessed

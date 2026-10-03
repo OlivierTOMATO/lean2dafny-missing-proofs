@@ -6,12 +6,12 @@
 // Dafny: finished with 13 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/aime_1984_p1.dfy"
-lemma {:axiom} FinsetSumRangeSuccRat(n: nat, f: nat -> Rat.rat)
+lemma {:axiom} FinsetSumRangeSuccRat(n: nat, f: nat -> Rat.rat)  // [ADDED DECLARATION]
   ensures Rat.sum(range(n + 1), f) == Rat.add(Rat.sum(range(n), f), f(n))
-lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)
+lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)  // [ADDED DECLARATION]
   requires a.to_real() == b.to_real()
   ensures a == b
-lemma {:induction false} SumHelper484(n: nat)
+lemma {:induction false} SumHelper484(n: nat)  // [ADDED DECLARATION]
   ensures 2.0 * Rat.sum(range(n), ((k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(k), Rat.of_int(1))))).to_real() == (2 * n * (n + 1)) as real
 {
   if n == 0 { assert range(0) == {}; }
@@ -24,7 +24,7 @@ lemma {:induction false} SumHelper484(n: nat)
 lemma {:induction false} vc_aime_1984_p1_L484(u: nat -> Rat.rat)
   ensures   Rat.sum(range(49), ((v_1_32_k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_1_32_k), Rat.of_int(1))))) == Rat.of_int(2450)
 {
-  SumHelper484(49);
-  RatCastInjective(Rat.sum(range(49), ((k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(k), Rat.of_int(1))))), Rat.of_int(2450));
+  SumHelper484(49);  // [ADDED]
+  RatCastInjective(Rat.sum(range(49), ((k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(k), Rat.of_int(1))))), Rat.of_int(2450));  // [ADDED]
 }
 

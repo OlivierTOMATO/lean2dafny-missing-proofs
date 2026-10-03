@@ -30,7 +30,7 @@ lemma {:induction false} vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222(a: real
   requires x * y_5_0 * (x * y_5_0) == x * x * (y_5_0 * y_5_0)
   ensures   Real.sqrt(x * x * (y_5_0 * y_5_0)) == x * y_5_0
 {
-  assert Real.pow(x, 2) * Real.pow(y_5_0, 2) == x * x * (y_5_0 * y_5_0);
+  assert Real.pow(x, 2) * Real.pow(y_5_0, 2) == x * x * (y_5_0 * y_5_0);  // [ADDED]
             assert (0.0 <= ((x * x) * (y_5_0 * y_5_0))) by {  // sub-goal of `by` (Lean state) // @tac 1192-1202
               // [TACTIC: Positivity]
               // positivity proof: the lemma applications Lean's positivity proof is built from (Lean execution 1192-1202 exec 307)

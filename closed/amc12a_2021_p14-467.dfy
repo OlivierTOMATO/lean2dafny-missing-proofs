@@ -10,10 +10,10 @@ lemma {:induction false} vc_amc12a_2021_p14_L467()
   ensures   Real.sum(IccN(1, 100), ((v_22_k: nat) => Real.logb(3.0, 5.0))) == 100.0 * Real.logb(3.0, 5.0)
 {
   FinsetSumConst(IccN(1, 100), Real.logb(3.0, 5.0));  // Finset.sum_const, applied inside simp (exec 2042, internal)
-  NatCardIcc(1, 100);  // Nat.card_Icc, applied inside simp (exec 2042, internal)
+  NatCardIcc(1, 100);  // Nat.card_Icc, applied inside simp (exec 2042, internal)  // [ADDED]
 }
 
 // Mathlib: theorem Nat.card_Icc (a b : ℕ) : (Finset.Icc a b).card = b + 1 - a   (ℕ truncated subtraction = tsub)
 // added to this ablation work copy only (no library counterpart in integ5)
-lemma {:axiom} NatCardIcc(a: nat, b: nat)
+lemma {:axiom} NatCardIcc(a: nat, b: nat)  // [ADDED DECLARATION]
   ensures |IccN(a, b)| == tsub(b + 1, a)

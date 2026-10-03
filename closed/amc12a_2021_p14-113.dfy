@@ -21,6 +21,6 @@ lemma {:induction false} vc_amc12a_2021_p14_L113(k_0_0: nat)
   requires Real.log(Real.pow(5.0, k_0_0)) == (k_0_0 as real) * Real.log(5.0)
   ensures   Real.logb(5.0, 3.0) == Real.div(Real.log(3.0), Real.log(5.0))
 {
-  RealLogbUnfold(5.0, 3.0);  // Lean rw [Real.logb] = Real.logb.eq_1 at Lean's recorded args
+  RealLogbUnfold(5.0, 3.0);  // Lean rw [Real.logb] = Real.logb.eq_1 at Lean's recorded args  // [ADDED]
 }
 

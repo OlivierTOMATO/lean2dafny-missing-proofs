@@ -7,7 +7,7 @@
 // NOTE: uses a MODIFIED library copy: see alt/aime_1984_p1-62/LIBRARY_CHANGES.diff
 
 include "alt/aime_1984_p1-62/out/aime_1984_p1.dfy"
-lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)
+lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)  // [ADDED DECLARATION]
   requires a.to_real() == b.to_real()
   ensures a == b
 
@@ -41,6 +41,6 @@ lemma {:induction false} vc_aime_1984_p1_L62(n: int, n_1_0: int, n_1_0_0: int, u
   requires Rat.add(u(0), Rat.add(Rat.of_int(n_1_0_0), Rat.of_int(1))).Rational?
   ensures   u(n_1_0_0 + 1) == Rat.add(u(0), Rat.add(Rat.of_int(n_1_0_0), Rat.of_int(1)))
 {
-  RatCastInjective(u(n_1_0_0 + 1), Rat.add(u(0), Rat.add(Rat.of_int(n_1_0_0), Rat.of_int(1))));
+  RatCastInjective(u(n_1_0_0 + 1), Rat.add(u(0), Rat.add(Rat.of_int(n_1_0_0), Rat.of_int(1))));  // [ADDED]
 }
 

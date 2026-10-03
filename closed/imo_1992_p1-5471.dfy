@@ -40,6 +40,6 @@ lemma {:induction false} vc_imo_1992_p1_L5471(k_3_5: int, p: int, q: int, r: int
   requires Int.pow(r, 1) == r
   ensures   0 - 1 + p * q * r == 0 - 3 + (p * 3 - p * q * 3) + (p * q * r * 3 - p * r * 3) + (q * 3 - q * r * 3) + r * 3
 {
-  assert (p - 1) * (q - 1) * (r - 1) == p * q * r - p * q - p * r - q * r + p + q + r - 1;
+  assert (p - 1) * (q - 1) * (r - 1) == p * q * r - p * q - p * r - q * r + p + q + r - 1;  // [ADDED]
 }
 

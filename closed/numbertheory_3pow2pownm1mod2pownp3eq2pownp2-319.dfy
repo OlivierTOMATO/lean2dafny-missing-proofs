@@ -46,7 +46,7 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L319(k_1
   requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
   ensures   2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) % Int.pow(2, 2 * n + 5) == 0
 {
-  IntModEqZero(2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, 2 * n + 5));  // Dvd.intro witness q = 2k (Lean ⟨2 * k, _⟩)
-  assert 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) == Int.pow(2, 2 * n + 5) * (2 * k_1_0_2_0);  // instance q := 2k (already a requires = Lean ring step)
+  IntModEqZero(2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, 2 * n + 5));  // Dvd.intro witness q = 2k (Lean ⟨2 * k, _⟩)  // [ADDED]
+  assert 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) == Int.pow(2, 2 * n + 5) * (2 * k_1_0_2_0);  // instance q := 2k (already a requires = Lean ring step)  // [ADDED]
 }
 

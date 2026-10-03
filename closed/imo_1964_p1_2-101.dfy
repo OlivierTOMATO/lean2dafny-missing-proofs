@@ -27,7 +27,7 @@ lemma {:induction false} vc_imo_1964_p1_2_L101(n: nat)
 
 // side checks at the same line (not the reported failure): 1 check(s)
 // side check: divisor is always non-zero.
-lemma {:induction false} vc_imo_1964_p1_2_L101_side1(n: nat)
+lemma {:induction false} vc_imo_1964_p1_2_L101_side1(n: nat)  // [ADDED DECLARATION]
   requires 0 <= n
   requires forall n0: nat :: true && 0 <= n0 && n0 < n ==> !NatDvd(7, Int.pow(2, n0) + 1)
   requires 0 < 7

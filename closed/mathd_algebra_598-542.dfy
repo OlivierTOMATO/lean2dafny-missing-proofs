@@ -6,7 +6,7 @@
 // Dafny: finished with 13 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/mathd_algebra_598.dfy"
-lemma {:axiom} DivEqIff(a: real, b: real, c: real)
+lemma {:axiom} DivEqIff(a: real, b: real, c: real)  // [ADDED DECLARATION]
   requires c != 0.0
   ensures a / c == b <==> a == b * c
 
@@ -26,7 +26,7 @@ lemma {:induction false} vc_mathd_algebra_598_L542(a: real, b: real, c: real, d:
   requires ((0.0 < 2.0) && (0.0 < 2.0) && (0.0 < Real.log(2.0)) && (0.0 < 2.0) && (0.0 < 2.0 * Real.log(2.0))) || ((0.0 < 2.0) && (!(0.0 < 2.0 && 0.0 < Real.log(2.0)))) || ((!(0.0 < 2.0)) && (0.0 < 2.0) && (0.0 < Real.log(2.0)) && (0.0 < 2.0) && (0.0 < 2.0 * Real.log(2.0))) || ((!(0.0 < 2.0)) && (!(0.0 < 2.0 && 0.0 < Real.log(2.0))))
   ensures   Real.div(3.0 * Real.log(2.0), 2.0 * Real.log(2.0)) == 3.0 / 2.0
 {
-  DivEqIff(3.0 * Real.log(2.0), 3.0 / 2.0, 2.0 * Real.log(2.0));
+  DivEqIff(3.0 * Real.log(2.0), 3.0 / 2.0, 2.0 * Real.log(2.0));  // [ADDED]
         // have h₁₂₃ : Real.log ( 2 ) != 0  [type from Lean state]
         assert (Real.log(2.0) != 0.0) by { // @tac 4053-4115 // @tac 4122-4130
           // have h₁₂₄ : Real.log ( 2 ) > 0  [type from Lean state]

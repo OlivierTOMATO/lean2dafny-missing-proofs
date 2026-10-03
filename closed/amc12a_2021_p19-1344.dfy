@@ -26,6 +26,6 @@ lemma {:induction false} vc_amc12a_2021_p19_L1344(S: set<real>, x_0_0_0_0: real)
   requires Real.sin(x_0_0_0_0) == 1.0
   ensures   Real.cos(x_0_0_0_0) == Real.cos(Real.pi() / 2.0)
 {
-  RealCosPiDivTwo();
+  RealCosPiDivTwo();  // [ADDED]
 }
 

@@ -32,6 +32,6 @@ lemma {:induction false} vc_amc12a_2017_p7_L67(f: nat -> real, n: nat, n_1_0: in
   requires forall n_1_1_1_3: nat :: 1 < n_1_1_1_3 ==> !Even(n_1_1_1_3) ==> f(n_1_1_1_3) == f(tsub(n_1_1_1_3, 2)) + 2.0
   ensures   f(n_1_0_0) + 2.0 == (n_1_0_0 as real) + 2.0 + 1.0
 {
-  assert f(n_1_0_0 + 1 + 1) == f(tsub(n_1_0_0 + 1 + 1, 2)) + 2.0;
+  assert f(n_1_0_0 + 1 + 1) == f(tsub(n_1_0_0 + 1 + 1, 2)) + 2.0;  // [ADDED]
 }
 

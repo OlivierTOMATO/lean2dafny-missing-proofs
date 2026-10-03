@@ -6,18 +6,18 @@
 // Dafny: finished with 5 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/aime_1984_p1.dfy"
-lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)
+lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)  // [ADDED DECLARATION]
   requires a.to_real() == b.to_real()
   ensures a == b
-lemma {:axiom} RatCastNeg(q: Rat.rat)
+lemma {:axiom} RatCastNeg(q: Rat.rat)  // [ADDED DECLARATION]
   ensures Rat.neg(q).to_real() == -q.to_real()
 
 lemma {:induction false} vc_aime_1984_p1_L408(u: nat -> Rat.rat)
   requires Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.of_int(4851)) == Rat.of_int(137)
   ensures   u(0) == Rat.div(Rat.neg(Rat.of_int(2357)), Rat.of_int(49))
 {
-  RatCastNeg(Rat.of_int(2357));
-  RatCastInjective(u(0), Rat.div(Rat.neg(Rat.of_int(2357)), Rat.of_int(49)));
+  RatCastNeg(Rat.of_int(2357));  // [ADDED]
+  RatCastInjective(u(0), Rat.div(Rat.neg(Rat.of_int(2357)), Rat.of_int(49)));  // [ADDED]
       // [TACTIC: «Linarith[_]At___»]
       // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 2370-2378 exec 450)
       // UNCITED-APPLIED Linarith.mul_neg: certificate piece `(2 : ℚ) * ((49 : ℚ) * u (0 : ℕ) - -((1 : ℚ) * (2357 : ℚ))) < (0 : ℚ)` not stated: not a product

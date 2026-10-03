@@ -29,7 +29,7 @@ lemma {:induction false} vc_amc12b_2020_p21_L1436(S: set<nat>, k_0_0_0_0_0_0_0_0
   ensures   (49 as real) <= Real.sqrt(2430.0)
 {
   // K5: Real.le_sqrt (named in Lean's norm_num simp set; rewrote the goal to 49^2 <= 2430)
-  RealLeSqrt(49.0, 2430.0);
+  RealLeSqrt(49.0, 2430.0);  // [ADDED]
                             // [TACTIC: «_<;>_» [ Real.le_sqrt , Real.sqrt_lt ] norm_num [ Real.le_sqrt , Real.sqrt_lt ] <;> nlinarith [ Real.sqrt_nonneg 2430 , Real.sq_sqrt ( show 0 ≤ ( 2430 : ℝ ) by norm_num norm_num ) , Real.sqrt_nonneg 2430 , Real.sq_sqrt ( show 0 ≤ ( 2430 : ℝ ) by norm_num norm_num ) ] nlinarith [ Real.sqrt_nonneg 2430 , Real.sq_sqrt ( show 0 ≤ ( 2430 : ℝ ) by norm_num norm_num ) , Real.sqrt_nonneg 2430 , Real.sq_sqrt ( show 0 ≤ ( 2430 : ℝ ) by norm_num norm_num ) ]]
                             // [TACTIC: «Norm_num[_]At___» [ Real.le_sqrt , Real.sqrt_lt ]]
                             // UNCITED Real.le_sqrt: no Lean instance recorded (arguments unknown), not guessed

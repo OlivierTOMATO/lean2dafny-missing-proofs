@@ -6,7 +6,7 @@
 // Dafny: finished with 5 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/amc12a_2021_p18.dfy"
-lemma {:axiom} NatPrimeDefLt(p: nat)
+lemma {:axiom} NatPrimeDefLt(p: nat)  // [ADDED DECLARATION]
   requires 2 <= p
   requires forall m: nat :: m < p ==> NatDvd(m, p) ==> m == 1
   ensures prime(p)
@@ -21,6 +21,6 @@ lemma {:induction false} vc_amc12a_2021_p18_L140(f: Rat.rat -> real)
   requires 0 <= 5
   ensures   prime(5)
 {
-  NatPrimeDefLt(5);
+  NatPrimeDefLt(5);  // [ADDED]
 }
 

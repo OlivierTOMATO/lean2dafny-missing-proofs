@@ -16,6 +16,6 @@ lemma {:induction false} vc_amc12a_2021_p14_L280(k_2_0: nat)
   requires k_2_0 in IccN(1, 100)
   ensures   Real.logb(Real.pow(9.0, k_2_0), Real.pow(25.0, k_2_0)) == Real.div(Real.log(Real.pow(25.0, k_2_0)), Real.log(Real.pow(9.0, k_2_0)))
 {
-  RealLogbUnfold(Real.pow(9.0, k_2_0), Real.pow(25.0, k_2_0));  // Lean rw [Real.logb] = Real.logb.eq_1 at Lean's recorded args
+  RealLogbUnfold(Real.pow(9.0, k_2_0), Real.pow(25.0, k_2_0));  // Lean rw [Real.logb] = Real.logb.eq_1 at Lean's recorded args  // [ADDED]
 }
 

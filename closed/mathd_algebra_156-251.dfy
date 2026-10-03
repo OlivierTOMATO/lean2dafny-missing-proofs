@@ -18,6 +18,6 @@ lemma {:induction false} vc_mathd_algebra_156_L251(f: real -> real, g: real -> r
   requires (x * x - 2.0 != 0.0) || (x * x - 2.0 == 0.0)
   ensures   x * x - 2.0 == 0.0 || x * x - 3.0 == 0.0
 {
-  EqZeroOrEqZeroOfMulEqZero(x * x - 2.0, x * x - 3.0);
+  EqZeroOrEqZeroOfMulEqZero(x * x - 2.0, x * x - 3.0);  // [ADDED]
 }
 

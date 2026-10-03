@@ -28,7 +28,7 @@ lemma {:induction false} vc_amc12a_2021_p19_L1352(S: set<real>, x_0_0_0_0: real)
   requires Real.sin(x_0_0_0_0) == Real.sin(Real.pi() / 2.0)
   ensures   x_0_0_0_0 == Real.pi() / 2.0
 {
-  RealInjOnCos(x_0_0_0_0, Real.pi() / 2.0);
+  RealInjOnCos(x_0_0_0_0, Real.pi() / 2.0);  // [ADDED]
                                     assert (0.0 <= x_0_0_0_0) by {  // sub-goal of `by` (Lean state) // @tac 7490-7524
                                       // [TACTIC: «Linarith[_]At___» [ h₂ , h₃ , Real.pi_pos ]]
                                       // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 7490-7524 exec 1568)

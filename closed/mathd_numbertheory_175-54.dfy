@@ -14,9 +14,9 @@ lemma {:induction false} vc_mathd_numbertheory_175_L54()
   requires 0 <= 502
   ensures   Int.pow(2, 2010) == Int.pow(2 * 2 * 2 * 2, 502) * (2 * 2)
 {
-  NatPowAdd(2, 2008, 2);
-  NatPowMul(2, 4, 502);
-  assert Int.pow(2, 4) == 2 * 2 * 2 * 2 by { reveal Int.pow(); }
-  assert Int.pow(2, 2) == 2 * 2 by { reveal Int.pow(); }
+  NatPowAdd(2, 2008, 2);  // [ADDED]
+  NatPowMul(2, 4, 502);  // [ADDED]
+  assert Int.pow(2, 4) == 2 * 2 * 2 * 2 by { reveal Int.pow(); }  // [ADDED]
+  assert Int.pow(2, 2) == 2 * 2 by { reveal Int.pow(); }  // [ADDED]
 }
 

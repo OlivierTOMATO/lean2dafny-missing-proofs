@@ -14,6 +14,6 @@ lemma {:induction false} vc_mathd_algebra_756_L231(a: real, b: real)
   requires 2.0 > 0.0
   ensures   a * Real.log(2.0) == Real.log(32.0)
 {
-  RealLogRpow(2.0, a);
+  RealLogRpow(2.0, a);  // [ADDED]
 }
 

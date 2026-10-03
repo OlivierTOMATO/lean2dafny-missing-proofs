@@ -6,7 +6,7 @@
 // Dafny: finished with 21 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/imo_1959_p1.dfy"
-lemma {:axiom} NatGcdSelfAddRight(m: nat, n: nat)
+lemma {:axiom} NatGcdSelfAddRight(m: nat, n: nat)  // [ADDED DECLARATION]
   ensures gcd(m, m + n) == gcd(m, n)
 
 lemma {:induction false} vc_imo_1959_p1_L32(n: int)
@@ -21,8 +21,8 @@ lemma {:induction false} vc_imo_1959_p1_L32(n: int)
   requires gcd(14 * n + 3, 7 * n + 1) == gcd(7 * n + 1, 14 * n + 3)
   ensures   gcd(14 * n + 3, 1 * (14 * n + 3) + (7 * n + 1)) == gcd(14 * n + 3, 7 * n + 1)
 {
-  assert 1 * (14 * n + 3) == 14 * n + 3;
-  NatGcdSelfAddRight(14 * n + 3, 7 * n + 1);
+  assert 1 * (14 * n + 3) == 14 * n + 3;  // [ADDED]
+  NatGcdSelfAddRight(14 * n + 3, 7 * n + 1);  // [ADDED]
           NatGcdComm(((14 * n) + 3), ((7 * n) + 1));  // cite: Nat.gcd_comm
           // UNCITED Nat.gcd_add_mul_right_right: no Lean instance recorded (arguments unknown), not guessed
           // UNCITED Nat.gcd_assoc: no Lean instance recorded (arguments unknown), not guessed

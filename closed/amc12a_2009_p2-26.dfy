@@ -23,10 +23,10 @@ lemma {:induction false} vc_amc12a_2009_p2_L26()
   ensures   Rat.add(Rat.of_int(1), Rat.div(Rat.of_int(1), Rat.div(Rat.of_int(3), Rat.of_int(2)))) == Rat.div(Rat.of_int(5), Rat.of_int(3))
 {
   // K4: cast ℚ→ℝ injective (Rat.cast_injective)
-  RatCastInjective(Rat.add(Rat.of_int(1), Rat.div(Rat.of_int(1), Rat.div(Rat.of_int(3), Rat.of_int(2)))), Rat.div(Rat.of_int(5), Rat.of_int(3)));
+  RatCastInjective(Rat.add(Rat.of_int(1), Rat.div(Rat.of_int(1), Rat.div(Rat.of_int(3), Rat.of_int(2)))), Rat.div(Rat.of_int(5), Rat.of_int(3)));  // [ADDED]
 }
 
 // Mathlib: Rat.cast_injective (ℚ → ℝ cast is injective), exact statement over the library's to_real cast
-lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)
+lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)  // [ADDED DECLARATION]
   requires a.to_real() == b.to_real()
   ensures a == b

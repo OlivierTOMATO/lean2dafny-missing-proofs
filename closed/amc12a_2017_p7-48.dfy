@@ -33,6 +33,6 @@ lemma {:induction false} vc_amc12a_2017_p7_L48(f: nat -> real, n: nat, n_1_0: in
   requires 0 <= n_1_0_0 + 1
   ensures   f(n_1_0_0 + 1) == (n_1_0_0 as real) + 2.0
 {
-  assert f(n_1_0_0 + 1 + 1) == f(tsub(n_1_0_0 + 1 + 1, 1)) + 1.0;
+  assert f(n_1_0_0 + 1 + 1) == f(tsub(n_1_0_0 + 1 + 1, 1)) + 1.0;  // [ADDED]
 }
 

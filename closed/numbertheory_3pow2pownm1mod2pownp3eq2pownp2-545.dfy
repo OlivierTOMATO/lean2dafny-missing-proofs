@@ -6,10 +6,10 @@
 // Dafny: finished with 87 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
-lemma {:axiom} NatModModOfDvd(a: nat, b: nat, c: nat)
+lemma {:axiom} NatModModOfDvd(a: nat, b: nat, c: nat)  // [ADDED DECLARATION]
   requires NatDvd(c, b)
   ensures NatMod(NatMod(a, b), c) == NatMod(a, c)
-lemma {:axiom} NatDvdRefl(a: nat)
+lemma {:axiom} NatDvdRefl(a: nat)  // [ADDED DECLARATION]
   ensures NatDvd(a, a)
 
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545(k_1_0: int, k_1_2: int, k_1_2_0: int, k_1_3: int, k_2: int, n: nat)
@@ -38,8 +38,8 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545(k_1
   requires ((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3)) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0)) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3)) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0)) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3)) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0)) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3)) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0))
   ensures   NatMod(NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3)) + 0, Int.pow(2, n + 3)) == NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3))
 {
-  NatAddZero(NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3)));  // Lean simp internal: add_zero
-  NatDvdRefl(Int.pow(2, n + 3));
-  NatModModOfDvd(Int.pow(2, n + 2), Int.pow(2, n + 3), Int.pow(2, n + 3));  // Lean simp internal: Nat.mod_mod_of_dvd (a:=2^(n+2), b:=c:=2^(n+3))
+  NatAddZero(NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3)));  // Lean simp internal: add_zero  // [ADDED]
+  NatDvdRefl(Int.pow(2, n + 3));  // [ADDED]
+  NatModModOfDvd(Int.pow(2, n + 2), Int.pow(2, n + 3), Int.pow(2, n + 3));  // Lean simp internal: Nat.mod_mod_of_dvd (a:=2^(n+2), b:=c:=2^(n+3))  // [ADDED]
 }
 

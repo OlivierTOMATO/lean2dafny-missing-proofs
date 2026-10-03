@@ -20,7 +20,7 @@ lemma {:induction false} vc_mathd_numbertheory_175_L93()
   requires Int.pow(2 * 2 * 2 * 2, 502) % 10 + 10 * (Int.pow(2 * 2 * 2 * 2, 502) / 10) == Int.pow(2 * 2 * 2 * 2, 502)
   ensures   (Int.pow(2 * 2 * 2 * 2, 502) % 10 + 10 * (Int.pow(2 * 2 * 2 * 2, 502) / 10)) % 10 == 6
 {
-  NatPowMod(2 * 2 * 2 * 2, 502, 10);
+  NatPowMod(2 * 2 * 2 * 2, 502, 10);  // [ADDED]
                   // [TACTIC: «_<;>_» [ h₁ , Nat.pow_mod , Nat.mul_mod , Nat.add_mod , h₅₂₁ ] simp [ h₁ , Nat.pow_mod , Nat.mul_mod , Nat.add_mod , h₅₂₁ ] simp [ h₁ , Nat.pow_mod , Nat.mul_mod , Nat.add_mod , h₅₂₁ ] <;> norm_num norm_num <;> omega omega]
                   // [TACTIC: simp [ h₁ , Nat.pow_mod , Nat.mul_mod , Nat.add_mod , h₅₂₁ ]]
                   // UNCITED Nat.pow_mod: no Lean instance recorded (arguments unknown), not guessed

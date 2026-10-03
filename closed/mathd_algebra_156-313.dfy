@@ -19,6 +19,6 @@ lemma {:induction false} vc_mathd_algebra_156_L313(f: real -> real, g: real -> r
   requires ((x * x != 2.0) && (y * y - 2.0 != 0.0)) || ((x * x != 2.0) && (y * y - 2.0 == 0.0)) || ((x * x == 2.0) && (y * y - 2.0 != 0.0)) || ((x * x == 2.0) && (y * y - 2.0 == 0.0))
   ensures   y * y - 2.0 == 0.0 || y * y - 3.0 == 0.0
 {
-  EqZeroOrEqZeroOfMulEqZero(y * y - 2.0, y * y - 3.0);
+  EqZeroOrEqZeroOfMulEqZero(y * y - 2.0, y * y - 3.0);  // [ADDED]
 }
 

@@ -25,7 +25,7 @@ lemma {:induction false} vc_amc12b_2020_p21_L1245(S: set<nat>, k_0_0_0_0_0_0_0_0
   ensures   (20 as real) <= Real.sqrt(400.0)
 {
   // K5: Real.le_sqrt (named in Lean's norm_num simp set; rewrote the goal to 20^2 <= 400)
-  RealLeSqrt(20.0, 400.0);
+  RealLeSqrt(20.0, 400.0);  // [ADDED]
                             // [TACTIC: «Norm_num[_]At___» [ Real.le_sqrt , Real.sqrt_lt ]]
                             // UNCITED Real.le_sqrt: no Lean instance recorded (arguments unknown), not guessed
                             // UNCITED Real.sqrt_lt: no Lean instance recorded (arguments unknown), not guessed

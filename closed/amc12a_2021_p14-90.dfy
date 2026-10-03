@@ -21,7 +21,7 @@ lemma {:induction false} vc_amc12a_2021_p14_L90(k_0_0: nat)
   requires ((k_0_0 * k_0_0) as real) * Real.log(3.0) == (k_0_0 as real) * (k_0_0 as real) * Real.log(3.0)
   ensures   Real.log(Real.pow(3.0, Int.pow(k_0_0, 2))) == (k_0_0 as real) * (k_0_0 as real) * Real.log(3.0)
 {
-  assert Int.pow(k_0_0, 2) == k_0_0 * k_0_0;  // computed: k^2 = k*k
+  assert Int.pow(k_0_0, 2) == k_0_0 * k_0_0;  // computed: k^2 = k*k  // [ADDED]
           // [TACTIC: «_<;>_» [ Real.log_pow ] rw [ Real.log_pow ] <;> norm_cast norm_cast norm_cast <;> field_simp field_simp <;> ring]
           // [TACTIC: choice [ Real.log_pow ] rw [ Real.log_pow ]]
           RealLogPow(Int.pow(k_0_0, 2), 3.0);  // cite: Real.log_pow

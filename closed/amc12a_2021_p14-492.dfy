@@ -17,6 +17,6 @@ lemma {:induction false} vc_amc12a_2021_p14_L492()
   requires Real.logb(5.0, 3.0) == Real.div(Real.log(3.0), Real.log(5.0))
   ensures   Real.logb(3.0, 5.0) == Real.div(Real.log(5.0), Real.log(3.0))
 {
-  RealLogbUnfold(3.0, 5.0);  // rw [Real.logb]: Real.logb.eq_1 (3, 5) (exec 2256)
+  RealLogbUnfold(3.0, 5.0);  // rw [Real.logb]: Real.logb.eq_1 (3, 5) (exec 2256)  // [ADDED]
 }
 

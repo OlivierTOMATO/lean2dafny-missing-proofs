@@ -29,7 +29,7 @@ lemma {:induction false} vc_amc12a_2003_p25_L58(a: real, b: real, f: real -> rea
   requires exists x_2_1: real :: Real.sqrt(a * (x_2_1 * x_2_1) + b * x_2_1) == 0.0 - 1.0
   ensures   exists x_44: real :: Real.sqrt(a * (x_44 * x_44) + b * x_44) == 0.0 - 1.0
 {
-  forall t: real ensures 0.0 <= Real.sqrt(t) { RealSqrtNonneg(t); }  // K5: Mathlib Real.sqrt_nonneg (named in Lean simp only set, line 15; used by nlinarith)
+  forall t: real ensures 0.0 <= Real.sqrt(t) { RealSqrtNonneg(t); }  // K5: Mathlib Real.sqrt_nonneg (named in Lean simp only set, line 15; used by nlinarith)  // [ADDED]
     // [TACTIC: exact h₆]
     assert (exists x_14: real :: (Real.sqrt(((a * (x_14 * x_14)) + (b * x_14))) == -(1.0)));  // hypothesis h₆ at `exact` (Lean state)
     // UNCITED-APPLIED funext(fun (x : ℝ) => Prop, fun (x : ℝ) => True ∧ √(a * x ^ (2 : ℕ) + b * x) = (-1 : ℝ), fun (x : ℝ) => √(a * x ^ (2 : ℕ) + b * x) = (-1 : ℝ)): no library counterpart (not stated) [exec 100 1019-1039]

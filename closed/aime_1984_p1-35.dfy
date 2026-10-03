@@ -7,7 +7,7 @@
 // NOTE: uses a MODIFIED library copy: see alt/aime_1984_p1-35/LIBRARY_CHANGES.diff
 
 include "alt/aime_1984_p1-35/out/aime_1984_p1.dfy"
-lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)
+lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)  // [ADDED DECLARATION]
   requires a.to_real() == b.to_real()
   ensures a == b
 
@@ -23,7 +23,7 @@ lemma {:induction false} vc_aime_1984_p1_L35(n: int, n_1_0: int, u: nat -> Rat.r
   requires Rat.add(u(0), Rat.of_int(0)).Rational?
   ensures   u(0) == Rat.add(u(0), Rat.of_int(0))
 {
-  RatCastInjective(u(0), Rat.add(u(0), Rat.of_int(0)));
+  RatCastInjective(u(0), Rat.add(u(0), Rat.of_int(0)));  // [ADDED]
       // [TACTIC: «Norm_num[_]At___»]
       // UNCITED-APPLIED internal ×11 [exec 26 591-599]: applications made inside the tactic's own automation, not stated — add_zero ×1; machinery/glue: Eq.trans ×2, congrArg ×2, of_eq_true ×1, Mathlib.Meta.NormNum.IsNat.to_eq ×1 (+4 more heads, ×4)
 }

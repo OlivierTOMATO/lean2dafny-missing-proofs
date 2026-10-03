@@ -11,7 +11,7 @@ lemma {:induction false} vc_mathd_algebra_170_L285(S: set<int>)
   requires S == Icc(0 - 3, 7)
   ensures   |Icc(0 - 3, 7)| == 11
 {
-  assert Icc(0 - 3, 7) == {-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7};
+  assert Icc(0 - 3, 7) == {-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7};  // [ADDED]
       // [TACTIC: Rfl]
 }
 

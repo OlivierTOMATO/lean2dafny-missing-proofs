@@ -6,16 +6,16 @@
 // Dafny: finished with 6 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/aime_1984_p1.dfy"
-lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)
+lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)  // [ADDED DECLARATION]
   requires a.to_real() == b.to_real()
   ensures a == b
-lemma {:axiom} RatCastNeg(q: Rat.rat)
+lemma {:axiom} RatCastNeg(q: Rat.rat)  // [ADDED DECLARATION]
   ensures Rat.neg(q).to_real() == -q.to_real()
 
 lemma {:induction false} vc_aime_1984_p1_L123(u: nat -> Rat.rat)
   ensures   Rat.add(Rat.sub(Rat.mul(Rat.of_int(49), u(0)), Rat.neg(Rat.mul(Rat.of_int(1), Rat.of_int(2357)))), Rat.sub(Rat.of_int(93), Rat.add(Rat.mul(Rat.of_int(49), u(0)), Rat.of_int(2450)))) == Rat.of_int(0)
 {
-  RatCastNeg(Rat.mul(Rat.of_int(1), Rat.of_int(2357)));
-  RatCastInjective(Rat.add(Rat.sub(Rat.mul(Rat.of_int(49), u(0)), Rat.neg(Rat.mul(Rat.of_int(1), Rat.of_int(2357)))), Rat.sub(Rat.of_int(93), Rat.add(Rat.mul(Rat.of_int(49), u(0)), Rat.of_int(2450)))), Rat.of_int(0));
+  RatCastNeg(Rat.mul(Rat.of_int(1), Rat.of_int(2357)));  // [ADDED]
+  RatCastInjective(Rat.add(Rat.sub(Rat.mul(Rat.of_int(49), u(0)), Rat.neg(Rat.mul(Rat.of_int(1), Rat.of_int(2357)))), Rat.sub(Rat.of_int(93), Rat.add(Rat.mul(Rat.of_int(49), u(0)), Rat.of_int(2450)))), Rat.of_int(0));  // [ADDED]
 }
 

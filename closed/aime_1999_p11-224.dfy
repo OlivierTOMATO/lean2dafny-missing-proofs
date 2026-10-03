@@ -18,6 +18,6 @@ lemma {:induction false} vc_aime_1999_p11_L224(m: Rat.rat)
   requires 0 <= 35
   ensures   2.0 * Real.sin(2.5 * Real.pi() / 180.0) * Real.sum(IccN(1, 35), ((k: nat) => Real.sin(5.0 * (k as real) * Real.pi() / 180.0))) == Real.sum(IccN(1, 35), ((v_0_0_0_6_k: nat) => 2.0 * Real.sin(2.5 * Real.pi() / 180.0) * Real.sin(5.0 * (v_0_0_0_6_k as real) * Real.pi() / 180.0)))
 {
-  FinsetMulSumPointwise(IccN(1, 35), ((k: nat) => Real.sin(5.0 * (k as real) * Real.pi() / 180.0)), ((v_0_0_0_6_k: nat) => 2.0 * Real.sin(2.5 * Real.pi() / 180.0) * Real.sin(5.0 * (v_0_0_0_6_k as real) * Real.pi() / 180.0)), 2.0 * Real.sin(2.5 * Real.pi() / 180.0));  // K1: Finset.mul_sum at Lean's instance (exec 68 cite)
+  FinsetMulSumPointwise(IccN(1, 35), ((k: nat) => Real.sin(5.0 * (k as real) * Real.pi() / 180.0)), ((v_0_0_0_6_k: nat) => 2.0 * Real.sin(2.5 * Real.pi() / 180.0) * Real.sin(5.0 * (v_0_0_0_6_k as real) * Real.pi() / 180.0)), 2.0 * Real.sin(2.5 * Real.pi() / 180.0));  // K1: Finset.mul_sum at Lean's instance (exec 68 cite)  // [ADDED]
 }
 

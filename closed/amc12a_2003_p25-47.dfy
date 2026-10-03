@@ -26,6 +26,6 @@ lemma {:induction false} vc_amc12a_2003_p25_L47(a: real, b: real, f: real -> rea
   requires exists x_37: real :: Real.sqrt(a * (x_37 * x_37) + b * x_37) == 2.0
   ensures   exists x_39: real :: Real.sqrt(a * (x_39 * x_39) + b * x_39) == 0.0 - 2.0
 {
-  forall t: real ensures 0.0 <= Real.sqrt(t) { RealSqrtNonneg(t); }  // K5: Mathlib Real.sqrt_nonneg (named in Lean simp only set, line 15; used by nlinarith)
+  forall t: real ensures 0.0 <= Real.sqrt(t) { RealSqrtNonneg(t); }  // K5: Mathlib Real.sqrt_nonneg (named in Lean simp only set, line 15; used by nlinarith)  // [ADDED]
 }
 
