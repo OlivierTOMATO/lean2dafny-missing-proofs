@@ -1,37 +1,38 @@
-// CLOSED LEMMA for failing line numbertheory_2pownm1prime_nprime-284 (theorem numbertheory_2pownm1prime_nprime, Dafny line 284, OOR)
-// closes with: K3 (locality) — single
-// added: only NatDvd(m,n) and the destructuring branch disjunction kept
-// Dafny: finished with 2 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_044/numbertheory_2pownm1prime_nprime-284/K3.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line numbertheory_2pownm1prime_nprime-284: theorem numbertheory_2pownm1prime_nprime, Dafny line 284 (OOR: Verification out of resource (numbertheory_2pownm1prime_nprime))
+// failing Dafny line: assert exists k: nat :: (n) == (m) * k by {
+// Lean step: h₁₁
+// hypotheses: 23 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// not closed: tried H0=failed, K3=failed; this file is the honest base attempt
+// Dafny: finished with 9 verified, 2 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Line lemma for failing line 284 of numbertheory_2pownm1prime_nprime (OOR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "../../../../../wt_integ5/out/numbertheory_2pownm1prime_nprime.dfy"
-
-// ========================================================================================
-// FAILING LINE 284 (OOR) in numbertheory_2pownm1prime_nprime: Verification out of resource (numbertheory_2pownm1prime_nprime)
-//   dafny |             assert exists k: nat :: (n) == (m) * k by {  // the ∃ of `m ∣ n` (Dvd.dvd unfolded)
-//   statement kind: have / step assertion
-// inside Lean have h₁₁, Lean lines 71-79:
-//   lean  |     have h₁₁ : 2 ^ m - 1 ∣ 2 ^ n - 1 := by
-//   lean  |       have h₁₁₁ : m ∣ n := h₆
-//   lean  |       obtain ⟨k, hk⟩ := h₁₁₁
-//   lean  |       rw [hk]
-//   lean  |       have h₁₁₂ : 2 ^ m - 1 ∣ 2 ^ (m * k) - 1 := by
-//   lean  |         have h₁₁₃ : 2 ^ m - 1 ∣ 2 ^ (m * k) - 1 := by
-//   lean  |           simpa [pow_mul] using nat_sub_dvd_pow_sub_pow _ 1 k
-//   lean  |         exact h₁₁₃
-//   lean  |       simpa [pow_mul, mul_comm] using h₁₁₂
-
-// 1 path(s) merged (joined); 23 shared facts; 1 distinct path conditions
-// AUGMENTATION K3: locality: only h₁₁₁ and the destructuring branch fact
-
+include "../dafny/numbertheory_2pownm1prime_nprime.dfy"
 lemma {:induction false} vc_numbertheory_2pownm1prime_nprime_L284(k_1_0_0_2_2_0: int, k_1_0_0_2_2_3: int, m_1_0_0_1_2_5: int, m_1_0_0_2: nat, m_1_0_0_3: nat, m_1_0_0_5: int, m_1_0_0_5_0: nat, m_1_0_0_6: nat, n: nat)
+  requires 0 <= n
+  requires 0 <= m_1_0_0_1_2_5
+  requires 0 <= m_1_0_0_5
+  requires 0 <= k_1_0_0_2_2_3
+  requires 0 < n
+  requires prime(tsub(Int.pow(2, n), 1))
+  requires forall n0: nat :: 0 < n0 && prime(tsub(Int.pow(2, n0), 1)) && 0 <= n0 && n0 < n ==> prime(n0)
+  requires n >= 2
+  requires !prime(n)
+  requires ((0 <= m_1_0_0_2) && (((NatDvd(m_1_0_0_2, n)) && ((m_1_0_0_2 != 1) || (m_1_0_0_2 == 1))) || (!NatDvd(m_1_0_0_2, n)))) || (m_1_0_0_2 < 0)
+  requires exists m_1_0_0_1: nat :: NatDvd(m_1_0_0_1, n) && m_1_0_0_1 != 1 && m_1_0_0_1 != n
+  requires ((0 <= m_1_0_0_3) && (((NatDvd(m_1_0_0_3, n)) && ((m_1_0_0_3 != 1) || (m_1_0_0_3 == 1))) || (!NatDvd(m_1_0_0_3, n)))) || (m_1_0_0_3 < 0)
+  requires exists m_1_0_0_4: nat :: NatDvd(m_1_0_0_4, n) && m_1_0_0_4 != 1 && m_1_0_0_4 != n
+  requires ((0 <= m_1_0_0_6) && (((NatDvd(m_1_0_0_6, n)) && ((m_1_0_0_6 != 1) || (m_1_0_0_6 == 1))) || (!NatDvd(m_1_0_0_6, n)))) || (m_1_0_0_6 < 0)
+  requires (0 <= 0 && NatDvd(0, n) && 0 != 1 && 0 != n) || (0 <= 0 && NatDvd(0, n) && 0 != 1 && 0 != n) || (exists as_m1_0_0_0_1_0_0_0: nat :: NatDvd(as_m1_0_0_0_1_0_0_0, n) && as_m1_0_0_0_1_0_0_0 != 1 && as_m1_0_0_0_1_0_0_0 != n)
+  requires 0 <= m_1_0_0_5_0
   requires NatDvd(m_1_0_0_5_0, n)
+  requires m_1_0_0_5_0 != 1
+  requires m_1_0_0_5_0 != n
+  requires ((NatDvd(m_1_0_0_5_0, n)) && (((NatDvd(m_1_0_0_5_0, n)) && (m_1_0_0_5_0 != 1)) || (!(NatDvd(m_1_0_0_5_0, n) && m_1_0_0_5_0 != 1)))) || ((!NatDvd(m_1_0_0_5_0, n)) && (((NatDvd(m_1_0_0_5_0, n)) && (m_1_0_0_5_0 != 1)) || (!(NatDvd(m_1_0_0_5_0, n) && m_1_0_0_5_0 != 1))))
+  requires m_1_0_0_5_0 >= 2
+  requires m_1_0_0_5_0 < n
   requires ((m_1_0_0_5_0 == 0) && (n == m_1_0_0_5_0 * 0) && ((0 <= k_1_0_0_2_2_0) || (k_1_0_0_2_2_0 < 0))) || ((m_1_0_0_5_0 != 0) && (n == m_1_0_0_5_0 * (n / m_1_0_0_5_0)) && ((0 <= k_1_0_0_2_2_0) || (k_1_0_0_2_2_0 < 0)))
-  ensures  exists k_1_0_0_2_2_1: nat :: n == m_1_0_0_5_0 * k_1_0_0_2_2_1
+  ensures   exists k_1_0_0_2_2_1: nat :: n == m_1_0_0_5_0 * k_1_0_0_2_2_1
 {
-
+              if (m_1_0_0_1_2_5) == 0 { assert (n) == (m_1_0_0_1_2_5) * 0; }
+              else { assert (n) == (m_1_0_0_1_2_5) * ((n) / (m_1_0_0_1_2_5)); }
 }
+

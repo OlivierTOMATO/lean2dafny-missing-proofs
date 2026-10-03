@@ -1,43 +1,34 @@
-// CLOSED LEMMA for failing line imo_1973_p3-564 (theorem imo_1973_p3, Dafny line 564, ERR)
-// closes with: K3 (locality) — single
-// added: kept 25/37 requires: Lean nlinarith (exec 417) before-state hyps h_y (Q=0), h_y_le_neg_2 (y<=-2) + the named sq_nonneg facts, certificate product pieces and the certificate identity; dropped path copies y_2/y_2_0/y_2_3, existentials, h₂ (not used by the certificate), y>=2-branch disjunct, cast facts
-// Dafny: finished with 2 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_035/imo_1973_p3-564/K3.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line imo_1973_p3-564: theorem imo_1973_p3, Dafny line 564 (ERR: assertion might not hold)
+// failing Dafny line: assert ((4.0 / 5.0) <= ((a * a) + (b * b))) by {
+// Lean step: nlinarith [sq_nonneg (y + 2), sq_nonneg (y - 2), sq_nonneg a, sq_nonneg (b - 2),
+// hypotheses: 37 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// not closed: tried H0=failed, K3=oor; this file is the honest base attempt
+// Dafny: finished with 24 verified, 3 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Line lemma for failing line 564 of imo_1973_p3 (ERR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "../../../../../wt_integ5/out/imo_1973_p3.dfy"
-
-// ========================================================================================
-// FAILING LINE 564 (ERR) in imo_1973_p3: assertion might not hold
-//   dafny |       assert ((4.0 / 5.0) <= ((a * a) + (b * b))) by {  // sub-goal of `nlinarith` (Lean state) // @tac 2449-2614
-//   statement kind: sub-goal (Lean tactic state)
-//   @tac 2449-2614 | Lean: nlinarith [sq_nonneg (y + 2), sq_nonneg (y - 2), sq_nonneg a, sq_nonneg (b - 2),
-//        before-goal ⊢ (4 / 5 : ℝ) ≤ a ^ (2 : ℕ) + b ^ (2 : ℕ)
-//        before-goal ⊢ (5 : ℝ) * (1 : ℝ) ^ (2 : ℕ) = (5 : ℝ)
-// inside Lean have h₃, Lean lines 63-68:
-//   lean  |   have h₃ : a ^ 2 + b ^ 2 ≥ 4 / 5 := by
-//   lean  |     obtain ⟨y, h_y, h_y_ineq⟩ := h₁
-//   lean  |     have h_y_ineq' := h_y_ineq
-//   lean  |     cases' h_y_ineq' with h_y_ge_2 h_y_le_neg_2 <;> simp_all
-//   lean  |     <;> nlinarith [sq_nonneg (y + 2), sq_nonneg (y - 2), sq_nonneg a, sq_nonneg (b - 2),
-//   lean  |       sq_nonneg (a - b * 2), sq_nonneg (a + b * 2), sq_nonneg (a ^ 2 - 4 * (b - 2))]
-
-// 1 path(s) merged (joined); 37 shared facts; 1 distinct path conditions
-// AUGMENTATION: K3 locality: 25/37 requires kept (Lean nlinarith exec 417 before-state hyps h_y, h_y_le_neg_2 + its certificate facts); sufficiency test
+include "../dafny/imo_1973_p3.dfy"
 lemma {:induction false} vc_imo_1973_p3_L564(a: real, b: real, y_2: real, y_2_0: real, y_2_2: real, y_2_3: real)
+  requires exists x_1: real :: x_1 * x_1 * x_1 * x_1 + a * (x_1 * x_1 * x_1) + b * (x_1 * x_1) + a * x_1 + 1.0 == 0.0
+  requires ((y_2 * y_2 + a * y_2 + (b - 2.0) == 0.0) && ((2.0 > y_2) || (y_2 >= 2.0))) || (y_2 * y_2 + a * y_2 + (b - 2.0) != 0.0)
+  requires exists y_1: real :: y_1 * y_1 + a * y_1 + (b - 2.0) == 0.0 && (y_1 >= 2.0 || y_1 <= 0.0 - 2.0)
+  requires a * a - 4.0 * (b - 2.0) >= 0.0
+  requires ((y_2_0 * y_2_0 + a * y_2_0 + (b - 2.0) == 0.0) && ((2.0 > y_2_0) || (y_2_0 >= 2.0))) || (y_2_0 * y_2_0 + a * y_2_0 + (b - 2.0) != 0.0)
+  requires exists y_2_1: real :: y_2_1 * y_2_1 + a * y_2_1 + (b - 2.0) == 0.0 && (y_2_1 >= 2.0 || y_2_1 <= 0.0 - 2.0)
+  requires ((y_2_3 * y_2_3 + a * y_2_3 + (b - 2.0) == 0.0) && ((2.0 > y_2_3) || (y_2_3 >= 2.0))) || (y_2_3 * y_2_3 + a * y_2_3 + (b - 2.0) != 0.0)
+  requires (true && 0.0 * 0.0 + a * 0.0 + (b - 2.0) == 0.0 && (0.0 >= 2.0 || 0.0 <= 0.0 - 2.0)) || (exists as_y2_0_2_0: real :: as_y2_0_2_0 * as_y2_0_2_0 + a * as_y2_0_2_0 + (b - 2.0) == 0.0 && (as_y2_0_2_0 >= 2.0 || as_y2_0_2_0 <= 0.0 - 2.0))
   requires y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0) == 0.0
   requires y_2_2 >= 2.0 || y_2_2 <= 0.0 - 2.0
   requires (2.0 > y_2_2) || (y_2_2 >= 2.0)
+  requires ((y_2_2 >= 2.0) && (4.0 * (b - 2.0) <= a * a) && (2.0 <= y_2_2) && (5.0 != 0.0) && (4.0 / 5.0 <= a * a + b * b) && (a * a + b * b >= 4.0 / 5.0)) || (2.0 > y_2_2)
   requires y_2_2 <= 0.0 - 2.0
+  requires 4.0 * (b - 2.0) <= a * a
   requires 0.0 <= (y_2_2 + 2.0) * (y_2_2 + 2.0)
   requires 0.0 <= 1.0 * b * (1.0 * b)
   requires 0.0 <= (a - b * 2.0) * (a - b * 2.0)
   requires 0.0 <= (a + b * 2.0) * (a + b * 2.0)
   requires 0.0 <= (y_2_2 - 2.0) * (y_2_2 - 2.0)
   requires 0.0 <= y_2_2 * y_2_2
+  requires (1 as real) == 1.0
+  requires (0 as real) == 0.0
   requires ((5.0 * (1.0 * a * (1.0 * a)) + 5.0 * (1.0 * b * (1.0 * b)) - 1.0 * 4.0 < 0.0) && (5.0 * (1.0 * a * (1.0 * a)) + 5.0 * (1.0 * b * (1.0 * b)) - 1.0 * 4.0 < 0.0) && (5.0 * (1.0 * a * (1.0 * a)) + 5.0 * (1.0 * b * (1.0 * b)) - 1.0 * 4.0 <= 0.0)) || (0.0 <= 5.0 * (1.0 * a * (1.0 * a)) + 5.0 * (1.0 * b * (1.0 * b)) - 1.0 * 4.0)
   requires ((0.0 <= (y_2_2 + 2.0) * (y_2_2 + 2.0)) && (0.0 <= (y_2_2 + 2.0) * (y_2_2 + 2.0) * ((y_2_2 + 2.0) * (y_2_2 + 2.0))) && ((0.0 <= (y_2_2 + 2.0) * (y_2_2 + 2.0)) || ((y_2_2 + 2.0) * (y_2_2 + 2.0) < 0.0))) || (((y_2_2 + 2.0) * (y_2_2 + 2.0) < 0.0) && ((0.0 <= (y_2_2 + 2.0) * (y_2_2 + 2.0)) || ((y_2_2 + 2.0) * (y_2_2 + 2.0) < 0.0)))
   requires ((0.0 <= (y_2_2 + 2.0) * (y_2_2 + 2.0)) && (0.0 <= 1.0 * b * (1.0 * b)) && (0.0 <= (y_2_2 + 2.0) * (y_2_2 + 2.0) * (1.0 * b * (1.0 * b)))) || (!(0.0 <= (y_2_2 + 2.0) * (y_2_2 + 2.0) && 0.0 <= 1.0 * b * (1.0 * b)))
@@ -53,7 +44,75 @@ lemma {:induction false} vc_imo_1973_p3_L564(a: real, b: real, y_2: real, y_2_0:
   requires ((0.0 <= y_2_2 * y_2_2) && (5.0 * (1.0 * a * (1.0 * a)) + 5.0 * (1.0 * b * (1.0 * b)) - 1.0 * 4.0 <= 0.0) && (y_2_2 * y_2_2 * (5.0 * (1.0 * a * (1.0 * a)) + 5.0 * (1.0 * b * (1.0 * b)) - 1.0 * 4.0) <= 0.0)) || (!(0.0 <= y_2_2 * y_2_2 && 5.0 * (1.0 * a * (1.0 * a)) + 5.0 * (1.0 * b * (1.0 * b)) - 1.0 * 4.0 <= 0.0))
   requires ((y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0) == 0.0) && ((y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0)) * (y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0)) == 0.0)) || (y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0) != 0.0)
   requires 0.0 - 1528.0 * ((y_2_2 + 2.0) * (y_2_2 + 2.0)) + (0.0 - 960.0 * (y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0))) + 992.0 * (y_2_2 - (0.0 - 2.0)) + 8.0 * (5.0 * (1.0 * a * (1.0 * a)) + 5.0 * (1.0 * b * (1.0 * b)) - 1.0 * 4.0) + (0.0 - 80.0 * ((y_2_2 + 2.0) * (y_2_2 + 2.0) * ((y_2_2 + 2.0) * (y_2_2 + 2.0)))) + (0.0 - 50.0 * ((y_2_2 + 2.0) * (y_2_2 + 2.0) * (1.0 * b * (1.0 * b)))) + (0.0 - 5.0 * ((y_2_2 + 2.0) * (y_2_2 + 2.0) * ((a - b * 2.0) * (a - b * 2.0)))) + 80.0 * ((y_2_2 + 2.0) * (y_2_2 + 2.0) * (y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0))) + 640.0 * ((y_2_2 + 2.0) * (y_2_2 + 2.0) * (y_2_2 - (0.0 - 2.0))) + (0.0 - 5.0 * ((a + b * 2.0) * (a + b * 2.0) * ((y_2_2 - 2.0) * (y_2_2 - 2.0)))) + 200.0 * (1.0 * b * (1.0 * b) * (y_2_2 - (0.0 - 2.0))) + 80.0 * ((y_2_2 - 2.0) * (y_2_2 - 2.0) * (y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0))) + 18.0 * (y_2_2 * y_2_2 * (5.0 * (1.0 * a * (1.0 * a)) + 5.0 * (1.0 * b * (1.0 * b)) - 1.0 * 4.0)) + (0.0 - 80.0 * ((y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0)) * (y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0)))) == 0.0
-  ensures  4.0 / 5.0 <= a * a + b * b
+  ensures   4.0 / 5.0 <= a * a + b * b
 {
-
+        SqNonneg((y_2 + 2.0));  // cite: sq_nonneg
+        SqNonneg((1.0 * b));  // cite: sq_nonneg
+        SqNonneg((a - (b * 2.0)));  // cite: sq_nonneg
+        SqNonneg((a + (b * 2.0)));  // cite: sq_nonneg
+        SqNonneg((y_2 - 2.0));  // cite: sq_nonneg
+        SqNonneg(y_2);  // cite: sq_nonneg
+        NatCastOne();  // cite: Nat.cast_one [applied by the tactic, not named in it]
+        NatCastZero();  // cite: Nat.cast_zero [applied by the tactic, not named in it]
+        if (((((5.0 * ((1.0 * a) * (1.0 * a))) + (5.0 * ((1.0 * b) * (1.0 * b)))) - (1.0 * 4.0))) < (0.0)) { LeOfLt((((5.0 * ((1.0 * a) * (1.0 * a))) + (5.0 * ((1.0 * b) * (1.0 * b)))) - (1.0 * 4.0)), 0.0); }  // cite: le_of_lt [applied by the tactic, not named in it]
+        // NOT APPLIED `sq_nonneg a`, `sq_nonneg ( b - 2 )`, `sq_nonneg ( a ^ 2 - 4 * ( b - 2 ) )`: named here, but no application Lean recorded at this tactic has their arguments (4 of the 7 named instances match a recorded application)
+        // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 2449-2614 exec 417)
+        // UNCITED-APPLIED Linarith.mul_nonpos: certificate piece `(1528 : ℝ) * -(y + (2 : ℝ)) ^ (2 : ℕ) ≤ (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: (0.0 <= ((y + 2.0) * (y + 2.0))); (1528.0 > 0.0)
+        SqNonneg((y_2 + 2.0)); assert (0.0 <= ((y_2 + 2.0) * (y_2 + 2.0)));  // cert: sq_nonneg
+        // UNCITED-APPLIED Linarith.mul_eq: certificate piece `(960 : ℝ) * -(y ^ (2 : ℕ) + a * y + (b - (2 : ℝ))) = (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: (-((((y * y) + (a * y)) + (b - 2.0))) == 0.0); (960.0 > 0.0)
+        // UNCITED-APPLIED Linarith.mul_nonpos: certificate piece `(992 : ℝ) * (y - (-2 : ℝ)) ≤ (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: ((y - -(2.0)) <= 0.0); (992.0 > 0.0)
+        // UNCITED-APPLIED Linarith.mul_neg: certificate piece `(8 : ℝ) * ((5 : ℝ) * ((1 : ℝ) * a) ^ (2 : ℕ) + (5 : ℝ) * ((1 : ℝ) * b) ^ (2 : ℕ) - (1 : ℝ) * (4 : ℝ)) < (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: ((((5.0 * ((1.0 * a) * (1.0 * a))) + (5.0 * ((1.0 * b) * (1.0 * b)))) - (1.0 * 4.0)) < 0.0); (8.0 > 0.0)
+        // UNCITED-APPLIED Linarith.mul_neg: certificate piece `(5 : ℝ) * (a ^ (2 : ℕ) + b ^ (2 : ℕ) - (4 / 5 : ℝ)) < (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: ((((a * a) + (b * b)) - (4.0 / 5.0)) < 0.0); (5.0 > 0.0)
+        // UNCITED-APPLIED Linarith.mul_nonpos: certificate piece `(80 : ℝ) * -(-(y + (2 : ℝ)) ^ (2 : ℕ) * -(y + (2 : ℝ)) ^ (2 : ℕ)) ≤ (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: (0.0 <= (((y + 2.0) * (y + 2.0)) * ((y + 2.0) * (y + 2.0)))); (80.0 > 0.0)
+        if (0.0 <= ((y_2 + 2.0) * (y_2 + 2.0))) { cert_piece_18(a, b, y_2); }  // cert: mul_nonneg_of_nonpos_of_nonpos (square of a compound term: Z3 may not carry it through the lemma binding)
+        // UNCITED-APPLIED Linarith.mul_nonpos: certificate piece `(50 : ℝ) * -(-(y + (2 : ℝ)) ^ (2 : ℕ) * -((1 : ℝ) * b) ^ (2 : ℕ)) ≤ (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: (0.0 <= (((y + 2.0) * (y + 2.0)) * ((1.0 * b) * (1.0 * b)))); (50.0 > 0.0)
+        if (0.0 <= ((y_2 + 2.0) * (y_2 + 2.0))) && (0.0 <= ((1.0 * b) * (1.0 * b))) { cert_piece_19(a, b, y_2); }  // cert: mul_nonneg_of_nonpos_of_nonpos
+        SqNonneg((1.0 * b)); assert (0.0 <= ((1.0 * b) * (1.0 * b)));  // cert: sq_nonneg
+        // UNCITED-APPLIED Linarith.mul_nonpos: certificate piece `(5 : ℝ) * -(-(y + (2 : ℝ)) ^ (2 : ℕ) * -(a - b * (2 : ℝ)) ^ (2 : ℕ)) ≤ (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: (0.0 <= (((y + 2.0) * (y + 2.0)) * ((a - (b * 2.0)) * (a - (b * 2.0))))); (5.0 > 0.0)
+        if (0.0 <= ((y_2 + 2.0) * (y_2 + 2.0))) && (0.0 <= ((a - (b * 2.0)) * (a - (b * 2.0)))) { cert_piece_20(a, b, y_2); }  // cert: mul_nonneg_of_nonpos_of_nonpos
+        SqNonneg((a - (b * 2.0))); assert (0.0 <= ((a - (b * 2.0)) * (a - (b * 2.0))));  // cert: sq_nonneg
+        // UNCITED-APPLIED Linarith.mul_eq: certificate piece `(80 : ℝ) * -(-(y + (2 : ℝ)) ^ (2 : ℕ) * (y ^ (2 : ℕ) + a * y + (b - (2 : ℝ)))) = (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: ((((y + 2.0) * (y + 2.0)) * (((y * y) + (a * y)) + (b - 2.0))) == 0.0); (80.0 > 0.0)
+        if (0.0 <= ((y_2 + 2.0) * (y_2 + 2.0))) && ((((y_2 * y_2) + (a * y_2)) + (b - 2.0)) == 0.0) { assert (-((((y_2 + 2.0) * (y_2 + 2.0)) * (((y_2 * y_2) + (a * y_2)) + (b - 2.0)))) == 0.0); }  // cert: Linarith.mul_zero_eq
+        // UNCITED-APPLIED Linarith.mul_nonpos: certificate piece `(640 : ℝ) * -(-(y + (2 : ℝ)) ^ (2 : ℕ) * (y - (-2 : ℝ))) ≤ (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: ((((y + 2.0) * (y + 2.0)) * (y - -(2.0))) <= 0.0); (640.0 > 0.0)
+        if (0.0 <= ((y_2 + 2.0) * (y_2 + 2.0))) && ((y_2 - -(2.0)) <= 0.0) { cert_piece_21(a, b, y_2); }  // cert: mul_nonneg_of_nonpos_of_nonpos
+        // UNCITED-APPLIED Linarith.mul_nonpos: certificate piece `(5 : ℝ) * -(-(a + b * (2 : ℝ)) ^ (2 : ℕ) * -(y - (2 : ℝ)) ^ (2 : ℕ)) ≤ (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: (0.0 <= (((a + (b * 2.0)) * (a + (b * 2.0))) * ((y - 2.0) * (y - 2.0)))); (5.0 > 0.0)
+        if (0.0 <= ((a + (b * 2.0)) * (a + (b * 2.0)))) && (0.0 <= ((y_2 - 2.0) * (y_2 - 2.0))) { cert_piece_22(a, b, y_2); }  // cert: mul_nonneg_of_nonpos_of_nonpos
+        SqNonneg((a + (b * 2.0))); assert (0.0 <= ((a + (b * 2.0)) * (a + (b * 2.0))));  // cert: sq_nonneg
+        SqNonneg((y_2 - 2.0)); assert (0.0 <= ((y_2 - 2.0) * (y_2 - 2.0)));  // cert: sq_nonneg
+        // UNCITED-APPLIED Linarith.mul_nonpos: certificate piece `(200 : ℝ) * -(-((1 : ℝ) * b) ^ (2 : ℕ) * (y - (-2 : ℝ))) ≤ (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: ((((1.0 * b) * (1.0 * b)) * (y - -(2.0))) <= 0.0); (200.0 > 0.0)
+        if (0.0 <= ((1.0 * b) * (1.0 * b))) && ((y_2 - -(2.0)) <= 0.0) { cert_piece_23(a, b, y_2); }  // cert: mul_nonneg_of_nonpos_of_nonpos
+        // UNCITED-APPLIED Linarith.mul_eq: certificate piece `(80 : ℝ) * -(-(y - (2 : ℝ)) ^ (2 : ℕ) * (y ^ (2 : ℕ) + a * y + (b - (2 : ℝ)))) = (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: ((((y - 2.0) * (y - 2.0)) * (((y * y) + (a * y)) + (b - 2.0))) == 0.0); (80.0 > 0.0)
+        if (0.0 <= ((y_2 - 2.0) * (y_2 - 2.0))) && ((((y_2 * y_2) + (a * y_2)) + (b - 2.0)) == 0.0) { assert (-((((y_2 - 2.0) * (y_2 - 2.0)) * (((y_2 * y_2) + (a * y_2)) + (b - 2.0)))) == 0.0); }  // cert: Linarith.mul_zero_eq
+        // UNCITED-APPLIED Linarith.mul_nonpos: certificate piece `(18 : ℝ) * -(-y ^ (2 : ℕ) * ((5 : ℝ) * ((1 : ℝ) * a) ^ (2 : ℕ) + (5 : ℝ) * ((1 : ℝ) * b) ^ (2 : ℕ) - (1 : ℝ) * (4 : ℝ))…` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: (((y * y) * (((5.0 * ((1.0 * a) * (1.0 * a))) + (5.0 * ((1.0 * b) * (1.0 * b)))) - (1.0 * 4.0))) <= 0.0); (18.0 > 0.0)
+        if (0.0 <= (y_2 * y_2)) && ((((5.0 * ((1.0 * a) * (1.0 * a))) + (5.0 * ((1.0 * b) * (1.0 * b)))) - (1.0 * 4.0)) <= 0.0) { cert_piece_24(a, b, y_2); }  // cert: mul_nonneg_of_nonpos_of_nonpos
+        SqNonneg(y_2); assert (0.0 <= (y_2 * y_2));  // cert: sq_nonneg
+        // UNCITED-APPLIED Linarith.mul_eq: certificate piece `(80 : ℝ) * -((y ^ (2 : ℕ) + a * y + (b - (2 : ℝ))) * (y ^ (2 : ℕ) + a * y + (b - (2 : ℝ)))) = (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: (-(((((y * y) + (a * y)) + (b - 2.0)) * (((y * y) + (a * y)) + (b - 2.0)))) == 0.0); (80.0 > 0.0)
+        if ((((y_2 * y_2) + (a * y_2)) + (b - 2.0)) == 0.0) { assert (((((y_2 * y_2) + (a * y_2)) + (b - 2.0)) * (((y_2 * y_2) + (a * y_2)) + (b - 2.0))) == 0.0); }  // cert: Linarith.zero_mul_eq
+        // UNCITED-APPLIED add_lt_of_neg_of_le ×7: certificate sums not stated: partial sums (subterms of a larger recorded sum of this certificate), e.g. `(1528 : ℝ) * -(y + (2 : ℝ)) ^ (2 : ℕ) + (960 : ℝ) * -(y ^ (2 : ℕ) + a * y + (b - (2 : ℝ))) + (992 : ℝ) * (y - (-2 : ℝ))…`
+        // UNCITED-APPLIED Linarith.lt_of_lt_of_eq ×2: certificate sums not stated: partial sums (subterms of a larger recorded sum of this certificate), e.g. `(1528 : ℝ) * -(y + (2 : ℝ)) ^ (2 : ℕ) + (960 : ℝ) * -(y ^ (2 : ℕ) + a * y + (b - (2 : ℝ))) + (992 : ℝ) * (y - (-2 : ℝ))…`
+        // UNCITED-APPLIED add_lt_of_le_of_neg: certificate sum `(1528 : ℝ) * -(y + (2 : ℝ)) ^ (2 : ℕ) + (960 : ℝ) * -(y ^ (2 : ℕ) + a * y + (b - (2 : ℝ))) + (992 : ℝ) * (y - (-2 : ℝ))…` not stated: a partial sum (a subterm of a larger recorded sum of this certificate)
+        // UNCITED-APPLIED add_nonpos: certificate sum `(1528 : ℝ) * -(y + (2 : ℝ)) ^ (2 : ℕ) + (960 : ℝ) * -(y ^ (2 : ℕ) + a * y + (b - (2 : ℝ))) + (992 : ℝ) * (y - (-2 : ℝ))…` not stated: a partial sum (a subterm of a larger recorded sum of this certificate)
+        // UNCITED-APPLIED Linarith.le_of_le_of_eq: certificate sum `(1528 : ℝ) * -(y + (2 : ℝ)) ^ (2 : ℕ) + (960 : ℝ) * -(y ^ (2 : ℕ) + a * y + (b - (2 : ℝ))) ≤ (0 : ℝ)` not stated: a partial sum (a subterm of a larger recorded sum of this certificate)
+        cert_identity_25(a, b, y_2);  // cert: Linarith.lt_of_lt_of_eq
+        // UNCITED-APPLIED internal ×367 [exec 417 2449-2614]: applications made inside the tactic's own automation, not stated — neg_nonpos_of_nonneg ×8, mul_nonneg_of_nonpos_of_nonpos ×7, neg_eq_zero ×4, CancelDenoms.pow_subst ×2, le_of_not_gt ×1, add_lt_of_neg_of_le ×1, add_lt_of_le_of_neg ×1, add_nonpos ×1, sub_nonpos_of_le ×1, CancelDenoms.sub_subst ×1, CancelDenoms.add_subst ×1, CancelDenoms.div_subst ×1, sub_neg_of_lt ×1; machinery/glue: Mathlib.Tactic.Ring.mul_congr ×8, Mathlib.Tactic.Ring.cast_pos ×8, Mathlib.Meta.NormNum.isNat_ofNat ×8, Mathlib.Tactic.Ring.add_pf_add_zero ×8 (+54 more heads, ×305) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1], Nat.cast_zero [Lean recorded ×1], le_of_lt [Lean recorded ×1], sq_nonneg [Lean recorded ×6])
+        // UNCITED-APPLIED internal ×5 [exec 424 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×5 [exec 425 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×5 [exec 426 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×9 [exec 418 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×3, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+3 more heads, ×3) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×9 [exec 419 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×3, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+3 more heads, ×3) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×14 [exec 420 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.IsInt.to_isNat ×2, Mathlib.Meta.NormNum.IsRat.to_isInt ×2, Mathlib.Meta.NormNum.IsNat.to_isRat ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+6 more heads, ×6) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×6 [exec 421 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×5 [exec 422 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×5 [exec 427 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×5 [exec 428 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×5 [exec 429 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×5 [exec 430 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×5 [exec 431 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×5 [exec 432 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×5 [exec 433 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×5 [exec 434 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×5 [exec 435 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×5 [exec 436 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+        // UNCITED-APPLIED internal ×5 [exec 437 2449-2614]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
 }
+

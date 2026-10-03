@@ -1,13 +1,16 @@
-// CLOSED LEMMA for failing line amc12a_2021_p14-121 (theorem amc12a_2021_p14, Dafny line 121, ERR)
-// closes with: K2 (computation) — single
-// added: libpow variant: Real.pow and Int.pow opaque, recursive ensures removed, explicit PowZero/PowSucc lemmas (work/shard_018/libpow)
-// Dafny: finished with 10 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_018/amc12a_2021_p14-121/K2pow.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line amc12a_2021_p14-121: theorem amc12a_2021_p14, Dafny line 121 (ERR: assertion might not hold)
+// failing Dafny line: assert (Real.div((((k as real) * (k as real)) * Real.log(3.0)), ((k as real) * Real.log(5.0))) == ((k as real) * Real.div(Real.log(3.0), Real.log(5.0)))) by {
+// Lean step: have h₅₅₁ : (k : ℝ) ≠ 0 := by
+// hypotheses: 16 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: S_split2 — 
+// Dafny: finished with 22 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// shard_018 ablation variant: K2pow
-// base: /home/changjie/lean2dafny_research/agents_tac/classify5/line_lemmas/ERR/amc12a_2021_p14/L121.dfy (main lemma only; side checks dropped)
-include "/home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_018/libpow/out/amc12a_2021_p14.dfy"
+include "../dafny/amc12a_2021_p14.dfy"
+lemma s018_Step121(k: nat)
+  requires (k as real) != 0.0
+  requires (k as real) * (k as real) * Real.log(3.0) * Real.log(5.0) == (k as real) * Real.log(3.0) * ((k as real) * Real.log(5.0))
+  ensures Real.div((k as real) * (k as real) * Real.log(3.0), (k as real) * Real.log(5.0)) == (k as real) * Real.div(Real.log(3.0), Real.log(5.0))
+{ }
 
 lemma {:induction false} vc_amc12a_2021_p14_L121(k_0_0: nat)
   requires 0 <= k_0_0
@@ -26,7 +29,27 @@ lemma {:induction false} vc_amc12a_2021_p14_L121(k_0_0: nat)
   requires (k_0_0 as real) != 0.0
   requires (k_0_0 as real) * (k_0_0 as real) * Real.log(3.0) * Real.log(5.0) == (k_0_0 as real) * Real.log(3.0) * ((k_0_0 as real) * Real.log(5.0))
   requires ((0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0))) || ((0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0)) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0)))) || ((0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0)) && ((k_0_0 as real) <= 0.0)) || ((0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0)) && ((k_0_0 as real) <= 0.0) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0)))) || ((0.0 < (k_0_0 as real)) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0))) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0))) || ((0.0 < (k_0_0 as real)) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0)))) || ((0.0 < (k_0_0 as real)) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0))) && ((k_0_0 as real) <= 0.0) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0))) || ((0.0 < (k_0_0 as real)) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0))) && ((k_0_0 as real) <= 0.0)) || (((k_0_0 as real) <= 0.0) && (0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0))) || (((k_0_0 as real) <= 0.0) && (0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0)) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0)))) || (((k_0_0 as real) <= 0.0) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0))) && (0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k_0_0 as real) * Real.log(5.0))) || (((k_0_0 as real) <= 0.0) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0))) && (0.0 < (k_0_0 as real))) || (((k_0_0 as real) <= 0.0) && (!(0.0 < (k_0_0 as real) && 0.0 < Real.log(5.0))))
-  ensures  Real.div((k_0_0 as real) * (k_0_0 as real) * Real.log(3.0), (k_0_0 as real) * Real.log(5.0)) == (k_0_0 as real) * Real.div(Real.log(3.0), Real.log(5.0))
+  ensures   Real.div((k_0_0 as real) * (k_0_0 as real) * Real.log(3.0), (k_0_0 as real) * Real.log(5.0)) == (k_0_0 as real) * Real.div(Real.log(3.0), Real.log(5.0))
 {
-
+  s018_Step121(k_0_0);
+            // have h₅₅₁ :  != 0  [type from Lean state]
+            assert ((k_0_0 as real) != 0.0) by { // @tac 2056-2094 // @tac 2056-2074
+              // [TACTIC: «_<;>_» at hk ⊢ <;> omega omega]
+              // [TACTIC: «Norm_num[_]At___» at hk ⊢]
+              // UNCITED-APPLIED internal ×1 [exec 539 2056-2074]: applications made inside the tactic's own automation, not stated — machinery/glue: congrArg ×1
+              assert ((1 <= k_0_0) && (k_0_0 <= 20));  // hypothesis hk after `norm_num` (Lean state) // @tac-hyp 2056-2074
+              assert !(k_0_0 == 0) by {  // sub-goal of `omega` (Lean state) // @tac 2089-2094
+                // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
+                // UNCITED-APPLIED internal ×32 [exec 548 2089-2094]: applications made inside the tactic's own automation, not stated — le_of_le_of_eq ×2, Int.sub_nonneg_of_le ×2, Int.sub_eq_zero_of_eq ×1; machinery/glue: Eq.symm ×5, Eq.trans ×4, Lean.Omega.Int.sub_congr ×3, Lean.Omega.LinearCombo.sub_eval ×3 (+9 more heads, ×12)
+              }
+            }
+            // [TACTIC: «_<;>_» [ h₅₅₁ ] field_simp [ h₅₅₁ ] <;> ring <;> field_simp [ h₅₅₁ ] field_simp [ h₅₅₁ ] <;> ring <;> norm_cast norm_cast norm_cast <;> simp_all [ Nat.cast_pow , Nat.cast_mul , Nat.cast_add , Nat.cast_one ] simp_all [ Nat.cast_pow , Nat.cast_mul , Nat.cast_add , Nat.cast_one ] simp_all [ Nat.cast_pow , Nat.cast_mul , Nat.cast_add , Nat.cast_one ] <;> field_simp [ h₅₅₁ ] field_simp [ h₅₅₁ ] <;> ring]
+            // [TACTIC: choice [ h₅₅₁ ] field_simp [ h₅₅₁ ]]
+            if (0.0 < ((k_0_0 as real))) && (0.0 < (Real.log(5.0))) { MulPos((k_0_0 as real), Real.log(5.0)); }  // cite: mul_pos [applied by the tactic, not named in it]
+            // `fieldSimp` step's recorded applications: the lemma applications Lean's proof term of this step is built from (no linarith run here) (Lean execution 2103-2126 exec 584)
+            if (0.0 < (k_0_0 as real)) && (0.0 < Real.log(5.0)) { cert_piece_1(k_0_0); }  // cert: mul_pos
+            // UNCITED-APPLIED internal ×13 [exec 584 2103-2126]: applications made inside the tactic's own automation, not stated — ne_of_gt ×2, mul_div_assoc' ×1, Mathlib.Meta.Positivity.log_pos_of_isNat ×1, div_mul_eq_mul_div ×1, Nat.cast_pos ×1, lt_of_lt_of_le ×1, Mathlib.Meta.Positivity.pos_of_isNat ×1; machinery/glue: congrArg ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2, Eq.trans ×1 (cited in this block, not counted here: mul_pos [Lean recorded ×1])
+            assert (((((k_0_0 as real) * (k_0_0 as real)) * Real.log(3.0)) * Real.log(5.0)) == (((k_0_0 as real) * Real.log(3.0)) * ((k_0_0 as real) * Real.log(5.0))));  // sub-goal of `ring` (Lean state) // @tac 2139-2143
+            // UNCITED-APPLIED internal ×56 [exec 597 2139-2143]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_mul ×6, Mathlib.Tactic.Ring.mul_add ×6, Mathlib.Tactic.Ring.mul_pf_left ×6, Mathlib.Tactic.Ring.mul_congr ×5 (+19 more heads, ×33)
 }
+

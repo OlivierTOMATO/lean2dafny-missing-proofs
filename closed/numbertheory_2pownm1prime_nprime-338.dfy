@@ -1,29 +1,41 @@
-// CLOSED LEMMA for failing line numbertheory_2pownm1prime_nprime-338 (theorem numbertheory_2pownm1prime_nprime, Dafny line 338, OOR)
-// closes with: K3 (locality) — single
-// added: no hypotheses at all
-// Dafny: finished with 3 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_044/numbertheory_2pownm1prime_nprime-338/K3.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line numbertheory_2pownm1prime_nprime-338: theorem numbertheory_2pownm1prime_nprime, Dafny line 338 (OOR: Verification out of resource (numbertheory_2pownm1prime_nprime))
+// failing Dafny line: assert (tsub((2 * 2), 1) == 3);
+// Lean step: norm_num
+// hypotheses: 29 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: own-lemma — nothing: the file's own proof body, hypotheses = facts in scope minus the goal and minus the block's own asserts
+// Dafny: finished with 17 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Line lemma for failing line 338 of numbertheory_2pownm1prime_nprime (OOR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "../../../../../wt_integ5/out/numbertheory_2pownm1prime_nprime.dfy"
-
-// ========================================================================================
-// FAILING LINE 338 (OOR) in numbertheory_2pownm1prime_nprime: Verification out of resource (numbertheory_2pownm1prime_nprime)
-//   dafny |               assert (tsub((2 * 2), 1) == 3); // @tac 3240-3248
-//   statement kind: have / step assertion
-//   @tac 3240-3248 | Lean: norm_num
-//        before-goal ⊢ (2 : ℕ) ^ (2 : ℕ) - (1 : ℕ) = (3 : ℕ)
-// Lean have h₁₂₅, Lean lines 86-86:
-//   lean  |         have h₁₂₅ : 2 ^ 2 - 1 = 3 := by norm_num
-
-// 1 path(s) merged (joined); 29 shared facts; 1 distinct path conditions
-// AUGMENTATION K3: locality: norm_num saw only the ground goal
-
+include "../dafny/numbertheory_2pownm1prime_nprime.dfy"
 lemma {:induction false} vc_numbertheory_2pownm1prime_nprime_L338(k_1_0_0_2_2_3: int, m_1_0_0_1_2_5: int, m_1_0_0_2: nat, m_1_0_0_3: nat, m_1_0_0_5: int, m_1_0_0_5_0: nat, m_1_0_0_6: nat, n: nat)
-  ensures  tsub(2 * 2, 1) == 3
-{
+  requires 0 <= n
+  requires 0 <= m_1_0_0_1_2_5
+  requires 0 <= m_1_0_0_5
+  requires 0 <= k_1_0_0_2_2_3
+  requires 0 < n
+  requires prime(tsub(Int.pow(2, n), 1))
+  requires forall n0: nat :: 0 < n0 && prime(tsub(Int.pow(2, n0), 1)) && 0 <= n0 && n0 < n ==> prime(n0)
+  requires n >= 2
+  requires !prime(n)
+  requires ((0 <= m_1_0_0_2) && (((NatDvd(m_1_0_0_2, n)) && ((m_1_0_0_2 != 1) || (m_1_0_0_2 == 1))) || (!NatDvd(m_1_0_0_2, n)))) || (m_1_0_0_2 < 0)
+  requires exists m_1_0_0_1: nat :: NatDvd(m_1_0_0_1, n) && m_1_0_0_1 != 1 && m_1_0_0_1 != n
+  requires ((0 <= m_1_0_0_3) && (((NatDvd(m_1_0_0_3, n)) && ((m_1_0_0_3 != 1) || (m_1_0_0_3 == 1))) || (!NatDvd(m_1_0_0_3, n)))) || (m_1_0_0_3 < 0)
+  requires exists m_1_0_0_4: nat :: NatDvd(m_1_0_0_4, n) && m_1_0_0_4 != 1 && m_1_0_0_4 != n
+  requires ((0 <= m_1_0_0_6) && (((NatDvd(m_1_0_0_6, n)) && ((m_1_0_0_6 != 1) || (m_1_0_0_6 == 1))) || (!NatDvd(m_1_0_0_6, n)))) || (m_1_0_0_6 < 0)
+  requires (0 <= 0 && NatDvd(0, n) && 0 != 1 && 0 != n) || (0 <= 0 && NatDvd(0, n) && 0 != 1 && 0 != n) || (exists as_m1_0_0_0_1_0_0_0: nat :: NatDvd(as_m1_0_0_0_1_0_0_0, n) && as_m1_0_0_0_1_0_0_0 != 1 && as_m1_0_0_0_1_0_0_0 != n)
+  requires 0 <= m_1_0_0_5_0
+  requires NatDvd(m_1_0_0_5_0, n)
+  requires m_1_0_0_5_0 != 1
+  requires m_1_0_0_5_0 != n
+  requires ((NatDvd(m_1_0_0_5_0, n)) && (((NatDvd(m_1_0_0_5_0, n)) && (m_1_0_0_5_0 != 1)) || (!(NatDvd(m_1_0_0_5_0, n) && m_1_0_0_5_0 != 1)))) || ((!NatDvd(m_1_0_0_5_0, n)) && (((NatDvd(m_1_0_0_5_0, n)) && (m_1_0_0_5_0 != 1)) || (!(NatDvd(m_1_0_0_5_0, n) && m_1_0_0_5_0 != 1))))
+  requires m_1_0_0_5_0 >= 2
+  requires m_1_0_0_5_0 < n
+  requires 0 <= Int.pow(2, m_1_0_0_5_0)
+  requires 0 <= 1
+  requires 0 <= Int.pow(2, n)
+  requires NatDvd(tsub(Int.pow(2, m_1_0_0_5_0), 1), tsub(Int.pow(2, n), 1))
+  requires Int.pow(2, m_1_0_0_5_0) >= 2 * 2
+  requires 0 <= 2 * 2
+  requires tsub(Int.pow(2, m_1_0_0_5_0), 1) >= tsub(2 * 2, 1)
+  ensures   tsub(2 * 2, 1) == 3
+{ }
 
-}

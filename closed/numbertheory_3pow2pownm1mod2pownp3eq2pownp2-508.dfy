@@ -1,63 +1,11 @@
-// CLOSED LEMMA for failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-508 (theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 508, OOR)
-// closes with: K3 (locality) — base
-// added: nothing (line lemma standalone)
-// Dafny: verifies unchanged (dossier standalone check)
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/line_lemmas/OOR/numbertheory_3pow2pownm1mod2pownp3eq2pownp2/L508.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-508: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 508 (OOR: Verification out of resource (numbertheory_3pow2pownm1mod2pownp3eq2pownp2))
+// failing Dafny line: assert (NatMod((Int.pow(2, (n + 2)) + (k * Int.pow(2, (n + 3)))), Int.pow(2, (n + 3))) == Int.pow(2, (n + 2))) by {
+// Lean step: have h₂ : (2 ^ (n + 2) + k * 2 ^ (n + 3)) % 2 ^ (n + 3) = 2 ^ (n + 2) % 2 ^ (n + 3) := by
+// hypotheses: 19 facts Z3 had at the line (goal itself removed: 0; the block's own asserts removed: 1); nothing assumed beyond the facts in scope
+// not closed: tried H0=oor; this file is the honest base attempt
+// Dafny: finished with 208 verified, 0 errors, 8 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Line lemma for failing line 508 of numbertheory_3pow2pownm1mod2pownp3eq2pownp2 (OOR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "../../../../wt_integ5/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
-
-// ========================================================================================
-// FAILING LINE 508 (OOR) in numbertheory_3pow2pownm1mod2pownp3eq2pownp2: Verification out of resource (numbertheory_3pow2pownm1mod2pownp3eq2pownp2)
-//   dafny |     assert (NatMod((Int.pow(2, (n + 2)) + (k * Int.pow(2, (n + 3)))), Int.pow(2, (n + 3))) == Int.pow(2, (n + 2))) by {  // sub-goal before `have` (Lean state) // @tac 8037-8870 // @tac 8875-8884
-//   statement kind: sub-goal (Lean tactic state)
-//   @tac 8037-8870 | Lean: have h₂ : (2 ^ (n + 2) + k * 2 ^ (n + 3)) % 2 ^ (n + 3) = 2 ^ (n + 2) % 2 ^ (n + 3) := by
-//        before-goal ⊢ ((2 : ℕ) ^ (n + (2 : ℕ)) + k * (2 : ℕ) ^ (n + (3 : ℕ))) % (2 : ℕ) ^ (n + (3 : ℕ)) = (2 : ℕ) ^ (n + (2 : ℕ))
-//   @tac 8875-8884 | Lean: rw [h₂]
-//        before-goal ⊢ ((2 : ℕ) ^ (n + (2 : ℕ)) + k * (2 : ℕ) ^ (n + (3 : ℕ))) % (2 : ℕ) ^ (n + (3 : ℕ)) = (2 : ℕ) ^ (n + (2 : ℕ))
-//        before-goal ⊢ (2 : ℕ) ^ (n + (2 : ℕ)) % (2 : ℕ) ^ (n + (3 : ℕ)) = (2 : ℕ) ^ (n + (2 : ℕ))
-// inside Lean have h_final, Lean lines 130-165:
-//   lean  |   have h_final : (3 ^ 2 ^ n - 1) % 2 ^ (n + 3) = 2 ^ (n + 2) := by
-//   lean  |     obtain ⟨k, hk⟩ := h_main
-//   lean  |     have h₁ : 3 ^ 2 ^ n - 1 = 2 ^ (n + 2) + k * 2 ^ (n + 3) := by
-//   lean  |       have h₂ : 3 ^ 2 ^ n = 1 + 2 ^ (n + 2) + k * 2 ^ (n + 3) := by linarith
-//   lean  |       have h₃ : 3 ^ 2 ^ n - 1 = 2 ^ (n + 2) + k * 2 ^ (n + 3) := by
-//   lean  |         have h₄ : 3 ^ 2 ^ n ≥ 1 := by
-//   lean  |           apply Nat.one_le_pow
-//   lean  |           <;> positivity
-//   lean  |         omega
-//   lean  |       exact h₃
-//   lean  |     rw [h₁]
-//   lean  |     have h₂ : (2 ^ (n + 2) + k * 2 ^ (n + 3)) % 2 ^ (n + 3) = 2 ^ (n + 2) % 2 ^ (n + 3) := by
-//   lean  |       have h₃ : (2 ^ (n + 2) + k * 2 ^ (n + 3)) % 2 ^ (n + 3) = (2 ^ (n + 2)) % 2 ^ (n + 3) := by
-//   lean  |         have h₄ : k * 2 ^ (n + 3) % 2 ^ (n + 3) = 0 := by
-//   lean  |           have h₅ : 2 ^ (n + 3) ∣ k * 2 ^ (n + 3) := by
-//   lean  |             use k
-//   lean  |             <;> ring
-//   lean  |           exact Nat.mod_eq_zero_of_dvd h₅
-//   lean  |         have h₅ : (2 ^ (n + 2) + k * 2 ^ (n + 3)) % 2 ^ (n + 3) = (2 ^ (n + 2) % 2 ^ (n + 3) + k * 2 ^ (n + 3) % 2 ^ (n + 3)) % 2 ^ (n + 3) := by
-//   lean  |           simp [Nat.add_mod]
-//   lean  |         rw [h₅]
-//   lean  |         have h₆ : k * 2 ^ (n + 3) % 2 ^ (n + 3) = 0 := h₄
-//   lean  |         rw [h₆]
-//   lean  |         have h₇ : (2 ^ (n + 2) % 2 ^ (n + 3) + 0) % 2 ^ (n + 3) = 2 ^ (n + 2) % 2 ^ (n + 3) := by
-//   lean  |           simp [Nat.add_mod]
-//   lean  |         rw [h₇]
-//   lean  |       exact h₃
-//   lean  |     rw [h₂]
-//   lean  |     have h₃ : 2 ^ (n + 2) % 2 ^ (n + 3) = 2 ^ (n + 2) := by
-//   lean  |       have h₄ : 2 ^ (n + 2) < 2 ^ (n + 3) := by
-//   lean  |         apply Nat.pow_lt_pow_of_lt_right
-//   lean  |         <;> omega
-//   lean  |       have h₅ : 2 ^ (n + 2) % 2 ^ (n + 3) = 2 ^ (n + 2) := by
-//   lean  |         rw [Nat.mod_eq_of_lt h₄]
-//   lean  |       rw [h₅]
-//   lean  |     rw [h₃]
-
-// 8 path(s) merged (paths); 19 shared facts; 8 distinct path conditions
+include "../dafny/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L508(k_1_0: int, k_1_2: int, k_1_2_0: int, k_1_3: int, k_2: int, n: nat)
   requires 0 <= n
   requires 0 <= k_1_2
@@ -77,109 +25,87 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L508(k_1
   requires 0 <= Int.pow(2, n + 3)
   requires 0 <= Int.pow(2, n + 2)
   requires NatMod(Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3), Int.pow(2, n + 3)) == NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3))
-  requires NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3)) == Int.pow(2, n + 2)
   requires ((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3)) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0)) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3)) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0)) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3)) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0)) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3)) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0))
-  ensures  NatMod(Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3), Int.pow(2, n + 3)) == Int.pow(2, n + 2)
-{ }
-
-// side checks at the same line (not the reported failure): 6 check(s)
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L508_side1(k_1_0: int, k_1_2: int, k_1_2_0: int, k_1_3: int, k_2: int, n: nat)
-  requires 0 <= n
-  requires 0 <= k_1_2
-  requires 0 < n
-  requires 0 <= Int.pow(2, n)
-  requires 0 <= n + 2
-  requires 0 <= n + 3
-  requires exists k_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1 * Int.pow(2, n + 3)
-  requires exists k_1_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_1 * Int.pow(2, n + 3)
-  requires (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_1_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_1_0 * Int.pow(2, n + 3))
-  requires 0 <= k_1_2_0
-  requires Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
-  requires 0 <= Int.pow(3, Int.pow(2, n))
-  requires 0 <= 1
-  requires tsub(Int.pow(3, Int.pow(2, n)), 1) == Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
-  requires 0 <= Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
-  requires 0 <= Int.pow(2, n + 3)
-  requires 0 <= Int.pow(2, n + 2)
-  requires NatMod(Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3), Int.pow(2, n + 3)) == NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3))
-  requires NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3)) == Int.pow(2, n + 2)
-  requires ((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3)) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0)) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3)) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0)) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3)) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0)) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3)) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0))
-  ensures  0 <= n + 2
-{ }
-
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L508_side2(k_1_0: int, k_1_2: int, k_1_2_0: int, k_1_3: int, k_2: int, n: nat)
-  requires 0 <= n
-  requires 0 <= k_1_2
-  requires 0 < n
-  requires 0 <= Int.pow(2, n)
-  requires 0 <= n + 2
-  requires 0 <= n + 3
-  requires exists k_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1 * Int.pow(2, n + 3)
-  requires exists k_1_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_1 * Int.pow(2, n + 3)
-  requires (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_1_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_1_0 * Int.pow(2, n + 3))
-  requires 0 <= k_1_2_0
-  requires Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
-  requires 0 <= Int.pow(3, Int.pow(2, n))
-  requires 0 <= 1
-  requires tsub(Int.pow(3, Int.pow(2, n)), 1) == Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
-  requires 0 <= Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
-  requires 0 <= Int.pow(2, n + 3)
-  requires 0 <= Int.pow(2, n + 2)
-  requires NatMod(Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3), Int.pow(2, n + 3)) == NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3))
-  requires NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3)) == Int.pow(2, n + 2)
-  requires ((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3)) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0)) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3)) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0)) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3)) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0)) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3)) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0))
-  ensures  0 <= n + 3
-{ }
-
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L508_side3(k_1_0: int, k_1_2: int, k_1_2_0: int, k_1_3: int, k_2: int, n: nat)
-  requires 0 <= n
-  requires 0 <= k_1_2
-  requires 0 < n
-  requires 0 <= Int.pow(2, n)
-  requires 0 <= n + 2
-  requires 0 <= n + 3
-  requires exists k_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1 * Int.pow(2, n + 3)
-  requires exists k_1_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_1 * Int.pow(2, n + 3)
-  requires (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_1_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_1_0 * Int.pow(2, n + 3))
-  requires 0 <= k_1_2_0
-  requires Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
-  requires 0 <= Int.pow(3, Int.pow(2, n))
-  requires 0 <= 1
-  requires tsub(Int.pow(3, Int.pow(2, n)), 1) == Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
-  requires 0 <= Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
-  requires 0 <= Int.pow(2, n + 3)
-  requires 0 <= Int.pow(2, n + 2)
-  requires NatMod(Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3), Int.pow(2, n + 3)) == NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3))
-  requires NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3)) == Int.pow(2, n + 2)
-  requires ((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3)) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0)) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3)) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0)) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3)) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0)) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3)) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0))
-  ensures  0 <= Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
-{ }
-
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L508_side4(k_1_0: int, k_1_2: int, k_1_2_0: int, k_1_3: int, k_2: int, n: nat)
-  requires 0 <= n
-  requires 0 <= k_1_2
-  requires 0 < n
-  requires 0 <= Int.pow(2, n)
-  requires 0 <= n + 2
-  requires 0 <= n + 3
-  requires exists k_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1 * Int.pow(2, n + 3)
-  requires exists k_1_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_1 * Int.pow(2, n + 3)
-  requires (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_1_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_1_0 * Int.pow(2, n + 3))
-  requires 0 <= k_1_2_0
-  requires Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
-  requires 0 <= Int.pow(3, Int.pow(2, n))
-  requires 0 <= 1
-  requires tsub(Int.pow(3, Int.pow(2, n)), 1) == Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
-  requires 0 <= Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
-  requires 0 <= Int.pow(2, n + 3)
-  requires 0 <= Int.pow(2, n + 2)
-  requires NatMod(Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3), Int.pow(2, n + 3)) == NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3))
-  requires NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3)) == Int.pow(2, n + 2)
-  requires ((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3)) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0)) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3)) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0)) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3)) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0)) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3)) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0))
-  ensures  0 <= Int.pow(2, n + 3)
-{ }
+  ensures   NatMod(Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3), Int.pow(2, n + 3)) == Int.pow(2, n + 2)
+{
+      // have h₂ : ( 2 ^ ( n + 2 ) + k * 2 ^ ( n + 3 ) ) % 2 ^ ( n + 3 ) == 2 ^ ( n + 2 )  [type from Lean state]
+      assert (NatMod((Int.pow(2, (n + 2)) + (k_1_0 * Int.pow(2, (n + 3)))), Int.pow(2, (n + 3))) == NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3)))) by { // @tac 8135-8853 // @tac 8860-8870
+        // have h₃ : ( 2 ^ ( n + 2 ) + k * 2 ^ ( n + 3 ) ) % 2 ^ ( n + 3 ) == ( 2 ^ ( n + 2  [type from Lean state]
+        assert (NatMod((Int.pow(2, (n + 2)) + (k_1_0 * Int.pow(2, (n + 3)))), Int.pow(2, (n + 3))) == NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3)))) by { // @tac 8237-8431 // @tac 8440-8608 // @tac 8617-8626
+          // have h₄ : k * 2 ^ ( n + 3 ) % 2 ^ ( n + 3 ) == 0  [type from Lean state]
+          assert (NatMod((k_1_0 * Int.pow(2, (n + 3))), Int.pow(2, (n + 3))) == 0) by { // @tac 8299-8387 // @tac 8398-8431
+            // have h₅ : 2 ^ ( n + 3 ) ∣ k * 2 ^ ( n + 3 )  [type from Lean state]
+            assert NatDvd(Int.pow(2, (n + 3)), (k_1_0 * Int.pow(2, (n + 3)))) by { // @tac 8361-8387 // @tac 8361-8366
+              // [TACTIC: «_<;>_» k <;> ring]
+              // [TACTIC: Use k]
+              assert ((k_1_0 * Int.pow(2, (n + 3))) == (Int.pow(2, (n + 3)) * k_1_0));  // sub-goal of `ring` (Lean state) // @tac 8383-8387
+              // UNCITED-APPLIED internal ×53 [exec 1322 8383-8387]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_pf_add_zero ×4, Mathlib.Tactic.Ring.add_mul ×4, Mathlib.Tactic.Ring.mul_add ×4, Mathlib.Tactic.Ring.mul_zero ×4 (+22 more heads, ×37)
+            }
+            // [TACTIC: exact Nat.mod_eq_zero_of_dvd h₅]
+            assert NatDvd(Int.pow(2, (n + 3)), (k_1_0 * Int.pow(2, (n + 3))));
+            assert (NatDvd((Int.pow(2, (n + 3))), ((k_1_0 * Int.pow(2, (n + 3))))));  // precondition of NatModEqZeroOfDvd (Lean: Nat.mod_eq_zero_of_dvd)
+            NatModEqZeroOfDvd(Int.pow(2, (n + 3)), (k_1_0 * Int.pow(2, (n + 3))));  // cite: Nat.mod_eq_zero_of_dvd
+          }
+          // have h₅ : ( 2 ^ ( n + 2 ) + k * 2 ^ ( n + 3 ) ) % 2 ^ ( n + 3 ) == ( 2 ^ ( n + 2  [type from Lean state]
+          assert (NatMod((Int.pow(2, (n + 2)) + (k_1_0 * Int.pow(2, (n + 3)))), Int.pow(2, (n + 3))) == NatMod((NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3))) + NatMod((k_1_0 * Int.pow(2, (n + 3))), Int.pow(2, (n + 3)))), Int.pow(2, (n + 3)))) by { // @tac 8590-8608
+            // [TACTIC: simp [ Nat.add_mod ]]
+            NatAddMod(Int.pow(2, (n + 2)), (k_1_0 * Int.pow(2, (n + 3))), Int.pow(2, (n + 3)));  // cite: Nat.add_mod
+            // UNCITED-APPLIED internal ×13 [exec 1340 8590-8608]: applications made inside the tactic's own automation, not stated — Nat.mul_mod_left ×1, add_zero ×1, Nat.mod_mod_of_dvd ×1; machinery/glue: Eq.trans ×4, congrArg ×3, of_eq_true ×1, congr ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.add_mod [Lean recorded ×1])
+          }
+          // [TACTIC: rwSeq [ h₅ ]]
+          // UNCITED-APPLIED congrArg(((2 : ℕ) ^ (n + (2 : ℕ)) + k * (2 : ℕ) ^ (n + (3 : ℕ))) % (2 : ℕ) ^ (…, ((2 : ℕ) ^ (n + (2 : ℕ)) % (2 : ℕ) ^ (n + (3 : ℕ)) + k * (2 : ℕ) ^ (n…, fun (_a : ℕ) => _a = (2 : ℕ) ^ (n + (2 : ℕ)) % (2 : ℕ) ^ (n + (3 : ℕ))): no library counterpart (not stated) [exec 1345 8617-8626]
+          assert (NatMod((NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3))) + NatMod((k_1_0 * Int.pow(2, (n + 3))), Int.pow(2, (n + 3)))), Int.pow(2, (n + 3))) == NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3)))) by {  // sub-goal before `have` (Lean state) // @tac 8635-8688 // @tac 8697-8706
+            // have h₆ : k * 2 ^ ( n + 3 ) % 2 ^ ( n + 3 ) == 0  [type from Lean state]
+            assert (NatMod((k_1_0 * Int.pow(2, (n + 3))), Int.pow(2, (n + 3))) == 0) by {
+              // [TACTIC: exact h₄]
+              assert (NatMod((k_1_0 * Int.pow(2, (n + 3))), Int.pow(2, (n + 3))) == 0);
+            }
+            // [TACTIC: rwSeq [ h₆ ]]
+            // UNCITED-APPLIED congrArg(k * (2 : ℕ) ^ (n + (3 : ℕ)) % (2 : ℕ) ^ (n + (3 : ℕ)), (0 : ℕ), fun (_a : ℕ) => ((2 : ℕ) ^ (n + (2 : ℕ)) % (2 : ℕ) ^ (n + (3 : ℕ)) + …): no library counterpart (not stated) [exec 1388 8697-8706]
+            assert (NatMod((NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3))) + 0), Int.pow(2, (n + 3))) == NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3)))) by {  // sub-goal before `have` (Lean state) // @tac 8715-8835 // @tac 8844-8853
+              // have h₇ : ( 2 ^ ( n + 2 ) % 2 ^ ( n + 3 ) + 0 ) % 2 ^ ( n + 3 ) == 2 ^ ( n + 2 )  [type from Lean state]
+              assert (NatMod((NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3))) + 0), Int.pow(2, (n + 3))) == NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3)))); // @tac 8817-8835
+                // [TACTIC: simp [ Nat.add_mod ]]
+                // UNCITED Nat.add_mod: named in this rewriting step; no record of Lean's proof attributes an application of it to this execution (its recorded applications are at other tactics of the proof; a rewrite at a hypothesis is filed under the tactic that later uses the hypothesis, and a conditional / under-binder simp rewrite may be unrecorded), so whether it was applied here is not known; not stated
+                // UNCITED-APPLIED internal ×8 [exec 1431 8817-8835]: applications made inside the tactic's own automation, not stated — add_zero ×1, Nat.mod_mod_of_dvd ×1; machinery/glue: Eq.trans ×2, congrArg ×2, of_eq_true ×1, eq_self ×1
+              // [TACTIC: rwSeq [ h₇ ]]
+              // UNCITED-APPLIED congrArg(((2 : ℕ) ^ (n + (2 : ℕ)) % (2 : ℕ) ^ (n + (3 : ℕ)) + (0 : ℕ)) % (2 : …, (2 : ℕ) ^ (n + (2 : ℕ)) % (2 : ℕ) ^ (n + (3 : ℕ)), fun (_a : ℕ) => _a = (2 : ℕ) ^ (n + (2 : ℕ)) % (2 : ℕ) ^ (n + (3 : ℕ))): no library counterpart (not stated) [exec 1436 8844-8853]
+            }
+          }
+        }
+        // [TACTIC: exact h₃]
+        assert (NatMod((Int.pow(2, (n + 2)) + (k_1_0 * Int.pow(2, (n + 3)))), Int.pow(2, (n + 3))) == NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3))));
+      }
+      // [TACTIC: rwSeq [ h₂ ]]
+      // UNCITED-APPLIED congrArg(((2 : ℕ) ^ (n + (2 : ℕ)) + k * (2 : ℕ) ^ (n + (3 : ℕ))) % (2 : ℕ) ^ (…, (2 : ℕ) ^ (n + (2 : ℕ)) % (2 : ℕ) ^ (n + (3 : ℕ)), fun (_a : ℕ) => _a = (2 : ℕ) ^ (n + (2 : ℕ))): no library counterpart (not stated) [exec 1462 8875-8884]
+      assert (NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3))) == Int.pow(2, (n + 2))) by {  // sub-goal before `have` (Lean state) // @tac 8889-9170 // @tac 9175-9184
+        // have h₃ : 2 ^ ( n + 2 ) % 2 ^ ( n + 3 ) == 2 ^ ( n + 2 )  [type from Lean state]
+        assert (NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3))) == Int.pow(2, (n + 2))) by { // @tac 8953-9055 // @tac 9062-9154 // @tac 9161-9170
+          // have h₄ : 2 ^ ( n + 2 ) < 2 ^ ( n + 3 )  [type from Lean state]
+          assert (Int.pow(2, (n + 2)) < Int.pow(2, (n + 3))) by { // @tac 9005-9055 // @tac 9005-9037
+            // [TACTIC: «_<;>_» Nat.pow_lt_pow_of_lt_right apply Nat.pow_lt_pow_of_lt_right <;> omega omega]
+            // [TACTIC: choice Nat.pow_lt_pow_of_lt_right apply Nat.pow_lt_pow_of_lt_right]
+            assert ((2) >= 2) && (((n + 2)) < ((n + 3)));  // precondition of NatPowLtPowOfLtRight (Lean: Nat.pow_lt_pow_of_lt_right)
+            NatPowLtPowOfLtRight(2, (n + 2), (n + 3));  // cite: Nat.pow_lt_pow_of_lt_right
+            assert (1 < 2);  // sub-goal of `omega` (Lean state) // @tac 9050-9055
+            // UNCITED-APPLIED internal ×5 [exec 1535 9050-9055]: applications made inside the tactic's own automation, not stated — Int.sub_nonneg_of_le ×1, Nat.le_of_not_lt ×1; machinery/glue: Decidable.byContradiction ×1, of_decide_eq_true ×1, Lean.Omega.Int.ofNat_le_of_le ×1
+            assert ((n + 2) < (n + 3)) by {  // sub-goal of `omega` (Lean state) // @tac 9050-9055
+              // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
+              // UNCITED-APPLIED internal ×11 [exec 1538 9050-9055]: applications made inside the tactic's own automation, not stated — Int.ofNat_add ×2, Int.sub_nonneg_of_le ×1, Nat.le_of_not_lt ×1; machinery/glue: Eq.symm ×4, Decidable.byContradiction ×1, of_decide_eq_true ×1, Lean.Omega.Int.ofNat_le_of_le ×1
+            }
+          }
+          // have h₅ : 2 ^ ( n + 2 ) % 2 ^ ( n + 3 ) == 2 ^ ( n + 2 )  [type from Lean state]
+          assert (NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3))) == Int.pow(2, (n + 2))) by { // @tac 9128-9154
+            // [TACTIC: rwSeq [ Nat.mod_eq_of_lt h₄ ]]
+            assert ((Int.pow(2, (n + 2))) < (Int.pow(2, (n + 3))));  // precondition of NatModEqOfLt (Lean: Nat.mod_eq_of_lt)
+            NatModEqOfLt(Int.pow(2, (n + 2)), Int.pow(2, (n + 3)));  // cite: Nat.mod_eq_of_lt
+            // UNCITED-APPLIED congrArg((2 : ℕ) ^ (n + (2 : ℕ)) % (2 : ℕ) ^ (n + (3 : ℕ)), (2 : ℕ) ^ (n + (2 : ℕ)), fun (_a : ℕ) => _a = (2 : ℕ) ^ (n + (2 : ℕ))): no library counterpart (not stated) [exec 1559 9128-9154]
+          }
+          // [TACTIC: rwSeq [ h₅ ]]
+          // UNCITED-APPLIED congrArg((2 : ℕ) ^ (n + (2 : ℕ)) % (2 : ℕ) ^ (n + (3 : ℕ)), (2 : ℕ) ^ (n + (2 : ℕ)), fun (_a : ℕ) => _a = (2 : ℕ) ^ (n + (2 : ℕ))): no library counterpart (not stated) [exec 1584 9161-9170]
+        }
+        // [TACTIC: rwSeq [ h₃ ]]
+        // UNCITED-APPLIED congrArg((2 : ℕ) ^ (n + (2 : ℕ)) % (2 : ℕ) ^ (n + (3 : ℕ)), (2 : ℕ) ^ (n + (2 : ℕ)), fun (_a : ℕ) => _a = (2 : ℕ) ^ (n + (2 : ℕ))): no library counterpart (not stated) [exec 1609 9175-9184]
+      }
+}
 

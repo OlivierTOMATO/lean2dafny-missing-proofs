@@ -1,0 +1,10 @@
+--- standard/MathPrelude.dfy
++++ modified/MathPrelude.dfy
+@@ -217,5 +217,6 @@
+   function {:axiom} prod<T>(s: set<T>, f: T -> complex): complex
+ 
+-  function pow(z: complex, k: nat): complex
++  // K2-pow variant (ablation shard_016): Complex.pow made opaque — only change vs wt_integ5/library
++  opaque function pow(z: complex, k: nat): complex
+   { if k == 0 then Complex(1.0, 0.0) else mul(z, pow(z, k - 1)) }
+   // Lean's zpow on ℂ: z^n for n ≥ 0, (z^(−n))⁻¹ = 1 / z^(−n) for n < 0 (div is unspecified at 0,

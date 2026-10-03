@@ -1,0 +1,9 @@
+--- standard/MathPrelude.dfy
++++ modified/MathPrelude.dfy
+@@ -51,5 +51,5 @@
+ 
+   function pow(b: real, k: nat): (p: real)
+-      ensures if k == 0 then p == 1.0 else p == b * pow(b, k - 1)
++      // K2-pow variant (k_ablate_shard_032): recursive ensures removed; body kept
+     {
+       if k == 0 then 1.0 else b * pow(b, k - 1)

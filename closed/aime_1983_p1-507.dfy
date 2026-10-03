@@ -1,33 +1,11 @@
-// CLOSED LEMMA for failing line aime_1983_p1-507 (theorem aime_1983_p1, Dafny line 507, ERR)
-// closes with: K3 (locality) — base
-// added: nothing (line lemma standalone)
-// Dafny: verifies unchanged (dossier standalone check)
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/line_lemmas/ERR/aime_1983_p1/L507.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line aime_1983_p1-507: theorem aime_1983_p1, Dafny line 507 (ERR: assertion might not hold)
+// failing Dafny line: assert (Real.log(((x as real) * (y as real))) == (Real.log((x as real)) + Real.log((y as real)))) by {
+// Lean step: have h₃ : 0 < (x : ℝ) := by positivity
+// hypotheses: 18 facts Z3 had at the line (goal itself removed: 1; the block's own asserts removed: 4); nothing assumed beyond the facts in scope
+// how it closes: own-lemma — nothing: the file's own proof body, hypotheses = facts in scope minus the goal and minus the block's own asserts
+// Dafny: finished with 9 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Line lemma for failing line 507 of aime_1983_p1 (ERR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "../../../../wt_integ5/out/aime_1983_p1.dfy"
-
-// ========================================================================================
-// FAILING LINE 507 (ERR) in aime_1983_p1: assertion might not hold
-//   dafny |       assert (Real.log(((x as real) * (y as real))) == (Real.log((x as real)) + Real.log((y as real)))) by { // @tac 1902-1944 // @tac 1951-1993 // @tac 2000-2049
-//   statement kind: have / step assertion
-//   @tac 1902-1944 | Lean: have h₃ : 0 < (x : ℝ) := by positivity
-//        before-goal ⊢ Real.log (↑x * ↑y) = Real.log ↑x + Real.log ↑y
-//   @tac 1951-1993 | Lean: have h₄ : 0 < (y : ℝ) := by positivity
-//        before-goal ⊢ Real.log (↑x * ↑y) = Real.log ↑x + Real.log ↑y
-//   @tac 2000-2049 | Lean: rw [Real.log_mul (by positivity) (by positivity)]
-//        before-goal ⊢ Real.log (↑x * ↑y) = Real.log ↑x + Real.log ↑y
-//        before-goal ⊢ Real.log ↑x + Real.log ↑y = Real.log ↑x + Real.log ↑y
-// Lean have h₂, Lean lines 54-57:
-//   lean  |     have h₂ : Real.log ((x : ℝ) * y) = Real.log (x : ℝ) + Real.log (y : ℝ) := by
-//   lean  |       have h₃ : 0 < (x : ℝ) := by positivity
-//   lean  |       have h₄ : 0 < (y : ℝ) := by positivity
-//   lean  |       rw [Real.log_mul (by positivity) (by positivity)]
-
-// 1 path(s) merged (paths); 23 shared facts; 1 distinct path conditions
+include "../dafny/aime_1983_p1.dfy"
 lemma {:induction false} vc_aime_1983_p1_L507(w: int, x: int, y: int, z: int)
   requires 0 <= x
   requires 0 <= y
@@ -47,11 +25,31 @@ lemma {:induction false} vc_aime_1983_p1_L507(w: int, x: int, y: int, z: int)
   requires Real.log((y as real)) > 0.0
   requires Real.log((z as real)) > 0.0
   requires Real.log((x as real) * (y as real) * (z as real)) == Real.log((x as real) * (y as real)) + Real.log((z as real))
-  requires 0.0 < (x as real)
-  requires 0.0 < (y as real)
-  requires (x as real) != 0.0
-  requires (y as real) != 0.0
-  requires Real.log((x as real) * (y as real)) == Real.log((x as real)) + Real.log((y as real))
-  ensures  Real.log((x as real) * (y as real)) == Real.log((x as real)) + Real.log((y as real))
-{ }
+  ensures   Real.log((x as real) * (y as real)) == Real.log((x as real)) + Real.log((y as real))
+{
+        // have h₃ : 0 <   [type from Lean state]
+        assert (0.0 < (x as real)); // @tac 1934-1944
+          // [TACTIC: Positivity]
+          // UNCITED-APPLIED internal ×4 [exec 561 1934-1944]: applications made inside the tactic's own automation, not stated — lt_trans ×1, Mathlib.Meta.Positivity.pos_of_isNat ×1, Nat.cast_one ×1; machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×1
+          // UNCITED-APPLIED Nat.cast_one: cast target unknown (Lean applies it at ℝ and ℤ in this proof; the record does not say which)
+        // have h₄ : 0 <   [type from Lean state]
+        assert (0.0 < (y as real)); // @tac 1983-1993
+          // [TACTIC: Positivity]
+          // UNCITED-APPLIED internal ×4 [exec 578 1983-1993]: applications made inside the tactic's own automation, not stated — lt_trans ×1, Mathlib.Meta.Positivity.pos_of_isNat ×1, Nat.cast_one ×1; machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×1
+          // UNCITED-APPLIED Nat.cast_one: cast target unknown (Lean applies it at ℝ and ℤ in this proof; the record does not say which)
+        assert ((x as real) != 0.0) by {  // sub-goal of `by` (Lean state) // @tac 2021-2031
+          // [TACTIC: Positivity]
+          // UNCITED-APPLIED internal ×5 [exec 590 2021-2031]: applications made inside the tactic's own automation, not stated — ne_of_gt ×1, lt_trans ×1, Mathlib.Meta.Positivity.pos_of_isNat ×1, Nat.cast_one ×1; machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×1
+          // UNCITED-APPLIED Nat.cast_one: cast target unknown (Lean applies it at ℝ and ℤ in this proof; the record does not say which)
+        }
+        assert ((y as real) != 0.0) by {  // sub-goal of `by` (Lean state) // @tac 2037-2047
+          // [TACTIC: Positivity]
+          // UNCITED-APPLIED internal ×5 [exec 595 2037-2047]: applications made inside the tactic's own automation, not stated — ne_of_gt ×1, lt_trans ×1, Mathlib.Meta.Positivity.pos_of_isNat ×1, Nat.cast_one ×1; machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×1
+          // UNCITED-APPLIED Nat.cast_one: cast target unknown (Lean applies it at ℝ and ℤ in this proof; the record does not say which)
+        }
+        // [TACTIC: rwSeq [ Real.log_mul ( by positivity ) ( by positivity ) ]]
+        assert (((x as real)) != 0.0) && (((y as real)) != 0.0);  // precondition of RealLogMul (Lean: Real.log_mul)
+        RealLogMul((x as real), (y as real));  // cite: Real.log_mul
+        // UNCITED-APPLIED congrArg(Real.log (↑x * ↑y), Real.log ↑x + Real.log ↑y, fun (_a : ℝ) => _a = Real.log ↑x + Real.log ↑y): no library counterpart (not stated) [exec 583 2000-2049]
+}
 

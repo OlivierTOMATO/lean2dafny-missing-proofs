@@ -1,14 +1,14 @@
-// CLOSED LEMMA for failing line numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-390 (theorem numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown, Dafny line 390, OOR)
-// closes with: simplest (simplest) — simplest-close
-// added: lemma DvdMulSelf(a: nat, w: nat) requires a != 0 ensures (a * w) % a == 0 { NatDvdMulOfDvdRight(a, a, w); assert NatDvd(a, w * a); }  + at the line: DvdMulSelf(f(k), tsub(f(k), 2 * Int.pow(6, k)));
-// Dafny: finished with 20 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_053/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-390/SCsplit.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-390: theorem numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown, Dafny line 390 (OOR: Verification out of resource (numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown))
+// failing Dafny line: assert (if ((f(k) as int)) == 0 then (((f(k) * tsub(f(k), (2 * Int.pow(6, k)))) as int)) == 0 else (((f(k) * tsub(f(k), (2 * Int.pow(6, k)))) as int)) % ((f(k) as int)) == 0);
+// Lean step: h_div
+// hypotheses: 21 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: SCsplit_helper — 
+// Dafny: finished with 27 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// shard_053 ablation SCsplit of line 390 (copy of line_lemmas/OOR/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown/L390.dfy main lemma)
-include "../../../../../wt_integ5/out/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
+include "../dafny/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
 lemma DvdMulSelf(a: nat, w: nat) requires a != 0 ensures (a * w) % a == 0 { NatDvdMulOfDvdRight(a, a, w); assert NatDvd(a, w * a); }  // step as its own lemma over atoms, via existing NatDvdMulOfDvdRight
-lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390_SCsplit(f: nat -> nat, k_0_2_3_2_1_0: int, k_1_0: nat, k_1_1_0_1_0: int, m: int, n: int, t_3_5: int)
+
+lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390(f: nat -> nat, k_0_2_3_2_1_0: int, k_1_0: nat, k_1_1_0_1_0: int, m: int, n: int, t_3_5: int)
   requires 0 <= m
   requires 0 <= n
   requires 0 <= k_0_2_3_2_1_0
@@ -30,7 +30,8 @@ lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L
   requires f(k_1_0) != 0
   requires f(k_1_0) == 0 ==> f.requires(k_1_0) && f.requires(k_1_0)
   requires f(k_1_0) != 0 ==> f.requires(k_1_0) && f.requires(k_1_0) && f.requires(k_1_0)
-  ensures  f(k_1_0) * tsub(f(k_1_0), 2 * Int.pow(6, k_1_0)) % f(k_1_0) == 0
+  ensures   f(k_1_0) * tsub(f(k_1_0), 2 * Int.pow(6, k_1_0)) % f(k_1_0) == 0
 {
   DvdMulSelf(f(k_1_0), tsub(f(k_1_0), 2 * Int.pow(6, k_1_0)));
 }
+

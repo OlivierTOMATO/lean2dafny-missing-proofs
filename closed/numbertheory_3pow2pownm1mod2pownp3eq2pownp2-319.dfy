@@ -1,28 +1,11 @@
-// CLOSED LEMMA for failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-319 (theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 319, OOR)
-// closes with: K1 (instance) — single
-// added: IntModEqZero(2 * k * Int.pow(2, 2 * n + 5), Int.pow(2, 2 * n + 5)); assert 2 * k * Int.pow(2, 2 * n + 5) == Int.pow(2, 2 * n + 5) * (2 * k);  (witness q = 2k from ⟨2 * k, _⟩)
-// Dafny: finished with 78 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_048/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-319/K1.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-319: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 319 (OOR: Verification out of resource (induction_helper_1))
+// failing Dafny line: assert (if ((Int.pow(2, ((2 * n) + 5)) as int)) == 0 then ((((2 * k) * Int.pow(2, ((2 * n) + 5))) as int)) == 0 else ((((2 * k) * Int.pow(2, ((2 * n) + 5))) as int)) % ((Int.pow(2, ((2 * n) + 5)) as i
+// Lean step: h₁₄
+// hypotheses: 37 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K1 — IntModEqZero(2 * k * Int.pow(2, 2 * n + 5), Int.pow(2, 2 * n + 5)); assert 2 * k * Int.pow(2, 2 * n + 5) == Int.pow(2, 2 * n + 5) * (2 * k);  (witness q = 2k from ⟨2 * k, _⟩)
+// Dafny: finished with 78 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// ABLATION shard_048: K1 witness 2k for divisibility
-// Line lemma for failing line 319 of numbertheory_3pow2pownm1mod2pownp3eq2pownp2 (OOR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "/home/changjie/lean2dafny_research/agents_tac/wt_integ5/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
-
-// ========================================================================================
-// FAILING LINE 319 (OOR) in induction_helper_1: Verification out of resource (induction_helper_1)
-//   dafny |                         assert (if ((Int.pow(2, ((2 * n) + 5)) as int)) == 0 then ((((2 * k) * Int.pow(2, ((2 * n) + 5))) as int)) == 0 else ((((2 * k) * Int.pow(2, ((2 * n) + 5))) as int)) % ((Int.pow(2, ((2 * n) + 5)) as int)) == 0);  // goal closed by `exact ⟨…⟩` (Lean state)
-//   statement kind: have / step assertion
-// inside Lean have h₁₄, Lean lines 106-110:
-//   lean  |                 have h₁₄ : 2 ^ (n + 4) ∣ 2 * k * 2 ^ (2 * n + 5) := by
-//   lean  |                   calc
-//   lean  |                     2 ^ (n + 4) ∣ 2 ^ (2 * n + 5) := h₁₃
-//   lean  |                     _ ∣ 2 * k * 2 ^ (2 * n + 5) := by
-//   lean  |                       exact ⟨2 * k, by ring⟩
-
-// 4 path(s) merged (paths); 36 shared facts; 4 distinct path conditions
+include "../dafny/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L319(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
   requires 0 <= n
   requires 0 <= k_1_0_2
@@ -61,8 +44,9 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L319(k_1
   requires 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) == Int.pow(2, 2 * n + 5) * (2 * k_1_0_2_0)
   requires Int.pow(2, 2 * n + 5) != 0
   requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) % Int.pow(2, 2 * n + 5) == 0
+  ensures   2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) % Int.pow(2, 2 * n + 5) == 0
 {
   IntModEqZero(2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, 2 * n + 5));  // Dvd.intro witness q = 2k (Lean ⟨2 * k, _⟩)
   assert 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) == Int.pow(2, 2 * n + 5) * (2 * k_1_0_2_0);  // instance q := 2k (already a requires = Lean ring step)
 }
+

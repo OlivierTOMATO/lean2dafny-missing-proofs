@@ -1,27 +1,12 @@
-// CLOSED LEMMA for failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-283 (theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 283, OOR)
-// closes with: K2 (computation) — variant
-// added: library copy (work/shard_047/_powlib) with only the recursive `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` of Int.pow removed
-// Dafny: finished with 85 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_047/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-283/L283_K2pow.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-283: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 283 (OOR: Verification out of resource (induction_helper_1))
+// failing Dafny line: assert NatDvd(Int.pow(2, (n + 4)), ((k * k) * Int.pow(2, ((2 * n) + 6)))) by {
+// Lean step: exact dvd_mul_of_dvd_right h₁₀ _
+// hypotheses: 37 facts Z3 had at the line (goal itself removed: 0; the block's own asserts removed: 1); nothing assumed beyond the facts in scope
+// how it closes: L283_K2pow — 
+// Dafny: finished with 100 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// NOTE: uses a MODIFIED library copy: see alt/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-283/LIBRARY_CHANGES.diff
 
-// Line lemma for failing line 283 of numbertheory_3pow2pownm1mod2pownp3eq2pownp2 (OOR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "/home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_047/_powlib/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
-
-// ========================================================================================
-// FAILING LINE 283 (OOR) in induction_helper_1: Verification out of resource (induction_helper_1)
-//   dafny |                   assert NatDvd(Int.pow(2, (n + 4)), ((k * k) * Int.pow(2, ((2 * n) + 6)))) by { // @tac 5287-5323
-//   statement kind: have / step assertion
-//   @tac 5287-5323 | Lean: exact dvd_mul_of_dvd_right h₁₀ _
-//        before-goal ⊢ (2 : ℕ) ^ (n + (4 : ℕ)) ∣ k ^ (2 : ℕ) * (2 : ℕ) ^ ((2 : ℕ) * n + (6 : ℕ))
-// Lean have h₁₁, Lean lines 97-98:
-//   lean  |               have h₁₁ : 2 ^ (n + 4) ∣ k ^ 2 * 2 ^ (2 * n + 6) := by
-//   lean  |                 exact dvd_mul_of_dvd_right h₁₀ _
-
-// 4 path(s) merged (paths); 37 shared facts; 4 distinct path conditions
-// ABLATION VARIANT K2pow: K2-pow
+include "alt/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-283/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
   requires 0 <= n
   requires 0 <= k_1_0_2
@@ -54,12 +39,18 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283(k_1
   requires 0 <= k_1_0_2_0 * Int.pow(2, n + 4)
   requires NatDvd(Int.pow(2, n + 4), k_1_0_2_0 * Int.pow(2, n + 4))
   requires 0 <= Int.pow(2, 2 * n + 6)
-  requires NatDvd(Int.pow(2, n + 4), Int.pow(2, 2 * n + 6))
   requires 0 <= k_1_0_2_0 * k_1_0_2_0
   requires NatDvd(Int.pow(2, n + 4), Int.pow(2, 2 * n + 6)) || (Int.pow(2, n + 4) == 0 ==> Int.pow(2, 2 * n + 6) == 0)
   requires NatDvd(Int.pow(2, n + 4), Int.pow(2, 2 * n + 6)) || (Int.pow(2, n + 4) != 0 ==> Int.pow(2, 2 * n + 6) % Int.pow(2, n + 4) == 0)
   requires NatDvd(Int.pow(2, n + 4), k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6))
   requires if Int.pow(2, n + 4) == 0 then k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) == 0 else k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) % Int.pow(2, n + 4) == 0
   requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  0 <= k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6)
-{ }
+  ensures   0 <= k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6)
+{
+ 
+                    // [TACTIC: exact dvd_mul_of_dvd_right h₁₀ _]
+                    assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 6)));
+                    assert (NatDvd((Int.pow(2, (n + 4))), (Int.pow(2, ((2 * n) + 6)))));  // precondition of NatDvdMulOfDvdRight (Lean: dvd_mul_of_dvd_right)
+                    NatDvdMulOfDvdRight(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 6)), (k_1_0_0 * k_1_0_0));  // cite: dvd_mul_of_dvd_right
+}
+

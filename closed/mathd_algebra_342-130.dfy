@@ -1,37 +1,11 @@
-// CLOSED LEMMA for failing line mathd_algebra_342-130 (theorem mathd_algebra_342, Dafny line 130, ERR)
-// closes with: K5 (automation lemma) — single
-// added: FinsetSumRangeSucc(0, F); FinsetSumRangeZero(F);
-// Dafny: finished with 21 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_038/mathd_algebra_342-130/K5.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line mathd_algebra_342-130: theorem mathd_algebra_342, Dafny line 130 (ERR: assertion might not hold)
+// failing Dafny line: assert (Real.sum(range(5), ((k: nat) => (a + ((k as real) * d)))) == ((5.0 * a) + (10.0 * d))) by {
+// Lean step: norm_num [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ,
+// hypotheses: 17 facts Z3 had at the line (goal itself removed: 0; the block's own asserts removed: 1); nothing assumed beyond the facts in scope
+// how it closes: K5 — FinsetSumRangeSucc(0, F); FinsetSumRangeZero(F);
+// Dafny: finished with 26 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// kinds ablation shard_038, mathd_algebra_342-130, augmentation K5
-// Line lemma for failing line 130 of mathd_algebra_342 (ERR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "../../../../../wt_integ5/out/mathd_algebra_342.dfy"
-
-// ========================================================================================
-// FAILING LINE 130 (ERR) in mathd_algebra_342: assertion might not hold
-//   dafny |     assert (Real.sum(range(5), ((k: nat) => (a + ((k as real) * d)))) == ((5.0 * a) + (10.0 * d))) by { // @tac 605-816 // @tac 605-797 // @tac 605-778 // @tac 605-760
-//   statement kind: have / step assertion
-//   @tac 605-816 | Lean: norm_num [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ,
-//        before-goal ⊢ ∑ k ∈ Finset.range (5 : ℕ), (a + ↑k * d) = (5 : ℝ) * a + (10 : ℝ) * d
-//   @tac 605-797 | Lean: norm_num [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ,
-//        before-goal ⊢ ∑ k ∈ Finset.range (5 : ℕ), (a + ↑k * d) = (5 : ℝ) * a + (10 : ℝ) * d
-//   @tac 605-778 | Lean: norm_num [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ,
-//        before-goal ⊢ ∑ k ∈ Finset.range (5 : ℕ), (a + ↑k * d) = (5 : ℝ) * a + (10 : ℝ) * d
-//   @tac 605-760 | Lean: norm_num [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ,
-//        before-goal ⊢ ∑ k ∈ Finset.range (5 : ℕ), (a + ↑k * d) = (5 : ℝ) * a + (10 : ℝ) * d
-// Lean have h₂₁, Lean lines 12-17:
-//   lean  |     have h₂₁ : (∑ k in Finset.range 5, (a + k * d : ℝ)) = 5 * a + 10 * d := by
-//   lean  |       norm_num [Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ, Finset.sum_range_succ,
-//   lean  |         Finset.sum_range_succ, Finset.sum_range_succ]
-//   lean  |       <;> ring_nf
-//   lean  |       <;> norm_num
-//   lean  |       <;> linarith
-
-// 1 path(s) merged (paths); 18 shared facts; 1 distinct path conditions
+include "../dafny/mathd_algebra_342.dfy"
 lemma {:induction false} vc_mathd_algebra_342_L130(a: real, d: real)
   requires Real.sum(range(5), ((k: nat) => a + (k as real) * d)) == 70.0
   requires Real.sum(range(10), ((k: nat) => a + (k as real) * d)) == 210.0
@@ -49,11 +23,25 @@ lemma {:induction false} vc_mathd_algebra_342_L130(a: real, d: real)
   requires Real.sum(range(1 + 1), ((k: nat) => a + (k as real) * d)) == Real.sum(range(1), ((k: nat) => a + (k as real) * d)) + ((k: nat) => a + (k as real) * d)(1)
   requires (0 as real) == 0.0
   requires (1 as real) == 1.0
-  requires a + (a + d) + (a + 2.0 * d) + (a + 3.0 * d) + (a + 4.0 * d) == 5.0 * a + 10.0 * d
   requires 0 <= 5
-  ensures  Real.sum(range(5), ((k: nat) => a + (k as real) * d)) == 5.0 * a + 10.0 * d
+  ensures   Real.sum(range(5), ((k: nat) => a + (k as real) * d)) == 5.0 * a + 10.0 * d
 {
   FinsetSumRangeSucc(0, ((k: nat) => a + (k as real) * d));
   FinsetSumRangeZero(((k: nat) => a + (k as real) * d));
+      // [TACTIC: «_<;>_» [ Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ ] norm_num [ Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ ] <;> ring_nf ring_nf <;> norm_num norm_num <;> linarith linarith]
+      // [TACTIC: choice [ Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ ] norm_num [ Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ ]]
+      FinsetSumRangeSucc(4, ((x: nat) => (a + ((x as real) * d))));  // cite: Finset.sum_range_succ
+      FinsetSumRangeSucc(3, ((x: nat) => (a + ((x as real) * d))));  // cite: Finset.sum_range_succ
+      FinsetSumRangeSucc(2, ((x: nat) => (a + ((x as real) * d))));  // cite: Finset.sum_range_succ
+      FinsetSumRangeSucc(1, ((x: nat) => (a + ((x as real) * d))));  // cite: Finset.sum_range_succ
+      // UNCITED-APPLIED Finset.sum_singleton: recorded instance not expressible here (sort/type/scope), not guessed
+      NatCastZero();  // cite: Nat.cast_zero [applied by the tactic, not named in it]
+      NatCastOne();  // cite: Nat.cast_one [applied by the tactic, not named in it]
+      // UNCITED-APPLIED internal ×38 [exec 51 605-760]: applications made inside the tactic's own automation, not stated — Finset.sum_singleton ×1, add_zero ×1, one_mul ×1; machinery/glue: congrArg ×8, Eq.trans ×8, Mathlib.Meta.NormNum.IsNat.to_eq ×5, Mathlib.Meta.NormNum.isNat_natCast ×5 (+2 more heads, ×9) (cited in this block, not counted here: Finset.sum_range_succ [Lean recorded ×4], Nat.cast_one [Lean recorded ×1], Nat.cast_zero [Lean recorded ×1])
+      assert (((((a + (a + d)) + (a + (2.0 * d))) + (a + (3.0 * d))) + (a + (4.0 * d))) == ((5.0 * a) + (10.0 * d))) by {  // sub-goal of `ring_nf` (Lean state) // @tac 771-778
+        PowOne(a);  // cite: pow_one [applied by the tactic, not named in it]
+        PowOne(d);  // cite: pow_one [applied by the tactic, not named in it]
+        // UNCITED-APPLIED internal ×118 [exec 60 771-778]: applications made inside the tactic's own automation, not stated — add_zero ×1; machinery/glue: Mathlib.Tactic.Ring.add_congr ×8, Mathlib.Tactic.Ring.add_pf_add_overlap ×7, Mathlib.Tactic.Ring.add_overlap_pf ×7, Mathlib.Meta.NormNum.IsNat.to_raw_eq ×7 (+21 more heads, ×88) (cited in this block, not counted here: pow_one [Lean recorded ×2])
+      }
 }
 

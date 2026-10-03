@@ -1,13 +1,12 @@
-// CLOSED LEMMA for failing line numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-265 (theorem numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown, Dafny line 265, OOR)
-// closes with: K2 (computation) — simplest-close
-// added: lemma RingId(a: int, b: int) ensures a * b * (a * a + b * b) + a * a * (b * b) == a * b * (a * a + a * b + b * b) { }  + call RingId(Int.pow(2, k), Int.pow(3, k)); together with the K2-pow library change
-// Dafny: finished with 24 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_052/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-265/split+K2pow.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-265: theorem numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown, Dafny line 265 (OOR: Verification out of resource (numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown))
+// failing Dafny line: assert ((((Int.pow(2, k) * Int.pow(3, k)) * ((Int.pow(2, k) * Int.pow(2, k)) + (Int.pow(3, k) * Int.pow(3, k)))) + ((Int.pow(2, k) * Int.pow(2, k)) * (Int.pow(3, k) * Int.pow(3, k)))) == ((Int.pow(2, 
+// Lean step: ring_nf
+// hypotheses: 28 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: split+K2pow — 
+// Dafny: finished with 24 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// NOTE: uses a MODIFIED library copy: see alt/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-265/LIBRARY_CHANGES.diff
 
-// main line lemma only (side checks dropped); header: see original line lemma file
-include "/home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_052/_k2pow/out/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
-
+include "alt/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-265/out/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
 lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265(f: nat -> nat, k_0_0: nat, k_0_2_3_2_1_0: int, k_1_1_0_1_0: int, m: int, n: int, t_3_5: int)
   requires 0 <= m
   requires 0 <= n
@@ -37,11 +36,18 @@ lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L
   requires Int.pow(2, 2 * k_0_0) == Int.pow(2, k_0_0) * Int.pow(2, k_0_0)
   requires Int.pow(3, 2 * k_0_0) == Int.pow(3, k_0_0) * Int.pow(3, k_0_0)
   requires Int.pow(k_0_0, 1) == k_0_0
-  ensures  Int.pow(2, k_0_0) * Int.pow(3, k_0_0) * (Int.pow(2, k_0_0) * Int.pow(2, k_0_0) + Int.pow(3, k_0_0) * Int.pow(3, k_0_0)) + Int.pow(2, k_0_0) * Int.pow(2, k_0_0) * (Int.pow(3, k_0_0) * Int.pow(3, k_0_0)) == Int.pow(2, k_0_0) * Int.pow(3, k_0_0) * (Int.pow(2, k_0_0) * Int.pow(2, k_0_0) + Int.pow(2, k_0_0) * Int.pow(3, k_0_0) + Int.pow(3, k_0_0) * Int.pow(3, k_0_0))
+  ensures   Int.pow(2, k_0_0) * Int.pow(3, k_0_0) * (Int.pow(2, k_0_0) * Int.pow(2, k_0_0) + Int.pow(3, k_0_0) * Int.pow(3, k_0_0)) + Int.pow(2, k_0_0) * Int.pow(2, k_0_0) * (Int.pow(3, k_0_0) * Int.pow(3, k_0_0)) == Int.pow(2, k_0_0) * Int.pow(3, k_0_0) * (Int.pow(2, k_0_0) * Int.pow(2, k_0_0) + Int.pow(2, k_0_0) * Int.pow(3, k_0_0) + Int.pow(3, k_0_0) * Int.pow(3, k_0_0))
 {
   RingId(Int.pow(2, k_0_0), Int.pow(3, k_0_0));
+                    // [TACTIC: «_<;>_» ring_nf <;> nlinarith [ pow_pos ( by norm_num norm_num : 0 < ( 2 : ℕ ) ) k , pow_pos ( by norm_num norm_num : 0 < ( 3 : ℕ ) ) k ] nlinarith [ pow_pos ( by norm_num norm_num : 0 < ( 2 : ℕ ) ) k , pow_pos ( by norm_num norm_num : 0 < ( 3 : ℕ ) ) k ]]
+                    // [TACTIC: Ring_nfAt]
+                    NatPowOne(k_0_0);  // cite: pow_one [applied by the tactic, not named in it]
+                    // UNCITED-APPLIED mul_one ×4: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := k); (a := (3 : ℕ) ^ (k * (3 : ℕ))); (a := (3 : ℕ) ^ (k * (2 : ℕ))); (a := (3 : ℕ) ^ k)
+                    // `ring_nf` closed the goal; the rest of the chain did not run
+                    // [TACTIC: «Norm_num[_]At___»]
+                    // [TACTIC: «Norm_num[_]At___»]
+                    // UNCITED-APPLIED internal ×120 [exec 1120 3842-3849]: applications made inside the tactic's own automation, not stated — mul_one ×4, add_zero ×3; machinery/glue: congr ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_add ×8, Mathlib.Tactic.Ring.add_pf_add_zero ×8 (+29 more heads, ×81) (cited in this block, not counted here: pow_one [Lean recorded ×1])
 }
-
 
 lemma RingId(a: int, b: int)
   ensures a * b * (a * a + b * b) + a * a * (b * b) == a * b * (a * a + a * b + b * b)

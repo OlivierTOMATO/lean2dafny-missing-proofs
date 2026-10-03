@@ -1,19 +1,13 @@
-// CLOSED LEMMA for failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-516 (theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 516, OOR)
-// closes with: K1+K4 (instance, types) — multi
-// added: IntPowPos(2, n + 3); MulNonnegInt(k_1_2_0, Int.pow(2, n + 3)); NatDvdIffModEqZero(Int.pow(2, n + 3), k_1_2_0 * Int.pow(2, n + 3));  — existing library lemmas, ran: closed (C.dfy)
-// Dafny: finished with 72 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_050/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-516/K1K4.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-516: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 516 (OOR: Verification out of resource (numbertheory_3pow2pownm1mod2pownp3eq2pownp2))
+// failing Dafny line: assert NatDvd(Int.pow(2, (n + 3)), (k * Int.pow(2, (n + 3)))) by {
+// Lean step: use k
+// hypotheses: 16 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K2pow — library copy with MathPrelude Int.pow recursive ensures `if k == 0 then p == 1 else p == b * pow(b, k - 1)` removed (only change; kinds/work/shard_050/powlib)
+// Dafny: finished with 32 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// NOTE: uses a MODIFIED library copy: see alt/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-516/LIBRARY_CHANGES.diff
 
-// shard_050 ablation K1K4 of line_lemmas/OOR/numbertheory_3pow2pownm1mod2pownp3eq2pownp2/L516.dfy
-include "/home/changjie/lean2dafny_research/agents_tac/wt_integ5/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
-
-// Lean (Mathlib): theorem Dvd.intro {a b : α} (k : α) (h : a * k = b) : a ∣ b   (α = ℕ) [exact; added to this work copy]
-lemma {:axiom} NatDvdIntro(k: nat, a: nat, b: nat)
-  requires a * k == b
-  ensures NatDvd(a, b)
-
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516_K1K4(k_1_0: int, k_1_2: int, k_1_2_0: int, k_1_3: int, k_2: int, n: nat)
+include "alt/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-516/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
+lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516(k_1_0: int, k_1_2: int, k_1_2_0: int, k_1_3: int, k_2: int, n: nat)
   requires 0 <= n
   requires 0 <= k_1_2
   requires 0 < n
@@ -30,11 +24,12 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516_K1K
   requires tsub(Int.pow(3, Int.pow(2, n)), 1) == Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
   requires k_1_2_0 * Int.pow(2, n + 3) == Int.pow(2, n + 3) * k_1_2_0
   requires 0 <= Int.pow(2, n + 3)
-  ensures  ((((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3)) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0)) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3)) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0)) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3)) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0)) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3)) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0))) ==> (0 <= k_1_2_0 * Int.pow(2, n + 3)))
-        && ((((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3)))) ==> (NatDvd(Int.pow(2, n + 3), k_1_2_0 * Int.pow(2, n + 3)) || (Int.pow(2, n + 3) == 0 ==> k_1_2_0 * Int.pow(2, n + 3) == 0)))
-        && ((((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3)))) ==> (NatDvd(Int.pow(2, n + 3), k_1_2_0 * Int.pow(2, n + 3)) || (Int.pow(2, n + 3) != 0 ==> k_1_2_0 * Int.pow(2, n + 3) % Int.pow(2, n + 3) == 0)))
+  ensures   ((((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3)) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0)) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3)) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0)) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3)) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0)) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3)) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0))) ==> (0 <= k_1_2_0 * Int.pow(2, n + 3)))
 {
-  assert 0 <= Int.pow(2, n + 3);
-  MulNonnegInt(k_1_2_0, Int.pow(2, n + 3));
-  NatDvdIntro(k_1_2_0, Int.pow(2, n + 3), k_1_2_0 * Int.pow(2, n + 3));
+
+              // [TACTIC: «_<;>_» k <;> ring]
+              // [TACTIC: Use k]
+              assert ((k_1_0 * Int.pow(2, (n + 3))) == (Int.pow(2, (n + 3)) * k_1_0));  // sub-goal of `ring` (Lean state) // @tac 8383-8387
+              // UNCITED-APPLIED internal ×53 [exec 1322 8383-8387]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_pf_add_zero ×4, Mathlib.Tactic.Ring.add_mul ×4, Mathlib.Tactic.Ring.mul_add ×4, Mathlib.Tactic.Ring.mul_zero ×4 (+22 more heads, ×37)
 }
+

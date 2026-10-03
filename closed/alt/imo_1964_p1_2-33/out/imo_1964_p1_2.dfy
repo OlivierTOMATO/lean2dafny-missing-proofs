@@ -1,0 +1,112 @@
+// ════════════════════════════════════════════════════════════
+// MECHANICAL TRANSLATION (emitter v2) of ast_cache_v2/imo_1964_p1_2.json
+// Each Lean `have` → `assert ... by {}` at the same depth;
+// quantified haves → forall statements. Typed pipeline only.
+// ════════════════════════════════════════════════════════════
+
+include "../library/library_new.dfy"
+
+// ──────────────────────────────────────────────────
+// R14 — recursive lemma for `induction n` (structural)
+// ──────────────────────────────────────────────────
+lemma {:isolate_assertions} induction_helper_1(n: nat)
+  // induction on the theorem parameter n: Lean reverts the hypotheses that
+  // mention n; here they are the requires, so the recursive call must re-establish them
+  ensures (((Int.pow(2, n) % 7) == 1) || (((Int.pow(2, n) % 7) == 2) || ((Int.pow(2, n) % 7) == 4)))
+  decreases n
+{
+  if n == 0 {
+    assert (((Int.pow(2, 0) % 7) == 1) || (((Int.pow(2, 0) % 7) == 2) || ((Int.pow(2, 0) % 7) == 4))) by {  // sub-goal before `simp` (Lean state) // @tac 517-521
+      // [TACTIC: simp]
+      NatPowZero(2);  // cite: pow_zero [applied by the tactic, not named in it]
+      // UNCITED-APPLIED internal ×14 [exec 56 517-521]: applications made inside the tactic's own automation, not stated — Nat.one_mod ×1, or_self ×1, or_false ×1; machinery/glue: congrArg ×5, Eq.trans ×2, congr ×2, of_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: pow_zero [Lean recorded ×1])
+    }
+  } else {
+    induction_helper_1(n - 1);
+    var n: nat := n - 1;  // Lean's predecessor binder (succ n)
+    assert (((Int.pow(2, (n + 1)) % 7) == 1) || (((Int.pow(2, (n + 1)) % 7) == 2) || ((Int.pow(2, (n + 1)) % 7) == 4))) by {  // sub-goal before `cases` (Lean state) // @tac 608-941
+      // `cases`: 2 cases (Lean states); 2 branch bodies
+      if (((Int.pow(2, n) % 7) == 1)) {  // sub-goal of `cases` (Lean state)
+        // [TACTIC: rwSeq [ Nat.pow_succ ]]
+        NatPowSucc(2, n);  // cite: Nat.pow_succ
+        // UNCITED-APPLIED congrArg((2 : ℕ) ^ succ n, (2 : ℕ) ^ n * (2 : ℕ), fun (_a : ℕ) => _a % (7 : ℕ) = (1 : ℕ) ∨ _a % (7 : ℕ) = (2 : ℕ) ∨ _a …): no library counterpart (not stated) [exec 69 647-664]
+        assert ((((Int.pow(2, n) * 2) % 7) == 1) || ((((Int.pow(2, n) * 2) % 7) == 2) || (((Int.pow(2, n) * 2) % 7) == 4))) by {  // sub-goal before `norm_num` (Lean state) // @tac 673-711
+          // [TACTIC: «Norm_num[_]At___» [ h , Nat.mul_mod , Nat.add_mod ]]
+          // UNCITED Nat.add_mod: named in this rewriting step; no record of Lean's proof attributes an application of it to this execution (its recorded applications are at other tactics of the proof; a rewrite at a hypothesis is filed under the tactic that later uses the hypothesis, and a conditional / under-binder simp rewrite may be unrecorded), so whether it was applied here is not known; not stated
+          assert ((7) > 0);  // precondition of NatMulMod (Lean: Nat.mul_mod)
+          NatMulMod(Int.pow(2, n), 2, 7);  // cite: Nat.mul_mod
+          // UNCITED-APPLIED internal ×26 [exec 96 673-711]: applications made inside the tactic's own automation, not stated — one_mul ×1, or_false ×1, or_true ×1; machinery/glue: congrArg ×6, Eq.trans ×4, congr ×3, Mathlib.Meta.NormNum.isNat_ofNat ×3 (+7 more heads, ×7) (cited in this block, not counted here: Nat.mul_mod [Lean recorded ×1])
+        }
+        assert (((Int.pow(2, (n + 1)) % 7) == 1) || (((Int.pow(2, (n + 1)) % 7) == 2) || ((Int.pow(2, (n + 1)) % 7) == 4)));  // sub-goal of `cases` (Lean state) // @tac 647-664
+      }
+      if ((((Int.pow(2, n) % 7) == 2) || ((Int.pow(2, n) % 7) == 4))) {  // sub-goal of `cases` (Lean state)
+        // `cases`: 2 cases (Lean states); 2 branch bodies
+        if (((Int.pow(2, n) % 7) == 2)) {  // sub-goal of `cases` (Lean state)
+          // [TACTIC: rwSeq [ Nat.pow_succ ]]
+          NatPowSucc(2, n);  // cite: Nat.pow_succ
+          // UNCITED-APPLIED congrArg((2 : ℕ) ^ succ n, (2 : ℕ) ^ n * (2 : ℕ), fun (_a : ℕ) => _a % (7 : ℕ) = (1 : ℕ) ∨ _a % (7 : ℕ) = (2 : ℕ) ∨ _a …): no library counterpart (not stated) [exec 109 779-796]
+          assert ((((Int.pow(2, n) * 2) % 7) == 1) || ((((Int.pow(2, n) * 2) % 7) == 2) || (((Int.pow(2, n) * 2) % 7) == 4))) by {  // sub-goal before `norm_num` (Lean state) // @tac 807-845
+            // [TACTIC: «Norm_num[_]At___» [ h , Nat.mul_mod , Nat.add_mod ]]
+            // UNCITED Nat.add_mod: named in this rewriting step; no record of Lean's proof attributes an application of it to this execution (its recorded applications are at other tactics of the proof; a rewrite at a hypothesis is filed under the tactic that later uses the hypothesis, and a conditional / under-binder simp rewrite may be unrecorded), so whether it was applied here is not known; not stated
+            assert ((7) > 0);  // precondition of NatMulMod (Lean: Nat.mul_mod)
+            NatMulMod(Int.pow(2, n), 2, 7);  // cite: Nat.mul_mod
+            // UNCITED-APPLIED internal ×28 [exec 136 807-845]: applications made inside the tactic's own automation, not stated — or_true ×1; machinery/glue: congrArg ×6, Eq.trans ×4, congr ×3, Mathlib.Meta.NormNum.IsNat.to_eq ×3 (+8 more heads, ×11) (cited in this block, not counted here: Nat.mul_mod [Lean recorded ×1])
+          }
+          assert (((Int.pow(2, (n + 1)) % 7) == 1) || (((Int.pow(2, (n + 1)) % 7) == 2) || ((Int.pow(2, (n + 1)) % 7) == 4)));  // sub-goal of `cases` (Lean state) // @tac 779-796
+        }
+        if (((Int.pow(2, n) % 7) == 4)) {  // sub-goal of `cases` (Lean state)
+          // [TACTIC: rwSeq [ Nat.pow_succ ]]
+          NatPowSucc(2, n);  // cite: Nat.pow_succ
+          // UNCITED-APPLIED congrArg((2 : ℕ) ^ succ n, (2 : ℕ) ^ n * (2 : ℕ), fun (_a : ℕ) => _a % (7 : ℕ) = (1 : ℕ) ∨ _a % (7 : ℕ) = (2 : ℕ) ∨ _a …): no library counterpart (not stated) [exec 144 875-892]
+          assert ((((Int.pow(2, n) * 2) % 7) == 1) || ((((Int.pow(2, n) * 2) % 7) == 2) || (((Int.pow(2, n) * 2) % 7) == 4))) by {  // sub-goal before `norm_num` (Lean state) // @tac 903-941
+            // [TACTIC: «Norm_num[_]At___» [ h , Nat.mul_mod , Nat.add_mod ]]
+            // UNCITED Nat.add_mod: named in this rewriting step; no record of Lean's proof attributes an application of it to this execution (its recorded applications are at other tactics of the proof; a rewrite at a hypothesis is filed under the tactic that later uses the hypothesis, and a conditional / under-binder simp rewrite may be unrecorded), so whether it was applied here is not known; not stated
+            assert ((7) > 0);  // precondition of NatMulMod (Lean: Nat.mul_mod)
+            NatMulMod(Int.pow(2, n), 2, 7);  // cite: Nat.mul_mod
+            // UNCITED-APPLIED internal ×29 [exec 171 903-941]: applications made inside the tactic's own automation, not stated — or_self ×1, or_false ×1; machinery/glue: congrArg ×6, Eq.trans ×4, Mathlib.Meta.NormNum.isNat_ofNat ×4, congr ×3 (+7 more heads, ×10) (cited in this block, not counted here: Nat.mul_mod [Lean recorded ×1])
+          }
+          assert (((Int.pow(2, (n + 1)) % 7) == 1) || (((Int.pow(2, (n + 1)) % 7) == 2) || ((Int.pow(2, (n + 1)) % 7) == 4)));  // sub-goal of `cases` (Lean state) // @tac 875-892
+        }
+        assert (((Int.pow(2, (n + 1)) % 7) == 1) || (((Int.pow(2, (n + 1)) % 7) == 2) || ((Int.pow(2, (n + 1)) % 7) == 4)));  // sub-goal of `cases` (Lean state) // @tac 737-941
+      }
+    }
+  }
+}
+
+// statement: Lean elaborated type (v3, stmt_cache) — requires/ensures below
+lemma imo_1964_p1_2(n: nat)
+  ensures (!NatDvd(7, (Int.pow(2, n) + 1))) // @tac 234-262
+{
+  // [TACTIC: rwSeq [ Nat.dvd_iff_mod_eq_zero ]]
+  assert (0 < (7));  // precondition of NatDvdIffModEqZero (Lean: Nat.dvd_iff_mod_eq_zero)
+  NatDvdIffModEqZero(7, (Int.pow(2, n) + 1));  // cite: Nat.dvd_iff_mod_eq_zero
+  // UNCITED-APPLIED congrArg(fun (_a : Prop) => ¬_a): no library counterpart (not stated) [exec 8 234-262]
+  assert !(((Int.pow(2, n) + 1) % 7) == 0) by {  // sub-goal before `have` (Lean state) // @tac 335-941 // @tac 1054-1118 // @tac 1054-1079
+    // have h : 2 ^ n % 7 == 1 || 2 ^ n % 7 == 2 || 2 ^ n % 7 == 4  [type from Lean state]
+    assert (((Int.pow(2, n) % 7) == 1) || (((Int.pow(2, n) % 7) == 2) || ((Int.pow(2, n) % 7) == 4))) by { // @tac 486-941
+      // induction n → recursive lemma induction_helper_1
+      induction_helper_1(n);
+    }
+    // [TACTIC: «_<;>_» h with ( h | h | h ) <;> simp [ h , Nat.add_mod , Nat.mul_mod ] simp [ h , Nat.add_mod , Nat.mul_mod ] simp [ h , Nat.add_mod , Nat.mul_mod ]]
+    // [TACTIC: rcases h with ( h | h | h )]
+    if (((Int.pow(2, n) % 7) == 1)) {  // sub-goal of `simp` (Lean state)
+      NatAddMod(Int.pow(2, n), 1, 7);  // cite: Nat.add_mod
+      // UNCITED Nat.mul_mod: named in this rewriting step; no record of Lean's proof attributes an application of it to this execution (its recorded applications are at other tactics of the proof; a rewrite at a hypothesis is filed under the tactic that later uses the hypothesis, and a conditional / under-binder simp rewrite may be unrecorded), so whether it was applied here is not known; not stated
+      assert !(((Int.pow(2, n) + 1) % 7) == 0);  // sub-goal of `simp` (Lean state) // @tac 1084-1118
+      // UNCITED-APPLIED internal ×9 [exec 186 1084-1118]: applications made inside the tactic's own automation, not stated — Nat.one_mod ×1; machinery/glue: congrArg ×4, Eq.trans ×2, of_eq_true ×1, congr ×1 (cited in this block, not counted here: Nat.add_mod [Lean recorded ×1])
+    }
+    if (((Int.pow(2, n) % 7) == 2)) {  // sub-goal of `simp` (Lean state)
+      NatAddMod(Int.pow(2, n), 1, 7);  // cite: Nat.add_mod
+      // UNCITED Nat.mul_mod: named in this rewriting step; no record of Lean's proof attributes an application of it to this execution (its recorded applications are at other tactics of the proof; a rewrite at a hypothesis is filed under the tactic that later uses the hypothesis, and a conditional / under-binder simp rewrite may be unrecorded), so whether it was applied here is not known; not stated
+      assert !(((Int.pow(2, n) + 1) % 7) == 0);  // sub-goal of `simp` (Lean state) // @tac 1084-1118
+      // UNCITED-APPLIED internal ×9 [exec 189 1084-1118]: applications made inside the tactic's own automation, not stated — Nat.one_mod ×1; machinery/glue: congrArg ×4, Eq.trans ×2, of_eq_true ×1, congr ×1 (cited in this block, not counted here: Nat.add_mod [Lean recorded ×1])
+    }
+    if (((Int.pow(2, n) % 7) == 4)) {  // sub-goal of `simp` (Lean state)
+      NatAddMod(Int.pow(2, n), 1, 7);  // cite: Nat.add_mod
+      // UNCITED Nat.mul_mod: named in this rewriting step; no record of Lean's proof attributes an application of it to this execution (its recorded applications are at other tactics of the proof; a rewrite at a hypothesis is filed under the tactic that later uses the hypothesis, and a conditional / under-binder simp rewrite may be unrecorded), so whether it was applied here is not known; not stated
+      assert !(((Int.pow(2, n) + 1) % 7) == 0);  // sub-goal of `simp` (Lean state) // @tac 1084-1118
+      // UNCITED-APPLIED internal ×9 [exec 192 1084-1118]: applications made inside the tactic's own automation, not stated — Nat.one_mod ×1; machinery/glue: congrArg ×4, Eq.trans ×2, of_eq_true ×1, congr ×1 (cited in this block, not counted here: Nat.add_mod [Lean recorded ×1])
+    }
+  }
+}
+

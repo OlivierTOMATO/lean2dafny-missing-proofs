@@ -1,14 +1,11 @@
-// CLOSED LEMMA for failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-88 (theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 88, OOR)
-// closes with: K2 (computation) — simplest-close
-// added: library: drop Int.pow recursive ensures (opaque-style pow); plus in the step: IntPowAdd(2,n,2);IntPowAdd(2,n,3);IntPowAdd(2,n,4);IntPowAdd(2,n,n);assert n+n==2*n;IntPowAdd(2,2*n,4);IntPowAdd(2,2*n,5);IntPowAdd(2,2*n,6);assert Int.pow(2,2)==4&&…&&Int.pow(2,6)==64; and a call to the pow-free helper le
-// Dafny: finished with 69 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_045/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-88/SPLIT_K2pow.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-88: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 88 (OOR: Verification out of resource (induction_helper_1))
+// failing Dafny line: assert ((((1 + Int.pow(2, (n + 2))) + (k * Int.pow(2, (n + 3)))) * ((1 + Int.pow(2, (n + 2))) + (k * Int.pow(2, (n + 3))))) == ((1 + Int.pow(2, (n + 3))) + (((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(
+// Lean step: ring_nf at *
+// hypotheses: 29 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// not closed: tried H0=oor, K2=oor, K2pow=failed, K5=oor, K3=oor, SPLIT_K2pow=oor, SPLIT=oor, SIMPLE=oor, PAIR_K2pow_K5=oor; this file is the honest base attempt
+// Dafny: finished with 35 verified, 0 errors, 2 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// shard_045 ablation SPLIT_K2pow of numbertheory_3pow2pownm1mod2pownp3eq2pownp2 L88 (original line lemma, main VC only)
-// SPLIT_K2pow: pow_add instances + IsNat values + pow-free polynomial helper lemma
-include "/home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_045/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-88/SPLIT_K2pow_lib/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
-
+include "../dafny/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L88(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
   requires 0 <= n
   requires 0 <= k_1_0_2
@@ -39,18 +36,14 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L88(k_1_
   requires 0 <= 2 * n + 6
   requires 0 <= 2 * n + 5
   requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) == 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5))
+  ensures   (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) == 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5))
 {
-  IntPowAdd(2, n, 2); IntPowAdd(2, n, 3); IntPowAdd(2, n, 4); IntPowAdd(2, n, n);
-  assert n + n == 2 * n;
-  IntPowAdd(2, 2 * n, 4); IntPowAdd(2, 2 * n, 5); IntPowAdd(2, 2 * n, 6);
-  assert Int.pow(2, 2) == 4 && Int.pow(2, 3) == 8 && Int.pow(2, 4) == 16 && Int.pow(2, 5) == 32 && Int.pow(2, 6) == 64;
-  vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L88_poly(Int.pow(2, n), k_1_0_2_0, Int.pow(2, n + 2), Int.pow(2, n + 3), Int.pow(2, n + 4), Int.pow(2, 2 * n + 4), Int.pow(2, 2 * n + 5), Int.pow(2, 2 * n + 6));
+                  // [TACTIC: «_<;>_» at * <;> simp [ pow_add , pow_mul , mul_assoc , mul_comm , mul_left_comm , Nat.mul_div_cancel_left ] simp [ pow_add , pow_mul , mul_assoc , mul_comm , mul_left_comm , Nat.mul_div_cancel_left ] simp [ pow_add , pow_mul , mul_assoc , mul_comm , mul_left_comm , Nat.mul_div_cancel_left ] <;> ring_nf at * <;> omega omega]
+                  // [TACTIC: Ring_nfAt at *]
+                  NatPowOne(k_1_0_0);  // cite: pow_one [applied by the tactic, not named in it]
+                  NatPowOne(n);  // cite: pow_one [applied by the tactic, not named in it]
+                  // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := n)
+                  // UNCITED-APPLIED internal ×233 [exec 277 1686-1698]: applications made inside the tactic's own automation, not stated — add_zero ×2, mul_one ×1; machinery/glue: congrArg ×8, Mathlib.Tactic.Ring.add_pf_add_gt ×8, Mathlib.Tactic.Ring.add_pf_add_zero ×8, Mathlib.Tactic.Ring.single_pow ×8 (+43 more heads, ×198) (cited in this block, not counted here: pow_one [Lean recorded ×2])
+                  // `ring_nf` closed the goal; the rest of the chain did not run
 }
 
-// split helper: the ring_nf step over plain ints (pow atoms replaced by variables tied to Lean's normal form)
-lemma vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L88_poly(a: int, k: int, p2: int, p3: int, p4: int, q4: int, q5: int, q6: int)
-  requires p2 == a * 4 && p3 == a * 8 && p4 == a * 16
-  requires q4 == a * a * 16 && q5 == a * a * 32 && q6 == a * a * 64
-  ensures (1 + p2 + k * p3) * (1 + p2 + k * p3) == 1 + p3 + (q4 + k * p4 + k * k * q6 + 2 * k * q5)
-{ }

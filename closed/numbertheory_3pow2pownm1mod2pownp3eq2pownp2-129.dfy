@@ -1,14 +1,11 @@
-// CLOSED LEMMA for failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-129 (theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 129, OOR)
-// closes with: K1 (instance) — single
-// added: IntModEqZero(k_1_0_2_0 * Int.pow(2, n + 4), Int.pow(2, n + 4)); assert k_1_0_2_0 * Int.pow(2, n + 4) == Int.pow(2, n + 4) * k_1_0_2_0; — Lean's ∃-witness k of ⟨k, by ring⟩ instantiating the dvd⇔mod bridge (library :171)
-// Dafny: finished with 52 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_045/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-129/K1.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-129: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 129 (OOR: Verification out of resource (induction_helper_1))
+// failing Dafny line: assert (if ((Int.pow(2, (n + 4)) as int)) == 0 then (((k * Int.pow(2, (n + 4))) as int)) == 0 else (((k * Int.pow(2, (n + 4))) as int)) % ((Int.pow(2, (n + 4)) as int)) == 0);
+// Lean step: h₆
+// hypotheses: 29 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K1 — IntModEqZero(k_1_0_2_0 * Int.pow(2, n + 4), Int.pow(2, n + 4)); assert k_1_0_2_0 * Int.pow(2, n + 4) == Int.pow(2, n + 4) * k_1_0_2_0; — Lean's ∃-witness k of ⟨k, by ring⟩ instantiating the dvd⇔mod bridge (library :171)
+// Dafny: finished with 52 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// shard_045 ablation K1 of numbertheory_3pow2pownm1mod2pownp3eq2pownp2 L129 (original line lemma, main VC only)
-// K1: Lean's ∃-witness k (⟨k, by ring⟩) instantiating dvd⇔mod bridge (IntModEqZero, Mathlib Int.emod_emod_of_dvd-style iff; library :171)
-include "/home/changjie/lean2dafny_research/agents_tac/wt_integ5/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
-
+include "../dafny/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L129(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
   requires 0 <= n
   requires 0 <= k_1_0_2
@@ -39,8 +36,9 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L129(k_1
   requires k_1_0_2_0 * Int.pow(2, n + 4) == Int.pow(2, n + 4) * k_1_0_2_0
   requires Int.pow(2, n + 4) != 0
   requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  k_1_0_2_0 * Int.pow(2, n + 4) % Int.pow(2, n + 4) == 0
+  ensures   k_1_0_2_0 * Int.pow(2, n + 4) % Int.pow(2, n + 4) == 0
 {
   IntModEqZero(k_1_0_2_0 * Int.pow(2, n + 4), Int.pow(2, n + 4));
   assert k_1_0_2_0 * Int.pow(2, n + 4) == Int.pow(2, n + 4) * k_1_0_2_0;
 }
+

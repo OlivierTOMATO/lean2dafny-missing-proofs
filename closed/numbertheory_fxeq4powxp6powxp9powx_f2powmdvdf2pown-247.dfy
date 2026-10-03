@@ -1,13 +1,12 @@
-// CLOSED LEMMA for failing line numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-247 (theorem numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown, Dafny line 247, OOR)
-// closes with: K2 (computation) — single
-// added: library copy without Int.pow's recursive postcondition (kinds/work/shard_052/_k2pow)
-// Dafny: finished with 23 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_052/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-247/K2pow.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-247: theorem numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown, Dafny line 247 (OOR: Verification out of resource (numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown))
+// failing Dafny line: assert (Int.pow(3, (2 * k)) == (Int.pow(3, k) * Int.pow(3, k))) by {
+// Lean step: rw [show (2 * k : ℕ) = k + k by ring]
+// hypotheses: 29 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K2pow — library copy without Int.pow's recursive postcondition (kinds/work/shard_052/_k2pow)
+// Dafny: finished with 27 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// NOTE: uses a MODIFIED library copy: see alt/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-247/LIBRARY_CHANGES.diff
 
-// main line lemma only (side checks dropped); header: see original line lemma file
-include "/home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_052/_k2pow/out/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
-
+include "alt/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-247/out/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
 lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L247(f: nat -> nat, k_0_0: nat, k_0_2_3_2_1_0: int, k_1_1_0_1_0: int, m: int, n: int, t_3_5: int)
   requires 0 <= m
   requires 0 <= n
@@ -38,6 +37,21 @@ lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L
   requires 2 * k_0_0 == k_0_0 + k_0_0
   requires 0 <= k_0_0 + k_0_0
   requires Int.pow(3, k_0_0 + k_0_0) == Int.pow(3, k_0_0) * Int.pow(3, k_0_0)
-  ensures  Int.pow(3, 2 * k_0_0) == Int.pow(3, k_0_0) * Int.pow(3, k_0_0)
-{ }
+  ensures   Int.pow(3, 2 * k_0_0) == Int.pow(3, k_0_0) * Int.pow(3, k_0_0)
+{
+ 
+                    assert ((2 * k_0_0) == (k_0_0 + k_0_0)) by {  // sub-goal of `by` (Lean state) // @tac 3748-3752
+                      // [TACTIC: Ring]
+                      // UNCITED-APPLIED internal ×19 [exec 1022 3748-3752]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.of_eq ×1, Mathlib.Tactic.Ring.mul_congr ×1, Mathlib.Tactic.Ring.cast_pos ×1, Mathlib.Meta.NormNum.isNat_ofNat ×1 (+15 more heads, ×15)
+                    }
+                    // [TACTIC: rwSeq [ show ( 2 * k : ℕ ) = k + k by ring ]]
+                    // UNCITED-APPLIED congrArg((2 : ℕ) * k, k + k, fun (_a : ℕ) => (3 : ℕ) ^ _a = (3 : ℕ) ^ k * (3 : ℕ) ^ k): no library counterpart (not stated) [exec 1011 3714-3753]
+                    assert (Int.pow(3, (k_0_0 + k_0_0)) == (Int.pow(3, k_0_0) * Int.pow(3, k_0_0))) by {  // sub-goal before `rw` (Lean state) // @tac 3766-3799 // @tac 3766-3778
+                      // [TACTIC: «_<;>_» [ pow_add ] rw [ pow_add ] <;> ring]
+                      // [TACTIC: rwSeq [ pow_add ]]
+                      NatPowAdd(3, k_0_0, k_0_0);  // cite: pow_add
+                      // `rw` closed the goal; the rest of the chain did not run
+                      // UNCITED-APPLIED congrArg((3 : ℕ) ^ (k + k), (3 : ℕ) ^ k * (3 : ℕ) ^ k, fun (_a : ℕ) => _a = (3 : ℕ) ^ k * (3 : ℕ) ^ k): no library counterpart (not stated) [exec 1056 3766-3778]
+                    }
+}
 

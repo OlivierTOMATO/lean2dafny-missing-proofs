@@ -1,14 +1,12 @@
-// CLOSED LEMMA for failing line numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-442 (theorem numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown, Dafny line 442, ERR)
-// closes with: simplest (simplest) — simplest-close
-// added: emit ∃ bodies through `ghost function NatId(x: nat): nat { x }` (h₃ as `exists t: nat :: n == m + NatId(t)`, and the same at the obtain), or skip restating the ∃ before `var t :|`
-// Dafny: finished with 22 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_053/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-442/SCnatid.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-442: theorem numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown, Dafny line 442 (ERR: assertion might not hold)
+// failing Dafny line: assert exists t: nat :: (n == (m + t));
+// Lean step: h_final
+// hypotheses: 19 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// not closed: tried H0=failed, K1=failed, K3=failed; this file is the honest base attempt
+// Dafny: finished with 21 verified, 1 error  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// shard_053 ablation SCnatid of line 442 (copy of line_lemmas/ERR/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown/L442.dfy main lemma)
-include "../../../../../wt_integ5/out/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
-ghost function NatId(x: nat): nat { x }  // identity; gives the ∃ body a trigger term
-lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L442_SCnatid(f: nat -> nat, k_0_2_3_2_1_0: int, k_1_1_0_1_0: int, m: int, n: int, t_3_2: int, t_3_3: int, t_3_5: int)
+include "../dafny/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
+lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L442(f: nat -> nat, k_0_2_3_2_1_0: int, k_1_1_0_1_0: int, m: int, n: int, t_3_2: int, t_3_3: int, t_3_5: int)
   requires 0 <= m
   requires 0 <= n
   requires 0 <= k_0_2_3_2_1_0
@@ -26,9 +24,8 @@ lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L
   requires forall k_1_1: nat :: true ==> NatDvd(f(k_1_1), f(2 * k_1_1))
   requires forall t_2_3: nat :: true ==> f.requires(Int.pow(2, m)) && f.requires(Int.pow(2, m + t_2_3))
   requires forall t_2_3: nat :: true ==> NatDvd(f(Int.pow(2, m)), f(Int.pow(2, m + t_2_3)))
-  requires exists t_3_1: nat :: n == m + NatId(t_3_1)
+  requires exists t_3_1: nat :: n == m + t_3_1
   requires ((0 <= t_3_2) && (0 <= t_3_3)) || ((0 <= t_3_2) && (t_3_3 < 0)) || ((t_3_2 < 0) && (0 <= t_3_3)) || ((t_3_2 < 0) && (t_3_3 < 0))
-  ensures  exists t_3_4: nat :: n == m + NatId(t_3_4)
-{
+  ensures   exists t_3_4: nat :: n == m + t_3_4
+{ }
 
-}

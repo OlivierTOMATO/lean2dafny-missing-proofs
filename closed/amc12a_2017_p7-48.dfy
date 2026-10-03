@@ -1,15 +1,12 @@
-// CLOSED LEMMA for failing line amc12a_2017_p7-48 (theorem amc12a_2017_p7, Dafny line 48, ERR)
-// closes with: K1 (instance) — single
-// added: instance of h₁ (even step) at Lean argument: assert f(n_1_0_0 + 1 + 1) == f(tsub(n_1_0_0 + 1 + 1, 1)) + 1.0;
-// Dafny: finished with 16 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_017/amc12a_2017_p7-48/K1.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line amc12a_2017_p7-48: theorem amc12a_2017_p7, Dafny line 48 (ERR: assertion might not hold)
+// failing Dafny line: assert (f((n + 1)) == ((n as real) + 2.0));
+// Lean step: simp_all [Nat.succ_eq_add_one, Nat.add_assoc, Nat.add_comm, Nat.add_left_comm, parity_simps]
+// hypotheses: 24 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K1 — instance of h₁ (even step) at Lean argument: assert f(n_1_0_0 + 1 + 1) == f(tsub(n_1_0_0 + 1 + 1, 1)) + 1.0;
+// Dafny: finished with 16 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// shard_017 ablation K1 for amc12a_2017_p7-48 (copy of the ORIGINAL line lemma; see ablate/shard_017.jsonl)
-include "../../../../../wt_integ5/out/amc12a_2017_p7.dfy"
-
-
-lemma {:induction false} vc_amc12a_2017_p7_L48_K1(f: nat -> real, n: nat, n_1_0: int, n_1_0_0: int, n_1_1_0_0: int, n_1_1_0_2: int)
+include "../dafny/amc12a_2017_p7.dfy"
+lemma {:induction false} vc_amc12a_2017_p7_L48(f: nat -> real, n: nat, n_1_0: int, n_1_0_0: int, n_1_1_0_0: int, n_1_1_0_2: int)
   requires 0 <= n
   requires 0 <= n_1_0
   requires f(1) == 2.0
@@ -34,7 +31,8 @@ lemma {:induction false} vc_amc12a_2017_p7_L48_K1(f: nat -> real, n: nat, n_1_0:
   requires ((0 <= n_1_1_0_2) && (((1 < n_1_1_0_2) && (((!Even(n_1_1_0_2)) && (0 <= 2)) || (Even(n_1_1_0_2)))) || (n_1_1_0_2 <= 1))) || (n_1_1_0_2 < 0)
   requires forall n_1_1_0_3: nat :: 1 < n_1_1_0_3 ==> !Even(n_1_1_0_3) ==> f(n_1_1_0_3) == f(tsub(n_1_1_0_3, 2)) + 2.0
   requires 0 <= n_1_0_0 + 1
-  ensures  f(n_1_0_0 + 1) == (n_1_0_0 as real) + 2.0
+  ensures   f(n_1_0_0 + 1) == (n_1_0_0 as real) + 2.0
 {
   assert f(n_1_0_0 + 1 + 1) == f(tsub(n_1_0_0 + 1 + 1, 1)) + 1.0;
 }
+

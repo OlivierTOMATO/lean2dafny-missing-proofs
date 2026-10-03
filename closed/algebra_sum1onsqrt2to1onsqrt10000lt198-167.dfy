@@ -1,18 +1,12 @@
-// CLOSED LEMMA for failing line algebra_sum1onsqrt2to1onsqrt10000lt198-167 (theorem algebra_sum1onsqrt2to1onsqrt10000lt198, Dafny line 167, ERR)
-// closes with: K5 (automation lemma) — single
-// added: FinsetSumSingletonNatK8(2, summand) — norm_num internal Finset.sum_singleton, exact Mathlib at ℕ added to work copy
-// Dafny: finished with 8 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_008/algebra_sum1onsqrt2to1onsqrt10000lt198-167/K5.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line algebra_sum1onsqrt2to1onsqrt10000lt198-167: theorem algebra_sum1onsqrt2to1onsqrt10000lt198, Dafny line 167 (ERR: assertion might not hold)
+// failing Dafny line: assert (Real.sum(IccN(2, 2), ((k: nat) => (2.0 * (Real.sqrt((k as real)) - Real.sqrt(((k as real) - 1.0)))))) == (2.0 * (Real.sqrt((2 as real)) - Real.sqrt(1.0)))) by {
+// Lean step: norm_num [Finset.sum_Icc_succ_top]
+// hypotheses: 8 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// not closed: tried H0=error, K1=error, K4=error; this file is the honest base attempt
+// Dafny: 1 parse errors detected in H_algebra_sum1onsqrt2to1onsqrt10000lt198-167_H0.dfy  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// [k_ablate shard_008 K5] algebra_sum1onsqrt2to1onsqrt10000lt198-167: K5: norm_num's internal Finset.sum_singleton application, exact Mathlib statement at ℕ
-include "/home/changjie/lean2dafny_research/agents_tac/wt_integ5/out/algebra_sum1onsqrt2to1onsqrt10000lt198.dfy"
-
-// Mathlib: theorem Finset.sum_singleton (f : α → β) (a : α) : ∑ x ∈ {a}, f x = f a  (α = ℕ; added to the work copy)
-lemma {:axiom} FinsetSumSingletonNatK8(a: nat, f: nat -> real)
-  ensures Real.sum({a}, f) == f(a)
-
-lemma {:induction false} K8_K5_algebra_sum1onsqrt2to1onsqrt10000lt198_167(n: int, n_1_0_1_0: int, n_1_0_1_0_1_0: int)
+include "../dafny/algebra_sum1onsqrt2to1onsqrt10000lt198.dfy"
+lemma {:induction false} vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L167(n: int, n_1_0_1_0: int, n_1_0_1_0_1_0: int)
   requires 0 <= n
   requires 0 <= n_1_0_1_0
   requires 0 <= n_1_0_1_0_1_0
@@ -20,9 +14,14 @@ lemma {:induction false} K8_K5_algebra_sum1onsqrt2to1onsqrt10000lt198_167(n: int
   requires n >= 1
   requires n == 1
   requires 0 <= 2
-  requires IccN(2, 2) == {2}
-  requires (1 as real) == 1.0
-  ensures  Real.sum(IccN(2, 2), ((k: nat) => 2.0 * (Real.sqrt((k as real)) - Real.sqrt((k as real) - 1.0)))) == 2.0 * (Real.sqrt((2 as real)) - Real.sqrt(1.0))
+  requires IccN(2, 2) == 
 {
-  FinsetSumSingletonNatK8(2, ((k: nat) => 2.0 * (Real.sqrt((k as real)) - Real.sqrt((k as real) - 1.0))));  // K5: Finset.sum_singleton, applied inside norm_num (exec 628, internal)
+      // [TACTIC: «Norm_num[_]At___» [ Finset.sum_Icc_succ_top ]]
+      // UNCITED Finset.sum_Icc_succ_top: named in this rewriting step; no record of Lean's proof attributes an application of it to this execution (its recorded applications are at other tactics of the proof; a rewrite at a hypothesis is filed under the tactic that later uses the hypothesis, and a conditional / under-binder simp rewrite may be unrecorded), so whether it was applied here is not known; not stated
+      // UNCITED-APPLIED Finset.sum_congr: recorded instance not expressible here (sort/type/scope), not guessed
+      FinsetIccSelfNat(2);  // cite: Finset.Icc_self [applied by the tactic, not named in it]
+      // UNCITED-APPLIED Finset.sum_singleton: recorded instance not expressible here (sort/type/scope), not guessed
+      NatCastOne();  // cite: Nat.cast_one [applied by the tactic, not named in it]
+      // UNCITED-APPLIED internal ×26 [exec 628 4396-4430]: applications made inside the tactic's own automation, not stated — Finset.sum_congr ×1, Finset.sum_singleton ×1; machinery/glue: congrArg ×5, Eq.trans ×4, congr ×3, Mathlib.Meta.NormNum.IsNat.to_eq ×2 (+8 more heads, ×10) (cited in this block, not counted here: Finset.Icc_self [Lean recorded ×1], Nat.cast_one [Lean recorded ×1])
 }
+

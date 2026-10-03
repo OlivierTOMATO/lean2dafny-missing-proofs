@@ -1,14 +1,11 @@
-// CLOSED LEMMA for failing line amc12a_2021_p19-1668 (theorem amc12a_2021_p19, Dafny line 1668, OOR)
-// closes with: K5 (automation lemma) — single
-// added: RealCosZero(); RealSinZero(); RealSinPiDivTwo();  // cos_zero, sin_zero (named by Lean), sin_pi_div_two (simp set)
-// Dafny: finished with 47 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_021/amc12a_2021_p19-1668/K5.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line amc12a_2021_p19-1668: theorem amc12a_2021_p19, Dafny line 1668 (OOR: Verification out of resource (amc12a_2021_p19))
+// failing Dafny line: assert (Real.sin(((Real.pi() / 2.0) * Real.cos(0.0))) == Real.cos(((Real.pi() / 2.0) * Real.sin(0.0))));
+// Lean step: norm_num [Real.cos_zero, Real.sin_zero]
+// hypotheses: 8 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K5 — RealCosZero(); RealSinZero(); RealSinPiDivTwo();  // cos_zero, sin_zero (named by Lean), sin_pi_div_two (simp set)
+// Dafny: finished with 47 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// shard_021 ablation amc12a_2021_p19-1668 variant K5
-// K5
-include "/home/changjie/lean2dafny_research/agents_tac/wt_integ5/out/amc12a_2021_p19.dfy"
-
+include "../dafny/amc12a_2021_p19.dfy"
 lemma {:induction false} vc_amc12a_2021_p19_L1668(S: set<real>, x_0_0_0_0: real)
   requires forall x_1: real :: (x_1 in S) == (0.0 <= x_1 && x_1 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_1)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_1)))
   requires (x_0_0_0_0 in S) == (0.0 <= x_0_0_0_0 && x_0_0_0_0 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0)))
@@ -18,7 +15,8 @@ lemma {:induction false} vc_amc12a_2021_p19_L1668(S: set<real>, x_0_0_0_0: real)
   requires 0.0 <= 0.0
   requires 0.0 <= Real.pi()
   requires ((0.0 <= x_0_0_0_0) && (x_0_0_0_0 <= Real.pi()) && (2.0 != 0.0) && (Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0)))) || ((0.0 <= x_0_0_0_0) && (x_0_0_0_0 <= Real.pi()) && (2.0 != 0.0) && (!(0.0 <= x_0_0_0_0 && x_0_0_0_0 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0))))) || ((0.0 <= x_0_0_0_0) && (x_0_0_0_0 <= Real.pi()) && (Real.pi() < x_0_0_0_0) && (Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0)))) || ((0.0 <= x_0_0_0_0) && (x_0_0_0_0 <= Real.pi()) && (Real.pi() < x_0_0_0_0) && (!(0.0 <= x_0_0_0_0 && x_0_0_0_0 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0))))) || ((0.0 <= x_0_0_0_0) && (x_0_0_0_0 <= Real.pi()) && (x_0_0_0_0 < 0.0) && (Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0)))) || ((0.0 <= x_0_0_0_0) && (x_0_0_0_0 <= Real.pi()) && (x_0_0_0_0 < 0.0) && (!(0.0 <= x_0_0_0_0 && x_0_0_0_0 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0))))) || ((0.0 <= x_0_0_0_0) && (Real.pi() < x_0_0_0_0) && (x_0_0_0_0 <= Real.pi()) && (2.0 != 0.0) && (Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0)))) || ((0.0 <= x_0_0_0_0) && (Real.pi() < x_0_0_0_0) && (x_0_0_0_0 <= Real.pi()) && (2.0 != 0.0) && (!(0.0 <= x_0_0_0_0 && x_0_0_0_0 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0))))) || ((0.0 <= x_0_0_0_0) && (Real.pi() < x_0_0_0_0) && (x_0_0_0_0 <= Real.pi()) && (Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0)))) || ((0.0 <= x_0_0_0_0) && (Real.pi() < x_0_0_0_0) && (!(0.0 <= x_0_0_0_0 && x_0_0_0_0 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0))))) || ((0.0 <= x_0_0_0_0) && (Real.pi() < x_0_0_0_0) && (x_0_0_0_0 < 0.0) && (x_0_0_0_0 <= Real.pi()) && (Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0)))) || ((0.0 <= x_0_0_0_0) && (Real.pi() < x_0_0_0_0) && (x_0_0_0_0 < 0.0) && (!(0.0 <= x_0_0_0_0 && x_0_0_0_0 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0))))) || ((x_0_0_0_0 < 0.0) && (0.0 <= x_0_0_0_0) && (x_0_0_0_0 <= Real.pi()) && (2.0 != 0.0) && (Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0)))) || ((x_0_0_0_0 < 0.0) && (0.0 <= x_0_0_0_0) && (x_0_0_0_0 <= Real.pi()) && (2.0 != 0.0) && (!(0.0 <= x_0_0_0_0 && x_0_0_0_0 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0))))) || ((x_0_0_0_0 < 0.0) && (0.0 <= x_0_0_0_0) && (Real.pi() < x_0_0_0_0) && (x_0_0_0_0 <= Real.pi()) && (Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0)))) || ((x_0_0_0_0 < 0.0) && (0.0 <= x_0_0_0_0) && (Real.pi() < x_0_0_0_0) && (!(0.0 <= x_0_0_0_0 && x_0_0_0_0 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0))))) || ((x_0_0_0_0 < 0.0) && (0.0 <= x_0_0_0_0) && (x_0_0_0_0 <= Real.pi()) && (Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0)))) || ((x_0_0_0_0 < 0.0) && (!(0.0 <= x_0_0_0_0 && x_0_0_0_0 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_0_0_0_0)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_0_0_0_0)))))
-  ensures  Real.sin(Real.pi() / 2.0 * Real.cos(0.0)) == Real.cos(Real.pi() / 2.0 * Real.sin(0.0))
+  ensures   Real.sin(Real.pi() / 2.0 * Real.cos(0.0)) == Real.cos(Real.pi() / 2.0 * Real.sin(0.0))
 {
   RealCosZero(); RealSinZero(); RealSinPiDivTwo();  // Real.cos_zero, Real.sin_zero (named), Real.sin_pi_div_two (simp set)
 }
+

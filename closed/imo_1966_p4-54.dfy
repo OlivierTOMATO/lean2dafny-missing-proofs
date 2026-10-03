@@ -1,21 +1,12 @@
-// CLOSED LEMMA for failing line imo_1966_p4-54 (theorem imo_1966_p4, Dafny line 54, OOR)
-// closes with: K5 (automation lemma) — single
-// added: FinsetSumSingletonNat(1, F)  [exact Mathlib Finset.sum_singleton (ℕ-indexed), added to work copy; Lean applied it internally at exec 732]
-// Dafny: finished with 30 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_030/imo_1966_p4-54/K5.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line imo_1966_p4-54: theorem imo_1966_p4, Dafny line 54 (OOR: Verification out of resource (induction_helper_1))
+// failing Dafny line: assert (Real.sum(IccN(1, (0 + 1)), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x))))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, (0 + 1)) * x)))));
+// Lean step: simp_all [Finset.sum_Icc_succ_top, Nat.one_ne_zero, Nat.succ_pos, base_case]
+// hypotheses: 21 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: own-lemma — nothing: the file's own proof body, hypotheses = facts in scope minus the goal and minus the block's own asserts
+// Dafny: finished with 24 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// k_ablate shard_030, line imo_1966_p4-54, variant K5
-// K5: Finset.sum_singleton at (f, 1) (Lean exec 732, internal application)
-// base = line_lemmas/OOR/imo_1966_p4/L54.dfy main lemma (side-check lemmas omitted)
-include "../../../../../wt_integ5/out/imo_1966_p4.dfy"
-
-// Lean (Mathlib): Finset.sum_singleton (f : α → β) (a : α) : ∑ x ∈ {a}, f x = f a   (α = ℕ, β = ℝ);
-// Lean applied it (internal, exec 732) at (fun x_1 => (sin (2^x_1 * x))⁻¹, 1)
-lemma {:axiom} FinsetSumSingletonNat(a: nat, f: nat -> real)
-  ensures Real.sum({a}, f) == f(a)
-
-lemma {:induction false} vc_imo_1966_p4_L54_K5(n: int, n_1_0: int, n_1_0_0: int, n_1_0_1_0: int, x: real)
+include "../dafny/imo_1966_p4.dfy"
+lemma {:induction false} vc_imo_1966_p4_L54(n: int, n_1_0: int, n_1_0_0: int, n_1_0_1_0: int, x: real)
   requires 0 <= n
   requires 0 <= n_1_0
   requires 0 <= n_1_0_1_0
@@ -36,11 +27,6 @@ lemma {:induction false} vc_imo_1966_p4_L54_K5(n: int, n_1_0: int, n_1_0_0: int,
   requires 0 <= 1
   requires 0 < 0 ==> Real.sum(IccN(1, 0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, 0) * x))
   requires 0 < 0 + 1
-  requires IccN(1, 1) == {1}
-  requires Real.pow(2.0, 1) == 2.0
-  requires 0 <= 0 + 1
-  requires ((0 < 0) && (0 <= 0)) || (!(0 < 0))
-  ensures  Real.sum(IccN(1, 0 + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, 0 + 1) * x))
-{
-  FinsetSumSingletonNat(1, ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x))));  // K5: Finset.sum_singleton
-}
+  requires IccN(1, 1) == 
+{ }
+

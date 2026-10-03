@@ -1,72 +1,11 @@
-// CLOSED LEMMA for failing line aime_1999_p11-1161 (theorem aime_1999_p11, Dafny line 1161, OOR)
-// closes with: K2 (computation) — single
-// added: assert gcd(175,2)==1; RatNumDivEqOfCoprime(175,2); RatDenDivEqOfCoprime(175,2); RatNumDenOfReducedValue(m,175,2) — Lean's computed representation of 175/2 (norm_num IsRat), existing library lemmas
-// Dafny: finished with 35 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_005/aime_1999_p11-1161/K2.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line aime_1999_p11-1161: theorem aime_1999_p11, Dafny line 1161 (OOR: Verification out of resource (aime_1999_p11))
+// failing Dafny line: assert (m == Rat.div(Rat.of_int(175), Rat.of_int(2))) by {
+// Lean step: norm_cast at h₃ ⊢
+// hypotheses: 20 facts Z3 had at the line (goal itself removed: 0; the block's own asserts removed: 2); nothing assumed beyond the facts in scope
+// not closed: tried H0=oor, K2=oor, K4=oor, K3=oor, pair_K3_K4=oor; this file is the honest base attempt
+// Dafny: finished with 21 verified, 1 error, 1 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Line lemma for failing line 1161 of aime_1999_p11 (OOR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "../../../../../wt_integ5/library/library_new.dfy"
-
-// ========================================================================================
-// FAILING LINE 1161 (OOR) in aime_1999_p11: Verification out of resource (aime_1999_p11)
-//   dafny |       assert (m == Rat.div(Rat.of_int(175), Rat.of_int(2))) by { // @tac 11739-12154 // @tac 11739-12129 // @tac 11739-12099 // @tac 11739-12070 // @tac 11739-12040 // @tac 11739-11987 // @tac 11739-11942 // @tac 11739-11917 // @tac 11739-11892 // @tac 11739-11861 // @tac 11739-11831 // @tac 11739-1
-//   statement kind: have / step assertion
-//   @tac 11739-12154 | Lean: norm_cast at h₃ ⊢
-//        before-goal ⊢ m = (175 / 2 : ℚ)
-//   @tac 11739-12129 | Lean: norm_cast at h₃ ⊢
-//        before-goal ⊢ m = (175 / 2 : ℚ)
-//   @tac 11739-12099 | Lean: norm_cast at h₃ ⊢
-//        before-goal ⊢ m = (175 / 2 : ℚ)
-//   @tac 11739-12070 | Lean: norm_cast at h₃ ⊢
-//        before-goal ⊢ m = (175 / 2 : ℚ)
-//   @tac 11739-12040 | Lean: norm_cast at h₃ ⊢
-//        before-goal ⊢ m = (175 / 2 : ℚ)
-//   @tac 11739-11987 | Lean: norm_cast at h₃ ⊢
-//        before-goal ⊢ m = (175 / 2 : ℚ)
-//   @tac 11739-11942 | Lean: norm_cast at h₃ ⊢
-//        before-goal ⊢ m = (175 / 2 : ℚ)
-//   @tac 11739-11917 | Lean: norm_cast at h₃ ⊢
-//        before-goal ⊢ m = (175 / 2 : ℚ)
-//   @tac 11739-11892 | Lean: norm_cast at h₃ ⊢
-//        before-goal ⊢ m = (175 / 2 : ℚ)
-//   @tac 11739-11861 | Lean: norm_cast at h₃ ⊢
-//        before-goal ⊢ m = (175 / 2 : ℚ)
-//   @tac 11739-11831 | Lean: norm_cast at h₃ ⊢
-//        before-goal ⊢ m = (175 / 2 : ℚ)
-//   @tac 11739-11799 | Lean: norm_cast at h₃ ⊢
-//        before-goal ⊢ m = (175 / 2 : ℚ)
-//   @tac 11739-11760 | Lean: norm_cast at h₃ ⊢
-//        before-goal ⊢ m = (175 / 2 : ℚ)
-//   @tac 11777-11799 | Lean: field_simp at h₃ ⊢
-//        before-goal ⊢ m = (175 / 2 : ℚ)
-// Lean have h₇, Lean lines 245-264:
-//   lean  |     have h₇ : m = 175 / 2 := by
-//   lean  |       norm_cast at h₃ ⊢
-//   lean  |       <;>
-//   lean  |       field_simp at h₃ ⊢ <;>
-//   lean  |       norm_cast at h₃ ⊢ <;>
-//   lean  |       ring_nf at h₃ ⊢ <;>
-//   lean  |       norm_num at h₃ ⊢ <;>
-//   lean  |       (try norm_num) <;>
-//   lean  |       (try linarith) <;>
-//   lean  |       (try nlinarith [Real.pi_gt_three])
-//   lean  |       <;>
-//   lean  |       simp_all [Rat.ext_iff, Nat.cast_inj]
-//   lean  |       <;>
-//   lean  |       norm_num at *
-//   lean  |       <;>
-//   lean  |       ring_nf at *
-//   lean  |       <;>
-//   lean  |       norm_num at *
-//   lean  |       <;>
-//   lean  |       linarith
-
-// 1 path(s) merged (paths); 22 shared facts; 1 distinct path conditions
-// [k_ablate K2] K2: Lean's computed representation of 175/2 (num 175, den 2, coprime) as checked asserts/lemma calls; existing library lemmas
-
+include "../dafny/aime_1999_p11.dfy"
 lemma {:induction false} vc_aime_1999_p11_L1161(m: Rat.rat)
   requires m.Rational?
   requires gcd(Int.natAbs(m.num), m.denom) == 1
@@ -84,15 +23,36 @@ lemma {:induction false} vc_aime_1999_p11_L1161(m: Rat.rat)
   requires m.to_real() * Real.pi() / 180.0 == 35.0 * Real.pi() / 72.0
   requires 2.0 != 0.0
   requires m.to_real() == 175.0 / 2.0
-  requires m.to_real() * 2.0 == 175.0
   requires Rat.of_int(2).Rational?
   requires Rat.mul(m, Rat.of_int(2)).Rational?
   requires Rat.of_int(175).Rational?
-  requires Rat.mul(m, Rat.of_int(2)) == Rat.of_int(175)
   requires Rat.div(Rat.of_int(175), Rat.of_int(2)).Rational?
-  ensures  m == Rat.div(Rat.of_int(175), Rat.of_int(2))
+  ensures   m == Rat.div(Rat.of_int(175), Rat.of_int(2))
 {
-  assert gcd(175, 2) == 1;  // K2: Lean norm_num/decide value
-  RatNumDivEqOfCoprime(175, 2); RatDenDivEqOfCoprime(175, 2);  // (175/2:ℚ).num/.den (norm_num ℚ evaluation, IsRat)
-  RatNumDenOfReducedValue(m, 175, 2);
+        // [TACTIC: «_<;>_» at h₃ ⊢ norm_cast at h₃ ⊢ <;> field_simp at h₃ ⊢ <;> norm_cast at h₃ ⊢ norm_cast at h₃ ⊢ <;> ring_nf at h₃ ⊢ <;> norm_num at h₃ ⊢ <;> ( try norm_num norm_num ) <;> ( try linarith linarith ) <;> ( try nlinarith [ Real.pi_gt_three ] nlinarith [ Real.pi_gt_three ] ) <;> simp_all [ Rat.ext_iff , Nat.cast_inj ] simp_all [ Rat.ext_iff , Nat.cast_inj ] simp_all [ Rat.ext_iff , Nat.cast_inj ] <;> norm_num at * <;> ring_nf at * <;> norm_num at * <;> linarith linarith]
+        // [TACTIC: choice at h₃ ⊢ norm_cast at h₃ ⊢]
+        // UNCITED-APPLIED Nat.cast_zero: cast target unknown (Lean applies it at ℚ and ℝ in this proof; the record does not say which)
+        assert (((m).to_real() * 2.0) == 175.0);  // hypothesis h₃ after `field_simp` (Lean state) // @tac-hyp 11777-11799
+        assert (Rat.mul(m, Rat.of_int(2)) == Rat.of_int(175)) by {  // sub-goal of `norm_cast` (Lean state) // @tac 11810-11831
+          // UNCITED-APPLIED Eq.symm((Rat.of_int(2)).to_real(), 2.0): its premise is not established here and its conclusion is the same Dafny fact (== is symmetric): a guarded call would state nothing
+          // UNCITED-APPLIED Eq.symm((Rat.of_int(175)).to_real(), 175.0): its premise is not established here and its conclusion is the same Dafny fact (== is symmetric): a guarded call would state nothing
+          // UNCITED-APPLIED Nat.cast_zero: cast target unknown (Lean applies it at ℚ and ℝ in this proof; the record does not say which)
+          assert (Rat.mul(m, Rat.of_int(2)) == Rat.of_int(175));  // hypothesis h₃ after `norm_cast` (Lean state) // @tac-hyp 11810-11831
+          // UNCITED-APPLIED congrArg(↑m * (2 : ℝ), ↑(m * ↑(2 : ℕ)), fun (x : ℝ) => x = ↑(175 : ℕ)): no library counterpart (not stated) [exec 2799 11810-11831]
+          // UNCITED-APPLIED congrArg((2 : ℝ), ↑(2 : ℚ), HMul.hMul ↑m): no library counterpart (not stated) [exec 2799 11810-11831]
+          // UNCITED-APPLIED congrArg((175 : ℝ), ↑(175 : ℚ), Eq ↑(m * ↑(2 : ℕ))): no library counterpart (not stated) [exec 2799 11810-11831]
+          // UNCITED-APPLIED Eq.trans: no library counterpart (not stated) [exec 2799 11810-11831]
+          // UNCITED-APPLIED Eq.trans(↑m * (2 : ℝ), ↑m * ↑(2 : ℚ), ↑(m * ↑(2 : ℕ))): no library counterpart (not stated) [exec 2799 11810-11831]
+          // UNCITED-APPLIED Rat.cast_ofNat(nat_lit 2): no library counterpart (not stated) [exec 2799 11810-11831]
+          // UNCITED-APPLIED Rat.cast_ofNat(nat_lit 175): no library counterpart (not stated) [exec 2799 11810-11831]
+          // UNCITED-APPLIED internal ×3 [exec 2799 11810-11831]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, Mathlib.Meta.NormNum.isNat_eq_false ×1
+        }
+        // UNCITED-APPLIED internal ×4 [exec 2770 11777-11799]: applications made inside the tactic's own automation, not stated — Nat.cast_zero ×1; machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, Mathlib.Meta.NormNum.isNat_eq_false ×1
+        // [TACTIC: try norm_num norm_num]  NOT RUN in Lean (no execution recorded)
+        // [TACTIC: ( try norm_num norm_num )]  NOT RUN in Lean (no execution recorded)
+        // [TACTIC: try linarith linarith]  NOT RUN in Lean (no execution recorded)
+        // [TACTIC: ( try linarith linarith )]  NOT RUN in Lean (no execution recorded)
+        // [TACTIC: try nlinarith [ Real.pi_gt_three ] nlinarith [ Real.pi_gt_three ]]  NOT RUN in Lean (no execution recorded)
+        // [TACTIC: ( try nlinarith [ Real.pi_gt_three ] nlinarith [ Real.pi_gt_three ] )]  NOT RUN in Lean (no execution recorded)
 }
+

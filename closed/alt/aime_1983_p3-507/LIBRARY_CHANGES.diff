@@ -1,0 +1,9 @@
+--- standard/MathPrelude.dfy
++++ modified/MathPrelude.dfy
+@@ -18,5 +18,5 @@
+   // term Real.sqrt(t) silently assume t ≥ 0 — unsound.)
+   function {:axiom} sqrt(x: real): (y: real)
+-      ensures x <= 0.0 ==> y == 0.0   // (y >= 0 follows with the x > 0 clause)
++      // [k_ablate variant] `x <= 0.0 ==> y == 0.0` ensures removed (Mathlib Real.sqrt_eq_zero'; would be a lemma)
+       ensures x >= 0.0 ==> y * y == x
+       ensures x > 0.0 ==> y > 0.0

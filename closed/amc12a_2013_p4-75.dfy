@@ -1,25 +1,20 @@
-// CLOSED LEMMA for failing line amc12a_2013_p4-75 (theorem amc12a_2013_p4, Dafny line 75, ERR)
-// closes with: K2 (computation) — single
-// added: IsNat value of 2^2012 (isNat_pow / IsNatPowT.run record at exec 276) as a checked chain
-// Dafny: finished with 87 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_017/amc12a_2013_p4-75/K2.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line amc12a_2013_p4-75: theorem amc12a_2013_p4, Dafny line 75 (ERR: assertion might not hold)
+// failing Dafny line: assert (Real.div((5.0 * Real.pow(2.0, 2012)), (3.0 * Real.pow(2.0, 2012))) == (5.0 / 3.0)) by {
+// Lean step: have h₆ : (2 : ℝ) ^ 2012 ≠ 0 := by positivity
+// hypotheses: 7 facts Z3 had at the line (goal itself removed: 0; the block's own asserts removed: 2); nothing assumed beyond the facts in scope
+// how it closes: K2 — IsNat value of 2^2012 (isNat_pow / IsNatPowT.run record at exec 276) as a checked chain
+// Dafny: finished with 92 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// shard_017 ablation K2 for amc12a_2013_p4-75 (copy of the ORIGINAL line lemma; see ablate/shard_017.jsonl)
-include "../../../../../wt_integ5/out/amc12a_2013_p4.dfy"
-
-
-lemma {:induction false} vc_amc12a_2013_p4_L75_K2()
+include "../dafny/amc12a_2013_p4.dfy"
+lemma {:induction false} vc_amc12a_2013_p4_L75()
   requires 0 <= 2014
   requires 0 <= 2012
   requires Real.pow(2.0, 2014) - Real.pow(2.0, 2012) > 0.0
   requires Real.pow(2.0, 2014) == 4.0 * Real.pow(2.0, 2012)
   requires 4.0 * Real.pow(2.0, 2012) + Real.pow(2.0, 2012) == 5.0 * Real.pow(2.0, 2012)
   requires 4.0 * Real.pow(2.0, 2012) - Real.pow(2.0, 2012) == 3.0 * Real.pow(2.0, 2012)
-  requires Real.pow(2.0, 2012) != 0.0
   requires (0 as real) == 0.0
-  requires 5.0 * Real.pow(2.0, 2012) * 3.0 == 5.0 * (3.0 * Real.pow(2.0, 2012))
-  ensures  Real.div(5.0 * Real.pow(2.0, 2012), 3.0 * Real.pow(2.0, 2012)) == 5.0 / 3.0
+  ensures   Real.div(5.0 * Real.pow(2.0, 2012), 3.0 * Real.pow(2.0, 2012)) == 5.0 / 3.0
 {
   assert Real.pow(2.0, 1) == 2.0;
   PowAdd(2.0, 1, 1); assert Real.pow(2.0, 2) == 4.0;
@@ -39,4 +34,20 @@ lemma {:induction false} vc_amc12a_2013_p4_L75_K2()
   PowAdd(2.0, 502, 1); assert Real.pow(2.0, 503) == 26187124863169134960105517574620793217733136368344518315866330944769070371237396439066160738607233257207093473020480568073738052367083144426628220715008.0;
   PowAdd(2.0, 503, 503); assert Real.pow(2.0, 1006) == 685765508599211085406992031398401158759299079491541508764000248557024672719959118395646962442045349201660590667234013968119772982843080987903012964780708787451812337588750783066948774723991753080189067657794974398949244241113521123786594812548932026532556574571938698730267509225767960757581162756440064.0;
   PowAdd(2.0, 1006, 1006); assert Real.pow(2.0, 2012) == 470274332784334653125768479202378540655541330775529554115642465003833860666314880555687725595240968158595467116129264752003939926369507463752061483485861144736276435539199098882821239391191223793372884951300039658625496939095606738728210538661750185864826865902233185521437202864633084516500128653190482662785715851200342038947346369773215985258228844545757195127630339401818145309639808171054153250067278229485143728648281210300022956686758638598311483121262968506593107081583296672399695696759318866966038223190941759604116629173993695268516969610783232718583925968170363989270386498609909150306424324096.0;
+          // have h₆ : 2 ^ 2012 != 0  [type from Lean state]
+          assert (Real.pow(2.0, 2012) != 0.0) by { // @tac 1506-1516
+            // [TACTIC: Positivity]
+            // positivity proof (Lean execution 1506-1516 exec 265): nothing of it stated; Lean's records:
+            // cert: pow_pos piece `(0.0 < Real.pow(2.0, 2012))` not stated (only `0 < a ^ 2` of an atom a is lowered)
+            // UNCITED-APPLIED internal ×3 [exec 265 1506-1516]: applications made inside the tactic's own automation, not stated — ne_of_gt ×1, Mathlib.Meta.Positivity.pos_of_isNat ×1; machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×1 (cited in this block, not counted here: pow_pos [Lean recorded ×1])
+            assert (0.0 < (2.0));  // precondition of PowPos (Lean: pow_pos)
+            PowPos(2.0, 2012);  // cite: pow_pos [applied by the tactic, not named in it]
+          }
+          // [TACTIC: «_<;>_» [ h₆ ] field_simp [ h₆ ] <;> ring_nf ring_nf <;> linarith linarith]
+          // [TACTIC: choice [ h₆ ] field_simp [ h₆ ]]
+          NatCastZero();  // cite: Nat.cast_zero [applied by the tactic, not named in it]
+          // UNCITED-APPLIED internal ×30 [exec 276 1523-1540]: applications made inside the tactic's own automation, not stated — div_mul_eq_mul_div ×1; machinery/glue: Mathlib.Meta.NormNum.IsNatPowT.trans ×8, Mathlib.Meta.NormNum.IsNatPowT.bit1 ×7, Mathlib.Meta.NormNum.isNat_ofNat ×4, Mathlib.Meta.NormNum.IsNatPowT.bit0 ×3 (+6 more heads, ×7) (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+          assert (((5.0 * Real.pow(2.0, 2012)) * 3.0) == (5.0 * (3.0 * Real.pow(2.0, 2012))));  // sub-goal of `ring_nf` (Lean state) // @tac 1557-1564
+          // UNCITED-APPLIED internal ×72 [exec 285 1557-1564]: applications made inside the tactic's own automation, not stated — add_zero ×1; machinery/glue: Mathlib.Meta.NormNum.IsNatPowT.trans ×8, Mathlib.Meta.NormNum.IsNatPowT.bit1 ×7, Mathlib.Meta.NormNum.IsNat.of_raw ×5, Mathlib.Tactic.Ring.mul_congr ×4 (+22 more heads, ×47)
 }
+

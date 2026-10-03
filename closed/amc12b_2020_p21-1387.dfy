@@ -1,43 +1,12 @@
-// CLOSED LEMMA for failing line amc12b_2020_p21-1387 (theorem amc12b_2020_p21, Dafny line 1387, ERR)
-// closes with: K5 (automation lemma) — single
-// added: RealLeSqrt(48.0, 2360.0);  (Mathlib Real.le_sqrt, in Lean's norm_num simp set)
-// Dafny: finished with 13 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_023/amc12b_2020_p21-1387/K5.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line amc12b_2020_p21-1387: theorem amc12b_2020_p21, Dafny line 1387 (ERR: assertion might not hold)
+// failing Dafny line: assert ((48 as real) <= Real.sqrt(2360.0)) by {
+// Lean step: norm_num [Real.le_sqrt, Real.sqrt_lt]
+// hypotheses: 18 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K5 — RealLeSqrt(48.0, 2360.0);  (Mathlib Real.le_sqrt, in Lean's norm_num simp set)
+// Dafny: finished with 13 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Line lemma for failing line 1387 of amc12b_2020_p21 (ERR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "../../../../../wt_integ5/out/amc12b_2020_p21.dfy"
-
-// ========================================================================================
-// FAILING LINE 1387 (ERR) in amc12b_2020_p21: assertion might not hold
-//   dafny |                           assert ((48 as real) <= Real.sqrt(2360.0)) by {  // sub-goal of `constructor` (Lean state) // @tac 13808-14054 // @tac 13808-13845 // @tac 13760-14054
-//   statement kind: sub-goal (Lean tactic state)
-//   @tac 13808-14054 | Lean: norm_num [Real.le_sqrt, Real.sqrt_lt]
-//        before-goal ⊢ ↑(48 : ℤ) ≤ √(2360 : ℝ)
-//   @tac 13808-13845 | Lean: norm_num [Real.le_sqrt, Real.sqrt_lt]
-//        before-goal ⊢ ↑(48 : ℤ) ≤ √(2360 : ℝ)
-//   @tac 13760-14054 | Lean: · -- Prove 48 ≤ Real.sqrt 2360
-//        before-goal ⊢ ↑(48 : ℤ) ≤ √(2360 : ℝ)
-//        before-goal ⊢ √(2360 : ℝ) < ↑(48 : ℤ) + (1 : ℝ)
-// inside Lean have h₂, Lean lines 313-325:
-//   lean  |           have h₂ : Int.floor (Real.sqrt 2360 : ℝ) = 48 := by
-//   lean  |             rw [Int.floor_eq_iff]
-//   lean  |             constructor
-//   lean  |             · -- Prove 48 ≤ Real.sqrt 2360
-//   lean  |               norm_num [Real.le_sqrt, Real.sqrt_lt]
-//   lean  |               <;>
-//   lean  |               nlinarith [Real.sqrt_nonneg 2360, Real.sq_sqrt (show 0 ≤ (2360 : ℝ) by norm_num),
-//   lean  |                 Real.sqrt_nonneg 2360, Real.sq_sqrt (show 0 ≤ (2360 : ℝ) by norm_num)]
-//   lean  |             · -- Prove Real.sqrt 2360 < 48 + 1
-//   lean  |               norm_num [Real.le_sqrt, Real.sqrt_lt]
-//   lean  |               <;>
-//   lean  |               nlinarith [Real.sqrt_nonneg 2360, Real.sq_sqrt (show 0 ≤ (2360 : ℝ) by norm_num),
-//   lean  |                 Real.sqrt_nonneg 2360, Real.sq_sqrt (show 0 ≤ (2360 : ℝ) by norm_num)]
-
-// 1 path(s) merged (joined); 18 shared facts; 1 distinct path conditions
-lemma {:induction false} vc_amc12b_2020_p21_L1387_K5(S: set<nat>, k_0_0_0_0_0_0_0_0_5: int, n_0_0_0_0: int)
+include "../dafny/amc12b_2020_p21.dfy"
+lemma {:induction false} vc_amc12b_2020_p21_L1387(S: set<nat>, k_0_0_0_0_0_0_0_0_5: int, n_0_0_0_0: int)
   requires 0 <= k_0_0_0_0_0_0_0_0_5
   requires forall n_1: int :: 0 <= n_1 ==> (n_1 in S) == (0 < n_1 && ((n_1 as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n_1 as real))) as real))
   requires 0 <= n_0_0_0_0
@@ -56,8 +25,18 @@ lemma {:induction false} vc_amc12b_2020_p21_L1387_K5(S: set<nat>, k_0_0_0_0_0_0_
   requires 2360 == 400 || 2360 == 470 || 2360 == 2290 || 2360 == 2360 || 2360 == 2430 || 2360 == 2500
   requires 0 < 2360
   requires (floor(Real.sqrt(2360.0)) == 48) == ((48 as real) <= Real.sqrt(2360.0) && Real.sqrt(2360.0) < (48 as real) + 1.0)
-  ensures  (48 as real) <= Real.sqrt(2360.0)
+  ensures   (48 as real) <= Real.sqrt(2360.0)
 {
   // K5: Real.le_sqrt (named in Lean's norm_num simp set; rewrote the goal to 48^2 <= 2360)
   RealLeSqrt(48.0, 2360.0);
+                            // [TACTIC: «_<;>_» [ Real.le_sqrt , Real.sqrt_lt ] norm_num [ Real.le_sqrt , Real.sqrt_lt ] <;> nlinarith [ Real.sqrt_nonneg 2360 , Real.sq_sqrt ( show 0 ≤ ( 2360 : ℝ ) by norm_num norm_num ) , Real.sqrt_nonneg 2360 , Real.sq_sqrt ( show 0 ≤ ( 2360 : ℝ ) by norm_num norm_num ) ] nlinarith [ Real.sqrt_nonneg 2360 , Real.sq_sqrt ( show 0 ≤ ( 2360 : ℝ ) by norm_num norm_num ) , Real.sqrt_nonneg 2360 , Real.sq_sqrt ( show 0 ≤ ( 2360 : ℝ ) by norm_num norm_num ) ]]
+                            // [TACTIC: «Norm_num[_]At___» [ Real.le_sqrt , Real.sqrt_lt ]]
+                            // UNCITED Real.le_sqrt: no Lean instance recorded (arguments unknown), not guessed
+                            // UNCITED Real.sqrt_lt: no Lean instance recorded (arguments unknown), not guessed
+                            // UNCITED-APPLIED Nat.cast_zero: cast target unknown (Lean applies it at ℝ and ℤ in this proof; the record does not say which)
+                            // `norm_num` closed the goal; the rest of the chain did not run
+                            // [TACTIC: «Norm_num[_]At___»]
+                            // [TACTIC: «Norm_num[_]At___»]
+                            // UNCITED-APPLIED internal ×18 [exec 2462 13808-13845]: applications made inside the tactic's own automation, not stated — Nat.cast_zero ×1; machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×5, Mathlib.Meta.NormNum.isNat_le_true ×3, of_eq_true ×1, Eq.trans ×1 (+7 more heads, ×7)
 }
+

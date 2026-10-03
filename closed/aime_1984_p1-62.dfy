@@ -1,21 +1,17 @@
-// CLOSED LEMMA for failing line aime_1984_p1-62 (theorem aime_1984_p1, Dafny line 62, OOR)
-// closes with: K4 (types) — single
-// added: RatCastInjective(u(m+1), Rat.add(u(0), Rat.add(Rat.of_int(m), Rat.of_int(1)))) [Mathlib Rat.cast_injective]
-// Dafny: finished with 25 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_002/aime_1984_p1-62/K4.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line aime_1984_p1-62: theorem aime_1984_p1, Dafny line 62 (OOR: Verification out of resource (induction_helper_1))
+// failing Dafny line: assert (u((n + 1)) == Rat.add(u(0), Rat.add(Rat.of_int(n), Rat.of_int(1))));
+// Lean step: simp [ih, Nat.cast_add, Nat.cast_one, Nat.cast_zero, add_assoc] at h₃ h₄ ⊢
+// hypotheses: 27 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K4 — RatCastInjective(u(m+1), Rat.add(u(0), Rat.add(Rat.of_int(m), Rat.of_int(1)))) [Mathlib Rat.cast_injective]
+// Dafny: finished with 25 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// NOTE: uses a MODIFIED library copy: see alt/aime_1984_p1-62/LIBRARY_CHANGES.diff
 
-// k_ablate shard_002, line aime_1984_p1-62, variant K4
-// K4: Rat.cast_injective call
-include "../_lib/library_new.dfy"
-
-// Lean (Mathlib): Rat.cast_injective : Function.Injective ((↑) : ℚ → α)  [DivisionRing α] [CharZero α], α = ℝ
-// (to_real is the library's model of the cast ℚ → ℝ, MathPrelude: Rat.cast_def)
+include "alt/aime_1984_p1-62/out/aime_1984_p1.dfy"
 lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)
   requires a.to_real() == b.to_real()
   ensures a == b
 
-lemma {:induction false} vc_aime_1984_p1_L62_K4(n: int, n_1_0: int, n_1_0_0: int, u: nat -> Rat.rat)
+lemma {:induction false} vc_aime_1984_p1_L62(n: int, n_1_0: int, n_1_0_0: int, u: nat -> Rat.rat)
   requires 0 <= n
   requires 0 <= n_1_0
   requires forall n_2: int :: 0 <= n_2 ==> u.requires(n_2 + 1) && u.requires(n_2)
@@ -43,7 +39,8 @@ lemma {:induction false} vc_aime_1984_p1_L62_K4(n: int, n_1_0: int, n_1_0_0: int
   requires Rat.of_int(n_1_0_0).Rational?
   requires Rat.add(Rat.of_int(n_1_0_0), Rat.of_int(1)).Rational?
   requires Rat.add(u(0), Rat.add(Rat.of_int(n_1_0_0), Rat.of_int(1))).Rational?
-  ensures  u(n_1_0_0 + 1) == Rat.add(u(0), Rat.add(Rat.of_int(n_1_0_0), Rat.of_int(1)))
+  ensures   u(n_1_0_0 + 1) == Rat.add(u(0), Rat.add(Rat.of_int(n_1_0_0), Rat.of_int(1)))
 {
   RatCastInjective(u(n_1_0_0 + 1), Rat.add(u(0), Rat.add(Rat.of_int(n_1_0_0), Rat.of_int(1))));
 }
+

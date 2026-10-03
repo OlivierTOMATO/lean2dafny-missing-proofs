@@ -1,21 +1,17 @@
-// CLOSED LEMMA for failing line aime_1984_p1-35 (theorem aime_1984_p1, Dafny line 35, ERR)
-// closes with: K4 (types) — single
-// added: RatCastInjective(u(0), Rat.add(u(0), Rat.of_int(0))) [Mathlib Rat.cast_injective]
-// Dafny: finished with 13 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_002/aime_1984_p1-35/K4.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line aime_1984_p1-35: theorem aime_1984_p1, Dafny line 35 (ERR: assertion might not hold)
+// failing Dafny line: assert (u(0) == Rat.add(u(0), Rat.of_int(0))) by {
+// Lean step: norm_num
+// hypotheses: 9 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K4 — RatCastInjective(u(0), Rat.add(u(0), Rat.of_int(0))) [Mathlib Rat.cast_injective]
+// Dafny: finished with 13 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// NOTE: uses a MODIFIED library copy: see alt/aime_1984_p1-35/LIBRARY_CHANGES.diff
 
-// k_ablate shard_002, line aime_1984_p1-35, variant K4
-// K4: Rat.cast_injective call
-include "../_lib/library_new.dfy"
-
-// Lean (Mathlib): Rat.cast_injective : Function.Injective ((↑) : ℚ → α)  [DivisionRing α] [CharZero α], α = ℝ
-// (to_real is the library's model of the cast ℚ → ℝ, MathPrelude: Rat.cast_def)
+include "alt/aime_1984_p1-35/out/aime_1984_p1.dfy"
 lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)
   requires a.to_real() == b.to_real()
   ensures a == b
 
-lemma {:induction false} vc_aime_1984_p1_L35_K4(n: int, n_1_0: int, u: nat -> Rat.rat)
+lemma {:induction false} vc_aime_1984_p1_L35(n: int, n_1_0: int, u: nat -> Rat.rat)
   requires 0 <= n
   requires 0 <= n_1_0
   requires forall n_2: int :: 0 <= n_2 ==> u.requires(n_2 + 1) && u.requires(n_2)
@@ -25,7 +21,10 @@ lemma {:induction false} vc_aime_1984_p1_L35_K4(n: int, n_1_0: int, u: nat -> Ra
   requires 0 <= 0
   requires Rat.of_int(0).Rational?
   requires Rat.add(u(0), Rat.of_int(0)).Rational?
-  ensures  u(0) == Rat.add(u(0), Rat.of_int(0))
+  ensures   u(0) == Rat.add(u(0), Rat.of_int(0))
 {
   RatCastInjective(u(0), Rat.add(u(0), Rat.of_int(0)));
+      // [TACTIC: «Norm_num[_]At___»]
+      // UNCITED-APPLIED internal ×11 [exec 26 591-599]: applications made inside the tactic's own automation, not stated — add_zero ×1; machinery/glue: Eq.trans ×2, congrArg ×2, of_eq_true ×1, Mathlib.Meta.NormNum.IsNat.to_eq ×1 (+4 more heads, ×4)
 }
+

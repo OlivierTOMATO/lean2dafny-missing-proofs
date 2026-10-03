@@ -1,105 +1,11 @@
-// CLOSED LEMMA for failing line numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-95 (theorem numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown, Dafny line 95, OOR)
-// closes with: K3 (locality) — base
-// added: nothing (line lemma standalone)
-// Dafny: verifies unchanged (dossier standalone check)
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/line_lemmas/OOR/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown/L95.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-95: theorem numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown, Dafny line 95 (OOR: Verification out of resource (numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown))
+// failing Dafny line: assert (((Int.pow(4, (2 * k)) + Int.pow(6, (2 * k))) + Int.pow(9, (2 * k))) == (((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k)) * tsub(((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k)), (2 * Int.pow
+// Lean step: have h₃ : (4 : ℕ) ^ (2 * k) = (4 : ℕ) ^ k * (4 : ℕ) ^ k := by
+// hypotheses: 21 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// not closed: tried H0=oor; this file is the honest base attempt
+// Dafny: finished with 295 verified, 0 errors, 15 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Line lemma for failing line 95 of numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown (OOR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "../../../../wt_integ5/out/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
-
-// ========================================================================================
-// FAILING LINE 95 (OOR) in numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown: Verification out of resource (numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown)
-//   dafny |     assert (((Int.pow(4, (2 * k)) + Int.pow(6, (2 * k))) + Int.pow(9, (2 * k))) == (((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k)) * tsub(((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k)), (2 * Int.pow(6, k))))) by {  // sub-goal before `have` (Lean state) // @tac 708-857 // @tac 862-1011 // @tac
-//   statement kind: sub-goal (Lean tactic state)
-//   @tac 708-857 | Lean: have h₃ : (4 : ℕ) ^ (2 * k) = (4 : ℕ) ^ k * (4 : ℕ) ^ k := by
-//        before-goal ⊢ (4 : ℕ) ^ ((2 : ℕ) * k) + (6 : ℕ) ^ ((2 : ℕ) * k) + (9 : ℕ) ^ ((2 : ℕ) * k) =
-  ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k) * ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k - (2 : ℕ) * (6 : ℕ) ^ k)
-//   @tac 862-1011 | Lean: have h₄ : (6 : ℕ) ^ (2 * k) = (6 : ℕ) ^ k * (6 : ℕ) ^ k := by
-//        before-goal ⊢ (4 : ℕ) ^ ((2 : ℕ) * k) + (6 : ℕ) ^ ((2 : ℕ) * k) + (9 : ℕ) ^ ((2 : ℕ) * k) =
-  ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k) * ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k - (2 : ℕ) * (6 : ℕ) ^ k)
-//   @tac 1016-1165 | Lean: have h₅ : (9 : ℕ) ^ (2 * k) = (9 : ℕ) ^ k * (9 : ℕ) ^ k := by
-//        before-goal ⊢ (4 : ℕ) ^ ((2 : ℕ) * k) + (6 : ℕ) ^ ((2 : ℕ) * k) + (9 : ℕ) ^ ((2 : ℕ) * k) =
-  ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k) * ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k - (2 : ℕ) * (6 : ℕ) ^ k)
-//   @tac 1170-1191 | Lean: rw [h₃, h₄, h₅]
-//        before-goal ⊢ (4 : ℕ) ^ ((2 : ℕ) * k) + (6 : ℕ) ^ ((2 : ℕ) * k) + (9 : ℕ) ^ ((2 : ℕ) * k) =
-  ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k) * ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k - (2 : ℕ) * (6 : ℕ) ^ k)
-//        before-goal ⊢ (4 : ℕ) ^ k * (4 : ℕ) ^ k + (6 : ℕ) ^ k * (6 : ℕ) ^ k + (9 : ℕ) ^ k * (9 : ℕ) ^ k =
-  ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k) * ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k - (2 : ℕ) * (6 : ℕ) ^ k)
-// inside Lean have h_main, Lean lines 12-80:
-//   lean  |   have h_main : ∀ k : ℕ, f (2 * k) = f k * (f k - 2 * 6 ^ k) := by
-//   lean  |     intro k
-//   lean  |     have h₁ : f (2 * k) = 4 ^ (2 * k) + 6 ^ (2 * k) + 9 ^ (2 * k) := by
-//   lean  |       rw [h₀]
-//   lean  |     have h₂ : f k = 4 ^ k + 6 ^ k + 9 ^ k := by
-//   lean  |       rw [h₀]
-//   lean  |     rw [h₁, h₂]
-//   lean  |     have h₃ : (4 : ℕ) ^ (2 * k) = (4 : ℕ) ^ k * (4 : ℕ) ^ k := by
-//   lean  |       rw [show (2 * k : ℕ) = k + k by ring]
-//   lean  |       rw [pow_add]
-//   lean  |       <;> ring
-//   lean  |     have h₄ : (6 : ℕ) ^ (2 * k) = (6 : ℕ) ^ k * (6 : ℕ) ^ k := by
-//   lean  |       rw [show (2 * k : ℕ) = k + k by ring]
-//   lean  |       rw [pow_add]
-//   lean  |       <;> ring
-//   lean  |     have h₅ : (9 : ℕ) ^ (2 * k) = (9 : ℕ) ^ k * (9 : ℕ) ^ k := by
-//   lean  |       rw [show (2 * k : ℕ) = k + k by ring]
-//   lean  |       rw [pow_add]
-//   lean  |       <;> ring
-//   lean  |     rw [h₃, h₄, h₅]
-//   lean  |     have h₆ : (4 : ℕ) ^ k * (4 : ℕ) ^ k + (6 : ℕ) ^ k * (6 : ℕ) ^ k + (9 : ℕ) ^ k * (9 : ℕ) ^ k = ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k) * ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k) - 2 * ((4 : ℕ) ^ k * (6 : ℕ) ^ k + (4 : ℕ) ^ k * (9 : ℕ) ^ k + (6 : ℕ) ^ k * (9 : ℕ) ^ k) := by
-//   lean  |       have h₇ : ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k) * ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k) = (4 : ℕ) ^ k * (4 : ℕ) ^ k + (6 : ℕ) ^ k * (6 : ℕ) ^ k + (9 : ℕ) ^ k * (9 : ℕ) ^ k + 2 * ((4 : ℕ) ^ k * (6 : ℕ) ^ k + (4 : ℕ) ^ k * (9 : ℕ) ^ k + (6 : ℕ) ^ k * (9 : ℕ) ^ k) := by
-//   lean  |         ring
-//   lean  |       have h₈ : (4 : ℕ) ^ k * (6 : ℕ) ^ k + (4 : ℕ) ^ k * (9 : ℕ) ^ k + (6 : ℕ) ^ k * (9 : ℕ) ^ k = (6 : ℕ) ^ k * ((4 : ℕ) ^ k + (9 : ℕ) ^ k) + (4 : ℕ) ^ k * (9 : ℕ) ^ k := by
-//   lean  |         ring
-//   lean  |       omega
-//   lean  |     have h₇ : (4 : ℕ) ^ k * (6 : ℕ) ^ k + (4 : ℕ) ^ k * (9 : ℕ) ^ k + (6 : ℕ) ^ k * (9 : ℕ) ^ k = (6 : ℕ) ^ k * ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k) := by
-//   lean  |       have h₈ : (4 : ℕ) ^ k * (6 : ℕ) ^ k + (4 : ℕ) ^ k * (9 : ℕ) ^ k + (6 : ℕ) ^ k * (9 : ℕ) ^ k = (6 : ℕ) ^ k * ((4 : ℕ) ^ k + (9 : ℕ) ^ k) + (4 : ℕ) ^ k * (9 : ℕ) ^ k := by
-//   lean  |         ring
-//   lean  |       have h₉ : (6 : ℕ) ^ k * ((4 : ℕ) ^ k + (9 : ℕ) ^ k) + (4 : ℕ) ^ k * (9 : ℕ) ^ k = (6 : ℕ) ^ k * ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k) := by
-//   lean  |         have h₁₀ : (6 : ℕ) ^ k = (2 : ℕ) ^ k * (3 : ℕ) ^ k := by
-//   lean  |           rw [show (6 : ℕ) = 2 * 3 by norm_num]
-//   lean  |           rw [mul_pow]
-//   lean  |           <;> ring
-//   lean  |         rw [h₁₀]
-//   lean  |         have h₁₁ : (4 : ℕ) ^ k = (2 : ℕ) ^ (2 * k) := by
-//   lean  |           rw [show (4 : ℕ) = 2 ^ 2 by norm_num]
-//   lean  |           rw [← pow_mul]
-//   lean  |           <;> ring_nf
-//   lean  |         have h₁₂ : (9 : ℕ) ^ k = (3 : ℕ) ^ (2 * k) := by
-//   lean  |           rw [show (9 : ℕ) = 3 ^ 2 by norm_num]
-//   lean  |           rw [← pow_mul]
-//   lean  |           <;> ring_nf
-//   lean  |         rw [h₁₁, h₁₂]
-//   lean  |         have h₁₃ : (2 : ℕ) ^ k * (3 : ℕ) ^ k * ((2 : ℕ) ^ (2 * k) + (3 : ℕ) ^ (2 * k)) + (2 : ℕ) ^ (2 * k) * (3 : ℕ) ^ (2 * k) = (2 : ℕ) ^ k * (3 : ℕ) ^ k * ((2 : ℕ) ^ (2 * k) + (2 : ℕ) ^ k * (3 : ℕ) ^ k + (3 : ℕ) ^ (2 * k)) := by
-//   lean  |           have h₁₄ : (2 : ℕ) ^ (2 * k) = (2 : ℕ) ^ k * (2 : ℕ) ^ k := by
-//   lean  |             rw [show (2 * k : ℕ) = k + k by ring]
-//   lean  |             rw [pow_add]
-//   lean  |             <;> ring
-//   lean  |           have h₁₅ : (3 : ℕ) ^ (2 * k) = (3 : ℕ) ^ k * (3 : ℕ) ^ k := by
-//   lean  |             rw [show (2 * k : ℕ) = k + k by ring]
-//   lean  |             rw [pow_add]
-//   lean  |             <;> ring
-//   lean  |           rw [h₁₄, h₁₅]
-//   lean  |           ring_nf
-//   lean  |           <;> nlinarith [pow_pos (by norm_num : 0 < (2 : ℕ)) k, pow_pos (by norm_num : 0 < (3 : ℕ)) k]
-//   lean  |         rw [h₁₃]
-//   lean  |         <;> ring_nf
-//   lean  |         <;> nlinarith [pow_pos (by norm_num : 0 < (2 : ℕ)) k, pow_pos (by norm_num : 0 < (3 : ℕ)) k]
-//   lean  |       omega
-//   lean  |     rw [h₆, h₇]
-//   lean  |     <;> cases k with
-//   lean  |     | zero =>
-//   lean  |       norm_num [h₀, pow_zero, Nat.mul_sub_left_distrib, Nat.mul_sub_right_distrib]
-//   lean  |     | succ k =>
-//   lean  |       simp_all [Nat.mul_sub_left_distrib, Nat.mul_sub_right_distrib, Nat.add_assoc]
-//   lean  |       <;> ring_nf at *
-//   lean  |       <;> norm_num at *
-//   lean  |       <;> omega
-
-// 1 path(s) merged (paths); 21 shared facts; 1 distinct path conditions
+include "../dafny/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
 lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L95(f: nat -> nat, k_0_0: nat, k_0_2_3_2_1_0: int, k_1_1_0_1_0: int, m: int, n: int, t_3_5: int)
   requires 0 <= m
   requires 0 <= n
@@ -122,85 +28,242 @@ lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L
   requires 0 <= Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0)
   requires 0 <= 2 * Int.pow(6, k_0_0)
   requires Int.pow(4, k_0_0) * Int.pow(4, k_0_0) + Int.pow(6, k_0_0) * Int.pow(6, k_0_0) + Int.pow(9, k_0_0) * Int.pow(9, k_0_0) == (Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0)) * tsub(Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0), 2 * Int.pow(6, k_0_0))
-  ensures  Int.pow(4, 2 * k_0_0) + Int.pow(6, 2 * k_0_0) + Int.pow(9, 2 * k_0_0) == (Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0)) * tsub(Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0), 2 * Int.pow(6, k_0_0))
-{ }
-
-// side checks at the same line (not the reported failure): 5 check(s)
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L95_side1(f: nat -> nat, k_0_0: nat, k_0_2_3_2_1_0: int, k_1_1_0_1_0: int, m: int, n: int, t_3_5: int)
-  requires 0 <= m
-  requires 0 <= n
-  requires 0 <= k_0_2_3_2_1_0
-  requires 0 <= k_1_1_0_1_0
-  requires 0 <= t_3_5
-  requires forall x_1: nat :: f.requires(x_1)
-  requires forall x_1: nat :: f(x_1) == Int.pow(4, x_1) + Int.pow(6, x_1) + Int.pow(9, x_1)
-  requires 0 < m
-  requires 0 < n
-  requires m <= n
-  requires forall m0: int, n0: int :: (forall x_2: nat :: f.requires(x_2)) && (0 <= m0 && 0 <= n0 && (forall x_2: nat :: f(x_2) == Int.pow(4, x_2) + Int.pow(6, x_2) + Int.pow(9, x_2)) && 0 < m0 && 0 < n0 && m0 <= n0 && ((0 <= m0 && m0 < m) || (m0 == m && 0 <= n0 && n0 < n)) ==> f.requires(Int.pow(2, m0)) && f.requires(Int.pow(2, n0)) && NatDvd(f(Int.pow(2, m0)), f(Int.pow(2, n0))))
-  requires 0 <= k_0_0
-  requires 0 <= 2 * k_0_0
-  requires f(2 * k_0_0) == Int.pow(4, 2 * k_0_0) + Int.pow(6, 2 * k_0_0) + Int.pow(9, 2 * k_0_0)
-  requires f(k_0_0) == Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0)
-  requires Int.pow(4, 2 * k_0_0) == Int.pow(4, k_0_0) * Int.pow(4, k_0_0)
-  requires Int.pow(6, 2 * k_0_0) == Int.pow(6, k_0_0) * Int.pow(6, k_0_0)
-  requires Int.pow(9, 2 * k_0_0) == Int.pow(9, k_0_0) * Int.pow(9, k_0_0)
-  requires 0 <= Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0)
-  requires 0 <= 2 * Int.pow(6, k_0_0)
-  requires Int.pow(4, k_0_0) * Int.pow(4, k_0_0) + Int.pow(6, k_0_0) * Int.pow(6, k_0_0) + Int.pow(9, k_0_0) * Int.pow(9, k_0_0) == (Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0)) * tsub(Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0), 2 * Int.pow(6, k_0_0))
-  ensures  0 <= 2 * k_0_0
-{ }
-
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L95_side2(f: nat -> nat, k_0_0: nat, k_0_2_3_2_1_0: int, k_1_1_0_1_0: int, m: int, n: int, t_3_5: int)
-  requires 0 <= m
-  requires 0 <= n
-  requires 0 <= k_0_2_3_2_1_0
-  requires 0 <= k_1_1_0_1_0
-  requires 0 <= t_3_5
-  requires forall x_1: nat :: f.requires(x_1)
-  requires forall x_1: nat :: f(x_1) == Int.pow(4, x_1) + Int.pow(6, x_1) + Int.pow(9, x_1)
-  requires 0 < m
-  requires 0 < n
-  requires m <= n
-  requires forall m0: int, n0: int :: (forall x_2: nat :: f.requires(x_2)) && (0 <= m0 && 0 <= n0 && (forall x_2: nat :: f(x_2) == Int.pow(4, x_2) + Int.pow(6, x_2) + Int.pow(9, x_2)) && 0 < m0 && 0 < n0 && m0 <= n0 && ((0 <= m0 && m0 < m) || (m0 == m && 0 <= n0 && n0 < n)) ==> f.requires(Int.pow(2, m0)) && f.requires(Int.pow(2, n0)) && NatDvd(f(Int.pow(2, m0)), f(Int.pow(2, n0))))
-  requires 0 <= k_0_0
-  requires 0 <= 2 * k_0_0
-  requires f(2 * k_0_0) == Int.pow(4, 2 * k_0_0) + Int.pow(6, 2 * k_0_0) + Int.pow(9, 2 * k_0_0)
-  requires f(k_0_0) == Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0)
-  requires Int.pow(4, 2 * k_0_0) == Int.pow(4, k_0_0) * Int.pow(4, k_0_0)
-  requires Int.pow(6, 2 * k_0_0) == Int.pow(6, k_0_0) * Int.pow(6, k_0_0)
-  requires Int.pow(9, 2 * k_0_0) == Int.pow(9, k_0_0) * Int.pow(9, k_0_0)
-  requires 0 <= Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0)
-  requires 0 <= 2 * Int.pow(6, k_0_0)
-  requires Int.pow(4, k_0_0) * Int.pow(4, k_0_0) + Int.pow(6, k_0_0) * Int.pow(6, k_0_0) + Int.pow(9, k_0_0) * Int.pow(9, k_0_0) == (Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0)) * tsub(Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0), 2 * Int.pow(6, k_0_0))
-  ensures  0 <= Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0)
-{ }
-
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L95_side3(f: nat -> nat, k_0_0: nat, k_0_2_3_2_1_0: int, k_1_1_0_1_0: int, m: int, n: int, t_3_5: int)
-  requires 0 <= m
-  requires 0 <= n
-  requires 0 <= k_0_2_3_2_1_0
-  requires 0 <= k_1_1_0_1_0
-  requires 0 <= t_3_5
-  requires forall x_1: nat :: f.requires(x_1)
-  requires forall x_1: nat :: f(x_1) == Int.pow(4, x_1) + Int.pow(6, x_1) + Int.pow(9, x_1)
-  requires 0 < m
-  requires 0 < n
-  requires m <= n
-  requires forall m0: int, n0: int :: (forall x_2: nat :: f.requires(x_2)) && (0 <= m0 && 0 <= n0 && (forall x_2: nat :: f(x_2) == Int.pow(4, x_2) + Int.pow(6, x_2) + Int.pow(9, x_2)) && 0 < m0 && 0 < n0 && m0 <= n0 && ((0 <= m0 && m0 < m) || (m0 == m && 0 <= n0 && n0 < n)) ==> f.requires(Int.pow(2, m0)) && f.requires(Int.pow(2, n0)) && NatDvd(f(Int.pow(2, m0)), f(Int.pow(2, n0))))
-  requires 0 <= k_0_0
-  requires 0 <= 2 * k_0_0
-  requires f(2 * k_0_0) == Int.pow(4, 2 * k_0_0) + Int.pow(6, 2 * k_0_0) + Int.pow(9, 2 * k_0_0)
-  requires f(k_0_0) == Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0)
-  requires Int.pow(4, 2 * k_0_0) == Int.pow(4, k_0_0) * Int.pow(4, k_0_0)
-  requires Int.pow(6, 2 * k_0_0) == Int.pow(6, k_0_0) * Int.pow(6, k_0_0)
-  requires Int.pow(9, 2 * k_0_0) == Int.pow(9, k_0_0) * Int.pow(9, k_0_0)
-  requires 0 <= Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0)
-  requires 0 <= 2 * Int.pow(6, k_0_0)
-  requires Int.pow(4, k_0_0) * Int.pow(4, k_0_0) + Int.pow(6, k_0_0) * Int.pow(6, k_0_0) + Int.pow(9, k_0_0) * Int.pow(9, k_0_0) == (Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0)) * tsub(Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0), 2 * Int.pow(6, k_0_0))
-  ensures  0 <= 2 * Int.pow(6, k_0_0)
-{ }
+  ensures   Int.pow(4, 2 * k_0_0) + Int.pow(6, 2 * k_0_0) + Int.pow(9, 2 * k_0_0) == (Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0)) * tsub(Int.pow(4, k_0_0) + Int.pow(6, k_0_0) + Int.pow(9, k_0_0), 2 * Int.pow(6, k_0_0))
+{
+      // have h₃ : 4 ^ ( 2 * k ) == 4 ^ k * 4 ^ k  [type from Lean state]
+      assert (Int.pow(4, (2 * k_0_0)) == (Int.pow(4, k_0_0) * Int.pow(4, k_0_0))) by { // @tac 784-823
+        assert ((2 * k_0_0) == (k_0_0 + k_0_0)) by {  // sub-goal of `by` (Lean state) // @tac 818-822
+          // [TACTIC: Ring]
+          // UNCITED-APPLIED internal ×19 [exec 166 818-822]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.of_eq ×1, Mathlib.Tactic.Ring.mul_congr ×1, Mathlib.Tactic.Ring.cast_pos ×1, Mathlib.Meta.NormNum.isNat_ofNat ×1 (+15 more heads, ×15)
+        }
+        // [TACTIC: rwSeq [ show ( 2 * k : ℕ ) = k + k by ring ]]
+        // UNCITED-APPLIED congrArg((2 : ℕ) * k, k + k, fun (_a : ℕ) => (4 : ℕ) ^ _a = (4 : ℕ) ^ k * (4 : ℕ) ^ k): no library counterpart (not stated) [exec 155 784-823]
+        assert (Int.pow(4, (k_0_0 + k_0_0)) == (Int.pow(4, k_0_0) * Int.pow(4, k_0_0))) by {  // sub-goal before `rw` (Lean state) // @tac 830-857 // @tac 830-842
+          // [TACTIC: «_<;>_» [ pow_add ] rw [ pow_add ] <;> ring]
+          // [TACTIC: rwSeq [ pow_add ]]
+          NatPowAdd(4, k_0_0, k_0_0);  // cite: pow_add
+          // `rw` closed the goal; the rest of the chain did not run
+          // UNCITED-APPLIED congrArg((4 : ℕ) ^ (k + k), (4 : ℕ) ^ k * (4 : ℕ) ^ k, fun (_a : ℕ) => _a = (4 : ℕ) ^ k * (4 : ℕ) ^ k): no library counterpart (not stated) [exec 200 830-842]
+        }
+      }
+      // have h₄ : 6 ^ ( 2 * k ) == 6 ^ k * 6 ^ k  [type from Lean state]
+      assert (Int.pow(6, (2 * k_0_0)) == (Int.pow(6, k_0_0) * Int.pow(6, k_0_0))) by { // @tac 938-977
+        assert ((2 * k_0_0) == (k_0_0 + k_0_0)) by {  // sub-goal of `by` (Lean state) // @tac 972-976
+          // [TACTIC: Ring]
+          // UNCITED-APPLIED internal ×19 [exec 258 972-976]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.of_eq ×1, Mathlib.Tactic.Ring.mul_congr ×1, Mathlib.Tactic.Ring.cast_pos ×1, Mathlib.Meta.NormNum.isNat_ofNat ×1 (+15 more heads, ×15)
+        }
+        // [TACTIC: rwSeq [ show ( 2 * k : ℕ ) = k + k by ring ]]
+        // UNCITED-APPLIED congrArg((2 : ℕ) * k, k + k, fun (_a : ℕ) => (6 : ℕ) ^ _a = (6 : ℕ) ^ k * (6 : ℕ) ^ k): no library counterpart (not stated) [exec 247 938-977]
+        assert (Int.pow(6, (k_0_0 + k_0_0)) == (Int.pow(6, k_0_0) * Int.pow(6, k_0_0))) by {  // sub-goal before `rw` (Lean state) // @tac 984-1011 // @tac 984-996
+          // [TACTIC: «_<;>_» [ pow_add ] rw [ pow_add ] <;> ring]
+          // [TACTIC: rwSeq [ pow_add ]]
+          NatPowAdd(6, k_0_0, k_0_0);  // cite: pow_add
+          // `rw` closed the goal; the rest of the chain did not run
+          // UNCITED-APPLIED congrArg((6 : ℕ) ^ (k + k), (6 : ℕ) ^ k * (6 : ℕ) ^ k, fun (_a : ℕ) => _a = (6 : ℕ) ^ k * (6 : ℕ) ^ k): no library counterpart (not stated) [exec 292 984-996]
+        }
+      }
+      // have h₅ : 9 ^ ( 2 * k ) == 9 ^ k * 9 ^ k  [type from Lean state]
+      assert (Int.pow(9, (2 * k_0_0)) == (Int.pow(9, k_0_0) * Int.pow(9, k_0_0))) by { // @tac 1092-1131
+        assert ((2 * k_0_0) == (k_0_0 + k_0_0)) by {  // sub-goal of `by` (Lean state) // @tac 1126-1130
+          // [TACTIC: Ring]
+          // UNCITED-APPLIED internal ×19 [exec 350 1126-1130]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.of_eq ×1, Mathlib.Tactic.Ring.mul_congr ×1, Mathlib.Tactic.Ring.cast_pos ×1, Mathlib.Meta.NormNum.isNat_ofNat ×1 (+15 more heads, ×15)
+        }
+        // [TACTIC: rwSeq [ show ( 2 * k : ℕ ) = k + k by ring ]]
+        // UNCITED-APPLIED congrArg((2 : ℕ) * k, k + k, fun (_a : ℕ) => (9 : ℕ) ^ _a = (9 : ℕ) ^ k * (9 : ℕ) ^ k): no library counterpart (not stated) [exec 339 1092-1131]
+        assert (Int.pow(9, (k_0_0 + k_0_0)) == (Int.pow(9, k_0_0) * Int.pow(9, k_0_0))) by {  // sub-goal before `rw` (Lean state) // @tac 1138-1165 // @tac 1138-1150
+          // [TACTIC: «_<;>_» [ pow_add ] rw [ pow_add ] <;> ring]
+          // [TACTIC: rwSeq [ pow_add ]]
+          NatPowAdd(9, k_0_0, k_0_0);  // cite: pow_add
+          // `rw` closed the goal; the rest of the chain did not run
+          // UNCITED-APPLIED congrArg((9 : ℕ) ^ (k + k), (9 : ℕ) ^ k * (9 : ℕ) ^ k, fun (_a : ℕ) => _a = (9 : ℕ) ^ k * (9 : ℕ) ^ k): no library counterpart (not stated) [exec 384 1138-1150]
+        }
+      }
+      // [TACTIC: rwSeq [ h₃ , h₄ , h₅ ]]
+      // UNCITED-APPLIED congrArg((4 : ℕ) ^ ((2 : ℕ) * k), (4 : ℕ) ^ k * (4 : ℕ) ^ k, fun (_a : ℕ) => _a + (6 : ℕ) ^ ((2 : ℕ) * k) + (9 : ℕ) ^ ((2 : ℕ) * k…): no library counterpart (not stated) [exec 415 1170-1191]
+      // UNCITED-APPLIED congrArg((6 : ℕ) ^ ((2 : ℕ) * k), (6 : ℕ) ^ k * (6 : ℕ) ^ k, fun (_a : ℕ) => (4 : ℕ) ^ k * (4 : ℕ) ^ k + _a + (9 : ℕ) ^ ((2 : ℕ) *…): no library counterpart (not stated) [exec 415 1170-1191]
+      // UNCITED-APPLIED congrArg((9 : ℕ) ^ ((2 : ℕ) * k), (9 : ℕ) ^ k * (9 : ℕ) ^ k, fun (_a : ℕ) => (4 : ℕ) ^ k * (4 : ℕ) ^ k + (6 : ℕ) ^ k * (6 : ℕ) ^ k…): no library counterpart (not stated) [exec 415 1170-1191]
+      assert ((((Int.pow(4, k_0_0) * Int.pow(4, k_0_0)) + (Int.pow(6, k_0_0) * Int.pow(6, k_0_0))) + (Int.pow(9, k_0_0) * Int.pow(9, k_0_0))) == (((Int.pow(4, k_0_0) + Int.pow(6, k_0_0)) + Int.pow(9, k_0_0)) * tsub(((Int.pow(4, k_0_0) + Int.pow(6, k_0_0)) + Int.pow(9, k_0_0)), (2 * Int.pow(6, k_0_0))))) by {  // sub-goal before `have` (Lean state) // @tac 1196-2067 // @tac 2072-4114 // @tac 4119-4417 // @tac 4119-4134
+        // have h₆ : 4 ^ k * 4 ^ k + 6 ^ k * 6 ^ k + 9 ^ k * 9 ^ k == ( 4 ^ k + 6 ^ k + 9 ^  [type from Lean state]
+        assert ((((Int.pow(4, k_0_0) * Int.pow(4, k_0_0)) + (Int.pow(6, k_0_0) * Int.pow(6, k_0_0))) + (Int.pow(9, k_0_0) * Int.pow(9, k_0_0))) == tsub((((Int.pow(4, k_0_0) + Int.pow(6, k_0_0)) + Int.pow(9, k_0_0)) * ((Int.pow(4, k_0_0) + Int.pow(6, k_0_0)) + Int.pow(9, k_0_0))), (2 * (((Int.pow(4, k_0_0) * Int.pow(6, k_0_0)) + (Int.pow(4, k_0_0) * Int.pow(9, k_0_0))) + (Int.pow(6, k_0_0) * Int.pow(9, k_0_0)))))) by { // @tac 1516-1842 // @tac 1849-2055 // @tac 2062-2067
+          // have h₇ : ( 4 ^ k + 6 ^ k + 9 ^ k ) * ( 4 ^ k + 6 ^ k + 9 ^ k ) == 4 ^ k * 4 ^ k  [type from Lean state]
+          assert ((((Int.pow(4, k_0_0) + Int.pow(6, k_0_0)) + Int.pow(9, k_0_0)) * ((Int.pow(4, k_0_0) + Int.pow(6, k_0_0)) + Int.pow(9, k_0_0))) == ((((Int.pow(4, k_0_0) * Int.pow(4, k_0_0)) + (Int.pow(6, k_0_0) * Int.pow(6, k_0_0))) + (Int.pow(9, k_0_0) * Int.pow(9, k_0_0))) + (2 * (((Int.pow(4, k_0_0) * Int.pow(6, k_0_0)) + (Int.pow(4, k_0_0) * Int.pow(9, k_0_0))) + (Int.pow(6, k_0_0) * Int.pow(9, k_0_0)))))); // @tac 1838-1842
+            // [TACTIC: Ring]
+          // UNCITED-APPLIED internal ×112 [exec 480 1838-1842]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_pf_add_zero ×8, Mathlib.Tactic.Ring.add_pf_zero_add ×8, Mathlib.Tactic.Ring.mul_pf_right ×8, Mathlib.Tactic.Ring.add_pf_add_lt ×7 (+24 more heads, ×81)
+          // have h₈ : 4 ^ k * 6 ^ k + 4 ^ k * 9 ^ k + 6 ^ k * 9 ^ k == 6 ^ k * ( 4 ^ k + 9 ^  [type from Lean state]
+          assert ((((Int.pow(4, k_0_0) * Int.pow(6, k_0_0)) + (Int.pow(4, k_0_0) * Int.pow(9, k_0_0))) + (Int.pow(6, k_0_0) * Int.pow(9, k_0_0))) == ((Int.pow(6, k_0_0) * (Int.pow(4, k_0_0) + Int.pow(9, k_0_0))) + (Int.pow(4, k_0_0) * Int.pow(9, k_0_0)))); // @tac 2051-2055
+            // [TACTIC: Ring]
+          // UNCITED-APPLIED internal ×76 [exec 501 2051-2055]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_mul ×7, Mathlib.Tactic.Ring.mul_add ×7, Mathlib.Tactic.Ring.add_pf_add_zero ×7, Mathlib.Tactic.Ring.mul_pf_left ×6 (+17 more heads, ×49)
+          // [TACTIC: omega]
+          // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
+          // UNCITED-APPLIED internal ×66 [exec 502 2062-2067]: applications made inside the tactic's own automation, not stated — Int.ofNat_add ×8, Int.ofNat_mul ×8, Int.sub_eq_zero_of_eq ×7, Int.sub_nonneg_of_le ×3, Int.add_one_le_of_lt ×3, Nat.lt_or_gt_of_ne ×1, Int.ofNat_nonneg ×1; machinery/glue: Eq.symm ×20, Lean.Omega.Int.ofNat_congr ×6, Lean.Omega.Int.ofNat_lt_of_lt ×3, Lean.Omega.Int.ofNat_pow ×3 (+3 more heads, ×3)
+        }
+        // have h₇ : 4 ^ k * 6 ^ k + 4 ^ k * 9 ^ k + 6 ^ k * 9 ^ k == 6 ^ k * ( 4 ^ k + 6 ^  [type from Lean state]
+        assert ((((Int.pow(4, k_0_0) * Int.pow(6, k_0_0)) + (Int.pow(4, k_0_0) * Int.pow(9, k_0_0))) + (Int.pow(6, k_0_0) * Int.pow(9, k_0_0))) == (Int.pow(6, k_0_0) * ((Int.pow(4, k_0_0) + Int.pow(6, k_0_0)) + Int.pow(9, k_0_0)))) by { // @tac 2256-2462 // @tac 2469-4102 // @tac 4109-4114
+          // have h₈ : 4 ^ k * 6 ^ k + 4 ^ k * 9 ^ k + 6 ^ k * 9 ^ k == 6 ^ k * ( 4 ^ k + 9 ^  [type from Lean state]
+          assert ((((Int.pow(4, k_0_0) * Int.pow(6, k_0_0)) + (Int.pow(4, k_0_0) * Int.pow(9, k_0_0))) + (Int.pow(6, k_0_0) * Int.pow(9, k_0_0))) == ((Int.pow(6, k_0_0) * (Int.pow(4, k_0_0) + Int.pow(9, k_0_0))) + (Int.pow(4, k_0_0) * Int.pow(9, k_0_0)))); // @tac 2458-2462
+            // [TACTIC: Ring]
+          // UNCITED-APPLIED internal ×76 [exec 539 2458-2462]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_mul ×7, Mathlib.Tactic.Ring.mul_add ×7, Mathlib.Tactic.Ring.add_pf_add_zero ×7, Mathlib.Tactic.Ring.mul_pf_left ×6 (+17 more heads, ×49)
+          // have h₉ : 6 ^ k * ( 4 ^ k + 9 ^ k ) + 4 ^ k * 9 ^ k == 6 ^ k * ( 4 ^ k + 6 ^ k +  [type from Lean state]
+          assert (((Int.pow(6, k_0_0) * (Int.pow(4, k_0_0) + Int.pow(9, k_0_0))) + (Int.pow(4, k_0_0) * Int.pow(9, k_0_0))) == (Int.pow(6, k_0_0) * ((Int.pow(4, k_0_0) + Int.pow(6, k_0_0)) + Int.pow(9, k_0_0)))) by { // @tac 2641-2799 // @tac 2808-2820
+            // have h₁₀ : 6 ^ k == 2 ^ k * 3 ^ k  [type from Lean state]
+            assert (Int.pow(6, k_0_0) == (Int.pow(2, k_0_0) * Int.pow(3, k_0_0))) by { // @tac 2718-2757
+              assert (6 == (2 * 3)) by {  // sub-goal of `by` (Lean state) // @tac 2748-2756
+                // [TACTIC: «Norm_num[_]At___»]
+                // UNCITED-APPLIED internal ×7 [exec 583 2748-2756]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×3, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1)
+              }
+              // [TACTIC: rwSeq [ show ( 6 : ℕ ) = 2 * 3 by norm_num norm_num ]]
+              // UNCITED-APPLIED congrArg((6 : ℕ), (2 : ℕ) * (3 : ℕ), fun (_a : ℕ) => _a ^ k = (2 : ℕ) ^ k * (3 : ℕ) ^ k): no library counterpart (not stated) [exec 576 2718-2757]
+              assert (Int.pow((2 * 3), k_0_0) == (Int.pow(2, k_0_0) * Int.pow(3, k_0_0))) by {  // sub-goal before `rw` (Lean state) // @tac 2768-2799 // @tac 2768-2780
+                // [TACTIC: «_<;>_» [ mul_pow ] rw [ mul_pow ] <;> ring]
+                // [TACTIC: rwSeq [ mul_pow ]]
+                MulPowInt(2, 3, k_0_0);  // cite: mul_pow
+                // `rw` closed the goal; the rest of the chain did not run
+                // UNCITED-APPLIED congrArg(((2 : ℕ) * (3 : ℕ)) ^ k, (2 : ℕ) ^ k * (3 : ℕ) ^ k, fun (_a : ℕ) => _a = (2 : ℕ) ^ k * (3 : ℕ) ^ k): no library counterpart (not stated) [exec 617 2768-2780]
+              }
+            }
+            // [TACTIC: rwSeq [ h₁₀ ]]
+            // UNCITED-APPLIED congrArg((6 : ℕ) ^ k, (2 : ℕ) ^ k * (3 : ℕ) ^ k, fun (_a : ℕ) => _a * ((4 : ℕ) ^ k + (9 : ℕ) ^ k) + (4 : ℕ) ^ k * (9 :…): no library counterpart (not stated) [exec 648 2808-2820]
+            assert ((((Int.pow(2, k_0_0) * Int.pow(3, k_0_0)) * (Int.pow(4, k_0_0) + Int.pow(9, k_0_0))) + (Int.pow(4, k_0_0) * Int.pow(9, k_0_0))) == ((Int.pow(2, k_0_0) * Int.pow(3, k_0_0)) * ((Int.pow(4, k_0_0) + (Int.pow(2, k_0_0) * Int.pow(3, k_0_0))) + Int.pow(9, k_0_0)))) by {  // sub-goal before `have` (Lean state) // @tac 2829-2984 // @tac 2993-3148 // @tac 3157-3178
+              // have h₁₁ : 4 ^ k == 2 ^ ( 2 * k )  [type from Lean state]
+              assert (Int.pow(4, k_0_0) == Int.pow(2, (2 * k_0_0))) by { // @tac 2896-2935
+                assert (4 == (2 * 2)) by {  // sub-goal of `by` (Lean state) // @tac 2926-2934
+                  // [TACTIC: «Norm_num[_]At___»]
+                  // UNCITED-APPLIED internal ×8 [exec 702 2926-2934]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+3 more heads, ×3)
+                }
+                // [TACTIC: rwSeq [ show ( 4 : ℕ ) = 2 ^ 2 by norm_num norm_num ]]
+                // UNCITED-APPLIED congrArg((4 : ℕ), (2 : ℕ) ^ (2 : ℕ), fun (_a : ℕ) => _a ^ k = (2 : ℕ) ^ ((2 : ℕ) * k)): no library counterpart (not stated) [exec 695 2896-2935]
+                assert (Int.pow((2 * 2), k_0_0) == Int.pow(2, (2 * k_0_0))) by {  // sub-goal before `rw` (Lean state) // @tac 2946-2984 // @tac 2946-2962
+                  // [TACTIC: «_<;>_» [ ← pow_mul ] rw [ ← pow_mul ] <;> ring_nf ring_nf]
+                  // [TACTIC: rwSeq [ ← pow_mul ]]
+                  NatPowMul(2, 2, k_0_0);  // cite: pow_mul
+                  // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
+                  // `rw` closed the goal; the rest of the chain did not run
+                  // UNCITED-APPLIED congrArg(((2 : ℕ) ^ (2 : ℕ)) ^ k, (2 : ℕ) ^ ((2 : ℕ) * k), fun (_a : ℕ) => _a = (2 : ℕ) ^ ((2 : ℕ) * k)): no library counterpart (not stated) [exec 736 2946-2962]
+                }
+              }
+              // have h₁₂ : 9 ^ k == 3 ^ ( 2 * k )  [type from Lean state]
+              assert (Int.pow(9, k_0_0) == Int.pow(3, (2 * k_0_0))) by { // @tac 3060-3099
+                assert (9 == (3 * 3)) by {  // sub-goal of `by` (Lean state) // @tac 3090-3098
+                  // [TACTIC: «Norm_num[_]At___»]
+                  // UNCITED-APPLIED internal ×9 [exec 790 3090-3098]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×3, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+3 more heads, ×3)
+                }
+                // [TACTIC: rwSeq [ show ( 9 : ℕ ) = 3 ^ 2 by norm_num norm_num ]]
+                // UNCITED-APPLIED congrArg((9 : ℕ), (3 : ℕ) ^ (2 : ℕ), fun (_a : ℕ) => _a ^ k = (3 : ℕ) ^ ((2 : ℕ) * k)): no library counterpart (not stated) [exec 783 3060-3099]
+                assert (Int.pow((3 * 3), k_0_0) == Int.pow(3, (2 * k_0_0))) by {  // sub-goal before `rw` (Lean state) // @tac 3110-3148 // @tac 3110-3126
+                  // [TACTIC: «_<;>_» [ ← pow_mul ] rw [ ← pow_mul ] <;> ring_nf ring_nf]
+                  // [TACTIC: rwSeq [ ← pow_mul ]]
+                  NatPowMul(3, 2, k_0_0);  // cite: pow_mul
+                  // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
+                  // `rw` closed the goal; the rest of the chain did not run
+                  // UNCITED-APPLIED congrArg(((3 : ℕ) ^ (2 : ℕ)) ^ k, (3 : ℕ) ^ ((2 : ℕ) * k), fun (_a : ℕ) => _a = (3 : ℕ) ^ ((2 : ℕ) * k)): no library counterpart (not stated) [exec 824 3110-3126]
+                }
+              }
+              // [TACTIC: rwSeq [ h₁₁ , h₁₂ ]]
+              // UNCITED-APPLIED congrArg((4 : ℕ) ^ k, (2 : ℕ) ^ ((2 : ℕ) * k), fun (_a : ℕ) => (2 : ℕ) ^ k * (3 : ℕ) ^ k * (_a + (9 : ℕ) ^ k) + _a *…): no library counterpart (not stated) [exec 855 3157-3178]
+              // UNCITED-APPLIED congrArg((9 : ℕ) ^ k, (3 : ℕ) ^ ((2 : ℕ) * k), fun (_a : ℕ) => (2 : ℕ) ^ k * (3 : ℕ) ^ k * ((2 : ℕ) ^ ((2 : ℕ) * k) …): no library counterpart (not stated) [exec 855 3157-3178]
+              assert ((((Int.pow(2, k_0_0) * Int.pow(3, k_0_0)) * (Int.pow(2, (2 * k_0_0)) + Int.pow(3, (2 * k_0_0)))) + (Int.pow(2, (2 * k_0_0)) * Int.pow(3, (2 * k_0_0)))) == ((Int.pow(2, k_0_0) * Int.pow(3, k_0_0)) * ((Int.pow(2, (2 * k_0_0)) + (Int.pow(2, k_0_0) * Int.pow(3, k_0_0))) + Int.pow(3, (2 * k_0_0))))) by {  // sub-goal before `have` (Lean state) // @tac 3187-3956 // @tac 3965-4102 // @tac 3965-3997 // @tac 3965-3977
+                // have h₁₃ : 2 ^ k * 3 ^ k * ( 2 ^ ( 2 * k ) + 3 ^ ( 2 * k ) ) + 2 ^ ( 2 * k ) * 3   [type from Lean state]
+                assert ((((Int.pow(2, k_0_0) * Int.pow(3, k_0_0)) * (Int.pow(2, (2 * k_0_0)) + Int.pow(3, (2 * k_0_0)))) + (Int.pow(2, (2 * k_0_0)) * Int.pow(3, (2 * k_0_0)))) == ((Int.pow(2, k_0_0) * Int.pow(3, k_0_0)) * ((Int.pow(2, (2 * k_0_0)) + (Int.pow(2, k_0_0) * Int.pow(3, k_0_0))) + Int.pow(3, (2 * k_0_0))))) by { // @tac 3448-3618 // @tac 3629-3799 // @tac 3810-3831
+                  // have h₁₄ : 2 ^ ( 2 * k ) == 2 ^ k * 2 ^ k  [type from Lean state]
+                  assert (Int.pow(2, (2 * k_0_0)) == (Int.pow(2, k_0_0) * Int.pow(2, k_0_0))) by { // @tac 3533-3572
+                    assert ((2 * k_0_0) == (k_0_0 + k_0_0)) by {  // sub-goal of `by` (Lean state) // @tac 3567-3571
+                      // [TACTIC: Ring]
+                      // UNCITED-APPLIED internal ×19 [exec 930 3567-3571]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.of_eq ×1, Mathlib.Tactic.Ring.mul_congr ×1, Mathlib.Tactic.Ring.cast_pos ×1, Mathlib.Meta.NormNum.isNat_ofNat ×1 (+15 more heads, ×15)
+                    }
+                    // [TACTIC: rwSeq [ show ( 2 * k : ℕ ) = k + k by ring ]]
+                    // UNCITED-APPLIED congrArg((2 : ℕ) * k, k + k, fun (_a : ℕ) => (2 : ℕ) ^ _a = (2 : ℕ) ^ k * (2 : ℕ) ^ k): no library counterpart (not stated) [exec 919 3533-3572]
+                    assert (Int.pow(2, (k_0_0 + k_0_0)) == (Int.pow(2, k_0_0) * Int.pow(2, k_0_0))) by {  // sub-goal before `rw` (Lean state) // @tac 3585-3618 // @tac 3585-3597
+                      // [TACTIC: «_<;>_» [ pow_add ] rw [ pow_add ] <;> ring]
+                      // [TACTIC: rwSeq [ pow_add ]]
+                      NatPowAdd(2, k_0_0, k_0_0);  // cite: pow_add
+                      // `rw` closed the goal; the rest of the chain did not run
+                      // UNCITED-APPLIED congrArg((2 : ℕ) ^ (k + k), (2 : ℕ) ^ k * (2 : ℕ) ^ k, fun (_a : ℕ) => _a = (2 : ℕ) ^ k * (2 : ℕ) ^ k): no library counterpart (not stated) [exec 964 3585-3597]
+                    }
+                  }
+                  // have h₁₅ : 3 ^ ( 2 * k ) == 3 ^ k * 3 ^ k  [type from Lean state]
+                  assert (Int.pow(3, (2 * k_0_0)) == (Int.pow(3, k_0_0) * Int.pow(3, k_0_0))) by { // @tac 3714-3753
+                    assert ((2 * k_0_0) == (k_0_0 + k_0_0)) by {  // sub-goal of `by` (Lean state) // @tac 3748-3752
+                      // [TACTIC: Ring]
+                      // UNCITED-APPLIED internal ×19 [exec 1022 3748-3752]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.of_eq ×1, Mathlib.Tactic.Ring.mul_congr ×1, Mathlib.Tactic.Ring.cast_pos ×1, Mathlib.Meta.NormNum.isNat_ofNat ×1 (+15 more heads, ×15)
+                    }
+                    // [TACTIC: rwSeq [ show ( 2 * k : ℕ ) = k + k by ring ]]
+                    // UNCITED-APPLIED congrArg((2 : ℕ) * k, k + k, fun (_a : ℕ) => (3 : ℕ) ^ _a = (3 : ℕ) ^ k * (3 : ℕ) ^ k): no library counterpart (not stated) [exec 1011 3714-3753]
+                    assert (Int.pow(3, (k_0_0 + k_0_0)) == (Int.pow(3, k_0_0) * Int.pow(3, k_0_0))) by {  // sub-goal before `rw` (Lean state) // @tac 3766-3799 // @tac 3766-3778
+                      // [TACTIC: «_<;>_» [ pow_add ] rw [ pow_add ] <;> ring]
+                      // [TACTIC: rwSeq [ pow_add ]]
+                      NatPowAdd(3, k_0_0, k_0_0);  // cite: pow_add
+                      // `rw` closed the goal; the rest of the chain did not run
+                      // UNCITED-APPLIED congrArg((3 : ℕ) ^ (k + k), (3 : ℕ) ^ k * (3 : ℕ) ^ k, fun (_a : ℕ) => _a = (3 : ℕ) ^ k * (3 : ℕ) ^ k): no library counterpart (not stated) [exec 1056 3766-3778]
+                    }
+                  }
+                  // [TACTIC: rwSeq [ h₁₄ , h₁₅ ]]
+                  // UNCITED-APPLIED congrArg((2 : ℕ) ^ ((2 : ℕ) * k), (2 : ℕ) ^ k * (2 : ℕ) ^ k, fun (_a : ℕ) => (2 : ℕ) ^ k * (3 : ℕ) ^ k * (_a + (3 : ℕ) ^ ((2 : ℕ) …): no library counterpart (not stated) [exec 1087 3810-3831]
+                  // UNCITED-APPLIED congrArg((3 : ℕ) ^ ((2 : ℕ) * k), (3 : ℕ) ^ k * (3 : ℕ) ^ k, fun (_a : ℕ) => (2 : ℕ) ^ k * (3 : ℕ) ^ k * ((2 : ℕ) ^ k * (2 : ℕ) ^ …): no library counterpart (not stated) [exec 1087 3810-3831]
+                  assert ((((Int.pow(2, k_0_0) * Int.pow(3, k_0_0)) * ((Int.pow(2, k_0_0) * Int.pow(2, k_0_0)) + (Int.pow(3, k_0_0) * Int.pow(3, k_0_0)))) + ((Int.pow(2, k_0_0) * Int.pow(2, k_0_0)) * (Int.pow(3, k_0_0) * Int.pow(3, k_0_0)))) == ((Int.pow(2, k_0_0) * Int.pow(3, k_0_0)) * (((Int.pow(2, k_0_0) * Int.pow(2, k_0_0)) + (Int.pow(2, k_0_0) * Int.pow(3, k_0_0))) + (Int.pow(3, k_0_0) * Int.pow(3, k_0_0))))) by {  // sub-goal before `ring_nf` (Lean state) // @tac 3842-3956 // @tac 3842-3849
+                    // [TACTIC: «_<;>_» ring_nf <;> nlinarith [ pow_pos ( by norm_num norm_num : 0 < ( 2 : ℕ ) ) k , pow_pos ( by norm_num norm_num : 0 < ( 3 : ℕ ) ) k ] nlinarith [ pow_pos ( by norm_num norm_num : 0 < ( 2 : ℕ ) ) k , pow_pos ( by norm_num norm_num : 0 < ( 3 : ℕ ) ) k ]]
+                    // [TACTIC: Ring_nfAt]
+                    NatPowOne(k_0_0);  // cite: pow_one [applied by the tactic, not named in it]
+                    // UNCITED-APPLIED mul_one ×4: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := k); (a := (3 : ℕ) ^ (k * (3 : ℕ))); (a := (3 : ℕ) ^ (k * (2 : ℕ))); (a := (3 : ℕ) ^ k)
+                    // `ring_nf` closed the goal; the rest of the chain did not run
+                    // [TACTIC: «Norm_num[_]At___»]
+                    // [TACTIC: «Norm_num[_]At___»]
+                    // UNCITED-APPLIED internal ×120 [exec 1120 3842-3849]: applications made inside the tactic's own automation, not stated — mul_one ×4, add_zero ×3; machinery/glue: congr ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_add ×8, Mathlib.Tactic.Ring.add_pf_add_zero ×8 (+29 more heads, ×81) (cited in this block, not counted here: pow_one [Lean recorded ×1])
+                  }
+                }
+                // [TACTIC: «_<;>_» [ h₁₃ ] rw [ h₁₃ ] <;> ring_nf ring_nf <;> nlinarith [ pow_pos ( by norm_num norm_num : 0 < ( 2 : ℕ ) ) k , pow_pos ( by norm_num norm_num : 0 < ( 3 : ℕ ) ) k ] nlinarith [ pow_pos ( by norm_num norm_num : 0 < ( 2 : ℕ ) ) k , pow_pos ( by norm_num norm_num : 0 < ( 3 : ℕ ) ) k ]]
+                // [TACTIC: rwSeq [ h₁₃ ]]
+                // `rw` closed the goal; the rest of the chain did not run
+                // [TACTIC: «Norm_num[_]At___»]
+                // [TACTIC: «Norm_num[_]At___»]
+                // UNCITED-APPLIED congrArg((2 : ℕ) ^ k * (3 : ℕ) ^ k * ((2 : ℕ) ^ ((2 : ℕ) * k) + (3 : ℕ) ^ ((2 …, (2 : ℕ) ^ k * (3 : ℕ) ^ k * ((2 : ℕ) ^ ((2 : ℕ) * k) + (2 : ℕ) ^ k * …, fun (_a : ℕ) => _a = (2 : ℕ) ^ k * (3 : ℕ) ^ k * ((2 : ℕ) ^ ((2 : ℕ) …): no library counterpart (not stated) [exec 1141 3965-3977]
+              }
+            }
+          }
+          // [TACTIC: omega]
+          // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
+          // UNCITED-APPLIED internal ×28 [exec 1174 4109-4114]: applications made inside the tactic's own automation, not stated — Int.ofNat_mul ×5, Int.ofNat_add ×3, Int.sub_eq_zero_of_eq ×2, Int.sub_nonneg_of_le ×2, Int.add_one_le_of_lt ×2, Nat.lt_or_gt_of_ne ×1; machinery/glue: Eq.symm ×7, Lean.Omega.Int.ofNat_congr ×2, Lean.Omega.Int.ofNat_lt_of_lt ×2, Decidable.byContradiction ×1 (+1 more heads, ×1)
+        }
+        // [TACTIC: «_<;>_» [ h₆ , h₇ ] rw [ h₆ , h₇ ] <;> cases k with | zero => norm_num [ h₀ , pow_zero , Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib ] norm_num [ h₀ , pow_zero , Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib ] | succ k => simp_all [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ] simp_all [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ] simp_all [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ] <;> ring_nf at * <;> norm_num at * <;> omega omega]
+        // [TACTIC: choice [ h₆ , h₇ ] rw [ h₆ , h₇ ]]
+        // UNCITED-APPLIED congrArg((4 : ℕ) ^ k * (4 : ℕ) ^ k + (6 : ℕ) ^ k * (6 : ℕ) ^ k + (9 : ℕ) ^ k *…, ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k) * ((4 : ℕ) ^ k + (6 : ℕ) ^ …, fun (_a : ℕ) => _a = ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k) * ((4 …): no library counterpart (not stated) [exec 1184 4119-4134]
+        // UNCITED-APPLIED congrArg((4 : ℕ) ^ k * (6 : ℕ) ^ k + (4 : ℕ) ^ k * (9 : ℕ) ^ k + (6 : ℕ) ^ k *…, (6 : ℕ) ^ k * ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k), fun (_a : ℕ) => ((4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k) * ((4 : ℕ) …): no library counterpart (not stated) [exec 1184 4119-4134]
+        assert (tsub((((Int.pow(4, k_0_0) + Int.pow(6, k_0_0)) + Int.pow(9, k_0_0)) * ((Int.pow(4, k_0_0) + Int.pow(6, k_0_0)) + Int.pow(9, k_0_0))), (2 * (Int.pow(6, k_0_0) * ((Int.pow(4, k_0_0) + Int.pow(6, k_0_0)) + Int.pow(9, k_0_0))))) == (((Int.pow(4, k_0_0) + Int.pow(6, k_0_0)) + Int.pow(9, k_0_0)) * tsub(((Int.pow(4, k_0_0) + Int.pow(6, k_0_0)) + Int.pow(9, k_0_0)), (2 * Int.pow(6, k_0_0))))) by {  // sub-goal of `cases` (Lean state) // @tac 4143-4417
+          // cases k (zero / succ) — branches with their Lean states
+          if k_0_0 == 0 {
+            if ((f((2 * 0)) == ((Int.pow(4, (2 * 0)) + Int.pow(6, (2 * 0))) + Int.pow(9, (2 * 0))))) && ((f(0) == ((Int.pow(4, 0) + Int.pow(6, 0)) + Int.pow(9, 0)))) && ((Int.pow(4, (2 * 0)) == (Int.pow(4, 0) * Int.pow(4, 0)))) && ((Int.pow(6, (2 * 0)) == (Int.pow(6, 0) * Int.pow(6, 0)))) && ((Int.pow(9, (2 * 0)) == (Int.pow(9, 0) * Int.pow(9, 0)))) && (((((Int.pow(4, 0) * Int.pow(4, 0)) + (Int.pow(6, 0) * Int.pow(6, 0))) + (Int.pow(9, 0) * Int.pow(9, 0))) == tsub((((Int.pow(4, 0) + Int.pow(6, 0)) + Int.pow(9, 0)) * ((Int.pow(4, 0) + Int.pow(6, 0)) + Int.pow(9, 0))), (2 * (((Int.pow(4, 0) * Int.pow(6, 0)) + (Int.pow(4, 0) * Int.pow(9, 0))) + (Int.pow(6, 0) * Int.pow(9, 0))))))) && (((((Int.pow(4, 0) * Int.pow(6, 0)) + (Int.pow(4, 0) * Int.pow(9, 0))) + (Int.pow(6, 0) * Int.pow(9, 0))) == (Int.pow(6, 0) * ((Int.pow(4, 0) + Int.pow(6, 0)) + Int.pow(9, 0))))) {  // sub-goal of `cases` (Lean state)
+              // [TACTIC: «Norm_num[_]At___» [ h₀ , pow_zero , Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib ]]
+              // UNCITED pow_zero: named in this rewriting step; no record of Lean's proof attributes an application of it to this execution (its recorded applications are at other tactics of the proof; a rewrite at a hypothesis is filed under the tactic that later uses the hypothesis, and a conditional / under-binder simp rewrite may be unrecorded), so whether it was applied here is not known; not stated
+              // UNCITED Nat.mul_sub_left_distrib: named in this rewriting step; no record of Lean's proof attributes an application of it to this execution (its recorded applications are at other tactics of the proof; a rewrite at a hypothesis is filed under the tactic that later uses the hypothesis, and a conditional / under-binder simp rewrite may be unrecorded), so whether it was applied here is not known; not stated
+              // UNCITED Nat.mul_sub_right_distrib: no Lean instance recorded (arguments unknown), not guessed
+              assert (tsub((((Int.pow(4, 0) + Int.pow(6, 0)) + Int.pow(9, 0)) * ((Int.pow(4, 0) + Int.pow(6, 0)) + Int.pow(9, 0))), (2 * (Int.pow(6, 0) * ((Int.pow(4, 0) + Int.pow(6, 0)) + Int.pow(9, 0))))) == (((Int.pow(4, 0) + Int.pow(6, 0)) + Int.pow(9, 0)) * tsub(((Int.pow(4, 0) + Int.pow(6, 0)) + Int.pow(9, 0)), (2 * Int.pow(6, 0)))));  // sub-goal of `cases` (Lean state) // @tac 4176-4254
+              // UNCITED-APPLIED internal ×23 [exec 1225 4176-4254]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_mul ×5, Mathlib.Meta.NormNum.isNat_ofNat ×5, Mathlib.Meta.NormNum.isNat_pow ×3, Mathlib.Meta.NormNum.natPow_zero ×3 (+5 more heads, ×7)
+            }
+          } else {
+            var k_0_0: nat := k_0_0 - 1;
+            if ((f((2 * (k_0_0 + 1))) == ((Int.pow(4, (2 * (k_0_0 + 1))) + Int.pow(6, (2 * (k_0_0 + 1)))) + Int.pow(9, (2 * (k_0_0 + 1)))))) && ((f((k_0_0 + 1)) == ((Int.pow(4, (k_0_0 + 1)) + Int.pow(6, (k_0_0 + 1))) + Int.pow(9, (k_0_0 + 1))))) && ((Int.pow(4, (2 * (k_0_0 + 1))) == (Int.pow(4, (k_0_0 + 1)) * Int.pow(4, (k_0_0 + 1))))) && ((Int.pow(6, (2 * (k_0_0 + 1))) == (Int.pow(6, (k_0_0 + 1)) * Int.pow(6, (k_0_0 + 1))))) && ((Int.pow(9, (2 * (k_0_0 + 1))) == (Int.pow(9, (k_0_0 + 1)) * Int.pow(9, (k_0_0 + 1))))) && (((((Int.pow(4, (k_0_0 + 1)) * Int.pow(4, (k_0_0 + 1))) + (Int.pow(6, (k_0_0 + 1)) * Int.pow(6, (k_0_0 + 1)))) + (Int.pow(9, (k_0_0 + 1)) * Int.pow(9, (k_0_0 + 1)))) == tsub((((Int.pow(4, (k_0_0 + 1)) + Int.pow(6, (k_0_0 + 1))) + Int.pow(9, (k_0_0 + 1))) * ((Int.pow(4, (k_0_0 + 1)) + Int.pow(6, (k_0_0 + 1))) + Int.pow(9, (k_0_0 + 1)))), (2 * (((Int.pow(4, (k_0_0 + 1)) * Int.pow(6, (k_0_0 + 1))) + (Int.pow(4, (k_0_0 + 1)) * Int.pow(9, (k_0_0 + 1)))) + (Int.pow(6, (k_0_0 + 1)) * Int.pow(9, (k_0_0 + 1)))))))) && (((((Int.pow(4, (k_0_0 + 1)) * Int.pow(6, (k_0_0 + 1))) + (Int.pow(4, (k_0_0 + 1)) * Int.pow(9, (k_0_0 + 1)))) + (Int.pow(6, (k_0_0 + 1)) * Int.pow(9, (k_0_0 + 1)))) == (Int.pow(6, (k_0_0 + 1)) * ((Int.pow(4, (k_0_0 + 1)) + Int.pow(6, (k_0_0 + 1))) + Int.pow(9, (k_0_0 + 1)))))) {  // sub-goal of `cases` (Lean state)
+              // [TACTIC: «_<;>_» [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ] simp_all [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ] simp_all [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ] <;> ring_nf at * <;> norm_num at * <;> omega omega]
+              // [TACTIC: choice [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ] simp_all [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ] simp_all [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ]]
+              NatMulSubLeftDistrib((Int.pow(4, (k_0_0 + 1)) + (Int.pow(6, (k_0_0 + 1)) + Int.pow(9, (k_0_0 + 1)))), (Int.pow(4, (k_0_0 + 1)) + (Int.pow(6, (k_0_0 + 1)) + Int.pow(9, (k_0_0 + 1)))), (2 * Int.pow(6, (k_0_0 + 1))));  // cite: Nat.mul_sub_left_distrib
+              // UNCITED Nat.mul_sub_right_distrib: no Lean instance recorded (arguments unknown), not guessed
+              // UNCITED Nat.add_assoc: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances here: (n := (4 : ℕ) ^ (k + (1 : ℕ)), m := (6 : ℕ) ^ (k + (1 : ℕ)), k := (9 : ℕ) ^ (k + (1 : ℕ)))
+              // GAP: Nat.mul_sub_left_distrib: this execution also rewrote the hypotheses h₁, h₂, h₇; the harvest for this theorem records only the goal-side application(s) of the tactic (hypothesis-side rewrites are not recorded), so its applications to those hypotheses (if any) are not stated
+              // UNCITED-APPLIED internal ×8 [exec 1244 4277-4354]: applications made inside the tactic's own automation, not stated — Nat.add_assoc ×1; machinery/glue: congrArg ×4, congr ×3 (cited in this block, not counted here: Nat.mul_sub_left_distrib [Lean recorded ×1])
+              assert (forall x: nat :: (f(x) == (Int.pow(4, x) + (Int.pow(6, x) + Int.pow(9, x)))));  // hypothesis h₀ after `simp_all` (Lean state) // @tac-hyp 4277-4354
+              assert ((0 < m) && (0 < n));  // hypothesis h₁ after `simp_all` (Lean state) // @tac-hyp 4277-4354
+              assert (m <= n);  // hypothesis h₂ after `simp_all` (Lean state) // @tac-hyp 4277-4354
+              assert (((Int.pow(4, (k_0_0 + 1)) * Int.pow(4, (k_0_0 + 1))) + ((Int.pow(6, (k_0_0 + 1)) * Int.pow(6, (k_0_0 + 1))) + (Int.pow(9, (k_0_0 + 1)) * Int.pow(9, (k_0_0 + 1))))) == tsub(((Int.pow(4, (k_0_0 + 1)) + (Int.pow(6, (k_0_0 + 1)) + Int.pow(9, (k_0_0 + 1)))) * (Int.pow(4, (k_0_0 + 1)) + (Int.pow(6, (k_0_0 + 1)) + Int.pow(9, (k_0_0 + 1))))), (2 * (Int.pow(6, (k_0_0 + 1)) * (Int.pow(4, (k_0_0 + 1)) + (Int.pow(6, (k_0_0 + 1)) + Int.pow(9, (k_0_0 + 1))))))));  // hypothesis h₁ after `simp_all` (Lean state) // @tac-hyp 4277-4354
+              assert (((Int.pow(4, (k_0_0 + 1)) * Int.pow(6, (k_0_0 + 1))) + ((Int.pow(4, (k_0_0 + 1)) * Int.pow(9, (k_0_0 + 1))) + (Int.pow(6, (k_0_0 + 1)) * Int.pow(9, (k_0_0 + 1))))) == (Int.pow(6, (k_0_0 + 1)) * (Int.pow(4, (k_0_0 + 1)) + (Int.pow(6, (k_0_0 + 1)) + Int.pow(9, (k_0_0 + 1))))));  // hypothesis h₇ after `simp_all` (Lean state) // @tac-hyp 4277-4354
+              assert (tsub(((Int.pow(4, (k_0_0 + 1)) + (Int.pow(6, (k_0_0 + 1)) + Int.pow(9, (k_0_0 + 1)))) * (Int.pow(4, (k_0_0 + 1)) + (Int.pow(6, (k_0_0 + 1)) + Int.pow(9, (k_0_0 + 1))))), (2 * (Int.pow(6, (k_0_0 + 1)) * (Int.pow(4, (k_0_0 + 1)) + (Int.pow(6, (k_0_0 + 1)) + Int.pow(9, (k_0_0 + 1))))))) == tsub(((Int.pow(4, (k_0_0 + 1)) + (Int.pow(6, (k_0_0 + 1)) + Int.pow(9, (k_0_0 + 1)))) * (Int.pow(4, (k_0_0 + 1)) + (Int.pow(6, (k_0_0 + 1)) + Int.pow(9, (k_0_0 + 1))))), ((Int.pow(4, (k_0_0 + 1)) + (Int.pow(6, (k_0_0 + 1)) + Int.pow(9, (k_0_0 + 1)))) * (2 * Int.pow(6, (k_0_0 + 1)))))) by {  // sub-goal of `ring_nf` (Lean state) // @tac 4365-4377
+                NatPowOne(k_0_0);  // cite: pow_one [applied by the tactic, not named in it]
+                // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := k)
+                // UNCITED-APPLIED internal ×187 [exec 1253 4365-4377]: applications made inside the tactic's own automation, not stated — add_zero ×5, mul_one ×1; machinery/glue: Mathlib.Tactic.Ring.add_pf_add_zero ×8, Mathlib.Tactic.Ring.mul_pf_left ×8, Mathlib.Tactic.Ring.mul_zero ×8, Mathlib.Tactic.Ring.mul_pf_right ×8 (+33 more heads, ×149) (cited in this block, not counted here: pow_one [Lean recorded ×1])
+              }
+              assert (tsub((((Int.pow(4, (k_0_0 + 1)) + Int.pow(6, (k_0_0 + 1))) + Int.pow(9, (k_0_0 + 1))) * ((Int.pow(4, (k_0_0 + 1)) + Int.pow(6, (k_0_0 + 1))) + Int.pow(9, (k_0_0 + 1)))), (2 * (Int.pow(6, (k_0_0 + 1)) * ((Int.pow(4, (k_0_0 + 1)) + Int.pow(6, (k_0_0 + 1))) + Int.pow(9, (k_0_0 + 1)))))) == (((Int.pow(4, (k_0_0 + 1)) + Int.pow(6, (k_0_0 + 1))) + Int.pow(9, (k_0_0 + 1))) * tsub(((Int.pow(4, (k_0_0 + 1)) + Int.pow(6, (k_0_0 + 1))) + Int.pow(9, (k_0_0 + 1))), (2 * Int.pow(6, (k_0_0 + 1))))));  // sub-goal of `cases` (Lean state) // @tac 4277-4417 // @tac 4277-4401 // @tac 4277-4377 // @tac 4277-4354
+            }
+          }
+          // UNCITED-APPLIED Eq.symm(k, (0 : ℕ)): library counterpart exists, but the translation of this tactic states no such instance [exec 1220 4143-4417]
+          // UNCITED-APPLIED Eq.symm(k✝, k + (1 : ℕ)): library counterpart exists, but the translation of this tactic states no such instance [exec 1220 4143-4417]
+        }
+      }
+}
 

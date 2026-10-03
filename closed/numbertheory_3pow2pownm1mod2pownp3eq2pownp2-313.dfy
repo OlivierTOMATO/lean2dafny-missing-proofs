@@ -1,30 +1,11 @@
-// CLOSED LEMMA for failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-313 (theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 313, OOR)
-// closes with: K1 (instance) — single
-// added: NatDvdTrans(Int.pow(2, n + 4), Int.pow(2, 2 * n + 5), 2 * k * Int.pow(2, 2 * n + 5));  (dvd_trans at the calc args; library axiom = Mathlib dvd_trans)
-// Dafny: finished with 96 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_048/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-313/K1.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-313: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 313 (OOR: Verification out of resource (induction_helper_1))
+// failing Dafny line: assert NatDvd(Int.pow(2, (n + 4)), ((2 * k) * Int.pow(2, ((2 * n) + 5)))) by {
+// Lean step: calc
+// hypotheses: 36 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// not closed: tried H0=oor, K1=oor, K2pow=oor, K3=oor; this file is the honest base attempt
+// Dafny: finished with 91 verified, 0 errors, 2 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// ABLATION shard_048: K1 dvd_trans instance at calc args
-// Line lemma for failing line 313 of numbertheory_3pow2pownm1mod2pownp3eq2pownp2 (OOR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "/home/changjie/lean2dafny_research/agents_tac/wt_integ5/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
-
-// ========================================================================================
-// FAILING LINE 313 (OOR) in induction_helper_1: Verification out of resource (induction_helper_1)
-//   dafny |                     assert NatDvd(Int.pow(2, (n + 4)), ((2 * k) * Int.pow(2, ((2 * n) + 5)))) by { // @tac 5794-5966
-//   statement kind: have / step assertion
-//   @tac 5794-5966 | Lean: calc
-//        before-goal ⊢ (2 : ℕ) ^ (n + (4 : ℕ)) ∣ (2 : ℕ) * k * (2 : ℕ) ^ ((2 : ℕ) * n + (5 : ℕ))
-// Lean have h₁₄, Lean lines 106-110:
-//   lean  |                 have h₁₄ : 2 ^ (n + 4) ∣ 2 * k * 2 ^ (2 * n + 5) := by
-//   lean  |                   calc
-//   lean  |                     2 ^ (n + 4) ∣ 2 ^ (2 * n + 5) := h₁₃
-//   lean  |                     _ ∣ 2 * k * 2 ^ (2 * n + 5) := by
-//   lean  |                       exact ⟨2 * k, by ring⟩
-
-// 8 path(s) merged (paths); 36 shared facts; 2 distinct path conditions; 2 claims conjoined
+include "../dafny/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L313(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
   requires 0 <= n
   requires 0 <= k_1_0_2
@@ -62,8 +43,17 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L313(k_1
   requires NatDvd(Int.pow(2, n + 4), Int.pow(2, 2 * n + 5))
   requires 0 <= 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
   requires NatDvd(Int.pow(2, 2 * n + 5), 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5))
-  ensures  ((((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))) ==> (NatDvd(Int.pow(2, n + 4), 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) || (Int.pow(2, n + 4) == 0 ==> 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) == 0)))
-        && ((((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))) ==> (NatDvd(Int.pow(2, n + 4), 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) || (Int.pow(2, n + 4) != 0 ==> 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) % Int.pow(2, n + 4) == 0)))
+  ensures   ((((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))) ==> (NatDvd(Int.pow(2, n + 4), 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) || (Int.pow(2, n + 4) == 0 ==> 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) == 0)))
 {
-  NatDvdTrans(Int.pow(2, n + 4), Int.pow(2, 2 * n + 5), 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5));  // Lean calc: Trans instance = dvd_trans at (2^(n+4), 2^(2n+5), 2k*2^(2n+5))
+                      assert NatDvd(Int.pow(2, ((2 * n) + 5)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))) by {  // sub-goal of `by` (Lean state) // @tac 5940-5966
+                        assert (((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) == (Int.pow(2, ((2 * n) + 5)) * (2 * k_1_0_0))) by {  // sub-goal of `by` (Lean state) // @tac 5959-5963
+                          // [TACTIC: Ring]
+                        }
+                        // [TACTIC: exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩]
+                        assert (if ((Int.pow(2, ((2 * n) + 5)) as int)) == 0 then ((((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) as int)) == 0 else ((((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) as int)) % ((Int.pow(2, ((2 * n) + 5)) as int)) == 0);  // goal closed by `exact ⟨…⟩` (Lean state)
+                        // UNCITED-APPLIED internal ×72 [exec 863 5940-5966]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_mul ×6, Mathlib.Tactic.Ring.mul_add ×6, Mathlib.Tactic.Ring.zero_mul ×6, Mathlib.Tactic.Ring.mul_pf_right ×5 (+25 more heads, ×49)
+                      }
+                      // [TACTIC: calc_unparsed 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 5 ) 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 5 ) := h₁₃ _ ∣ 2 * k * 2 ^ ( 2 * n + 5 ) _ ∣ 2 * k * 2 ^ ( 2 * n + 5 ) := by exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩ exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩]
+                      // GAP: calc chain not lowered (relation outside Dafny calc, e.g. ∣); its step proofs follow, each with its recorded goal; the chain itself is not composed
 }
+

@@ -1,17 +1,13 @@
-// CLOSED LEMMA for failing line amc12a_2019_p21-67 (theorem amc12a_2019_p21, Dafny line 67, ERR)
-// closes with: simplest (simplest) — simplest-close
-// added: library Mathlib Finset.sum_insert/sum_empty for Complex.sum + proved helpers OnePow_k, PowRed_k, L67lin_k (linear 12-term regrouping) and InvVals_k (1/z = z^7, 1/z^4 = z^4, 1/1 = 1 from Complex.div's formula with normSq = 1) + checked values z, z^2 = I, z^4 = -1, z^7 + the 12-term expansion
-// Dafny: finished with 117 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_017/amc12a_2019_p21-67/S2.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line amc12a_2019_p21-67: theorem amc12a_2019_p21, Dafny line 67 (ERR: assertion might not hold)
+// failing Dafny line: assert (Complex.sum(Icc(1, 12), ((k: int) => Complex.div(Complex.of_real(1.0), Complex.zpow(z, (k * k))))) == Complex.add(Complex.add(Complex.mul(Complex.of_real(6.0), Complex.pow(z, 7)), Complex.mul(
+// Lean step: h₃
+// hypotheses: 21 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: S2 — 
+// Dafny: finished with 143 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// shard_017 ablation S2 for amc12a_2019_p21-67 (copy of the ORIGINAL line lemma; see ablate/shard_017.jsonl)
-include "../../../../../wt_integ5/out/amc12a_2019_p21.dfy"
-
-// Mathlib: Finset.sum_empty : ∑ x ∈ ∅, f x = 0
+include "../dafny/amc12a_2019_p21.dfy"
 lemma {:axiom} CSumEmpty_k<T>(f: T -> Complex.complex)
   ensures Complex.sum({}, f) == Complex.of_real(0.0)
-// Mathlib: Finset.sum_insert (h : a ∉ s) : ∑ x ∈ insert a s, f x = f a + ∑ x ∈ s, f x
 lemma {:axiom} CSumInsert_k<T>(s: set<T>, a: T, f: T -> Complex.complex)
   requires a !in s
   ensures Complex.sum(s + {a}, f) == Complex.add(f(a), Complex.sum(s, f))
@@ -39,7 +35,7 @@ lemma InvVals_k(z: Complex.complex)
   assert Complex.normSq(Complex.of_real(1.0)) == 1.0;
 }
 
-lemma {:induction false} vc_amc12a_2019_p21_L67_S2(z: Complex.complex)
+lemma {:induction false} vc_amc12a_2019_p21_L67(z: Complex.complex)
   requires z == Complex.div(Complex.add(Complex.of_real(1.0), Complex.I()), Complex.of_real(Real.sqrt(2.0)))
   requires 0 <= 8
   requires Complex.pow(z, 8).Complex?
@@ -61,7 +57,7 @@ lemma {:induction false} vc_amc12a_2019_p21_L67_S2(z: Complex.complex)
   requires Complex.mul(Complex.of_real(6.0), Complex.pow(z, 7)).Complex?
   requires Complex.add(Complex.mul(Complex.of_real(6.0), Complex.pow(z, 7)), Complex.mul(Complex.of_real(3.0), Complex.pow(z, 4))).Complex?
   requires Complex.add(Complex.add(Complex.mul(Complex.of_real(6.0), Complex.pow(z, 7)), Complex.mul(Complex.of_real(3.0), Complex.pow(z, 4))), Complex.of_real(3.0)).Complex?
-  ensures  Complex.sum(Icc(1, 12), ((k: int) => Complex.div(Complex.of_real(1.0), Complex.zpow(z, k * k)))) == Complex.add(Complex.add(Complex.mul(Complex.of_real(6.0), Complex.pow(z, 7)), Complex.mul(Complex.of_real(3.0), Complex.pow(z, 4))), Complex.of_real(3.0))
+  ensures   Complex.sum(Icc(1, 12), ((k: int) => Complex.div(Complex.of_real(1.0), Complex.zpow(z, k * k)))) == Complex.add(Complex.add(Complex.mul(Complex.of_real(6.0), Complex.pow(z, 7)), Complex.mul(Complex.of_real(3.0), Complex.pow(z, 4))), Complex.of_real(3.0))
 {
   assert Real.sqrt(2.0) * Real.sqrt(2.0) == 2.0;
   assert Complex.normSq(Complex.of_real(Real.sqrt(2.0))) == 2.0;
@@ -116,3 +112,4 @@ lemma {:induction false} vc_amc12a_2019_p21_L67_S2(z: Complex.complex)
   assert Complex.sum(Icc(1, 12), ((k: int) => Complex.div(Complex.of_real(1.0), Complex.zpow(z, k * k)))) == Complex.add(Complex.of_real(1.0), Complex.add(Complex.pow(z, 7), Complex.add(Complex.pow(z, 4), Complex.add(Complex.pow(z, 7), Complex.add(Complex.of_real(1.0), Complex.add(Complex.pow(z, 7), Complex.add(Complex.pow(z, 4), Complex.add(Complex.pow(z, 7), Complex.add(Complex.of_real(1.0), Complex.add(Complex.pow(z, 7), Complex.add(Complex.pow(z, 4), Complex.add(Complex.pow(z, 7), Complex.of_real(0.0)))))))))))));
   L67lin_k(Complex.sum(Icc(1, 12), ((k: int) => Complex.div(Complex.of_real(1.0), Complex.zpow(z, k * k)))), Complex.pow(z, 7), Complex.pow(z, 4));
 }
+

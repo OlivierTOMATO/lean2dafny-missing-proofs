@@ -1,86 +1,11 @@
-// CLOSED LEMMA for failing line amc12a_2008_p4-22 (theorem amc12a_2008_p4, Dafny line 22, ERR)
-// closes with: K4 (types) — single
-// added: NatCastProdReal ×2 calls; work-copy axiom = exact Mathlib Finset.prod_natCast/Nat.cast_prod with Finset.prod_congr folded (pointwise Nat.cast_add/Nat.cast_mul/Rat.cast_ofNat); Lean exec 347 internal: Finset.prod_natCast ×1, Rat.cast_natCast ×2, Nat.cast_add ×2, Nat.cast_mul ×2, Rat.cast_ofNat ×1, Fi
-// Dafny: finished with 51 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_012/amc12a_2008_p4-22/K4.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line amc12a_2008_p4-22: theorem amc12a_2008_p4, Dafny line 22 (ERR: assertion might not hold)
+// failing Dafny line: assert (Real.div(Real.prod(IccN(1, 501), ((x: nat) => (((Rat.of_int(4)).to_real() * (x as real)) + (Rat.of_int(4)).to_real()))), Real.prod(IccN(1, 501), ((x: nat) => ((Rat.of_int(4)).to_real() * (x as
+// Lean step: norm_cast
+// hypotheses: 9 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K4 — NatCastProdReal ×2 calls; work-copy axiom = exact Mathlib Finset.prod_natCast/Nat.cast_prod with Finset.prod_congr folded (pointwise Nat.cast_add/Nat.cast_mul/Rat.cast_ofNat); Lean exec 347 internal: Finset.prod_natCast ×1, Rat.cast_natCast ×2, Nat.cast_add ×2, Nat.cast_mul ×2, Rat.cast_ofNat ×1, Fi
+// Dafny: finished with 56 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// shard_012 K4: Lean exec 347 norm_cast cast lemmas (Finset.prod_natCast + prod_congr of Nat.cast_add/mul, Rat.cast_natCast/ofNat)
-// Line lemma for failing line 22 of amc12a_2008_p4 (ERR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "../../../../../wt_integ5/out/amc12a_2008_p4.dfy"
-
-// ========================================================================================
-// FAILING LINE 22 (ERR) in amc12a_2008_p4: assertion might not hold
-//   dafny |     assert (Real.div(Real.prod(IccN(1, 501), ((x: nat) => (((Rat.of_int(4)).to_real() * (x as real)) + (Rat.of_int(4)).to_real()))), Real.prod(IccN(1, 501), ((x: nat) => ((Rat.of_int(4)).to_real() * (x as real))))) == 502.0) by {  // sub-goal of `norm_cast` (Lean state) // @tac 626-635
-//   statement kind: sub-goal (Lean tactic state)
-//   @tac 626-635 | Lean: norm_cast
-//        before-goal ⊢ (∏ x ∈ Finset.Icc (1 : ℕ) (501 : ℕ), (↑(4 : ℚ) * ↑x + ↑(4 : ℚ))) / ∏ x ∈ Finset.Icc (1 : ℕ) (501 : ℕ), ↑(4 : ℚ) * ↑x =
-//      (502 : ℝ)
-//        before-goal ⊢ ↑(∏ i ∈ Finset.Icc (1 : ℕ) (501 : ℕ), ((4 : ℕ) * i + (4 : ℕ))) / ↑(∏ i ∈ Finset.Icc (1 : ℕ) (501 : ℕ), (4 : ℕ) * i) =
-//      (502 : ℚ)
-// Lean theorem statement, Lean lines 12-70:
-//   lean  | theorem amc12a_2008_p4 : (∏ k in Finset.Icc (1 : ℕ) 501, ((4 : ℝ) * k + 4) / (4 * k)) = 502 := by
-//   lean  |   norm_num [Finset.prod_range_succ]
-//   lean  |   <;> norm_num
-//   lean  |   <;> rw [show (4 : ℝ) = (4 : ℚ) by norm_num]
-//   lean  |   <;> norm_cast
-//   lean  |   <;> simp [Finset.prod_range_succ]
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  |   <;> norm_num
-//   lean  |   <;> ring
-//   lean  |   <;> simp_all
-//   lean  | 
-
-// 1 path(s) merged (paths); 9 shared facts; 1 distinct path conditions
+include "../dafny/amc12a_2008_p4.dfy"
 lemma {:induction false} vc_amc12a_2008_p4_L22()
   requires Rat.of_int(4).Rational?
   requires 4.0 == Rat.of_int(4).to_real()
@@ -91,10 +16,17 @@ lemma {:induction false} vc_amc12a_2008_p4_L22()
   requires Rat.div(Rat.of_int(Int.prod(IccN(1, 501), ((v_1_2_i: nat) => 4 * v_1_2_i + 4))), Rat.of_int(Int.prod(IccN(1, 501), ((v_1_12_i: nat) => 4 * v_1_12_i)))).Rational?
   requires Rat.of_int(502).Rational?
   requires Rat.div(Rat.of_int(Int.prod(IccN(1, 501), ((v_1_2_i: nat) => 4 * v_1_2_i + 4))), Rat.of_int(Int.prod(IccN(1, 501), ((v_1_12_i: nat) => 4 * v_1_12_i)))) == Rat.of_int(502)
-  ensures  Real.div(Real.prod(IccN(1, 501), ((x: nat) => Rat.of_int(4).to_real() * (x as real) + Rat.of_int(4).to_real())), Real.prod(IccN(1, 501), ((x: nat) => Rat.of_int(4).to_real() * (x as real)))) == 502.0
+  ensures   Real.div(Real.prod(IccN(1, 501), ((x: nat) => Rat.of_int(4).to_real() * (x as real) + Rat.of_int(4).to_real())), Real.prod(IccN(1, 501), ((x: nat) => Rat.of_int(4).to_real() * (x as real)))) == 502.0
 {
   NatCastProdReal(IccN(1, 501), ((v_1_2_i: nat) => 4 * v_1_2_i + 4), ((x: nat) => Rat.of_int(4).to_real() * (x as real) + Rat.of_int(4).to_real()));
   NatCastProdReal(IccN(1, 501), ((v_1_12_i: nat) => 4 * v_1_12_i), ((x: nat) => Rat.of_int(4).to_real() * (x as real)));
+      // UNCITED-APPLIED Eq.symm(Rat.of_int(Int.prod(IccN(1, 501), ((i: nat) => ((4 * i) + 4)))), Rat.prod(IccN(1, 501), ((x: nat) => Rat.add(Rat.mul(Rat.of_int(4), Rat.of_int(x)), Rat.of…): its premise is not established here and its conclusion is the same Dafny fact (== is symmetric): a guarded call would state nothing
+      // UNCITED-APPLIED Eq.symm((Rat.of_int(502)).to_real(), 502.0): its premise is not established here and its conclusion is the same Dafny fact (== is symmetric): a guarded call would state nothing
+      // UNCITED-APPLIED Eq.symm: 1 more recorded instance (↑↑x, ↑x) not expressible here (sort/type/scope), not guessed
+      // UNCITED-APPLIED Nat.cast_add: recorded instance not expressible here (sort/type/scope), not guessed
+      // UNCITED-APPLIED Nat.cast_mul: recorded instance not expressible here (sort/type/scope), not guessed
+      assert (Rat.div(Rat.of_int(Int.prod(IccN(1, 501), ((i: nat) => ((4 * i) + 4)))), Rat.of_int(Int.prod(IccN(1, 501), ((i: nat) => (4 * i))))) == Rat.of_int(502));  // sub-goal of `norm_cast` (Lean state)
+      // UNCITED-APPLIED internal ×33 [exec 347 626-635]: applications made inside the tactic's own automation, not stated — Finset.prod_congr ×5, Rat.cast_natCast ×2, Nat.cast_add ×2, Nat.cast_mul ×2, Finset.prod_natCast ×1, Rat.cast_ofNat ×1; machinery/glue: congrArg ×8, Eq.trans ×6, Eq.symm ×4, congr ×2
 }
 
 // side checks at the same line (not the reported failure): 4 check(s)

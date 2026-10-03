@@ -1,55 +1,11 @@
-// CLOSED LEMMA for failing line imo_1966_p4-187 (theorem imo_1966_p4, Dafny line 187, OOR)
-// closes with: K3 (locality) — base
-// added: nothing (line lemma standalone)
-// Dafny: verifies unchanged (dossier standalone check)
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/line_lemmas/OOR/imo_1966_p4/L187.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line imo_1966_p4-187: theorem imo_1966_p4, Dafny line 187 (OOR: Verification out of resource (imo_1966_p4))
+// failing Dafny line: assert (((Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, m) * x)))) + Real.div(1.0, Real.sin((Real.pow(2.0, (m + 1)) * x)))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan
+// Lean step: have h₃ : 1 / Real.sin (2 ^ (m + 1) * x) = 1 / Real.tan (2 ^ m * x) - 1 / Real.tan (2 ^ (m + 1) * x) := by
+// hypotheses: 14 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// not closed: tried H0=oor; this file is the honest base attempt
+// Dafny: finished with 111 verified, 1 error, 26 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Line lemma for failing line 187 of imo_1966_p4 (OOR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "../../../../wt_integ5/out/imo_1966_p4.dfy"
-
-// ========================================================================================
-// FAILING LINE 187 (OOR) in imo_1966_p4: Verification out of resource (imo_1966_p4)
-//   dafny |     assert (((Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, m) * x)))) + Real.div(1.0, Real.sin((Real.pow(2.0, (m + 1)) * x)))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, (m + 1)) * x))))) by {  // sub-goal before `have` (Lean state) // @tac 1937-2624
-//   statement kind: sub-goal (Lean tactic state)
-//   @tac 1937-2624 | Lean: have h₃ : 1 / Real.sin (2 ^ (m + 1) * x) = 1 / Real.tan (2 ^ m * x) - 1 / Real.tan (2 ^ (m + 1) * x) := by
-//        before-goal ⊢ (1 : ℝ) / tan x - (1 : ℝ) / tan ((2 : ℝ) ^ m * x) + (1 : ℝ) / sin ((2 : ℝ) ^ (m + (1 : ℕ)) * x) =
-  (1 : ℝ) / tan x - (1 : ℝ) / tan ((2 : ℝ) ^ (m + (1 : ℕ)) * x)
-//   @tac 2629-2656 | Lean: rw [h₃]
-//        before-goal ⊢ (1 : ℝ) / tan x - (1 : ℝ) / tan ((2 : ℝ) ^ m * x) + (1 : ℝ) / sin ((2 : ℝ) ^ (m + (1 : ℕ)) * x) =
-  (1 : ℝ) / tan x - (1 : ℝ) / tan ((2 : ℝ) ^ (m + (1 : ℕ)) * x)
-//   @tac 2629-2638 | Lean: rw [h₃]
-//        before-goal ⊢ (1 : ℝ) / tan x - (1 : ℝ) / tan ((2 : ℝ) ^ m * x) + (1 : ℝ) / sin ((2 : ℝ) ^ (m + (1 : ℕ)) * x) =
-  (1 : ℝ) / tan x - (1 : ℝ) / tan ((2 : ℝ) ^ (m + (1 : ℕ)) * x)
-//        before-goal ⊢ (1 : ℝ) / tan x - (1 : ℝ) / tan ((2 : ℝ) ^ m * x) +
-    ((1 : ℝ) / tan ((2 : ℝ) ^ m * x) - (1 : ℝ) / tan ((2 : ℝ) ^ (m + (1 : ℕ)) * x)) =
-  (1 : ℝ) / tan x - (1 : ℝ) / tan ((2 : ℝ) ^ (m + (1 : ℕ)) * x)
-// inside Lean have inductive_step, Lean lines 35-55:
-//   lean  |   have inductive_step : ∀ m : ℕ, 0 < m → 
-//   lean  |     (∑ k in Finset.Icc 1 m, 1 / Real.sin (2 ^ k * x)) = (1 / Real.tan x) - (1 / Real.tan (2 ^ m * x)) →
-//   lean  |     (∑ k in Finset.Icc 1 (m + 1), 1 / Real.sin (2 ^ k * x)) = (1 / Real.tan x) - (1 / Real.tan (2 ^ (m + 1) * x)) := by
-//   lean  |     intro m hm h
-//   lean  |     have h₁' : m + 1 > 0 := by linarith
-//   lean  |     have h₂ : ∑ k in Finset.Icc 1 (m + 1), 1 / Real.sin (2 ^ k * x) = ∑ k in Finset.Icc 1 m, 1 / Real.sin (2 ^ k * x) + 1 / Real.sin (2 ^ (m + 1) * x) := by
-//   lean  |       rw [Finset.sum_Icc_succ_top]
-//   lean  |       <;> simp [hm]
-//   lean  |     rw [h₂, h]
-//   lean  |     have h₃ : 1 / Real.sin (2 ^ (m + 1) * x) = 1 / Real.tan (2 ^ m * x) - 1 / Real.tan (2 ^ (m + 1) * x) := by
-//   lean  |       rw [show 2 ^ (m + 1) * x = 2 * (2 ^ m * x) by ring]
-//   lean  |       simp [Real.tan_eq_sin_div_cos, Real.sin_two_mul, Real.cos_two_mul, mul_assoc]
-//   lean  |       by_cases hcos : Real.cos (2 ^ m * x) = 0 <;> by_cases hsin : Real.sin (2 ^ m * x) = 0 <;>
-//   lean  |         by_cases hcos' : Real.cos (2 ^ (m + 1) * x) = 0 <;> by_cases hsin' : Real.sin (2 ^ (m + 1) * x) = 0 <;>
-//   lean  |           field_simp [hcos, hsin, hcos', hsin']
-//   lean  |       <;> ring_nf
-//   lean  |       <;> simp_all [Real.cos_sq, Real.sin_sq]
-//   lean  |       <;> ring_nf
-//   lean  |       <;> nlinarith [Real.sin_sq_add_cos_sq (2 ^ m * x), Real.sin_sq_add_cos_sq (2 ^ (m + 1) * x)]
-//   lean  |     rw [h₃]
-//   lean  |     <;> nlinarith
-
-// 2 path(s) merged (paths); 14 shared facts; 2 distinct path conditions
+include "../dafny/imo_1966_p4.dfy"
 lemma {:induction false} vc_imo_1966_p4_L187(m_1_0: nat, n: int, x: real)
   requires 0 <= n
   requires forall k_1: nat :: 0 < k_1 ==> (forall m_2: int :: x != Real.div((m_2 as real) * Real.pi(), Real.pow(2.0, k_1)))
@@ -65,26 +21,205 @@ lemma {:induction false} vc_imo_1966_p4_L187(m_1_0: nat, n: int, x: real)
   requires Real.sum(IccN(1, m_1_0 + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.sum(IccN(1, m_1_0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) + Real.div(1.0, Real.sin(Real.pow(2.0, m_1_0 + 1) * x))
   requires Real.div(1.0, Real.sin(Real.pow(2.0, m_1_0 + 1) * x)) == Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0) * x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0 + 1) * x))
   requires Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0) * x)) + (Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0) * x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0 + 1) * x))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0 + 1) * x))
-  ensures  Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0) * x)) + Real.div(1.0, Real.sin(Real.pow(2.0, m_1_0 + 1) * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0 + 1) * x))
-{ }
-
-// side checks at the same line (not the reported failure): 2 check(s)
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_imo_1966_p4_L187_side1(m_1_0: nat, n: int, x: real)
-  requires 0 <= n
-  requires forall k_1: nat :: 0 < k_1 ==> (forall m_2: int :: x != Real.div((m_2 as real) * Real.pi(), Real.pow(2.0, k_1)))
-  requires 0 < n
-  requires forall n0: int :: (forall k_3: nat :: 0 < k_3 ==> (forall m_3: int :: true)) && (0 <= n0 && (forall k_3: nat :: 0 < k_3 ==> (forall m_3: int :: x != Real.div((m_3 as real) * Real.pi(), Real.pow(2.0, k_3)))) && 0 < n0 && ((0 <= n0 && n0 < n) || (n0 == n && 0.0 <= x && x <= x - 1.0)) ==> (forall k: int :: true) && Real.sum(IccN(1, n0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, n0) * x)))
-  requires Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x))
-  requires 0 <= m_1_0
-  requires 0 < m_1_0
-  requires 0 <= 1
-  requires Real.sum(IccN(1, m_1_0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0) * x))
-  requires m_1_0 + 1 > 0
-  requires 0 <= m_1_0 + 1
-  requires Real.sum(IccN(1, m_1_0 + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.sum(IccN(1, m_1_0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) + Real.div(1.0, Real.sin(Real.pow(2.0, m_1_0 + 1) * x))
-  requires Real.div(1.0, Real.sin(Real.pow(2.0, m_1_0 + 1) * x)) == Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0) * x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0 + 1) * x))
-  requires Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0) * x)) + (Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0) * x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0 + 1) * x))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0 + 1) * x))
-  ensures  0 <= m_1_0 + 1
-{ }
+  ensures   Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0) * x)) + Real.div(1.0, Real.sin(Real.pow(2.0, m_1_0 + 1) * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_1_0 + 1) * x))
+{
+      // have h₃ : 1 / Real.sin ( ( 2 ^ ( m + 1 ) * x ) ) == 1 / Real.tan ( ( 2 ^ m * x )  [type from Lean state]
+      assert (Real.div(1.0, Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x))) == (Real.div(1.0, Real.tan((Real.pow(2.0, m_1_0) * x))) - Real.div(1.0, Real.tan((Real.pow(2.0, (m_1_0 + 1)) * x))))) by { // @tac 2052-2103
+        assert ((Real.pow(2.0, (m_1_0 + 1)) * x) == (2.0 * (Real.pow(2.0, m_1_0) * x))) by {  // sub-goal of `by` (Lean state) // @tac 2098-2102
+          // [TACTIC: Ring]
+          // UNCITED-APPLIED internal ×50 [exec 373 2098-2102]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_pf_add_zero ×5, Mathlib.Tactic.Ring.add_mul ×5, Mathlib.Tactic.Ring.mul_add ×5, Mathlib.Tactic.Ring.zero_mul ×4 (+18 more heads, ×31)
+        }
+        // [TACTIC: rwSeq [ show 2 ^ ( m + 1 ) * x = 2 * ( 2 ^ m * x ) by ring ]]
+        // UNCITED-APPLIED congrArg((2 : ℝ) ^ (m + (1 : ℕ)) * x, (2 : ℝ) * ((2 : ℝ) ^ m * x), fun (_a : ℝ) => (1 : ℝ) / sin _a = (1 : ℝ) / tan ((2 : ℝ) ^ m * x) - …): no library counterpart (not stated) [exec 362 2052-2103]
+        assert (Real.div(1.0, Real.sin((2.0 * (Real.pow(2.0, m_1_0) * x)))) == (Real.div(1.0, Real.tan((Real.pow(2.0, m_1_0) * x))) - Real.div(1.0, Real.tan((2.0 * (Real.pow(2.0, m_1_0) * x)))))) by {  // sub-goal before `simp` (Lean state) // @tac 2110-2187
+          // [TACTIC: simp [ Real.tan_eq_sin_div_cos , Real.sin_two_mul , Real.cos_two_mul , mul_assoc ]]
+          RealTanEqSinDivCos((Real.pow(2.0, m_1_0) * x));  // cite: Real.tan_eq_sin_div_cos
+          RealTanEqSinDivCos((2.0 * (Real.pow(2.0, m_1_0) * x)));  // cite: Real.tan_eq_sin_div_cos
+          RealSinTwoMul((Real.pow(2.0, m_1_0) * x));  // cite: Real.sin_two_mul
+          RealCosTwoMul((Real.pow(2.0, m_1_0) * x));  // cite: Real.cos_two_mul
+          // UNCITED mul_assoc: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances here: (a := (2 : ℝ), b := sin ((2 : ℝ) ^ m * x), c := cos ((2 : ℝ) ^ m * x)); (a := (cos ((2 : ℝ) ^ m * x))⁻¹, b := (sin ((2 : ℝ) ^ m * x))⁻¹, c := (2 : ℝ)⁻¹)
+          // UNCITED-APPLIED internal ×27 [exec 398 2110-2187]: applications made inside the tactic's own automation, not stated — one_div ×3, mul_assoc ×2, mul_inv_rev ×2, inv_div ×2; machinery/glue: Eq.trans ×8, congrArg ×7, congr ×3 (cited in this block, not counted here: Real.cos_two_mul [Lean recorded ×1], Real.sin_two_mul [Lean recorded ×1], Real.tan_eq_sin_div_cos [Lean recorded ×2])
+          assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))))) by {  // sub-goal before `by_cases` (Lean state) // @tac 2194-2624 // @tac 2194-2525 // @tac 2194-2507 // @tac 2194-2461 // @tac 2194-2443 // @tac 2194-2391 // @tac 2194-2339 // @tac 2194-2279 // @tac 2194-2234
+            // [TACTIC: «_<;>_» hcos : Real.cos ( 2 ^ m * x ) = 0 <;> by_cases hsin : Real.sin ( 2 ^ m * x ) = 0 <;> by_cases hcos' : Real.cos ( 2 ^ ( m + 1 ) * x ) = 0 <;> by_cases hsin' : Real.sin ( 2 ^ ( m + 1 ) * x ) = 0 <;> field_simp [ hcos , hsin , hcos' , hsin' ] field_simp [ hcos , hsin , hcos' , hsin' ] <;> ring_nf ring_nf <;> simp_all [ Real.cos_sq , Real.sin_sq ] simp_all [ Real.cos_sq , Real.sin_sq ] simp_all [ Real.cos_sq , Real.sin_sq ] <;> ring_nf ring_nf <;> nlinarith [ Real.sin_sq_add_cos_sq ( 2 ^ m * x ) , Real.sin_sq_add_cos_sq ( 2 ^ ( m + 1 ) * x ) ] nlinarith [ Real.sin_sq_add_cos_sq ( 2 ^ m * x ) , Real.sin_sq_add_cos_sq ( 2 ^ ( m + 1 ) * x ) ]]
+            // [TACTIC: «By_cases_:_» hcos : Real.cos ( 2 ^ m * x ) = 0]
+            if ((Real.cos((Real.pow(2.0, m_1_0) * x)) == 0.0)) {  // sub-goal of `by_cases` (Lean state)
+              if ((Real.sin((Real.pow(2.0, m_1_0) * x)) == 0.0)) {  // sub-goal of `by_cases` (Lean state)
+                if ((Real.cos((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `by_cases` (Lean state)
+                  if ((Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (0 : ℝ))
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×39 [exec 568 2406-2443]: applications made inside the tactic's own automation, not stated — div_zero ×3, inv_eq_one_div ×2, mul_div_assoc' ×1, mul_one ×1, zero_div ×1, zero_pow ×1, zero_sub ×1, sub_self ×1; machinery/glue: Eq.trans ×8, congrArg ×8, congr ×7, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+3 more heads, ×3)
+                  }
+                  if (!(Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (0 : ℝ))
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×39 [exec 571 2406-2443]: applications made inside the tactic's own automation, not stated — div_zero ×3, inv_eq_one_div ×2, mul_div_assoc' ×1, mul_one ×1, zero_div ×1, zero_pow ×1, zero_sub ×1, sub_self ×1; machinery/glue: Eq.trans ×8, congrArg ×8, congr ×7, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+3 more heads, ×3)
+                  }
+                  assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2344-2391
+                }
+                if (!(Real.cos((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `by_cases` (Lean state)
+                  if ((Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (0 : ℝ))
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×39 [exec 574 2406-2443]: applications made inside the tactic's own automation, not stated — div_zero ×3, inv_eq_one_div ×2, mul_div_assoc' ×1, mul_one ×1, zero_div ×1, zero_pow ×1, zero_sub ×1, sub_self ×1; machinery/glue: Eq.trans ×8, congrArg ×8, congr ×7, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+3 more heads, ×3)
+                  }
+                  if (!(Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (0 : ℝ))
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×39 [exec 577 2406-2443]: applications made inside the tactic's own automation, not stated — div_zero ×3, inv_eq_one_div ×2, mul_div_assoc' ×1, mul_one ×1, zero_div ×1, zero_pow ×1, zero_sub ×1, sub_self ×1; machinery/glue: Eq.trans ×8, congrArg ×8, congr ×7, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+3 more heads, ×3)
+                  }
+                  assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2344-2391
+                }
+                assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2292-2339
+              }
+              if (!(Real.sin((Real.pow(2.0, m_1_0) * x)) == 0.0)) {  // sub-goal of `by_cases` (Lean state)
+                if ((Real.cos((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `by_cases` (Lean state)
+                  if ((Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×2: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (1 : ℝ)); (a := (0 : ℝ))
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×42 [exec 580 2406-2443]: applications made inside the tactic's own automation, not stated — inv_eq_one_div ×3, div_zero ×2, mul_div_assoc' ×2, mul_one ×2, zero_div ×2, div_mul_eq_mul_div ×1, div_div ×1, zero_pow ×1, zero_sub ×1, sub_self ×1; machinery/glue: Eq.trans ×8, congrArg ×8, congr ×5, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+3 more heads, ×3)
+                  }
+                  if (!(Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×2: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (1 : ℝ)); (a := (0 : ℝ))
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×42 [exec 583 2406-2443]: applications made inside the tactic's own automation, not stated — inv_eq_one_div ×3, div_zero ×2, mul_div_assoc' ×2, mul_one ×2, zero_div ×2, div_mul_eq_mul_div ×1, div_div ×1, zero_pow ×1, zero_sub ×1, sub_self ×1; machinery/glue: Eq.trans ×8, congrArg ×8, congr ×5, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+3 more heads, ×3)
+                  }
+                  assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2344-2391
+                }
+                if (!(Real.cos((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `by_cases` (Lean state)
+                  if ((Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×2: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (1 : ℝ)); (a := (0 : ℝ))
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×42 [exec 586 2406-2443]: applications made inside the tactic's own automation, not stated — inv_eq_one_div ×3, div_zero ×2, mul_div_assoc' ×2, mul_one ×2, zero_div ×2, div_mul_eq_mul_div ×1, div_div ×1, zero_pow ×1, zero_sub ×1, sub_self ×1; machinery/glue: Eq.trans ×8, congrArg ×8, congr ×5, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+3 more heads, ×3)
+                  }
+                  if (!(Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×2: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (1 : ℝ)); (a := (0 : ℝ))
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×42 [exec 589 2406-2443]: applications made inside the tactic's own automation, not stated — inv_eq_one_div ×3, div_zero ×2, mul_div_assoc' ×2, mul_one ×2, zero_div ×2, div_mul_eq_mul_div ×1, div_div ×1, zero_pow ×1, zero_sub ×1, sub_self ×1; machinery/glue: Eq.trans ×8, congrArg ×8, congr ×5, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+3 more heads, ×3)
+                  }
+                  assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2344-2391
+                }
+                assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2292-2339
+              }
+              assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2239-2279
+            }
+            if (!(Real.cos((Real.pow(2.0, m_1_0) * x)) == 0.0)) {  // sub-goal of `by_cases` (Lean state)
+              if ((Real.sin((Real.pow(2.0, m_1_0) * x)) == 0.0)) {  // sub-goal of `by_cases` (Lean state)
+                if ((Real.cos((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `by_cases` (Lean state)
+                  if ((Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (0 : ℝ))
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×34 [exec 592 2406-2443]: applications made inside the tactic's own automation, not stated — inv_eq_one_div ×3, div_zero ×3, zero_div ×2, mul_div_assoc' ×1, mul_one ×1, div_mul_eq_mul_div ×1, sub_self ×1; machinery/glue: Eq.trans ×8, congrArg ×8, congr ×4, of_eq_true ×1 (+1 more heads, ×1)
+                  }
+                  if (!(Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (0 : ℝ))
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×34 [exec 595 2406-2443]: applications made inside the tactic's own automation, not stated — inv_eq_one_div ×3, div_zero ×3, zero_div ×2, mul_div_assoc' ×1, mul_one ×1, div_mul_eq_mul_div ×1, sub_self ×1; machinery/glue: Eq.trans ×8, congrArg ×8, congr ×4, of_eq_true ×1 (+1 more heads, ×1)
+                  }
+                  assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2344-2391
+                }
+                if (!(Real.cos((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `by_cases` (Lean state)
+                  if ((Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (0 : ℝ))
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×34 [exec 598 2406-2443]: applications made inside the tactic's own automation, not stated — inv_eq_one_div ×3, div_zero ×3, zero_div ×2, mul_div_assoc' ×1, mul_one ×1, div_mul_eq_mul_div ×1, sub_self ×1; machinery/glue: Eq.trans ×8, congrArg ×8, congr ×4, of_eq_true ×1 (+1 more heads, ×1)
+                  }
+                  if (!(Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (0 : ℝ))
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×34 [exec 601 2406-2443]: applications made inside the tactic's own automation, not stated — inv_eq_one_div ×3, div_zero ×3, zero_div ×2, mul_div_assoc' ×1, mul_one ×1, div_mul_eq_mul_div ×1, sub_self ×1; machinery/glue: Eq.trans ×8, congrArg ×8, congr ×4, of_eq_true ×1 (+1 more heads, ×1)
+                  }
+                  assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2344-2391
+                }
+                assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2292-2339
+              }
+              if (!(Real.sin((Real.pow(2.0, m_1_0) * x)) == 0.0)) {  // sub-goal of `by_cases` (Lean state)
+                if ((Real.cos((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `by_cases` (Lean state)
+                  if ((Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (1 : ℝ))
+                    if ((Real.sin((Real.pow(2.0, m_1_0) * x))) != 0.0) && ((Real.cos((Real.pow(2.0, m_1_0) * x))) != 0.0) { MulNeZero(Real.sin((Real.pow(2.0, m_1_0) * x)), Real.cos((Real.pow(2.0, m_1_0) * x))); }  // cite: mul_ne_zero [applied by the tactic, not named in it]
+                    if ((Real.sin((Real.pow(2.0, m_1_0) * x))) != 0.0) && (((2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))) != 0.0) { MulNeZero(Real.sin((Real.pow(2.0, m_1_0) * x)), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))); }  // cite: mul_ne_zero [applied by the tactic, not named in it]
+                    if ((Real.cos((Real.pow(2.0, m_1_0) * x))) != 0.0) && (((Real.sin((Real.pow(2.0, m_1_0) * x)) * 2.0)) != 0.0) { MulNeZero(Real.cos((Real.pow(2.0, m_1_0) * x)), (Real.sin((Real.pow(2.0, m_1_0) * x)) * 2.0)); }  // cite: mul_ne_zero [applied by the tactic, not named in it]
+                    assert ((Real.sin((Real.pow(2.0, m_1_0) * x)) * (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))) == (((Real.cos((Real.pow(2.0, m_1_0) * x)) * (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))) - (Real.sin((Real.pow(2.0, m_1_0) * x)) * ((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0))) * (Real.cos((Real.pow(2.0, m_1_0) * x)) * (Real.sin((Real.pow(2.0, m_1_0) * x)) * 2.0)))) by {  // sub-goal of `ring_nf` (Lean state) // @tac 2454-2461
+                      PowOne(x);  // cite: pow_one [applied by the tactic, not named in it]
+                      NatPowOne(m_1_0);  // cite: pow_one [applied by the tactic, not named in it]
+                      PowOne(Real.cos((x * Real.pow(2.0, m_1_0))));  // cite: pow_one [applied by the tactic, not named in it]
+                      // UNCITED-APPLIED mul_one ×2: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := m); (a := (2 : ℝ) ^ m)
+                      // UNCITED-APPLIED Nat.cast_one: cast target unknown (Lean applies it at ℝ and ℤ in this proof; the record does not say which)
+                      // UNCITED-APPLIED internal ×158 [exec 622 2454-2461]: applications made inside the tactic's own automation, not stated — add_zero ×3, mul_one ×2, Nat.cast_one ×1; machinery/glue: Eq.trans ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_congr ×8, Mathlib.Tactic.Ring.add_mul ×8 (+45 more heads, ×120) (cited in this block, not counted here: pow_one [Lean recorded ×3])
+                    }
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×35 [exec 604 2406-2443]: applications made inside the tactic's own automation, not stated — div_mul_eq_mul_div ×4, inv_eq_one_div ×3, div_div ×3, mul_div_assoc' ×2, mul_one ×1, sub_div' ×1, Mathlib.Meta.Positivity.pos_of_isNat ×1, div_sub' ×1, one_mul ×1; machinery/glue: congrArg ×8, Eq.trans ×7, congr ×2, Mathlib.Meta.NormNum.isNat_ofNat ×1 (cited in this block, not counted here: mul_ne_zero [Lean recorded ×3])
+                  }
+                  if (!(Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (1 : ℝ))
+                    if ((Real.sin((Real.pow(2.0, m_1_0) * x))) != 0.0) && ((Real.cos((Real.pow(2.0, m_1_0) * x))) != 0.0) { MulNeZero(Real.sin((Real.pow(2.0, m_1_0) * x)), Real.cos((Real.pow(2.0, m_1_0) * x))); }  // cite: mul_ne_zero [applied by the tactic, not named in it]
+                    if ((Real.sin((Real.pow(2.0, m_1_0) * x))) != 0.0) && (((2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))) != 0.0) { MulNeZero(Real.sin((Real.pow(2.0, m_1_0) * x)), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))); }  // cite: mul_ne_zero [applied by the tactic, not named in it]
+                    if ((Real.cos((Real.pow(2.0, m_1_0) * x))) != 0.0) && (((Real.sin((Real.pow(2.0, m_1_0) * x)) * 2.0)) != 0.0) { MulNeZero(Real.cos((Real.pow(2.0, m_1_0) * x)), (Real.sin((Real.pow(2.0, m_1_0) * x)) * 2.0)); }  // cite: mul_ne_zero [applied by the tactic, not named in it]
+                    assert ((Real.sin((Real.pow(2.0, m_1_0) * x)) * (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))) == (((Real.cos((Real.pow(2.0, m_1_0) * x)) * (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))) - (Real.sin((Real.pow(2.0, m_1_0) * x)) * ((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0))) * (Real.cos((Real.pow(2.0, m_1_0) * x)) * (Real.sin((Real.pow(2.0, m_1_0) * x)) * 2.0)))) by {  // sub-goal of `ring_nf` (Lean state) // @tac 2454-2461
+                      PowOne(x);  // cite: pow_one [applied by the tactic, not named in it]
+                      NatPowOne(m_1_0);  // cite: pow_one [applied by the tactic, not named in it]
+                      PowOne(Real.cos((x * Real.pow(2.0, m_1_0))));  // cite: pow_one [applied by the tactic, not named in it]
+                      // UNCITED-APPLIED mul_one ×2: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := m); (a := (2 : ℝ) ^ m)
+                      // UNCITED-APPLIED Nat.cast_one: cast target unknown (Lean applies it at ℝ and ℤ in this proof; the record does not say which)
+                      // UNCITED-APPLIED internal ×158 [exec 625 2454-2461]: applications made inside the tactic's own automation, not stated — add_zero ×3, mul_one ×2, Nat.cast_one ×1; machinery/glue: Eq.trans ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_congr ×8, Mathlib.Tactic.Ring.add_mul ×8 (+45 more heads, ×120) (cited in this block, not counted here: pow_one [Lean recorded ×3])
+                    }
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×35 [exec 607 2406-2443]: applications made inside the tactic's own automation, not stated — div_mul_eq_mul_div ×4, inv_eq_one_div ×3, div_div ×3, mul_div_assoc' ×2, mul_one ×1, sub_div' ×1, Mathlib.Meta.Positivity.pos_of_isNat ×1, div_sub' ×1, one_mul ×1; machinery/glue: congrArg ×8, Eq.trans ×7, congr ×2, Mathlib.Meta.NormNum.isNat_ofNat ×1 (cited in this block, not counted here: mul_ne_zero [Lean recorded ×3])
+                  }
+                  assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2344-2391
+                }
+                if (!(Real.cos((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `by_cases` (Lean state)
+                  if ((Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (1 : ℝ))
+                    if ((Real.sin((Real.pow(2.0, m_1_0) * x))) != 0.0) && ((Real.cos((Real.pow(2.0, m_1_0) * x))) != 0.0) { MulNeZero(Real.sin((Real.pow(2.0, m_1_0) * x)), Real.cos((Real.pow(2.0, m_1_0) * x))); }  // cite: mul_ne_zero [applied by the tactic, not named in it]
+                    if ((Real.sin((Real.pow(2.0, m_1_0) * x))) != 0.0) && (((2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))) != 0.0) { MulNeZero(Real.sin((Real.pow(2.0, m_1_0) * x)), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))); }  // cite: mul_ne_zero [applied by the tactic, not named in it]
+                    if ((Real.cos((Real.pow(2.0, m_1_0) * x))) != 0.0) && (((Real.sin((Real.pow(2.0, m_1_0) * x)) * 2.0)) != 0.0) { MulNeZero(Real.cos((Real.pow(2.0, m_1_0) * x)), (Real.sin((Real.pow(2.0, m_1_0) * x)) * 2.0)); }  // cite: mul_ne_zero [applied by the tactic, not named in it]
+                    assert ((Real.sin((Real.pow(2.0, m_1_0) * x)) * (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))) == (((Real.cos((Real.pow(2.0, m_1_0) * x)) * (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))) - (Real.sin((Real.pow(2.0, m_1_0) * x)) * ((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0))) * (Real.cos((Real.pow(2.0, m_1_0) * x)) * (Real.sin((Real.pow(2.0, m_1_0) * x)) * 2.0)))) by {  // sub-goal of `ring_nf` (Lean state) // @tac 2454-2461
+                      PowOne(x);  // cite: pow_one [applied by the tactic, not named in it]
+                      NatPowOne(m_1_0);  // cite: pow_one [applied by the tactic, not named in it]
+                      PowOne(Real.cos((x * Real.pow(2.0, m_1_0))));  // cite: pow_one [applied by the tactic, not named in it]
+                      // UNCITED-APPLIED mul_one ×2: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := m); (a := (2 : ℝ) ^ m)
+                      // UNCITED-APPLIED Nat.cast_one: cast target unknown (Lean applies it at ℝ and ℤ in this proof; the record does not say which)
+                      // UNCITED-APPLIED internal ×158 [exec 628 2454-2461]: applications made inside the tactic's own automation, not stated — add_zero ×3, mul_one ×2, Nat.cast_one ×1; machinery/glue: Eq.trans ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_congr ×8, Mathlib.Tactic.Ring.add_mul ×8 (+45 more heads, ×120) (cited in this block, not counted here: pow_one [Lean recorded ×3])
+                    }
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×35 [exec 610 2406-2443]: applications made inside the tactic's own automation, not stated — div_mul_eq_mul_div ×4, inv_eq_one_div ×3, div_div ×3, mul_div_assoc' ×2, mul_one ×1, sub_div' ×1, Mathlib.Meta.Positivity.pos_of_isNat ×1, div_sub' ×1, one_mul ×1; machinery/glue: congrArg ×8, Eq.trans ×7, congr ×2, Mathlib.Meta.NormNum.isNat_ofNat ×1 (cited in this block, not counted here: mul_ne_zero [Lean recorded ×3])
+                  }
+                  if (!(Real.sin((Real.pow(2.0, (m_1_0 + 1)) * x)) == 0.0)) {  // sub-goal of `field_simp` (Lean state)
+                    // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (1 : ℝ))
+                    if ((Real.sin((Real.pow(2.0, m_1_0) * x))) != 0.0) && ((Real.cos((Real.pow(2.0, m_1_0) * x))) != 0.0) { MulNeZero(Real.sin((Real.pow(2.0, m_1_0) * x)), Real.cos((Real.pow(2.0, m_1_0) * x))); }  // cite: mul_ne_zero [applied by the tactic, not named in it]
+                    if ((Real.sin((Real.pow(2.0, m_1_0) * x))) != 0.0) && (((2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))) != 0.0) { MulNeZero(Real.sin((Real.pow(2.0, m_1_0) * x)), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))); }  // cite: mul_ne_zero [applied by the tactic, not named in it]
+                    if ((Real.cos((Real.pow(2.0, m_1_0) * x))) != 0.0) && (((Real.sin((Real.pow(2.0, m_1_0) * x)) * 2.0)) != 0.0) { MulNeZero(Real.cos((Real.pow(2.0, m_1_0) * x)), (Real.sin((Real.pow(2.0, m_1_0) * x)) * 2.0)); }  // cite: mul_ne_zero [applied by the tactic, not named in it]
+                    assert ((Real.sin((Real.pow(2.0, m_1_0) * x)) * (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))) == (((Real.cos((Real.pow(2.0, m_1_0) * x)) * (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x))))) - (Real.sin((Real.pow(2.0, m_1_0) * x)) * ((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0))) * (Real.cos((Real.pow(2.0, m_1_0) * x)) * (Real.sin((Real.pow(2.0, m_1_0) * x)) * 2.0)))) by {  // sub-goal of `ring_nf` (Lean state) // @tac 2454-2461
+                      PowOne(x);  // cite: pow_one [applied by the tactic, not named in it]
+                      NatPowOne(m_1_0);  // cite: pow_one [applied by the tactic, not named in it]
+                      PowOne(Real.cos((x * Real.pow(2.0, m_1_0))));  // cite: pow_one [applied by the tactic, not named in it]
+                      // UNCITED-APPLIED mul_one ×2: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := m); (a := (2 : ℝ) ^ m)
+                      // UNCITED-APPLIED Nat.cast_one: cast target unknown (Lean applies it at ℝ and ℤ in this proof; the record does not say which)
+                      // UNCITED-APPLIED internal ×158 [exec 631 2454-2461]: applications made inside the tactic's own automation, not stated — add_zero ×3, mul_one ×2, Nat.cast_one ×1; machinery/glue: Eq.trans ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_congr ×8, Mathlib.Tactic.Ring.add_mul ×8 (+45 more heads, ×120) (cited in this block, not counted here: pow_one [Lean recorded ×3])
+                    }
+                    assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `field_simp` (Lean state) // @tac 2406-2443
+                    // UNCITED-APPLIED internal ×35 [exec 613 2406-2443]: applications made inside the tactic's own automation, not stated — div_mul_eq_mul_div ×4, inv_eq_one_div ×3, div_div ×3, mul_div_assoc' ×2, mul_one ×1, sub_div' ×1, Mathlib.Meta.Positivity.pos_of_isNat ×1, div_sub' ×1, one_mul ×1; machinery/glue: congrArg ×8, Eq.trans ×7, congr ×2, Mathlib.Meta.NormNum.isNat_ofNat ×1 (cited in this block, not counted here: mul_ne_zero [Lean recorded ×3])
+                  }
+                  assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2344-2391
+                }
+                assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2292-2339
+              }
+              assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m_1_0) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m_1_0) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m_1_0) * x)), Real.sin((Real.pow(2.0, m_1_0) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m_1_0) * x)) * Real.cos((Real.pow(2.0, m_1_0) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2239-2279
+            }
+          }
+        }
+      }
+      // [TACTIC: «_<;>_» [ h₃ ] rw [ h₃ ] <;> nlinarith nlinarith]
+      // [TACTIC: choice [ h₃ ] rw [ h₃ ]]
+      // UNCITED-APPLIED congrArg((1 : ℝ) / sin ((2 : ℝ) ^ (m + (1 : ℕ)) * x), (1 : ℝ) / tan ((2 : ℝ) ^ m * x) - (1 : ℝ) / tan ((2 : ℝ) ^ (m + (1 : …, fun (_a : ℝ) => (1 : ℝ) / tan x - (1 : ℝ) / tan ((2 : ℝ) ^ m * x) + _…): no library counterpart (not stated) [exec 659 2629-2638]
+      assert (((Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, m_1_0) * x)))) + (Real.div(1.0, Real.tan((Real.pow(2.0, m_1_0) * x))) - Real.div(1.0, Real.tan((Real.pow(2.0, (m_1_0 + 1)) * x))))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, (m_1_0 + 1)) * x))))) by {  // sub-goal of `nlinarith` (Lean state) // @tac 2647-2656
+        // UNCITED-APPLIED Nat.cast_one: cast target unknown (Lean applies it at ℝ and ℤ in this proof; the record does not say which)
+        // UNCITED-APPLIED Nat.cast_zero: cast target unknown (Lean applies it at ℝ and ℤ in this proof; the record does not say which)
+        // UNCITED-APPLIED internal ×11 [exec 694 2647-2656]: applications made inside the tactic's own automation, not stated — CancelDenoms.sub_subst ×5, sub_neg_of_lt ×2, CancelDenoms.add_subst ×1; machinery/glue: Linarith.eq_of_not_lt_of_not_gt ×1, Not.intro ×1, Linarith.lt_irrefl ×1
+        // UNCITED-APPLIED internal ×91 [exec 695 2647-2656]: applications made inside the tactic's own automation, not stated — Nat.cast_one ×1, Nat.cast_zero ×1; machinery/glue: Mathlib.Tactic.Ring.sub_congr ×4, Mathlib.Meta.NormNum.IsInt.to_isNat ×4, Mathlib.Tactic.Ring.sub_pf ×4, Mathlib.Tactic.Ring.neg_add ×4 (+34 more heads, ×73)
+        // UNCITED-APPLIED internal ×92 [exec 696 2647-2656]: applications made inside the tactic's own automation, not stated — Nat.cast_one ×1, Nat.cast_zero ×1; machinery/glue: Mathlib.Tactic.Ring.sub_congr ×4, Mathlib.Meta.NormNum.IsInt.to_isNat ×4, Mathlib.Tactic.Ring.sub_pf ×4, Mathlib.Tactic.Ring.neg_add ×4 (+35 more heads, ×74)
+      }
+}
 

@@ -1,13 +1,12 @@
-// CLOSED LEMMA for failing line imo_1964_p1_1-80 (theorem imo_1964_p1_1, Dafny line 80, OOR)
-// closes with: K2 (computation) — single
-// added: MathPrelude Int.pow: drop `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` (body unchanged; sign ensures kept) — work-dir copy kinds/work/shard_025/libpow
-// Dafny: finished with 23 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_025/imo_1964_p1_1-80/K2pow.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line imo_1964_p1_1-80: theorem imo_1964_p1_1, Dafny line 80 (OOR: Verification out of resource (imo_1964_p1_1))
+// failing Dafny line: assert ((Int.pow(2, ((n % 3) + (3 * (n / 3)))) % 7) == (1 % 7));
+// Lean step: rw [← Nat.mod_add_div n 3] at h₃
+// hypotheses: 13 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// not closed: tried H0=oor; this file is the honest base attempt
+// Dafny: finished with 22 verified, 0 errors, 1 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-include "/home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_025/libpow/out/imo_1964_p1_1.dfy"
-
-lemma {:induction false} K2pow_L80(n: nat)
+include "../dafny/imo_1964_p1_1.dfy"
+lemma {:induction false} vc_imo_1964_p1_1_L80(n: nat)
   requires 0 <= n
   requires NatDvd(7, tsub(Int.pow(2, n), 1))
   requires if 7 == 0 then tsub(Int.pow(2, n), 1) == 0 else tsub(Int.pow(2, n), 1) % 7 == 0
@@ -21,7 +20,6 @@ lemma {:induction false} K2pow_L80(n: nat)
   requires (n % 3 == 0) == (exists q: nat :: n == 3 * q)
   requires 1 == 1
   requires 0 <= n % 3 + 3 * (n / 3)
-  ensures  Int.pow(2, n % 3 + 3 * (n / 3)) % 7 == 1 % 7
-{
+  ensures   Int.pow(2, n % 3 + 3 * (n / 3)) % 7 == 1 % 7
+{ }
 
-}

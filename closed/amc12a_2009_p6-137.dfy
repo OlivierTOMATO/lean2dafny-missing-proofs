@@ -1,28 +1,11 @@
-// CLOSED LEMMA for failing line amc12a_2009_p6-137 (theorem amc12a_2009_p6, Dafny line 137, ERR)
-// closes with: K2 (computation) — single
-// added: ring_nf normal forms: assert (2 as real)*(m*n) == m*n*2.0; assert 2.0*(m*n) == m*n*2.0
-// Dafny: finished with 7 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_016/amc12a_2009_p6-137/K2.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line amc12a_2009_p6-137: theorem amc12a_2009_p6, Dafny line 137 (ERR: assertion might not hold)
+// failing Dafny line: assert (Real.rpow(2.0, ((2 as real) * (m * n))) == Real.rpow(2.0, (2.0 * (m * n)))) by {
+// Lean step: ring_nf
+// hypotheses: 15 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K2 — ring_nf normal forms: assert (2 as real)*(m*n) == m*n*2.0; assert 2.0*(m*n) == m*n*2.0
+// Dafny: finished with 7 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Line lemma for failing line 137 of amc12a_2009_p6 (ERR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "/home/changjie/lean2dafny_research/agents_tac/wt_integ5/out/amc12a_2009_p6.dfy"
-
-// ========================================================================================
-// FAILING LINE 137 (ERR) in amc12a_2009_p6: assertion might not hold
-//   dafny |                     assert (Real.rpow(2.0, ((2 as real) * (m * n))) == Real.rpow(2.0, (2.0 * (m * n)))) by {  // sub-goal of `ring_nf` (Lean state) // @tac 3143-3150
-//   statement kind: sub-goal (Lean tactic state)
-//   @tac 3143-3150 | Lean: ring_nf
-//        before-goal ⊢ (2 : ℝ) ^ (↑(2 : ℕ) * (m * n)) = (2 : ℝ) ^ ((2 : ℝ) * (m * n))
-//        before-goal ⊢ (0 : ℝ) ≤ (2 : ℝ)
-// inside Lean have h₆₅, Lean lines 83-85:
-//   lean  |             have h₆₅ : ((2 : ℝ) ^ 2 : ℝ) ^ (m * n : ℝ) = (2 : ℝ) ^ (2 * (m * n) : ℝ) := by
-//   lean  |               rw [← Real.rpow_nat_cast]
-//   lean  |               rw [← Real.rpow_mul] <;> ring_nf <;> norm_num <;> linarith
-
-// 1 path(s) merged (paths); 15 shared facts; 1 distinct path conditions
+include "../dafny/amc12a_2009_p6.dfy"
 lemma {:induction false} vc_amc12a_2009_p6_L137(m: real, n: real, p: real, q: real)
   requires p == Real.rpow(2.0, m)
   requires q == Real.rpow(3.0, n)
@@ -39,10 +22,15 @@ lemma {:induction false} vc_amc12a_2009_p6_L137(m: real, n: real, p: real, q: re
   requires Real.pow(m, 1) == m
   requires Real.pow(n, 1) == n
   requires Real.pow(Real.rpow(2.0, m * n * 2.0), 1) == Real.rpow(2.0, m * n * 2.0)
-  ensures  Real.rpow(2.0, (2 as real) * (m * n)) == Real.rpow(2.0, 2.0 * (m * n))
+  ensures   Real.rpow(2.0, (2 as real) * (m * n)) == Real.rpow(2.0, 2.0 * (m * n))
 {
   // K2: ring_nf normal form of the rpow exponent (exec 885: both sides normalised to m * n * 2)
   assert (2 as real) * (m * n) == m * n * 2.0;
   assert 2.0 * (m * n) == m * n * 2.0;
+                      PowOne(m);  // cite: pow_one [applied by the tactic, not named in it]
+                      PowOne(n);  // cite: pow_one [applied by the tactic, not named in it]
+                      PowOne(Real.rpow(2.0, ((m * n) * 2.0)));  // cite: pow_one [applied by the tactic, not named in it]
+                      // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (2 : ℝ) ^ (m * n * (2 : ℝ)))
+                      // UNCITED-APPLIED internal ×54 [exec 885 3143-3150]: applications made inside the tactic's own automation, not stated — add_zero ×2, mul_one ×1; machinery/glue: Eq.trans ×8, congrArg ×8, congr ×3, Mathlib.Tactic.Ring.mul_congr ×3 (+18 more heads, ×29) (cited in this block, not counted here: pow_one [Lean recorded ×3])
 }
 

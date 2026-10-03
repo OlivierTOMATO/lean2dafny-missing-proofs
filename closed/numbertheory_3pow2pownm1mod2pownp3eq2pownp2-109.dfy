@@ -1,169 +1,11 @@
-// CLOSED LEMMA for failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-109 (theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 109, OOR)
-// closes with: K3 (locality) — base
-// added: nothing (line lemma standalone)
-// Dafny: verifies unchanged (dossier standalone check)
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/line_lemmas/OOR/numbertheory_3pow2pownm1mod2pownp3eq2pownp2/L109.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-109: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 109 (OOR: Verification out of resource (induction_helper_1))
+// failing Dafny line: assert (((1 + Int.pow(2, (n + 3))) + (((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5))))) == ((1 + Int.pow(2, ((
+// Lean step: have h₄ : (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) % 2 ^ (n + 4) = 0 := by
+// hypotheses: 30 facts Z3 had at the line (goal itself removed: 1; the block's own asserts removed: 0); nothing assumed beyond the facts in scope
+// not closed: tried H0=timeout; this file is the honest base attempt
+// Dafny: timeout  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Line lemma for failing line 109 of numbertheory_3pow2pownm1mod2pownp3eq2pownp2 (OOR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "../../../../wt_integ5/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
-
-// ========================================================================================
-// FAILING LINE 109 (OOR) in induction_helper_1: Verification out of resource (induction_helper_1)
-//   dafny |           assert (((1 + Int.pow(2, (n + 3))) + (((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5))))) == ((1 + Int.pow(2, ((n + 1) + 2))) + (NatDiv((((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * 
-//   statement kind: sub-goal (Lean tactic state)
-//   @tac 2077-4423 | Lean: have h₄ : (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) % 2 ^ (n + 4) = 0 := by
-//        before-goal ⊢ (1 : ℕ) + (2 : ℕ) ^ (n + (3 : ℕ)) +
-    ((2 : ℕ) ^ ((2 : ℕ) * n + (4 : ℕ)) + k * (2 : ℕ) ^ (n + (4 : ℕ)) + k ^ (2 : ℕ) * (2 : ℕ) ^ ((2 : ℕ) * n + (6 : ℕ)) +
-      (2 : ℕ) * k * (2 : ℕ) ^ ((2 : ℕ) * n + (5 : ℕ))) =
-  (1 :
-//   @tac 4432-6861 | Lean: have h₅ : (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) / 2 ^ (n + 4) * 2 ^ (n + 4) = (2 ^ (2 * n + 4) + k * 2 ^ (n + 
-//        before-goal ⊢ (1 : ℕ) + (2 : ℕ) ^ (n + (3 : ℕ)) +
-    ((2 : ℕ) ^ ((2 : ℕ) * n + (4 : ℕ)) + k * (2 : ℕ) ^ (n + (4 : ℕ)) + k ^ (2 : ℕ) * (2 : ℕ) ^ ((2 : ℕ) * n + (6 : ℕ)) +
-      (2 : ℕ) * k * (2 : ℕ) ^ ((2 : ℕ) * n + (5 : ℕ))) =
-  (1 :
-//   @tac 6870-7441 | Lean: have h₆ : 1 + 2 ^ (n + 3) + (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) = 1 + 2 ^ (n + 1 + 2) + ((2 ^ (2 * n + 4) + 
-//        before-goal ⊢ (1 : ℕ) + (2 : ℕ) ^ (n + (3 : ℕ)) +
-    ((2 : ℕ) ^ ((2 : ℕ) * n + (4 : ℕ)) + k * (2 : ℕ) ^ (n + (4 : ℕ)) + k ^ (2 : ℕ) * (2 : ℕ) ^ ((2 : ℕ) * n + (6 : ℕ)) +
-      (2 : ℕ) * k * (2 : ℕ) ^ ((2 : ℕ) * n + (5 : ℕ))) =
-  (1 :
-//   @tac 7450-7547 | Lean: rw [h₆]
-//        before-goal ⊢ (1 : ℕ) + (2 : ℕ) ^ (n + (3 : ℕ)) +
-    ((2 : ℕ) ^ ((2 : ℕ) * n + (4 : ℕ)) + k * (2 : ℕ) ^ (n + (4 : ℕ)) + k ^ (2 : ℕ) * (2 : ℕ) ^ ((2 : ℕ) * n + (6 : ℕ)) +
-      (2 : ℕ) * k * (2 : ℕ) ^ ((2 : ℕ) * n + (5 : ℕ))) =
-  (1 :
-//   @tac 7450-7537 | Lean: rw [h₆]
-//        before-goal ⊢ (1 : ℕ) + (2 : ℕ) ^ (n + (3 : ℕ)) +
-    ((2 : ℕ) ^ ((2 : ℕ) * n + (4 : ℕ)) + k * (2 : ℕ) ^ (n + (4 : ℕ)) + k ^ (2 : ℕ) * (2 : ℕ) ^ ((2 : ℕ) * n + (6 : ℕ)) +
-      (2 : ℕ) * k * (2 : ℕ) ^ ((2 : ℕ) * n + (5 : ℕ))) =
-  (1 :
-//   @tac 7450-7520 | Lean: rw [h₆]
-//        before-goal ⊢ (1 : ℕ) + (2 : ℕ) ^ (n + (3 : ℕ)) +
-    ((2 : ℕ) ^ ((2 : ℕ) * n + (4 : ℕ)) + k * (2 : ℕ) ^ (n + (4 : ℕ)) + k ^ (2 : ℕ) * (2 : ℕ) ^ ((2 : ℕ) * n + (6 : ℕ)) +
-      (2 : ℕ) * k * (2 : ℕ) ^ ((2 : ℕ) * n + (5 : ℕ))) =
-  (1 :
-//   @tac 7450-7459 | Lean: rw [h₆]
-//        before-goal ⊢ (1 : ℕ) + (2 : ℕ) ^ (n + (3 : ℕ)) +
-    ((2 : ℕ) ^ ((2 : ℕ) * n + (4 : ℕ)) + k * (2 : ℕ) ^ (n + (4 : ℕ)) + k ^ (2 : ℕ) * (2 : ℕ) ^ ((2 : ℕ) * n + (6 : ℕ)) +
-      (2 : ℕ) * k * (2 : ℕ) ^ ((2 : ℕ) * n + (5 : ℕ))) =
-  (1 :
-//        before-goal ⊢ (1 : ℕ) + (2 : ℕ) ^ (n + (1 : ℕ) + (2 : ℕ)) +
-    ((2 : ℕ) ^ ((2 : ℕ) * n + (4 : ℕ)) + k * (2 : ℕ) ^ (n + (4 : ℕ)) + k ^ (2 : ℕ) * (2 : ℕ) ^ ((2 : ℕ) * n + (6 : ℕ)) +
-          (2 : ℕ) * k * (2 : ℕ) ^ ((2 : ℕ) * n + (5 :
-// Lean theorem statement, Lean lines 9-168:
-//   lean  | theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2 (n : ℕ) (h₀ : 0 < n) :
-//   lean  |     (3 ^ 2 ^ n - 1) % 2 ^ (n + 3) = 2 ^ (n + 2) := by
-//   lean  |   have h_main : ∃ (k : ℕ), 3 ^ 2 ^ n = 1 + 2 ^ (n + 2) + k * 2 ^ (n + 3) := by
-//   lean  |     have h₁ : ∀ n : ℕ, 0 < n → ∃ (k : ℕ), 3 ^ 2 ^ n = 1 + 2 ^ (n + 2) + k * 2 ^ (n + 3) := by
-//   lean  |       intro n hn
-//   lean  |       induction' hn with n hn IH
-//   lean  |       · -- Base case: n = 1
-//   lean  |         use 0
-//   lean  |         norm_num
-//   lean  |       · -- Inductive step: assume the statement holds for n, prove for n + 1
-//   lean  |         obtain ⟨k, hk⟩ := IH
-//   lean  |         use (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) / 2 ^ (n + 4)
-//   lean  |         have h₂ : 3 ^ 2 ^ (n + 1) = (3 ^ 2 ^ n) ^ 2 := by
-//   lean  |           simp [pow_succ, pow_mul, pow_two]
-//   lean  |           <;> ring_nf
-//   lean  |           <;> simp [pow_add, pow_mul, pow_two]
-//   lean  |           <;> ring_nf
-//   lean  |         rw [h₂, hk]
-//   lean  |         have h₃ : (1 + 2 ^ (n + 2) + k * 2 ^ (n + 3)) ^ 2 = 1 + 2 ^ (n + 3) + (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) := by
-//   lean  |           have h₄ : n ≥ 0 := by linarith
-//   lean  |           have h₅ : 2 * n + 4 ≥ n + 4 := by
-//   lean  |             omega
-//   lean  |           have h₆ : 2 * n + 6 ≥ n + 4 := by
-//   lean  |             omega
-//   lean  |           have h₇ : 2 * n + 5 ≥ n + 4 := by
-//   lean  |             omega
-//   lean  |           calc
-//   lean  |             (1 + 2 ^ (n + 2) + k * 2 ^ (n + 3)) ^ 2 = 1 + 2 ^ (n + 3) + (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) := by
-//   lean  |               ring_nf at *
-//   lean  |               <;>
-//   lean  |                 simp [pow_add, pow_mul, mul_assoc, mul_comm, mul_left_comm, Nat.mul_div_cancel_left]
-//   lean  |               <;>
-//   lean  |                 ring_nf at *
-//   lean  |               <;>
-//   lean  |                 omega
-//   lean  |             _ = 1 + 2 ^ (n + 3) + (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) := by
-//   lean  |               rfl
-//   lean  |         rw [h₃]
-//   lean  |         have h₄ : (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) % 2 ^ (n + 4) = 0 := by
-//   lean  |           have h₅ : 2 ^ (n + 4) ∣ 2 ^ (2 * n + 4) := by
-//   lean  |             apply pow_dvd_pow 2
-//   lean  |             omega
-//   lean  |           have h₆ : 2 ^ (n + 4) ∣ k * 2 ^ (n + 4) := by
-//   lean  |             exact ⟨k, by ring⟩
-//   lean  |           have h₇ : 2 ^ (n + 4) ∣ k ^ 2 * 2 ^ (2 * n + 6) := by
-//   lean  |             have h₈ : 2 ^ (n + 4) ∣ 2 ^ (2 * n + 6) := by
-//   lean  |               apply pow_dvd_pow 2
-//   lean  |               omega
-//   lean  |             have h₉ : 2 ^ (n + 4) ∣ k ^ 2 * 2 ^ (2 * n + 6) := by
-//   lean  |               exact dvd_mul_of_dvd_right h₈ _
-//   lean  |             exact h₉
-//   lean  |           have h₈ : 2 ^ (n + 4) ∣ 2 * k * 2 ^ (2 * n + 5) := by
-//   lean  |             have h₉ : 2 ^ (n + 4) ∣ 2 ^ (2 * n + 5) := by
-//   lean  |               apply pow_dvd_pow 2
-//   lean  |               omega
-//   lean  |             have h₁₀ : 2 ^ (n + 4) ∣ 2 * k * 2 ^ (2 * n + 5) := by
-//   lean  |               have h₁₁ : 2 ^ (n + 4) ∣ 2 ^ (2 * n + 5) := h₉
-//   lean  |               have h₁₂ : 2 ^ (n + 4) ∣ 2 * k * 2 ^ (2 * n + 5) := by
-//   lean  |                 calc
-//   lean  |                   2 ^ (n + 4) ∣ 2 ^ (2 * n + 5) := h₁₁
-//   lean  |                   _ ∣ 2 * k * 2 ^ (2 * n + 5) := by
-//   lean  |                     exact ⟨2 * k, by ring⟩
-//   lean  |               exact h₁₂
-//   lean  |             exact h₁₀
-//   lean  |           have h₉ : 2 ^ (n + 4) ∣ 2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5) := by
-//   lean  |             have h₁₀ : 2 ^ (n + 4) ∣ 2 ^ (2 * n + 4) := h₅
-//   lean  |             have h₁₁ : 2 ^ (n + 4) ∣ k * 2 ^ (n + 4) := h₆
-//   lean  |             have h₁₂ : 2 ^ (n + 4) ∣ k ^ 2 * 2 ^ (2 * n + 6) := h₇
-//   lean  |             have h₁₃ : 2 ^ (n + 4) ∣ 2 * k * 2 ^ (2 * n + 5) := h₈
-//   lean  |             -- Sum of multiples is a multiple
-//   lean  |             exact Nat.dvd_add (Nat.dvd_add (Nat.dvd_add h₁₀ h₆) h₇) h₈
-//   lean  |           have h₁₀ : (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) % 2 ^ (n + 4) = 0 := by
-//   lean  |             have h₁₁ : 2 ^ (n + 4) ∣ 2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5) := h₉
-//   lean  |             have h₁₂ : (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) % 2 ^ (n + 4) = 0 := by
-//   lean  |               exact Nat.mod_eq_zero_of_dvd h₁₁
-//   lean  |             exact h₁₂
-//   lean  |           exact h₁₀
-//   lean  |         have h₅ : (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) / 2 ^ (n + 4) * 2 ^ (n + 4) = (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) := by
-//   lean  |           have h₆ : 2 ^ (n + 4) ∣ 2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5) := by
-//   lean  |             have h₇ : 2 ^ (n + 4) ∣ 2 ^ (2 * n + 4) := by
-//   lean  |               apply pow_dvd_pow 2
-//   lean  |               omega
-//   lean  |             have h₈ : 2 ^ (n + 4) ∣ k * 2 ^ (n + 4) := by
-//   lean  |               exact ⟨k, by ring⟩
-//   lean  |             have h₉ : 2 ^ (n + 4) ∣ k ^ 2 * 2 ^ (2 * n + 6) := by
-//   lean  |               have h₁₀ : 2 ^ (n + 4) ∣ 2 ^ (2 * n + 6) := by
-//   lean  |                 apply pow_dvd_pow 2
-//   lean  |                 omega
-//   lean  |               have h₁₁ : 2 ^ (n + 4) ∣ k ^ 2 * 2 ^ (2 * n + 6) := by
-//   lean  |                 exact dvd_mul_of_dvd_right h₁₀ _
-//   lean  |               exact h₁₁
-//   lean  |             have h₁₀ : 2 ^ (n + 4) ∣ 2 * k * 2 ^ (2 * n + 5) := by
-//   lean  |               have h₁₁ : 2 ^ (n + 4) ∣ 2 ^ (2 * n + 5) := by
-//   lean  |                 apply pow_dvd_pow 2
-//   lean  |                 omega
-//   lean  |               have h₁₂ : 2 ^ (n + 4) ∣ 2 * k * 2 ^ (2 * n + 5) := by
-//   lean  |                 have h₁₃ : 2 ^ (n + 4) ∣ 2 ^ (2 * n + 5) := h₁₁
-//   lean  |                 have h₁₄ : 2 ^ (n + 4) ∣ 2 * k * 2 ^ (2 * n + 5) := by
-//   lean  |                   calc
-//   lean  |                     2 ^ (n + 4) ∣ 2 ^ (2 * n + 5) := h₁₃
-//   lean  |                     _ ∣ 2 * k * 2 ^ (2 * n + 5) := by
-//   lean  |                       exact ⟨2 * k, by ring⟩
-//   lean  |                 exact h₁₄
-//   lean  |               exact h₁₂
-//   lean  |             -- Sum of multiples is a multiple
-//   lean  |             exact Nat.dvd_add (Nat.dvd_add (Nat.dvd_add h₇ h₈) h₉) h₁₀
-//   lean  |           have h₁₁ : (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) / 2 ^ (n + 4) * 2 ^ (n + 4) = (2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5)) := by
-//   lean  |             have h₁₂ : 2 ^ (n + 4) ∣ 2 ^ (2 * n + 4) + k * 2 ^ (n + 4) + k ^ 2 * 2 ^ (2 * n + 6) + 2 * k * 2 ^ (2 * n + 5) 
-//   lean  | … (truncated)
-
-// 4 path(s) merged (paths); 30 shared facts; 4 distinct path conditions
+include "../dafny/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
   requires 0 <= n
   requires 0 <= k_1_0_2
@@ -194,333 +36,318 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109(k_1
   requires NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 4) == Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
   requires 0 <= n + 1 + 2
   requires 0 <= n + 1 + 3
-  requires 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) == 1 + Int.pow(2, n + 1 + 2) + NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 1 + 3)
   requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) == 1 + Int.pow(2, n + 1 + 2) + NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 1 + 3)
-{ }
-
-// side checks at the same line (not the reported failure): 14 check(s)
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109_side1(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
-  requires 0 <= n
-  requires 0 <= k_1_0_2
-  requires n != 0
-  requires 0 <= n - 1
-  requires 0 <= n || n - 1 == n
-  requires n - 1 < n
-  requires exists k_1: nat :: Int.pow(3, Int.pow(2, n - 1 + 1)) == 1 + Int.pow(2, n - 1 + 1 + 2) + k_1 * Int.pow(2, n - 1 + 1 + 3)
-  requires 0 + 1 <= n
-  requires 0 <= Int.pow(2, n)
-  requires 0 <= n + 2
-  requires 0 <= n + 3
-  requires exists k_1_0_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_1 * Int.pow(2, n + 3)
-  requires (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_0_1_0_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_0_1_0_0 * Int.pow(2, n + 3))
-  requires 0 <= k_1_0_2_0
-  requires Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)
-  requires 0 <= n + 1
-  requires 0 <= Int.pow(2, n + 1)
-  requires Int.pow(3, Int.pow(2, n + 1)) == Int.pow(3, Int.pow(2, n)) * Int.pow(3, Int.pow(2, n))
-  requires 0 <= 2 * n + 4
-  requires 0 <= n + 4
-  requires 0 <= 2 * n + 6
-  requires 0 <= 2 * n + 5
-  requires (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) == 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5))
-  requires 0 <= Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= Int.pow(2, n + 4)
-  requires NatMod(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) == 0
-  requires NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 4) == Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= n + 1 + 2
-  requires 0 <= n + 1 + 3
-  requires 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) == 1 + Int.pow(2, n + 1 + 2) + NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 1 + 3)
-  requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  0 <= n + 3
-{ }
-
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109_side2(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
-  requires 0 <= n
-  requires 0 <= k_1_0_2
-  requires n != 0
-  requires 0 <= n - 1
-  requires 0 <= n || n - 1 == n
-  requires n - 1 < n
-  requires exists k_1: nat :: Int.pow(3, Int.pow(2, n - 1 + 1)) == 1 + Int.pow(2, n - 1 + 1 + 2) + k_1 * Int.pow(2, n - 1 + 1 + 3)
-  requires 0 + 1 <= n
-  requires 0 <= Int.pow(2, n)
-  requires 0 <= n + 2
-  requires 0 <= n + 3
-  requires exists k_1_0_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_1 * Int.pow(2, n + 3)
-  requires (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_0_1_0_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_0_1_0_0 * Int.pow(2, n + 3))
-  requires 0 <= k_1_0_2_0
-  requires Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)
-  requires 0 <= n + 1
-  requires 0 <= Int.pow(2, n + 1)
-  requires Int.pow(3, Int.pow(2, n + 1)) == Int.pow(3, Int.pow(2, n)) * Int.pow(3, Int.pow(2, n))
-  requires 0 <= 2 * n + 4
-  requires 0 <= n + 4
-  requires 0 <= 2 * n + 6
-  requires 0 <= 2 * n + 5
-  requires (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) == 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5))
-  requires 0 <= Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= Int.pow(2, n + 4)
-  requires NatMod(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) == 0
-  requires NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 4) == Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= n + 1 + 2
-  requires 0 <= n + 1 + 3
-  requires 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) == 1 + Int.pow(2, n + 1 + 2) + NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 1 + 3)
-  requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  0 <= 2 * n + 4
-{ }
-
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109_side3(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
-  requires 0 <= n
-  requires 0 <= k_1_0_2
-  requires n != 0
-  requires 0 <= n - 1
-  requires 0 <= n || n - 1 == n
-  requires n - 1 < n
-  requires exists k_1: nat :: Int.pow(3, Int.pow(2, n - 1 + 1)) == 1 + Int.pow(2, n - 1 + 1 + 2) + k_1 * Int.pow(2, n - 1 + 1 + 3)
-  requires 0 + 1 <= n
-  requires 0 <= Int.pow(2, n)
-  requires 0 <= n + 2
-  requires 0 <= n + 3
-  requires exists k_1_0_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_1 * Int.pow(2, n + 3)
-  requires (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_0_1_0_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_0_1_0_0 * Int.pow(2, n + 3))
-  requires 0 <= k_1_0_2_0
-  requires Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)
-  requires 0 <= n + 1
-  requires 0 <= Int.pow(2, n + 1)
-  requires Int.pow(3, Int.pow(2, n + 1)) == Int.pow(3, Int.pow(2, n)) * Int.pow(3, Int.pow(2, n))
-  requires 0 <= 2 * n + 4
-  requires 0 <= n + 4
-  requires 0 <= 2 * n + 6
-  requires 0 <= 2 * n + 5
-  requires (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) == 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5))
-  requires 0 <= Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= Int.pow(2, n + 4)
-  requires NatMod(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) == 0
-  requires NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 4) == Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= n + 1 + 2
-  requires 0 <= n + 1 + 3
-  requires 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) == 1 + Int.pow(2, n + 1 + 2) + NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 1 + 3)
-  requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  0 <= n + 4
-{ }
-
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109_side4(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
-  requires 0 <= n
-  requires 0 <= k_1_0_2
-  requires n != 0
-  requires 0 <= n - 1
-  requires 0 <= n || n - 1 == n
-  requires n - 1 < n
-  requires exists k_1: nat :: Int.pow(3, Int.pow(2, n - 1 + 1)) == 1 + Int.pow(2, n - 1 + 1 + 2) + k_1 * Int.pow(2, n - 1 + 1 + 3)
-  requires 0 + 1 <= n
-  requires 0 <= Int.pow(2, n)
-  requires 0 <= n + 2
-  requires 0 <= n + 3
-  requires exists k_1_0_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_1 * Int.pow(2, n + 3)
-  requires (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_0_1_0_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_0_1_0_0 * Int.pow(2, n + 3))
-  requires 0 <= k_1_0_2_0
-  requires Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)
-  requires 0 <= n + 1
-  requires 0 <= Int.pow(2, n + 1)
-  requires Int.pow(3, Int.pow(2, n + 1)) == Int.pow(3, Int.pow(2, n)) * Int.pow(3, Int.pow(2, n))
-  requires 0 <= 2 * n + 4
-  requires 0 <= n + 4
-  requires 0 <= 2 * n + 6
-  requires 0 <= 2 * n + 5
-  requires (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) == 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5))
-  requires 0 <= Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= Int.pow(2, n + 4)
-  requires NatMod(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) == 0
-  requires NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 4) == Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= n + 1 + 2
-  requires 0 <= n + 1 + 3
-  requires 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) == 1 + Int.pow(2, n + 1 + 2) + NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 1 + 3)
-  requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  0 <= 2 * n + 6
-{ }
-
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109_side5(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
-  requires 0 <= n
-  requires 0 <= k_1_0_2
-  requires n != 0
-  requires 0 <= n - 1
-  requires 0 <= n || n - 1 == n
-  requires n - 1 < n
-  requires exists k_1: nat :: Int.pow(3, Int.pow(2, n - 1 + 1)) == 1 + Int.pow(2, n - 1 + 1 + 2) + k_1 * Int.pow(2, n - 1 + 1 + 3)
-  requires 0 + 1 <= n
-  requires 0 <= Int.pow(2, n)
-  requires 0 <= n + 2
-  requires 0 <= n + 3
-  requires exists k_1_0_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_1 * Int.pow(2, n + 3)
-  requires (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_0_1_0_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_0_1_0_0 * Int.pow(2, n + 3))
-  requires 0 <= k_1_0_2_0
-  requires Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)
-  requires 0 <= n + 1
-  requires 0 <= Int.pow(2, n + 1)
-  requires Int.pow(3, Int.pow(2, n + 1)) == Int.pow(3, Int.pow(2, n)) * Int.pow(3, Int.pow(2, n))
-  requires 0 <= 2 * n + 4
-  requires 0 <= n + 4
-  requires 0 <= 2 * n + 6
-  requires 0 <= 2 * n + 5
-  requires (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) == 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5))
-  requires 0 <= Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= Int.pow(2, n + 4)
-  requires NatMod(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) == 0
-  requires NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 4) == Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= n + 1 + 2
-  requires 0 <= n + 1 + 3
-  requires 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) == 1 + Int.pow(2, n + 1 + 2) + NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 1 + 3)
-  requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  0 <= 2 * n + 5
-{ }
-
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109_side6(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
-  requires 0 <= n
-  requires 0 <= k_1_0_2
-  requires n != 0
-  requires 0 <= n - 1
-  requires 0 <= n || n - 1 == n
-  requires n - 1 < n
-  requires exists k_1: nat :: Int.pow(3, Int.pow(2, n - 1 + 1)) == 1 + Int.pow(2, n - 1 + 1 + 2) + k_1 * Int.pow(2, n - 1 + 1 + 3)
-  requires 0 + 1 <= n
-  requires 0 <= Int.pow(2, n)
-  requires 0 <= n + 2
-  requires 0 <= n + 3
-  requires exists k_1_0_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_1 * Int.pow(2, n + 3)
-  requires (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_0_1_0_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_0_1_0_0 * Int.pow(2, n + 3))
-  requires 0 <= k_1_0_2_0
-  requires Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)
-  requires 0 <= n + 1
-  requires 0 <= Int.pow(2, n + 1)
-  requires Int.pow(3, Int.pow(2, n + 1)) == Int.pow(3, Int.pow(2, n)) * Int.pow(3, Int.pow(2, n))
-  requires 0 <= 2 * n + 4
-  requires 0 <= n + 4
-  requires 0 <= 2 * n + 6
-  requires 0 <= 2 * n + 5
-  requires (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) == 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5))
-  requires 0 <= Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= Int.pow(2, n + 4)
-  requires NatMod(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) == 0
-  requires NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 4) == Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= n + 1 + 2
-  requires 0 <= n + 1 + 3
-  requires 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) == 1 + Int.pow(2, n + 1 + 2) + NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 1 + 3)
-  requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  0 <= n + 1 + 2
-{ }
-
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109_side7(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
-  requires 0 <= n
-  requires 0 <= k_1_0_2
-  requires n != 0
-  requires 0 <= n - 1
-  requires 0 <= n || n - 1 == n
-  requires n - 1 < n
-  requires exists k_1: nat :: Int.pow(3, Int.pow(2, n - 1 + 1)) == 1 + Int.pow(2, n - 1 + 1 + 2) + k_1 * Int.pow(2, n - 1 + 1 + 3)
-  requires 0 + 1 <= n
-  requires 0 <= Int.pow(2, n)
-  requires 0 <= n + 2
-  requires 0 <= n + 3
-  requires exists k_1_0_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_1 * Int.pow(2, n + 3)
-  requires (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_0_1_0_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_0_1_0_0 * Int.pow(2, n + 3))
-  requires 0 <= k_1_0_2_0
-  requires Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)
-  requires 0 <= n + 1
-  requires 0 <= Int.pow(2, n + 1)
-  requires Int.pow(3, Int.pow(2, n + 1)) == Int.pow(3, Int.pow(2, n)) * Int.pow(3, Int.pow(2, n))
-  requires 0 <= 2 * n + 4
-  requires 0 <= n + 4
-  requires 0 <= 2 * n + 6
-  requires 0 <= 2 * n + 5
-  requires (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) == 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5))
-  requires 0 <= Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= Int.pow(2, n + 4)
-  requires NatMod(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) == 0
-  requires NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 4) == Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= n + 1 + 2
-  requires 0 <= n + 1 + 3
-  requires 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) == 1 + Int.pow(2, n + 1 + 2) + NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 1 + 3)
-  requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  0 <= Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-{ }
-
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109_side8(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
-  requires 0 <= n
-  requires 0 <= k_1_0_2
-  requires n != 0
-  requires 0 <= n - 1
-  requires 0 <= n || n - 1 == n
-  requires n - 1 < n
-  requires exists k_1: nat :: Int.pow(3, Int.pow(2, n - 1 + 1)) == 1 + Int.pow(2, n - 1 + 1 + 2) + k_1 * Int.pow(2, n - 1 + 1 + 3)
-  requires 0 + 1 <= n
-  requires 0 <= Int.pow(2, n)
-  requires 0 <= n + 2
-  requires 0 <= n + 3
-  requires exists k_1_0_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_1 * Int.pow(2, n + 3)
-  requires (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_0_1_0_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_0_1_0_0 * Int.pow(2, n + 3))
-  requires 0 <= k_1_0_2_0
-  requires Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)
-  requires 0 <= n + 1
-  requires 0 <= Int.pow(2, n + 1)
-  requires Int.pow(3, Int.pow(2, n + 1)) == Int.pow(3, Int.pow(2, n)) * Int.pow(3, Int.pow(2, n))
-  requires 0 <= 2 * n + 4
-  requires 0 <= n + 4
-  requires 0 <= 2 * n + 6
-  requires 0 <= 2 * n + 5
-  requires (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) == 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5))
-  requires 0 <= Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= Int.pow(2, n + 4)
-  requires NatMod(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) == 0
-  requires NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 4) == Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= n + 1 + 2
-  requires 0 <= n + 1 + 3
-  requires 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) == 1 + Int.pow(2, n + 1 + 2) + NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 1 + 3)
-  requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  0 <= Int.pow(2, n + 4)
-{ }
-
-// side check: value always satisfies the subset constraints of 'nat'
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109_side9(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
-  requires 0 <= n
-  requires 0 <= k_1_0_2
-  requires n != 0
-  requires 0 <= n - 1
-  requires 0 <= n || n - 1 == n
-  requires n - 1 < n
-  requires exists k_1: nat :: Int.pow(3, Int.pow(2, n - 1 + 1)) == 1 + Int.pow(2, n - 1 + 1 + 2) + k_1 * Int.pow(2, n - 1 + 1 + 3)
-  requires 0 + 1 <= n
-  requires 0 <= Int.pow(2, n)
-  requires 0 <= n + 2
-  requires 0 <= n + 3
-  requires exists k_1_0_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_1 * Int.pow(2, n + 3)
-  requires (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_0_1_0_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_0_1_0_0 * Int.pow(2, n + 3))
-  requires 0 <= k_1_0_2_0
-  requires Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)
-  requires 0 <= n + 1
-  requires 0 <= Int.pow(2, n + 1)
-  requires Int.pow(3, Int.pow(2, n + 1)) == Int.pow(3, Int.pow(2, n)) * Int.pow(3, Int.pow(2, n))
-  requires 0 <= 2 * n + 4
-  requires 0 <= n + 4
-  requires 0 <= 2 * n + 6
-  requires 0 <= 2 * n + 5
-  requires (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) == 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5))
-  requires 0 <= Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= Int.pow(2, n + 4)
-  requires NatMod(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) == 0
-  requires NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 4) == Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
-  requires 0 <= n + 1 + 2
-  requires 0 <= n + 1 + 3
-  requires 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) == 1 + Int.pow(2, n + 1 + 2) + NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 1 + 3)
-  requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  0 <= n + 1 + 3
-{ }
+  ensures   1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) == 1 + Int.pow(2, n + 1 + 2) + NatDiv(Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 1 + 3)
+{
+            // have h₄ : ( 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 * 2 ^ ( 2 * n + 6 ) +   [type from Lean state]
+            assert (NatMod((((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) == 0) by { // @tac 2211-2310 // @tac 2321-2405 // @tac 2416-2730 // @tac 2741-3368 // @tac 3379-3909 // @tac 3920-4399 // @tac 4410-4423
+              // have h₅ : 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 4 )  [type from Lean state]
+              assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 4))) by { // @tac 2273-2292
+                // [TACTIC: apply pow_dvd_pow 2]
+                assert ((n + 4) <= ((2 * n) + 4)) by {  // sub-goal before `omega` (Lean state) // @tac 2305-2310
+                  // [TACTIC: omega]
+                  // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
+                  // UNCITED-APPLIED internal ×16 [exec 366 2305-2310]: applications made inside the tactic's own automation, not stated — Int.ofNat_add ×2, Int.ofNat_nonneg ×1, Int.sub_nonneg_of_le ×1, Int.add_one_le_of_lt ×1, Nat.lt_of_not_le ×1, Int.ofNat_mul ×1; machinery/glue: Eq.symm ×6, Decidable.byContradiction ×1, of_decide_eq_true ×1, Lean.Omega.Int.ofNat_lt_of_lt ×1
+                }
+                assert (((n + 4)) <= (((2 * n) + 4)));  // precondition of NatPowDvdPow (Lean: pow_dvd_pow; `apply`: proved by the steps above)
+                NatPowDvdPow(2, (n + 4), ((2 * n) + 4));  // cite: pow_dvd_pow
+              }
+              // have h₆ : 2 ^ ( n + 4 ) ∣ k * 2 ^ ( n + 4 )  [type from Lean state]
+              assert NatDvd(Int.pow(2, (n + 4)), (k_1_0_0 * Int.pow(2, (n + 4)))) by { // @tac 2383-2405
+                assert ((k_1_0_0 * Int.pow(2, (n + 4))) == (Int.pow(2, (n + 4)) * k_1_0_0)) by {  // sub-goal of `by` (Lean state) // @tac 2398-2402
+                  // [TACTIC: Ring]
+                }
+                // [TACTIC: exact ⟨ k , by ring ⟩ ⟨ k , by ring ⟩]
+                assert (if ((Int.pow(2, (n + 4)) as int)) == 0 then (((k_1_0_0 * Int.pow(2, (n + 4))) as int)) == 0 else (((k_1_0_0 * Int.pow(2, (n + 4))) as int)) % ((Int.pow(2, (n + 4)) as int)) == 0);  // goal closed by `exact ⟨…⟩` (Lean state)
+                // UNCITED-APPLIED internal ×55 [exec 383 2383-2405]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_pf_add_zero ×4, Mathlib.Tactic.Ring.add_mul ×4, Mathlib.Tactic.Ring.mul_add ×4, Mathlib.Tactic.Ring.mul_zero ×4 (+23 more heads, ×39)
+              }
+              // have h₇ : 2 ^ ( n + 4 ) ∣ k ^ 2 * 2 ^ ( 2 * n + 6 )  [type from Lean state]
+              assert NatDvd(Int.pow(2, (n + 4)), ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) by { // @tac 2486-2589 // @tac 2602-2707 // @tac 2720-2730
+                // have h₈ : 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 6 )  [type from Lean state]
+                assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 6))) by { // @tac 2550-2569
+                  // [TACTIC: apply pow_dvd_pow 2]
+                  assert ((n + 4) <= ((2 * n) + 6)) by {  // sub-goal before `omega` (Lean state) // @tac 2584-2589
+                    // [TACTIC: omega]
+                    // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
+                    // UNCITED-APPLIED internal ×11 [exec 426 2584-2589]: applications made inside the tactic's own automation, not stated — Int.ofNat_add ×2, Int.ofNat_nonneg ×1, Int.sub_nonneg_of_le ×1, Int.add_one_le_of_lt ×1, Nat.lt_of_not_le ×1, Int.ofNat_mul ×1; machinery/glue: Decidable.byContradiction ×1, of_decide_eq_true ×1, Eq.symm ×1, Lean.Omega.Int.ofNat_lt_of_lt ×1
+                  }
+                  assert (((n + 4)) <= (((2 * n) + 6)));  // precondition of NatPowDvdPow (Lean: pow_dvd_pow; `apply`: proved by the steps above)
+                  NatPowDvdPow(2, (n + 4), ((2 * n) + 6));  // cite: pow_dvd_pow
+                }
+                // have h₉ : 2 ^ ( n + 4 ) ∣ k ^ 2 * 2 ^ ( 2 * n + 6 )  [type from Lean state]
+                assert NatDvd(Int.pow(2, (n + 4)), ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) by { // @tac 2674-2707
+                  // [TACTIC: exact dvd_mul_of_dvd_right h₈ _]
+                  assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 6)));
+                  assert (NatDvd((Int.pow(2, (n + 4))), (Int.pow(2, ((2 * n) + 6)))));  // precondition of NatDvdMulOfDvdRight (Lean: dvd_mul_of_dvd_right)
+                  NatDvdMulOfDvdRight(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 6)), (k_1_0_0 * k_1_0_0));  // cite: dvd_mul_of_dvd_right
+                }
+                // [TACTIC: exact h₉]
+                assert NatDvd(Int.pow(2, (n + 4)), ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6))));
+              }
+              // have h₈ : 2 ^ ( n + 4 ) ∣ 2 * k * 2 ^ ( 2 * n + 5 )  [type from Lean state]
+              assert NatDvd(Int.pow(2, (n + 4)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))) by { // @tac 2811-2914 // @tac 2927-3342 // @tac 3355-3368
+                // have h₉ : 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 5 )  [type from Lean state]
+                assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 5))) by { // @tac 2875-2894
+                  // [TACTIC: apply pow_dvd_pow 2]
+                  assert ((n + 4) <= ((2 * n) + 5)) by {  // sub-goal before `omega` (Lean state) // @tac 2909-2914
+                    // [TACTIC: omega]
+                    // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
+                    // UNCITED-APPLIED internal ×11 [exec 478 2909-2914]: applications made inside the tactic's own automation, not stated — Int.ofNat_add ×2, Int.ofNat_nonneg ×1, Int.sub_nonneg_of_le ×1, Int.add_one_le_of_lt ×1, Nat.lt_of_not_le ×1, Int.ofNat_mul ×1; machinery/glue: Decidable.byContradiction ×1, of_decide_eq_true ×1, Eq.symm ×1, Lean.Omega.Int.ofNat_lt_of_lt ×1
+                  }
+                  assert (((n + 4)) <= (((2 * n) + 5)));  // precondition of NatPowDvdPow (Lean: pow_dvd_pow; `apply`: proved by the steps above)
+                  NatPowDvdPow(2, (n + 4), ((2 * n) + 5));  // cite: pow_dvd_pow
+                }
+                // have h₁₀ : 2 ^ ( n + 4 ) ∣ 2 * k * 2 ^ ( 2 * n + 5 )  [type from Lean state]
+                assert NatDvd(Int.pow(2, (n + 4)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))) by { // @tac 3002-3056 // @tac 3071-3314 // @tac 3329-3342
+                  // have h₁₁ : 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 5 )  [type from Lean state]
+                  assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 5))) by {
+                    // [TACTIC: exact h₉]
+                    assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 5)));
+                  }
+                  // have h₁₂ : 2 ^ ( n + 4 ) ∣ 2 * k * 2 ^ ( 2 * n + 5 )  [type from Lean state]
+                  assert NatDvd(Int.pow(2, (n + 4)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))) by { // @tac 3148-3314
+                    assert NatDvd(Int.pow(2, ((2 * n) + 5)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))) by {  // sub-goal of `by` (Lean state) // @tac 3288-3314
+                      assert (((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) == (Int.pow(2, ((2 * n) + 5)) * (2 * k_1_0_0))) by {  // sub-goal of `by` (Lean state) // @tac 3307-3311
+                        // [TACTIC: Ring]
+                      }
+                      // [TACTIC: exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩]
+                      assert (if ((Int.pow(2, ((2 * n) + 5)) as int)) == 0 then ((((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) as int)) == 0 else ((((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) as int)) % ((Int.pow(2, ((2 * n) + 5)) as int)) == 0);  // goal closed by `exact ⟨…⟩` (Lean state)
+                      // UNCITED-APPLIED internal ×72 [exec 528 3288-3314]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_mul ×6, Mathlib.Tactic.Ring.mul_add ×6, Mathlib.Tactic.Ring.zero_mul ×6, Mathlib.Tactic.Ring.mul_pf_right ×5 (+25 more heads, ×49)
+                    }
+                    // [TACTIC: calc_unparsed 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 5 ) 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 5 ) := h₁₁ _ ∣ 2 * k * 2 ^ ( 2 * n + 5 ) _ ∣ 2 * k * 2 ^ ( 2 * n + 5 ) := by exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩ exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩]
+                    // GAP: calc chain not lowered (relation outside Dafny calc, e.g. ∣); its step proofs follow, each with its recorded goal; the chain itself is not composed
+                  }
+                  // [TACTIC: exact h₁₂]
+                  assert NatDvd(Int.pow(2, (n + 4)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))));
+                }
+                // [TACTIC: exact h₁₀]
+                assert NatDvd(Int.pow(2, (n + 4)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))));
+              }
+              // have h₉ : 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 * 2 ^ (   [type from Lean state]
+              assert NatDvd(Int.pow(2, (n + 4)), (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))))) by { // @tac 3511-3565 // @tac 3578-3632 // @tac 3645-3707 // @tac 3720-3782 // @tac 3841-3909
+                // have h₁₀ : 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 4 )  [type from Lean state]
+                assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 4))) by {
+                  // [TACTIC: exact h₅]
+                  assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 4)));
+                }
+                // have h₁₁ : 2 ^ ( n + 4 ) ∣ k * 2 ^ ( n + 4 )  [type from Lean state]
+                assert NatDvd(Int.pow(2, (n + 4)), (k_1_0_0 * Int.pow(2, (n + 4)))) by {
+                  // [TACTIC: exact h₆]
+                  assert NatDvd(Int.pow(2, (n + 4)), (k_1_0_0 * Int.pow(2, (n + 4))));
+                }
+                // have h₁₂ : 2 ^ ( n + 4 ) ∣ k ^ 2 * 2 ^ ( 2 * n + 6 )  [type from Lean state]
+                assert NatDvd(Int.pow(2, (n + 4)), ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) by {
+                  // [TACTIC: exact h₇]
+                  assert NatDvd(Int.pow(2, (n + 4)), ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6))));
+                }
+                // have h₁₃ : 2 ^ ( n + 4 ) ∣ 2 * k * 2 ^ ( 2 * n + 5 )  [type from Lean state]
+                assert NatDvd(Int.pow(2, (n + 4)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))) by {
+                  // [TACTIC: exact h₈]
+                  assert NatDvd(Int.pow(2, (n + 4)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))));
+                }
+                // [TACTIC: exact Nat.dvd_add ( Nat.dvd_add ( Nat.dvd_add h₁₀ h₆ ) h₇ ) h₈]
+                assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 4)));
+                assert (NatDvd((Int.pow(2, (n + 4))), (Int.pow(2, ((2 * n) + 4))))) && (NatDvd((Int.pow(2, (n + 4))), ((k_1_0_0 * Int.pow(2, (n + 4))))));  // precondition of NatDvdAdd (Lean: Nat.dvd_add)
+                NatDvdAdd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 4)), (k_1_0_0 * Int.pow(2, (n + 4))));  // cite: Nat.dvd_add
+                assert (NatDvd((Int.pow(2, (n + 4))), ((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4))))))) && (NatDvd((Int.pow(2, (n + 4))), (((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6))))));  // precondition of NatDvdAdd (Lean: Nat.dvd_add)
+                NatDvdAdd(Int.pow(2, (n + 4)), (Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))), ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6))));  // cite: Nat.dvd_add
+                assert (NatDvd((Int.pow(2, (n + 4))), (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6))))))) && (NatDvd((Int.pow(2, (n + 4))), (((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))))));  // precondition of NatDvdAdd (Lean: Nat.dvd_add)
+                NatDvdAdd(Int.pow(2, (n + 4)), ((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))));  // cite: Nat.dvd_add
+              }
+              // have h₁₀ : ( 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 * 2 ^ ( 2 * n + 6 ) +   [type from Lean state]
+              assert (NatMod((((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) == 0) by { // @tac 4059-4183 // @tac 4196-4373 // @tac 4386-4399
+                // have h₁₁ : 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 * 2 ^ (   [type from Lean state]
+                assert NatDvd(Int.pow(2, (n + 4)), (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))))) by {
+                  // [TACTIC: exact h₉]
+                  assert NatDvd(Int.pow(2, (n + 4)), (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))));
+                }
+                // have h₁₂ : ( 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 * 2 ^ ( 2 * n + 6 ) +   [type from Lean state]
+                assert (NatMod((((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) == 0) by { // @tac 4337-4373
+                  // [TACTIC: exact Nat.mod_eq_zero_of_dvd h₁₁]
+                  assert NatDvd(Int.pow(2, (n + 4)), (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))));
+                  assert (NatDvd((Int.pow(2, (n + 4))), ((((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))))));  // precondition of NatModEqZeroOfDvd (Lean: Nat.mod_eq_zero_of_dvd)
+                  NatModEqZeroOfDvd(Int.pow(2, (n + 4)), (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))));  // cite: Nat.mod_eq_zero_of_dvd
+                }
+                // [TACTIC: exact h₁₂]
+                assert (NatMod((((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) == 0);
+              }
+              // [TACTIC: exact h₁₀]
+              assert (NatMod((((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) == 0);
+            }
+            // have h₅ : ( 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 * 2 ^ ( 2 * n + 6 ) +   [type from Lean state]
+            assert ((NatDiv((((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) * Int.pow(2, (n + 4))) == (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))))) by { // @tac 4666-6151 // @tac 6162-6837 // @tac 6848-6861
+              // have h₆ : 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 * 2 ^ (   [type from Lean state]
+              assert NatDvd(Int.pow(2, (n + 4)), (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))))) by { // @tac 4798-4901 // @tac 4914-5000 // @tac 5013-5351 // @tac 5364-6024 // @tac 6083-6151
+                // have h₇ : 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 4 )  [type from Lean state]
+                assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 4))) by { // @tac 4862-4881
+                  // [TACTIC: apply pow_dvd_pow 2]
+                  assert ((n + 4) <= ((2 * n) + 4)) by {  // sub-goal before `omega` (Lean state) // @tac 4896-4901
+                    // [TACTIC: omega]
+                    // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
+                    // UNCITED-APPLIED internal ×11 [exec 701 4896-4901]: applications made inside the tactic's own automation, not stated — Int.ofNat_add ×2, Int.ofNat_nonneg ×1, Int.sub_nonneg_of_le ×1, Int.add_one_le_of_lt ×1, Nat.lt_of_not_le ×1, Int.ofNat_mul ×1; machinery/glue: Decidable.byContradiction ×1, of_decide_eq_true ×1, Eq.symm ×1, Lean.Omega.Int.ofNat_lt_of_lt ×1
+                  }
+                  assert (((n + 4)) <= (((2 * n) + 4)));  // precondition of NatPowDvdPow (Lean: pow_dvd_pow; `apply`: proved by the steps above)
+                  NatPowDvdPow(2, (n + 4), ((2 * n) + 4));  // cite: pow_dvd_pow
+                }
+                // have h₈ : 2 ^ ( n + 4 ) ∣ k * 2 ^ ( n + 4 )  [type from Lean state]
+                assert NatDvd(Int.pow(2, (n + 4)), (k_1_0_0 * Int.pow(2, (n + 4)))) by { // @tac 4978-5000
+                  assert ((k_1_0_0 * Int.pow(2, (n + 4))) == (Int.pow(2, (n + 4)) * k_1_0_0)) by {  // sub-goal of `by` (Lean state) // @tac 4993-4997
+                    // [TACTIC: Ring]
+                  }
+                  // [TACTIC: exact ⟨ k , by ring ⟩ ⟨ k , by ring ⟩]
+                  assert (if ((Int.pow(2, (n + 4)) as int)) == 0 then (((k_1_0_0 * Int.pow(2, (n + 4))) as int)) == 0 else (((k_1_0_0 * Int.pow(2, (n + 4))) as int)) % ((Int.pow(2, (n + 4)) as int)) == 0);  // goal closed by `exact ⟨…⟩` (Lean state)
+                  // UNCITED-APPLIED internal ×55 [exec 718 4978-5000]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_pf_add_zero ×4, Mathlib.Tactic.Ring.add_mul ×4, Mathlib.Tactic.Ring.mul_add ×4, Mathlib.Tactic.Ring.mul_zero ×4 (+23 more heads, ×39)
+                }
+                // have h₉ : 2 ^ ( n + 4 ) ∣ k ^ 2 * 2 ^ ( 2 * n + 6 )  [type from Lean state]
+                assert NatDvd(Int.pow(2, (n + 4)), ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) by { // @tac 5085-5195 // @tac 5210-5323 // @tac 5338-5351
+                  // have h₁₀ : 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 6 )  [type from Lean state]
+                  assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 6))) by { // @tac 5154-5173
+                    // [TACTIC: apply pow_dvd_pow 2]
+                    assert ((n + 4) <= ((2 * n) + 6)) by {  // sub-goal before `omega` (Lean state) // @tac 5190-5195
+                      // [TACTIC: omega]
+                      // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
+                      // UNCITED-APPLIED internal ×11 [exec 761 5190-5195]: applications made inside the tactic's own automation, not stated — Int.ofNat_add ×2, Int.ofNat_nonneg ×1, Int.sub_nonneg_of_le ×1, Int.add_one_le_of_lt ×1, Nat.lt_of_not_le ×1, Int.ofNat_mul ×1; machinery/glue: Decidable.byContradiction ×1, of_decide_eq_true ×1, Eq.symm ×1, Lean.Omega.Int.ofNat_lt_of_lt ×1
+                    }
+                    assert (((n + 4)) <= (((2 * n) + 6)));  // precondition of NatPowDvdPow (Lean: pow_dvd_pow; `apply`: proved by the steps above)
+                    NatPowDvdPow(2, (n + 4), ((2 * n) + 6));  // cite: pow_dvd_pow
+                  }
+                  // have h₁₁ : 2 ^ ( n + 4 ) ∣ k ^ 2 * 2 ^ ( 2 * n + 6 )  [type from Lean state]
+                  assert NatDvd(Int.pow(2, (n + 4)), ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) by { // @tac 5287-5323
+                    // [TACTIC: exact dvd_mul_of_dvd_right h₁₀ _]
+                    assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 6)));
+                    assert (NatDvd((Int.pow(2, (n + 4))), (Int.pow(2, ((2 * n) + 6)))));  // precondition of NatDvdMulOfDvdRight (Lean: dvd_mul_of_dvd_right)
+                    NatDvdMulOfDvdRight(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 6)), (k_1_0_0 * k_1_0_0));  // cite: dvd_mul_of_dvd_right
+                  }
+                  // [TACTIC: exact h₁₁]
+                  assert NatDvd(Int.pow(2, (n + 4)), ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6))));
+                }
+                // have h₁₀ : 2 ^ ( n + 4 ) ∣ 2 * k * 2 ^ ( 2 * n + 5 )  [type from Lean state]
+                assert NatDvd(Int.pow(2, (n + 4)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))) by { // @tac 5439-5549 // @tac 5564-5996 // @tac 6011-6024
+                  // have h₁₁ : 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 5 )  [type from Lean state]
+                  assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 5))) by { // @tac 5508-5527
+                    // [TACTIC: apply pow_dvd_pow 2]
+                    assert ((n + 4) <= ((2 * n) + 5)) by {  // sub-goal before `omega` (Lean state) // @tac 5544-5549
+                      // [TACTIC: omega]
+                      // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
+                      // UNCITED-APPLIED internal ×11 [exec 813 5544-5549]: applications made inside the tactic's own automation, not stated — Int.ofNat_add ×2, Int.ofNat_nonneg ×1, Int.sub_nonneg_of_le ×1, Int.add_one_le_of_lt ×1, Nat.lt_of_not_le ×1, Int.ofNat_mul ×1; machinery/glue: Decidable.byContradiction ×1, of_decide_eq_true ×1, Eq.symm ×1, Lean.Omega.Int.ofNat_lt_of_lt ×1
+                    }
+                    assert (((n + 4)) <= (((2 * n) + 5)));  // precondition of NatPowDvdPow (Lean: pow_dvd_pow; `apply`: proved by the steps above)
+                    NatPowDvdPow(2, (n + 4), ((2 * n) + 5));  // cite: pow_dvd_pow
+                  }
+                  // have h₁₂ : 2 ^ ( n + 4 ) ∣ 2 * k * 2 ^ ( 2 * n + 5 )  [type from Lean state]
+                  assert NatDvd(Int.pow(2, (n + 4)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))) by { // @tac 5641-5698 // @tac 5715-5966 // @tac 5983-5996
+                    // have h₁₃ : 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 5 )  [type from Lean state]
+                    assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 5))) by {
+                      // [TACTIC: exact h₁₁]
+                      assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 5)));
+                    }
+                    // have h₁₄ : 2 ^ ( n + 4 ) ∣ 2 * k * 2 ^ ( 2 * n + 5 )  [type from Lean state]
+                    assert NatDvd(Int.pow(2, (n + 4)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))) by { // @tac 5794-5966
+                      assert NatDvd(Int.pow(2, ((2 * n) + 5)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))) by {  // sub-goal of `by` (Lean state) // @tac 5940-5966
+                        assert (((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) == (Int.pow(2, ((2 * n) + 5)) * (2 * k_1_0_0))) by {  // sub-goal of `by` (Lean state) // @tac 5959-5963
+                          // [TACTIC: Ring]
+                        }
+                        // [TACTIC: exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩]
+                        assert (if ((Int.pow(2, ((2 * n) + 5)) as int)) == 0 then ((((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) as int)) == 0 else ((((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) as int)) % ((Int.pow(2, ((2 * n) + 5)) as int)) == 0);  // goal closed by `exact ⟨…⟩` (Lean state)
+                        // UNCITED-APPLIED internal ×72 [exec 863 5940-5966]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_mul ×6, Mathlib.Tactic.Ring.mul_add ×6, Mathlib.Tactic.Ring.zero_mul ×6, Mathlib.Tactic.Ring.mul_pf_right ×5 (+25 more heads, ×49)
+                      }
+                      // [TACTIC: calc_unparsed 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 5 ) 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 5 ) := h₁₃ _ ∣ 2 * k * 2 ^ ( 2 * n + 5 ) _ ∣ 2 * k * 2 ^ ( 2 * n + 5 ) := by exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩ exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩]
+                      // GAP: calc chain not lowered (relation outside Dafny calc, e.g. ∣); its step proofs follow, each with its recorded goal; the chain itself is not composed
+                    }
+                    // [TACTIC: exact h₁₄]
+                    assert NatDvd(Int.pow(2, (n + 4)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))));
+                  }
+                  // [TACTIC: exact h₁₂]
+                  assert NatDvd(Int.pow(2, (n + 4)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))));
+                }
+                // [TACTIC: exact Nat.dvd_add ( Nat.dvd_add ( Nat.dvd_add h₇ h₈ ) h₉ ) h₁₀]
+                assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 4)));
+                assert (NatDvd((Int.pow(2, (n + 4))), (Int.pow(2, ((2 * n) + 4))))) && (NatDvd((Int.pow(2, (n + 4))), ((k_1_0_0 * Int.pow(2, (n + 4))))));  // precondition of NatDvdAdd (Lean: Nat.dvd_add)
+                NatDvdAdd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 4)), (k_1_0_0 * Int.pow(2, (n + 4))));  // cite: Nat.dvd_add
+                assert (NatDvd((Int.pow(2, (n + 4))), ((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4))))))) && (NatDvd((Int.pow(2, (n + 4))), (((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6))))));  // precondition of NatDvdAdd (Lean: Nat.dvd_add)
+                NatDvdAdd(Int.pow(2, (n + 4)), (Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))), ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6))));  // cite: Nat.dvd_add
+                assert (NatDvd((Int.pow(2, (n + 4))), (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6))))))) && (NatDvd((Int.pow(2, (n + 4))), (((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))))));  // precondition of NatDvdAdd (Lean: Nat.dvd_add)
+                NatDvdAdd(Int.pow(2, (n + 4)), ((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))));  // cite: Nat.dvd_add
+              }
+              // have h₁₁ : ( 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 * 2 ^ ( 2 * n + 6 ) +   [type from Lean state]
+              assert ((NatDiv((((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) * Int.pow(2, (n + 4))) == (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))))) by { // @tac 6401-6525 // @tac 6538-6811 // @tac 6824-6837
+                // have h₁₂ : 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 * 2 ^ (   [type from Lean state]
+                assert NatDvd(Int.pow(2, (n + 4)), (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))))) by {
+                  // [TACTIC: exact h₆]
+                  assert NatDvd(Int.pow(2, (n + 4)), (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))));
+                }
+                // have h₁₃ : ( 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 * 2 ^ ( 2 * n + 6 ) +   [type from Lean state]
+                assert ((NatDiv((((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) * Int.pow(2, (n + 4))) == (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))))) by { // @tac 6779-6811
+                  // [TACTIC: exact Nat.div_mul_cancel h₁₂]
+                  assert NatDvd(Int.pow(2, (n + 4)), (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))));
+                  assert (NatDvd((Int.pow(2, (n + 4))), ((((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))))));  // precondition of NatDivMulCancel (Lean: Nat.div_mul_cancel)
+                  NatDivMulCancel((((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4)));  // cite: Nat.div_mul_cancel
+                }
+                // [TACTIC: exact h₁₃]
+                assert ((NatDiv((((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) * Int.pow(2, (n + 4))) == (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))));
+              }
+              // [TACTIC: exact h₁₁]
+              assert ((NatDiv((((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) * Int.pow(2, (n + 4))) == (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))));
+            }
+            // have h₆ : 1 + 2 ^ ( n + 3 ) + ( 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 *   [type from Lean state]
+            assert (((1 + Int.pow(2, (n + 3))) + (((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))))) == ((1 + Int.pow(2, ((n + 1) + 2))) + (NatDiv((((Int.pow(2, ((2 * n) + 4)) + (k_1_0_0 * Int.pow(2, (n + 4)))) + ((k_1_0_0 * k_1_0_0) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) * Int.pow(2, ((n + 1) + 3))))) by { // @tac 7150-7190 // @tac 7201-7241 // @tac 7252-7296 // @tac 7307-7441 // @tac 7307-7431 // @tac 7307-7402
+              // have h₇ : n + 3 == n + 1 + 2  [type from Lean state]
+              assert ((n + 3) == ((n + 1) + 2)); // @tac 7186-7190
+                // [TACTIC: Ring]
+              // UNCITED-APPLIED internal ×19 [exec 959 7186-7190]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_congr ×3, Mathlib.Tactic.Ring.cast_pos ×3, Mathlib.Meta.NormNum.isNat_ofNat ×3, Mathlib.Tactic.Ring.add_pf_add_gt ×2 (+7 more heads, ×8)
+              // have h₈ : n + 4 == n + 1 + 3  [type from Lean state]
+              assert ((n + 4) == ((n + 1) + 3)); // @tac 7237-7241
+                // [TACTIC: Ring]
+              // UNCITED-APPLIED internal ×19 [exec 980 7237-7241]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_congr ×3, Mathlib.Tactic.Ring.cast_pos ×3, Mathlib.Meta.NormNum.isNat_ofNat ×3, Mathlib.Tactic.Ring.add_pf_add_gt ×2 (+7 more heads, ×8)
+              // have h₉ : 2 * n + 4 == 2 * n + 4  [type from Lean state]
+              assert (((2 * n) + 4) == ((2 * n) + 4)); // @tac 7292-7296
+                // [TACTIC: Ring]
+              // UNCITED-APPLIED internal ×16 [exec 1001 7292-7296]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.cast_pos ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2, Mathlib.Tactic.Ring.of_eq ×1, Mathlib.Tactic.Ring.add_congr ×1 (+10 more heads, ×10)
+              // [TACTIC: «_<;>_» [ h₇ , h₈ , h₉ , pow_add , pow_mul , Nat.mul_div_assoc , Nat.div_eq_of_lt ] at h₄ h₅ ⊢ simp [ h₇ , h₈ , h₉ , pow_add , pow_mul , Nat.mul_div_assoc , Nat.div_eq_of_lt ] at h₄ h₅ ⊢ <;> ring_nf at h₄ h₅ ⊢ <;> omega omega]
+              // [TACTIC: choice [ h₇ , h₈ , h₉ , pow_add , pow_mul , Nat.mul_div_assoc , Nat.div_eq_of_lt ] at h₄ h₅ ⊢ simp [ h₇ , h₈ , h₉ , pow_add , pow_mul , Nat.mul_div_assoc , Nat.div_eq_of_lt ] at h₄ h₅ ⊢]
+              NatPowAdd(2, (n + 1), 2);  // cite: pow_add
+              NatPowAdd(2, n, 1);  // cite: pow_add
+              NatPowAdd(2, (2 * n), 4);  // cite: pow_add
+              NatPowAdd(2, (n + 1), 3);  // cite: pow_add
+              NatPowAdd(2, (2 * n), 6);  // cite: pow_add
+              NatPowAdd(2, (2 * n), 5);  // cite: pow_add
+              NatPowMul(2, 2, n);  // cite: pow_mul
+              // UNCITED Nat.mul_div_assoc: no Lean instance recorded (arguments unknown), not guessed
+              // UNCITED Nat.div_eq_of_lt: no Lean instance recorded (arguments unknown), not guessed
+              NatPowOne(2);  // cite: pow_one [applied by the tactic, not named in it]
+              // GAP: pow_add: this execution also rewrote the hypotheses h₄, h₅; the harvest for this theorem records only the goal-side application(s) of the tactic (hypothesis-side rewrites are not recorded), so its applications to those hypotheses (if any) are not stated
+              // GAP: pow_mul: this execution also rewrote the hypotheses h₄, h₅; the harvest for this theorem records only the goal-side application(s) of the tactic (hypothesis-side rewrites are not recorded), so its applications to those hypotheses (if any) are not stated
+              // UNCITED-APPLIED internal ×22 [exec 1012 7307-7402]: applications made inside the tactic's own automation, not stated — machinery/glue: Eq.trans ×8, congrArg ×8, congr ×6 (cited in this block, not counted here: pow_add [Lean recorded ×6], pow_mul [Lean recorded ×1], pow_one [Lean recorded ×1])
+              assert (NatMod(((((Int.pow(4, n) * 16) + (k_1_0_0 * ((Int.pow(2, n) * 2) * 8))) + ((k_1_0_0 * k_1_0_0) * (Int.pow(4, n) * 64))) + ((2 * k_1_0_0) * (Int.pow(4, n) * 32))), ((Int.pow(2, n) * 2) * 8)) == 0);  // hypothesis h₄ after `simp` (Lean state) // @tac-hyp 7307-7402
+              assert ((NatDiv(((((Int.pow(4, n) * 16) + (k_1_0_0 * ((Int.pow(2, n) * 2) * 8))) + ((k_1_0_0 * k_1_0_0) * (Int.pow(4, n) * 64))) + ((2 * k_1_0_0) * (Int.pow(4, n) * 32))), ((Int.pow(2, n) * 2) * 8)) * ((Int.pow(2, n) * 2) * 8)) == ((((Int.pow(4, n) * 16) + (k_1_0_0 * ((Int.pow(2, n) * 2) * 8))) + ((k_1_0_0 * k_1_0_0) * (Int.pow(4, n) * 64))) + ((2 * k_1_0_0) * (Int.pow(4, n) * 32))));  // hypothesis h₅ after `simp` (Lean state) // @tac-hyp 7307-7402
+              assert (((((Int.pow(4, n) * 16) + (k_1_0_0 * ((Int.pow(2, n) * 2) * 8))) + ((k_1_0_0 * k_1_0_0) * (Int.pow(4, n) * 64))) + ((2 * k_1_0_0) * (Int.pow(4, n) * 32))) == (NatDiv(((((Int.pow(4, n) * 16) + (k_1_0_0 * ((Int.pow(2, n) * 2) * 8))) + ((k_1_0_0 * k_1_0_0) * (Int.pow(4, n) * 64))) + ((2 * k_1_0_0) * (Int.pow(4, n) * 32))), ((Int.pow(2, n) * 2) * 8)) * ((Int.pow(2, n) * 2) * 8))) by {  // sub-goal of `ring_nf` (Lean state) // @tac 7407-7431
+                NatPowOne(k_1_0_0);  // cite: pow_one [applied by the tactic, not named in it]
+                NatPowOne(n);  // cite: pow_one [applied by the tactic, not named in it]
+                NatPowOne(NatDiv((((((k_1_0_0 * Int.pow(2, n)) * 16) + ((k_1_0_0 * Int.pow(4, n)) * 64)) + ((Int.pow(k_1_0_0, 2) * Int.pow(4, n)) * 64)) + (Int.pow(4, n) * 16)), (Int.pow(2, n) * 16)));  // cite: pow_one [applied by the tactic, not named in it]
+                // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := n)
+                assert (NatMod((((((k_1_0_0 * Int.pow(2, n)) * 16) + ((k_1_0_0 * Int.pow(4, n)) * 64)) + (((k_1_0_0 * k_1_0_0) * Int.pow(4, n)) * 64)) + (Int.pow(4, n) * 16)), (Int.pow(2, n) * 16)) == 0);  // hypothesis h₄ after `ring_nf` (Lean state) // @tac-hyp 7407-7431
+                assert (((NatDiv((((((k_1_0_0 * Int.pow(2, n)) * 16) + ((k_1_0_0 * Int.pow(4, n)) * 64)) + (((k_1_0_0 * k_1_0_0) * Int.pow(4, n)) * 64)) + (Int.pow(4, n) * 16)), (Int.pow(2, n) * 16)) * Int.pow(2, n)) * 16) == (((((k_1_0_0 * Int.pow(2, n)) * 16) + ((k_1_0_0 * Int.pow(4, n)) * 64)) + (((k_1_0_0 * k_1_0_0) * Int.pow(4, n)) * 64)) + (Int.pow(4, n) * 16)));  // hypothesis h₅ after `ring_nf` (Lean state) // @tac-hyp 7407-7431
+                assert ((((((k_1_0_0 * Int.pow(2, n)) * 16) + ((k_1_0_0 * Int.pow(4, n)) * 64)) + (((k_1_0_0 * k_1_0_0) * Int.pow(4, n)) * 64)) + (Int.pow(4, n) * 16)) == ((NatDiv((((((k_1_0_0 * Int.pow(2, n)) * 16) + ((k_1_0_0 * Int.pow(4, n)) * 64)) + (((k_1_0_0 * k_1_0_0) * Int.pow(4, n)) * 64)) + (Int.pow(4, n) * 16)), (Int.pow(2, n) * 16)) * Int.pow(2, n)) * 16)) by {  // sub-goal of `omega` (Lean state) // @tac 7436-7441
+                  // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
+                  // cite: pow_one [same instance stated in an enclosing scope: NatPowOne(k);]
+                  // cite: pow_one [same instance stated in an enclosing scope: NatPowOne(n);]
+                  // cite: pow_one [same instance stated in an enclosing scope: NatPowOne(NatDiv((((((k * Int.pow(2, n)) * 16) + ((k * Int.pow(4, n)) * 64)) + ((Int.pow(k, 2) * Int.pow(4, n)) * 64)) + (Int.pow(4, n) * 16)), (Int.pow(2, n) * 16)));]
+                  // cite: pow_one [same instance stated in an enclosing scope: NatPowOne(2);]
+                  // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := n)
+                  // cite: pow_add [same instance stated in an enclosing scope: NatPowAdd(2, (2 * n), 4);]
+                  // cite: pow_add [same instance stated in an enclosing scope: NatPowAdd(2, (n + 1), 3);]
+                  // cite: pow_add [same instance stated in an enclosing scope: NatPowAdd(2, n, 1);]
+                  // cite: pow_add [same instance stated in an enclosing scope: NatPowAdd(2, (2 * n), 6);]
+                  // cite: pow_add [same instance stated in an enclosing scope: NatPowAdd(2, (2 * n), 5);]
+                  // cite: pow_mul [same instance stated in an enclosing scope: NatPowMul(2, 2, n);]
+                  // UNCITED-APPLIED internal ×170 [exec 1030 7436-7441]: applications made inside the tactic's own automation, not stated — Int.ofNat_mul ×8, add_zero ×5, Int.ofNat_add ×3, Int.sub_nonneg_of_le ×2, Int.add_one_le_of_lt ×2, Nat.lt_or_gt_of_ne ×1, Int.sub_eq_zero_of_eq ×1, mul_one ×1; machinery/glue: congr ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_congr ×8, Mathlib.Tactic.Ring.add_mul ×8 (+34 more heads, ×115) (cited in this block, not counted here: pow_add [Lean recorded ×5], pow_mul [Lean recorded ×1], pow_one [Lean recorded ×4])
+                }
+                // UNCITED-APPLIED internal ×146 [exec 1021 7407-7431]: applications made inside the tactic's own automation, not stated — add_zero ×5, mul_one ×1; machinery/glue: congr ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_congr ×8, Mathlib.Tactic.Ring.add_mul ×8 (+29 more heads, ×108) (cited in this block, not counted here: pow_one [Lean recorded ×3])
+              }
+            }
+            // [TACTIC: «_<;>_» [ h₆ ] rw [ h₆ ] <;> simp [ h₅ , Nat.mul_div_assoc , Nat.div_eq_of_lt ] simp [ h₅ , Nat.mul_div_assoc , Nat.div_eq_of_lt ] simp [ h₅ , Nat.mul_div_assoc , Nat.div_eq_of_lt ] <;> ring_nf at * <;> omega omega]
+            // [TACTIC: rwSeq [ h₆ ]]
+            // `rw` closed the goal; the rest of the chain did not run
+            // UNCITED-APPLIED congrArg((1 : ℕ) + (2 : ℕ) ^ (n + (3 : ℕ)) + ((2 : ℕ) ^ ((2 : ℕ) * n + (4 : ℕ)…, (1 : ℕ) + (2 : ℕ) ^ (n + (1 : ℕ) + (2 : ℕ)) + ((2 : ℕ) ^ ((2 : ℕ) * n…, fun (_a : ℕ) => _a = (1 : ℕ) + (2 : ℕ) ^ (succ n + (2 : ℕ)) + ((2 : ℕ…): no library counterpart (not stated) [exec 1050 7450-7459]
+}
 

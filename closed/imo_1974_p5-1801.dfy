@@ -1,13 +1,12 @@
-// CLOSED LEMMA for failing line imo_1974_p5-1801 (theorem imo_1974_p5, Dafny line 1801, ERR)
-// closes with: K2 (computation) — single
-// added: assert s == Real.div(((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d)), (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d));  (field_simp's normal form: Lean's after-hyp of exec 1254)
-// Dafny: finished with 2 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_036/imo_1974_p5-1801/K2.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line imo_1974_p5-1801: theorem imo_1974_p5, Dafny line 1801 (ERR: assertion might not hold)
+// failing Dafny line: assert (1.0 < Real.div(((((((a * ((a + b) + c)) + (b * ((a + b) + d))) * ((b + c) + d)) + (c * (((a + b) + d) * ((a + b) + c)))) * ((a + c) + d)) + (d * ((((a + b) + d) * ((a + b) + c)) * ((b + c) + d
+// Lean step: field_simp [h₁] at term1_pos term1_less1 term2_pos term2_less1 term3_pos term3_less1 term4_pos term4_less1 s_pos lower_bound
+// hypotheses: 24 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K2 — assert s == Real.div(((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d)), (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d));  (field_simp's normal form: Lean's after-hyp of exec 1254)
+// Dafny: finished with 2 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// NOTE: uses a MODIFIED library copy: see alt/imo_1974_p5-1801/LIBRARY_CHANGES.diff
 
-// K2: field_simp normal form s == N/D (Lean after-state of field_simp, exec 1131/1254), one checked assert
-// source: line_lemmas/ERR/imo_1974_p5/L1801.dfy (vc_extract original line lemma)
-include "../../../../../wt_integ5/library/library_new.dfy"
+include "alt/imo_1974_p5-1801/out/imo_1974_p5.dfy"
 lemma {:induction false} vc_imo_1974_p5_L1801(a: real, b: real, c: real, d: real, s: real)
   requires 0.0 < a
   requires 0.0 < b
@@ -33,7 +32,8 @@ lemma {:induction false} vc_imo_1974_p5_L1801(a: real, b: real, c: real, d: real
   requires 0.0 < (a + b + d) * (a + b + c) * (b + c + d)
   requires 0.0 < (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d)
   requires 0.0 < ((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d))
-  ensures  1.0 < Real.div(((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d)), (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d))
+  ensures   1.0 < Real.div(((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d)), (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d))
 {
   assert s == Real.div(((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d)), (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d));
 }
+

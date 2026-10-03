@@ -1,29 +1,12 @@
-// CLOSED LEMMA for failing line amc12a_2021_p19-855 (theorem amc12a_2021_p19, Dafny line 855, OOR)
-// closes with: K1 (instance) — single
-// added: RealInjOnCos(Real.pi() / 2.0 * (1.0 - Real.cos(x)), Real.pi() / 2.0 * Real.sin(x))  [Lean's Set.InjOn.eq_iff (injOn_cos) at its recorded arguments]
-// Dafny: finished with 26 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_020/amc12a_2021_p19-855/K1.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line amc12a_2021_p19-855: theorem amc12a_2021_p19, Dafny line 855 (OOR: Verification out of resource (amc12a_2021_p19))
+// failing Dafny line: assert (((Real.pi() / 2.0) * (1.0 - Real.cos(x))) == ((Real.pi() / 2.0) * Real.sin(x))) by {
+// Lean step: apply (injOn_cos.eq_iff ⟨by nlinarith, by nlinarith⟩ ⟨by nlinarith, by nlinarith⟩).1
+// hypotheses: 14 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K1 — RealInjOnCos(Real.pi() / 2.0 * (1.0 - Real.cos(x)), Real.pi() / 2.0 * Real.sin(x))  [Lean's Set.InjOn.eq_iff (injOn_cos) at its recorded arguments]
+// Dafny: finished with 40 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Line lemma for failing line 855 of amc12a_2021_p19 (OOR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "../../../../../wt_integ5/out/amc12a_2021_p19.dfy"
-
-// ========================================================================================
-// FAILING LINE 855 (OOR) in amc12a_2021_p19: Verification out of resource (amc12a_2021_p19)
-//   dafny |                     assert (((Real.pi() / 2.0) * (1.0 - Real.cos(x))) == ((Real.pi() / 2.0) * Real.sin(x))) by { // @tac 3477-3569
-//   statement kind: have / step assertion
-//   @tac 3477-3569 | Lean: apply (injOn_cos.eq_iff ⟨by nlinarith, by nlinarith⟩ ⟨by nlinarith, by nlinarith⟩).1
-//        before-goal ⊢ π / (2 : ℝ) * ((1 : ℝ) - cos x) = π / (2 : ℝ) * sin x
-// Lean have h₅₄₅, Lean lines 65-67:
-//   lean  |           have h₅₄₅ : Real.pi / 2 * (1 - Real.cos x) = Real.pi / 2 * Real.sin x := by
-//   lean  |             apply (injOn_cos.eq_iff ⟨by nlinarith, by nlinarith⟩ ⟨by nlinarith, by nlinarith⟩).1
-//   lean  |             exact h₅₃
-
-// 9 path(s) merged (paths); 14 shared facts; 5 distinct path conditions
-
-lemma {:induction false} vc_amc12a_2021_p19_L855_K1(S: set<real>, x_0_0_0_0: real)
+include "../dafny/amc12a_2021_p19.dfy"
+lemma {:induction false} vc_amc12a_2021_p19_L855(S: set<real>, x_0_0_0_0: real)
   requires forall x_1: real :: (x_1 in S) == (0.0 <= x_1 && x_1 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_1)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_1)))
   requires 0.0 <= x_0_0_0_0
   requires x_0_0_0_0 <= Real.pi()
@@ -38,8 +21,91 @@ lemma {:induction false} vc_amc12a_2021_p19_L855_K1(S: set<real>, x_0_0_0_0: rea
   requires Real.pi() / 2.0 * Real.sin(x_0_0_0_0) <= Real.pi()
   requires 0.0 <= Real.pi() / 2.0 * (1.0 - Real.cos(x_0_0_0_0))
   requires 0.0 <= Real.pi() / 2.0 * Real.sin(x_0_0_0_0)
-  ensures  Real.pi() / 2.0 * (1.0 - Real.cos(x_0_0_0_0)) == Real.pi() / 2.0 * Real.sin(x_0_0_0_0)
+  ensures   Real.pi() / 2.0 * (1.0 - Real.cos(x_0_0_0_0)) == Real.pi() / 2.0 * Real.sin(x_0_0_0_0)
 {
   RealInjOnCos(Real.pi() / 2.0 * (1.0 - Real.cos(x_0_0_0_0)), Real.pi() / 2.0 * Real.sin(x_0_0_0_0));
+                      assert (0.0 <= ((Real.pi() / 2.0) * (1.0 - Real.cos(x_0_0_0_0)))) by {  // sub-goal of `by` (Lean state) // @tac 3507-3516
+                        // [TACTIC: «Nlinarith[_]At___»]
+                        // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 3507-3516 exec 626)
+                        // UNCITED-APPLIED Linarith.mul_nonpos: certificate piece `(2 : ℝ) * -(π / (2 : ℝ) * ((1 : ℝ) - cos x)) ≤ (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: (0.0 <= ((Real.pi() / 2.0) * (1.0 - Real.cos(x)))); (2.0 > 0.0)
+                        // UNCITED-APPLIED Linarith.mul_neg: certificate piece `(2 : ℝ) * (π / (2 : ℝ) * ((1 : ℝ) - cos x)) < (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: (((Real.pi() / 2.0) * (1.0 - Real.cos(x))) < 0.0); (2.0 > 0.0)
+                        cert_identity_19(S, x_0_0_0_0);  // cert: add_lt_of_le_of_neg
+                        // UNCITED-APPLIED internal ×14 [exec 626 3507-3516]: applications made inside the tactic's own automation, not stated — le_of_not_gt ×1, add_lt_of_le_of_neg ×1, CancelDenoms.neg_subst ×1, CancelDenoms.mul_subst ×1, CancelDenoms.div_subst ×1, CancelDenoms.sub_subst ×1, neg_nonpos_of_nonneg ×1, lt_zero_of_zero_gt ×1; machinery/glue: congrArg ×3, Linarith.lt_irrefl ×1, Linarith.mul_nonpos ×1, Linarith.mul_neg ×1
+                        // UNCITED-APPLIED internal ×74 [exec 647 3507-3516]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.mul_add ×5, Mathlib.Tactic.Ring.add_pf_add_zero ×5, Mathlib.Tactic.Ring.mul_congr ×4, Mathlib.Tactic.Ring.add_mul ×4 (+30 more heads, ×56) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1], Nat.cast_zero [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×14 [exec 627 3507-3516]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.IsInt.to_isNat ×2, Mathlib.Meta.NormNum.IsRat.to_isInt ×2, Mathlib.Meta.NormNum.IsNat.to_isRat ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+6 more heads, ×6) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 628 3507-3516]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 629 3507-3516]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×14 [exec 631 3507-3516]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.IsInt.to_isNat ×2, Mathlib.Meta.NormNum.IsRat.to_isInt ×2, Mathlib.Meta.NormNum.IsNat.to_isRat ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+6 more heads, ×6) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 632 3507-3516]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 633 3507-3516]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×5 [exec 634 3507-3516]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+                        NatCastOne();  // cite: Nat.cast_one [applied by the tactic, not named in it: inside its internal steps (`normNum` exec 627, 628, 629, 631, 632, 633 / `ring1` exec 647)]
+                        NatCastZero();  // cite: Nat.cast_zero [applied by the tactic, not named in it: inside its internal steps (`normNum` exec 630, 634 / `ring1` exec 647)]
+                        // UNCITED-APPLIED internal ×5 [exec 630 3507-3516]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+                      }
+                      assert (((Real.pi() / 2.0) * (1.0 - Real.cos(x_0_0_0_0))) <= Real.pi()) by {  // sub-goal of `by` (Lean state) // @tac 3521-3530
+                        // [TACTIC: «Nlinarith[_]At___»]
+                        // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 3521-3530 exec 652)
+                        // UNCITED-APPLIED Linarith.mul_nonpos: certificate piece `(2 : ℝ) * (π / (2 : ℝ) * ((1 : ℝ) - cos x) - π) ≤ (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: ((((Real.pi() / 2.0) * (1.0 - Real.cos(x))) - Real.pi()) <= 0.0); (2.0 > 0.0)
+                        // UNCITED-APPLIED Linarith.mul_neg: certificate piece `(2 : ℝ) * (π - π / (2 : ℝ) * ((1 : ℝ) - cos x)) < (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: ((Real.pi() - ((Real.pi() / 2.0) * (1.0 - Real.cos(x)))) < 0.0); (2.0 > 0.0)
+                        cert_identity_20(S, x_0_0_0_0);  // cert: add_lt_of_le_of_neg
+                        // UNCITED-APPLIED internal ×15 [exec 652 3521-3530]: applications made inside the tactic's own automation, not stated — CancelDenoms.sub_subst ×3, le_of_not_gt ×1, add_lt_of_le_of_neg ×1, CancelDenoms.mul_subst ×1, CancelDenoms.div_subst ×1, sub_nonpos_of_le ×1, sub_neg_of_lt ×1; machinery/glue: congrArg ×3, Linarith.lt_irrefl ×1, Linarith.mul_nonpos ×1, Linarith.mul_neg ×1
+                        // UNCITED-APPLIED internal ×102 [exec 673 3521-3530]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.mul_add ×6, Mathlib.Tactic.Ring.add_pf_add_zero ×6, Mathlib.Tactic.Ring.mul_congr ×5, Mathlib.Tactic.Ring.add_mul ×5 (+32 more heads, ×80) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1], Nat.cast_zero [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×14 [exec 653 3521-3530]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.IsInt.to_isNat ×2, Mathlib.Meta.NormNum.IsRat.to_isInt ×2, Mathlib.Meta.NormNum.IsNat.to_isRat ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+6 more heads, ×6) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 654 3521-3530]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 655 3521-3530]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×14 [exec 657 3521-3530]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.IsInt.to_isNat ×2, Mathlib.Meta.NormNum.IsRat.to_isInt ×2, Mathlib.Meta.NormNum.IsNat.to_isRat ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+6 more heads, ×6) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 658 3521-3530]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 659 3521-3530]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×5 [exec 660 3521-3530]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+                        NatCastOne();  // cite: Nat.cast_one [applied by the tactic, not named in it: inside its internal steps (`normNum` exec 653, 654, 655, 657, 658, 659 / `ring1` exec 673)]
+                        NatCastZero();  // cite: Nat.cast_zero [applied by the tactic, not named in it: inside its internal steps (`normNum` exec 656, 660 / `ring1` exec 673)]
+                        // UNCITED-APPLIED internal ×5 [exec 656 3521-3530]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+                      }
+                      assert (0.0 <= ((Real.pi() / 2.0) * Real.sin(x_0_0_0_0))) by {  // sub-goal of `by` (Lean state) // @tac 3540-3549
+                        // [TACTIC: «Nlinarith[_]At___»]
+                        // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 3540-3549 exec 678)
+                        // UNCITED-APPLIED Linarith.mul_nonpos: certificate piece `(2 : ℝ) * -(π / (2 : ℝ) * sin x) ≤ (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: (0.0 <= ((Real.pi() / 2.0) * Real.sin(x))); (2.0 > 0.0)
+                        // UNCITED-APPLIED Linarith.mul_neg: certificate piece `(2 : ℝ) * (π / (2 : ℝ) * sin x) < (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: (((Real.pi() / 2.0) * Real.sin(x)) < 0.0); (2.0 > 0.0)
+                        cert_identity_21(S, x_0_0_0_0);  // cert: add_lt_of_le_of_neg
+                        // UNCITED-APPLIED internal ×13 [exec 678 3540-3549]: applications made inside the tactic's own automation, not stated — le_of_not_gt ×1, add_lt_of_le_of_neg ×1, CancelDenoms.neg_subst ×1, CancelDenoms.mul_subst ×1, CancelDenoms.div_subst ×1, neg_nonpos_of_nonneg ×1, lt_zero_of_zero_gt ×1; machinery/glue: congrArg ×3, Linarith.lt_irrefl ×1, Linarith.mul_nonpos ×1, Linarith.mul_neg ×1
+                        // UNCITED-APPLIED internal ×45 [exec 699 3540-3549]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.mul_congr ×3, Mathlib.Tactic.Ring.add_mul ×3, Mathlib.Tactic.Ring.mul_add ×3, Mathlib.Tactic.Ring.add_pf_add_zero ×3 (+26 more heads, ×33) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1], Nat.cast_zero [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×14 [exec 679 3540-3549]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.IsInt.to_isNat ×2, Mathlib.Meta.NormNum.IsRat.to_isInt ×2, Mathlib.Meta.NormNum.IsNat.to_isRat ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+6 more heads, ×6) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 680 3540-3549]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 681 3540-3549]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×14 [exec 683 3540-3549]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.IsInt.to_isNat ×2, Mathlib.Meta.NormNum.IsRat.to_isInt ×2, Mathlib.Meta.NormNum.IsNat.to_isRat ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+6 more heads, ×6) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 684 3540-3549]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 685 3540-3549]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×5 [exec 686 3540-3549]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+                        NatCastOne();  // cite: Nat.cast_one [applied by the tactic, not named in it: inside its internal steps (`normNum` exec 679, 680, 681, 683, 684, 685 / `ring1` exec 699)]
+                        NatCastZero();  // cite: Nat.cast_zero [applied by the tactic, not named in it: inside its internal steps (`normNum` exec 682, 686 / `ring1` exec 699)]
+                        // UNCITED-APPLIED internal ×5 [exec 682 3540-3549]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+                      }
+                      assert (((Real.pi() / 2.0) * Real.sin(x_0_0_0_0)) <= Real.pi()) by {  // sub-goal of `by` (Lean state) // @tac 3554-3563
+                        // [TACTIC: «Nlinarith[_]At___»]
+                        // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 3554-3563 exec 704)
+                        // UNCITED-APPLIED Linarith.mul_nonpos: certificate piece `(2 : ℝ) * (π / (2 : ℝ) * sin x - π) ≤ (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: ((((Real.pi() / 2.0) * Real.sin(x)) - Real.pi()) <= 0.0); (2.0 > 0.0)
+                        // UNCITED-APPLIED Linarith.mul_neg: certificate piece `(2 : ℝ) * (π - π / (2 : ℝ) * sin x) < (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: ((Real.pi() - ((Real.pi() / 2.0) * Real.sin(x))) < 0.0); (2.0 > 0.0)
+                        cert_identity_22(S, x_0_0_0_0);  // cert: add_lt_of_le_of_neg
+                        // UNCITED-APPLIED internal ×14 [exec 704 3554-3563]: applications made inside the tactic's own automation, not stated — CancelDenoms.sub_subst ×2, le_of_not_gt ×1, add_lt_of_le_of_neg ×1, CancelDenoms.mul_subst ×1, CancelDenoms.div_subst ×1, sub_nonpos_of_le ×1, sub_neg_of_lt ×1; machinery/glue: congrArg ×3, Linarith.lt_irrefl ×1, Linarith.mul_nonpos ×1, Linarith.mul_neg ×1
+                        // UNCITED-APPLIED internal ×72 [exec 725 3554-3563]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.mul_congr ×4, Mathlib.Tactic.Ring.add_mul ×4, Mathlib.Tactic.Ring.mul_add ×4, Mathlib.Tactic.Ring.add_pf_add_zero ×4 (+30 more heads, ×56) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1], Nat.cast_zero [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×14 [exec 705 3554-3563]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.IsInt.to_isNat ×2, Mathlib.Meta.NormNum.IsRat.to_isInt ×2, Mathlib.Meta.NormNum.IsNat.to_isRat ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+6 more heads, ×6) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 706 3554-3563]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 707 3554-3563]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×14 [exec 709 3554-3563]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.IsInt.to_isNat ×2, Mathlib.Meta.NormNum.IsRat.to_isInt ×2, Mathlib.Meta.NormNum.IsNat.to_isRat ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+6 more heads, ×6) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 710 3554-3563]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×6 [exec 711 3554-3563]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+                        // UNCITED-APPLIED internal ×5 [exec 712 3554-3563]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+                        NatCastOne();  // cite: Nat.cast_one [applied by the tactic, not named in it: inside its internal steps (`normNum` exec 705, 706, 707, 709, 710, 711 / `ring1` exec 725)]
+                        NatCastZero();  // cite: Nat.cast_zero [applied by the tactic, not named in it: inside its internal steps (`normNum` exec 708, 712 / `ring1` exec 725)]
+                        // UNCITED-APPLIED internal ×5 [exec 708 3554-3563]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+                      }
+                      // [TACTIC: apply ( injOn_cos.eq_iff ⟨ by nlinarith nlinarith , by nlinarith nlinarith ⟩ ⟨ by nlinarith nlinarith , by nlinarith nlinarith ⟩ ⟨ by nlinarith nlinarith , by nlinarith nlinarith ⟩ ⟨ by nlinarith nlinarith , by nlinarith nlinarith ⟩ ) . 1]
+                      // UNCITED injOn_cos.eq_iff: Lean records its application under the generic head Set.InjOn.eq_iff (marked UNCITED-APPLIED at its execution), not matched to this name here; not stated
+                      assert (Real.cos(((Real.pi() / 2.0) * (1.0 - Real.cos(x_0_0_0_0)))) == Real.cos(((Real.pi() / 2.0) * Real.sin(x_0_0_0_0)))) by {  // sub-goal before `exact` (Lean state) // @tac 3582-3595
+                        // [TACTIC: exact h₅₃]
+                        assert (Real.cos(((Real.pi() / 2.0) * (1.0 - Real.cos(x_0_0_0_0)))) == Real.cos(((Real.pi() / 2.0) * Real.sin(x_0_0_0_0))));
+                      }
+                      // UNCITED-APPLIED Set.InjOn.eq_iff(Set.Icc (0 : ℝ) π, cos, π / (2 : ℝ) * ((1 : ℝ) - cos x), π / (2 : ℝ) * sin x): library counterpart RealInjOnCosEqIff (Mathlib `injOn_cos.eq_iff`) exists, but the translation of this tactic states no such instance [exec 621 3477-3569]
 }
 

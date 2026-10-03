@@ -1,14 +1,11 @@
-// CLOSED LEMMA for failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-124 (theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 124, OOR)
-// closes with: K2 (computation) — single
-// added: library copy with Int.pow recursive ensures removed
-// Dafny: finished with 56 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_045/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-124/K2pow.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-124: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 124 (OOR: Verification out of resource (induction_helper_1))
+// failing Dafny line: assert NatDvd(Int.pow(2, (n + 4)), (k * Int.pow(2, (n + 4)))) by {
+// Lean step: exact ⟨k, by ring⟩
+// hypotheses: 29 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// not closed: tried H0=oor, K2pow=oor, K4=oor, K3=oor; this file is the honest base attempt
+// Dafny: finished with 64 verified, 0 errors, 2 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// shard_045 ablation K2pow of numbertheory_3pow2pownm1mod2pownp3eq2pownp2 L124 (original line lemma, main VC only)
-// K2pow
-include "/home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_045/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-124/K2pow_lib/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
-
+include "../dafny/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L124(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
   requires 0 <= n
   requires 0 <= k_1_0_2
@@ -39,5 +36,13 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L124(k_1
   requires k_1_0_2_0 * Int.pow(2, n + 4) == Int.pow(2, n + 4) * k_1_0_2_0
   requires if Int.pow(2, n + 4) == 0 then k_1_0_2_0 * Int.pow(2, n + 4) == 0 else k_1_0_2_0 * Int.pow(2, n + 4) % Int.pow(2, n + 4) == 0
   requires ((0 <= k_1_0_0) && (0 <= k_1_0_3) && (Int.pow(2, n + 4) == 0)) || ((0 <= k_1_0_0) && (0 <= k_1_0_3) && (Int.pow(2, n + 4) != 0)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0) && (Int.pow(2, n + 4) == 0)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0) && (Int.pow(2, n + 4) != 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3) && (Int.pow(2, n + 4) == 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3) && (Int.pow(2, n + 4) != 0)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0) && (Int.pow(2, n + 4) == 0)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0) && (Int.pow(2, n + 4) != 0))
-  ensures  0 <= k_1_0_2_0 * Int.pow(2, n + 4)
-{ }
+  ensures   0 <= k_1_0_2_0 * Int.pow(2, n + 4)
+{
+                assert ((k_1_0_0 * Int.pow(2, (n + 4))) == (Int.pow(2, (n + 4)) * k_1_0_0)) by {  // sub-goal of `by` (Lean state) // @tac 2398-2402
+                  // [TACTIC: Ring]
+                }
+                // [TACTIC: exact ⟨ k , by ring ⟩ ⟨ k , by ring ⟩]
+                assert (if ((Int.pow(2, (n + 4)) as int)) == 0 then (((k_1_0_0 * Int.pow(2, (n + 4))) as int)) == 0 else (((k_1_0_0 * Int.pow(2, (n + 4))) as int)) % ((Int.pow(2, (n + 4)) as int)) == 0);  // goal closed by `exact ⟨…⟩` (Lean state)
+                // UNCITED-APPLIED internal ×55 [exec 383 2383-2405]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_pf_add_zero ×4, Mathlib.Tactic.Ring.add_mul ×4, Mathlib.Tactic.Ring.mul_add ×4, Mathlib.Tactic.Ring.mul_zero ×4 (+23 more heads, ×39)
+}
+

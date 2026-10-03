@@ -1,23 +1,12 @@
-// CLOSED LEMMA for failing line aime_1984_p1-22 (theorem aime_1984_p1, Dafny line 22, OOR)
-// closes with: K4 (types) — single
-// added: RatCastInjective(E, Rat.of_int(0)) [Mathlib Rat.cast_injective, added to work copy]
-// Dafny: finished with 10 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_002/aime_1984_p1-22/K4.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line aime_1984_p1-22: theorem aime_1984_p1, Dafny line 22 (OOR: Verification out of resource (cert_identity_2))
+// failing Dafny line: ensures Rat.add(Rat.sub(u((n + 1)), Rat.add(u(0), Rat.add(Rat.of_int(n), Rat.of_int(1)))), Rat.sub(Rat.add(u(0), Rat.add(Rat.of_int(n), Rat.of_int(1))), u((n + 1)))) == Rat.of_int(0)
+// Lean step: h₂
+// hypotheses: 0 facts Z3 had at the line (goal itself removed: 0; facts derived inside the helper lemma's own body removed: 1); nothing assumed beyond the facts in scope
+// not closed: tried H0=failed, K2=oor, K4=failed, K2K4=failed, SC_b=failed; this file is the honest base attempt
+// Dafny: finished with 3 verified, 2 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// k_ablate shard_002, line aime_1984_p1-22, variant K4
-// K4: Rat.cast_injective (exact Mathlib), lemma call; its precondition is checked
-include "../_lib/library_new.dfy"
+include "../dafny/aime_1984_p1.dfy"
+lemma {:induction false} vc_aime_1984_p1_L22(n: int, u: nat -> Rat.rat)
+  ensures   Rat.add(Rat.sub(u(n + 1), Rat.add(u(0), Rat.add(Rat.of_int(n), Rat.of_int(1)))), Rat.sub(Rat.add(u(0), Rat.add(Rat.of_int(n), Rat.of_int(1))), u(n + 1))) == Rat.of_int(0)
+{ }
 
-// Lean (Mathlib): Rat.cast_injective : Function.Injective ((↑) : ℚ → α)  [DivisionRing α] [CharZero α], α = ℝ
-// (to_real is the library's model of the cast ℚ → ℝ, MathPrelude: Rat.cast_def)
-lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)
-  requires a.to_real() == b.to_real()
-  ensures a == b
-
-lemma {:induction false} vc_aime_1984_p1_L22_K4(n: int, u: nat -> Rat.rat)
-  requires 0 <= n
-  ensures  Rat.add(Rat.sub(u(n + 1), Rat.add(u(0), Rat.add(Rat.of_int(n), Rat.of_int(1)))), Rat.sub(Rat.add(u(0), Rat.add(Rat.of_int(n), Rat.of_int(1))), u(n + 1))) == Rat.of_int(0)
-{
-  RatCastInjective(Rat.add(Rat.sub(u(n + 1), Rat.add(u(0), Rat.add(Rat.of_int(n), Rat.of_int(1)))), Rat.sub(Rat.add(u(0), Rat.add(Rat.of_int(n), Rat.of_int(1))), u(n + 1))), Rat.of_int(0));  // K4: ℚ is a normalised structure (cast injective)
-}

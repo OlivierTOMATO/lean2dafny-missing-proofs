@@ -1,25 +1,11 @@
-// CLOSED LEMMA for failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-266 (theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 266, OOR)
-// closes with: K1+K4 (instance, types) — multi
-// added: IntMulNonneg(k_1_0_2_0, Int.pow(2, n + 4)); NatDvdIffModEqZero(Int.pow(2, n + 4), k_1_0_2_0 * Int.pow(2, n + 4)); ghost var q: nat := k_1_0_2_0; assert k_1_0_2_0 * Int.pow(2, n + 4) == Int.pow(2, n + 4) * q;
-// Dafny: finished with 69 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_047/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-266/L266_K1K4.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-266: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 266 (OOR: Verification out of resource (induction_helper_1))
+// failing Dafny line: assert (if ((Int.pow(2, (n + 4)) as int)) == 0 then (((k * Int.pow(2, (n + 4))) as int)) == 0 else (((k * Int.pow(2, (n + 4))) as int)) % ((Int.pow(2, (n + 4)) as int)) == 0);
+// Lean step: h₈
+// hypotheses: 31 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: L266_K1K4 — 
+// Dafny: finished with 69 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Line lemma for failing line 266 of numbertheory_3pow2pownm1mod2pownp3eq2pownp2 (OOR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "/home/changjie/lean2dafny_research/agents_tac/wt_integ5/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
-
-// ========================================================================================
-// FAILING LINE 266 (OOR) in induction_helper_1: Verification out of resource (induction_helper_1)
-//   dafny |                   assert (if ((Int.pow(2, (n + 4)) as int)) == 0 then (((k * Int.pow(2, (n + 4))) as int)) == 0 else (((k * Int.pow(2, (n + 4))) as int)) % ((Int.pow(2, (n + 4)) as int)) == 0);  // goal closed by `exact ⟨…⟩` (Lean state)
-//   statement kind: have / step assertion
-// inside Lean have h₈, Lean lines 91-92:
-//   lean  |             have h₈ : 2 ^ (n + 4) ∣ k * 2 ^ (n + 4) := by
-//   lean  |               exact ⟨k, by ring⟩
-
-// 4 path(s) merged (paths); 30 shared facts; 4 distinct path conditions
-// ABLATION VARIANT K1K4: pair K1+K4
+include "../dafny/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L266(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
   requires 0 <= n
   requires 0 <= k_1_0_2
@@ -52,10 +38,11 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L266(k_1
   requires k_1_0_2_0 * Int.pow(2, n + 4) == Int.pow(2, n + 4) * k_1_0_2_0
   requires Int.pow(2, n + 4) != 0
   requires ((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))
-  ensures  k_1_0_2_0 * Int.pow(2, n + 4) % Int.pow(2, n + 4) == 0
+  ensures   k_1_0_2_0 * Int.pow(2, n + 4) % Int.pow(2, n + 4) == 0
 {
   IntMulNonneg(k_1_0_2_0, Int.pow(2, n + 4));
   NatDvdIffModEqZero(Int.pow(2, n + 4), k_1_0_2_0 * Int.pow(2, n + 4));  // Nat.dvd_iff_mod_eq_zero
   ghost var q: nat := k_1_0_2_0;  // Lean witness k
   assert k_1_0_2_0 * Int.pow(2, n + 4) == Int.pow(2, n + 4) * q;  // Lean `by ring` sub-goal (already in requires)
 }
+

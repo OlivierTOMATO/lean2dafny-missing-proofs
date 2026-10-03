@@ -1,27 +1,11 @@
-// CLOSED LEMMA for failing line amc12b_2020_p21-656 (theorem amc12b_2020_p21, Dafny line 656, ERR)
-// closes with: K3 (locality) — base
-// added: nothing (line lemma standalone)
-// Dafny: verifies unchanged (dossier standalone check)
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/line_lemmas/ERR/amc12b_2020_p21/L656.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line amc12b_2020_p21-656: theorem amc12b_2020_p21, Dafny line 656 (ERR: assertion might not hold)
+// failing Dafny line: assert ((n as real) < (((k as real) + 16.0) * ((k as real) + 16.0))) by {
+// Lean step: nlinarith [Real.sq_sqrt (by positivity : 0 ≤ (n : ℝ)), h₁₀]
+// hypotheses: 32 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// not closed: tried H0=failed; this file is the honest base attempt
+// Dafny: finished with 20 verified, 1 error  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Line lemma for failing line 656 of amc12b_2020_p21 (ERR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-include "../../../../wt_integ5/out/amc12b_2020_p21.dfy"
-
-// ========================================================================================
-// FAILING LINE 656 (ERR) in amc12b_2020_p21: assertion might not hold
-//   dafny |                       assert ((n as real) < (((k as real) + 16.0) * ((k as real) + 16.0))) by { // @tac 4651-4718
-//   statement kind: have / step assertion
-//   @tac 4651-4718 | Lean: nlinarith [Real.sq_sqrt (by positivity : 0 ≤ (n : ℝ)), h₁₀]
-//        before-goal ⊢ ↑n < (↑k + (16 : ℝ)) ^ (2 : ℕ)
-//        before-goal ⊢ (70 / 70 : ℝ) = (1 : ℝ)
-// Lean have h₁₂, Lean lines 89-90:
-//   lean  |         have h₁₂ : (n : ℝ) < (k + 16 : ℝ) ^ 2 := by
-//   lean  |           nlinarith [Real.sq_sqrt (by positivity : 0 ≤ (n : ℝ)), h₁₀]
-
-// 1 path(s) merged (joined); 32 shared facts; 1 distinct path conditions
+include "../dafny/amc12b_2020_p21.dfy"
 lemma {:induction false} vc_amc12b_2020_p21_L656(S: set<nat>, k_0_0_0_0_0_0_0_0_2: int, k_0_0_0_0_0_0_0_0_3: int, k_0_0_0_0_0_0_0_0_5: int, k_0_0_0_0_0_0_0_0_5_0: int, k_0_0_0_0_0_0_0_0_6: int, n_0_0_0_0: int)
   requires 0 <= k_0_0_0_0_0_0_0_0_5
   requires forall n_1: int :: 0 <= n_1 ==> (n_1 in S) == (0 < n_1 && ((n_1 as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n_1 as real))) as real))
@@ -55,6 +39,25 @@ lemma {:induction false} vc_amc12b_2020_p21_L656(S: set<nat>, k_0_0_0_0_0_0_0_0_
   requires ((0.0 < (n_0_0_0_0 as real)) && (0.0 < (n_0_0_0_0 as real)) && (0.0 <= (n_0_0_0_0 as real))) || ((n_0_0_0_0 as real) <= 0.0)
   requires ((Real.sqrt((n_0_0_0_0 as real)) - ((k_0_0_0_0_0_0_0_0_5_0 as real) + 16.0) < 0.0) && (Real.sqrt((n_0_0_0_0 as real)) - ((k_0_0_0_0_0_0_0_0_5_0 as real) + 16.0) < 0.0) && (Real.sqrt((n_0_0_0_0 as real)) - ((k_0_0_0_0_0_0_0_0_5_0 as real) + 16.0) <= 0.0)) || (0.0 <= Real.sqrt((n_0_0_0_0 as real)) - ((k_0_0_0_0_0_0_0_0_5_0 as real) + 16.0))
   requires Real.sqrt((n_0_0_0_0 as real)) * Real.sqrt((n_0_0_0_0 as real)) == (n_0_0_0_0 as real)
-  ensures  (n_0_0_0_0 as real) < ((k_0_0_0_0_0_0_0_0_5_0 as real) + 16.0) * ((k_0_0_0_0_0_0_0_0_5_0 as real) + 16.0)
-{ }
+  ensures   (n_0_0_0_0 as real) < ((k_0_0_0_0_0_0_0_0_5_0 as real) + 16.0) * ((k_0_0_0_0_0_0_0_0_5_0 as real) + 16.0)
+{
+                        assert (0.0 <= (n_0_0_0_0 as real)) by {  // sub-goal of `by` (Lean state) // @tac 4679-4689
+                          // [TACTIC: Positivity]
+                        }
+                        // [TACTIC: «Nlinarith[_]At___» [ Real.sq_sqrt ( by positivity : 0 ≤ ( n : ℝ ) ) , h₁₀ ]]
+                        // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 4651-4718 exec 1131)
+                        // UNCITED-APPLIED Linarith.mul_neg: certificate piece `(16 : ℝ) * (√↑n - (↑k + (16 : ℝ))) < (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: ((Real.sqrt((n as real)) - ((k as real) + 16.0)) < 0.0); (16.0 > 0.0)
+                        if (0.0 <= (k_0_0_0_0_0_0_0_0_2 as real)) && ((Real.sqrt((n_0_0_0_0 as real)) - ((k_0_0_0_0_0_0_0_0_2 as real) + 16.0)) <= 0.0) { cert_piece_15(S, k_0_0_0_0_0_0_0_0_2, n_0_0_0_0); }  // cert: mul_nonneg_of_nonpos_of_nonpos
+                        if ((Real.sqrt((n_0_0_0_0 as real)) - ((k_0_0_0_0_0_0_0_0_2 as real) + 16.0)) <= 0.0) && (0.0 <= Real.sqrt((n_0_0_0_0 as real))) { cert_piece_16(S, k_0_0_0_0_0_0_0_0_2, n_0_0_0_0); }  // cert: mul_nonneg_of_nonpos_of_nonpos
+                        // UNCITED-APPLIED add_lt_of_neg_of_le ×2: certificate sums not stated: partial sums (subterms of a larger recorded sum of this certificate), e.g. `(16 : ℝ) * (√↑n - (↑k + (16 : ℝ))) + ((↑k + (16 : ℝ)) ^ (2 : ℕ) - ↑n) + -(√↑n ^ (2 : ℕ) - ↑n) + -(-↑k * (√↑n - (↑k + (1…`
+                        // UNCITED-APPLIED Linarith.lt_of_lt_of_eq: certificate sum `(16 : ℝ) * (√↑n - (↑k + (16 : ℝ))) + ((↑k + (16 : ℝ)) ^ (2 : ℕ) - ↑n) + -(√↑n ^ (2 : ℕ) - ↑n) < (0 : ℝ)` not stated: a partial sum (a subterm of a larger recorded sum of this certificate)
+                        cert_identity_17(S, k_0_0_0_0_0_0_0_0_2, n_0_0_0_0);  // cert: add_lt_of_neg_of_le
+                        // UNCITED-APPLIED internal ×225 [exec 1131 4651-4718]: applications made inside the tactic's own automation, not stated — neg_nonpos_of_nonneg ×4, add_lt_of_neg_of_le ×3, mul_nonneg_of_nonpos_of_nonpos ×2, lt_of_not_ge ×1, Nat.cast_zero ×1, sub_neg_of_lt ×1, sub_nonpos_of_le ×1, neg_eq_zero ×1, sub_eq_zero_of_eq ×1, Nat.cast_pos ×1; machinery/glue: Mathlib.Tactic.Ring.add_pf_add_zero ×8, Mathlib.Tactic.Ring.add_pf_add_lt ×8, Mathlib.Tactic.Ring.add_pf_zero_add ×8, Mathlib.Tactic.Ring.add_mul ×8 (+53 more heads, ×177) (cited in this block, not counted here: Real.sq_sqrt [Lean recorded ×1], le_of_lt [Lean recorded ×2])
+                        // UNCITED-APPLIED internal ×6 [exec 1144 4651-4718]: applications made inside the tactic's own automation, not stated — Nat.cast_zero ×1; machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1
+                        // UNCITED-APPLIED Nat.cast_zero: cast target unknown (Lean applies it at ℝ and ℤ in this proof; the record does not say which)
+                        if ((0.0) < ((n_0_0_0_0 as real))) { LeOfLt(0.0, (n_0_0_0_0 as real)); }  // cite: le_of_lt [applied by the tactic, not named in it]
+                        if (((Real.sqrt((n_0_0_0_0 as real)) - ((k_0_0_0_0_0_0_0_0_2 as real) + 16.0))) < (0.0)) { LeOfLt((Real.sqrt((n_0_0_0_0 as real)) - ((k_0_0_0_0_0_0_0_0_2 as real) + 16.0)), 0.0); }  // cite: le_of_lt [applied by the tactic, not named in it]
+                        assert (0.0 <= ((n_0_0_0_0 as real)));  // precondition of RealSqSqrt (Lean: Real.sq_sqrt)
+                        RealSqSqrt((n_0_0_0_0 as real));  // cite: Real.sq_sqrt
+}
 

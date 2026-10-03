@@ -1,21 +1,15 @@
-// CLOSED LEMMA for failing line aime_1984_p1-471 (theorem aime_1984_p1, Dafny line 471, OOR)
-// closes with: K1+K5 (instance, automation lemma) — multi
-// added: add lemma {:axiom} NsmulEqMulRat(n: nat, a: Rat.rat) ensures Rat.nsmul(n, a) == Rat.mul(Rat.of_int(n), a) [Mathlib nsmul_eq_mul]; body: FinsetSumConstRat(range(49), u(0)); FinsetCardRange(49); NsmulEqMulRat(49, u(0));
-// Dafny: finished with 43 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_003/aime_1984_p1-471/K1K5.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line aime_1984_p1-471: theorem aime_1984_p1, Dafny line 471 (OOR: Verification out of resource (aime_1984_p1))
+// failing Dafny line: assert (Rat.add(Rat.sum(range(49), ((k: nat) => u(0))), Rat.sum(range(49), ((k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(k), Rat.of_int(1)))))) == Rat.add(Rat.mul(Rat.of_int(49), u(0)), Rat.s
+// Lean step: simp [Finset.sum_const, Finset.card_range]
+// hypotheses: 22 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K5 — NsmulEqMulRat(49, u(0)) [Mathlib nsmul_eq_mul, internal simp record; not in library, added to work copy]
+// Dafny: finished with 43 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-include "../../../../../wt_integ5/out/aime_1984_p1.dfy"
-
-// k_ablate_shard_003 aime_1984_p1-471 variant K1K5
-// base: line_lemmas/OOR/aime_1984_p1/L471.dfy
-// pair K1+K5
-
-// Lean (Mathlib): @nsmul_eq_mul : ∀ [NonAssocSemiring R] (n : ℕ) (a : R), n • a = ↑n * a   (R = ℚ)
+include "../dafny/aime_1984_p1.dfy"
 lemma {:axiom} NsmulEqMulRat(n: nat, a: Rat.rat)
   ensures Rat.nsmul(n, a) == Rat.mul(Rat.of_int(n), a)
 
-lemma {:induction false} vc_aime_1984_p1_L471_K1K5(u: nat -> Rat.rat)
+lemma {:induction false} vc_aime_1984_p1_L471(u: nat -> Rat.rat)
   requires forall n_1: int :: 0 <= n_1 ==> u.requires(n_1 + 1) && u.requires(n_1)
   requires forall n_1: int :: 0 <= n_1 ==> u(n_1 + 1) == Rat.add(u(n_1), Rat.of_int(1))
   requires Rat.sum(range(98), ((k: nat) => u(k + 1))) == Rat.of_int(137)
@@ -38,9 +32,14 @@ lemma {:induction false} vc_aime_1984_p1_L471_K1K5(u: nat -> Rat.rat)
   requires |range(49)| == 49
   requires Rat.mul(Rat.of_int(49), u(0)).Rational?
   requires Rat.add(Rat.mul(Rat.of_int(49), u(0)), Rat.sum(range(49), ((v_1_32_k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_1_32_k), Rat.of_int(1)))))).Rational?
-  ensures  Rat.add(Rat.sum(range(49), ((v_1_0_47_k: nat) => u(0))), Rat.sum(range(49), ((v_1_32_k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_1_32_k), Rat.of_int(1)))))) == Rat.add(Rat.mul(Rat.of_int(49), u(0)), Rat.sum(range(49), ((v_1_32_k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_1_32_k), Rat.of_int(1))))))
+  ensures   Rat.add(Rat.sum(range(49), ((v_1_0_47_k: nat) => u(0))), Rat.sum(range(49), ((v_1_32_k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_1_32_k), Rat.of_int(1)))))) == Rat.add(Rat.mul(Rat.of_int(49), u(0)), Rat.sum(range(49), ((v_1_32_k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_1_32_k), Rat.of_int(1))))))
 {
-  FinsetSumConstRat(range(49), u(0));  // Lean: Finset.sum_const
-  FinsetCardRange(49);  // Lean: Finset.card_range
   NsmulEqMulRat(49, u(0));  // Lean simp internal: nsmul_eq_mul
+          // [TACTIC: «_<;>_» [ Finset.sum_const , Finset.card_range ] simp [ Finset.sum_const , Finset.card_range ] simp [ Finset.sum_const , Finset.card_range ] <;> ring]
+          // [TACTIC: simp [ Finset.sum_const , Finset.card_range ]]
+          FinsetSumConstRat(range(49), u(0));  // cite: Finset.sum_const
+          FinsetCardRange(49);  // cite: Finset.card_range
+          // `simp` closed the goal; the rest of the chain did not run
+          // UNCITED-APPLIED internal ×8 [exec 675 3298-3340]: applications made inside the tactic's own automation, not stated — nsmul_eq_mul ×1; machinery/glue: Eq.trans ×3, congrArg ×2, of_eq_true ×1, eq_self ×1 (cited in this block, not counted here: Finset.card_range [Lean recorded ×1], Finset.sum_const [Lean recorded ×1])
 }
+

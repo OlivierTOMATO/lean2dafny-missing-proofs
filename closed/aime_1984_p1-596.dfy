@@ -1,29 +1,23 @@
-// CLOSED LEMMA for failing line aime_1984_p1-596 (theorem aime_1984_p1, Dafny line 596, OOR)
-// closes with: K3+K4 (locality, types) — multi
-// added: own lemma with no requires: ensures Rat.add(Rat.mul(Rat.of_int(49), Rat.div(Rat.neg(Rat.of_int(2357)), Rat.of_int(49))), Rat.of_int(2450)) == Rat.of_int(93) { RatCastNeg(Rat.of_int(2357)); RatCastInjective(<lhs>, Rat.of_int(93)); } + library lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat) requires a.to_real() == b.to_real() ensures a == b  [Mathlib Rat.cast_injective]; lemma {:axiom} RatCastNeg(q: Rat.rat) ensures Rat.neg(q).to_real() == -q.to_real()  [Mathlib Rat.cast_neg]
-// Dafny: finished with 2 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_003/aime_1984_p1-596/K3K4b.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line aime_1984_p1-596: theorem aime_1984_p1, Dafny line 596 (OOR: Verification out of resource (aime_1984_p1))
+// failing Dafny line: assert (Rat.add(Rat.mul(Rat.of_int(49), Rat.div(Rat.neg(Rat.of_int(2357)), Rat.of_int(49))), Rat.of_int(2450)) == Rat.of_int(93)) by {
+// Lean step: norm_num
+// hypotheses: 0 facts Z3 had at the line; this variant also drops 24 hypotheses; nothing assumed beyond the facts in scope
+// how it closes: K3K4b — 
+// Dafny: finished with 2 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-include "../../../../../wt_integ5/out/aime_1984_p1.dfy"
-
-// k_ablate_shard_003 aime_1984_p1-596 variant K3K4b
-// base: line_lemmas/OOR/aime_1984_p1/L596.dfy
-// pair K3+K4: no hypotheses (Lean's norm_num goal is ground; sufficiency) + Rat.cast_neg + Rat.cast_injective
-
-// Lean (Mathlib): @Rat.cast_injective : Function.Injective (Rat.cast : ℚ → α)  (α = ℝ, a char-zero
-//   division ring; to_real is Rat.cast to ℝ per MathPrelude `Lean: Rat.cast_def`)
+include "../dafny/aime_1984_p1.dfy"
 lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)
   requires a.to_real() == b.to_real()
   ensures a == b
-
-// Lean (Mathlib): @Rat.cast_neg : ∀ (q : ℚ), ↑(-q) = -↑q   (α = ℝ)
 lemma {:axiom} RatCastNeg(q: Rat.rat)
   ensures Rat.neg(q).to_real() == -q.to_real()
 
-lemma {:induction false} vc_aime_1984_p1_L596_K3K4b(u: nat -> Rat.rat)
-  ensures  Rat.add(Rat.mul(Rat.of_int(49), Rat.div(Rat.neg(Rat.of_int(2357)), Rat.of_int(49))), Rat.of_int(2450)) == Rat.of_int(93)
+lemma {:induction false} vc_aime_1984_p1_L596(u: nat -> Rat.rat)
+  ensures   Rat.add(Rat.mul(Rat.of_int(49), Rat.div(Rat.neg(Rat.of_int(2357)), Rat.of_int(49))), Rat.of_int(2450)) == Rat.of_int(93)
 {
   RatCastNeg(Rat.of_int(2357));
   RatCastInjective(Rat.add(Rat.mul(Rat.of_int(49), Rat.div(Rat.neg(Rat.of_int(2357)), Rat.of_int(49))), Rat.of_int(2450)), Rat.of_int(93));
+              // [TACTIC: «Norm_num[_]At___»]
+              // UNCITED-APPLIED internal ×19 [exec 819 3649-3657]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×4, Mathlib.Meta.NormNum.isRat_mul ×2, Mathlib.Meta.NormNum.IsNat.to_isInt ×2, of_eq_true ×1 (+10 more heads, ×10)
 }
+

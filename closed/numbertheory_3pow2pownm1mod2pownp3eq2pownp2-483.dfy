@@ -1,15 +1,13 @@
-// CLOSED LEMMA for failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-483 (theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 483, OOR)
-// closes with: K2 (computation) — single
-// added: library copy with MathPrelude Int.pow recursive ensures `if k == 0 then p == 1 else p == b * pow(b, k - 1)` removed (only change; kinds/work/shard_050/powlib)
-// Dafny: finished with 39 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_050/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-483/K2pow.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-483: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 483 (OOR: Verification out of resource (numbertheory_3pow2pownm1mod2pownp3eq2pownp2))
+// failing Dafny line: NatCastAddInt((1 + Int.pow(2, (n + 2))), (k * Int.pow(2, (n + 3))));
+// Lean step: h₂
+// hypotheses: 20 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K2pow — library copy with MathPrelude Int.pow recursive ensures `if k == 0 then p == 1 else p == b * pow(b, k - 1)` removed (only change; kinds/work/shard_050/powlib)
+// Dafny: finished with 39 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// NOTE: uses a MODIFIED library copy: see alt/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-483/LIBRARY_CHANGES.diff
 
-// shard_050 ablation K2pow of line_lemmas/OOR/numbertheory_3pow2pownm1mod2pownp3eq2pownp2/L483.dfy
-include "/home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_050/powlib/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
-
-
-lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483_K2pow(k_1_0: int, k_1_2: int, k_1_2_0: int, k_1_3: int, k_2: int, n: nat)
+include "alt/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-483/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
+lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483(k_1_0: int, k_1_2: int, k_1_2_0: int, k_1_3: int, k_2: int, n: nat)
   requires 0 <= n
   requires 0 <= k_1_2
   requires 0 < n
@@ -30,7 +28,8 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483_K2p
   requires Int.pow(2, n + 3) == Int.pow(2, n + 3)
   requires 0 <= 1 + Int.pow(2, n + 2)
   requires ((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3)) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0)) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3)) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0)) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3)) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0)) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3)) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0))
-  ensures  0 <= k_1_2_0 * Int.pow(2, n + 3)
+  ensures   0 <= k_1_2_0 * Int.pow(2, n + 3)
 {
 
 }
+

@@ -1,16 +1,44 @@
-// CLOSED LEMMA for failing line imo_1965_p1-1290 (theorem imo_1965_p1, Dafny line 1290, OOR)
-// closes with: K3 (locality) — single
-// added: lemma over only the if-guard (the 2 hypotheses of Linarith.mul_zero_eq) ⇒ claim; all other ~30-50 requires dropped (sufficiency test)
-// Dafny: finished with 1 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_029/imo_1965_p1-1290/K3.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line imo_1965_p1-1290: theorem imo_1965_p1, Dafny line 1290 (OOR: Verification out of resource (imo_1965_p1))
+// failing Dafny line: if (Real.cos((2.0 * x)) <= 0.0) && (((Real.sqrt((1.0 + Real.sin((2.0 * x)))) * Real.sqrt((1.0 + Real.sin((2.0 * x))))) - (1.0 + Real.sin((2.0 * x)))) == 0.0) { assert ((Real.cos((2.0 * x)) * ((Real.sq
+// Lean step: h₄
+// hypotheses: 32 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// not closed: tried H0=failed; this file is the honest base attempt
+// Dafny: finished with 0 verified, 1 error  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-include "../../../../../wt_integ5/out/imo_1965_p1.dfy"
-
-// K3 locality: the certificate piece over only the hypotheses Lean's lemma application uses
-// (requires = the if-guard of Dafny line 1290; all other 32 context facts dropped).
-lemma {:induction false} k3_L1290(x: real)
-  requires (Real.cos((2.0 * x)) <= 0.0)
-  requires (((Real.sqrt((1.0 + Real.sin((2.0 * x)))) * Real.sqrt((1.0 + Real.sin((2.0 * x))))) - (1.0 + Real.sin((2.0 * x)))) == 0.0)
-  ensures ((Real.cos((2.0 * x)) * ((Real.sqrt((1.0 + Real.sin((2.0 * x)))) * Real.sqrt((1.0 + Real.sin((2.0 * x))))) - (1.0 + Real.sin((2.0 * x))))) == 0.0)
+include "../dafny/imo_1965_p1.dfy"
+lemma {:induction false} vc_imo_1965_p1_L1290(x: real)
+  requires 0.0 <= x
+  requires x <= 2.0 * Real.pi()
+  requires 2.0 * Real.cos(x) <= abs(Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)))
+  requires abs(Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) <= Real.sqrt(2.0)
+  requires 0.0 <= Real.sqrt(1.0 + Real.sin(2.0 * x))
+  requires 0.0 <= Real.sqrt(1.0 - Real.sin(2.0 * x))
+  requires 0.0 <= Real.sqrt(2.0)
+  requires 0.0 <= Real.sqrt(1.0 + Real.sin(2.0 * x)) * Real.sqrt(1.0 - Real.sin(2.0 * x))
+  requires 0.0 <= Real.cos(2.0 * x) || Real.cos(2.0 * x) <= 0.0
+  requires ((0.0 <= Real.cos(2.0 * x)) && (((0.0 <= Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) && (((0.0 <= Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) && (Real.abs(Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) == Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)))) || (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)) < 0.0)) && (((0.0 <= Real.cos(2.0 * x)) && (Real.abs(Real.cos(2.0 * x)) == Real.cos(2.0 * x))) || (Real.cos(2.0 * x) < 0.0)) && (2.0 * Real.cos(x) <= Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) && (Real.sqrt(1.0 + Real.sin(2.0 * x)) <= Real.sqrt(2.0) + Real.sqrt(1.0 - Real.sin(2.0 * x))) && (Real.sqrt(1.0 - Real.sin(2.0 * x)) <= Real.sqrt(1.0 + Real.sin(2.0 * x))) && ((Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) * (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) == 2.0 - 2.0 * Real.cos(2.0 * x)) && (abs(Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) * abs(Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) == 2.0 - 2.0 * abs(Real.cos(2.0 * x)))) || (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)) < 0.0)) && (((Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)) <= 0.0) && (((0.0 <= Real.cos(2.0 * x)) && (Real.abs(Real.cos(2.0 * x)) == Real.cos(2.0 * x))) || (Real.cos(2.0 * x) < 0.0)) && (((Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)) <= 0.0) && (Real.abs(Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) == 0.0 - (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))))) || (0.0 < Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)))) && (2.0 * Real.cos(x) <= Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) && (Real.sqrt(1.0 - Real.sin(2.0 * x)) <= Real.sqrt(2.0) + Real.sqrt(1.0 + Real.sin(2.0 * x))) && (Real.sqrt(1.0 + Real.sin(2.0 * x)) <= Real.sqrt(1.0 - Real.sin(2.0 * x))) && ((Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) * (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) == 2.0 - 2.0 * Real.cos(2.0 * x)) && (abs(Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) * abs(Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) == 2.0 - 2.0 * abs(Real.cos(2.0 * x)))) || (0.0 < Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)))) && (0.0 <= Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)) || Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)) <= 0.0) && (abs(Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) * abs(Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) == 2.0 - 2.0 * abs(Real.cos(2.0 * x)))) || (Real.cos(2.0 * x) < 0.0)
+  requires Real.cos(2.0 * x) <= 0.0
+  requires ((0.0 <= Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) && (((0.0 <= Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) && (Real.abs(Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) == Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)))) || (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)) < 0.0)) && (((Real.cos(2.0 * x) <= 0.0) && (Real.abs(Real.cos(2.0 * x)) == 0.0 - Real.cos(2.0 * x))) || (0.0 < Real.cos(2.0 * x))) && (2.0 * Real.cos(x) <= Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) && (Real.sqrt(1.0 + Real.sin(2.0 * x)) <= Real.sqrt(2.0) + Real.sqrt(1.0 - Real.sin(2.0 * x))) && (Real.sqrt(1.0 - Real.sin(2.0 * x)) <= Real.sqrt(1.0 + Real.sin(2.0 * x))) && ((Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) * (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) == 2.0 + 2.0 * Real.cos(2.0 * x)) && (abs(Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) * abs(Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) == 2.0 - 2.0 * abs(Real.cos(2.0 * x)))) || (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)) < 0.0)
+  requires Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)) <= 0.0
+  requires ((Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)) <= 0.0) && (Real.abs(Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))) == 0.0 - (Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x))))) || (0.0 < Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.0 - Real.sin(2.0 * x)))
+  requires ((Real.cos(2.0 * x) <= 0.0) && (Real.abs(Real.cos(2.0 * x)) == 0.0 - Real.cos(2.0 * x))) || (0.0 < Real.cos(2.0 * x))
+  requires 2.0 * Real.cos(x) <= Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))
+  requires Real.sqrt(1.0 - Real.sin(2.0 * x)) <= Real.sqrt(2.0) + Real.sqrt(1.0 + Real.sin(2.0 * x))
+  requires Real.sqrt(1.0 + Real.sin(2.0 * x)) <= Real.sqrt(1.0 - Real.sin(2.0 * x))
+  requires 0.0 <= 1.0 + Real.sin(2.0 * x)
+  requires 0.0 <= 1.0 - Real.sin(2.0 * x)
+  requires 0.0 <= 2.0
+  requires Real.cos(2.0 * x) * Real.cos(2.0 * x) + Real.sin(2.0 * x) * Real.sin(2.0 * x) == 1.0
+  requires (1 as real) == 1.0
+  requires (0 as real) == 0.0
+  requires 0.0 <= Real.sqrt(1.0 - Real.sin(2.0 * x)) * Real.sqrt(1.0 - Real.sin(2.0 * x))
+  requires 0.0 <= (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) * (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x)))
+  requires 0.0 <= Real.sqrt(1.0 + Real.sin(2.0 * x)) * Real.sqrt(1.0 + Real.sin(2.0 * x))
+  requires (((Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) * (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) - (2.0 + 2.0 * Real.cos(2.0 * x)) < 0.0) && ((Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) * (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) - (2.0 + 2.0 * Real.cos(2.0 * x)) < 0.0) && ((Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) * (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) - (2.0 + 2.0 * Real.cos(2.0 * x)) <= 0.0)) || (0.0 <= (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) * (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) - (2.0 + 2.0 * Real.cos(2.0 * x)))
+  requires ((2.0 + 2.0 * Real.cos(2.0 * x) - (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) * (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) < 0.0) && (2.0 + 2.0 * Real.cos(2.0 * x) - (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) * (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) < 0.0) && (2.0 + 2.0 * Real.cos(2.0 * x) - (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) * (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) <= 0.0)) || (0.0 <= 2.0 + 2.0 * Real.cos(2.0 * x) - (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))) * (Real.sqrt(1.0 - Real.sin(2.0 * x)) - Real.sqrt(1.0 + Real.sin(2.0 * x))))
+  requires Real.sqrt(1.0 - Real.sin(2.0 * x)) * Real.sqrt(1.0 - Real.sin(2.0 * x)) == 1.0 - Real.sin(2.0 * x)
+  requires Real.sqrt(1.0 + Real.sin(2.0 * x)) * Real.sqrt(1.0 + Real.sin(2.0 * x)) == 1.0 + Real.sin(2.0 * x)
+  requires (0.0 <= Real.sqrt(1.0 - Real.sin(2.0 * x)) * Real.sqrt(1.0 - Real.sin(2.0 * x))) || (Real.sqrt(1.0 - Real.sin(2.0 * x)) * Real.sqrt(1.0 - Real.sin(2.0 * x)) < 0.0)
+  ensures   false /*VC_GAP*/
 { }
+

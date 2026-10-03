@@ -1,12 +1,12 @@
-// CLOSED LEMMA for failing line imo_1966_p4-348 (theorem imo_1966_p4, Dafny line 348, OOR)
-// closes with: K2 (computation) — single
-// added: work-copy library with Real.pow made opaque and its recursive postcondition removed (only change)
-// Dafny: finished with 80 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_034/imo_1966_p4-348/K2pow.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line imo_1966_p4-348: theorem imo_1966_p4, Dafny line 348 (OOR: Verification out of resource (imo_1966_p4))
+// failing Dafny line: assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m) * x)), Real.sin((Real.pow(2.0, m) * 
+// Lean step: field_simp [hcos, hsin, hcos', hsin']
+// hypotheses: 32 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K2pow — work-copy library with Real.pow made opaque and its recursive postcondition removed (only change)
+// Dafny: finished with 80 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// NOTE: uses a MODIFIED library copy: see alt/imo_1966_p4-348/LIBRARY_CHANGES.diff
 
-include "/home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_034/_powlib/out/imo_1966_p4.dfy"
-
+include "alt/imo_1966_p4-348/out/imo_1966_p4.dfy"
 lemma {:induction false} vc_imo_1966_p4_L348(m_1_0: nat, n: int, x: real)
   requires 0 <= n
   requires forall k_1: nat :: 0 < k_1 ==> (forall m_2: int :: x != Real.div((m_2 as real) * Real.pi(), Real.pow(2.0, k_1)))
@@ -40,7 +40,8 @@ lemma {:induction false} vc_imo_1966_p4_L348(m_1_0: nat, n: int, x: real)
   requires (Real.cos(Real.pow(2.0, m_1_0) * x) != 0.0) || (Real.cos(Real.pow(2.0, m_1_0) * x) == 0.0)
   requires ((Real.cos(Real.pow(2.0, m_1_0) * x) != 0.0) && (Real.sin(Real.pow(2.0, m_1_0) * x) * 2.0 != 0.0) && (Real.cos(Real.pow(2.0, m_1_0) * x) * (Real.sin(Real.pow(2.0, m_1_0) * x) * 2.0) != 0.0)) || (!(Real.cos(Real.pow(2.0, m_1_0) * x) != 0.0 && Real.sin(Real.pow(2.0, m_1_0) * x) * 2.0 != 0.0))
   requires Real.sin(Real.pow(2.0, m_1_0) * x) * (2.0 * (Real.sin(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x))) == (Real.cos(Real.pow(2.0, m_1_0) * x) * (2.0 * (Real.sin(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x))) - Real.sin(Real.pow(2.0, m_1_0) * x) * (2.0 * (Real.cos(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)) - 1.0)) * (Real.cos(Real.pow(2.0, m_1_0) * x) * (Real.sin(Real.pow(2.0, m_1_0) * x) * 2.0))
-  ensures  Real.div(1.0, Real.cos(Real.pow(2.0, m_1_0) * x)) * (Real.div(1.0, Real.sin(Real.pow(2.0, m_1_0) * x)) * (1.0 / 2.0)) == Real.div(Real.cos(Real.pow(2.0, m_1_0) * x), Real.sin(Real.pow(2.0, m_1_0) * x)) - Real.div(2.0 * (Real.cos(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)) - 1.0, 2.0 * (Real.sin(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)))
+  ensures   Real.div(1.0, Real.cos(Real.pow(2.0, m_1_0) * x)) * (Real.div(1.0, Real.sin(Real.pow(2.0, m_1_0) * x)) * (1.0 / 2.0)) == Real.div(Real.cos(Real.pow(2.0, m_1_0) * x), Real.sin(Real.pow(2.0, m_1_0) * x)) - Real.div(2.0 * (Real.cos(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)) - 1.0, 2.0 * (Real.sin(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)))
 {
 
 }
+

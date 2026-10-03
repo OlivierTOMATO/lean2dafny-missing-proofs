@@ -1,14 +1,12 @@
-// CLOSED LEMMA for failing line numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-447 (theorem numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown, Dafny line 447, OOR)
-// closes with: K1 (instance) — single
-// added: induction_helper_1(m, n, f, t_3_5_0);  // h_chain t at Lean's argument (h_chain := h₃ := induction) [K1.dfy]
-// Dafny: finished with 44 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_053/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-447/K1.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-447: theorem numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown, Dafny line 447 (OOR: Verification out of resource (numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown))
+// failing Dafny line: assert NatDvd(f(Int.pow(2, m)), f(Int.pow(2, (m + t))));
+// Lean step: h₄
+// hypotheses: 25 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: own-lemma — nothing: the file's own proof body, hypotheses = facts in scope minus the goal and minus the block's own asserts
+// Dafny: finished with 27 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// shard_053 ablation K1 of line 447 (copy of line_lemmas/OOR/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown/L447.dfy main lemma)
-include "../../../../../wt_integ5/out/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
-
-lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447_K1(f: nat -> nat, k_0_2_3_2_1_0: int, k_1_1_0_1_0: int, m: nat, n: int, t_3_2: int, t_3_3: int, t_3_5: int, t_3_5_0: int, t_3_6: int)
+include "../dafny/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
+lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447(f: nat -> nat, k_0_2_3_2_1_0: int, k_1_1_0_1_0: int, m: nat, n: int, t_3_2: int, t_3_3: int, t_3_5: int, t_3_5_0: int, t_3_6: int)
   requires 0 <= m
   requires 0 <= n
   requires 0 <= k_0_2_3_2_1_0
@@ -34,8 +32,6 @@ lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L
   requires 0 <= Int.pow(2, m)
   requires 0 <= m + t_3_5_0
   requires 0 <= Int.pow(2, m + t_3_5_0)
-  ensures  ((((0 <= t_3_2) && (0 <= t_3_3) && (0 <= t_3_6)) || ((0 <= t_3_2) && (0 <= t_3_3) && (t_3_6 < 0)) || ((0 <= t_3_2) && (t_3_3 < 0) && (0 <= t_3_6)) || ((0 <= t_3_2) && (t_3_3 < 0) && (t_3_6 < 0)) || ((t_3_2 < 0) && (0 <= t_3_3) && (0 <= t_3_6)) || ((t_3_2 < 0) && (0 <= t_3_3) && (t_3_6 < 0)) || ((t_3_2 < 0) && (t_3_3 < 0) && (0 <= t_3_6)) || ((t_3_2 < 0) && (t_3_3 < 0) && (t_3_6 < 0))) ==> (NatDvd(f(Int.pow(2, m)), f(Int.pow(2, m + t_3_5_0))) || (f(Int.pow(2, m)) == 0 ==> f(Int.pow(2, m + t_3_5_0)) == 0)))
-        && ((((0 <= t_3_2) && (0 <= t_3_3) && (0 <= t_3_6)) || ((0 <= t_3_2) && (0 <= t_3_3) && (t_3_6 < 0)) || ((0 <= t_3_2) && (t_3_3 < 0) && (0 <= t_3_6)) || ((0 <= t_3_2) && (t_3_3 < 0) && (t_3_6 < 0)) || ((t_3_2 < 0) && (0 <= t_3_3) && (0 <= t_3_6)) || ((t_3_2 < 0) && (0 <= t_3_3) && (t_3_6 < 0)) || ((t_3_2 < 0) && (t_3_3 < 0) && (0 <= t_3_6)) || ((t_3_2 < 0) && (t_3_3 < 0) && (t_3_6 < 0))) ==> (NatDvd(f(Int.pow(2, m)), f(Int.pow(2, m + t_3_5_0))) || (f(Int.pow(2, m)) != 0 ==> f(Int.pow(2, m + t_3_5_0)) % f(Int.pow(2, m)) == 0)))
-{
-  induction_helper_1(m, n, f, t_3_5_0);  // h_chain t: Lean inst record (h_final.h₄)
-}
+  ensures   ((((0 <= t_3_2) && (0 <= t_3_3) && (0 <= t_3_6)) || ((0 <= t_3_2) && (0 <= t_3_3) && (t_3_6 < 0)) || ((0 <= t_3_2) && (t_3_3 < 0) && (0 <= t_3_6)) || ((0 <= t_3_2) && (t_3_3 < 0) && (t_3_6 < 0)) || ((t_3_2 < 0) && (0 <= t_3_3) && (0 <= t_3_6)) || ((t_3_2 < 0) && (0 <= t_3_3) && (t_3_6 < 0)) || ((t_3_2 < 0) && (t_3_3 < 0) && (0 <= t_3_6)) || ((t_3_2 < 0) && (t_3_3 < 0) && (t_3_6 < 0))) ==> (NatDvd(f(Int.pow(2, m)), f(Int.pow(2, m + t_3_5_0))) || (f(Int.pow(2, m)) == 0 ==> f(Int.pow(2, m + t_3_5_0)) == 0)))
+{ }
+

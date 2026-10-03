@@ -1,17 +1,17 @@
-// CLOSED LEMMA for failing line amc12_2001_p5-38 (theorem amc12_2001_p5, Dafny line 38, OOR)
-// closes with: K3 (locality) — single
-// added: dropped the 2 requires mentioning Int.pow/factorial; kept 0 <= x (Lean simp used no hypotheses)
-// Dafny: finished with 2 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_009/amc12_2001_p5-38/K3.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line amc12_2001_p5-38: theorem amc12_2001_p5, Dafny line 38 (OOR: Verification out of resource (amc12_2001_p5))
+// failing Dafny line: ensures (!(Even(x)) <==> ((x % 2) == 1))
+// Lean step: simp [Nat.even_iff, Nat.mod_eq_zero_of_dvd]
+// hypotheses: 5 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// not closed: tried H0=oor; this file is the honest base attempt
+// Dafny: finished with 7 verified, 0 errors, 1 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// shard_009 ablation K3 for amc12_2001_p5 line 38; base = /home/changjie/lean2dafny_research/agents_tac/classify5/line_lemmas/OOR/amc12_2001_p5/L38.dfy (main lemma only)
-include "../../../../../wt_integ5/out/amc12_2001_p5.dfy"
-
-lemma {:induction false} k_L38_K3(x_1_0_0_0_0: int)
+include "../dafny/amc12_2001_p5.dfy"
+lemma {:induction false} vc_amc12_2001_p5_L38(x_1_0_0_0_0: int)
   requires 0 <= 5000
+  requires 0 <= Int.pow(2, 5000) * factorial(5000)
   requires 0 <= 10000
+  requires NatDvd(Int.pow(2, 5000) * factorial(5000), factorial(10000))
   requires 0 <= x_1_0_0_0_0
-  ensures  !Even(x_1_0_0_0_0) == (x_1_0_0_0_0 % 2 == 1)
-{
-}
+  ensures   !Even(x_1_0_0_0_0) == (x_1_0_0_0_0 % 2 == 1)
+{ }
+

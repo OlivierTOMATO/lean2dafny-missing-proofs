@@ -1,32 +1,12 @@
-// CLOSED LEMMA for failing line imo_1992_p1-5471 (theorem imo_1992_p1, Dafny line 5471, OOR)
-// closes with: K2 (computation) — single
-// added: assert (p - 1) * (q - 1) * (r - 1) == p*q*r - p*q - p*r - q*r + p + q + r - 1
-// Dafny: finished with 6 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_037/imo_1992_p1-5471/K2.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line imo_1992_p1-5471: theorem imo_1992_p1, Dafny line 5471 (OOR: Verification out of resource (imo_1992_p1))
+// failing Dafny line: assert ((-(1) + ((p * q) * r)) == ((((-(3) + ((p * 3) - ((p * q) * 3))) + ((((p * q) * r) * 3) - ((p * r) * 3))) + ((q * 3) - ((q * r) * 3))) + (r * 3)));
+// Lean step: ring_nf at hk ⊢
+// hypotheses: 30 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: K2 — assert (p - 1) * (q - 1) * (r - 1) == p*q*r - p*q - p*r - q*r + p + q + r - 1
+// Dafny: finished with 6 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// NOTE: uses a MODIFIED library copy: see alt/imo_1992_p1-5471/LIBRARY_CHANGES.diff
 
-include "../lib/library_new.dfy"
-// k_ablate shard_037 variant K2 of imo_1992_p1-5471
-
-// Line lemma for failing line 5471 of imo_1992_p1 (OOR), integ5 translation; merged from its path
-// lemmas (vc_extract, encode-only): requires = facts shared by all paths, then the disjunction
-// of the rest of each path; ensures = the line's claim.  Equivalent to the query Z3 gets at the line.
-
-
-// ========================================================================================
-// FAILING LINE 5471 (OOR) in imo_1992_p1: Verification out of resource (imo_1992_p1)
-//   dafny |         assert ((-(1) + ((p * q) * r)) == ((((-(3) + ((p * 3) - ((p * q) * 3))) + ((((p * q) * r) * 3) - ((p * r) * 3))) + ((q * 3) - ((q * r) * 3))) + (r * 3)));  // hypothesis hk after `ring_nf` (Lean state) // @tac-hyp 17949-17966
-//   statement kind: hypothesis after tactic (@tac-hyp)
-//   @tac-hyp 17949-17966 hk after: (-1 : ℤ) + p * q * r =
-//   (-3 : ℤ) + (p * (3 : ℤ) - p * q * (3 : ℤ)) + (p * q * r * (3 : ℤ) - p * r * (3 : ℤ)) +
-//       (q * (3 : ℤ) - q * r * (3 : ℤ)) +
-//     r * (3 : ℤ)
-// inside Lean have h₁₄, Lean lines 390-392:
-//   lean  |       have h₁₄ : p * q * r - 1 = 3 * ((p - 1) * (q - 1) * (r - 1)) := by
-//   lean  |         ring_nf at hk ⊢
-//   lean  |         <;> linarith
-
-// 1 path(s) merged (joined); 30 shared facts; 1 distinct path conditions
+include "alt/imo_1992_p1-5471/out/imo_1992_p1.dfy"
 lemma {:induction false} vc_imo_1992_p1_L5471(k_3_5: int, p: int, q: int, r: int)
   requires 1 < p
   requires p < q
@@ -58,7 +38,7 @@ lemma {:induction false} vc_imo_1992_p1_L5471(k_3_5: int, p: int, q: int, r: int
   requires Int.pow(p, 1) == p
   requires Int.pow(q, 1) == q
   requires Int.pow(r, 1) == r
-  ensures  0 - 1 + p * q * r == 0 - 3 + (p * 3 - p * q * 3) + (p * q * r * 3 - p * r * 3) + (q * 3 - q * r * 3) + r * 3
+  ensures   0 - 1 + p * q * r == 0 - 3 + (p * 3 - p * q * 3) + (p * q * r * 3 - p * r * 3) + (q * 3 - q * r * 3) + r * 3
 {
   assert (p - 1) * (q - 1) * (r - 1) == p * q * r - p * q - p * r - q * r + p + q + r - 1;
 }

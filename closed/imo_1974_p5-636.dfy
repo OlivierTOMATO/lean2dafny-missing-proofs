@@ -1,21 +1,16 @@
-// CLOSED LEMMA for failing line imo_1974_p5-636 (theorem imo_1974_p5, Dafny line 636, ERR)
-// closes with: K2 (computation) — single
-// added: K1 text + assert x * y == ((a * b) * (c * d));  (ring normal-form identity, checked)
-// Dafny: finished with 5 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_036/imo_1974_p5-636/K2.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// NOT CLOSED — failing line imo_1974_p5-636: theorem imo_1974_p5, Dafny line 636 (ERR: a postcondition could not be proved on this return path)
+// failing Dafny line: {
+// Lean step: lower_bound
+// hypotheses: 2 facts Z3 had at the line (goal itself removed: 1; facts derived inside the helper lemma's own body removed: 0); nothing assumed beyond the facts in scope
+// not closed: tried H0=failed; this file is the honest base attempt
+// Dafny: finished with 2 verified, 1 error  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// K2: normal-form identity x*y == ensures product (checked assert; ring identity Lean gets by defeq)
-// source: wt_integ5/out/imo_1974_p5.dfy lines 632-638 (cert_piece_68)
-include "../../../../../wt_integ5/library/library_new.dfy"
-lemma {:isolate_assertions} cert_piece_68(a: real, b: real, c: real, d: real, s: real)
-  requires (0.0 < (a * b))
-  requires (0.0 < (c * d))
-  ensures (0.0 < ((a * b) * (c * d)))
+include "../dafny/imo_1974_p5.dfy"
+lemma {:induction false} vc_imo_1974_p5_L636(a: real, b: real, c: real, d: real)
+  requires 0.0 < a * b
+  requires 0.0 < c * d
+  ensures   0.0 < a * b * (c * d)
 {
-  var x := (a * b);
-  var y := (c * d);
-  MulPos(x, y);
-  assert 0.0 < x * y;
-  assert x * y == ((a * b) * (c * d));
+  MulPos((a * b), (c * d));
 }
+

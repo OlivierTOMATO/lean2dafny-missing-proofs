@@ -1,15 +1,11 @@
-// CLOSED LEMMA for failing line imo_1966_p4-278 (theorem imo_1966_p4, Dafny line 278, OOR)
-// closes with: K2 (computation) — single
-// added: asserts LHS == 0.0 and RHS == 0.0 (simp's evaluated values of both sides under hsin: div_zero, sub_self; Lean's after-goal is closed)
-// Dafny: finished with 58 verified, 0 errors
-// source file on rack: /home/changjie/lean2dafny_research/agents_tac/classify5/kinds/work/shard_033/imo_1966_p4-278/K2.dfy
-// flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1 (timeout 30)
+// CLOSED — failing line imo_1966_p4-278: theorem imo_1966_p4, Dafny line 278 (OOR: Verification out of resource (imo_1966_p4))
+// failing Dafny line: assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m) * x)), Real.sin((Real.pow(2.0, m) * 
+// Lean step: field_simp [hcos, hsin, hcos', hsin']
+// hypotheses: 24 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// how it closes: own-lemma — nothing: the file's own proof body, hypotheses = facts in scope minus the goal and minus the block's own asserts
+// Dafny: finished with 55 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-// Ablation copy of line_lemmas/OOR/imo_1966_p4/L278.dfy (header comments dropped: multi-line goal comment did not parse)
-include "../../../../../wt_integ5/out/imo_1966_p4.dfy"
-
-// ABLATION K2 (shard_033)
-
+include "../dafny/imo_1966_p4.dfy"
 lemma {:induction false} vc_imo_1966_p4_L278(m_1_0: nat, n: int, x: real)
   requires 0 <= n
   requires forall k_1: nat :: 0 < k_1 ==> (forall m_2: int :: x != Real.div((m_2 as real) * Real.pi(), Real.pow(2.0, k_1)))
@@ -35,8 +31,6 @@ lemma {:induction false} vc_imo_1966_p4_L278(m_1_0: nat, n: int, x: real)
   requires Real.cos(Real.pow(2.0, m_1_0 + 1) * x) == 0.0
   requires ((Real.sin(Real.pow(2.0, m_1_0 + 1) * x) == 0.0) && (Real.div(1.0, Real.cos(Real.pow(2.0, m_1_0) * x)) * (Real.div(1.0, Real.sin(Real.pow(2.0, m_1_0) * x)) * (1.0 / 2.0)) == Real.div(Real.cos(Real.pow(2.0, m_1_0) * x), Real.sin(Real.pow(2.0, m_1_0) * x)) - Real.div(2.0 * (Real.cos(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)) - 1.0, 2.0 * (Real.sin(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x))))) || (Real.sin(Real.pow(2.0, m_1_0 + 1) * x) != 0.0)
   requires Real.sin(Real.pow(2.0, m_1_0 + 1) * x) != 0.0
-  ensures  Real.div(1.0, Real.cos(Real.pow(2.0, m_1_0) * x)) * (Real.div(1.0, Real.sin(Real.pow(2.0, m_1_0) * x)) * (1.0 / 2.0)) == Real.div(Real.cos(Real.pow(2.0, m_1_0) * x), Real.sin(Real.pow(2.0, m_1_0) * x)) - Real.div(2.0 * (Real.cos(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)) - 1.0, 2.0 * (Real.sin(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)))
-{
-  assert Real.div(1.0, Real.cos(Real.pow(2.0, m_1_0) * x)) * (Real.div(1.0, Real.sin(Real.pow(2.0, m_1_0) * x)) * (1.0 / 2.0)) == 0.0;  // simp-normalised value of LHS under hsin
-  assert Real.div(Real.cos(Real.pow(2.0, m_1_0) * x), Real.sin(Real.pow(2.0, m_1_0) * x)) - Real.div(2.0 * (Real.cos(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)) - 1.0, 2.0 * (Real.sin(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x))) == 0.0;  // simp-normalised value of RHS under hsin (0 - 0)
-}
+  ensures   Real.div(1.0, Real.cos(Real.pow(2.0, m_1_0) * x)) * (Real.div(1.0, Real.sin(Real.pow(2.0, m_1_0) * x)) * (1.0 / 2.0)) == Real.div(Real.cos(Real.pow(2.0, m_1_0) * x), Real.sin(Real.pow(2.0, m_1_0) * x)) - Real.div(2.0 * (Real.cos(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)) - 1.0, 2.0 * (Real.sin(Real.pow(2.0, m_1_0) * x) * Real.cos(Real.pow(2.0, m_1_0) * x)))
+{ }
+
