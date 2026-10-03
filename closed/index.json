@@ -1,0 +1,4048 @@
+[
+{
+"id": "aime_1983_p1-507",
+"theorem": "aime_1983_p1",
+"line": 507,
+"file": "closed/aime_1983_p1-507.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "aime_1983_p1-1057",
+"theorem": "aime_1983_p1",
+"line": 1057,
+"file": "closed/aime_1983_p1-1057.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 7 verified, 0 errors",
+"added": "DivEqIffReal(24.0*L, 2.0/5.0*L, 60.0); with lemma {:axiom} DivEqIffReal(a,c,b) requires c != 0.0 ensures a / c == b <==> a == b * c (exact Mathlib div_eq_iff, added to work copy; field_simp's simp set)"
+},
+{
+"id": "aime_1983_p3-274",
+"theorem": "aime_1983_p3",
+"line": 274,
+"file": "closed/aime_1983_p3-274.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 3 verified, 0 errors",
+"added": null
+},
+{
+"id": "aime_1983_p3-507",
+"theorem": "aime_1983_p3",
+"line": 507,
+"file": "closed/aime_1983_p3-507.dfy",
+"kind": "simplest",
+"how": "variant",
+"dafny": "finished with 1 verified, 0 errors",
+"added": null
+},
+{
+"id": "aime_1983_p3-856",
+"theorem": "aime_1983_p3",
+"line": 856,
+"file": "closed/aime_1983_p3-856.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 3 verified, 0 errors",
+"added": "FinsetProdPair(0.0 - 9.0 + Real.sqrt(61.0), 0.0 - 9.0 - Real.sqrt(61.0), {0.0 - 9.0 + Real.sqrt(61.0), 0.0 - 9.0 - Real.sqrt(61.0)}); (existing library lemma = Mathlib Finset.prod_pair, applied by Lean's simp at exec 1414)"
+},
+{
+"id": "aime_1984_p1-15",
+"theorem": "aime_1984_p1",
+"line": 15,
+"file": "closed/aime_1984_p1-15.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 10 verified, 0 errors",
+"added": "RatCastInjective(E, Rat.of_int(0)) [Mathlib Rat.cast_injective, added to work copy]"
+},
+{
+"id": "aime_1984_p1-22",
+"theorem": "aime_1984_p1",
+"line": 22,
+"file": "closed/aime_1984_p1-22.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 10 verified, 0 errors",
+"added": "RatCastInjective(E, Rat.of_int(0)) [Mathlib Rat.cast_injective, added to work copy]"
+},
+{
+"id": "aime_1984_p1-35",
+"theorem": "aime_1984_p1",
+"line": 35,
+"file": "closed/aime_1984_p1-35.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 13 verified, 0 errors",
+"added": "RatCastInjective(u(0), Rat.add(u(0), Rat.of_int(0))) [Mathlib Rat.cast_injective]"
+},
+{
+"id": "aime_1984_p1-62",
+"theorem": "aime_1984_p1",
+"line": 62,
+"file": "closed/aime_1984_p1-62.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 25 verified, 0 errors",
+"added": "RatCastInjective(u(m+1), Rat.add(u(0), Rat.add(Rat.of_int(m), Rat.of_int(1)))) [Mathlib Rat.cast_injective]"
+},
+{
+"id": "aime_1984_p1-82",
+"theorem": "aime_1984_p1",
+"line": 82,
+"file": "closed/aime_1984_p1-82.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 7 verified, 0 errors",
+"added": "RatCastNeg(q) at each Rat.neg(q) subterm [Mathlib Rat.cast_neg] + RatCastInjective(E, Rat.of_int(0)) [Mathlib Rat.cast_injective]"
+},
+{
+"id": "aime_1984_p1-90",
+"theorem": "aime_1984_p1",
+"line": 90,
+"file": "closed/aime_1984_p1-90.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 6 verified, 0 errors",
+"added": "RatCastInjective(E, Rat.of_int(0)) [Mathlib Rat.cast_injective, added to work copy]"
+},
+{
+"id": "aime_1984_p1-98",
+"theorem": "aime_1984_p1",
+"line": 98,
+"file": "closed/aime_1984_p1-98.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 7 verified, 0 errors",
+"added": "RatCastNeg(q) at each Rat.neg(q) subterm [Mathlib Rat.cast_neg] + RatCastInjective(E, Rat.of_int(0)) [Mathlib Rat.cast_injective]"
+},
+{
+"id": "aime_1984_p1-106",
+"theorem": "aime_1984_p1",
+"line": 106,
+"file": "closed/aime_1984_p1-106.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 6 verified, 0 errors",
+"added": "RatCastNeg(q) at each Rat.neg(q) subterm [Mathlib Rat.cast_neg] + RatCastInjective(E, Rat.of_int(0)) [Mathlib Rat.cast_injective]"
+},
+{
+"id": "aime_1984_p1-114",
+"theorem": "aime_1984_p1",
+"line": 114,
+"file": "closed/aime_1984_p1-114.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 7 verified, 0 errors",
+"added": "RatCastNeg(q) at each Rat.neg(q) subterm [Mathlib Rat.cast_neg] + RatCastInjective(E, Rat.of_int(0)) [Mathlib Rat.cast_injective]"
+},
+{
+"id": "aime_1984_p1-123",
+"theorem": "aime_1984_p1",
+"line": 123,
+"file": "closed/aime_1984_p1-123.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 6 verified, 0 errors",
+"added": "RatCastNeg(Rat.mul(of_int 1, of_int 2357)); RatCastInjective(E, of_int 0) [Rat.cast_neg + Rat.cast_injective, work copy]"
+},
+{
+"id": "aime_1984_p1-175",
+"theorem": "aime_1984_p1",
+"line": 175,
+"file": "closed/aime_1984_p1-175.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 36 verified, 0 errors",
+"added": null
+},
+{
+"id": "aime_1984_p1-180",
+"theorem": "aime_1984_p1",
+"line": 180,
+"file": "closed/aime_1984_p1-180.dfy",
+"kind": "K1+K5",
+"how": "multi",
+"dafny": "finished with 44 verified, 0 errors",
+"added": null
+},
+{
+"id": "aime_1984_p1-192",
+"theorem": "aime_1984_p1",
+"line": 192,
+"file": "closed/aime_1984_p1-192.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 41 verified, 0 errors",
+"added": null
+},
+{
+"id": "aime_1984_p1-408",
+"theorem": "aime_1984_p1",
+"line": 408,
+"file": "closed/aime_1984_p1-408.dfy",
+"kind": "K3+K4",
+"how": "multi",
+"dafny": "finished with 5 verified, 0 errors",
+"added": null
+},
+{
+"id": "aime_1984_p1-466",
+"theorem": "aime_1984_p1",
+"line": 466,
+"file": "closed/aime_1984_p1-466.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 35 verified, 0 errors",
+"added": null
+},
+{
+"id": "aime_1984_p1-471",
+"theorem": "aime_1984_p1",
+"line": 471,
+"file": "closed/aime_1984_p1-471.dfy",
+"kind": "K1+K5",
+"how": "multi",
+"dafny": "finished with 43 verified, 0 errors",
+"added": null
+},
+{
+"id": "aime_1984_p1-484",
+"theorem": "aime_1984_p1",
+"line": 484,
+"file": "closed/aime_1984_p1-484.dfy",
+"kind": "K3",
+"how": "simplest-close",
+"dafny": "finished with 13 verified, 0 errors",
+"added": null
+},
+{
+"id": "aime_1984_p1-596",
+"theorem": "aime_1984_p1",
+"line": 596,
+"file": "closed/aime_1984_p1-596.dfy",
+"kind": "K3+K4",
+"how": "multi",
+"dafny": "finished with 2 verified, 0 errors",
+"added": null
+},
+{
+"id": "aime_1987_p5-452",
+"theorem": "aime_1987_p5",
+"line": 452,
+"file": "closed/aime_1987_p5-452.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "assert exists k: int :: 30*(x*x)+517 == (3 * (x * x) + 1)*k by { assert 30*(x*x)+517 == (3 * (x * x) + 1)*(y*y); }  (Lean: use y ^ 2)"
+},
+{
+"id": "aime_1987_p5-495",
+"theorem": "aime_1987_p5",
+"line": 495,
+"file": "closed/aime_1987_p5-495.dfy",
+"kind": "K4+K5",
+"how": "multi",
+"dafny": "finished with 7 verified, 0 errors",
+"added": null
+},
+{
+"id": "aime_1987_p5-594",
+"theorem": "aime_1987_p5",
+"line": 594,
+"file": "closed/aime_1987_p5-594.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "IntDvdIffEmodEqZero(3 * (x * x) + 1, 507);  (Lean ∣ on ℤ is ∃ by definition)"
+},
+{
+"id": "aime_1987_p5-641",
+"theorem": "aime_1987_p5",
+"line": 641,
+"file": "closed/aime_1987_p5-641.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 3 verified, 0 errors",
+"added": "IntDvdIffEmodEqZero(3 * (x * x) + 1, 507);  (Lean ∣ on ℤ is ∃ by definition)"
+},
+{
+"id": "aime_1990_p4-205",
+"theorem": "aime_1990_p4",
+"line": 205,
+"file": "closed/aime_1990_p4-205.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "EqZeroOrEqZeroOfMulEqZero(x - 13.0, x + 3.0);  (Lean lemma at the instance fixed by h₅₃)"
+},
+{
+"id": "aime_1999_p11-177",
+"theorem": "aime_1999_p11",
+"line": 177,
+"file": "closed/aime_1999_p11-177.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "ℚ→ℝ cast atom m.to_real() abstracted as a real parameter r (piece stated ∀ r; the original is its instance r = m.to_real())"
+},
+{
+"id": "aime_1999_p11-187",
+"theorem": "aime_1999_p11",
+"line": 187,
+"file": "closed/aime_1999_p11-187.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "ℚ→ℝ cast atom m.to_real() abstracted as a real parameter r (piece stated ∀ r; the original is its instance r = m.to_real())"
+},
+{
+"id": "aime_1999_p11-224",
+"theorem": "aime_1999_p11",
+"line": 224,
+"file": "closed/aime_1999_p11-224.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 21 verified, 0 errors",
+"added": "FinsetMulSumPointwise(IccN(1,35), k=>sin(5kπ/180), k=>2sin(2.5π/180)·sin(5kπ/180), 2sin(2.5π/180)) — Lean's recorded Finset.mul_sum instance via existing library lemma"
+},
+{
+"id": "aime_1999_p11-938",
+"theorem": "aime_1999_p11",
+"line": 938,
+"file": "closed/aime_1999_p11-938.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 33 verified, 0 errors",
+"added": "RealInjOnTanEqIff(m.to_real()*π/180, 35π/72) — Lean's applied Set.InjOn.eq_iff instance via existing library lemma"
+},
+{
+"id": "aime_1999_p11-1161",
+"theorem": "aime_1999_p11",
+"line": 1161,
+"file": "closed/aime_1999_p11-1161.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 35 verified, 0 errors",
+"added": "assert gcd(175,2)==1; RatNumDivEqOfCoprime(175,2); RatDenDivEqOfCoprime(175,2); RatNumDenOfReducedValue(m,175,2) — Lean's computed representation of 175/2 (norm_num IsRat), existing library lemmas"
+},
+{
+"id": "aime_1999_p11-1170",
+"theorem": "aime_1999_p11",
+"line": 1170,
+"file": "closed/aime_1999_p11-1170.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 20 verified, 0 errors",
+"added": "lemma {:axiom} RatCastInj(a: Rat.rat, b: Rat.rat) ensures a.to_real() == b.to_real() <==> a == b  (Mathlib Rat.cast_inj, added to work copy); call RatCastInj(Rat.mul(m, of_int 2), of_int 175)"
+},
+{
+"id": "aime_1999_p11-1192",
+"theorem": "aime_1999_p11",
+"line": 1192,
+"file": "closed/aime_1999_p11-1192.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 23 verified, 0 errors",
+"added": "RatNumDivEqOfCoprime(175, 2) — the norm_num hint lemma Rat.num_div_eq_of_coprime (existing library counterpart)"
+},
+{
+"id": "algebra_9onxpypzleqsum2onxpy-471",
+"theorem": "algebra_9onxpypzleqsum2onxpy",
+"line": 471,
+"file": "closed/algebra_9onxpypzleqsum2onxpy-471.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "assert 2(x+y+z)(1/(x+y)+1/(y+z)+1/(z+x)) == Real.div(2(x+y+z)((y+z+(x+y))(z+x)+(x+y)(y+z)), (x+y)(y+z)(z+x)) — field_simp normal form (before-goal LHS == after-goal LHS), checked"
+},
+{
+"id": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-945",
+"theorem": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2",
+"line": 945,
+"file": "closed/algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-945.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 3 verified, 0 errors",
+"added": "assert (N/D)*(N/D) == (N*N)/(D*D) over Real.div (field_simp's before/after goals), checked"
+},
+{
+"id": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-949",
+"theorem": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2",
+"line": 949,
+"file": "closed/algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-949.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-1620",
+"theorem": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2",
+"line": 1620,
+"file": "closed/algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-1620.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-1725",
+"theorem": "algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2",
+"line": 1725,
+"file": "closed/algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2-1725.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "algebra_amgm_sumasqdivbgeqsuma-803",
+"theorem": "algebra_amgm_sumasqdivbgeqsuma",
+"line": 803,
+"file": "closed/algebra_amgm_sumasqdivbgeqsuma-803.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "keep only 0<a, 0<d; drop h₄₀–h₄₂ (three Real.div AM-GM facts) and 0<b,0<c,0<d²/a (sufficiency)"
+},
+{
+"id": "algebra_amgm_sumasqdivbgeqsuma-845",
+"theorem": "algebra_amgm_sumasqdivbgeqsuma",
+"line": 845,
+"file": "closed/algebra_amgm_sumasqdivbgeqsuma-845.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "algebra_apbon2pownleqapownpbpowon2-91",
+"theorem": "algebra_apbon2pownleqapownpbpowon2",
+"line": 91,
+"file": "closed/algebra_apbon2pownleqapownpbpowon2-91.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 135 verified, 0 errors",
+"added": "library variant: Real.pow without the recursive ensures (kinds/work/shard_007/_nopow/library/MathPrelude.dfy, only change); verbatim procedure copy _repro/repro_A_nopow.dfy"
+},
+{
+"id": "algebra_apbon2pownleqapownpbpowon2-142",
+"theorem": "algebra_apbon2pownleqapownpbpowon2",
+"line": 142,
+"file": "closed/algebra_apbon2pownleqapownpbpowon2-142.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 135 verified, 0 errors",
+"added": "library variant: Real.pow without the recursive ensures (kinds/work/shard_007/_nopow/library/MathPrelude.dfy, only change); verbatim procedure copy _repro/repro_A_nopow.dfy"
+},
+{
+"id": "algebra_apbon2pownleqapownpbpowon2-243",
+"theorem": "algebra_apbon2pownleqapownpbpowon2",
+"line": 243,
+"file": "closed/algebra_apbon2pownleqapownpbpowon2-243.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 12 verified, 0 errors",
+"added": "K2-pow: line lemma verbatim over the library without the recursive pow ensures"
+},
+{
+"id": "algebra_apbon2pownleqapownpbpowon2-272",
+"theorem": "algebra_apbon2pownleqapownpbpowon2",
+"line": 272,
+"file": "closed/algebra_apbon2pownleqapownpbpowon2-272.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 135 verified, 0 errors",
+"added": "library variant: Real.pow without the recursive ensures (kinds/work/shard_007/_nopow/library/MathPrelude.dfy, only change); verbatim procedure copy _repro/repro_A_nopow.dfy"
+},
+{
+"id": "algebra_apbon2pownleqapownpbpowon2-274",
+"theorem": "algebra_apbon2pownleqapownpbpowon2",
+"line": 274,
+"file": "closed/algebra_apbon2pownleqapownpbpowon2-274.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 135 verified, 0 errors",
+"added": "library variant: Real.pow without the recursive ensures (kinds/work/shard_007/_nopow/library/MathPrelude.dfy, only change); verbatim procedure copy _repro/repro_A_nopow.dfy"
+},
+{
+"id": "algebra_apbon2pownleqapownpbpowon2-302",
+"theorem": "algebra_apbon2pownleqapownpbpowon2",
+"line": 302,
+"file": "closed/algebra_apbon2pownleqapownpbpowon2-302.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 135 verified, 0 errors",
+"added": "library variant: Real.pow without the recursive ensures (kinds/work/shard_007/_nopow/library/MathPrelude.dfy, only change); verbatim procedure copy _repro/repro_A_nopow.dfy"
+},
+{
+"id": "algebra_apbon2pownleqapownpbpowon2-360",
+"theorem": "algebra_apbon2pownleqapownpbpowon2",
+"line": 360,
+"file": "closed/algebra_apbon2pownleqapownpbpowon2-360.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 135 verified, 0 errors",
+"added": "library variant: Real.pow without the recursive ensures (kinds/work/shard_007/_nopow/library/MathPrelude.dfy, only change); verbatim procedure copy _repro/repro_A_nopow.dfy"
+},
+{
+"id": "algebra_apbon2pownleqapownpbpowon2-648",
+"theorem": "algebra_apbon2pownleqapownpbpowon2",
+"line": 648,
+"file": "closed/algebra_apbon2pownleqapownpbpowon2-648.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 8 verified, 0 errors",
+"added": "K2-pow: line lemma verbatim over the library without the recursive pow ensures"
+},
+{
+"id": "algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3-799",
+"theorem": "algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3",
+"line": 799,
+"file": "closed/algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3-799.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "lemma LinarithMulZeroEq(x,y) requires y == 0.0 ensures x*y == 0.0 {} — the piece over only Lean's premise; and Lean's h₆₁ step as its own lemma H61 over h₀,h₁ replacing the emitted certificate block"
+},
+{
+"id": "algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3-1502",
+"theorem": "algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3",
+"line": 1502,
+"file": "closed/algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3-1502.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "lemma Split1502 over only the certificate's hypotheses (0≤a, a≤b, b≤c, c≤4/3, a+b+c=2, ab=(c-1)²) with Lean's own pieces + cert_identity_70, called at the start of the h₆₅ block"
+},
+{
+"id": "algebra_bleqa_apbon2msqrtableqambsqon8b-192",
+"theorem": "algebra_bleqa_apbon2msqrtableqambsqon8b",
+"line": 192,
+"file": "closed/algebra_bleqa_apbon2msqrtableqambsqon8b-192.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 6 verified, 0 errors",
+"added": "assert a * b == (x*x)*(y*y)  (the congrArg argument equality of rw, exec 252; checked)"
+},
+{
+"id": "algebra_bleqa_apbon2msqrtableqambsqon8b-222",
+"theorem": "algebra_bleqa_apbon2msqrtableqambsqon8b",
+"line": 222,
+"file": "closed/algebra_bleqa_apbon2msqrtableqambsqon8b-222.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 10 verified, 0 errors",
+"added": "RealSqrtEqIffSqEq(x*x*(y*y), x*y) — Lean's instance rendered like the goal"
+},
+{
+"id": "algebra_bleqa_apbon2msqrtableqambsqon8b-329",
+"theorem": "algebra_bleqa_apbon2msqrtableqambsqon8b",
+"line": 329,
+"file": "closed/algebra_bleqa_apbon2msqrtableqambsqon8b-329.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "algebra_others_exirrpowirrrat-198",
+"theorem": "algebra_others_exirrpowirrrat",
+"line": 198,
+"file": "closed/algebra_others_exirrpowirrrat-198.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "IrrationalNeRatK8(2.0, Rat.of_int(2)) — Lean's witness q := 2; exact Mathlib Irrational.ne_rat added to the work copy"
+},
+{
+"id": "algebra_sum1onsqrt2to1onsqrt10000lt198-167",
+"theorem": "algebra_sum1onsqrt2to1onsqrt10000lt198",
+"line": 167,
+"file": "closed/algebra_sum1onsqrt2to1onsqrt10000lt198-167.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 8 verified, 0 errors",
+"added": "FinsetSumSingletonNatK8(2, summand) — norm_num internal Finset.sum_singleton, exact Mathlib at ℕ added to work copy"
+},
+{
+"id": "algebra_sum1onsqrt2to1onsqrt10000lt198-212",
+"theorem": "algebra_sum1onsqrt2to1onsqrt10000lt198",
+"line": 212,
+"file": "closed/algebra_sum1onsqrt2to1onsqrt10000lt198-212.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 15 verified, 0 errors",
+"added": "forall k: nat | 2<=k<=10000 ensures <h₁ body> { assert 0<=k ==> k in IccN(2,10000) ==> <h₁ body>; }  — the instance of h₁ at k (checked)"
+},
+{
+"id": "algebra_sum1onsqrt2to1onsqrt10000lt198-213",
+"theorem": "algebra_sum1onsqrt2to1onsqrt10000lt198",
+"line": 213,
+"file": "closed/algebra_sum1onsqrt2to1onsqrt10000lt198-213.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 16 verified, 0 errors",
+"added": "FinsetSumIccSuccTopNat(2, m+1, summand) — recorded Finset.sum_Icc_succ_top instance (exec 686)"
+},
+{
+"id": "algebra_sum1onsqrt2to1onsqrt10000lt198-462",
+"theorem": "algebra_sum1onsqrt2to1onsqrt10000lt198",
+"line": 462,
+"file": "closed/algebra_sum1onsqrt2to1onsqrt10000lt198-462.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 4 verified, 0 errors",
+"added": "assert 2.0 * Real.div(1.0, S) == Real.div(2.0, S)  (field_simp before/after normal form, exec 480; checked)"
+},
+{
+"id": "amc12_2001_p5-11",
+"theorem": "amc12_2001_p5",
+"line": 11,
+"file": "closed/amc12_2001_p5-11.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 12 verified, 0 errors",
+"added": "MulNonnegInt(Int.pow(2, 5000), factorial(5000));  (library axiom = Mathlib mul_nonneg; in Lean the term is ℕ so 0 <= it is Nat.zero_le)"
+},
+{
+"id": "amc12_2001_p5-31",
+"theorem": "amc12_2001_p5",
+"line": 31,
+"file": "closed/amc12_2001_p5-31.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 57 verified, 0 errors",
+"added": "dropped the 2 requires mentioning Int.pow/factorial (h_main facts, unused by Lean's congr/ext/simp proof of this step); kept the pointwise ∀ fact and path conditions"
+},
+{
+"id": "amc12_2001_p5-38",
+"theorem": "amc12_2001_p5",
+"line": 38,
+"file": "closed/amc12_2001_p5-38.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "dropped the 2 requires mentioning Int.pow/factorial; kept 0 <= x (Lean simp used no hypotheses)"
+},
+{
+"id": "amc12a_2003_p25-28",
+"theorem": "amc12a_2003_p25",
+"line": 28,
+"file": "closed/amc12a_2003_p25-28.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 2 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2003_p25-31",
+"theorem": "amc12a_2003_p25",
+"line": 31,
+"file": "closed/amc12a_2003_p25-31.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 2 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2003_p25-34",
+"theorem": "amc12a_2003_p25",
+"line": 34,
+"file": "closed/amc12a_2003_p25-34.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 2 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2003_p25-37",
+"theorem": "amc12a_2003_p25",
+"line": 37,
+"file": "closed/amc12a_2003_p25-37.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 2 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2003_p25-40",
+"theorem": "amc12a_2003_p25",
+"line": 40,
+"file": "closed/amc12a_2003_p25-40.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 2 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2003_p25-43",
+"theorem": "amc12a_2003_p25",
+"line": 43,
+"file": "closed/amc12a_2003_p25-43.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 1 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2003_p25-44",
+"theorem": "amc12a_2003_p25",
+"line": 44,
+"file": "closed/amc12a_2003_p25-44.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 1 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2003_p25-46",
+"theorem": "amc12a_2003_p25",
+"line": 46,
+"file": "closed/amc12a_2003_p25-46.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 1 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2008_p4-12",
+"theorem": "amc12a_2008_p4",
+"line": 12,
+"file": "closed/amc12a_2008_p4-12.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 10 verified, 0 errors",
+"added": "FinsetProdDivDistribNat(...) call; work-copy axiom = exact Mathlib Finset.prod_div_distrib + Finset.prod_congr (Lean exec 279 internal: Finset.prod_div_distrib ×1)"
+},
+{
+"id": "amc12a_2008_p4-22",
+"theorem": "amc12a_2008_p4",
+"line": 22,
+"file": "closed/amc12a_2008_p4-22.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 51 verified, 0 errors",
+"added": "NatCastProdReal ×2 calls; work-copy axiom = exact Mathlib Finset.prod_natCast/Nat.cast_prod with Finset.prod_congr folded (pointwise Nat.cast_add/Nat.cast_mul/Rat.cast_ofNat); Lean exec 347 internal: Finset.prod_natCast ×1, Rat.cast_natCast ×2, Nat.cast_add ×2, Nat.cast_mul ×2, Rat.cast_ofNat ×1, Fi"
+},
+{
+"id": "amc12a_2008_p4-28",
+"theorem": "amc12a_2008_p4",
+"line": 28,
+"file": "closed/amc12a_2008_p4-28.dfy",
+"kind": "K2+K4",
+"how": "multi",
+"dafny": "finished with 20 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2009_p15-32",
+"theorem": "amc12a_2009_p15",
+"line": 32,
+"file": "closed/amc12a_2009_p15-32.dfy",
+"kind": "K3+K5",
+"how": "multi",
+"dafny": "finished with 36 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2009_p15-96",
+"theorem": "amc12a_2009_p15",
+"line": 96,
+"file": "closed/amc12a_2009_p15-96.dfy",
+"kind": "K3+K5",
+"how": "multi",
+"dafny": "finished with 17 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2009_p15-98",
+"theorem": "amc12a_2009_p15",
+"line": 98,
+"file": "closed/amc12a_2009_p15-98.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 15 verified, 0 errors",
+"added": "only the periodicity hypothesis (complex form) + int facts kept; side-check lemmas stripped"
+},
+{
+"id": "amc12a_2009_p15-100",
+"theorem": "amc12a_2009_p15",
+"line": 100,
+"file": "closed/amc12a_2009_p15-100.dfy",
+"kind": "K2+K3",
+"how": "multi",
+"dafny": "finished with 30 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2009_p15-107",
+"theorem": "amc12a_2009_p15",
+"line": 107,
+"file": "closed/amc12a_2009_p15-107.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 62 verified, 0 errors",
+"added": "only a_1 (real Re/Im form, before ring_nf) + int facts; group-1 ensures (VC_GAP conjunct omitted); side checks stripped"
+},
+{
+"id": "amc12a_2009_p15-175",
+"theorem": "amc12a_2009_p15",
+"line": 175,
+"file": "closed/amc12a_2009_p15-175.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12a_2009_p15-183",
+"theorem": "amc12a_2009_p15",
+"line": 183,
+"file": "closed/amc12a_2009_p15-183.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 134 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2009_p15-242",
+"theorem": "amc12a_2009_p15",
+"line": 242,
+"file": "closed/amc12a_2009_p15-242.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 7 verified, 0 errors",
+"added": "only `requires forall k :: pow(I,k%4) == pow(I,k)` (h_periodicity, the hypothesis simp_all rewrote) kept"
+},
+{
+"id": "amc12a_2009_p15-282",
+"theorem": "amc12a_2009_p15",
+"line": 282,
+"file": "closed/amc12a_2009_p15-282.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12a_2009_p15-287",
+"theorem": "amc12a_2009_p15",
+"line": 287,
+"file": "closed/amc12a_2009_p15-287.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12a_2009_p15-292",
+"theorem": "amc12a_2009_p15",
+"line": 292,
+"file": "closed/amc12a_2009_p15-292.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12a_2009_p15-297",
+"theorem": "amc12a_2009_p15",
+"line": 297,
+"file": "closed/amc12a_2009_p15-297.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12a_2009_p15-302",
+"theorem": "amc12a_2009_p15",
+"line": 302,
+"file": "closed/amc12a_2009_p15-302.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 51 verified, 0 errors",
+"added": "ghost var m0: nat := 0; assert Complex.sum(IccN(4 * m0 + 1, 4 * m0 + 4), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.sub(Complex.of_real(2.0), Complex.mul(Complex.of_real(2.0), Complex.I()));"
+},
+{
+"id": "amc12a_2009_p15-597",
+"theorem": "amc12a_2009_p15",
+"line": 597,
+"file": "closed/amc12a_2009_p15-597.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12a_2009_p15-607",
+"theorem": "amc12a_2009_p15",
+"line": 607,
+"file": "closed/amc12a_2009_p15-607.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12a_2009_p15-612",
+"theorem": "amc12a_2009_p15",
+"line": 612,
+"file": "closed/amc12a_2009_p15-612.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12a_2009_p15-617",
+"theorem": "amc12a_2009_p15",
+"line": 617,
+"file": "closed/amc12a_2009_p15-617.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "keep only h_sum_multiple_of_4 (∀ m) — the hypothesis the term references; drop 56 other requires"
+},
+{
+"id": "amc12a_2009_p15-693",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "amc12a_2009_p15-694",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "amc12a_2009_p15-727",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "amc12a_2009_p15-732",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "amc12a_2009_p15-741",
+"theorem": "amc12a_2009_p15",
+"line": 741,
+"file": "closed/amc12a_2009_p15-741.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 41 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2009_p15-742",
+"theorem": "amc12a_2009_p15",
+"line": 742,
+"file": "closed/amc12a_2009_p15-742.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 9 verified, 0 errors",
+"added": "keep only the pre-norm_cast hypothesis h_sum_multiple_of_4 (∀m, 2.0*(m as real) form) (norm_cast at * rewrote it alone)"
+},
+{
+"id": "amc12a_2009_p15-743",
+"theorem": "amc12a_2009_p15",
+"line": 743,
+"file": "closed/amc12a_2009_p15-743.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12a_2009_p15-744",
+"theorem": "amc12a_2009_p15",
+"line": 744,
+"file": "closed/amc12a_2009_p15-744.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 20 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2009_p2-20",
+"theorem": "amc12a_2009_p2",
+"line": 20,
+"file": "closed/amc12a_2009_p2-20.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "RatCastInjective(lhs, rhs) [Mathlib Rat.cast_injective as {:axiom} lemma in the work copy] on the two sides"
+},
+{
+"id": "amc12a_2009_p2-26",
+"theorem": "amc12a_2009_p2",
+"line": 26,
+"file": "closed/amc12a_2009_p2-26.dfy",
+"kind": "K4",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "RatCastInjective(lhs, rhs) [Mathlib Rat.cast_injective as {:axiom} lemma in the work copy]"
+},
+{
+"id": "amc12a_2009_p6-137",
+"theorem": "amc12a_2009_p6",
+"line": 137,
+"file": "closed/amc12a_2009_p6-137.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 7 verified, 0 errors",
+"added": "ring_nf normal forms: assert (2 as real)*(m*n) == m*n*2.0; assert 2.0*(m*n) == m*n*2.0"
+},
+{
+"id": "amc12a_2009_p9-181",
+"theorem": "amc12a_2009_p9",
+"line": 181,
+"file": "closed/amc12a_2009_p9-181.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 3 verified, 0 errors",
+"added": "forall x ensures goal(x) { assert f(x+3.0) == a*((x+3.0)*(x+3.0)) + b*(x+3.0) + c; }  (h₁ at x+3, the rewrite simp made in h₀)"
+},
+{
+"id": "amc12a_2009_p9-388",
+"theorem": "amc12a_2009_p9",
+"line": 388,
+"file": "closed/amc12a_2009_p9-388.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "asserts of h₅ 0, h₅ 1, h₅ 2, h₅ 3 (Lean's linarith hint terms; instances of the ∀ h₅ requires, checked)"
+},
+{
+"id": "amc12a_2013_p4-15",
+"theorem": "amc12a_2013_p4",
+"line": 15,
+"file": "closed/amc12a_2013_p4-15.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 77 verified, 0 errors",
+"added": "IsNat values of 2^2012 (binary chain mirroring norm_num IsNatPowT.bit0/bit1 records; each step = pow_add + computed numeral) and 2^2014 = 2^2012*2^2"
+},
+{
+"id": "amc12a_2013_p4-75",
+"theorem": "amc12a_2013_p4",
+"line": 75,
+"file": "closed/amc12a_2013_p4-75.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 87 verified, 0 errors",
+"added": "IsNat value of 2^2012 (isNat_pow / IsNatPowT.run record at exec 276) as a checked chain"
+},
+{
+"id": "amc12a_2017_p7-28",
+"theorem": "amc12a_2017_p7",
+"line": 28,
+"file": "closed/amc12a_2017_p7-28.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 11 verified, 0 errors",
+"added": "instance h₁ 2 : f 2 = f (2-1) + 1 (simp_all rewrote with h₁ at 2)"
+},
+{
+"id": "amc12a_2017_p7-48",
+"theorem": "amc12a_2017_p7",
+"line": 48,
+"file": "closed/amc12a_2017_p7-48.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 16 verified, 0 errors",
+"added": "instance of h₁ (even step) at Lean argument: assert f(n_1_0_0 + 1 + 1) == f(tsub(n_1_0_0 + 1 + 1, 1)) + 1.0;"
+},
+{
+"id": "amc12a_2017_p7-54",
+"theorem": "amc12a_2017_p7",
+"line": 54,
+"file": "closed/amc12a_2017_p7-54.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 17 verified, 0 errors",
+"added": "instance of h₂ (odd step) at Lean argument: assert f(n_1_0_0 + 1 + 1 + 1) == f(tsub(n_1_0_0 + 1 + 1 + 1, 2)) + 2.0;"
+},
+{
+"id": "amc12a_2017_p7-67",
+"theorem": "amc12a_2017_p7",
+"line": 67,
+"file": "closed/amc12a_2017_p7-67.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 16 verified, 0 errors",
+"added": "instance of h₂ (odd step) at Lean argument: assert f(n_1_0_0 + 1 + 1) == f(tsub(n_1_0_0 + 1 + 1, 2)) + 2.0;"
+},
+{
+"id": "amc12a_2017_p7-74",
+"theorem": "amc12a_2017_p7",
+"line": 74,
+"file": "closed/amc12a_2017_p7-74.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 17 verified, 0 errors",
+"added": "instance of h₁ (even step) at Lean argument: assert f(n_1_0_0 + 1 + 1 + 1) == f(tsub(n_1_0_0 + 1 + 1 + 1, 1)) + 1.0;"
+},
+{
+"id": "amc12a_2019_p21-18",
+"theorem": "amc12a_2019_p21",
+"line": 18,
+"file": "closed/amc12a_2019_p21-18.dfy",
+"kind": "simplest",
+"how": "variant",
+"dafny": "finished with 20 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2019_p21-29",
+"theorem": "amc12a_2019_p21",
+"line": 29,
+"file": "closed/amc12a_2019_p21-29.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 182 verified, 0 errors",
+"added": "Lean kernel checked `exact h₄` by unfolding both finite sums (defeq; zpow at ofNat = npow): both sums expanded to 12 terms with Mathlib Finset.sum_insert/sum_empty (added to work copy)"
+},
+{
+"id": "amc12a_2019_p21-41",
+"theorem": "amc12a_2019_p21",
+"line": 41,
+"file": "closed/amc12a_2019_p21-41.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 121 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2019_p21-67",
+"theorem": "amc12a_2019_p21",
+"line": 67,
+"file": "closed/amc12a_2019_p21-67.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 117 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2019_p21-76",
+"theorem": "amc12a_2019_p21",
+"line": 76,
+"file": "closed/amc12a_2019_p21-76.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 41 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2021_p14-79",
+"theorem": "amc12a_2021_p14",
+"line": 79,
+"file": "closed/amc12a_2021_p14-79.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 10 verified, 0 errors",
+"added": "RealLogbUnfold(Real.pow(5.0, k_0_0), Real.pow(3.0, Int.pow(k_0_0, 2)));  (Lean rw [Real.logb] = Real.logb.eq_1 at Lean's recorded args; library RealLogbUnfold = Mathlib Real.log_div_log)"
+},
+{
+"id": "amc12a_2021_p14-95",
+"theorem": "amc12a_2021_p14",
+"line": 95,
+"file": "closed/amc12a_2021_p14-95.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 11 verified, 0 errors",
+"added": "libpow variant: Real.pow and Int.pow opaque, recursive ensures removed, explicit PowZero/PowSucc lemmas (work/shard_018/libpow)"
+},
+{
+"id": "amc12a_2021_p14-113",
+"theorem": "amc12a_2021_p14",
+"line": 113,
+"file": "closed/amc12a_2021_p14-113.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 10 verified, 0 errors",
+"added": "RealLogbUnfold(5.0, 3.0);  (Lean rw [Real.logb] = Real.logb.eq_1 at Lean's recorded args; library RealLogbUnfold = Mathlib Real.log_div_log)"
+},
+{
+"id": "amc12a_2021_p14-121",
+"theorem": "amc12a_2021_p14",
+"line": 121,
+"file": "closed/amc12a_2021_p14-121.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 10 verified, 0 errors",
+"added": "libpow variant: Real.pow and Int.pow opaque, recursive ensures removed, explicit PowZero/PowSucc lemmas (work/shard_018/libpow)"
+},
+{
+"id": "amc12a_2021_p14-168",
+"theorem": "amc12a_2021_p14",
+"line": 168,
+"file": "closed/amc12a_2021_p14-168.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 52 verified, 0 errors",
+"added": "libpow variant: Real.pow and Int.pow opaque, recursive ensures removed, explicit PowZero/PowSucc lemmas (work/shard_018/libpow)"
+},
+{
+"id": "amc12a_2021_p14-197",
+"theorem": "amc12a_2021_p14",
+"line": 197,
+"file": "closed/amc12a_2021_p14-197.dfy",
+"kind": "K1+K3",
+"how": "multi",
+"dafny": "finished with 8 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2021_p14-219",
+"theorem": "amc12a_2021_p14",
+"line": 219,
+"file": "closed/amc12a_2021_p14-219.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 134 verified, 0 errors",
+"added": "FinsetSumSingletonNat(1, k => k as real);  (Finset.sum_singleton applied internally by norm_num at exec 921; exact Mathlib statement added to the work copy, ℕ index)"
+},
+{
+"id": "amc12a_2021_p14-280",
+"theorem": "amc12a_2021_p14",
+"line": 280,
+"file": "closed/amc12a_2021_p14-280.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 11 verified, 0 errors",
+"added": "RealLogbUnfold(Real.pow(9.0, k_2_0), Real.pow(25.0, k_2_0));  (Lean rw [Real.logb] = Real.logb.eq_1 at Lean's recorded args; library RealLogbUnfold = Mathlib Real.log_div_log)"
+},
+{
+"id": "amc12a_2021_p14-309",
+"theorem": "amc12a_2021_p14",
+"line": 309,
+"file": "closed/amc12a_2021_p14-309.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 11 verified, 0 errors",
+"added": "library copy with the recursive `ensures` of Real.pow/Int.pow removed (bodies kept); only that change"
+},
+{
+"id": "amc12a_2021_p14-357",
+"theorem": "amc12a_2021_p14",
+"line": 357,
+"file": "closed/amc12a_2021_p14-357.dfy",
+"kind": "K3+K5",
+"how": "multi",
+"dafny": "finished with 1 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2021_p14-467",
+"theorem": "amc12a_2021_p14",
+"line": 467,
+"file": "closed/amc12a_2021_p14-467.dfy",
+"kind": "K3+K5",
+"how": "multi",
+"dafny": "finished with 7 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12a_2021_p14-482",
+"theorem": "amc12a_2021_p14",
+"line": 482,
+"file": "closed/amc12a_2021_p14-482.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12a_2021_p14-484",
+"theorem": "amc12a_2021_p14",
+"line": 484,
+"file": "closed/amc12a_2021_p14-484.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 13 verified, 0 errors",
+"added": "RealLogbUnfold(5.0, 3.0)  (rw [Real.logb] = Real.logb.eq_1 at (5,3), exec 2182)"
+},
+{
+"id": "amc12a_2021_p14-492",
+"theorem": "amc12a_2021_p14",
+"line": 492,
+"file": "closed/amc12a_2021_p14-492.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 13 verified, 0 errors",
+"added": "RealLogbUnfold(3.0, 5.0)  (rw [Real.logb] = Real.logb.eq_1 at (3,5), exec 2256)"
+},
+{
+"id": "amc12a_2021_p14-502",
+"theorem": "amc12a_2021_p14",
+"line": 502,
+"file": "closed/amc12a_2021_p14-502.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 13 verified, 0 errors",
+"added": "library copy with the recursive `ensures` of Real.pow/Int.pow removed (bodies kept); only that change"
+},
+{
+"id": "amc12a_2021_p14-542",
+"theorem": "amc12a_2021_p14",
+"line": 542,
+"file": "closed/amc12a_2021_p14-542.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 21 verified, 0 errors",
+"added": "library copy with the recursive `ensures` of Real.pow/Int.pow removed (bodies kept); only that change"
+},
+{
+"id": "amc12a_2021_p14-548",
+"theorem": "amc12a_2021_p14",
+"line": 548,
+"file": "closed/amc12a_2021_p14-548.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 15 verified, 0 errors",
+"added": "library copy with the recursive `ensures` of Real.pow/Int.pow removed (bodies kept); only that change"
+},
+{
+"id": "amc12a_2021_p18-105",
+"theorem": "amc12a_2021_p18",
+"line": 105,
+"file": "closed/amc12a_2021_p18-105.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "RatMulOfIntOfInt(1, 1)  [library counterpart of norm_num's isNat_mul/isRat_mul (Mathlib Int.cast_mul / div_mul_cancel)]"
+},
+{
+"id": "amc12a_2021_p18-140",
+"theorem": "amc12a_2021_p18",
+"line": 140,
+"file": "closed/amc12a_2021_p18-140.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "NatPrimeDefLt(5) [Mathlib Nat.prime_def_lt added to work copy]; Z3 then checks the 5 divisibility cases by computation (Lean: decide, of_decide_eq_true)"
+},
+{
+"id": "amc12a_2021_p18-160",
+"theorem": "amc12a_2021_p18",
+"line": 160,
+"file": "closed/amc12a_2021_p18-160.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "RatMulOfIntOfInt(5, 5)  [library counterpart of norm_num's isNat_mul/isRat_mul (Mathlib Int.cast_mul / div_mul_cancel)]"
+},
+{
+"id": "amc12a_2021_p18-192",
+"theorem": "amc12a_2021_p18",
+"line": 192,
+"file": "closed/amc12a_2021_p18-192.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "NatPrimeDefLt(11) [Mathlib Nat.prime_def_lt added to work copy]; Z3 then checks the 11 divisibility cases by computation (Lean: decide, of_decide_eq_true)"
+},
+{
+"id": "amc12a_2021_p18-225",
+"theorem": "amc12a_2021_p18",
+"line": 225,
+"file": "closed/amc12a_2021_p18-225.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "RatMulDivOfIntCancel(25, 11)  [library counterpart of norm_num's isNat_mul/isRat_mul (Mathlib Int.cast_mul / div_mul_cancel)]"
+},
+{
+"id": "amc12a_2021_p19-855",
+"theorem": "amc12a_2021_p19",
+"line": 855,
+"file": "closed/amc12a_2021_p19-855.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 26 verified, 0 errors",
+"added": "RealInjOnCos(Real.pi() / 2.0 * (1.0 - Real.cos(x)), Real.pi() / 2.0 * Real.sin(x))  [Lean's Set.InjOn.eq_iff (injOn_cos) at its recorded arguments]"
+},
+{
+"id": "amc12a_2021_p19-1063",
+"theorem": "amc12a_2021_p19",
+"line": 1063,
+"file": "closed/amc12a_2021_p19-1063.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12a_2021_p19-1344",
+"theorem": "amc12a_2021_p19",
+"line": 1344,
+"file": "closed/amc12a_2021_p19-1344.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 14 verified, 0 errors",
+"added": "RealCosPiDivTwo()  [Mathlib Real.cos_pi_div_two: cos(π/2)=0, a simp lemma norm_num applied silently]"
+},
+{
+"id": "amc12a_2021_p19-1348",
+"theorem": "amc12a_2021_p19",
+"line": 1348,
+"file": "closed/amc12a_2021_p19-1348.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 15 verified, 0 errors",
+"added": "RealSinPiDivTwo()  [Mathlib Real.sin_pi_div_two: sin(π/2)=1, a simp lemma norm_num applied silently]"
+},
+{
+"id": "amc12a_2021_p19-1352",
+"theorem": "amc12a_2021_p19",
+"line": 1352,
+"file": "closed/amc12a_2021_p19-1352.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 24 verified, 0 errors",
+"added": "RealInjOnCos(x, Real.pi() / 2.0)  [Lean's Set.InjOn.eq_iff (injOn_cos) at its recorded arguments]"
+},
+{
+"id": "amc12a_2021_p19-1556",
+"theorem": "amc12a_2021_p19",
+"line": 1556,
+"file": "closed/amc12a_2021_p19-1556.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 33 verified, 0 errors",
+"added": "RealCosZero()  [Mathlib Real.cos_zero: cos 0 = 1, a simp lemma norm_num applied silently]"
+},
+{
+"id": "amc12a_2021_p19-1560",
+"theorem": "amc12a_2021_p19",
+"line": 1560,
+"file": "closed/amc12a_2021_p19-1560.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 33 verified, 0 errors",
+"added": "RealSinZero();  // Real.sin_zero, in norm_num simp set"
+},
+{
+"id": "amc12a_2021_p19-1564",
+"theorem": "amc12a_2021_p19",
+"line": 1564,
+"file": "closed/amc12a_2021_p19-1564.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 38 verified, 0 errors",
+"added": "RealInjOnCos(x_0_0_0_0, 0.0);  // Set.InjOn.eq_iff injOn_cos at (x,0), exec 1960 (named by Lean)"
+},
+{
+"id": "amc12a_2021_p19-1668",
+"theorem": "amc12a_2021_p19",
+"line": 1668,
+"file": "closed/amc12a_2021_p19-1668.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 47 verified, 0 errors",
+"added": "RealCosZero(); RealSinZero(); RealSinPiDivTwo();  // cos_zero, sin_zero (named by Lean), sin_pi_div_two (simp set)"
+},
+{
+"id": "amc12a_2021_p19-1722",
+"theorem": "amc12a_2021_p19",
+"line": 1722,
+"file": "closed/amc12a_2021_p19-1722.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 29 verified, 0 errors",
+"added": "RealCosPiDivTwo();  // simp-set lemma"
+},
+{
+"id": "amc12a_2021_p19-1726",
+"theorem": "amc12a_2021_p19",
+"line": 1726,
+"file": "closed/amc12a_2021_p19-1726.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 30 verified, 0 errors",
+"added": "RealSinPiDivTwo();  // simp-set lemma"
+},
+{
+"id": "amc12a_2021_p19-1733",
+"theorem": "amc12a_2021_p19",
+"line": 1733,
+"file": "closed/amc12a_2021_p19-1733.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 9 verified, 0 errors",
+"added": "RealSinZero(); on the reconstructed lemma"
+},
+{
+"id": "amc12a_2021_p22-1857",
+"theorem": "amc12a_2021_p22",
+"line": 1857,
+"file": "closed/amc12a_2021_p22-1857.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 27 verified, 0 errors",
+"added": "requires reduced to the two premises of Lean piece (0<=s, E==0) (sufficiency test)"
+},
+{
+"id": "amc12a_2021_p22-1858",
+"theorem": "amc12a_2021_p22",
+"line": 1858,
+"file": "closed/amc12a_2021_p22-1858.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 9 verified, 0 errors",
+"added": "requires reduced to the SqNonneg postcondition (sufficiency test)"
+},
+{
+"id": "amc12a_2021_p22-1859",
+"theorem": "amc12a_2021_p22",
+"line": 1859,
+"file": "closed/amc12a_2021_p22-1859.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 27 verified, 0 errors",
+"added": "requires reduced to the two premises of Lean piece (0<=s, E==0) (sufficiency test)"
+},
+{
+"id": "amc12b_2020_p13-197",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "amc12b_2020_p13-220",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "amc12b_2020_p13-452",
+"theorem": "amc12b_2020_p13",
+"line": 452,
+"file": "closed/amc12b_2020_p13-452.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12b_2020_p13-530",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "amc12b_2020_p21-569",
+"theorem": "amc12b_2020_p21",
+"line": 569,
+"file": "closed/amc12b_2020_p21-569.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12b_2020_p21-656",
+"theorem": "amc12b_2020_p21",
+"line": 656,
+"file": "closed/amc12b_2020_p21-656.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12b_2020_p21-698",
+"theorem": "amc12b_2020_p21",
+"line": 698,
+"file": "closed/amc12b_2020_p21-698.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "only h9 and ℕ-nonnegativity of k,n"
+},
+{
+"id": "amc12b_2020_p21-1245",
+"theorem": "amc12b_2020_p21",
+"line": 1245,
+"file": "closed/amc12b_2020_p21-1245.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 10 verified, 0 errors",
+"added": "RealLeSqrt(20.0, 400.0);  (Mathlib Real.le_sqrt, in Lean's norm_num simp set)"
+},
+{
+"id": "amc12b_2020_p21-1289",
+"theorem": "amc12b_2020_p21",
+"line": 1289,
+"file": "closed/amc12b_2020_p21-1289.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 11 verified, 0 errors",
+"added": "RealLeSqrt(21.0, 470.0);  (Mathlib Real.le_sqrt, in Lean's norm_num simp set)"
+},
+{
+"id": "amc12b_2020_p21-1338",
+"theorem": "amc12b_2020_p21",
+"line": 1338,
+"file": "closed/amc12b_2020_p21-1338.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 12 verified, 0 errors",
+"added": "RealLeSqrt(47.0, 2290.0);  (Mathlib Real.le_sqrt, in Lean's norm_num simp set)"
+},
+{
+"id": "amc12b_2020_p21-1387",
+"theorem": "amc12b_2020_p21",
+"line": 1387,
+"file": "closed/amc12b_2020_p21-1387.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 13 verified, 0 errors",
+"added": "RealLeSqrt(48.0, 2360.0);  (Mathlib Real.le_sqrt, in Lean's norm_num simp set)"
+},
+{
+"id": "amc12b_2020_p21-1436",
+"theorem": "amc12b_2020_p21",
+"line": 1436,
+"file": "closed/amc12b_2020_p21-1436.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 14 verified, 0 errors",
+"added": "RealLeSqrt(49.0, 2430.0);  (Mathlib Real.le_sqrt, in Lean's norm_num simp set)"
+},
+{
+"id": "amc12b_2020_p21-1485",
+"theorem": "amc12b_2020_p21",
+"line": 1485,
+"file": "closed/amc12b_2020_p21-1485.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "RealLeSqrt(50.0, 2500.0);  (Mathlib Real.le_sqrt, in Lean's norm_num simp set)"
+},
+{
+"id": "amc12b_2020_p22-25",
+"theorem": "amc12b_2020_p22",
+"line": 25,
+"file": "closed/amc12b_2020_p22-25.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "amc12b_2021_p1-366",
+"theorem": "amc12b_2021_p1",
+"line": 366,
+"file": "closed/amc12b_2021_p1-366.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 3 verified, 0 errors",
+"added": "IntIccCard(-9, 9, Icc(-9, 9));"
+},
+{
+"id": "amc12b_2021_p18-31",
+"theorem": "amc12b_2021_p18",
+"line": 31,
+"file": "closed/amc12b_2021_p18-31.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 7 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12b_2021_p18-91",
+"theorem": "amc12b_2021_p18",
+"line": 91,
+"file": "closed/amc12b_2021_p18-91.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 7 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12b_2021_p18-101",
+"theorem": "amc12b_2021_p18",
+"line": 101,
+"file": "closed/amc12b_2021_p18-101.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 7 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12b_2021_p9-412",
+"theorem": "amc12b_2021_p9",
+"line": 412,
+"file": "closed/amc12b_2021_p9-412.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "all requires dropped except 0<2, 2≠1 (field_simp used no context hypothesis)"
+},
+{
+"id": "amc12b_2021_p9-488",
+"theorem": "amc12b_2021_p9",
+"line": 488,
+"file": "closed/amc12b_2021_p9-488.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "all requires dropped except 0<2, 2≠1 (field_simp used no context hypothesis)"
+},
+{
+"id": "amc12b_2021_p9-546",
+"theorem": "amc12b_2021_p9",
+"line": 546,
+"file": "closed/amc12b_2021_p9-546.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 2 verified, 0 errors",
+"added": null
+},
+{
+"id": "amc12b_2021_p9-562",
+"theorem": "amc12b_2021_p9",
+"line": 562,
+"file": "closed/amc12b_2021_p9-562.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "imo_1959_p1-32",
+"theorem": "imo_1959_p1",
+"line": 32,
+"file": "closed/imo_1959_p1-32.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 19 verified, 0 errors",
+"added": "assert 1*(14n+3) == 14n+3; NatGcdSelfAddRight(14n+3, 7n+1) [exact Mathlib Nat.gcd_self_add_right, added; Lean's recorded args]"
+},
+{
+"id": "imo_1959_p1-61",
+"theorem": "imo_1959_p1",
+"line": 61,
+"file": "closed/imo_1959_p1-61.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 32 verified, 0 errors",
+"added": "NatGcdComm ×2; NatGcdMulRightAddRight(7n+1, 1, 2); NatGcdAddSelfRight(1, 7n); NatGcdOneLeft(7n) [exact Mathlib Nat.gcd_mul_right_add_right / gcd_add_self_right / gcd_one_left added; Lean's recorded args]"
+},
+{
+"id": "imo_1960_p2-415",
+"theorem": "imo_1960_p2",
+"line": 415,
+"file": "closed/imo_1960_p2-415.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 15 verified, 0 errors",
+"added": "Motive415 predicate (Lean's congrArg motive) + assert Motive415(E); assert Motive415(x);"
+},
+{
+"id": "imo_1964_p1_1-20",
+"theorem": "imo_1964_p1_1",
+"line": 20,
+"file": "closed/imo_1964_p1_1-20.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 18 verified, 0 errors",
+"added": "MathPrelude Int.pow: drop `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` (body unchanged; sign ensures kept) — work-dir copy kinds/work/shard_025/libpow"
+},
+{
+"id": "imo_1964_p1_1-27",
+"theorem": "imo_1964_p1_1",
+"line": 27,
+"file": "closed/imo_1964_p1_1-27.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 20 verified, 0 errors",
+"added": "MathPrelude Int.pow: drop `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` (body unchanged; sign ensures kept) — work-dir copy kinds/work/shard_025/libpow"
+},
+{
+"id": "imo_1964_p1_1-40",
+"theorem": "imo_1964_p1_1",
+"line": 40,
+"file": "closed/imo_1964_p1_1-40.dfy",
+"kind": "K1+K2",
+"how": "multi",
+"dafny": "finished with 28 verified, 0 errors",
+"added": null
+},
+{
+"id": "imo_1964_p1_1-45",
+"theorem": "imo_1964_p1_1",
+"line": 45,
+"file": "closed/imo_1964_p1_1-45.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 38 verified, 0 errors",
+"added": "MathPrelude Int.pow: drop `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` (body unchanged; sign ensures kept) — work-dir copy kinds/work/shard_025/libpow"
+},
+{
+"id": "imo_1964_p1_1-80",
+"theorem": "imo_1964_p1_1",
+"line": 80,
+"file": "closed/imo_1964_p1_1-80.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 23 verified, 0 errors",
+"added": "MathPrelude Int.pow: drop `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` (body unchanged; sign ensures kept) — work-dir copy kinds/work/shard_025/libpow"
+},
+{
+"id": "imo_1964_p1_1-121",
+"theorem": "imo_1964_p1_1",
+"line": 121,
+"file": "closed/imo_1964_p1_1-121.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 88 verified, 0 errors",
+"added": "MathPrelude Int.pow: drop `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` (body unchanged; sign ensures kept) — work-dir copy kinds/work/shard_025/libpow"
+},
+{
+"id": "imo_1964_p1_1-152",
+"theorem": "imo_1964_p1_1",
+"line": 152,
+"file": "closed/imo_1964_p1_1-152.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 37 verified, 0 errors",
+"added": "MathPrelude Int.pow: drop `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` (body unchanged; sign ensures kept) — work-dir copy kinds/work/shard_025/libpow"
+},
+{
+"id": "imo_1964_p1_2-33",
+"theorem": "imo_1964_p1_2",
+"line": 33,
+"file": "closed/imo_1964_p1_2-33.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 40 verified, 0 errors",
+"added": "MathPrelude Int.pow: drop `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` (body unchanged; sign ensures kept) — work-dir copy of library + translation"
+},
+{
+"id": "imo_1964_p1_2-48",
+"theorem": "imo_1964_p1_2",
+"line": 48,
+"file": "closed/imo_1964_p1_2-48.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 323 verified, 0 errors",
+"added": "MathPrelude Int.pow: drop `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` (body unchanged; sign ensures kept) — work-dir copy of library + translation"
+},
+{
+"id": "imo_1964_p1_2-61",
+"theorem": "imo_1964_p1_2",
+"line": 61,
+"file": "closed/imo_1964_p1_2-61.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 143 verified, 0 errors",
+"added": "MathPrelude Int.pow: drop `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` (body unchanged; sign ensures kept) — work-dir copy of library + translation"
+},
+{
+"id": "imo_1964_p1_2-78",
+"theorem": "imo_1964_p1_2",
+"line": 78,
+"file": "closed/imo_1964_p1_2-78.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 9 verified, 0 errors",
+"added": "MathPrelude Int.pow: drop `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` (body unchanged; sign ensures kept) — work-dir copy of library + translation"
+},
+{
+"id": "imo_1964_p1_2-84",
+"theorem": "imo_1964_p1_2",
+"line": 84,
+"file": "closed/imo_1964_p1_2-84.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "imo_1964_p1_2-95",
+"theorem": "imo_1964_p1_2",
+"line": 95,
+"file": "closed/imo_1964_p1_2-95.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 33 verified, 0 errors",
+"added": "MathPrelude Int.pow: drop `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` (body unchanged; sign ensures kept) — work-dir copy of library + translation"
+},
+{
+"id": "imo_1964_p1_2-101",
+"theorem": "imo_1964_p1_2",
+"line": 101,
+"file": "closed/imo_1964_p1_2-101.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 39 verified, 0 errors",
+"added": "MathPrelude Int.pow: drop `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` (body unchanged; sign ensures kept) — work-dir copy of library + translation"
+},
+{
+"id": "imo_1964_p1_2-107",
+"theorem": "imo_1964_p1_2",
+"line": 107,
+"file": "closed/imo_1964_p1_2-107.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 55 verified, 0 errors",
+"added": "MathPrelude Int.pow: drop `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` (body unchanged; sign ensures kept) — work-dir copy of library + translation"
+},
+{
+"id": "imo_1965_p1-833",
+"theorem": "imo_1965_p1",
+"line": 833,
+"file": "closed/imo_1965_p1-833.dfy",
+"kind": "simplest",
+"how": "variant",
+"dafny": "finished with 9 verified, 0 errors",
+"added": null
+},
+{
+"id": "imo_1965_p1-885",
+"theorem": "imo_1965_p1",
+"line": 885,
+"file": "closed/imo_1965_p1-885.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "only the piece's guard (Lean's lemma premises) — all other in-file facts dropped"
+},
+{
+"id": "imo_1965_p1-893",
+"theorem": "imo_1965_p1",
+"line": 893,
+"file": "closed/imo_1965_p1-893.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "only the piece's guard (Lean's lemma premises) — all other in-file facts dropped"
+},
+{
+"id": "imo_1965_p1-903",
+"theorem": "imo_1965_p1",
+"line": 903,
+"file": "closed/imo_1965_p1-903.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "only the piece's guard (Lean's lemma premises) — all other in-file facts dropped"
+},
+{
+"id": "imo_1965_p1-961",
+"theorem": "imo_1965_p1",
+"line": 961,
+"file": "closed/imo_1965_p1-961.dfy",
+"kind": "simplest",
+"how": "variant",
+"dafny": "finished with 9 verified, 0 errors",
+"added": null
+},
+{
+"id": "imo_1965_p1-1011",
+"theorem": "imo_1965_p1",
+"line": 1011,
+"file": "closed/imo_1965_p1-1011.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "only the piece's guard (Lean's lemma premises) — all other in-file facts dropped"
+},
+{
+"id": "imo_1965_p1-1013",
+"theorem": "imo_1965_p1",
+"line": 1013,
+"file": "closed/imo_1965_p1-1013.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "only the piece's guard (Lean's lemma premises) — all other in-file facts dropped"
+},
+{
+"id": "imo_1965_p1-1021",
+"theorem": "imo_1965_p1",
+"line": 1021,
+"file": "closed/imo_1965_p1-1021.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "hoisted context-free lemma requiring only Lean's premises of Linarith.zero_mul_eq (the line's `if` guard), ensures the product == 0 (cf. cert_piece_20..23 already hoisted by the translator)"
+},
+{
+"id": "imo_1965_p1-1136",
+"theorem": "imo_1965_p1",
+"line": 1136,
+"file": "closed/imo_1965_p1-1136.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "hoisted context-free lemma requiring only Lean's premises of Linarith.mul_zero_eq (the line's `if` guard), ensures the product == 0 (cf. cert_piece_20..23 already hoisted by the translator)"
+},
+{
+"id": "imo_1965_p1-1143",
+"theorem": "imo_1965_p1",
+"line": 1143,
+"file": "closed/imo_1965_p1-1143.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "hoisted context-free lemma requiring only Lean's premises of Linarith.mul_zero_eq (the line's `if` guard), ensures the product == 0 (cf. cert_piece_20..23 already hoisted by the translator)"
+},
+{
+"id": "imo_1965_p1-1146",
+"theorem": "imo_1965_p1",
+"line": 1146,
+"file": "closed/imo_1965_p1-1146.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "hoisted context-free lemma: no requires, body `SqNonneg(√(1+sin2x) − √(1−sin2x));` ensures 0 <= (…)*(…) (Lean's sq_nonneg at its argument)"
+},
+{
+"id": "imo_1965_p1-1148",
+"theorem": "imo_1965_p1",
+"line": 1148,
+"file": "closed/imo_1965_p1-1148.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "hoisted context-free lemma requiring only Lean's premises of Linarith.mul_zero_eq (the line's `if` guard), ensures the product == 0 (cf. cert_piece_20..23 already hoisted by the translator)"
+},
+{
+"id": "imo_1965_p1-1153",
+"theorem": "imo_1965_p1",
+"line": 1153,
+"file": "closed/imo_1965_p1-1153.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "hoisted context-free lemma requiring only Lean's premises of Linarith.zero_mul_eq (the line's `if` guard), ensures the product == 0 (cf. cert_piece_20..23 already hoisted by the translator)"
+},
+{
+"id": "imo_1965_p1-1161",
+"theorem": "imo_1965_p1",
+"line": 1161,
+"file": "closed/imo_1965_p1-1161.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "hoisted context-free lemma requiring only Lean's premises of Linarith.mul_zero_eq (the line's `if` guard), ensures the product == 0 (cf. cert_piece_20..23 already hoisted by the translator)"
+},
+{
+"id": "imo_1965_p1-1163",
+"theorem": "imo_1965_p1",
+"line": 1163,
+"file": "closed/imo_1965_p1-1163.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "lemma over only the if-guard (the 2 hypotheses of Linarith.mul_zero_eq) ⇒ claim; all other ~30-50 requires dropped (sufficiency test)"
+},
+{
+"id": "imo_1965_p1-1222",
+"theorem": "imo_1965_p1",
+"line": 1222,
+"file": "closed/imo_1965_p1-1222.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 24 verified, 0 errors",
+"added": null
+},
+{
+"id": "imo_1965_p1-1269",
+"theorem": "imo_1965_p1",
+"line": 1269,
+"file": "closed/imo_1965_p1-1269.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "lemma over only the if-guard (the 2 hypotheses of Linarith.mul_zero_eq) ⇒ claim; all other ~30-50 requires dropped (sufficiency test)"
+},
+{
+"id": "imo_1965_p1-1274",
+"theorem": "imo_1965_p1",
+"line": 1274,
+"file": "closed/imo_1965_p1-1274.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "lemma over only the if-guard (the 2 hypotheses of Linarith.mul_zero_eq) ⇒ claim; all other ~30-50 requires dropped (sufficiency test)"
+},
+{
+"id": "imo_1965_p1-1277",
+"theorem": "imo_1965_p1",
+"line": 1277,
+"file": "closed/imo_1965_p1-1277.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "lemma over only the if-guard (the 2 hypotheses of Linarith.mul_zero_eq) ⇒ claim; all other ~30-50 requires dropped (sufficiency test)"
+},
+{
+"id": "imo_1965_p1-1282",
+"theorem": "imo_1965_p1",
+"line": 1282,
+"file": "closed/imo_1965_p1-1282.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "lemma over only the if-guard (the 2 hypotheses of Linarith.zero_mul_eq) ⇒ claim; all other ~30-50 requires dropped (sufficiency test)"
+},
+{
+"id": "imo_1965_p1-1290",
+"theorem": "imo_1965_p1",
+"line": 1290,
+"file": "closed/imo_1965_p1-1290.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "lemma over only the if-guard (the 2 hypotheses of Linarith.mul_zero_eq) ⇒ claim; all other ~30-50 requires dropped (sufficiency test)"
+},
+{
+"id": "imo_1965_p1-1292",
+"theorem": "imo_1965_p1",
+"line": 1292,
+"file": "closed/imo_1965_p1-1292.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "lemma over only the if-guard (the 2 hypotheses of Linarith.mul_zero_eq) ⇒ claim; all other ~30-50 requires dropped (sufficiency test)"
+},
+{
+"id": "imo_1966_p4-37",
+"theorem": "imo_1966_p4",
+"line": 37,
+"file": "closed/imo_1966_p4-37.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 21 verified, 0 errors",
+"added": "library Real.pow uninterpreted (no body, no ensures); weaker library, sound"
+},
+{
+"id": "imo_1966_p4-54",
+"theorem": "imo_1966_p4",
+"line": 54,
+"file": "closed/imo_1966_p4-54.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 30 verified, 0 errors",
+"added": "FinsetSumSingletonNat(1, F)  [exact Mathlib Finset.sum_singleton (ℕ-indexed), added to work copy; Lean applied it internally at exec 732]"
+},
+{
+"id": "imo_1966_p4-86",
+"theorem": "imo_1966_p4",
+"line": 86,
+"file": "closed/imo_1966_p4-86.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "imo_1966_p4-156",
+"theorem": "imo_1966_p4",
+"line": 156,
+"file": "closed/imo_1966_p4-156.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "imo_1966_p4-187",
+"theorem": "imo_1966_p4",
+"line": 187,
+"file": "closed/imo_1966_p4-187.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "imo_1966_p4-189",
+"theorem": "imo_1966_p4",
+"line": 189,
+"file": "closed/imo_1966_p4-189.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 12 verified, 0 errors",
+"added": "library copy: Real.pow without recursive ensures (body kept)"
+},
+{
+"id": "imo_1966_p4-190",
+"theorem": "imo_1966_p4",
+"line": 190,
+"file": "closed/imo_1966_p4-190.dfy",
+"kind": "K2+K3",
+"how": "multi",
+"dafny": "finished with 2 verified, 0 errors",
+"added": null
+},
+{
+"id": "imo_1966_p4-204",
+"theorem": "imo_1966_p4",
+"line": 204,
+"file": "closed/imo_1966_p4-204.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 90 verified, 0 errors",
+"added": "RealSinSqAddCosSq(2^m*x); RealSinSqAddCosSq(2^(m+1)*x)  (the two nlinarith hint instances)"
+},
+{
+"id": "imo_1966_p4-212",
+"theorem": "imo_1966_p4",
+"line": 212,
+"file": "closed/imo_1966_p4-212.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 13 verified, 0 errors",
+"added": "library copy: Real.pow without recursive ensures"
+},
+{
+"id": "imo_1966_p4-220",
+"theorem": "imo_1966_p4",
+"line": 220,
+"file": "closed/imo_1966_p4-220.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "imo_1966_p4-225",
+"theorem": "imo_1966_p4",
+"line": 225,
+"file": "closed/imo_1966_p4-225.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 13 verified, 0 errors",
+"added": "library copy: Real.pow without recursive ensures"
+},
+{
+"id": "imo_1966_p4-230",
+"theorem": "imo_1966_p4",
+"line": 230,
+"file": "closed/imo_1966_p4-230.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 13 verified, 0 errors",
+"added": "library copy: Real.pow without recursive ensures"
+},
+{
+"id": "imo_1966_p4-233",
+"theorem": "imo_1966_p4",
+"line": 233,
+"file": "closed/imo_1966_p4-233.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "imo_1966_p4-235",
+"theorem": "imo_1966_p4",
+"line": 235,
+"file": "closed/imo_1966_p4-235.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 28 verified, 0 errors",
+"added": "library work copy: MathPrelude Real.pow recursive ensures removed (body kept)"
+},
+{
+"id": "imo_1966_p4-241",
+"theorem": "imo_1966_p4",
+"line": 241,
+"file": "closed/imo_1966_p4-241.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 17 verified, 0 errors",
+"added": "asserts of the values field_simp computed (exec ids in variant header): 1/cos=0 (or 1/sin=0), cos/sin=0, 2*(sin*cos)=0, (2cos^2-1)/(2 sin cos)=0"
+},
+{
+"id": "imo_1966_p4-246",
+"theorem": "imo_1966_p4",
+"line": 246,
+"file": "closed/imo_1966_p4-246.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 35 verified, 0 errors",
+"added": "library work copy: MathPrelude Real.pow recursive ensures removed (body kept)"
+},
+{
+"id": "imo_1966_p4-254",
+"theorem": "imo_1966_p4",
+"line": 254,
+"file": "closed/imo_1966_p4-254.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 41 verified, 0 errors",
+"added": "library work copy: MathPrelude Real.pow recursive ensures removed (body kept)"
+},
+{
+"id": "imo_1966_p4-259",
+"theorem": "imo_1966_p4",
+"line": 259,
+"file": "closed/imo_1966_p4-259.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 44 verified, 0 errors",
+"added": "library work copy: MathPrelude Real.pow recursive ensures removed (body kept)"
+},
+{
+"id": "imo_1966_p4-262",
+"theorem": "imo_1966_p4",
+"line": 262,
+"file": "closed/imo_1966_p4-262.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 37 verified, 0 errors",
+"added": "only the branch guards + the child-branch result disjunctions (other requires dropped; sufficiency)"
+},
+{
+"id": "imo_1966_p4-264",
+"theorem": "imo_1966_p4",
+"line": 264,
+"file": "closed/imo_1966_p4-264.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 46 verified, 0 errors",
+"added": "library work copy: MathPrelude Real.pow uninterpreted (no body, no recursive ensures) — weakening only [ensures = join conjunct g2 only: the extracted ensures has a VC_GAP conjunct `(s==0 && C'==0) ==> false` (extractor: unknown symbol ControlFlow)]"
+},
+{
+"id": "imo_1966_p4-266",
+"theorem": "imo_1966_p4",
+"line": 266,
+"file": "closed/imo_1966_p4-266.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 40 verified, 0 errors",
+"added": "only the branch guards + the child-branch result disjunctions (other requires dropped; sufficiency)"
+},
+{
+"id": "imo_1966_p4-273",
+"theorem": "imo_1966_p4",
+"line": 273,
+"file": "closed/imo_1966_p4-273.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 52 verified, 0 errors",
+"added": "library work copy: MathPrelude Real.pow uninterpreted (no body, no recursive ensures) — weakening only"
+},
+{
+"id": "imo_1966_p4-278",
+"theorem": "imo_1966_p4",
+"line": 278,
+"file": "closed/imo_1966_p4-278.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 58 verified, 0 errors",
+"added": "asserts LHS == 0.0 and RHS == 0.0 (simp's evaluated values of both sides under hsin: div_zero, sub_self; Lean's after-goal is closed)"
+},
+{
+"id": "imo_1966_p4-281",
+"theorem": "imo_1966_p4",
+"line": 281,
+"file": "closed/imo_1966_p4-281.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 57 verified, 0 errors",
+"added": "include _lib_nopow: MathPrelude Real.pow with the recursive postcondition `ensures if k == 0 then p == 1.0 else p == b * pow(b, k - 1)` removed (body unchanged, still unfoldable); lemma body empty"
+},
+{
+"id": "imo_1966_p4-291",
+"theorem": "imo_1966_p4",
+"line": 291,
+"file": "closed/imo_1966_p4-291.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 64 verified, 0 errors",
+"added": "include _lib_nopow: MathPrelude Real.pow with the recursive postcondition `ensures if k == 0 then p == 1.0 else p == b * pow(b, k - 1)` removed (body unchanged, still unfoldable); lemma body empty"
+},
+{
+"id": "imo_1966_p4-294",
+"theorem": "imo_1966_p4",
+"line": 294,
+"file": "closed/imo_1966_p4-294.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 66 verified, 0 errors",
+"added": "include _lib_nopow: MathPrelude Real.pow with the recursive postcondition `ensures if k == 0 then p == 1.0 else p == b * pow(b, k - 1)` removed (body unchanged, still unfoldable); lemma body empty"
+},
+{
+"id": "imo_1966_p4-296",
+"theorem": "imo_1966_p4",
+"line": 296,
+"file": "closed/imo_1966_p4-296.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 68 verified, 0 errors",
+"added": "include _lib_nopow: MathPrelude Real.pow with the recursive postcondition `ensures if k == 0 then p == 1.0 else p == b * pow(b, k - 1)` removed (body unchanged, still unfoldable); lemma body empty"
+},
+{
+"id": "imo_1966_p4-313",
+"theorem": "imo_1966_p4",
+"line": 313,
+"file": "closed/imo_1966_p4-313.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 71 verified, 0 errors",
+"added": "include _lib_nopow: MathPrelude Real.pow with the recursive postcondition `ensures if k == 0 then p == 1.0 else p == b * pow(b, k - 1)` removed (body unchanged, still unfoldable); lemma body empty"
+},
+{
+"id": "imo_1966_p4-332",
+"theorem": "imo_1966_p4",
+"line": 332,
+"file": "closed/imo_1966_p4-332.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 78 verified, 0 errors",
+"added": "asserts of ring_nf normal forms of field_simp's after-goal: sin·(2·sin·cos) == 2·sin²·cos and (cos·(2·sin·cos) − sin·(2cos²−1))·(cos·(sin·2)) == 2·sin²·cos (Lean exec 622/625 ring_nf closes it)"
+},
+{
+"id": "imo_1966_p4-348",
+"theorem": "imo_1966_p4",
+"line": 348,
+"file": "closed/imo_1966_p4-348.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 80 verified, 0 errors",
+"added": "work-copy library with Real.pow made opaque and its recursive postcondition removed (only change)"
+},
+{
+"id": "imo_1966_p4-367",
+"theorem": "imo_1966_p4",
+"line": 367,
+"file": "closed/imo_1966_p4-367.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 75 verified, 0 errors",
+"added": "only the branch-result requires (those containing the goal) and hcos/hsin kept (7 requires); pow/sum/tan facts dropped"
+},
+{
+"id": "imo_1966_p4-371",
+"theorem": "imo_1966_p4",
+"line": 371,
+"file": "closed/imo_1966_p4-371.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 88 verified, 0 errors",
+"added": "work-copy library with Real.pow made opaque and its recursive postcondition removed (only change)"
+},
+{
+"id": "imo_1966_p4-397",
+"theorem": "imo_1966_p4",
+"line": 397,
+"file": "closed/imo_1966_p4-397.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 3 verified, 0 errors",
+"added": "only 0 < n and the stated instance kept (2 requires)"
+},
+{
+"id": "imo_1966_p4-424",
+"theorem": "imo_1966_p4",
+"line": 424,
+"file": "closed/imo_1966_p4-424.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 3 verified, 0 errors",
+"added": "only final_conclusion kept (1 requires = the goal)"
+},
+{
+"id": "imo_1966_p5-1764",
+"theorem": "imo_1966_p5",
+"line": 1764,
+"file": "closed/imo_1966_p5-1764.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 48 verified, 0 errors",
+"added": "axiom S34_MulPosOfNegOfNeg (exact Mathlib mul_pos_of_neg_of_neg) + call at Lean's arguments"
+},
+{
+"id": "imo_1966_p5-1775",
+"theorem": "imo_1966_p5",
+"line": 1775,
+"file": "closed/imo_1966_p5-1775.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 48 verified, 0 errors",
+"added": "axiom S34_MulPosOfNegOfNeg (exact Mathlib mul_pos_of_neg_of_neg) + call at Lean's arguments"
+},
+{
+"id": "imo_1973_p3-512",
+"theorem": "imo_1973_p3",
+"line": 512,
+"file": "closed/imo_1973_p3-512.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "requires only 0 <= (y+2)*(y+2) and Q == 0 (Lean premises of mul_zero_eq); all other 20-30 requires dropped"
+},
+{
+"id": "imo_1973_p3-524",
+"theorem": "imo_1973_p3",
+"line": 524,
+"file": "closed/imo_1973_p3-524.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "requires only 0 <= (y-2)*(y-2) and Q == 0 (Lean premises of mul_zero_eq); all other 20-30 requires dropped"
+},
+{
+"id": "imo_1973_p3-531",
+"theorem": "imo_1973_p3",
+"line": 531,
+"file": "closed/imo_1973_p3-531.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "requires only Q == 0 (Lean premise h of zero_mul_eq); all other 20-30 requires dropped"
+},
+{
+"id": "imo_1973_p3-564",
+"theorem": "imo_1973_p3",
+"line": 564,
+"file": "closed/imo_1973_p3-564.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "kept 25/37 requires: Lean nlinarith (exec 417) before-state hyps h_y (Q=0), h_y_le_neg_2 (y<=-2) + the named sq_nonneg facts, certificate product pieces and the certificate identity; dropped path copies y_2/y_2_0/y_2_3, existentials, h₂ (not used by the certificate), y>=2-branch disjunct, cast facts"
+},
+{
+"id": "imo_1973_p3-591",
+"theorem": "imo_1973_p3",
+"line": 591,
+"file": "closed/imo_1973_p3-591.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "requires only 0 <= (y+2)*(y+2) and Q == 0 (Lean premises of mul_zero_eq); all other 20-30 requires dropped"
+},
+{
+"id": "imo_1973_p3-601",
+"theorem": "imo_1973_p3",
+"line": 601,
+"file": "closed/imo_1973_p3-601.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "requires only 0 <= (y-2)*(y-2) and Q == 0 (Lean premises of mul_zero_eq); all other 20-30 requires dropped"
+},
+{
+"id": "imo_1973_p3-606",
+"theorem": "imo_1973_p3",
+"line": 606,
+"file": "closed/imo_1973_p3-606.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "requires only Q == 0 (Lean premise h of zero_mul_eq); all other 20-30 requires dropped"
+},
+{
+"id": "imo_1974_p5-383",
+"theorem": "imo_1974_p5",
+"line": 383,
+"file": "closed/imo_1974_p5-383.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "K1 text + assert x * y == (((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)) * ((a + c) + d));  (ring normal-form identity, checked)"
+},
+{
+"id": "imo_1974_p5-636",
+"theorem": "imo_1974_p5",
+"line": 636,
+"file": "closed/imo_1974_p5-636.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "K1 text + assert x * y == ((a * b) * (c * d));  (ring normal-form identity, checked)"
+},
+{
+"id": "imo_1974_p5-717",
+"theorem": "imo_1974_p5",
+"line": 717,
+"file": "closed/imo_1974_p5-717.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "K1 text + assert x * y == (((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)) * ((a + c) + d));  (ring normal-form identity, checked)"
+},
+{
+"id": "imo_1974_p5-1013",
+"theorem": "imo_1974_p5",
+"line": 1013,
+"file": "closed/imo_1974_p5-1013.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "K1 text + assert x * y == ((a * b) * (a * c));  (ring normal-form identity, checked)"
+},
+{
+"id": "imo_1974_p5-1024",
+"theorem": "imo_1974_p5",
+"line": 1024,
+"file": "closed/imo_1974_p5-1024.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "K1 text + assert x * y == ((a * b) * (a * d));  (ring normal-form identity, checked)"
+},
+{
+"id": "imo_1974_p5-1035",
+"theorem": "imo_1974_p5",
+"line": 1035,
+"file": "closed/imo_1974_p5-1035.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "K1 text + assert x * y == ((a * b) * (b * c));  (ring normal-form identity, checked)"
+},
+{
+"id": "imo_1974_p5-1046",
+"theorem": "imo_1974_p5",
+"line": 1046,
+"file": "closed/imo_1974_p5-1046.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "K1 text + assert x * y == ((a * b) * (b * d));  (ring normal-form identity, checked)"
+},
+{
+"id": "imo_1974_p5-1057",
+"theorem": "imo_1974_p5",
+"line": 1057,
+"file": "closed/imo_1974_p5-1057.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "K1 text + assert x * y == ((a * b) * (c * d));  (ring normal-form identity, checked)"
+},
+{
+"id": "imo_1974_p5-1567",
+"theorem": "imo_1974_p5",
+"line": 1567,
+"file": "closed/imo_1974_p5-1567.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "assert s == Real.div(((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d)), (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d));  (field_simp's normal form: Lean's after-goal of exec 1131)"
+},
+{
+"id": "imo_1974_p5-1801",
+"theorem": "imo_1974_p5",
+"line": 1801,
+"file": "closed/imo_1974_p5-1801.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "assert s == Real.div(((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d)), (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d));  (field_simp's normal form: Lean's after-hyp of exec 1254)"
+},
+{
+"id": "imo_1983_p6-268",
+"theorem": "imo_1983_p6",
+"line": 268,
+"file": "closed/imo_1983_p6-268.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "imo_1984_p2-64",
+"theorem": "imo_1984_p2",
+"line": 64,
+"file": "closed/imo_1984_p2-64.dfy",
+"kind": "K2",
+"how": "variant",
+"dafny": "finished with 502 verified, 0 errors",
+"added": null
+},
+{
+"id": "imo_1992_p1-780",
+"theorem": "imo_1992_p1",
+"line": 780,
+"file": "closed/imo_1992_p1-780.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 9 verified, 0 errors",
+"added": "ring normal form of each product summand as asserts (Lean's ring normalisation, e.g. assert (1+1-p)*(3-p) == p*p + -5*p + 6)"
+},
+{
+"id": "imo_1992_p1-960",
+"theorem": "imo_1992_p1",
+"line": 960,
+"file": "closed/imo_1992_p1-960.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 8 verified, 0 errors",
+"added": "same normal forms as separate context-free helper lemmas, called in the body"
+},
+{
+"id": "imo_1992_p1-1145",
+"theorem": "imo_1992_p1",
+"line": 1145,
+"file": "closed/imo_1992_p1-1145.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 7 verified, 0 errors",
+"added": "same normal forms as separate context-free helper lemmas, called in the body"
+},
+{
+"id": "imo_1992_p1-1303",
+"theorem": "imo_1992_p1",
+"line": 1303,
+"file": "closed/imo_1992_p1-1303.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 6 verified, 0 errors",
+"added": "ring normal form of each product summand as asserts (Lean's ring normalisation, e.g. assert (1+1-p)*(3-p) == p*p + -5*p + 6)"
+},
+{
+"id": "imo_1992_p1-1343",
+"theorem": "imo_1992_p1",
+"line": 1343,
+"file": "closed/imo_1992_p1-1343.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 6 verified, 0 errors",
+"added": "ring normal form of each product summand as asserts (Lean's ring normalisation, e.g. assert (1+1-p)*(3-p) == p*p + -5*p + 6)"
+},
+{
+"id": "imo_1992_p1-1593",
+"theorem": "imo_1992_p1",
+"line": 1593,
+"file": "closed/imo_1992_p1-1593.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 9 verified, 0 errors",
+"added": "K2b with monomials written as atoms (-9 * (p * q * r) instead of -9 * p * q * r)"
+},
+{
+"id": "imo_1992_p1-5471",
+"theorem": "imo_1992_p1",
+"line": 5471,
+"file": "closed/imo_1992_p1-5471.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 6 verified, 0 errors",
+"added": "assert (p - 1) * (q - 1) * (r - 1) == p*q*r - p*q - p*r - q*r + p + q + r - 1"
+},
+{
+"id": "mathd_algebra_156-251",
+"theorem": "mathd_algebra_156",
+"line": 251,
+"file": "closed/mathd_algebra_156-251.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "EqZeroOrEqZeroOfMulEqZero(x * x - 2.0, x * x - 3.0);"
+},
+{
+"id": "mathd_algebra_156-313",
+"theorem": "mathd_algebra_156",
+"line": 313,
+"file": "closed/mathd_algebra_156-313.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "EqZeroOrEqZeroOfMulEqZero(y * y - 2.0, y * y - 3.0);"
+},
+{
+"id": "mathd_algebra_170-285",
+"theorem": "mathd_algebra_170",
+"line": 285,
+"file": "closed/mathd_algebra_170-285.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 3 verified, 0 errors",
+"added": "assert Icc(0 - 3, 7) == {-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7};"
+},
+{
+"id": "mathd_algebra_342-130",
+"theorem": "mathd_algebra_342",
+"line": 130,
+"file": "closed/mathd_algebra_342-130.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 21 verified, 0 errors",
+"added": "FinsetSumRangeSucc(0, F); FinsetSumRangeZero(F);"
+},
+{
+"id": "mathd_algebra_598-542",
+"theorem": "mathd_algebra_598",
+"line": 542,
+"file": "closed/mathd_algebra_598-542.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 5 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_algebra_756-231",
+"theorem": "mathd_algebra_756",
+"line": 231,
+"file": "closed/mathd_algebra_756-231.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "RealLogRpow(2.0, a);"
+},
+{
+"id": "mathd_algebra_756-438",
+"theorem": "mathd_algebra_756",
+"line": 438,
+"file": "closed/mathd_algebra_756-438.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "RealRpowNatCast(3.0, 5);"
+},
+{
+"id": "mathd_numbertheory_175-27",
+"theorem": "mathd_numbertheory_175",
+"line": 27,
+"file": "closed/mathd_numbertheory_175-27.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 5 verified, 0 errors",
+"added": "kinds/work/shard_039/_lib_nopowpost (MathPrelude Int.pow without `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)`; only change)"
+},
+{
+"id": "mathd_numbertheory_175-71",
+"theorem": "mathd_numbertheory_175",
+"line": 71,
+"file": "closed/mathd_numbertheory_175-71.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 16 verified, 0 errors",
+"added": "NatMulMod(Int.pow(2 * 2 * 2 * 2, 502), 2 * 2, 10);  (Nat.mul_mod, simp hint lemma)"
+},
+{
+"id": "mathd_numbertheory_175-79",
+"theorem": "mathd_numbertheory_175",
+"line": 79,
+"file": "closed/mathd_numbertheory_175-79.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 18 verified, 0 errors",
+"added": "kinds/work/shard_039/_lib_nopowpost (MathPrelude Int.pow without `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)`; only change)"
+},
+{
+"id": "mathd_numbertheory_175-93",
+"theorem": "mathd_numbertheory_175",
+"line": 93,
+"file": "closed/mathd_numbertheory_175-93.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 24 verified, 0 errors",
+"added": "NatPowMod(2 * 2 * 2 * 2, 502, 10);  (Nat.pow_mod, simp hint lemma)"
+},
+{
+"id": "mathd_numbertheory_175-107",
+"theorem": "mathd_numbertheory_175",
+"line": 107,
+"file": "closed/mathd_numbertheory_175-107.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "no requires (norm_num used no hypothesis)"
+},
+{
+"id": "mathd_numbertheory_618-114",
+"theorem": "mathd_numbertheory_618",
+"line": 114,
+"file": "closed/mathd_numbertheory_618-114.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 35 verified, 0 errors",
+"added": "NatGcdSelfAddRight(p(n), 2 * n);  with work-copy axiom = exact Mathlib Nat.gcd_self_add_right (m n : ℕ) : gcd m (m + n) = gcd m n (Lean's simp applied it internally, exec 193)"
+},
+{
+"id": "mathd_numbertheory_618-177",
+"theorem": "mathd_numbertheory_618",
+"line": 177,
+"file": "closed/mathd_numbertheory_618-177.dfy",
+"kind": "K1+K3",
+"how": "multi",
+"dafny": "finished with 8 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-183",
+"theorem": "mathd_numbertheory_618",
+"line": 183,
+"file": "closed/mathd_numbertheory_618-183.dfy",
+"kind": "K1+K3",
+"how": "multi",
+"dafny": "finished with 8 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-189",
+"theorem": "mathd_numbertheory_618",
+"line": 189,
+"file": "closed/mathd_numbertheory_618-189.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 4 verified, 0 errors",
+"added": "split lemma with only h₀ (∀x, p x = x*x - x + 41), n == 5, h₄ (1 < gcd(p(5), 2*5)) ⊢ false — the hypotheses Lean's `norm_num [h₀,…] at h₄ ⊢` used; all other requires (40-branch path disjunctions etc.) dropped"
+},
+{
+"id": "mathd_numbertheory_618-195",
+"theorem": "mathd_numbertheory_618",
+"line": 195,
+"file": "closed/mathd_numbertheory_618-195.dfy",
+"kind": "K1+K3",
+"how": "multi",
+"dafny": "finished with 8 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-201",
+"theorem": "mathd_numbertheory_618",
+"line": 201,
+"file": "closed/mathd_numbertheory_618-201.dfy",
+"kind": "K1+K3",
+"how": "multi",
+"dafny": "finished with 8 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-219",
+"theorem": "mathd_numbertheory_618",
+"line": 219,
+"file": "closed/mathd_numbertheory_618-219.dfy",
+"kind": "K1+K3",
+"how": "multi",
+"dafny": "finished with 8 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-225",
+"theorem": "mathd_numbertheory_618",
+"line": 225,
+"file": "closed/mathd_numbertheory_618-225.dfy",
+"kind": "K1+K3",
+"how": "multi",
+"dafny": "finished with 8 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-231",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "mathd_numbertheory_618-237",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "mathd_numbertheory_618-243",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "mathd_numbertheory_618-249",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "mathd_numbertheory_618-255",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "mathd_numbertheory_618-261",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "mathd_numbertheory_618-267",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "mathd_numbertheory_618-279",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "mathd_numbertheory_618-285",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "mathd_numbertheory_618-291",
+"theorem": "mathd_numbertheory_618",
+"line": 291,
+"file": "closed/mathd_numbertheory_618-291.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 7 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-297",
+"theorem": "mathd_numbertheory_618",
+"line": 297,
+"file": "closed/mathd_numbertheory_618-297.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 19 verified, 0 errors",
+"added": "assert tsub(23 * 23, 23) + 41 == 547; assert 2 * 23 == 46; assert gcd(547, 46) == 1;  (IsNat records isNat_natSub/isNat_add/isNat_mul/isNat_gcd, exec 470; all checked)"
+},
+{
+"id": "mathd_numbertheory_618-303",
+"theorem": "mathd_numbertheory_618",
+"line": 303,
+"file": "closed/mathd_numbertheory_618-303.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 7 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-309",
+"theorem": "mathd_numbertheory_618",
+"line": 309,
+"file": "closed/mathd_numbertheory_618-309.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 7 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-315",
+"theorem": "mathd_numbertheory_618",
+"line": 315,
+"file": "closed/mathd_numbertheory_618-315.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 7 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-321",
+"theorem": "mathd_numbertheory_618",
+"line": 321,
+"file": "closed/mathd_numbertheory_618-321.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 7 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-327",
+"theorem": "mathd_numbertheory_618",
+"line": 327,
+"file": "closed/mathd_numbertheory_618-327.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 7 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-333",
+"theorem": "mathd_numbertheory_618",
+"line": 333,
+"file": "closed/mathd_numbertheory_618-333.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 7 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-345",
+"theorem": "mathd_numbertheory_618",
+"line": 345,
+"file": "closed/mathd_numbertheory_618-345.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 7 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-351",
+"theorem": "mathd_numbertheory_618",
+"line": 351,
+"file": "closed/mathd_numbertheory_618-351.dfy",
+"kind": "K2+K3",
+"how": "multi",
+"dafny": "finished with 11 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-357",
+"theorem": "mathd_numbertheory_618",
+"line": 357,
+"file": "closed/mathd_numbertheory_618-357.dfy",
+"kind": "K2+K3",
+"how": "multi",
+"dafny": "finished with 11 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-363",
+"theorem": "mathd_numbertheory_618",
+"line": 363,
+"file": "closed/mathd_numbertheory_618-363.dfy",
+"kind": "K2+K3",
+"how": "multi",
+"dafny": "finished with 11 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-369",
+"theorem": "mathd_numbertheory_618",
+"line": 369,
+"file": "closed/mathd_numbertheory_618-369.dfy",
+"kind": "K2+K3",
+"how": "multi",
+"dafny": "finished with 11 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-382",
+"theorem": "mathd_numbertheory_618",
+"line": 382,
+"file": "closed/mathd_numbertheory_618-382.dfy",
+"kind": "K2+K3",
+"how": "multi",
+"dafny": "finished with 11 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-389",
+"theorem": "mathd_numbertheory_618",
+"line": 389,
+"file": "closed/mathd_numbertheory_618-389.dfy",
+"kind": "K2+K3",
+"how": "multi",
+"dafny": "finished with 11 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_618-396",
+"theorem": "mathd_numbertheory_618",
+"line": 396,
+"file": "closed/mathd_numbertheory_618-396.dfy",
+"kind": "K2+K3",
+"how": "multi",
+"dafny": "finished with 11 verified, 0 errors",
+"added": null
+},
+{
+"id": "mathd_numbertheory_84-26",
+"theorem": "mathd_numbertheory_84",
+"line": 26,
+"file": "closed/mathd_numbertheory_84-26.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 8 verified, 0 errors",
+"added": "IntFloorEqIff(9.0 / 160.0 * 100.0, 5);  (library counterpart of Int.floor_eq_iff, the simp lemma in norm_num [Int.floor_eq_iff, shifted_decimal])"
+},
+{
+"id": "numbertheory_2pownm1prime_nprime-104",
+"theorem": "numbertheory_2pownm1prime_nprime",
+"line": 104,
+"file": "closed/numbertheory_2pownm1prime_nprime-104.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 10 verified, 0 errors",
+"added": "witness of the cited existential named (var w :| …) + assert NatDvd(w, n)"
+},
+{
+"id": "numbertheory_2pownm1prime_nprime-284",
+"theorem": "numbertheory_2pownm1prime_nprime",
+"line": 284,
+"file": "closed/numbertheory_2pownm1prime_nprime-284.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 2 verified, 0 errors",
+"added": "only NatDvd(m,n) and the destructuring branch disjunction kept"
+},
+{
+"id": "numbertheory_2pownm1prime_nprime-286",
+"theorem": "numbertheory_2pownm1prime_nprime",
+"line": 286,
+"file": "closed/numbertheory_2pownm1prime_nprime-286.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 11 verified, 0 errors",
+"added": "NatDvdIffModEqZero(m,n); var q :| n == m*q; NatMulDivCancelLeft(m,q)  (Lean's obtain witness)"
+},
+{
+"id": "numbertheory_2pownm1prime_nprime-324",
+"theorem": "numbertheory_2pownm1prime_nprime",
+"line": 324,
+"file": "closed/numbertheory_2pownm1prime_nprime-324.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "only h₁₂₁ : m ≥ 2 kept"
+},
+{
+"id": "numbertheory_2pownm1prime_nprime-333",
+"theorem": "numbertheory_2pownm1prime_nprime",
+"line": 333,
+"file": "closed/numbertheory_2pownm1prime_nprime-333.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "only h₁₂₃ : Int.pow(2,m) >= 2*2 kept (omega's before-state facts)"
+},
+{
+"id": "numbertheory_2pownm1prime_nprime-338",
+"theorem": "numbertheory_2pownm1prime_nprime",
+"line": 338,
+"file": "closed/numbertheory_2pownm1prime_nprime-338.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 3 verified, 0 errors",
+"added": "no hypotheses at all"
+},
+{
+"id": "numbertheory_2pownm1prime_nprime-380",
+"theorem": "numbertheory_2pownm1prime_nprime",
+"line": 380,
+"file": "closed/numbertheory_2pownm1prime_nprime-380.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "only h₁₃₅ : m ≥ 2 kept"
+},
+{
+"id": "numbertheory_2pownm1prime_nprime-393",
+"theorem": "numbertheory_2pownm1prime_nprime",
+"line": 393,
+"file": "closed/numbertheory_2pownm1prime_nprime-393.dfy",
+"kind": "K3",
+"how": "single",
+"dafny": "finished with 1 verified, 0 errors",
+"added": "only h₂ : n ≥ 2 kept"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-40",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 40,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-40.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-57",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 57,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-57.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-59",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 59,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-59.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-88",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 88,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-88.dfy",
+"kind": "K2",
+"how": "simplest-close",
+"dafny": "finished with 69 verified, 0 errors",
+"added": "library: drop Int.pow recursive ensures (opaque-style pow); plus in the step: IntPowAdd(2,n,2);IntPowAdd(2,n,3);IntPowAdd(2,n,4);IntPowAdd(2,n,n);assert n+n==2*n;IntPowAdd(2,2*n,4);IntPowAdd(2,2*n,5);IntPowAdd(2,2*n,6);assert Int.pow(2,2)==4&&…&&Int.pow(2,6)==64; and a call to the pow-free helper le"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-98",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 98,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-98.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-109",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 109,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-109.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-111",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 111,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-111.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-113",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 113,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-113.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-124",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 124,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-124.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 56 verified, 0 errors",
+"added": "library copy with Int.pow recursive ensures removed"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-129",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 129,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-129.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 52 verified, 0 errors",
+"added": "IntModEqZero(k_1_0_2_0 * Int.pow(2, n + 4), Int.pow(2, n + 4)); assert k_1_0_2_0 * Int.pow(2, n + 4) == Int.pow(2, n + 4) * k_1_0_2_0; — Lean's ∃-witness k of ⟨k, by ring⟩ instantiating the dvd⇔mod bridge (library :171)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-146",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-150",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-176",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-177",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-182",
+"file": null,
+"kind": null,
+"how": null
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-195",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 195,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-195.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-220",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 220,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-220.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-221",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 221,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-221.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-222",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 222,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-222.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-226",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 226,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-226.dfy",
+"kind": "K2+K3",
+"how": "multi",
+"dafny": "finished with 30 verified, 0 errors",
+"added": null
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-233",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 233,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-233.dfy",
+"kind": "K2+K3",
+"how": "multi",
+"dafny": "finished with 30 verified, 0 errors",
+"added": null
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-240",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 240,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-240.dfy",
+"kind": "K3",
+"how": "variant",
+"dafny": "finished with 21 verified, 0 errors",
+"added": "requires: 0<=k, WF, NatMod(S,P)==0 (h₁₂)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-243",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 243,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-243.dfy",
+"kind": "K3",
+"how": "variant",
+"dafny": "finished with 21 verified, 0 errors",
+"added": "requires: 0<=k, WF, NatMod(S,P)==0 (h₁₀)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-246",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 246,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-246.dfy",
+"kind": "K2+K3",
+"how": "multi",
+"dafny": "finished with 35 verified, 0 errors",
+"added": null
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-250",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 250,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-250.dfy",
+"kind": "K3",
+"how": "variant",
+"dafny": "finished with 20 verified, 0 errors",
+"added": "requires: 0<=k, n+4<=2n+4 (omega subgoal); body: NatPowDvdPow(2,n+4,2n+4) (translation's own cite)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-261",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 261,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-261.dfy",
+"kind": "K2",
+"how": "variant",
+"dafny": "finished with 67 verified, 0 errors",
+"added": "library copy (work/shard_047/_powlib) with only the recursive `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` of Int.pow removed"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-266",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 266,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-266.dfy",
+"kind": "K1+K4",
+"how": "multi",
+"dafny": "finished with 69 verified, 0 errors",
+"added": null
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-283",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 283,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-283.dfy",
+"kind": "K2",
+"how": "variant",
+"dafny": "finished with 85 verified, 0 errors",
+"added": "library copy (work/shard_047/_powlib) with only the recursive `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` of Int.pow removed"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-287",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 287,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-287.dfy",
+"kind": "K2",
+"how": "variant",
+"dafny": "finished with 61 verified, 0 errors",
+"added": "library copy (work/shard_047/_powlib) with only the recursive `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)` of Int.pow removed"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-313",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 313,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-313.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 96 verified, 0 errors",
+"added": "NatDvdTrans(Int.pow(2, n + 4), Int.pow(2, 2 * n + 5), 2 * k * Int.pow(2, 2 * n + 5));  (dvd_trans at the calc args; library axiom = Mathlib dvd_trans)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-314",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 314,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-314.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 82 verified, 0 errors",
+"added": "library Int.pow without recursive ensures (work/shard_048/powlib)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-319",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 319,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-319.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 78 verified, 0 errors",
+"added": "IntModEqZero(2 * k * Int.pow(2, 2 * n + 5), Int.pow(2, 2 * n + 5)); assert 2 * k * Int.pow(2, 2 * n + 5) == Int.pow(2, 2 * n + 5) * (2 * k);  (witness q = 2k from ⟨2 * k, _⟩)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-335",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 335,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-335.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-336",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 336,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-336.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-337",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 337,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-337.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-341",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 341,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-341.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-348",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 348,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-348.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-355",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 355,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-355.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-358",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 358,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-358.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-361",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 361,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-361.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-389",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 389,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-389.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 159 verified, 0 errors",
+"added": "library Int.pow without the recursive ensures `if k==0 then p==1 else p==b*pow(b,k-1)` (work/shard_049/powlib; only that change)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-390",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 390,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-390.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 242 verified, 0 errors",
+"added": "library Int.pow without the recursive ensures `if k==0 then p==1 else p==b*pow(b,k-1)` (work/shard_049/powlib; only that change)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-391",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 391,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-391.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-394",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 394,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-394.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 254 verified, 0 errors",
+"added": "library Int.pow without the recursive ensures `if k==0 then p==1 else p==b*pow(b,k-1)` (work/shard_049/powlib; only that change)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-398",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 398,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-398.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-453",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 453,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-453.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-483",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 483,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-483.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 39 verified, 0 errors",
+"added": "library copy with MathPrelude Int.pow recursive ensures `if k == 0 then p == 1 else p == b * pow(b, k - 1)` removed (only change; kinds/work/shard_050/powlib)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-508",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 508,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-508.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-510",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 510,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-510.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-512",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 512,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-512.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-516",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 516,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-516.dfy",
+"kind": "K1+K4",
+"how": "multi",
+"dafny": "finished with 72 verified, 0 errors",
+"added": null
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-528",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 528,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-528.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-535",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 535,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-535.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 88 verified, 0 errors",
+"added": "library copy with MathPrelude Int.pow recursive ensures `if k == 0 then p == 1 else p == b * pow(b, k - 1)` removed (only change; kinds/work/shard_050/powlib)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-545",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 545,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-545.dfy",
+"kind": "K5",
+"how": "single",
+"dafny": "finished with 87 verified, 0 errors",
+"added": "NatAddZero(NatMod(2^(n+2),P)); NatDvdRefl(P); NatModModOfDvd(2^(n+2),P,P) — Lean simp internals add_zero, Nat.mod_mod_of_dvd (exact Mathlib/core, Nat.mod_mod_of_dvd & Nat.dvd_refl added to work copy)"
+},
+{
+"id": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2-555",
+"theorem": "numbertheory_3pow2pownm1mod2pownp3eq2pownp2",
+"line": 555,
+"file": "closed/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-555.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_aoddbdiv4asqpbsqmod8eq1-184",
+"theorem": "numbertheory_aoddbdiv4asqpbsqmod8eq1",
+"line": 184,
+"file": "closed/numbertheory_aoddbdiv4asqpbsqmod8eq1-184.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 14 verified, 0 errors",
+"added": "assert 4 * k * (4 * k) == k * k * 16;  // Lean ring_nf normal form (before (4k)^2, after k^2*16)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-77",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 77,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-77.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 20 verified, 0 errors",
+"added": "library Int.pow without the recursive ensures `if k == 0 then p == 1 else p == b * pow(b, k - 1)` (work/shard_051/_k2pow; body and sign ensures unchanged)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-95",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 95,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-95.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-97",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 97,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-97.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 15 verified, 0 errors",
+"added": "library Int.pow without the recursive ensures `if k == 0 then p == 1 else p == b * pow(b, k - 1)` (work/shard_051/_k2pow; body and sign ensures unchanged)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-113",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 113,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-113.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 16 verified, 0 errors",
+"added": "library Int.pow without the recursive ensures `if k == 0 then p == 1 else p == b * pow(b, k - 1)` (work/shard_051/_k2pow; body and sign ensures unchanged)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-129",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 129,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-129.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 17 verified, 0 errors",
+"added": "library Int.pow without the recursive ensures `if k == 0 then p == 1 else p == b * pow(b, k - 1)` (work/shard_051/_k2pow; body and sign ensures unchanged)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-148",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 148,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-148.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 24 verified, 0 errors",
+"added": "library Int.pow without the recursive ensures `if k == 0 then p == 1 else p == b * pow(b, k - 1)` (work/shard_051/_k2pow; body and sign ensures unchanged)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-150",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 150,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-150.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 20 verified, 0 errors",
+"added": "library Int.pow without the recursive ensures `if k == 0 then p == 1 else p == b * pow(b, k - 1)` (work/shard_051/_k2pow; body and sign ensures unchanged)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-164",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 164,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-164.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-170",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 170,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-170.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-189",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 189,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-189.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-227",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 227,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-227.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-229",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 229,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-229.dfy",
+"kind": "K3",
+"how": "base",
+"dafny": "verifies unchanged (dossier standalone check)",
+"added": "nothing (line lemma standalone)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-231",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 231,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-231.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 22 verified, 0 errors",
+"added": "library copy without Int.pow's recursive postcondition (kinds/work/shard_052/_k2pow)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-247",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 247,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-247.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 23 verified, 0 errors",
+"added": "library copy without Int.pow's recursive postcondition (kinds/work/shard_052/_k2pow)"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-265",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 265,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-265.dfy",
+"kind": "K2",
+"how": "simplest-close",
+"dafny": "finished with 24 verified, 0 errors",
+"added": "lemma RingId(a: int, b: int) ensures a * b * (a * a + b * b) + a * a * (b * b) == a * b * (a * a + a * b + b * b) { }  + call RingId(Int.pow(2, k), Int.pow(3, k)); together with the K2-pow library change"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-293",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 293,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-293.dfy",
+"kind": "K2",
+"how": "simplest-close",
+"dafny": "finished with 22 verified, 0 errors",
+"added": null
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-306",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 306,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-306.dfy",
+"kind": "K2",
+"how": "single",
+"dafny": "finished with 41 verified, 0 errors",
+"added": "library copy without Int.pow's recursive postcondition"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-318",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 318,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-318.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 21 verified, 0 errors",
+"added": null
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-319",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 319,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-319.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 25 verified, 0 errors",
+"added": null
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-324",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 324,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-324.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 32 verified, 0 errors",
+"added": null
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-390",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 390,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-390.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 20 verified, 0 errors",
+"added": null
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-407",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 407,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-407.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 38 verified, 0 errors",
+"added": null
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-408",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 408,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-408.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 55 verified, 0 errors",
+"added": "induction_helper_1(m, n, f, t_2_0);  // h₃ t at Lean's argument (Lean's h₃ is proved by induction on t) [K1.dfy]"
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-413",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 413,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-413.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 21 verified, 0 errors",
+"added": null
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-442",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 442,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-442.dfy",
+"kind": "simplest",
+"how": "simplest-close",
+"dafny": "finished with 22 verified, 0 errors",
+"added": null
+},
+{
+"id": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-447",
+"theorem": "numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown",
+"line": 447,
+"file": "closed/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-447.dfy",
+"kind": "K1",
+"how": "single",
+"dafny": "finished with 44 verified, 0 errors",
+"added": "induction_helper_1(m, n, f, t_3_5_0);  // h_chain t at Lean's argument (h_chain := h₃ := induction) [K1.dfy]"
+}
+]
