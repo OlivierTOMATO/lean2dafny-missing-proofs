@@ -306,26 +306,6 @@ lemma mathd_numbertheory_618(n: nat, p: nat -> nat)
         if (n == 25) && ((25 > 0)) && ((1 < gcd(p(25), p((25 + 1))))) && ((p((25 + 1)) == (p(25) + (2 * 25)))) && ((gcd(p(25), p((25 + 1))) == gcd(p(25), (2 * 25)))) && ((1 < gcd(p(25), (2 * 25)))) && (!(41 <= 25)) && ((25 <= 40)) {  // sub-goal of `norm_num` (Lean state)
           // UNCITED Nat.gcd_eq_right: no Lean instance recorded (arguments unknown), not guessed
           // UNCITED Nat.gcd_eq_left: no Lean instance recorded (arguments unknown), not guessed
-          assert 0 <= 25;  /* [IN-FILE CHECK] requires 1 of vc_mathd_numbertheory_618_L309 */
-          assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_mathd_numbertheory_618_L309 */
-          assert 25 > 0;  /* [IN-FILE CHECK] requires 3 of vc_mathd_numbertheory_618_L309 */
-          assert forall x_1: nat :: p(x_1) == tsub(x_1 * x_1, x_1) + 41;  /* [IN-FILE CHECK] requires 4 of vc_mathd_numbertheory_618_L309 */
-          assert 1 < gcd(p(25), p(25 + 1));  /* [IN-FILE CHECK] requires 5 of vc_mathd_numbertheory_618_L309 */
-          assert 0 <= 25 + 1;  /* [IN-FILE CHECK] requires 6 of vc_mathd_numbertheory_618_L309 */
-          assert p(25 + 1) == p(25) + 2 * 25;  /* [IN-FILE CHECK] requires 7 of vc_mathd_numbertheory_618_L309 */
-          assert 0 <= 2 * 25;  /* [IN-FILE CHECK] requires 8 of vc_mathd_numbertheory_618_L309 */
-          assert gcd(p(25), p(25 + 1)) == gcd(p(25), 2 * 25);  /* [IN-FILE CHECK] requires 9 of vc_mathd_numbertheory_618_L309 */
-          assert 1 < gcd(p(25), 2 * 25);  /* [IN-FILE CHECK] requires 10 of vc_mathd_numbertheory_618_L309 */
-          assert !(41 <= 25);  /* [IN-FILE CHECK] requires 11 of vc_mathd_numbertheory_618_L309 */
-          assert 25 <= 40;  /* [IN-FILE CHECK] requires 12 of vc_mathd_numbertheory_618_L309 */
-          assert 25 == 25;  /* [IN-FILE CHECK] requires 13 of vc_mathd_numbertheory_618_L309 */
-          assert 25 > 0;  /* [IN-FILE CHECK] requires 14 of vc_mathd_numbertheory_618_L309 */
-          assert 1 < gcd(p(25), p(25 + 1));  /* [IN-FILE CHECK] requires 15 of vc_mathd_numbertheory_618_L309 */
-          assert p(25 + 1) == p(25) + 2 * 25;  /* [IN-FILE CHECK] requires 16 of vc_mathd_numbertheory_618_L309 */
-          assert gcd(p(25), p(25 + 1)) == gcd(p(25), 2 * 25);  /* [IN-FILE CHECK] requires 17 of vc_mathd_numbertheory_618_L309 */
-          assert 1 < gcd(p(25), 2 * 25);  /* [IN-FILE CHECK] requires 18 of vc_mathd_numbertheory_618_L309 */
-          assert !(41 <= 25);  /* [IN-FILE CHECK] requires 19 of vc_mathd_numbertheory_618_L309 */
-          assert 25 <= 40;  /* [IN-FILE CHECK] requires 20 of vc_mathd_numbertheory_618_L309 */
           vc_mathd_numbertheory_618_L309(25, n, p);  /* [IN-FILE CHECK] the closed lemma for line 309 */
           assert false;  // sub-goal of `norm_num` (Lean state) // @tac 1612-1692
           // UNCITED-APPLIED internal ×23 [exec 476 1612-1692]: applications made inside the tactic's own automation, not stated — Tactic.NormNum.isNat_gcd ×1, Tactic.NormNum.nat_gcd_helper_2' ×1; machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×5, Eq.trans ×3, Mathlib.Meta.NormNum.IsNat.to_eq ×3, congrArg ×2 (+8 more heads, ×8)

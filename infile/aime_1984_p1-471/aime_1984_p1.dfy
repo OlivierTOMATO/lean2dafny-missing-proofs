@@ -468,29 +468,6 @@ lemma aime_1984_p1(u: nat -> Rat.rat)
           FinsetSumAddDistribRat(range(49), ((k: nat) => u(0)), ((k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(k), Rat.of_int(1)))));  // cite: Finset.sum_add_distrib
           // UNCITED-APPLIED congrArg(∑ x ∈ Finset.range (49 : ℕ), (u (0 : ℕ) + (2 : ℚ) * (↑x + (1 : ℚ))), ∑ x ∈ Finset.range (49 : ℕ), u (0 : ℕ) + ∑ x ∈ Finset.range (49 : ℕ),…, fun (_a : ℚ) => _a = ∑ k ∈ Finset.range (49 : ℕ), u (0 : ℕ) + ∑ k ∈ F…): no library counterpart (not stated) [exec 645 3185-3212]
         }
-        assert forall n_1: int :: 0 <= n_1 ==> u.requires(n_1 + 1) && u.requires(n_1);  /* [IN-FILE CHECK] requires 1 of vc_aime_1984_p1_L471 */
-        assert forall n_1: int :: 0 <= n_1 ==> u(n_1 + 1) == Rat.add(u(n_1), Rat.of_int(1));  /* [IN-FILE CHECK] requires 2 of vc_aime_1984_p1_L471 */
-        assert Rat.sum(range(98), ((k: nat) => u(k + 1))) == Rat.of_int(137);  /* [IN-FILE CHECK] requires 3 of vc_aime_1984_p1_L471 */
-        assert forall n_0_1: nat :: true ==> u.requires(n_0_1) && u.requires(0);  /* [IN-FILE CHECK] requires 4 of vc_aime_1984_p1_L471 */
-        assert forall n_0_1: nat :: true ==> u(n_0_1) == Rat.add(u(0), Rat.of_int(n_0_1));  /* [IN-FILE CHECK] requires 5 of vc_aime_1984_p1_L471 */
-        assert 0 <= 0;  /* [IN-FILE CHECK] requires 6 of vc_aime_1984_p1_L471 */
-        assert Rat.of_int(2357).Rational?;  /* [IN-FILE CHECK] requires 7 of vc_aime_1984_p1_L471 */
-        assert Rat.neg(Rat.of_int(2357)).Rational?;  /* [IN-FILE CHECK] requires 8 of vc_aime_1984_p1_L471 */
-        assert Rat.of_int(49).Rational?;  /* [IN-FILE CHECK] requires 9 of vc_aime_1984_p1_L471 */
-        assert Rat.div(Rat.neg(Rat.of_int(2357)), Rat.of_int(49)).Rational?;  /* [IN-FILE CHECK] requires 10 of vc_aime_1984_p1_L471 */
-        assert u(0) == Rat.div(Rat.neg(Rat.of_int(2357)), Rat.of_int(49));  /* [IN-FILE CHECK] requires 11 of vc_aime_1984_p1_L471 */
-        assert 0 <= 49;  /* [IN-FILE CHECK] requires 12 of vc_aime_1984_p1_L471 */
-        assert Rat.sum(range(49), ((k: nat) => u(2 * (k + 1)))).Rational?;  /* [IN-FILE CHECK] requires 13 of vc_aime_1984_p1_L471 */
-        assert Rat.sum(range(49), ((v_27_k: nat) => Rat.add(u(0), Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_27_k), Rat.of_int(1)))))).Rational?;  /* [IN-FILE CHECK] requires 14 of vc_aime_1984_p1_L471 */
-        assert Rat.sum(range(49), ((k: nat) => u(2 * (k + 1)))) == Rat.sum(range(49), ((v_27_k: nat) => Rat.add(u(0), Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_27_k), Rat.of_int(1))))));  /* [IN-FILE CHECK] requires 15 of vc_aime_1984_p1_L471 */
-        assert Rat.sum(range(49), ((v_1_0_47_k: nat) => u(0))).Rational?;  /* [IN-FILE CHECK] requires 16 of vc_aime_1984_p1_L471 */
-        assert Rat.sum(range(49), ((v_1_32_k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_1_32_k), Rat.of_int(1))))).Rational?;  /* [IN-FILE CHECK] requires 17 of vc_aime_1984_p1_L471 */
-        assert Rat.add(Rat.sum(range(49), ((v_1_0_47_k: nat) => u(0))), Rat.sum(range(49), ((v_1_32_k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_1_32_k), Rat.of_int(1)))))).Rational?;  /* [IN-FILE CHECK] requires 18 of vc_aime_1984_p1_L471 */
-        assert Rat.sum(range(49), ((v_27_k: nat) => Rat.add(u(0), Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_27_k), Rat.of_int(1)))))) == Rat.add(Rat.sum(range(49), ((v_1_0_47_k: nat) => u(0))), Rat.sum(range(49), ((v_1_32_k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_1_32_k), Rat.of_int(1))))));  /* [IN-FILE CHECK] requires 19 of vc_aime_1984_p1_L471 */
-        assert |range(49)| == 49;  /* [IN-FILE CHECK] requires 20 of vc_aime_1984_p1_L471 */
-        assert Rat.mul(Rat.of_int(49), u(0)).Rational?;  /* [IN-FILE CHECK] requires 21 of vc_aime_1984_p1_L471 */
-        assert Rat.add(Rat.mul(Rat.of_int(49), u(0)), Rat.sum(range(49), ((v_1_32_k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_1_32_k), Rat.of_int(1)))))).Rational?;  /* [IN-FILE CHECK] requires 22 of vc_aime_1984_p1_L471 */
-        vc_aime_1984_p1_L471(u);  /* [IN-FILE CHECK] the closed lemma for line 471 */
         assert (Rat.add(Rat.sum(range(49), ((k: nat) => u(0))), Rat.sum(range(49), ((k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(k), Rat.of_int(1)))))) == Rat.add(Rat.mul(Rat.of_int(49), u(0)), Rat.sum(range(49), ((k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(k), Rat.of_int(1))))))) by {  // sub-goal before `simp` (Lean state) // @tac 3298-3359 // @tac 3298-3340
           // [TACTIC: «_<;>_» [ Finset.sum_const , Finset.card_range ] simp [ Finset.sum_const , Finset.card_range ] simp [ Finset.sum_const , Finset.card_range ] <;> ring]
           // [TACTIC: simp [ Finset.sum_const , Finset.card_range ]]
@@ -498,6 +475,27 @@ lemma aime_1984_p1(u: nat -> Rat.rat)
           FinsetCardRange(49);  // cite: Finset.card_range
           // `simp` closed the goal; the rest of the chain did not run
           // UNCITED-APPLIED internal ×8 [exec 675 3298-3340]: applications made inside the tactic's own automation, not stated — nsmul_eq_mul ×1; machinery/glue: Eq.trans ×3, congrArg ×2, of_eq_true ×1, eq_self ×1 (cited in this block, not counted here: Finset.card_range [Lean recorded ×1], Finset.sum_const [Lean recorded ×1])
+          assert forall n_1: int :: 0 <= n_1 ==> u.requires(n_1 + 1) && u.requires(n_1);  /* [IN-FILE CHECK] requires 1 of vc_aime_1984_p1_L471 */
+          assert forall n_1: int :: 0 <= n_1 ==> u(n_1 + 1) == Rat.add(u(n_1), Rat.of_int(1));  /* [IN-FILE CHECK] requires 2 of vc_aime_1984_p1_L471 */
+          assert forall n_0_1: nat :: true ==> u.requires(n_0_1) && u.requires(0);  /* [IN-FILE CHECK] requires 4 of vc_aime_1984_p1_L471 */
+          assert forall n_0_1: nat :: true ==> u(n_0_1) == Rat.add(u(0), Rat.of_int(n_0_1));  /* [IN-FILE CHECK] requires 5 of vc_aime_1984_p1_L471 */
+          assert 0 <= 0;  /* [IN-FILE CHECK] requires 6 of vc_aime_1984_p1_L471 */
+          assert Rat.of_int(2357).Rational?;  /* [IN-FILE CHECK] requires 7 of vc_aime_1984_p1_L471 */
+          assert Rat.neg(Rat.of_int(2357)).Rational?;  /* [IN-FILE CHECK] requires 8 of vc_aime_1984_p1_L471 */
+          assert Rat.of_int(49).Rational?;  /* [IN-FILE CHECK] requires 9 of vc_aime_1984_p1_L471 */
+          assert Rat.div(Rat.neg(Rat.of_int(2357)), Rat.of_int(49)).Rational?;  /* [IN-FILE CHECK] requires 10 of vc_aime_1984_p1_L471 */
+          assert 0 <= 49;  /* [IN-FILE CHECK] requires 12 of vc_aime_1984_p1_L471 */
+          assert Rat.sum(range(49), ((k: nat) => u(2 * (k + 1)))).Rational?;  /* [IN-FILE CHECK] requires 13 of vc_aime_1984_p1_L471 */
+          assert Rat.sum(range(49), ((v_27_k: nat) => Rat.add(u(0), Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_27_k), Rat.of_int(1)))))).Rational?;  /* [IN-FILE CHECK] requires 14 of vc_aime_1984_p1_L471 */
+          assert Rat.sum(range(49), ((k: nat) => u(2 * (k + 1)))) == Rat.sum(range(49), ((v_27_k: nat) => Rat.add(u(0), Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_27_k), Rat.of_int(1))))));  /* [IN-FILE CHECK] requires 15 of vc_aime_1984_p1_L471 */
+          assert Rat.sum(range(49), ((v_1_0_47_k: nat) => u(0))).Rational?;  /* [IN-FILE CHECK] requires 16 of vc_aime_1984_p1_L471 */
+          assert Rat.sum(range(49), ((v_1_32_k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_1_32_k), Rat.of_int(1))))).Rational?;  /* [IN-FILE CHECK] requires 17 of vc_aime_1984_p1_L471 */
+          assert Rat.add(Rat.sum(range(49), ((v_1_0_47_k: nat) => u(0))), Rat.sum(range(49), ((v_1_32_k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_1_32_k), Rat.of_int(1)))))).Rational?;  /* [IN-FILE CHECK] requires 18 of vc_aime_1984_p1_L471 */
+          assert Rat.sum(range(49), ((v_27_k: nat) => Rat.add(u(0), Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_27_k), Rat.of_int(1)))))) == Rat.add(Rat.sum(range(49), ((v_1_0_47_k: nat) => u(0))), Rat.sum(range(49), ((v_1_32_k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_1_32_k), Rat.of_int(1))))));  /* [IN-FILE CHECK] requires 19 of vc_aime_1984_p1_L471 */
+          assert |range(49)| == 49;  /* [IN-FILE CHECK] requires 20 of vc_aime_1984_p1_L471 */
+          assert Rat.mul(Rat.of_int(49), u(0)).Rational?;  /* [IN-FILE CHECK] requires 21 of vc_aime_1984_p1_L471 */
+          assert Rat.add(Rat.mul(Rat.of_int(49), u(0)), Rat.sum(range(49), ((v_1_32_k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(v_1_32_k), Rat.of_int(1)))))).Rational?;  /* [IN-FILE CHECK] requires 22 of vc_aime_1984_p1_L471 */
+          vc_aime_1984_p1_L471(u);  /* [IN-FILE CHECK] the closed lemma for line 471 */
         }
       }
       // [TACTIC: rwSeq [ h₆ ]]

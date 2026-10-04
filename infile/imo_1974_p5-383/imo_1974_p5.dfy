@@ -381,8 +381,6 @@ lemma {:isolate_assertions} cert_piece_45(a: real, b: real, c: real, d: real, s:
   requires (0.0 < ((a + c) + d))
   ensures (0.0 < (((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)) * ((a + c) + d)))
 {
-  assert 0.0 < (a + b + d) * (a + b + c) * (b + c + d);  /* [IN-FILE CHECK] requires 1 of vc_imo_1974_p5_L383 */
-  assert 0.0 < a + c + d;  /* [IN-FILE CHECK] requires 2 of vc_imo_1974_p5_L383 */
   vc_imo_1974_p5_L383(a, b, c, d);  /* [IN-FILE CHECK] the closed lemma for line 383 */
   MulPos(((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)), ((a + c) + d));
 }

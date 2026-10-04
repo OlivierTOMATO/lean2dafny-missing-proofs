@@ -362,15 +362,11 @@ lemma imo_1966_p4(n: nat, x: real)
                       // UNCITED-APPLIED internal ×158 [exec 631 2454-2461]: applications made inside the tactic's own automation, not stated — add_zero ×3, mul_one ×2, Nat.cast_one ×1; machinery/glue: Eq.trans ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_congr ×8, Mathlib.Tactic.Ring.add_mul ×8 (+45 more heads, ×120) (cited in this block, not counted here: pow_one [Lean recorded ×3])
                     }
                     assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L364 */
-                    assert 0 < n;  /* [IN-FILE CHECK] requires 2 of vc_imo_1966_p4_L364 */
-                    assert Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x));  /* [IN-FILE CHECK] requires 3 of vc_imo_1966_p4_L364 */
                     assert 0 <= m;  /* [IN-FILE CHECK] requires 4 of vc_imo_1966_p4_L364 */
                     assert ((0 < m) && (0 <= 1)) || (m <= 0);  /* [IN-FILE CHECK] requires 5 of vc_imo_1966_p4_L364 */
                     assert 0 < m;  /* [IN-FILE CHECK] requires 6 of vc_imo_1966_p4_L364 */
-                    assert m + 1 > 0;  /* [IN-FILE CHECK] requires 7 of vc_imo_1966_p4_L364 */
                     assert 0 <= 1;  /* [IN-FILE CHECK] requires 8 of vc_imo_1966_p4_L364 */
                     assert 0 <= m + 1;  /* [IN-FILE CHECK] requires 9 of vc_imo_1966_p4_L364 */
-                    assert Real.pow(2.0, m + 1) * x == 2.0 * (Real.pow(2.0, m) * x);  /* [IN-FILE CHECK] requires 10 of vc_imo_1966_p4_L364 */
                     assert Real.tan(Real.pow(2.0, m) * x) == Real.div(Real.sin(Real.pow(2.0, m) * x), Real.cos(Real.pow(2.0, m) * x));  /* [IN-FILE CHECK] requires 11 of vc_imo_1966_p4_L364 */
                     assert Real.tan(2.0 * (Real.pow(2.0, m) * x)) == Real.div(Real.sin(2.0 * (Real.pow(2.0, m) * x)), Real.cos(2.0 * (Real.pow(2.0, m) * x)));  /* [IN-FILE CHECK] requires 12 of vc_imo_1966_p4_L364 */
                     assert Real.sin(2.0 * (Real.pow(2.0, m) * x)) == 2.0 * Real.sin(Real.pow(2.0, m) * x) * Real.cos(Real.pow(2.0, m) * x);  /* [IN-FILE CHECK] requires 13 of vc_imo_1966_p4_L364 */
@@ -381,7 +377,7 @@ lemma imo_1966_p4(n: nat, x: real)
                     assert Real.sin(Real.pow(2.0, m + 1) * x) != 0.0;  /* [IN-FILE CHECK] requires 18 of vc_imo_1966_p4_L364 */
                     assert (Real.sin(Real.pow(2.0, m) * x) != 0.0) || (Real.sin(Real.pow(2.0, m) * x) == 0.0);  /* [IN-FILE CHECK] requires 19 of vc_imo_1966_p4_L364 */
                     assert ((Real.sin(Real.pow(2.0, m) * x) != 0.0) && (Real.cos(Real.pow(2.0, m) * x) != 0.0) && (Real.sin(Real.pow(2.0, m) * x) * Real.cos(Real.pow(2.0, m) * x) != 0.0)) || (!(Real.sin(Real.pow(2.0, m) * x) != 0.0 && Real.cos(Real.pow(2.0, m) * x) != 0.0));  /* [IN-FILE CHECK] requires 20 of vc_imo_1966_p4_L364 */
-                    assert (Real.sin(Real.pow(2.0, m) * x) != 0.0) || (Real.sin(Real.pow(2.0, m) * x) == 0.0);  /* [IN-FILE CHECK] requires 21 of vc_imo_1966_p4_L364 */
+                    assert (Real.sin(Real.pow(2.0, m) * x) != 0.0) || (Real.sin(Real.pow(2.0, m) * x) == 0.0);  /* [IN-FILE CHECK] requires 19 of vc_imo_1966_p4_L364 */
                     assert (Real.cos(Real.pow(2.0, m) * x) != 0.0) || (Real.cos(Real.pow(2.0, m) * x) == 0.0);  /* [IN-FILE CHECK] requires 22 of vc_imo_1966_p4_L364 */
                     assert ((Real.cos(Real.pow(2.0, m) * x) != 0.0) && (Real.sin(Real.pow(2.0, m) * x) * 2.0 != 0.0) && (Real.cos(Real.pow(2.0, m) * x) * (Real.sin(Real.pow(2.0, m) * x) * 2.0) != 0.0)) || (!(Real.cos(Real.pow(2.0, m) * x) != 0.0 && Real.sin(Real.pow(2.0, m) * x) * 2.0 != 0.0));  /* [IN-FILE CHECK] requires 23 of vc_imo_1966_p4_L364 */
                     vc_imo_1966_p4_L364(m, n, x);  /* [IN-FILE CHECK] the closed lemma for line 364 */

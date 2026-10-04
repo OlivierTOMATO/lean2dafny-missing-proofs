@@ -219,28 +219,6 @@ lemma algebra_bleqa_apbon2msqrtableqambsqon8b(a: real, b: real)
         // UNCITED-APPLIED congrArg(b, y ^ (2 : ℕ), fun (_a : ℝ) => (x ^ (2 : ℕ) + _a) / (2 : ℝ) - √(x ^ (2 : ℕ) * _a) = …): no library counterpart (not stated) [exec 252 1061-1088]
         assert (((((x * x) + (y * y)) / 2.0) - Real.sqrt(((x * x) * (y * y)))) == (((x - y) * (x - y)) / 2.0)) by {  // sub-goal before `have` (Lean state) // @tac 1093-1236 // @tac 1241-1449 // @tac 1454-1485 // @tac 1454-1469
           // have h₁₀₃ : Real.sqrt ( ( ( x ^ 2 ) * ( y ^ 2 ) ) ) == x * y  [type from Lean state]
-          assert 0.0 < a;  /* [IN-FILE CHECK] requires 1 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert 0.0 < b;  /* [IN-FILE CHECK] requires 2 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert b <= a;  /* [IN-FILE CHECK] requires 3 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert 0.0 < Real.sqrt(a);  /* [IN-FILE CHECK] requires 4 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert 0.0 < Real.sqrt(b);  /* [IN-FILE CHECK] requires 5 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert Real.sqrt(b) <= Real.sqrt(a);  /* [IN-FILE CHECK] requires 6 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert x == Real.sqrt(a);  /* [IN-FILE CHECK] requires 7 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert 0.0 < x;  /* [IN-FILE CHECK] requires 8 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert Real.sqrt(b) <= x;  /* [IN-FILE CHECK] requires 9 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert y == Real.sqrt(b);  /* [IN-FILE CHECK] requires 10 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert 0.0 < y;  /* [IN-FILE CHECK] requires 11 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert y <= x;  /* [IN-FILE CHECK] requires 12 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert x >= y;  /* [IN-FILE CHECK] requires 13 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert a == x * x;  /* [IN-FILE CHECK] requires 14 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert b == y * y;  /* [IN-FILE CHECK] requires 15 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert 0.0 <= x * x * (y * y);  /* [IN-FILE CHECK] requires 16 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert 0.0 <= x * y;  /* [IN-FILE CHECK] requires 17 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert 0 <= 2;  /* [IN-FILE CHECK] requires 18 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert 0.0 <= Real.pow(x, 2) * Real.pow(y, 2);  /* [IN-FILE CHECK] requires 19 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert (Real.sqrt(Real.pow(x, 2) * Real.pow(y, 2)) == x * y) == (Real.pow(x * y, 2) == Real.pow(x, 2) * Real.pow(y, 2));  /* [IN-FILE CHECK] requires 20 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          assert x * y * (x * y) == x * x * (y * y);  /* [IN-FILE CHECK] requires 21 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222 */
-          vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222(a, b, x, y);  /* [IN-FILE CHECK] the closed lemma for line 222 */
           assert (Real.sqrt(((x * x) * (y * y))) == (x * y)) by { // @tac 1161-1220
             assert (0.0 <= ((x * x) * (y * y))) by {  // sub-goal of `by` (Lean state) // @tac 1192-1202
               // [TACTIC: Positivity]
@@ -277,6 +255,7 @@ lemma algebra_bleqa_apbon2msqrtableqambsqon8b(a: real, b: real)
               NatCastZero();  // cite: Nat.cast_zero [applied by the tactic, not named in it]
             }
             // UNCITED-APPLIED congrArg(fun (_a : Prop) => _a): no library counterpart (not stated) [exec 300 1161-1220]
+            vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L222(a, b, x, y);  /* [IN-FILE CHECK] the closed lemma for line 222 */
           }
           // have h₁₀₄ : ( x ^ 2 + y ^ 2 ) / 2 - Real.sqrt ( ( ( x ^ 2 ) * ( y ^ 2 ) ) ) == ( x  [type from Lean state]
           assert (((((x * x) + (y * y)) / 2.0) - Real.sqrt(((x * x) * (y * y)))) == (((x - y) * (x - y)) / 2.0)) by { // @tac 1341-1356

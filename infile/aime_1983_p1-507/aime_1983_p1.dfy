@@ -504,25 +504,6 @@ lemma aime_1983_p1(x: nat, y: nat, z: nat, w: nat)
     // UNCITED-APPLIED congrArg(Real.log (↑x * ↑y * ↑z), Real.log (↑x * ↑y) + Real.log ↑z, fun (_a : ℝ) => _a > (0 : ℝ)): no library counterpart (not stated) [exec 502 1797-1806]
     assert ((Real.log(((x as real) * (y as real))) + Real.log((z as real))) > 0.0) by {  // sub-goal before `have` (Lean state) // @tac 1811-2049 // @tac 2054-2063
       // have h₂ : Real.log ( (  * y ) ) == Real.log + Real.log  [type from Lean state]
-      assert 0 <= x;  /* [IN-FILE CHECK] requires 1 of vc_aime_1983_p1_L507 */
-      assert 0 <= y;  /* [IN-FILE CHECK] requires 2 of vc_aime_1983_p1_L507 */
-      assert 0 <= z;  /* [IN-FILE CHECK] requires 3 of vc_aime_1983_p1_L507 */
-      assert 0 <= w;  /* [IN-FILE CHECK] requires 4 of vc_aime_1983_p1_L507 */
-      assert 1 < x;  /* [IN-FILE CHECK] requires 5 of vc_aime_1983_p1_L507 */
-      assert 1 < y;  /* [IN-FILE CHECK] requires 6 of vc_aime_1983_p1_L507 */
-      assert 1 < z;  /* [IN-FILE CHECK] requires 7 of vc_aime_1983_p1_L507 */
-      assert Real.div(Real.log((w as real)), Real.log((x as real))) == 24.0;  /* [IN-FILE CHECK] requires 8 of vc_aime_1983_p1_L507 */
-      assert Real.div(Real.log((w as real)), Real.log((y as real))) == 40.0;  /* [IN-FILE CHECK] requires 9 of vc_aime_1983_p1_L507 */
-      assert Real.div(Real.log((w as real)), Real.log((x as real) * (y as real) * (z as real))) == 12.0;  /* [IN-FILE CHECK] requires 10 of vc_aime_1983_p1_L507 */
-      assert (x as real) > 1.0;  /* [IN-FILE CHECK] requires 11 of vc_aime_1983_p1_L507 */
-      assert (y as real) > 1.0;  /* [IN-FILE CHECK] requires 12 of vc_aime_1983_p1_L507 */
-      assert (z as real) > 1.0;  /* [IN-FILE CHECK] requires 13 of vc_aime_1983_p1_L507 */
-      assert (x as real) * (y as real) * (z as real) > 1.0;  /* [IN-FILE CHECK] requires 14 of vc_aime_1983_p1_L507 */
-      assert Real.log((x as real)) > 0.0;  /* [IN-FILE CHECK] requires 15 of vc_aime_1983_p1_L507 */
-      assert Real.log((y as real)) > 0.0;  /* [IN-FILE CHECK] requires 16 of vc_aime_1983_p1_L507 */
-      assert Real.log((z as real)) > 0.0;  /* [IN-FILE CHECK] requires 17 of vc_aime_1983_p1_L507 */
-      assert Real.log((x as real) * (y as real) * (z as real)) == Real.log((x as real) * (y as real)) + Real.log((z as real));  /* [IN-FILE CHECK] requires 18 of vc_aime_1983_p1_L507 */
-      vc_aime_1983_p1_L507(w, x, y, z);  /* [IN-FILE CHECK] the closed lemma for line 507 */
       assert (Real.log(((x as real) * (y as real))) == (Real.log((x as real)) + Real.log((y as real)))) by { // @tac 1902-1944 // @tac 1951-1993 // @tac 2000-2049
         // have h₃ : 0 <   [type from Lean state]
         assert (0.0 < (x as real)); // @tac 1934-1944
@@ -548,6 +529,7 @@ lemma aime_1983_p1(x: nat, y: nat, z: nat, w: nat)
         assert (((x as real)) != 0.0) && (((y as real)) != 0.0);  // precondition of RealLogMul (Lean: Real.log_mul)
         RealLogMul((x as real), (y as real));  // cite: Real.log_mul
         // UNCITED-APPLIED congrArg(Real.log (↑x * ↑y), Real.log ↑x + Real.log ↑y, fun (_a : ℝ) => _a = Real.log ↑x + Real.log ↑y): no library counterpart (not stated) [exec 583 2000-2049]
+        vc_aime_1983_p1_L507(w, x, y, z);  /* [IN-FILE CHECK] the closed lemma for line 507 */
       }
       // [TACTIC: rwSeq [ h₂ ]]
       // UNCITED-APPLIED congrArg(Real.log (↑x * ↑y), Real.log ↑x + Real.log ↑y, fun (_a : ℝ) => _a + Real.log ↑z > (0 : ℝ)): no library counterpart (not stated) [exec 618 2054-2063]

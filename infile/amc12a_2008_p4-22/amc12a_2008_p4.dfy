@@ -19,16 +19,6 @@ lemma amc12a_2008_p4()
       // [TACTIC: «Norm_num[_]At___»]
       // UNCITED-APPLIED internal ×6 [exec 308 610-618]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1)
     }
-    assert Rat.of_int(4).Rational?;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2008_p4_L22 */
-    assert 4.0 == Rat.of_int(4).to_real();  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2008_p4_L22 */
-    assert 0 <= 1;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2008_p4_L22 */
-    assert 0 <= 501;  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2008_p4_L22 */
-    assert Rat.of_int(Int.prod(IccN(1, 501), ((v_1_2_i: nat) => 4 * v_1_2_i + 4))).Rational?;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2008_p4_L22 */
-    assert Rat.of_int(Int.prod(IccN(1, 501), ((v_1_12_i: nat) => 4 * v_1_12_i))).Rational?;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2008_p4_L22 */
-    assert Rat.div(Rat.of_int(Int.prod(IccN(1, 501), ((v_1_2_i: nat) => 4 * v_1_2_i + 4))), Rat.of_int(Int.prod(IccN(1, 501), ((v_1_12_i: nat) => 4 * v_1_12_i)))).Rational?;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2008_p4_L22 */
-    assert Rat.of_int(502).Rational?;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2008_p4_L22 */
-    assert Rat.div(Rat.of_int(Int.prod(IccN(1, 501), ((v_1_2_i: nat) => 4 * v_1_2_i + 4))), Rat.of_int(Int.prod(IccN(1, 501), ((v_1_12_i: nat) => 4 * v_1_12_i)))) == Rat.of_int(502);  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2008_p4_L22 */
-    vc_amc12a_2008_p4_L22();  /* [IN-FILE CHECK] the closed lemma for line 22 */
     assert (Real.div(Real.prod(IccN(1, 501), ((x: nat) => (((Rat.of_int(4)).to_real() * (x as real)) + (Rat.of_int(4)).to_real()))), Real.prod(IccN(1, 501), ((x: nat) => ((Rat.of_int(4)).to_real() * (x as real))))) == 502.0) by {  // sub-goal of `norm_cast` (Lean state) // @tac 626-635
       // UNCITED-APPLIED Eq.symm(Rat.of_int(Int.prod(IccN(1, 501), ((i: nat) => ((4 * i) + 4)))), Rat.prod(IccN(1, 501), ((x: nat) => Rat.add(Rat.mul(Rat.of_int(4), Rat.of_int(x)), Rat.of…): its premise is not established here and its conclusion is the same Dafny fact (== is symmetric): a guarded call would state nothing
       // UNCITED-APPLIED Eq.symm((Rat.of_int(502)).to_real(), 502.0): its premise is not established here and its conclusion is the same Dafny fact (== is symmetric): a guarded call would state nothing
@@ -37,6 +27,7 @@ lemma amc12a_2008_p4()
       // UNCITED-APPLIED Nat.cast_mul: recorded instance not expressible here (sort/type/scope), not guessed
       assert (Rat.div(Rat.of_int(Int.prod(IccN(1, 501), ((i: nat) => ((4 * i) + 4)))), Rat.of_int(Int.prod(IccN(1, 501), ((i: nat) => (4 * i))))) == Rat.of_int(502));  // sub-goal of `norm_cast` (Lean state)
       // UNCITED-APPLIED internal ×33 [exec 347 626-635]: applications made inside the tactic's own automation, not stated — Finset.prod_congr ×5, Rat.cast_natCast ×2, Nat.cast_add ×2, Nat.cast_mul ×2, Finset.prod_natCast ×1, Rat.cast_ofNat ×1; machinery/glue: congrArg ×8, Eq.trans ×6, Eq.symm ×4, congr ×2
+      vc_amc12a_2008_p4_L22();  /* [IN-FILE CHECK] the closed lemma for line 22 */
     }
     // UNCITED-APPLIED congrArg((4 : ℝ), ↑(4 : ℚ), fun (_a : ℝ) => (∏ x ∈ Finset.Icc (1 : ℕ) (501 : ℕ), (_a * ↑x + _a)) …): no library counterpart (not stated) [exec 301 576-619]
   }

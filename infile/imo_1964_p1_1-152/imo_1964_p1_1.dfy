@@ -149,21 +149,6 @@ lemma imo_1964_p1_1(n: nat)
   assert ((3) > 0);  // precondition of NatModAddDiv (Lean: Nat.mod_add_div)
   NatModAddDiv(n, 3);  // cite: Nat.mod_add_div
   // UNCITED-APPLIED congrArg(n, n % (3 : ℕ) + (3 : ℕ) * (n / (3 : ℕ)), fun (_a : ℕ) => (3 : ℕ) ∣ _a): no library counterpart (not stated) [exec 384 1784-1812]
-  assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1964_p1_1_L152 */
-  assert NatDvd(7, tsub(Int.pow(2, n), 1));  /* [IN-FILE CHECK] requires 2 of vc_imo_1964_p1_1_L152 */
-  assert if 7 == 0 then tsub(Int.pow(2, n), 1) == 0 else tsub(Int.pow(2, n), 1) % 7 == 0;  /* [IN-FILE CHECK] requires 3 of vc_imo_1964_p1_1_L152 */
-  assert forall n0: nat :: NatDvd(7, tsub(Int.pow(2, n0), 1)) && 0 <= n0 && n0 < n ==> NatDvd(3, n0);  /* [IN-FILE CHECK] requires 4 of vc_imo_1964_p1_1_L152 */
-  assert IntMod(Int.pow(2, n), 7) == IntMod(1, 7);  /* [IN-FILE CHECK] requires 5 of vc_imo_1964_p1_1_L152 */
-  assert orderOf(2, 7) == 3;  /* [IN-FILE CHECK] requires 6 of vc_imo_1964_p1_1_L152 */
-  assert 0 <= 3;  /* [IN-FILE CHECK] requires 7 of vc_imo_1964_p1_1_L152 */
-  assert 3 > 0;  /* [IN-FILE CHECK] requires 8 of vc_imo_1964_p1_1_L152 */
-  assert 3 > 0;  /* [IN-FILE CHECK] requires 9 of vc_imo_1964_p1_1_L152 */
-  assert n % 3 + 3 * (n / 3) == n;  /* [IN-FILE CHECK] requires 10 of vc_imo_1964_p1_1_L152 */
-  assert NatDvd(3, n) || (3 == 0 ==> n == 0);  /* [IN-FILE CHECK] requires 11 of vc_imo_1964_p1_1_L152 */
-  assert NatDvd(3, n) || (3 != 0 ==> n % 3 == 0);  /* [IN-FILE CHECK] requires 12 of vc_imo_1964_p1_1_L152 */
-  assert NatMod(n, 3) == 0;  /* [IN-FILE CHECK] requires 13 of vc_imo_1964_p1_1_L152 */
-  assert 0 <= n % 3 + 3 * (n / 3);  /* [IN-FILE CHECK] requires 14 of vc_imo_1964_p1_1_L152 */
-  vc_imo_1964_p1_1_L152(n);  /* [IN-FILE CHECK] the closed lemma for line 152 */
   assert NatDvd(3, ((n % 3) + (3 * (n / 3)))) by {  // sub-goal before `simp_all` (Lean state) // @tac 1815-1858 // @tac 1815-1846 // @tac 1853-1858
     // [TACTIC: «_<;>_» [ Int.ModEq , Nat.ModEq ] simp_all [ Int.ModEq , Nat.ModEq ] simp_all [ Int.ModEq , Nat.ModEq ] <;> omega omega]
     // [TACTIC: choice [ Int.ModEq , Nat.ModEq ] simp_all [ Int.ModEq , Nat.ModEq ] simp_all [ Int.ModEq , Nat.ModEq ]]
@@ -174,6 +159,7 @@ lemma imo_1964_p1_1(n: nat)
     assert (NatDvd((3), (n)));  // precondition of NatModEqZeroOfDvd (Lean: Nat.mod_eq_zero_of_dvd)
     NatModEqZeroOfDvd(3, n);  // cite: Nat.mod_eq_zero_of_dvd [applied by the tactic, not named in it]
     // UNCITED-APPLIED internal ×57 [exec 425 1853-1858]: applications made inside the tactic's own automation, not stated — Int.ofNat_emod ×2, Int.emod_def ×2, Int.sub_nonneg_of_le ×2, Int.add_one_le_of_lt ×2, Int.sub_eq_zero_of_eq ×1, Int.lt_mul_ediv_self_add ×1, Int.ofNat_add ×1, Int.ofNat_mul ×1, Int.ofNat_ediv ×1, Nat.emod_pos_of_not_dvd ×1; machinery/glue: Eq.symm ×14, Lean.Omega.LinearCombo.sub_eval ×5, Lean.Omega.Int.mul_congr ×3, Lean.Omega.LinearCombo.add_eval ×3 (+14 more heads, ×18) (cited in this block, not counted here: Nat.mod_eq_zero_of_dvd [Lean recorded ×1])
+    vc_imo_1964_p1_1_L152(n);  /* [IN-FILE CHECK] the closed lemma for line 152 */
   }
 }
 

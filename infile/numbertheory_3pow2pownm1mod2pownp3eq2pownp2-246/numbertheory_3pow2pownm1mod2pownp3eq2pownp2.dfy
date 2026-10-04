@@ -243,24 +243,6 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
               assert (NatMod((((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) == 0);
             }
             // have h₅ : ( 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 * 2 ^ ( 2 * n + 6 ) +   [type from Lean state]
-            assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert n != 0;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert 0 + 1 <= n;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert 0 <= Int.pow(2, n);  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert 0 <= n + 2;  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert 0 <= n + 3;  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert 0 <= k;  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert 0 <= n + 1;  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert 0 <= Int.pow(2, n + 1);  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert 0 <= 2 * n + 4;  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert 0 <= n + 4;  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert 0 <= 2 * n + 6;  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert 0 <= 2 * n + 5;  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert 0 <= Int.pow(2, 2 * n + 4) + k * Int.pow(2, n + 4) + k * k * Int.pow(2, 2 * n + 6) + 2 * k * Int.pow(2, 2 * n + 5);  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert 0 <= Int.pow(2, n + 4);  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert NatMod(Int.pow(2, 2 * n + 4) + k * Int.pow(2, n + 4) + k * k * Int.pow(2, 2 * n + 6) + 2 * k * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) == 0;  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            assert NatDvd(Int.pow(2, n + 4), Int.pow(2, 2 * n + 4) + k * Int.pow(2, n + 4) + k * k * Int.pow(2, 2 * n + 6) + 2 * k * Int.pow(2, 2 * n + 5));  /* [IN-FILE CHECK] requires 17 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246 */
-            vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 246 */
             assert ((NatDiv((((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) * Int.pow(2, (n + 4))) == (((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5))))) by { // @tac 4666-6151 // @tac 6162-6837 // @tac 6848-6861
               // have h₆ : 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 * 2 ^ (   [type from Lean state]
               assert NatDvd(Int.pow(2, (n + 4)), (((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5))))) by { // @tac 4798-4901 // @tac 4914-5000 // @tac 5013-5351 // @tac 5364-6024 // @tac 6083-6151
@@ -374,6 +356,7 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
               }
               // [TACTIC: exact h₁₁]
               assert ((NatDiv((((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) * Int.pow(2, (n + 4))) == (((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5)))));
+              vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L246(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 246 */
             }
             // have h₆ : 1 + 2 ^ ( n + 3 ) + ( 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 *   [type from Lean state]
             assert (((1 + Int.pow(2, (n + 3))) + (((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5))))) == ((1 + Int.pow(2, ((n + 1) + 2))) + (NatDiv((((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) * Int.pow(2, ((n + 1) + 3))))) by { // @tac 7150-7190 // @tac 7201-7241 // @tac 7252-7296 // @tac 7307-7441 // @tac 7307-7431 // @tac 7307-7402

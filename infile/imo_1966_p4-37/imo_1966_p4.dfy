@@ -34,15 +34,7 @@ lemma {:isolate_assertions} induction_helper_1(n: nat, x: real)
       assert (Real.sum(IccN(1, 0), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x))))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, 0) * x)))));  // sub-goal before `cases` (Lean state) // @tac 2959-2969
     }
   } else {
-    assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L37 */
-    assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_imo_1966_p4_L37 */
-    assert forall k_1: nat :: 0 < k_1 ==> (forall m_2: int :: x != Real.div((m_2 as real) * Real.pi(), Real.pow(2.0, k_1)));  /* [IN-FILE CHECK] requires 3 of vc_imo_1966_p4_L37 */
-    assert Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x));  /* [IN-FILE CHECK] requires 4 of vc_imo_1966_p4_L37 */
-    assert forall m_4: nat :: 0 < m_4 ==> Real.sum(IccN(1, m_4), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_4) * x)) ==> Real.sum(IccN(1, m_4 + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_4 + 1) * x));  /* [IN-FILE CHECK] requires 5 of vc_imo_1966_p4_L37 */
-    assert forall n0: int :: (forall k_5: nat :: 0 < k_5 ==> (forall m_5: int :: true)) && ((forall k_5: nat :: 0 < k_5 ==> (forall m_5: int :: x != Real.div((m_5 as real) * Real.pi(), Real.pow(2.0, k_5)))) ==> Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x)) ==> (forall m_6: nat :: 0 < m_6 ==> (forall k: int :: true) && (Real.sum(IccN(1, m_6), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_6) * x)) ==> (forall k: int :: true)))) && (0 <= n0 && (forall k_5: nat :: 0 < k_5 ==> (forall m_5: int :: x != Real.div((m_5 as real) * Real.pi(), Real.pow(2.0, k_5)))) && Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x)) && (forall m_6: nat :: 0 < m_6 ==> Real.sum(IccN(1, m_6), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_6) * x)) ==> Real.sum(IccN(1, m_6 + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_6 + 1) * x))) && 0 <= n0 && n0 < n ==> (0 < n0 ==> (forall k: int :: true)) && (0 < n0 ==> Real.sum(IccN(1, n0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, n0) * x))));  /* [IN-FILE CHECK] requires 6 of vc_imo_1966_p4_L37 */
-    assert n != 0;  /* [IN-FILE CHECK] requires 7 of vc_imo_1966_p4_L37 */
-    assert 0 <= n - 1;  /* [IN-FILE CHECK] requires 8 of vc_imo_1966_p4_L37 */
-    vc_imo_1966_p4_L37(n, n, x);  /* [IN-FILE CHECK] the closed lemma for line 37 */
+    vc_imo_1966_p4_L37(__outer_n, n_1_0, n, x);  /* [IN-FILE CHECK] the closed lemma for line 37 */
     induction_helper_1(n - 1, x);
     var n: nat := n - 1;  // Lean's predecessor binder (succ n)
     if ((0 < (n + 1))) {  // sub-goal before `cases` (Lean state)
@@ -441,8 +433,9 @@ lemma imo_1966_p4(n: nat, x: real)
 
 // ===== closed lemma for line 37 (from closed/imo_1966_p4-37.dfy) =====
 
-lemma {:induction false} vc_imo_1966_p4_L37(n: int, n_1_0_1_0: int, x: real)
+lemma {:induction false} vc_imo_1966_p4_L37(n: int, n_1_0: int, n_1_0_1_0: int, x: real)
   requires 0 <= n
+  requires 0 <= n_1_0
   requires 0 <= n_1_0_1_0
   requires forall k_1: nat :: 0 < k_1 ==> (forall m_2: int :: x != Real.div((m_2 as real) * Real.pi(), Real.pow(2.0, k_1)))
   requires Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x))

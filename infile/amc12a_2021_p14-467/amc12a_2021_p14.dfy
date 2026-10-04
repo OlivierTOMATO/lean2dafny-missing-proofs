@@ -464,7 +464,6 @@ lemma amc12a_2021_p14()
     // UNCITED-APPLIED congrArg(∑ k ∈ Finset.Icc (1 : ℕ) (100 : ℕ), logb ((9 : ℝ) ^ k) ((25 : ℝ) ^ k), ∑ k ∈ Finset.Icc (1 : ℕ) (100 : ℕ), logb (3 : ℝ) (5 : ℝ), fun (_a : ℝ) => _a = (100 : ℝ) * logb (3 : ℝ) (5 : ℝ)): no library counterpart (not stated) [exec 1974 6471-6483]
     assert (Real.sum(IccN(1, 100), ((k: nat) => Real.logb(3.0, 5.0))) == (100.0 * Real.logb(3.0, 5.0))) by {  // sub-goal before `have` (Lean state) // @tac 6488-6735 // @tac 6740-6809 // @tac 6740-6796 // @tac 6740-6777 // @tac 6740-6752
       // have h₄₂ : ∑ k ∈ Finset.Icc (1 : ℕ) (100 : ℕ), Real.logb (3 : ℝ) (5 : ℝ) = (100 : ℝ) * Real.logb (3 : ℝ) (5 : ℝ)  [type from Lean state]
-      vc_amc12a_2021_p14_L467();  /* [IN-FILE CHECK] the closed lemma for line 467 */
       assert (Real.sum(IccN(1, 100), ((k: nat) => Real.logb(3.0, 5.0))) == (100.0 * Real.logb(3.0, 5.0))) by { // @tac 6596-6735 // @tac 6596-6720 // @tac 6596-6699 // @tac 6596-6672 // @tac 6596-6657 // @tac 6596-6638
         // [TACTIC: «_<;>_» [ Finset.sum_const , Finset.card_range ] simp [ Finset.sum_const , Finset.card_range ] simp [ Finset.sum_const , Finset.card_range ] <;> norm_num norm_num <;> ring <;> simp [ Real.logb ] simp [ Real.logb ] simp [ Real.logb ] <;> field_simp field_simp <;> ring]
         // [TACTIC: simp [ Finset.sum_const , Finset.card_range ]]
@@ -472,6 +471,7 @@ lemma amc12a_2021_p14()
         // UNCITED Finset.card_range: no Lean instance recorded (arguments unknown), not guessed
         // `simp` closed the goal; the rest of the chain did not run
         // UNCITED-APPLIED internal ×9 [exec 2042 6596-6638]: applications made inside the tactic's own automation, not stated — Nat.card_Icc ×1, nsmul_eq_mul ×1; machinery/glue: Eq.trans ×3, congrArg ×2, of_eq_true ×1, eq_self ×1 (cited in this block, not counted here: Finset.sum_const [Lean recorded ×1])
+        vc_amc12a_2021_p14_L467();  /* [IN-FILE CHECK] the closed lemma for line 467 */
       }
       // [TACTIC: «_<;>_» [ h₄₂ ] rw [ h₄₂ ] <;> simp [ Real.logb ] simp [ Real.logb ] simp [ Real.logb ] <;> field_simp field_simp <;> ring]
       // [TACTIC: rwSeq [ h₄₂ ]]

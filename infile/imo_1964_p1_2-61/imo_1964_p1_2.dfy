@@ -58,33 +58,13 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
           // [TACTIC: rwSeq [ Nat.pow_succ ]]
           NatPowSucc(2, n);  // cite: Nat.pow_succ
           // UNCITED-APPLIED congrArg((2 : ℕ) ^ succ n, (2 : ℕ) ^ n * (2 : ℕ), fun (_a : ℕ) => _a % (7 : ℕ) = (1 : ℕ) ∨ _a % (7 : ℕ) = (2 : ℕ) ∨ _a …): no library counterpart (not stated) [exec 144 875-892]
-          assert 0 <= (n + 1);  /* [IN-FILE CHECK] requires 1 of vc_imo_1964_p1_2_L61 */
-          assert forall n0: nat :: true && 0 <= n0 && n0 < (n + 1) ==> Int.pow(2, n0) % 7 == 1 || Int.pow(2, n0) % 7 == 2 || Int.pow(2, n0) % 7 == 4;  /* [IN-FILE CHECK] requires 2 of vc_imo_1964_p1_2_L61 */
-          assert (n + 1) != 0;  /* [IN-FILE CHECK] requires 3 of vc_imo_1964_p1_2_L61 */
-          assert 0 <= (n + 1) - 1;  /* [IN-FILE CHECK] requires 4 of vc_imo_1964_p1_2_L61 */
-          assert 0 <= (n + 1) || (n + 1) - 1 == (n + 1);  /* [IN-FILE CHECK] requires 5 of vc_imo_1964_p1_2_L61 */
-          assert (n + 1) - 1 < (n + 1);  /* [IN-FILE CHECK] requires 6 of vc_imo_1964_p1_2_L61 */
-          assert Int.pow(2, (n + 1) - 1) % 7 == 1 || Int.pow(2, (n + 1) - 1) % 7 == 2 || Int.pow(2, (n + 1) - 1) % 7 == 4;  /* [IN-FILE CHECK] requires 7 of vc_imo_1964_p1_2_L61 */
-          assert n == (n + 1) - 1;  /* [IN-FILE CHECK] requires 8 of vc_imo_1964_p1_2_L61 */
-          assert 7 != 0;  /* [IN-FILE CHECK] requires 9 of vc_imo_1964_p1_2_L61 */
-          assert ((Int.pow(2, n) % 7 == 1) && (0 <= 2) && (Int.pow(2, n + 1) == Int.pow(2, n) * 2) && (7 != 0) && (((Int.pow(2, n) * 2 % 7 != 1) && (7 != 0) && (((Int.pow(2, n) * 2 % 7 != 2) && (7 != 0)) || (Int.pow(2, n) * 2 % 7 == 2))) || (Int.pow(2, n) * 2 % 7 == 1)) && (Int.pow(2, n) * 2 % 7 == 1 || Int.pow(2, n) * 2 % 7 == 2 || Int.pow(2, n) * 2 % 7 == 4) && (0 <= n + 1) && (((Int.pow(2, n + 1) % 7 != 1) && (0 <= n + 1) && (((Int.pow(2, n + 1) % 7 != 2) && (0 <= n + 1)) || (Int.pow(2, n + 1) % 7 == 2))) || (Int.pow(2, n + 1) % 7 == 1)) && (Int.pow(2, n + 1) % 7 == 1 || Int.pow(2, n + 1) % 7 == 2 || Int.pow(2, n + 1) % 7 == 4)) || (Int.pow(2, n) % 7 != 1);  /* [IN-FILE CHECK] requires 10 of vc_imo_1964_p1_2_L61 */
-          assert ((Int.pow(2, n) % 7 != 2) && (7 != 0)) || (Int.pow(2, n) % 7 == 2);  /* [IN-FILE CHECK] requires 11 of vc_imo_1964_p1_2_L61 */
-          assert Int.pow(2, n) % 7 == 2 || Int.pow(2, n) % 7 == 4;  /* [IN-FILE CHECK] requires 12 of vc_imo_1964_p1_2_L61 */
-          assert ((Int.pow(2, n) % 7 == 2) && (0 <= 2) && (Int.pow(2, n + 1) == Int.pow(2, n) * 2) && (7 != 0) && (((Int.pow(2, n) * 2 % 7 != 1) && (7 != 0) && (((Int.pow(2, n) * 2 % 7 != 2) && (7 != 0)) || (Int.pow(2, n) * 2 % 7 == 2))) || (Int.pow(2, n) * 2 % 7 == 1)) && (Int.pow(2, n) * 2 % 7 == 1 || Int.pow(2, n) * 2 % 7 == 2 || Int.pow(2, n) * 2 % 7 == 4) && (0 <= n + 1) && (((Int.pow(2, n + 1) % 7 != 1) && (0 <= n + 1) && (((Int.pow(2, n + 1) % 7 != 2) && (0 <= n + 1)) || (Int.pow(2, n + 1) % 7 == 2))) || (Int.pow(2, n + 1) % 7 == 1)) && (Int.pow(2, n + 1) % 7 == 1 || Int.pow(2, n + 1) % 7 == 2 || Int.pow(2, n + 1) % 7 == 4)) || (Int.pow(2, n) % 7 != 2);  /* [IN-FILE CHECK] requires 13 of vc_imo_1964_p1_2_L61 */
-          assert Int.pow(2, n) % 7 == 4;  /* [IN-FILE CHECK] requires 14 of vc_imo_1964_p1_2_L61 */
-          assert 0 <= 2;  /* [IN-FILE CHECK] requires 15 of vc_imo_1964_p1_2_L61 */
-          assert Int.pow(2, n + 1) == Int.pow(2, n) * 2;  /* [IN-FILE CHECK] requires 16 of vc_imo_1964_p1_2_L61 */
-          assert 0 <= Int.pow(2, n);  /* [IN-FILE CHECK] requires 17 of vc_imo_1964_p1_2_L61 */
-          assert 0 <= 7;  /* [IN-FILE CHECK] requires 18 of vc_imo_1964_p1_2_L61 */
-          assert Int.pow(2, n) * 2 % 7 == Int.pow(2, n) % 7 * (2 % 7) % 7;  /* [IN-FILE CHECK] requires 19 of vc_imo_1964_p1_2_L61 */
-          assert ((Int.pow(2, n) * 2 % 7 != 1) && ((Int.pow(2, n) * 2 % 7 != 2) || (Int.pow(2, n) * 2 % 7 == 2))) || (Int.pow(2, n) * 2 % 7 == 1);  /* [IN-FILE CHECK] requires 20 of vc_imo_1964_p1_2_L61 */
-          vc_imo_1964_p1_2_L61(n + 1, n);  /* [IN-FILE CHECK] the closed lemma for line 61 */
           assert ((((Int.pow(2, n) * 2) % 7) == 1) || ((((Int.pow(2, n) * 2) % 7) == 2) || (((Int.pow(2, n) * 2) % 7) == 4))) by {  // sub-goal before `norm_num` (Lean state) // @tac 903-941
             // [TACTIC: «Norm_num[_]At___» [ h , Nat.mul_mod , Nat.add_mod ]]
             // UNCITED Nat.add_mod: named in this rewriting step; no record of Lean's proof attributes an application of it to this execution (its recorded applications are at other tactics of the proof; a rewrite at a hypothesis is filed under the tactic that later uses the hypothesis, and a conditional / under-binder simp rewrite may be unrecorded), so whether it was applied here is not known; not stated
             assert ((7) > 0);  // precondition of NatMulMod (Lean: Nat.mul_mod)
             NatMulMod(Int.pow(2, n), 2, 7);  // cite: Nat.mul_mod
             // UNCITED-APPLIED internal ×29 [exec 171 903-941]: applications made inside the tactic's own automation, not stated — or_self ×1, or_false ×1; machinery/glue: congrArg ×6, Eq.trans ×4, Mathlib.Meta.NormNum.isNat_ofNat ×4, congr ×3 (+7 more heads, ×10) (cited in this block, not counted here: Nat.mul_mod [Lean recorded ×1])
+            vc_imo_1964_p1_2_L61(n + 1, n);  /* [IN-FILE CHECK] the closed lemma for line 61 */
           }
           assert (((Int.pow(2, (n + 1)) % 7) == 1) || (((Int.pow(2, (n + 1)) % 7) == 2) || ((Int.pow(2, (n + 1)) % 7) == 4)));  // sub-goal of `cases` (Lean state) // @tac 875-892
         }

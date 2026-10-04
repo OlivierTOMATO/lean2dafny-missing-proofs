@@ -591,12 +591,6 @@ lemma aime_1987_p5(x: int, y: int)
                 // UNCITED-APPLIED internal ×5 [exec 774 2992-3000]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1
               }
               // [TACTIC: exact Int.le_of_dvd ( ( by norm_num norm_num ) , h₃₅₆ )]
-              assert y * y + 3 * (x * x * (y * y)) == 30 * (x * x) + 517;  /* [IN-FILE CHECK] requires 1 of vc_aime_1987_p5_L594 */
-              assert x != 0;  /* [IN-FILE CHECK] requires 2 of vc_aime_1987_p5_L594 */
-              assert IntDvd(3 * (x * x) + 1, 507);  /* [IN-FILE CHECK] requires 3 of vc_aime_1987_p5_L594 */
-              assert x * x >= 1;  /* [IN-FILE CHECK] requires 4 of vc_aime_1987_p5_L594 */
-              assert 3 * (x * x) + 1 > 0;  /* [IN-FILE CHECK] requires 5 of vc_aime_1987_p5_L594 */
-              assert 0 < 507;  /* [IN-FILE CHECK] requires 6 of vc_aime_1987_p5_L594 */
               vc_aime_1987_p5_L594(x, y);  /* [IN-FILE CHECK] the closed lemma for line 594 */
               assert (0 < (507)) && (exists k: int :: (507) == (((3 * (x * x)) + 1)) * k);  // precondition of IntLeOfDvd (Lean: Int.le_of_dvd)
               IntLeOfDvd(((3 * (x * x)) + 1), 507);  // cite: Int.le_of_dvd

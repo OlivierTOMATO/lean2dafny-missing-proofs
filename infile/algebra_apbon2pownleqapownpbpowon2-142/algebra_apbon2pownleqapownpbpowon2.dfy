@@ -140,8 +140,6 @@ lemma {:isolate_assertions} cert_piece_16(a: real, b: real, n: nat, k: nat)
   requires ((Real.pow(a, k) - Real.pow(b, k)) <= 0.0)
   ensures (0.0 <= ((a - b) * (Real.pow(a, k) - Real.pow(b, k))))
 {
-  assert a - b <= 0.0;  /* [IN-FILE CHECK] requires 1 of vc_algebra_apbon2pownleqapownpbpowon2_L142 */
-  assert Real.pow(a, k) - Real.pow(b, k) <= 0.0;  /* [IN-FILE CHECK] requires 2 of vc_algebra_apbon2pownleqapownpbpowon2_L142 */
   vc_algebra_apbon2pownleqapownpbpowon2_L142(a, b, k, n);  /* [IN-FILE CHECK] the closed lemma for line 142 */
   MulNonneg(-((a - b)), -((Real.pow(a, k) - Real.pow(b, k)))); MulNeg(-((a - b)), (Real.pow(a, k) - Real.pow(b, k))); assert (-((a - b))) * (-((Real.pow(a, k) - Real.pow(b, k)))) == -((-((a - b))) * ((Real.pow(a, k) - Real.pow(b, k)))); assert (-((a - b))) * ((Real.pow(a, k) - Real.pow(b, k))) == -(((a - b)) * ((Real.pow(a, k) - Real.pow(b, k))));
 }

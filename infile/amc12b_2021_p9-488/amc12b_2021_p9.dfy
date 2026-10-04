@@ -485,7 +485,6 @@ lemma amc12b_2021_p9()
       // [TACTIC: «_<;>_» [ h₇₂₁ ] rw [ h₇₂₁ ] <;> field_simp [ Real.log_ne_zero_of_pos_of_ne_one ( by norm_num norm_num : ( 0 : ℝ ) < 2 ) ( by norm_num norm_num : ( 2 : ℝ ) ≠ 1 ) ] field_simp [ Real.log_ne_zero_of_pos_of_ne_one ( by norm_num norm_num : ( 0 : ℝ ) < 2 ) ( by norm_num norm_num : ( 2 : ℝ ) ≠ 1 ) ] <;> ring_nf ring_nf <;> field_simp [ Real.log_ne_zero_of_pos_of_ne_one ( by norm_num norm_num : ( 0 : ℝ ) < 2 ) ( by norm_num norm_num : ( 2 : ℝ ) ≠ 1 ) ] field_simp [ Real.log_ne_zero_of_pos_of_ne_one ( by norm_num norm_num : ( 0 : ℝ ) < 2 ) ( by norm_num norm_num : ( 2 : ℝ ) ≠ 1 ) ] <;> ring_nf ring_nf]
       // [TACTIC: choice [ h₇₂₁ ] rw [ h₇₂₁ ]]
       // UNCITED-APPLIED congrArg(Real.log (160 : ℝ) / Real.log (2 : ℝ) / (Real.log (2 : ℝ) / Real.log …, Real.log (160 : ℝ) / Real.log (2 : ℝ) * (Real.log (20 : ℝ) / Real.log…, fun (_a : ℝ) => _a = Real.log (160 : ℝ) * Real.log (20 : ℝ) / Real.lo…): no library counterpart (not stated) [exec 1700 6860-6875]
-      vc_amc12b_2021_p9_L488();  /* [IN-FILE CHECK] the closed lemma for line 488 */
       assert ((Real.div(Real.log(160.0), Real.log(2.0)) * Real.div(Real.log(20.0), Real.log(2.0))) == Real.div((Real.log(160.0) * Real.log(20.0)), (Real.log(2.0) * Real.log(2.0)))) by {  // sub-goal of `field_simp` (Lean state) // @tac 6886-6994
         assert (0.0 < 2.0) by {  // sub-goal of `by` (Lean state) // @tac 6936-6944
           // [TACTIC: «Norm_num[_]At___»]
@@ -504,6 +503,7 @@ lemma amc12b_2021_p9()
           // UNCITED-APPLIED internal ×24 [exec 1754 7005-7012]: applications made inside the tactic's own automation, not stated — mul_one ×1, add_zero ×1; machinery/glue: Eq.trans ×4, congrArg ×3, of_eq_true ×1, Mathlib.Tactic.Ring.mul_congr ×1 (+13 more heads, ×13)
         }
         // UNCITED-APPLIED internal ×22 [exec 1735 6886-6994]: applications made inside the tactic's own automation, not stated — ne_of_gt ×4, Mathlib.Meta.Positivity.log_pos_of_isNat ×3, div_mul_eq_mul_div ×2, mul_div_assoc' ×1, div_div ×1, or_false ×1; machinery/glue: congrArg ×4, Eq.trans ×3, Mathlib.Meta.NormNum.isNat_ofNat ×3 (cited in this block, not counted here: mul_pos [Lean recorded ×1], pow_pos [Lean recorded ×1])
+        vc_amc12b_2021_p9_L488();  /* [IN-FILE CHECK] the closed lemma for line 488 */
       }
       // [TACTIC: «Norm_num[_]At___»]
       // [TACTIC: «Norm_num[_]At___»]

@@ -492,10 +492,6 @@ lemma aime_1987_p5(x: int, y: int)
         assert IntDvd(((3 * (x * x)) + 1), ((30 * (x * x)) + 517));
       }
       // have h₂₂₂ : ( 3 * x ^ 2 + 1 : ℤ ) ∣ 507  [type from Lean state]
-      assert y * y + 3 * (x * x * (y * y)) == 30 * (x * x) + 517;  /* [IN-FILE CHECK] requires 1 of vc_aime_1987_p5_L495 */
-      assert x != 0;  /* [IN-FILE CHECK] requires 2 of vc_aime_1987_p5_L495 */
-      assert IntDvd(3 * (x * x) + 1, 30 * (x * x) + 517);  /* [IN-FILE CHECK] requires 3 of vc_aime_1987_p5_L495 */
-      vc_aime_1987_p5_L495(x, y);  /* [IN-FILE CHECK] the closed lemma for line 495 */
       assert IntDvd(((3 * (x * x)) + 1), 507) by { // @tac 1389-1471 // @tac 1480-1509 // @tac 1518-1556
         // have h₂₂₃ : 30 * x ^ 2 + 517 == 10 * ( 3 * x ^ 2 + 1 ) + 507  [type from Lean state]
         assert (((30 * (x * x)) + 517) == ((10 * ((3 * (x * x)) + 1)) + 507)); // @tac 1467-1471
@@ -506,6 +502,7 @@ lemma aime_1987_p5(x: int, y: int)
         // [TACTIC: simpa [ dvd_add_right ] using h₂₂₁]
         // UNCITED dvd_add_right: no Lean instance recorded (arguments unknown), not guessed
         // UNCITED-APPLIED internal ×2 [exec 557 1518-1556]: applications made inside the tactic's own automation, not stated — machinery/glue: of_eq_true ×1, congrArg ×1
+        vc_aime_1987_p5_L495(x, y);  /* [IN-FILE CHECK] the closed lemma for line 495 */
       }
       // [TACTIC: exact h₂₂₂]
       assert IntDvd(((3 * (x * x)) + 1), 507);

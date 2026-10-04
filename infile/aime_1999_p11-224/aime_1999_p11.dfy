@@ -221,14 +221,6 @@ lemma aime_1999_p11(m: Rat.rat)
         // have h₂ : (2 : ℝ) * Real.sin (2.5 * Real.pi / (180 : ℝ)) * ∑ k ∈ Finset.Icc (1 : ℕ) (35 : ℕ), Real.sin ((5 : ℝ) * ↑k * R  [type from Lean state]
         assert (((2.0 * Real.sin(((2.5 * Real.pi()) / 180.0))) * Real.sum(IccN(1, 35), ((k: nat) => Real.sin((((5.0 * (k as real)) * Real.pi()) / 180.0))))) == (2.0 * Real.cos(((2.5 * Real.pi()) / 180.0)))) by { // @tac 1034-1336 // @tac 1345-1354
           // have h₃ : (2 : ℝ) * Real.sin (2.5 * Real.pi / (180 : ℝ)) * ∑ k ∈ Finset.Icc (1 : ℕ) (35 : ℕ), Real.sin ((5 : ℝ) * ↑k * R  [type from Lean state]
-          assert m.Rational?;  /* [IN-FILE CHECK] requires 1 of vc_aime_1999_p11_L224 */
-          assert gcd(Int.natAbs(m.num), m.denom) == 1;  /* [IN-FILE CHECK] requires 2 of vc_aime_1999_p11_L224 */
-          assert Rat.lt(Rat.of_int(0), m);  /* [IN-FILE CHECK] requires 3 of vc_aime_1999_p11_L224 */
-          assert Rat.of_int(0).num * m.denom < m.num * Rat.of_int(0).denom;  /* [IN-FILE CHECK] requires 4 of vc_aime_1999_p11_L224 */
-          assert Real.sum(IccN(1, 35), ((k: nat) => Real.sin(5.0 * (k as real) * Real.pi() / 180.0))) == Real.tan(m.to_real() * Real.pi() / 180.0);  /* [IN-FILE CHECK] requires 5 of vc_aime_1999_p11_L224 */
-          assert Real.div((m.num as real), (m.denom as real)) < 90.0;  /* [IN-FILE CHECK] requires 6 of vc_aime_1999_p11_L224 */
-          assert 0 <= 1;  /* [IN-FILE CHECK] requires 7 of vc_aime_1999_p11_L224 */
-          assert 0 <= 35;  /* [IN-FILE CHECK] requires 8 of vc_aime_1999_p11_L224 */
           vc_aime_1999_p11_L224(m);  /* [IN-FILE CHECK] the closed lemma for line 224 */
           assert (((2.0 * Real.sin(((2.5 * Real.pi()) / 180.0))) * Real.sum(IccN(1, 35), ((k: nat) => Real.sin((((5.0 * (k as real)) * Real.pi()) / 180.0))))) == Real.sum(IccN(1, 35), ((k: nat) => ((2.0 * Real.sin(((2.5 * Real.pi()) / 180.0))) * Real.sin((((5.0 * (k as real)) * Real.pi()) / 180.0)))))); // @tac 1276-1336 // @tac 1276-1295
           // UNCITED-APPLIED congrArg((2 : ℝ) * sin (2.5 * π / (180 : ℝ)) * ∑ i ∈ Finset.Icc (1 : ℕ) (35 : …, ∑ i ∈ Finset.Icc (1 : ℕ) (35 : ℕ), (2 : ℝ) * sin (2.5 * π / (180 : ℝ)…, fun (_a : ℝ) => _a = ∑ k ∈ Finset.Icc (1 : ℕ) (35 : ℕ), (2 : ℝ) * sin…): no library counterpart (not stated) [exec 77 1276-1295]

@@ -98,9 +98,6 @@ lemma amc12b_2003_p17(x: real, y: real)
   assert ((x) != 0.0) && ((y) != 0.0);  // precondition of RealLogMul (Lean: Real.log_mul)
   RealLogMul(x, y);  // cite: Real.log_mul
   // UNCITED-APPLIED internal ×7 [exec 57 612-681]: applications made inside the tactic's own automation, not stated — ne_of_gt ×2; machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, Eq.trans ×1, congrArg ×1, Mathlib.Meta.NormNum.isNat_eq_false ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1], Real.log_mul [Lean recorded ×1])
-  assert 0.0 < x;  /* [IN-FILE CHECK] requires 1 of vc_amc12b_2003_p17_L101 */
-  assert 0.0 < y;  /* [IN-FILE CHECK] requires 2 of vc_amc12b_2003_p17_L101 */
-  assert Real.log(x * Real.pow(y, 3)) == 1.0;  /* [IN-FILE CHECK] requires 3 of vc_amc12b_2003_p17_L101 */
   vc_amc12b_2003_p17_L101(x, y);  /* [IN-FILE CHECK] the closed lemma for line 101 */
   assert ((Real.log(x) + (3.0 * Real.log(y))) == 1.0);  // hypothesis h₁ after `field_simp` (Lean state) // @tac-hyp 612-681
   assert (((2.0 * Real.log(x)) + Real.log(y)) == 1.0);  // hypothesis h₂ after `field_simp` (Lean state) // @tac-hyp 612-681

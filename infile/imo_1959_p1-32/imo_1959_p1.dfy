@@ -29,21 +29,12 @@ lemma imo_1959_p1(n: nat)
         // [TACTIC: choice [ Nat.gcd_comm ] rw [ Nat.gcd_comm ]]
         NatGcdComm(((1 * ((14 * n) + 3)) + ((7 * n) + 1)), ((14 * n) + 3));  // cite: Nat.gcd_comm
         // UNCITED-APPLIED congrArg(Nat.gcd ((1 : ℕ) * ((14 : ℕ) * n + (3 : ℕ)) + ((7 : ℕ) * n + (1 : ℕ))…, Nat.gcd ((14 : ℕ) * n + (3 : ℕ)) ((1 : ℕ) * ((14 : ℕ) * n + (3 : ℕ)) …, fun (_a : ℕ) => _a = Nat.gcd ((14 : ℕ) * n + (3 : ℕ)) ((7 : ℕ) * n + …): no library counterpart (not stated) [exec 102 652-669]
-        assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1959_p1_L32 */
-        assert 0 < n;  /* [IN-FILE CHECK] requires 2 of vc_imo_1959_p1_L32 */
-        assert forall n0: nat :: 0 < n0 && 0 <= n0 && n0 < n ==> gcd(21 * n0 + 4, 14 * n0 + 3) == 1;  /* [IN-FILE CHECK] requires 3 of vc_imo_1959_p1_L32 */
-        assert 21 * n + 4 == 1 * (14 * n + 3) + (7 * n + 1);  /* [IN-FILE CHECK] requires 4 of vc_imo_1959_p1_L32 */
-        assert 0 <= 1 * (14 * n + 3) + (7 * n + 1);  /* [IN-FILE CHECK] requires 5 of vc_imo_1959_p1_L32 */
-        assert 0 <= 14 * n + 3;  /* [IN-FILE CHECK] requires 6 of vc_imo_1959_p1_L32 */
-        assert gcd(1 * (14 * n + 3) + (7 * n + 1), 14 * n + 3) == gcd(14 * n + 3, 1 * (14 * n + 3) + (7 * n + 1));  /* [IN-FILE CHECK] requires 7 of vc_imo_1959_p1_L32 */
-        assert 0 <= 7 * n + 1;  /* [IN-FILE CHECK] requires 8 of vc_imo_1959_p1_L32 */
-        assert gcd(14 * n + 3, 7 * n + 1) == gcd(7 * n + 1, 14 * n + 3);  /* [IN-FILE CHECK] requires 9 of vc_imo_1959_p1_L32 */
-        vc_imo_1959_p1_L32(n);  /* [IN-FILE CHECK] the closed lemma for line 32 */
         assert (gcd(((14 * n) + 3), ((1 * ((14 * n) + 3)) + ((7 * n) + 1))) == gcd(((14 * n) + 3), ((7 * n) + 1))) by {  // sub-goal of `simp` (Lean state) // @tac 680-758
           NatGcdComm(((14 * n) + 3), ((7 * n) + 1));  // cite: Nat.gcd_comm
           // UNCITED Nat.gcd_add_mul_right_right: no Lean instance recorded (arguments unknown), not guessed
           // UNCITED Nat.gcd_assoc: no Lean instance recorded (arguments unknown), not guessed
           // UNCITED-APPLIED internal ×10 [exec 137 680-758]: applications made inside the tactic's own automation, not stated — one_mul ×1, Nat.gcd_self_add_right ×1; machinery/glue: Eq.trans ×3, congrArg ×2, of_eq_true ×1, congr ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.gcd_comm [Lean recorded ×1])
+          vc_imo_1959_p1_L32(n);  /* [IN-FILE CHECK] the closed lemma for line 32 */
         }
       }
     }

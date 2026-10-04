@@ -29,7 +29,6 @@ lemma {:isolate_assertions} cert_piece_3(z: Complex.complex)
   requires ((Complex.Re(z) + 1.0) < 0.0)
   ensures (0.0 < ((Complex.Re(z) + 1.0) * (Complex.Re(z) + 1.0)))
 {
-  assert Complex.Re(z) + 1.0 < 0.0;  /* [IN-FILE CHECK] requires 1 of vc_amc12b_2021_p18_L31 */
   vc_amc12b_2021_p18_L31(z);  /* [IN-FILE CHECK] the closed lemma for line 31 */
   MulPos(-((Complex.Re(z) + 1.0)), -((Complex.Re(z) + 1.0))); MulNeg(-((Complex.Re(z) + 1.0)), (Complex.Re(z) + 1.0)); assert (-((Complex.Re(z) + 1.0))) * (-((Complex.Re(z) + 1.0))) == -((-((Complex.Re(z) + 1.0))) * ((Complex.Re(z) + 1.0))); assert (-((Complex.Re(z) + 1.0))) * ((Complex.Re(z) + 1.0)) == -(((Complex.Re(z) + 1.0)) * ((Complex.Re(z) + 1.0)));
 }

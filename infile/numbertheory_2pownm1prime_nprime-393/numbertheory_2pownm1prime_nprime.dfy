@@ -390,19 +390,6 @@ lemma numbertheory_2pownm1prime_nprime(n: nat)
                 // UNCITED-APPLIED internal ×25 [exec 923 3776-3781]: applications made inside the tactic's own automation, not stated — Int.sub_nonneg_of_le ×2, Int.add_one_le_of_lt ×1, Nat.lt_of_not_le ×1; machinery/glue: Eq.symm ×4, Lean.Omega.Constraint.addInequality_sat ×2, Lean.Omega.LinearCombo.sub_eval ×2, Decidable.byContradiction ×1 (+12 more heads, ×12)
               }
               // have h₁₃₅ : 2 ^ n >= 2 ^ 2  [type from Lean state]
-              assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_2pownm1prime_nprime_L393 */
-              assert 0 <= m;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_2pownm1prime_nprime_L393 */
-              assert 0 < n;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_2pownm1prime_nprime_L393 */
-              assert prime(tsub(Int.pow(2, n), 1));  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_2pownm1prime_nprime_L393 */
-              assert forall n0: nat :: 0 < n0 && prime(tsub(Int.pow(2, n0), 1)) && 0 <= n0 && n0 < n ==> prime(n0);  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_2pownm1prime_nprime_L393 */
-              assert n >= 2;  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_2pownm1prime_nprime_L393 */
-              assert !prime(n);  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_2pownm1prime_nprime_L393 */
-              assert exists m_1_0_0_1: nat :: NatDvd(m_1_0_0_1, n) && m_1_0_0_1 != 1 && m_1_0_0_1 != n;  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_2pownm1prime_nprime_L393 */
-              assert exists m_1_0_0_4: nat :: NatDvd(m_1_0_0_4, n) && m_1_0_0_4 != 1 && m_1_0_0_4 != n;  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_2pownm1prime_nprime_L393 */
-              assert (0 <= 0 && NatDvd(0, n) && 0 != 1 && 0 != n) || (0 <= 0 && NatDvd(0, n) && 0 != 1 && 0 != n) || (exists as_m1_0_0_0_1_0_0_0: nat :: NatDvd(as_m1_0_0_0_1_0_0_0, n) && as_m1_0_0_0_1_0_0_0 != 1 && as_m1_0_0_0_1_0_0_0 != n);  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_2pownm1prime_nprime_L393 */
-              assert 0 <= 1;  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_2pownm1prime_nprime_L393 */
-              assert 0 <= Int.pow(2, n);  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_2pownm1prime_nprime_L393 */
-              vc_numbertheory_2pownm1prime_nprime_L393(m, n);  /* [IN-FILE CHECK] the closed lemma for line 393 */
               assert (Int.pow(2, n) >= (2 * 2)) by {
                 assert (2 > 0) by {  // sub-goal of `by` (Lean state) // @tac 3858-3864
                   // [TACTIC: decide]
@@ -410,6 +397,7 @@ lemma numbertheory_2pownm1prime_nprime(n: nat)
                 }
                 // [TACTIC: exact Nat.pow_le_pow_of_le_right ( ( by decide decide ) , h₂ )]
                 // UNCITED Nat.pow_le_pow_of_le_right: applied by `exact` here; no library counterpart, its instance is not stated
+                vc_numbertheory_2pownm1prime_nprime_L393(m, n);  /* [IN-FILE CHECK] the closed lemma for line 393 */
               }
               // have h₁₃₆ : 2 ^ m - 1 < 2 ^ n - 1  [type from Lean state]
               assert (tsub(Int.pow(2, m), 1) < tsub(Int.pow(2, n), 1)) by { // @tac 3935-3980 // @tac 3991-4581 // @tac 4592-4608

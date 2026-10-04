@@ -95,8 +95,6 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
                   // `ring_nf` closed the goal; the rest of the chain did not run
                 }
               }
-              assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L98 */
-              assert 0 <= k;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L98 */
               vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L98(k, n);  /* [IN-FILE CHECK] the closed lemma for line 98 */
               ((1 + Int.pow(2, (n + 3))) + (((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5)))));
               == {

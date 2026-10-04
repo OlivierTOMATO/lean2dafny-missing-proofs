@@ -412,19 +412,6 @@ lemma imo_1960_p2(x: real)
                 }
                 // [TACTIC: rwSeq [ h₁₁ ]]
                 // UNCITED-APPLIED congrArg(((1 : ℝ) - √((1 : ℝ) + (2 : ℝ) * x)) ^ (2 : ℕ), (√((1 : ℝ) + (2 : ℝ) * x) - (1 : ℝ)) ^ (2 : ℕ), fun (_a : ℝ) => (4 : ℝ) * x ^ (2 : ℕ) / _a ≥ (2 : ℝ) * x + (9 : ℝ)): no library counterpart (not stated) [exec 458 1886-1898]
-                assert 0.0 <= 1.0 + 2.0 * x;  /* [IN-FILE CHECK] requires 1 of vc_imo_1960_p2_L415 */
-                assert (1.0 - Real.sqrt(1.0 + 2.0 * x)) * (1.0 - Real.sqrt(1.0 + 2.0 * x)) != 0.0;  /* [IN-FILE CHECK] requires 2 of vc_imo_1960_p2_L415 */
-                assert Real.div(4.0 * (x * x), (1.0 - Real.sqrt(1.0 + 2.0 * x)) * (1.0 - Real.sqrt(1.0 + 2.0 * x))) < 2.0 * x + 9.0;  /* [IN-FILE CHECK] requires 3 of vc_imo_1960_p2_L415 */
-                assert 2.0 != 0.0;  /* [IN-FILE CHECK] requires 4 of vc_imo_1960_p2_L415 */
-                assert 0.0 - 1.0 / 2.0 <= x;  /* [IN-FILE CHECK] requires 5 of vc_imo_1960_p2_L415 */
-                assert x > 0.0;  /* [IN-FILE CHECK] requires 6 of vc_imo_1960_p2_L415 */
-                assert Real.sqrt(1.0 + 2.0 * x) > 1.0;  /* [IN-FILE CHECK] requires 7 of vc_imo_1960_p2_L415 */
-                assert Real.sqrt(1.0 + 2.0 * x) != 1.0;  /* [IN-FILE CHECK] requires 8 of vc_imo_1960_p2_L415 */
-                assert !(Real.sqrt(1.0 + 2.0 * x) < 7.0 / 2.0);  /* [IN-FILE CHECK] requires 9 of vc_imo_1960_p2_L415 */
-                assert Real.sqrt(1.0 + 2.0 * x) >= 7.0 / 2.0;  /* [IN-FILE CHECK] requires 10 of vc_imo_1960_p2_L415 */
-                assert (Real.sqrt(1.0 + 2.0 * x) - 1.0) * (Real.sqrt(1.0 + 2.0 * x) - 1.0) >= (7.0 / 2.0 - 1.0) * (7.0 / 2.0 - 1.0);  /* [IN-FILE CHECK] requires 11 of vc_imo_1960_p2_L415 */
-                assert (1.0 - Real.sqrt(1.0 + 2.0 * x)) * (1.0 - Real.sqrt(1.0 + 2.0 * x)) == (Real.sqrt(1.0 + 2.0 * x) - 1.0) * (Real.sqrt(1.0 + 2.0 * x) - 1.0);  /* [IN-FILE CHECK] requires 12 of vc_imo_1960_p2_L415 */
-                vc_imo_1960_p2_L415(x);  /* [IN-FILE CHECK] the closed lemma for line 415 */
                 assert (Real.div((4.0 * (x * x)), ((Real.sqrt((1.0 + (2.0 * x))) - 1.0) * (Real.sqrt((1.0 + (2.0 * x))) - 1.0))) >= ((2.0 * x) + 9.0)) by {  // sub-goal before `have` (Lean state) // @tac 1909-2071 // @tac 2082-2094
                   // have h₁₂ : x == ( ( Real.sqrt ( ( 1 + 2 * x ) ) ) ^ 2 - 1 ) / 2  [type from Lean state]
                   assert (x == (((Real.sqrt((1.0 + (2.0 * x))) * Real.sqrt((1.0 + (2.0 * x)))) - 1.0) / 2.0)) by { // @tac 1984-2071
@@ -587,6 +574,7 @@ lemma imo_1960_p2(x: real)
                       // UNCITED-APPLIED congrArg(fun (_a : Prop) => _a): no library counterpart (not stated) [exec 707 2366-2397]
                     }
                   }
+                  vc_imo_1960_p2_L415(x);  /* [IN-FILE CHECK] the closed lemma for line 415 */
                 }
               }
               // [TACTIC: «Linarith[_]At___»]

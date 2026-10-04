@@ -136,18 +136,6 @@ lemma mathd_numbertheory_618(n: nat, p: nat -> nat)
     // UNCITED-APPLIED Decidable.byContradiction: no library counterpart (not stated) [exec 323 1420-1431]
     // by_contra h
     if !((41 <= n)) {
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_mathd_numbertheory_618_L139 */
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_mathd_numbertheory_618_L139 */
-      assert n > 0;  /* [IN-FILE CHECK] requires 3 of vc_mathd_numbertheory_618_L139 */
-      assert forall x_1: nat :: p(x_1) == tsub(x_1 * x_1, x_1) + 41;  /* [IN-FILE CHECK] requires 4 of vc_mathd_numbertheory_618_L139 */
-      assert 1 < gcd(p(n), p(n + 1));  /* [IN-FILE CHECK] requires 5 of vc_mathd_numbertheory_618_L139 */
-      assert 0 <= n + 1;  /* [IN-FILE CHECK] requires 6 of vc_mathd_numbertheory_618_L139 */
-      assert p(n + 1) == p(n) + 2 * n;  /* [IN-FILE CHECK] requires 7 of vc_mathd_numbertheory_618_L139 */
-      assert 0 <= 2 * n;  /* [IN-FILE CHECK] requires 8 of vc_mathd_numbertheory_618_L139 */
-      assert gcd(p(n), p(n + 1)) == gcd(p(n), 2 * n);  /* [IN-FILE CHECK] requires 9 of vc_mathd_numbertheory_618_L139 */
-      assert 1 < gcd(p(n), 2 * n);  /* [IN-FILE CHECK] requires 10 of vc_mathd_numbertheory_618_L139 */
-      assert !(41 <= n);  /* [IN-FILE CHECK] requires 11 of vc_mathd_numbertheory_618_L139 */
-      vc_mathd_numbertheory_618_L139(n, n, p);  /* [IN-FILE CHECK] the closed lemma for line 139 */
       assert false by {  // sub-goal before `have` (Lean state) // @tac 1511-1546 // @tac 1551-1586 // @tac 1591-1968 // @tac 1591-1944 // @tac 1591-1922 // @tac 1591-1763 // @tac 1591-1738 // @tac 1591-1714 // @tac 1591-1692 // @tac 1591-1607
         // have h₆ : n <= 40  [type from Lean state]
         assert (n <= 40) by { // @tac 1538-1546
@@ -430,6 +418,7 @@ lemma mathd_numbertheory_618(n: nat, p: nat -> nat)
         // NOT RUN in Lean (no execution recorded): no lemma instances
         // [TACTIC: omega]
         // NOT RUN in Lean (no execution recorded): no lemma instances
+        vc_mathd_numbertheory_618_L139(__outer_n, n_0_0_0_1_0, n, p);  /* [IN-FILE CHECK] the closed lemma for line 139 */
       }
       assert false;
     }
@@ -442,8 +431,9 @@ lemma mathd_numbertheory_618(n: nat, p: nat -> nat)
 
 // ===== closed lemma for line 139 (from closed/mathd_numbertheory_618-139.dfy) =====
 
-lemma {:induction false} vc_mathd_numbertheory_618_L139(n: int, n_0_0_0_1_0_1_0: int, p: nat -> nat)
+lemma {:induction false} vc_mathd_numbertheory_618_L139(n: int, n_0_0_0_1_0: int, n_0_0_0_1_0_1_0: int, p: nat -> nat)
   requires 0 <= n
+  requires 0 <= n_0_0_0_1_0
   requires 0 <= n_0_0_0_1_0_1_0
   requires n > 0
   requires forall x_1: nat :: p(x_1) == tsub(x_1 * x_1, x_1) + 41

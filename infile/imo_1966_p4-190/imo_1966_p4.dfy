@@ -187,10 +187,10 @@ lemma imo_1966_p4(n: nat, x: real)
     assert (((Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, m) * x)))) + Real.div(1.0, Real.sin((Real.pow(2.0, (m + 1)) * x)))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, (m + 1)) * x))))) by {  // sub-goal before `have` (Lean state) // @tac 1937-2624 // @tac 2629-2656 // @tac 2629-2638
       // have h₃ : 1 / Real.sin ( ( 2 ^ ( m + 1 ) * x ) ) == 1 / Real.tan ( ( 2 ^ m * x )  [type from Lean state]
       assert (Real.div(1.0, Real.sin((Real.pow(2.0, (m + 1)) * x))) == (Real.div(1.0, Real.tan((Real.pow(2.0, m) * x))) - Real.div(1.0, Real.tan((Real.pow(2.0, (m + 1)) * x))))) by { // @tac 2052-2103
-        vc_imo_1966_p4_L190(m, n, x);  /* [IN-FILE CHECK] the closed lemma for line 190 */
         assert ((Real.pow(2.0, (m + 1)) * x) == (2.0 * (Real.pow(2.0, m) * x))) by {  // sub-goal of `by` (Lean state) // @tac 2098-2102
           // [TACTIC: Ring]
           // UNCITED-APPLIED internal ×50 [exec 373 2098-2102]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_pf_add_zero ×5, Mathlib.Tactic.Ring.add_mul ×5, Mathlib.Tactic.Ring.mul_add ×5, Mathlib.Tactic.Ring.zero_mul ×4 (+18 more heads, ×31)
+          vc_imo_1966_p4_L190(m, n, x);  /* [IN-FILE CHECK] the closed lemma for line 190 */
         }
         // [TACTIC: rwSeq [ show 2 ^ ( m + 1 ) * x = 2 * ( 2 ^ m * x ) by ring ]]
         // UNCITED-APPLIED congrArg((2 : ℝ) ^ (m + (1 : ℕ)) * x, (2 : ℝ) * ((2 : ℝ) ^ m * x), fun (_a : ℝ) => (1 : ℝ) / sin _a = (1 : ℝ) / tan ((2 : ℝ) ^ m * x) - …): no library counterpart (not stated) [exec 362 2052-2103]

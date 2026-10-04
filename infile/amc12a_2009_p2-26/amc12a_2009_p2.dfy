@@ -23,19 +23,6 @@ lemma amc12a_2009_p2()
     // [TACTIC: «Norm_num[_]At___» [ step1 ]]
     // `norm_num` closed the goal; the rest of the chain did not run
   // have step3 : 1 + 1 / ( 3 / 2 ) == 5 / 3  [type from Lean state]
-  assert 1 + 1 == 2;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2009_p2_L26 */
-  assert Rat.of_int(1).Rational?;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2009_p2_L26 */
-  assert Rat.add(Rat.of_int(1), Rat.of_int(1)).Rational?;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2009_p2_L26 */
-  assert Rat.div(Rat.of_int(1), Rat.add(Rat.of_int(1), Rat.of_int(1))).Rational?;  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2009_p2_L26 */
-  assert Rat.add(Rat.of_int(1), Rat.div(Rat.of_int(1), Rat.add(Rat.of_int(1), Rat.of_int(1)))).Rational?;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2009_p2_L26 */
-  assert Rat.of_int(3).Rational?;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2009_p2_L26 */
-  assert Rat.of_int(2).Rational?;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2009_p2_L26 */
-  assert Rat.div(Rat.of_int(3), Rat.of_int(2)).Rational?;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2009_p2_L26 */
-  assert Rat.add(Rat.of_int(1), Rat.div(Rat.of_int(1), Rat.add(Rat.of_int(1), Rat.of_int(1)))) == Rat.div(Rat.of_int(3), Rat.of_int(2));  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2009_p2_L26 */
-  assert Rat.div(Rat.of_int(1), Rat.div(Rat.of_int(3), Rat.of_int(2))).Rational?;  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2009_p2_L26 */
-  assert Rat.add(Rat.of_int(1), Rat.div(Rat.of_int(1), Rat.div(Rat.of_int(3), Rat.of_int(2)))).Rational?;  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2009_p2_L26 */
-  assert Rat.of_int(5).Rational?;  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2009_p2_L26 */
-  assert Rat.div(Rat.of_int(5), Rat.of_int(3)).Rational?;  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2009_p2_L26 */
   vc_amc12a_2009_p2_L26();  /* [IN-FILE CHECK] the closed lemma for line 26 */
   assert (Rat.add(Rat.of_int(1), Rat.div(Rat.of_int(1), Rat.div(Rat.of_int(3), Rat.of_int(2)))) == Rat.div(Rat.of_int(5), Rat.of_int(3))); // @tac 1260-1360 // @tac 1260-1343 // @tac 1260-1330 // @tac 1260-1313 // @tac 1260-1283
   // UNCITED-APPLIED internal ×21 [exec 151 1260-1283]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.IsNat.to_isRat ×4, Mathlib.Meta.NormNum.isNat_ofNat ×4, Mathlib.Meta.NormNum.isRat_div ×3, Mathlib.Meta.NormNum.isRat_mul ×3 (+5 more heads, ×7)

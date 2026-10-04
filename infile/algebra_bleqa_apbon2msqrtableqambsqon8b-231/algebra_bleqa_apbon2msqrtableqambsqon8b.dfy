@@ -228,22 +228,6 @@ lemma algebra_bleqa_apbon2msqrtableqambsqon8b(a: real, b: real)
               // cert: pow_pos piece `(0.0 < (y * y))` not stated (only `0 < a ^ 2` of an atom a is lowered)
               // UNCITED-APPLIED internal ×2 [exec 307 1192-1202]: applications made inside the tactic's own automation, not stated — Real.sqrt_pos_of_pos ×2 (cited in this block, not counted here: le_of_lt [Lean recorded ×1], mul_pos [Lean recorded ×1], pow_pos [Lean recorded ×2])
               assert ((0.0) < (((x * x) * (y * y))));  // precondition of LeOfLt (Lean: le_of_lt)
-              assert 0.0 < a;  /* [IN-FILE CHECK] requires 1 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert 0.0 < b;  /* [IN-FILE CHECK] requires 2 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert b <= a;  /* [IN-FILE CHECK] requires 3 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert 0.0 < Real.sqrt(a);  /* [IN-FILE CHECK] requires 4 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert 0.0 < Real.sqrt(b);  /* [IN-FILE CHECK] requires 5 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert Real.sqrt(b) <= Real.sqrt(a);  /* [IN-FILE CHECK] requires 6 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert x == Real.sqrt(a);  /* [IN-FILE CHECK] requires 7 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert 0.0 < x;  /* [IN-FILE CHECK] requires 8 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert Real.sqrt(b) <= x;  /* [IN-FILE CHECK] requires 9 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert y == Real.sqrt(b);  /* [IN-FILE CHECK] requires 10 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert 0.0 < y;  /* [IN-FILE CHECK] requires 11 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert y <= x;  /* [IN-FILE CHECK] requires 12 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert x >= y;  /* [IN-FILE CHECK] requires 13 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert a == x * x;  /* [IN-FILE CHECK] requires 14 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert b == y * y;  /* [IN-FILE CHECK] requires 15 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
-              assert ((0.0 < x * x) && (0.0 < y * y)) || ((0.0 < x * x) && (!(0.0 < x * x && 0.0 < y * y))) || ((x * x <= 0.0) && (0.0 < x * x) && (0.0 < y * y)) || ((x * x <= 0.0) && (!(0.0 < x * x && 0.0 < y * y))) || ((y <= 0.0) && (0.0 < x * x) && (0.0 < y * y)) || ((y <= 0.0) && (0.0 < x * x) && (!(0.0 < x * x && 0.0 < y * y))) || ((y <= 0.0) && (x * x <= 0.0) && (0.0 < x * x) && (0.0 < y * y)) || ((y <= 0.0) && (x * x <= 0.0) && (!(0.0 < x * x && 0.0 < y * y))) || ((x <= 0.0) && (0.0 < x * x) && (0.0 < y * y)) || ((x <= 0.0) && (0.0 < x * x) && (!(0.0 < x * x && 0.0 < y * y))) || ((x <= 0.0) && (x * x <= 0.0) && (0.0 < x * x) && (0.0 < y * y)) || ((x <= 0.0) && (x * x <= 0.0) && (!(0.0 < x * x && 0.0 < y * y))) || ((x <= 0.0) && (y <= 0.0) && (0.0 < x * x) && (0.0 < y * y)) || ((x <= 0.0) && (y <= 0.0) && (0.0 < x * x) && (!(0.0 < x * x && 0.0 < y * y))) || ((x <= 0.0) && (y <= 0.0) && (x * x <= 0.0) && (0.0 < x * x) && (0.0 < y * y)) || ((x <= 0.0) && (y <= 0.0) && (x * x <= 0.0) && (!(0.0 < x * x && 0.0 < y * y)));  /* [IN-FILE CHECK] requires 16 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231 */
               vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L231(a, b, x, y);  /* [IN-FILE CHECK] the closed lemma for line 231 */
               LeOfLt(0.0, ((x * x) * (y * y)));  // cite: le_of_lt [applied by the tactic, not named in it]
               assert (0.0 < ((x * x))) && (0.0 < ((y * y)));  // precondition of MulPos (Lean: mul_pos)

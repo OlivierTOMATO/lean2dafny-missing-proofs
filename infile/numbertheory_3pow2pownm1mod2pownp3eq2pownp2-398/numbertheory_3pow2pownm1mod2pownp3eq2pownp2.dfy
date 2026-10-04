@@ -395,63 +395,6 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
                 // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := n)
                 assert (NatMod((((((k * Int.pow(2, n)) * 16) + ((k * Int.pow(4, n)) * 64)) + (((k * k) * Int.pow(4, n)) * 64)) + (Int.pow(4, n) * 16)), (Int.pow(2, n) * 16)) == 0);  // hypothesis h₄ after `ring_nf` (Lean state) // @tac-hyp 7407-7431
                 assert (((NatDiv((((((k * Int.pow(2, n)) * 16) + ((k * Int.pow(4, n)) * 64)) + (((k * k) * Int.pow(4, n)) * 64)) + (Int.pow(4, n) * 16)), (Int.pow(2, n) * 16)) * Int.pow(2, n)) * 16) == (((((k * Int.pow(2, n)) * 16) + ((k * Int.pow(4, n)) * 64)) + (((k * k) * Int.pow(4, n)) * 64)) + (Int.pow(4, n) * 16)));  // hypothesis h₅ after `ring_nf` (Lean state) // @tac-hyp 7407-7431
-                assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert n != 0;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= n - 1;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= n || n - 1 == n;  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert n - 1 < n;  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert exists k_1: nat :: Int.pow(3, Int.pow(2, n - 1 + 1)) == 1 + Int.pow(2, n - 1 + 1 + 2) + k_1 * Int.pow(2, n - 1 + 1 + 3);  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 + 1 <= n;  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= Int.pow(2, n);  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= n + 2;  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= n + 3;  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert exists k_1_0_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_1 * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_0_1_0_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_0_1_0_0 * Int.pow(2, n + 3));  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= k;  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= n + 1;  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= Int.pow(2, n + 1);  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert Int.pow(3, Int.pow(2, n + 1)) == Int.pow(3, Int.pow(2, n)) * Int.pow(3, Int.pow(2, n));  /* [IN-FILE CHECK] requires 17 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= 2 * n + 4;  /* [IN-FILE CHECK] requires 18 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= n + 4;  /* [IN-FILE CHECK] requires 19 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= 2 * n + 6;  /* [IN-FILE CHECK] requires 20 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= 2 * n + 5;  /* [IN-FILE CHECK] requires 21 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert (1 + Int.pow(2, n + 2) + k * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k * Int.pow(2, n + 3)) == 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k * Int.pow(2, n + 4) + k * k * Int.pow(2, 2 * n + 6) + 2 * k * Int.pow(2, 2 * n + 5));  /* [IN-FILE CHECK] requires 22 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= Int.pow(2, 2 * n + 4) + k * Int.pow(2, n + 4) + k * k * Int.pow(2, 2 * n + 6) + 2 * k * Int.pow(2, 2 * n + 5);  /* [IN-FILE CHECK] requires 23 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= Int.pow(2, n + 4);  /* [IN-FILE CHECK] requires 24 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert NatMod(Int.pow(2, 2 * n + 4) + k * Int.pow(2, n + 4) + k * k * Int.pow(2, 2 * n + 6) + 2 * k * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) == 0;  /* [IN-FILE CHECK] requires 25 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert NatDiv(Int.pow(2, 2 * n + 4) + k * Int.pow(2, n + 4) + k * k * Int.pow(2, 2 * n + 6) + 2 * k * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) * Int.pow(2, n + 4) == Int.pow(2, 2 * n + 4) + k * Int.pow(2, n + 4) + k * k * Int.pow(2, 2 * n + 6) + 2 * k * Int.pow(2, 2 * n + 5);  /* [IN-FILE CHECK] requires 26 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert n + 3 == n + 1 + 2;  /* [IN-FILE CHECK] requires 27 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert n + 4 == n + 1 + 3;  /* [IN-FILE CHECK] requires 28 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 2 * n + 4 == 2 * n + 4;  /* [IN-FILE CHECK] requires 29 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= 2;  /* [IN-FILE CHECK] requires 30 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert Int.pow(2, n + 1 + 2) == Int.pow(2, n + 1) * Int.pow(2, 2);  /* [IN-FILE CHECK] requires 31 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= 1;  /* [IN-FILE CHECK] requires 32 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert Int.pow(2, n + 1) == Int.pow(2, n) * Int.pow(2, 1);  /* [IN-FILE CHECK] requires 33 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= 2 * n;  /* [IN-FILE CHECK] requires 34 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= 4;  /* [IN-FILE CHECK] requires 35 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert Int.pow(2, 2 * n + 4) == Int.pow(2, 2 * n) * Int.pow(2, 4);  /* [IN-FILE CHECK] requires 36 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= 3;  /* [IN-FILE CHECK] requires 37 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert Int.pow(2, n + 1 + 3) == Int.pow(2, n + 1) * Int.pow(2, 3);  /* [IN-FILE CHECK] requires 38 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= 6;  /* [IN-FILE CHECK] requires 39 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert Int.pow(2, 2 * n + 6) == Int.pow(2, 2 * n) * Int.pow(2, 6);  /* [IN-FILE CHECK] requires 40 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= 5;  /* [IN-FILE CHECK] requires 41 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert Int.pow(2, 2 * n + 5) == Int.pow(2, 2 * n) * Int.pow(2, 5);  /* [IN-FILE CHECK] requires 42 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert Int.pow(2, 2 * n) == Int.pow(Int.pow(2, 2), n);  /* [IN-FILE CHECK] requires 43 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert Int.pow(2, 1) == 2;  /* [IN-FILE CHECK] requires 44 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= Int.pow(4, n) * 16 + k * (Int.pow(2, n) * 2 * 8) + k * k * (Int.pow(4, n) * 64) + 2 * k * (Int.pow(4, n) * 32);  /* [IN-FILE CHECK] requires 45 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= Int.pow(2, n) * 2 * 8;  /* [IN-FILE CHECK] requires 46 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert NatMod(Int.pow(4, n) * 16 + k * (Int.pow(2, n) * 2 * 8) + k * k * (Int.pow(4, n) * 64) + 2 * k * (Int.pow(4, n) * 32), Int.pow(2, n) * 2 * 8) == 0;  /* [IN-FILE CHECK] requires 47 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert NatDiv(Int.pow(4, n) * 16 + k * (Int.pow(2, n) * 2 * 8) + k * k * (Int.pow(4, n) * 64) + 2 * k * (Int.pow(4, n) * 32), Int.pow(2, n) * 2 * 8) * (Int.pow(2, n) * 2 * 8) == Int.pow(4, n) * 16 + k * (Int.pow(2, n) * 2 * 8) + k * k * (Int.pow(4, n) * 64) + 2 * k * (Int.pow(4, n) * 32);  /* [IN-FILE CHECK] requires 48 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert Int.pow(k, 1) == k;  /* [IN-FILE CHECK] requires 49 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert Int.pow(n, 1) == n;  /* [IN-FILE CHECK] requires 50 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= k * Int.pow(2, n) * 16 + k * Int.pow(4, n) * 64 + Int.pow(k, 2) * Int.pow(4, n) * 64 + Int.pow(4, n) * 16;  /* [IN-FILE CHECK] requires 51 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= Int.pow(2, n) * 16;  /* [IN-FILE CHECK] requires 52 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert Int.pow(NatDiv(k * Int.pow(2, n) * 16 + k * Int.pow(4, n) * 64 + Int.pow(k, 2) * Int.pow(4, n) * 64 + Int.pow(4, n) * 16, Int.pow(2, n) * 16), 1) == NatDiv(k * Int.pow(2, n) * 16 + k * Int.pow(4, n) * 64 + Int.pow(k, 2) * Int.pow(4, n) * 64 + Int.pow(4, n) * 16, Int.pow(2, n) * 16);  /* [IN-FILE CHECK] requires 53 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert 0 <= k * Int.pow(2, n) * 16 + k * Int.pow(4, n) * 64 + k * k * Int.pow(4, n) * 64 + Int.pow(4, n) * 16;  /* [IN-FILE CHECK] requires 54 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert NatMod(k * Int.pow(2, n) * 16 + k * Int.pow(4, n) * 64 + k * k * Int.pow(4, n) * 64 + Int.pow(4, n) * 16, Int.pow(2, n) * 16) == 0;  /* [IN-FILE CHECK] requires 55 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                assert NatDiv(k * Int.pow(2, n) * 16 + k * Int.pow(4, n) * 64 + k * k * Int.pow(4, n) * 64 + Int.pow(4, n) * 16, Int.pow(2, n) * 16) * Int.pow(2, n) * 16 == k * Int.pow(2, n) * 16 + k * Int.pow(4, n) * 64 + k * k * Int.pow(4, n) * 64 + Int.pow(4, n) * 16;  /* [IN-FILE CHECK] requires 56 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
-                vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 398 */
                 assert ((((((k * Int.pow(2, n)) * 16) + ((k * Int.pow(4, n)) * 64)) + (((k * k) * Int.pow(4, n)) * 64)) + (Int.pow(4, n) * 16)) == ((NatDiv((((((k * Int.pow(2, n)) * 16) + ((k * Int.pow(4, n)) * 64)) + (((k * k) * Int.pow(4, n)) * 64)) + (Int.pow(4, n) * 16)), (Int.pow(2, n) * 16)) * Int.pow(2, n)) * 16)) by {  // sub-goal of `omega` (Lean state) // @tac 7436-7441
                   // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
                   // cite: pow_one [same instance stated in an enclosing scope: NatPowOne(k);]
@@ -466,6 +409,52 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
                   // cite: pow_add [same instance stated in an enclosing scope: NatPowAdd(2, (2 * n), 5);]
                   // cite: pow_mul [same instance stated in an enclosing scope: NatPowMul(2, 2, n);]
                   // UNCITED-APPLIED internal ×170 [exec 1030 7436-7441]: applications made inside the tactic's own automation, not stated — Int.ofNat_mul ×8, add_zero ×5, Int.ofNat_add ×3, Int.sub_nonneg_of_le ×2, Int.add_one_le_of_lt ×2, Nat.lt_or_gt_of_ne ×1, Int.sub_eq_zero_of_eq ×1, mul_one ×1; machinery/glue: congr ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_congr ×8, Mathlib.Tactic.Ring.add_mul ×8 (+34 more heads, ×115) (cited in this block, not counted here: pow_add [Lean recorded ×5], pow_mul [Lean recorded ×1], pow_one [Lean recorded ×4])
+                  assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert n != 0;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= n - 1;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= n || n - 1 == n;  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert n - 1 < n;  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert exists k_1: nat :: Int.pow(3, Int.pow(2, n - 1 + 1)) == 1 + Int.pow(2, n - 1 + 1 + 2) + k_1 * Int.pow(2, n - 1 + 1 + 3);  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 + 1 <= n;  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= Int.pow(2, n);  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= n + 2;  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= n + 3;  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert exists k_1_0_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_1 * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_0_1_0_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_0_1_0_0 * Int.pow(2, n + 3));  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= k;  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= n + 1;  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= Int.pow(2, n + 1);  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= 2 * n + 4;  /* [IN-FILE CHECK] requires 18 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= n + 4;  /* [IN-FILE CHECK] requires 19 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= 2 * n + 6;  /* [IN-FILE CHECK] requires 20 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= 2 * n + 5;  /* [IN-FILE CHECK] requires 21 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= Int.pow(2, 2 * n + 4) + k * Int.pow(2, n + 4) + k * k * Int.pow(2, 2 * n + 6) + 2 * k * Int.pow(2, 2 * n + 5);  /* [IN-FILE CHECK] requires 23 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= Int.pow(2, n + 4);  /* [IN-FILE CHECK] requires 24 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= 2;  /* [IN-FILE CHECK] requires 30 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert Int.pow(2, n + 1 + 2) == Int.pow(2, n + 1) * Int.pow(2, 2);  /* [IN-FILE CHECK] requires 31 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= 1;  /* [IN-FILE CHECK] requires 32 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert Int.pow(2, n + 1) == Int.pow(2, n) * Int.pow(2, 1);  /* [IN-FILE CHECK] requires 33 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= 2 * n;  /* [IN-FILE CHECK] requires 34 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= 4;  /* [IN-FILE CHECK] requires 35 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert Int.pow(2, 2 * n + 4) == Int.pow(2, 2 * n) * Int.pow(2, 4);  /* [IN-FILE CHECK] requires 36 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= 3;  /* [IN-FILE CHECK] requires 37 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert Int.pow(2, n + 1 + 3) == Int.pow(2, n + 1) * Int.pow(2, 3);  /* [IN-FILE CHECK] requires 38 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= 6;  /* [IN-FILE CHECK] requires 39 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert Int.pow(2, 2 * n + 6) == Int.pow(2, 2 * n) * Int.pow(2, 6);  /* [IN-FILE CHECK] requires 40 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= 5;  /* [IN-FILE CHECK] requires 41 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert Int.pow(2, 2 * n + 5) == Int.pow(2, 2 * n) * Int.pow(2, 5);  /* [IN-FILE CHECK] requires 42 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert Int.pow(2, 2 * n) == Int.pow(Int.pow(2, 2), n);  /* [IN-FILE CHECK] requires 43 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert Int.pow(2, 1) == 2;  /* [IN-FILE CHECK] requires 44 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= Int.pow(4, n) * 16 + k * (Int.pow(2, n) * 2 * 8) + k * k * (Int.pow(4, n) * 64) + 2 * k * (Int.pow(4, n) * 32);  /* [IN-FILE CHECK] requires 45 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= Int.pow(2, n) * 2 * 8;  /* [IN-FILE CHECK] requires 46 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert Int.pow(k, 1) == k;  /* [IN-FILE CHECK] requires 49 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert Int.pow(n, 1) == n;  /* [IN-FILE CHECK] requires 50 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= k * Int.pow(2, n) * 16 + k * Int.pow(4, n) * 64 + Int.pow(k, 2) * Int.pow(4, n) * 64 + Int.pow(4, n) * 16;  /* [IN-FILE CHECK] requires 51 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= Int.pow(2, n) * 16;  /* [IN-FILE CHECK] requires 52 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert Int.pow(NatDiv(k * Int.pow(2, n) * 16 + k * Int.pow(4, n) * 64 + Int.pow(k, 2) * Int.pow(4, n) * 64 + Int.pow(4, n) * 16, Int.pow(2, n) * 16), 1) == NatDiv(k * Int.pow(2, n) * 16 + k * Int.pow(4, n) * 64 + Int.pow(k, 2) * Int.pow(4, n) * 64 + Int.pow(4, n) * 16, Int.pow(2, n) * 16);  /* [IN-FILE CHECK] requires 53 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  assert 0 <= k * Int.pow(2, n) * 16 + k * Int.pow(4, n) * 64 + k * k * Int.pow(4, n) * 64 + Int.pow(4, n) * 16;  /* [IN-FILE CHECK] requires 54 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398 */
+                  vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L398(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 398 */
                 }
                 // UNCITED-APPLIED internal ×146 [exec 1021 7407-7431]: applications made inside the tactic's own automation, not stated — add_zero ×5, mul_one ×1; machinery/glue: congr ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_congr ×8, Mathlib.Tactic.Ring.add_mul ×8 (+29 more heads, ×108) (cited in this block, not counted here: pow_one [Lean recorded ×3])
               }

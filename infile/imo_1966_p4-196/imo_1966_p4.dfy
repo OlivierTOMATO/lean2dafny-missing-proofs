@@ -193,13 +193,6 @@ lemma imo_1966_p4(n: nat, x: real)
         }
         // [TACTIC: rwSeq [ show 2 ^ ( m + 1 ) * x = 2 * ( 2 ^ m * x ) by ring ]]
         // UNCITED-APPLIED congrArg((2 : ℝ) ^ (m + (1 : ℕ)) * x, (2 : ℝ) * ((2 : ℝ) ^ m * x), fun (_a : ℝ) => (1 : ℝ) / sin _a = (1 : ℝ) / tan ((2 : ℝ) ^ m * x) - …): no library counterpart (not stated) [exec 362 2052-2103]
-        assert Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x));  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L196 */
-        assert Real.sum(IccN(1, m), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m) * x));  /* [IN-FILE CHECK] requires 2 of vc_imo_1966_p4_L196 */
-        assert Real.tan(Real.pow(2.0, m) * x) == Real.div(Real.sin(Real.pow(2.0, m) * x), Real.cos(Real.pow(2.0, m) * x));  /* [IN-FILE CHECK] requires 3 of vc_imo_1966_p4_L196 */
-        assert Real.tan(2.0 * (Real.pow(2.0, m) * x)) == Real.div(Real.sin(2.0 * (Real.pow(2.0, m) * x)), Real.cos(2.0 * (Real.pow(2.0, m) * x)));  /* [IN-FILE CHECK] requires 4 of vc_imo_1966_p4_L196 */
-        assert Real.sin(2.0 * (Real.pow(2.0, m) * x)) == 2.0 * Real.sin(Real.pow(2.0, m) * x) * Real.cos(Real.pow(2.0, m) * x);  /* [IN-FILE CHECK] requires 5 of vc_imo_1966_p4_L196 */
-        assert Real.cos(2.0 * (Real.pow(2.0, m) * x)) == 2.0 * Real.cos(Real.pow(2.0, m) * x) * Real.cos(Real.pow(2.0, m) * x) - 1.0;  /* [IN-FILE CHECK] requires 6 of vc_imo_1966_p4_L196 */
-        vc_imo_1966_p4_L196(m, n, x);  /* [IN-FILE CHECK] the closed lemma for line 196 */
         assert (Real.div(1.0, Real.sin((2.0 * (Real.pow(2.0, m) * x)))) == (Real.div(1.0, Real.tan((Real.pow(2.0, m) * x))) - Real.div(1.0, Real.tan((2.0 * (Real.pow(2.0, m) * x)))))) by {  // sub-goal before `simp` (Lean state) // @tac 2110-2187
           // [TACTIC: simp [ Real.tan_eq_sin_div_cos , Real.sin_two_mul , Real.cos_two_mul , mul_assoc ]]
           RealTanEqSinDivCos((Real.pow(2.0, m) * x));  // cite: Real.tan_eq_sin_div_cos
@@ -378,6 +371,12 @@ lemma imo_1966_p4(n: nat, x: real)
               assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m) * x)), Real.sin((Real.pow(2.0, m) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m) * x)) * Real.cos((Real.pow(2.0, m) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m) * x)) * Real.cos((Real.pow(2.0, m) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2239-2279
             }
           }
+          assert Real.sum(IccN(1, m), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m) * x));  /* [IN-FILE CHECK] requires 2 of vc_imo_1966_p4_L196 */
+          assert Real.tan(Real.pow(2.0, m) * x) == Real.div(Real.sin(Real.pow(2.0, m) * x), Real.cos(Real.pow(2.0, m) * x));  /* [IN-FILE CHECK] requires 3 of vc_imo_1966_p4_L196 */
+          assert Real.tan(2.0 * (Real.pow(2.0, m) * x)) == Real.div(Real.sin(2.0 * (Real.pow(2.0, m) * x)), Real.cos(2.0 * (Real.pow(2.0, m) * x)));  /* [IN-FILE CHECK] requires 4 of vc_imo_1966_p4_L196 */
+          assert Real.sin(2.0 * (Real.pow(2.0, m) * x)) == 2.0 * Real.sin(Real.pow(2.0, m) * x) * Real.cos(Real.pow(2.0, m) * x);  /* [IN-FILE CHECK] requires 5 of vc_imo_1966_p4_L196 */
+          assert Real.cos(2.0 * (Real.pow(2.0, m) * x)) == 2.0 * Real.cos(Real.pow(2.0, m) * x) * Real.cos(Real.pow(2.0, m) * x) - 1.0;  /* [IN-FILE CHECK] requires 6 of vc_imo_1966_p4_L196 */
+          vc_imo_1966_p4_L196(m, n, x);  /* [IN-FILE CHECK] the closed lemma for line 196 */
         }
       }
       // [TACTIC: «_<;>_» [ h₃ ] rw [ h₃ ] <;> nlinarith nlinarith]

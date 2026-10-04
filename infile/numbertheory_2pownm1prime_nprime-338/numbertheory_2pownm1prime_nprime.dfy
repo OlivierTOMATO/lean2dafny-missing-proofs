@@ -335,19 +335,6 @@ lemma numbertheory_2pownm1prime_nprime(n: nat)
                 // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
                 // UNCITED-APPLIED internal ×60 [exec 780 3188-3193]: applications made inside the tactic's own automation, not stated — le_of_le_of_eq ×4, Int.sub_nonneg_of_le ×3, Int.add_one_le_of_lt ×2, Int.ofNat_nonneg ×1, Nat.lt_of_not_le ×1, Int.sub_eq_zero_of_eq ×1; machinery/glue: Eq.symm ×10, Lean.Omega.Int.sub_congr ×5, Lean.Omega.LinearCombo.sub_eval ×5, Lean.Omega.Constraint.addInequality_sat ×4 (+16 more heads, ×24)
               // have h₁₂₅ : 2 ^ 2 - 1 == 3  [type from Lean state]
-              assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_2pownm1prime_nprime_L338 */
-              assert 0 <= m;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_2pownm1prime_nprime_L338 */
-              assert 0 < n;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_2pownm1prime_nprime_L338 */
-              assert prime(tsub(Int.pow(2, n), 1));  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_2pownm1prime_nprime_L338 */
-              assert forall n0: nat :: 0 < n0 && prime(tsub(Int.pow(2, n0), 1)) && 0 <= n0 && n0 < n ==> prime(n0);  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_2pownm1prime_nprime_L338 */
-              assert n >= 2;  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_2pownm1prime_nprime_L338 */
-              assert !prime(n);  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_2pownm1prime_nprime_L338 */
-              assert exists m_1_0_0_1: nat :: NatDvd(m_1_0_0_1, n) && m_1_0_0_1 != 1 && m_1_0_0_1 != n;  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_2pownm1prime_nprime_L338 */
-              assert exists m_1_0_0_4: nat :: NatDvd(m_1_0_0_4, n) && m_1_0_0_4 != 1 && m_1_0_0_4 != n;  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_2pownm1prime_nprime_L338 */
-              assert (0 <= 0 && NatDvd(0, n) && 0 != 1 && 0 != n) || (0 <= 0 && NatDvd(0, n) && 0 != 1 && 0 != n) || (exists as_m1_0_0_0_1_0_0_0: nat :: NatDvd(as_m1_0_0_0_1_0_0_0, n) && as_m1_0_0_0_1_0_0_0 != 1 && as_m1_0_0_0_1_0_0_0 != n);  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_2pownm1prime_nprime_L338 */
-              assert 0 <= 1;  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_2pownm1prime_nprime_L338 */
-              assert 0 <= Int.pow(2, n);  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_2pownm1prime_nprime_L338 */
-              assert 0 <= 2 * 2;  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_2pownm1prime_nprime_L338 */
               vc_numbertheory_2pownm1prime_nprime_L338(m, n);  /* [IN-FILE CHECK] the closed lemma for line 338 */
               assert (tsub((2 * 2), 1) == 3); // @tac 3240-3248
                 // [TACTIC: «Norm_num[_]At___»]

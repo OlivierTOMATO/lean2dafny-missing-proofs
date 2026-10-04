@@ -513,28 +513,12 @@ lemma numbertheory_3pow2pownm1mod2pownp3eq2pownp2(n: nat)
           // have h₄ : k * 2 ^ ( n + 3 ) % 2 ^ ( n + 3 ) == 0  [type from Lean state]
           assert (NatMod((k * Int.pow(2, (n + 3))), Int.pow(2, (n + 3))) == 0) by { // @tac 8299-8387 // @tac 8398-8431
             // have h₅ : 2 ^ ( n + 3 ) ∣ k * 2 ^ ( n + 3 )  [type from Lean state]
-            assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert 0 <= k_1_2;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert 0 < n;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert 0 <= Int.pow(2, n);  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert 0 <= n + 2;  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert 0 <= n + 3;  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert exists k_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1 * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert exists k_1_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_1 * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_1_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_1_0 * Int.pow(2, n + 3));  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert 0 <= k;  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert 0 <= Int.pow(3, Int.pow(2, n));  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert 0 <= 1;  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert tsub(Int.pow(3, Int.pow(2, n)), 1) == Int.pow(2, n + 2) + k * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert k * Int.pow(2, n + 3) == Int.pow(2, n + 3) * k;  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            assert 0 <= Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516 */
-            vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516(k, k_1_2, k, k_1_3, k_2, n);  /* [IN-FILE CHECK] the closed lemma for line 516 */
             assert NatDvd(Int.pow(2, (n + 3)), (k * Int.pow(2, (n + 3)))) by { // @tac 8361-8387 // @tac 8361-8366
               // [TACTIC: «_<;>_» k <;> ring]
               // [TACTIC: Use k]
               assert ((k * Int.pow(2, (n + 3))) == (Int.pow(2, (n + 3)) * k));  // sub-goal of `ring` (Lean state) // @tac 8383-8387
               // UNCITED-APPLIED internal ×53 [exec 1322 8383-8387]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_pf_add_zero ×4, Mathlib.Tactic.Ring.add_mul ×4, Mathlib.Tactic.Ring.mul_add ×4, Mathlib.Tactic.Ring.mul_zero ×4 (+22 more heads, ×37)
+              vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516(k, k_1_2, k, k_1_3, k_2, n);  /* [IN-FILE CHECK] the closed lemma for line 516 */
             }
             // [TACTIC: exact Nat.mod_eq_zero_of_dvd h₅]
             assert NatDvd(Int.pow(2, (n + 3)), (k * Int.pow(2, (n + 3))));

@@ -1682,33 +1682,6 @@ lemma imo_1984_p2(a: int, b: int)
           IntMulEmod((a * b), (a + b), 7);  // cite: Int.mul_emod
           // GAP: Int.mul_emod: this execution also rewrote the hypotheses h₄; the harvest for this theorem records only the goal-side application(s) of the tactic (hypothesis-side rewrites are not recorded), so its applications to those hypotheses (if any) are not stated
           // GAP: Int.add_emod: this execution also rewrote the hypotheses h₄; the harvest for this theorem records only the goal-side application(s) of the tactic (hypothesis-side rewrites are not recorded), so its applications to those hypotheses (if any) are not stated
-          assert 0 < a;  /* [IN-FILE CHECK] requires 1 of vc_imo_1984_p2_L1685 */
-          assert 0 < b;  /* [IN-FILE CHECK] requires 2 of vc_imo_1984_p2_L1685 */
-          assert !IntDvd(7, a);  /* [IN-FILE CHECK] requires 3 of vc_imo_1984_p2_L1685 */
-          assert !IntDvd(7, b);  /* [IN-FILE CHECK] requires 4 of vc_imo_1984_p2_L1685 */
-          assert !IntDvd(7, a + b);  /* [IN-FILE CHECK] requires 5 of vc_imo_1984_p2_L1685 */
-          assert 7 != 0;  /* [IN-FILE CHECK] requires 6 of vc_imo_1984_p2_L1685 */
-          assert 7 != 0;  /* [IN-FILE CHECK] requires 7 of vc_imo_1984_p2_L1685 */
-          assert (a * b * (a + b) % 7 == 0) == (exists k: int :: a * b * (a + b) == 7 * k);  /* [IN-FILE CHECK] requires 8 of vc_imo_1984_p2_L1685 */
-          assert a % 7 != 0;  /* [IN-FILE CHECK] requires 9 of vc_imo_1984_p2_L1685 */
-          assert b % 7 != 0;  /* [IN-FILE CHECK] requires 10 of vc_imo_1984_p2_L1685 */
-          assert (a + b) % 7 != 0;  /* [IN-FILE CHECK] requires 11 of vc_imo_1984_p2_L1685 */
-          assert 0 <= 7;  /* [IN-FILE CHECK] requires 12 of vc_imo_1984_p2_L1685 */
-          assert ((a % 7 != 1) && (7 != 0) && (((a % 7 != 2) && (7 != 0) && (((a % 7 != 3) && (7 != 0) && (((a % 7 != 4) && (7 != 0) && (((a % 7 != 5) && (7 != 0)) || (a % 7 == 5))) || (a % 7 == 4))) || (a % 7 == 3))) || (a % 7 == 2))) || (a % 7 == 1);  /* [IN-FILE CHECK] requires 13 of vc_imo_1984_p2_L1685 */
-          assert a % 7 == 1 || a % 7 == 2 || a % 7 == 3 || a % 7 == 4 || a % 7 == 5 || a % 7 == 6;  /* [IN-FILE CHECK] requires 14 of vc_imo_1984_p2_L1685 */
-          assert ((b % 7 != 1) && (7 != 0) && (((b % 7 != 2) && (7 != 0) && (((b % 7 != 3) && (7 != 0) && (((b % 7 != 4) && (7 != 0) && (((b % 7 != 5) && (7 != 0)) || (b % 7 == 5))) || (b % 7 == 4))) || (b % 7 == 3))) || (b % 7 == 2))) || (b % 7 == 1);  /* [IN-FILE CHECK] requires 15 of vc_imo_1984_p2_L1685 */
-          assert b % 7 == 1 || b % 7 == 2 || b % 7 == 3 || b % 7 == 4 || b % 7 == 5 || b % 7 == 6;  /* [IN-FILE CHECK] requires 16 of vc_imo_1984_p2_L1685 */
-          assert (a + b) % 7 == 1 || (a + b) % 7 == 2 || (a + b) % 7 == 3 || (a + b) % 7 == 4 || (a + b) % 7 == 5 || (a + b) % 7 == 6;  /* [IN-FILE CHECK] requires 17 of vc_imo_1984_p2_L1685 */
-          assert a % 7 == 6;  /* [IN-FILE CHECK] requires 18 of vc_imo_1984_p2_L1685 */
-          assert ((b % 7 == 2) && (7 > 0) && (a * b % 7 == a % 7 * (b % 7) % 7) && ((a + b) % 7 == (a % 7 + b % 7) % 7) && (7 > 0) && (a * b * (a + b) % 7 == a * b % 7 * ((a + b) % 7) % 7) && (a * b * (a + b) % 7 != 0)) || (b % 7 != 2);  /* [IN-FILE CHECK] requires 19 of vc_imo_1984_p2_L1685 */
-          assert ((b % 7 == 3) && (7 > 0) && (a * b % 7 == a % 7 * (b % 7) % 7) && ((a + b) % 7 == (a % 7 + b % 7) % 7) && (7 > 0) && (a * b * (a + b) % 7 == a * b % 7 * ((a + b) % 7) % 7) && (a * b * (a + b) % 7 != 0)) || (b % 7 != 3);  /* [IN-FILE CHECK] requires 20 of vc_imo_1984_p2_L1685 */
-          assert ((b % 7 == 4) && (7 > 0) && (a * b % 7 == a % 7 * (b % 7) % 7) && ((a + b) % 7 == (a % 7 + b % 7) % 7) && (7 > 0) && (a * b * (a + b) % 7 == a * b % 7 * ((a + b) % 7) % 7) && (a * b * (a + b) % 7 != 0)) || (b % 7 != 4);  /* [IN-FILE CHECK] requires 21 of vc_imo_1984_p2_L1685 */
-          assert b % 7 == 5;  /* [IN-FILE CHECK] requires 22 of vc_imo_1984_p2_L1685 */
-          assert 7 > 0;  /* [IN-FILE CHECK] requires 23 of vc_imo_1984_p2_L1685 */
-          assert a * b % 7 == a % 7 * (b % 7) % 7;  /* [IN-FILE CHECK] requires 24 of vc_imo_1984_p2_L1685 */
-          assert (a + b) % 7 == (a % 7 + b % 7) % 7;  /* [IN-FILE CHECK] requires 25 of vc_imo_1984_p2_L1685 */
-          assert 7 > 0;  /* [IN-FILE CHECK] requires 26 of vc_imo_1984_p2_L1685 */
-          assert a * b * (a + b) % 7 == a * b % 7 * ((a + b) % 7) % 7;  /* [IN-FILE CHECK] requires 27 of vc_imo_1984_p2_L1685 */
           vc_imo_1984_p2_L1685(a, b);  /* [IN-FILE CHECK] the closed lemma for line 1685 */
           assert !((((a * b) * (a + b)) % 7) == 0);  // sub-goal of `simp` (Lean state) // @tac 1318-1399
           // UNCITED-APPLIED internal ×16 [exec 252 1318-1399]: applications made inside the tactic's own automation, not stated — machinery/glue: congrArg ×8, Eq.trans ×4, congr ×3, of_eq_true ×1 (cited in this block, not counted here: Int.add_emod [Lean recorded ×1], Int.mul_emod [Lean recorded ×2])

@@ -1090,13 +1090,6 @@ lemma imo_1965_p1(x: real)
         assert ((2.0 * Real.cos(x)) <= (Real.sqrt((1.0 + Real.sin((2.0 * x)))) - Real.sqrt((1.0 - Real.sin((2.0 * x))))));  // hypothesis h₂ after `simp_all` (Lean state) // @tac-hyp 1245-1308
         assert (Real.sqrt((1.0 + Real.sin((2.0 * x)))) <= (Real.sqrt(2.0) + Real.sqrt((1.0 - Real.sin((2.0 * x))))));  // hypothesis h₃ after `simp_all` (Lean state) // @tac-hyp 1245-1308
         assert (Real.sqrt((1.0 - Real.sin((2.0 * x)))) <= Real.sqrt((1.0 + Real.sin((2.0 * x)))));  // hypothesis h₉ after `simp_all` (Lean state) // @tac-hyp 1245-1308
-        assert 0.0 <= Real.sqrt(1.0 + Real.sin(2.0 * x));  /* [IN-FILE CHECK] requires 1 of vc_imo_1965_p1_L1093 */
-        assert 0.0 <= Real.sqrt(1.0 - Real.sin(2.0 * x));  /* [IN-FILE CHECK] requires 2 of vc_imo_1965_p1_L1093 */
-        assert Real.cos(2.0 * x) <= 0.0;  /* [IN-FILE CHECK] requires 3 of vc_imo_1965_p1_L1093 */
-        assert Real.cos(2.0 * x) * Real.cos(2.0 * x) + Real.sin(2.0 * x) * Real.sin(2.0 * x) == 1.0;  /* [IN-FILE CHECK] requires 4 of vc_imo_1965_p1_L1093 */
-        assert Real.sqrt(1.0 - Real.sin(2.0 * x)) * Real.sqrt(1.0 - Real.sin(2.0 * x)) == 1.0 - Real.sin(2.0 * x);  /* [IN-FILE CHECK] requires 5 of vc_imo_1965_p1_L1093 */
-        assert Real.sqrt(1.0 + Real.sin(2.0 * x)) * Real.sqrt(1.0 + Real.sin(2.0 * x)) == 1.0 + Real.sin(2.0 * x);  /* [IN-FILE CHECK] requires 6 of vc_imo_1965_p1_L1093 */
-        vc_imo_1965_p1_L1093(x);  /* [IN-FILE CHECK] the closed lemma for line 1093 */
         assert (((Real.sqrt((1.0 + Real.sin((2.0 * x)))) - Real.sqrt((1.0 - Real.sin((2.0 * x))))) * (Real.sqrt((1.0 + Real.sin((2.0 * x)))) - Real.sqrt((1.0 - Real.sin((2.0 * x)))))) == (2.0 + (2.0 * Real.cos((2.0 * x))))) by {  // sub-goal of `nlinarith` (Lean state) // @tac 1323-1674
           assert (0.0 <= (1.0 + Real.sin((2.0 * x)))) by {  // sub-goal of `by` (Lean state) // @tac 1383-1447
             // [TACTIC: «Nlinarith[_]At___» [ Real.sin_le_one ( 2 * x ) , Real.neg_one_le_sin ( 2 * x ) ]]
@@ -1210,6 +1203,11 @@ lemma imo_1965_p1(x: real)
           // UNCITED-APPLIED internal ×5 [exec 237 1323-1674]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
           // UNCITED-APPLIED internal ×5 [exec 238 1323-1674]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
           // UNCITED-APPLIED internal ×5 [exec 239 1323-1674]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+          assert Real.cos(2.0 * x) <= 0.0;  /* [IN-FILE CHECK] requires 3 of vc_imo_1965_p1_L1093 */
+          assert Real.cos(2.0 * x) * Real.cos(2.0 * x) + Real.sin(2.0 * x) * Real.sin(2.0 * x) == 1.0;  /* [IN-FILE CHECK] requires 4 of vc_imo_1965_p1_L1093 */
+          assert Real.sqrt(1.0 - Real.sin(2.0 * x)) * Real.sqrt(1.0 - Real.sin(2.0 * x)) == 1.0 - Real.sin(2.0 * x);  /* [IN-FILE CHECK] requires 5 of vc_imo_1965_p1_L1093 */
+          assert Real.sqrt(1.0 + Real.sin(2.0 * x)) * Real.sqrt(1.0 + Real.sin(2.0 * x)) == 1.0 + Real.sin(2.0 * x);  /* [IN-FILE CHECK] requires 6 of vc_imo_1965_p1_L1093 */
+          vc_imo_1965_p1_L1093(x);  /* [IN-FILE CHECK] the closed lemma for line 1093 */
         }
         assert ((abs((Real.sqrt((1.0 + Real.sin((2.0 * x)))) - Real.sqrt((1.0 - Real.sin((2.0 * x)))))) * abs((Real.sqrt((1.0 + Real.sin((2.0 * x)))) - Real.sqrt((1.0 - Real.sin((2.0 * x))))))) == (2.0 - (2.0 * abs(Real.cos((2.0 * x))))));  // sub-goal of `simp_all` (Lean state) // @tac 1245-1308
         // UNCITED-APPLIED internal ×11 [exec 110 1245-1308]: applications made inside the tactic's own automation, not stated — mul_neg ×1, sub_neg_eq_add ×1; machinery/glue: congrArg ×3, Eq.trans ×3, congr ×1, of_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: abs_of_nonneg [Lean recorded ×1], abs_of_nonpos [Lean recorded ×1])

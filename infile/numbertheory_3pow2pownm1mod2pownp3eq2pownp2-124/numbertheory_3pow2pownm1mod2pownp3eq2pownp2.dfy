@@ -121,9 +121,6 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
                 NatPowDvdPow(2, (n + 4), ((2 * n) + 4));  // cite: pow_dvd_pow
               }
               // have h₆ : 2 ^ ( n + 4 ) ∣ k * 2 ^ ( n + 4 )  [type from Lean state]
-              assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L124 */
-              assert 0 <= k;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L124 */
-              vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L124(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 124 */
               assert NatDvd(Int.pow(2, (n + 4)), (k * Int.pow(2, (n + 4)))) by { // @tac 2383-2405
                 assert ((k * Int.pow(2, (n + 4))) == (Int.pow(2, (n + 4)) * k)) by {  // sub-goal of `by` (Lean state) // @tac 2398-2402
                   // [TACTIC: Ring]
@@ -131,6 +128,7 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
                 // [TACTIC: exact ⟨ k , by ring ⟩ ⟨ k , by ring ⟩]
                 assert (if ((Int.pow(2, (n + 4)) as int)) == 0 then (((k * Int.pow(2, (n + 4))) as int)) == 0 else (((k * Int.pow(2, (n + 4))) as int)) % ((Int.pow(2, (n + 4)) as int)) == 0);  // goal closed by `exact ⟨…⟩` (Lean state)
                 // UNCITED-APPLIED internal ×55 [exec 383 2383-2405]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_pf_add_zero ×4, Mathlib.Tactic.Ring.add_mul ×4, Mathlib.Tactic.Ring.mul_add ×4, Mathlib.Tactic.Ring.mul_zero ×4 (+23 more heads, ×39)
+                vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L124(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 124 */
               }
               // have h₇ : 2 ^ ( n + 4 ) ∣ k ^ 2 * 2 ^ ( 2 * n + 6 )  [type from Lean state]
               assert NatDvd(Int.pow(2, (n + 4)), ((k * k) * Int.pow(2, ((2 * n) + 6)))) by { // @tac 2486-2589 // @tac 2602-2707 // @tac 2720-2730

@@ -593,10 +593,10 @@ lemma aime_1984_p1(u: nat -> Rat.rat)
           assert (Rat.add(Rat.mul(Rat.of_int(49), u(0)), Rat.of_int(2450)) == Rat.of_int(93)) by { // @tac 3633-3642
             // [TACTIC: rwSeq [ h₃ ]]
             // UNCITED-APPLIED congrArg(u (0 : ℕ), (-2357 / 49 : ℚ), fun (_a : ℚ) => (49 : ℚ) * _a + (2450 : ℚ) = (93 : ℚ)): no library counterpart (not stated) [exec 792 3633-3642]
-            vc_aime_1984_p1_L596(u);  /* [IN-FILE CHECK] the closed lemma for line 596 */
             assert (Rat.add(Rat.mul(Rat.of_int(49), Rat.div(Rat.neg(Rat.of_int(2357)), Rat.of_int(49))), Rat.of_int(2450)) == Rat.of_int(93)) by {  // sub-goal before `norm_num` (Lean state) // @tac 3649-3657
               // [TACTIC: «Norm_num[_]At___»]
               // UNCITED-APPLIED internal ×19 [exec 819 3649-3657]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×4, Mathlib.Meta.NormNum.isRat_mul ×2, Mathlib.Meta.NormNum.IsNat.to_isInt ×2, of_eq_true ×1 (+10 more heads, ×10)
+              vc_aime_1984_p1_L596(u);  /* [IN-FILE CHECK] the closed lemma for line 596 */
             }
           }
           // [TACTIC: «Linarith[_]At___»]

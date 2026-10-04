@@ -1798,30 +1798,6 @@ lemma imo_1974_p5(a: real, b: real, c: real, d: real, s: real)
     assert (0.0 < c);  // hypothesis term3_pos after `field_simp` (Lean state) // @tac-hyp 6390-6516
     assert (0.0 < d);  // hypothesis term4_pos after `field_simp` (Lean state) // @tac-hyp 6390-6516
     assert (0.0 < ((((((a * ((a + b) + c)) + (b * ((a + b) + d))) * ((b + c) + d)) + (c * (((a + b) + d) * ((a + b) + c)))) * ((a + c) + d)) + (d * ((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)))));  // hypothesis s_pos after `field_simp` (Lean state) // @tac-hyp 6390-6516
-    assert 0.0 < a;  /* [IN-FILE CHECK] requires 1 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < b;  /* [IN-FILE CHECK] requires 2 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < c;  /* [IN-FILE CHECK] requires 3 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < d;  /* [IN-FILE CHECK] requires 4 of vc_imo_1974_p5_L1801 */
-    assert s == Real.div(a, a + b + d) + Real.div(b, a + b + c) + Real.div(c, b + c + d) + Real.div(d, a + c + d);  /* [IN-FILE CHECK] requires 5 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < Real.div(a, a + b + d);  /* [IN-FILE CHECK] requires 6 of vc_imo_1974_p5_L1801 */
-    assert Real.div(a, a + b + d) < 1.0;  /* [IN-FILE CHECK] requires 7 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < Real.div(b, a + b + c);  /* [IN-FILE CHECK] requires 8 of vc_imo_1974_p5_L1801 */
-    assert Real.div(b, a + b + c) < 1.0;  /* [IN-FILE CHECK] requires 9 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < Real.div(c, b + c + d);  /* [IN-FILE CHECK] requires 10 of vc_imo_1974_p5_L1801 */
-    assert Real.div(c, b + c + d) < 1.0;  /* [IN-FILE CHECK] requires 11 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < Real.div(d, a + c + d);  /* [IN-FILE CHECK] requires 12 of vc_imo_1974_p5_L1801 */
-    assert Real.div(d, a + c + d) < 1.0;  /* [IN-FILE CHECK] requires 13 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < s;  /* [IN-FILE CHECK] requires 14 of vc_imo_1974_p5_L1801 */
-    assert 1.0 < s;  /* [IN-FILE CHECK] requires 15 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < a + b + c + d;  /* [IN-FILE CHECK] requires 16 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < a + b + d;  /* [IN-FILE CHECK] requires 17 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < a + b + c;  /* [IN-FILE CHECK] requires 18 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < b + c + d;  /* [IN-FILE CHECK] requires 19 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < a + c + d;  /* [IN-FILE CHECK] requires 20 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < (a + b + d) * (a + b + c);  /* [IN-FILE CHECK] requires 21 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < (a + b + d) * (a + b + c) * (b + c + d);  /* [IN-FILE CHECK] requires 22 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d);  /* [IN-FILE CHECK] requires 23 of vc_imo_1974_p5_L1801 */
-    assert 0.0 < ((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d));  /* [IN-FILE CHECK] requires 24 of vc_imo_1974_p5_L1801 */
     vc_imo_1974_p5_L1801(a, b, c, d, s);  /* [IN-FILE CHECK] the closed lemma for line 1801 */
     assert (1.0 < Real.div(((((((a * ((a + b) + c)) + (b * ((a + b) + d))) * ((b + c) + d)) + (c * (((a + b) + d) * ((a + b) + c)))) * ((a + c) + d)) + (d * ((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)))), (((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)) * ((a + c) + d))));  // hypothesis lower_bound after `field_simp` (Lean state) // @tac-hyp 6390-6516
     // [TACTIC: refine' lt_of_sub_pos _]

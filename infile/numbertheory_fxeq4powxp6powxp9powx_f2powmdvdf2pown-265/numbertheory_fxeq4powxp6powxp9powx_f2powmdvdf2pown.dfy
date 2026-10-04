@@ -262,33 +262,6 @@ lemma numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown(m: nat, n: nat, f: nat 
                   // [TACTIC: rwSeq [ h₁₄ , h₁₅ ]]
                   // UNCITED-APPLIED congrArg((2 : ℕ) ^ ((2 : ℕ) * k), (2 : ℕ) ^ k * (2 : ℕ) ^ k, fun (_a : ℕ) => (2 : ℕ) ^ k * (3 : ℕ) ^ k * (_a + (3 : ℕ) ^ ((2 : ℕ) …): no library counterpart (not stated) [exec 1087 3810-3831]
                   // UNCITED-APPLIED congrArg((3 : ℕ) ^ ((2 : ℕ) * k), (3 : ℕ) ^ k * (3 : ℕ) ^ k, fun (_a : ℕ) => (2 : ℕ) ^ k * (3 : ℕ) ^ k * ((2 : ℕ) ^ k * (2 : ℕ) ^ …): no library counterpart (not stated) [exec 1087 3810-3831]
-                  assert 0 <= m;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert 0 <= k;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert forall x_1: nat :: f.requires(x_1);  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert forall x_1: nat :: f(x_1) == Int.pow(4, x_1) + Int.pow(6, x_1) + Int.pow(9, x_1);  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert 0 < m;  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert 0 < n;  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert m <= n;  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert forall m0: int, n0: int :: (forall x_2: nat :: f.requires(x_2)) && (0 <= m0 && 0 <= n0 && (forall x_2: nat :: f(x_2) == Int.pow(4, x_2) + Int.pow(6, x_2) + Int.pow(9, x_2)) && 0 < m0 && 0 < n0 && m0 <= n0 && ((0 <= m0 && m0 < m) || (m0 == m && 0 <= n0 && n0 < n)) ==> f.requires(Int.pow(2, m0)) && f.requires(Int.pow(2, n0)) && NatDvd(f(Int.pow(2, m0)), f(Int.pow(2, n0))));  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert 0 <= k;  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert 0 <= 2 * k;  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert f(2 * k) == Int.pow(4, 2 * k) + Int.pow(6, 2 * k) + Int.pow(9, 2 * k);  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert f(k) == Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k);  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert Int.pow(4, 2 * k) == Int.pow(4, k) * Int.pow(4, k);  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert Int.pow(6, 2 * k) == Int.pow(6, k) * Int.pow(6, k);  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert Int.pow(9, 2 * k) == Int.pow(9, k) * Int.pow(9, k);  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert 0 <= (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)) * (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k));  /* [IN-FILE CHECK] requires 17 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert 0 <= 2 * (Int.pow(4, k) * Int.pow(6, k) + Int.pow(4, k) * Int.pow(9, k) + Int.pow(6, k) * Int.pow(9, k));  /* [IN-FILE CHECK] requires 18 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert Int.pow(4, k) * Int.pow(4, k) + Int.pow(6, k) * Int.pow(6, k) + Int.pow(9, k) * Int.pow(9, k) == tsub((Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)) * (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)), 2 * (Int.pow(4, k) * Int.pow(6, k) + Int.pow(4, k) * Int.pow(9, k) + Int.pow(6, k) * Int.pow(9, k)));  /* [IN-FILE CHECK] requires 19 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert Int.pow(4, k) * Int.pow(6, k) + Int.pow(4, k) * Int.pow(9, k) + Int.pow(6, k) * Int.pow(9, k) == Int.pow(6, k) * (Int.pow(4, k) + Int.pow(9, k)) + Int.pow(4, k) * Int.pow(9, k);  /* [IN-FILE CHECK] requires 20 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert Int.pow(6, k) == Int.pow(2, k) * Int.pow(3, k);  /* [IN-FILE CHECK] requires 21 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert Int.pow(4, k) == Int.pow(2, 2 * k);  /* [IN-FILE CHECK] requires 22 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert Int.pow(9, k) == Int.pow(3, 2 * k);  /* [IN-FILE CHECK] requires 23 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert Int.pow(2, 2 * k) == Int.pow(2, k) * Int.pow(2, k);  /* [IN-FILE CHECK] requires 24 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert Int.pow(3, 2 * k) == Int.pow(3, k) * Int.pow(3, k);  /* [IN-FILE CHECK] requires 25 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  assert Int.pow(k, 1) == k;  /* [IN-FILE CHECK] requires 26 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
-                  vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265(f, k, k, m, n);  /* [IN-FILE CHECK] the closed lemma for line 265 */
                   assert ((((Int.pow(2, k) * Int.pow(3, k)) * ((Int.pow(2, k) * Int.pow(2, k)) + (Int.pow(3, k) * Int.pow(3, k)))) + ((Int.pow(2, k) * Int.pow(2, k)) * (Int.pow(3, k) * Int.pow(3, k)))) == ((Int.pow(2, k) * Int.pow(3, k)) * (((Int.pow(2, k) * Int.pow(2, k)) + (Int.pow(2, k) * Int.pow(3, k))) + (Int.pow(3, k) * Int.pow(3, k))))) by {  // sub-goal before `ring_nf` (Lean state) // @tac 3842-3956 // @tac 3842-3849
                     // [TACTIC: «_<;>_» ring_nf <;> nlinarith [ pow_pos ( by norm_num norm_num : 0 < ( 2 : ℕ ) ) k , pow_pos ( by norm_num norm_num : 0 < ( 3 : ℕ ) ) k ] nlinarith [ pow_pos ( by norm_num norm_num : 0 < ( 2 : ℕ ) ) k , pow_pos ( by norm_num norm_num : 0 < ( 3 : ℕ ) ) k ]]
                     // [TACTIC: Ring_nfAt]
@@ -298,6 +271,20 @@ lemma numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown(m: nat, n: nat, f: nat 
                     // [TACTIC: «Norm_num[_]At___»]
                     // [TACTIC: «Norm_num[_]At___»]
                     // UNCITED-APPLIED internal ×120 [exec 1120 3842-3849]: applications made inside the tactic's own automation, not stated — mul_one ×4, add_zero ×3; machinery/glue: congr ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_add ×8, Mathlib.Tactic.Ring.add_pf_add_zero ×8 (+29 more heads, ×81) (cited in this block, not counted here: pow_one [Lean recorded ×1])
+                    assert 0 <= m;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
+                    assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
+                    assert 0 <= k;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
+                    assert forall x_1: nat :: f.requires(x_1);  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
+                    assert forall x_1: nat :: f(x_1) == Int.pow(4, x_1) + Int.pow(6, x_1) + Int.pow(9, x_1);  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
+                    assert 0 < m;  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
+                    assert 0 < n;  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
+                    assert forall m0: int, n0: int :: (forall x_2: nat :: f.requires(x_2)) && (0 <= m0 && 0 <= n0 && (forall x_2: nat :: f(x_2) == Int.pow(4, x_2) + Int.pow(6, x_2) + Int.pow(9, x_2)) && 0 < m0 && 0 < n0 && m0 <= n0 && ((0 <= m0 && m0 < m) || (m0 == m && 0 <= n0 && n0 < n)) ==> f.requires(Int.pow(2, m0)) && f.requires(Int.pow(2, n0)) && NatDvd(f(Int.pow(2, m0)), f(Int.pow(2, n0))));  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
+                    assert 0 <= k;  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
+                    assert 0 <= 2 * k;  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
+                    assert 0 <= (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)) * (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k));  /* [IN-FILE CHECK] requires 17 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
+                    assert 0 <= 2 * (Int.pow(4, k) * Int.pow(6, k) + Int.pow(4, k) * Int.pow(9, k) + Int.pow(6, k) * Int.pow(9, k));  /* [IN-FILE CHECK] requires 18 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
+                    assert Int.pow(k, 1) == k;  /* [IN-FILE CHECK] requires 26 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265 */
+                    vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L265(f, k, k, m, n);  /* [IN-FILE CHECK] the closed lemma for line 265 */
                   }
                 }
                 // [TACTIC: «_<;>_» [ h₁₃ ] rw [ h₁₃ ] <;> ring_nf ring_nf <;> nlinarith [ pow_pos ( by norm_num norm_num : 0 < ( 2 : ℕ ) ) k , pow_pos ( by norm_num norm_num : 0 < ( 3 : ℕ ) ) k ] nlinarith [ pow_pos ( by norm_num norm_num : 0 < ( 2 : ℕ ) ) k , pow_pos ( by norm_num norm_num : 0 < ( 3 : ℕ ) ) k ]]

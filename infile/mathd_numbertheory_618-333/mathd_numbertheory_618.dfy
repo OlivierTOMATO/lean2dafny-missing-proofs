@@ -330,10 +330,6 @@ lemma mathd_numbertheory_618(n: nat, p: nat -> nat)
         if (n == 29) && ((29 > 0)) && ((1 < gcd(p(29), p((29 + 1))))) && ((p((29 + 1)) == (p(29) + (2 * 29)))) && ((gcd(p(29), p((29 + 1))) == gcd(p(29), (2 * 29)))) && ((1 < gcd(p(29), (2 * 29)))) && (!(41 <= 29)) && ((29 <= 40)) {  // sub-goal of `norm_num` (Lean state)
           // UNCITED Nat.gcd_eq_right: no Lean instance recorded (arguments unknown), not guessed
           // UNCITED Nat.gcd_eq_left: no Lean instance recorded (arguments unknown), not guessed
-          assert 0 <= 29;  /* [IN-FILE CHECK] requires 1 of vc_mathd_numbertheory_618_L333 */
-          assert forall x_1: nat :: p(x_1) == tsub(x_1 * x_1, x_1) + 41;  /* [IN-FILE CHECK] requires 2 of vc_mathd_numbertheory_618_L333 */
-          assert 1 < gcd(p(29), 2 * 29);  /* [IN-FILE CHECK] requires 3 of vc_mathd_numbertheory_618_L333 */
-          assert 29 == 29;  /* [IN-FILE CHECK] requires 4 of vc_mathd_numbertheory_618_L333 */
           vc_mathd_numbertheory_618_L333(29, n, p);  /* [IN-FILE CHECK] the closed lemma for line 333 */
           assert false;  // sub-goal of `norm_num` (Lean state) // @tac 1612-1692
           // UNCITED-APPLIED internal ×23 [exec 488 1612-1692]: applications made inside the tactic's own automation, not stated — Tactic.NormNum.isNat_gcd ×1, Tactic.NormNum.nat_gcd_helper_2' ×1; machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×5, Eq.trans ×3, Mathlib.Meta.NormNum.IsNat.to_eq ×3, congrArg ×2 (+8 more heads, ×8)

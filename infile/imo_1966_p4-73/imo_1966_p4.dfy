@@ -70,26 +70,7 @@ lemma {:isolate_assertions} induction_helper_1(n: nat, x: real)
           assert ((1) <= ((n + 1)) + 1);  // precondition of FinsetSumIccSuccTopNat (Lean: Finset.sum_Icc_succ_top)
           FinsetSumIccSuccTopNat(1, (n + 1), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x)))));  // cite: Finset.sum_Icc_succ_top
           // `simp_all` closed the goal; the rest of the chain did not run
-          assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L73 */
-          assert 0 <= n_1_0;  /* [IN-FILE CHECK] requires 2 of vc_imo_1966_p4_L73 */
-          assert 0 <= n_1_0_1_0;  /* [IN-FILE CHECK] requires 3 of vc_imo_1966_p4_L73 */
-          assert n != 0;  /* [IN-FILE CHECK] requires 4 of vc_imo_1966_p4_L73 */
-          assert 0 <= n - 1;  /* [IN-FILE CHECK] requires 5 of vc_imo_1966_p4_L73 */
-          assert 0 <= n || n - 1 == n;  /* [IN-FILE CHECK] requires 6 of vc_imo_1966_p4_L73 */
-          assert n - 1 < n;  /* [IN-FILE CHECK] requires 7 of vc_imo_1966_p4_L73 */
-          assert (n - 1) == n - 1;  /* [IN-FILE CHECK] requires 8 of vc_imo_1966_p4_L73 */
-          assert 0 < (n - 1) + 1;  /* [IN-FILE CHECK] requires 9 of vc_imo_1966_p4_L73 */
-          assert (n - 1) != 0;  /* [IN-FILE CHECK] requires 10 of vc_imo_1966_p4_L73 */
-          assert 0 <= (n - 1) - 1;  /* [IN-FILE CHECK] requires 11 of vc_imo_1966_p4_L73 */
-          assert n == (n - 1) - 1;  /* [IN-FILE CHECK] requires 12 of vc_imo_1966_p4_L73 */
-          assert 0 < n + 1 + 1;  /* [IN-FILE CHECK] requires 13 of vc_imo_1966_p4_L73 */
-          assert ((0 <= x) && (0 <= 1) && (0 <= n + 1 + 1) && ((x in IccN(1, n + 1 + 1)) || (!(x in IccN(1, n + 1 + 1))))) || (x < 0);  /* [IN-FILE CHECK] requires 14 of vc_imo_1966_p4_L73 */
-          assert 1 <= n + 1;  /* [IN-FILE CHECK] requires 15 of vc_imo_1966_p4_L73 */
-          assert 0 <= 1;  /* [IN-FILE CHECK] requires 16 of vc_imo_1966_p4_L73 */
-          assert 1 <= n + 1 + 1;  /* [IN-FILE CHECK] requires 17 of vc_imo_1966_p4_L73 */
-          assert 0 <= n + 1;  /* [IN-FILE CHECK] requires 18 of vc_imo_1966_p4_L73 */
-          assert 0 <= n + 1 + 1;  /* [IN-FILE CHECK] requires 19 of vc_imo_1966_p4_L73 */
-          vc_imo_1966_p4_L73(n, n_1_0, n - 1, n_1_0_1_0, n, x, x);  /* [IN-FILE CHECK] the closed lemma for line 73 */
+          vc_imo_1966_p4_L73(__outer_n, n_1_0, __outer_n - 1, n_1_0_1_0, n, __outer_x, x);  /* [IN-FILE CHECK] the closed lemma for line 73 */
           assert (Real.sum(IccN(1, ((n + 1) + 1)), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x))))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, ((n + 1) + 1)) * x)))));  // sub-goal before `simp_all` (Lean state) // @tac 3304-3476 // @tac 3304-3386
           // UNCITED-APPLIED internal ×35 [exec 741 3304-3386]: applications made inside the tactic's own automation, not stated — one_div ×8, implies_congr_ctx ×1, or_true ×1, true_implies ×1; machinery/glue: congr ×8, congrArg ×8, Eq.trans ×5, eq_self ×2 (+1 more heads, ×1) (cited in this block, not counted here: Finset.sum_Icc_succ_top [Lean recorded ×3], Finset.sum_congr [Lean recorded ×4])
         }

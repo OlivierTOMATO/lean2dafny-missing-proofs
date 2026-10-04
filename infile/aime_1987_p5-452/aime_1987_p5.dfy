@@ -449,9 +449,6 @@ lemma aime_1987_p5(x: int, y: int)
   // have h₂ : ( 3 * x ^ 2 + 1 : ℤ ) ∣ 507  [type from Lean state]
   assert IntDvd(((3 * (x * x)) + 1), 507) by { // @tac 886-1187 // @tac 1192-1579 // @tac 1584-1597
     // have h₂₁ : ( 3 * x ^ 2 + 1 : ℤ ) ∣ 30 * x ^ 2 + 517  [type from Lean state]
-    assert y * y + 3 * (x * x * (y * y)) == 30 * (x * x) + 517;  /* [IN-FILE CHECK] requires 1 of vc_aime_1987_p5_L452 */
-    assert x != 0;  /* [IN-FILE CHECK] requires 2 of vc_aime_1987_p5_L452 */
-    vc_aime_1987_p5_L452(x, y);  /* [IN-FILE CHECK] the closed lemma for line 452 */
     assert IntDvd(((3 * (x * x)) + 1), ((30 * (x * x)) + 517)) by { // @tac 956-965
       // [TACTIC: Use y ^ 2]
       assert (((30 * (x * x)) + 517) == (((3 * (x * x)) + 1) * (y * y))) by {  // sub-goal of `use` (Lean state) // @tac 972-1044 // @tac 1051-1172 // @tac 1179-1187
@@ -486,6 +483,7 @@ lemma aime_1987_p5(x: int, y: int)
         // UNCITED-APPLIED internal ×159 [exec 459 1179-1187]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_mul ×8, Mathlib.Tactic.Ring.mul_add ×8, Mathlib.Tactic.Ring.add_congr ×6, Mathlib.Meta.NormNum.isNat_ofNat ×6 (+40 more heads, ×131)
         // UNCITED-APPLIED internal ×171 [exec 460 1179-1187]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_mul ×8, Mathlib.Tactic.Ring.mul_add ×8, Mathlib.Tactic.Ring.neg_add ×7, Mathlib.Tactic.Ring.add_pf_add_zero ×7 (+39 more heads, ×141)
       }
+      vc_aime_1987_p5_L452(x, y);  /* [IN-FILE CHECK] the closed lemma for line 452 */
     }
     // have h₂₂ : ( 3 * x ^ 2 + 1 : ℤ ) ∣ 507  [type from Lean state]
     assert IntDvd(((3 * (x * x)) + 1), 507) by { // @tac 1249-1320 // @tac 1327-1556 // @tac 1563-1579

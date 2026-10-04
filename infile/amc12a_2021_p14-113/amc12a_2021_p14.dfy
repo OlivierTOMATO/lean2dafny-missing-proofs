@@ -110,18 +110,6 @@ lemma amc12a_2021_p14()
         // UNCITED-APPLIED congrArg(Real.log ((5 : ℝ) ^ k), ↑k * Real.log (5 : ℝ), fun (_a : ℝ) => ↑k ^ (2 : ℕ) * Real.log (3 : ℝ) / _a = ↑k * logb (5 :…): no library counterpart (not stated) [exec 400 1692-1713]
         assert (Real.div((((k as real) * (k as real)) * Real.log(3.0)), ((k as real) * Real.log(5.0))) == ((k as real) * Real.logb(5.0, 3.0))) by {  // sub-goal before `have` (Lean state) // @tac 1720-1876 // @tac 1883-2349 // @tac 2356-2428 // @tac 2356-2413 // @tac 2356-2392 // @tac 2356-2377
           // have h₅₄ : Real.logb ( 5 , 3 ) == Real.log ( 3 ) / Real.log ( 5 )  [type from Lean state]
-          assert 0 <= k;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p14_L113 */
-          assert 0 <= 1;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p14_L113 */
-          assert 0 <= 20;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p14_L113 */
-          assert k in IccN(1, 20);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p14_L113 */
-          assert 1 <= k;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p14_L113 */
-          assert k <= 20;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2021_p14_L113 */
-          assert k >= 1;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2021_p14_L113 */
-          assert 0 <= 2;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2021_p14_L113 */
-          assert 0 <= Int.pow(k, 2);  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2021_p14_L113 */
-          assert Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2))) == Real.div(Real.log(Real.pow(3.0, Int.pow(k, 2))), Real.log(Real.pow(5.0, k)));  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2021_p14_L113 */
-          assert Real.log(Real.pow(3.0, Int.pow(k, 2))) == (k as real) * (k as real) * Real.log(3.0);  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2021_p14_L113 */
-          assert Real.log(Real.pow(5.0, k)) == (k as real) * Real.log(5.0);  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2021_p14_L113 */
           vc_amc12a_2021_p14_L113(k);  /* [IN-FILE CHECK] the closed lemma for line 113 */
           assert (Real.logb(5.0, 3.0) == Real.div(Real.log(3.0), Real.log(5.0))); // @tac 1789-1876 // @tac 1789-1859 // @tac 1789-1836 // @tac 1789-1803
           // UNCITED-APPLIED congrArg(logb (5 : ℝ) (3 : ℝ), Real.log (3 : ℝ) / Real.log (5 : ℝ), fun (_a : ℝ) => _a = Real.log (3 : ℝ) / Real.log (5 : ℝ)): no library counterpart (not stated) [exec 463 1789-1803]

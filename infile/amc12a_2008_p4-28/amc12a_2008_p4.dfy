@@ -25,14 +25,6 @@ lemma amc12a_2008_p4()
       // UNCITED-APPLIED Eq.symm: 1 more recorded instance (↑↑x, ↑x) not expressible here (sort/type/scope), not guessed
       // UNCITED-APPLIED Nat.cast_add: recorded instance not expressible here (sort/type/scope), not guessed
       // UNCITED-APPLIED Nat.cast_mul: recorded instance not expressible here (sort/type/scope), not guessed
-      assert Rat.of_int(4).Rational?;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2008_p4_L28 */
-      assert 4.0 == Rat.of_int(4).to_real();  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2008_p4_L28 */
-      assert 0 <= 1;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2008_p4_L28 */
-      assert 0 <= 501;  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2008_p4_L28 */
-      assert Rat.of_int(Int.prod(IccN(1, 501), ((v_1_2_i: nat) => 4 * v_1_2_i + 4))).Rational?;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2008_p4_L28 */
-      assert Rat.of_int(Int.prod(IccN(1, 501), ((v_1_12_i: nat) => 4 * v_1_12_i))).Rational?;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2008_p4_L28 */
-      assert Rat.div(Rat.of_int(Int.prod(IccN(1, 501), ((v_1_2_i: nat) => 4 * v_1_2_i + 4))), Rat.of_int(Int.prod(IccN(1, 501), ((v_1_12_i: nat) => 4 * v_1_12_i)))).Rational?;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2008_p4_L28 */
-      assert Rat.of_int(502).Rational?;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2008_p4_L28 */
       vc_amc12a_2008_p4_L28();  /* [IN-FILE CHECK] the closed lemma for line 28 */
       assert (Rat.div(Rat.of_int(Int.prod(IccN(1, 501), ((i: nat) => ((4 * i) + 4)))), Rat.of_int(Int.prod(IccN(1, 501), ((i: nat) => (4 * i))))) == Rat.of_int(502));  // sub-goal of `norm_cast` (Lean state)
       // UNCITED-APPLIED internal ×33 [exec 347 626-635]: applications made inside the tactic's own automation, not stated — Finset.prod_congr ×5, Rat.cast_natCast ×2, Nat.cast_add ×2, Nat.cast_mul ×2, Finset.prod_natCast ×1, Rat.cast_ofNat ×1; machinery/glue: congrArg ×8, Eq.trans ×6, Eq.symm ×4, congr ×2

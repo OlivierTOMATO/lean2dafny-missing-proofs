@@ -195,14 +195,6 @@ lemma algebra_others_exirrpowirrrat()
             // [TACTIC: exact h₅₃ ⟨ 2 , by norm_num norm_num ⟩ ⟨ 2 , by norm_num norm_num ⟩]
             // GAP: the anonymous constructor ⟨…⟩ passed to `h₅₃`: its statement (the premise of h₅₃ it proves) is not recorded, not stated
             // goal closed by `exact ⟨…⟩` (Lean state) = the enclosing statement
-            assert Irrational(Real.rpow(Real.sqrt(2.0), Real.sqrt(2.0)));  /* [IN-FILE CHECK] requires 1 of vc_algebra_others_exirrpowirrrat_L198 */
-            assert Irrational(Real.sqrt(2.0));  /* [IN-FILE CHECK] requires 2 of vc_algebra_others_exirrpowirrrat_L198 */
-            assert Real.rpow(Real.sqrt(2.0), Real.sqrt(2.0)) > 0.0;  /* [IN-FILE CHECK] requires 3 of vc_algebra_others_exirrpowirrrat_L198 */
-            assert Real.rpow(Real.rpow(Real.sqrt(2.0), Real.sqrt(2.0)), Real.sqrt(2.0)) == 2.0;  /* [IN-FILE CHECK] requires 4 of vc_algebra_others_exirrpowirrrat_L198 */
-            assert Irrational(Real.rpow(Real.rpow(Real.sqrt(2.0), Real.sqrt(2.0)), Real.sqrt(2.0)));  /* [IN-FILE CHECK] requires 5 of vc_algebra_others_exirrpowirrrat_L198 */
-            assert Irrational(2.0);  /* [IN-FILE CHECK] requires 6 of vc_algebra_others_exirrpowirrrat_L198 */
-            assert Rat.of_int(2).Rational?;  /* [IN-FILE CHECK] requires 7 of vc_algebra_others_exirrpowirrrat_L198 */
-            assert Rat.of_int(2).to_real() == 2.0;  /* [IN-FILE CHECK] requires 8 of vc_algebra_others_exirrpowirrrat_L198 */
             vc_algebra_others_exirrpowirrrat_L198();  /* [IN-FILE CHECK] the closed lemma for line 198 */
             assert false; // @tac 3047-3141 // @tac 3150-3220 // @tac 3229-3263
           }

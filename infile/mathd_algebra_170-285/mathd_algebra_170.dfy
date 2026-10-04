@@ -282,11 +282,9 @@ lemma mathd_algebra_170(S: set<int>)
   assert (|S| == 11) by { // @tac 2469-2478
     // [TACTIC: rwSeq [ h₁ ]]
     // UNCITED-APPLIED congrArg(S, Finset.Icc (-3 : ℤ) (7 : ℤ), fun (_a : Finset ℤ) => Finset.card _a = (11 : ℕ)): no library counterpart (not stated) [exec 606 2469-2478]
-    assert forall n_1: int :: (n_1 in S) == (IntAbs(n_1 - 2) <= 5 + 6 / 10);  /* [IN-FILE CHECK] requires 1 of vc_mathd_algebra_170_L285 */
-    assert S == Icc(0 - 3, 7);  /* [IN-FILE CHECK] requires 2 of vc_mathd_algebra_170_L285 */
-    vc_mathd_algebra_170_L285(S);  /* [IN-FILE CHECK] the closed lemma for line 285 */
     assert (|Icc(-(3), 7)| == 11) by {  // sub-goal before `rfl` (Lean state) // @tac 2626-2629
       // [TACTIC: Rfl]
+      vc_mathd_algebra_170_L285(S);  /* [IN-FILE CHECK] the closed lemma for line 285 */
     }
   }
   // [TACTIC: apply h₂]

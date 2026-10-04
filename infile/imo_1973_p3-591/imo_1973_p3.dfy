@@ -588,8 +588,6 @@ lemma imo_1973_p3(a: real, b: real)
         if (0.0 <= ((y + 2.0) * (y + 2.0))) && (0.0 <= ((a - (b * 2.0)) * (a - (b * 2.0)))) { cert_piece_20(a, b, y); }  // cert: mul_nonneg_of_nonpos_of_nonpos
         SqNonneg((a - (b * 2.0))); assert (0.0 <= ((a - (b * 2.0)) * (a - (b * 2.0))));  // cert: sq_nonneg
         // UNCITED-APPLIED Linarith.mul_eq: certificate piece `(80 : ℝ) * -(-(y + (2 : ℝ)) ^ (2 : ℕ) * (y ^ (2 : ℕ) + a * y + (b - (2 : ℝ)))) = (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: ((((y + 2.0) * (y + 2.0)) * (((y * y) + (a * y)) + (b - 2.0))) == 0.0); (80.0 > 0.0)
-        assert 0.0 <= (y_2_2 + 2.0) * (y_2_2 + 2.0);  /* [IN-FILE CHECK] requires 1 of vc_imo_1973_p3_L591 */
-        assert y_2_2 * y_2_2 + a * y_2_2 + (b - 2.0) == 0.0;  /* [IN-FILE CHECK] requires 2 of vc_imo_1973_p3_L591 */
         vc_imo_1973_p3_L591(a, b, y_2, y, y_2_2, y_2_3);  /* [IN-FILE CHECK] the closed lemma for line 591 */
         if (0.0 <= ((y + 2.0) * (y + 2.0))) && ((((y * y) + (a * y)) + (b - 2.0)) == 0.0) { assert (-((((y + 2.0) * (y + 2.0)) * (((y * y) + (a * y)) + (b - 2.0)))) == 0.0); }  // cert: Linarith.mul_zero_eq
         // UNCITED-APPLIED Linarith.mul_nonpos: certificate piece `(640 : ℝ) * -(-(y + (2 : ℝ)) ^ (2 : ℕ) * (y - (-2 : ℝ))) ≤ (0 : ℝ)` not stated: a numeral multiple of a fact (linear: Dafny's arithmetic scales it natively); Lean's premises: ((((y + 2.0) * (y + 2.0)) * (y - -(2.0))) <= 0.0); (640.0 > 0.0)

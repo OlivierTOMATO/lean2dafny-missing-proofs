@@ -309,7 +309,6 @@ lemma numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown(m: nat, n: nat, f: nat 
             assert forall x_1: nat :: f(x_1) == Int.pow(4, x_1) + Int.pow(6, x_1) + Int.pow(9, x_1);  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L306 */
             assert 0 < m;  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L306 */
             assert 0 < n;  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L306 */
-            assert m <= n;  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L306 */
             assert forall m0: int, n0: int :: (forall x_2: nat :: f.requires(x_2)) && (0 <= m0 && 0 <= n0 && (forall x_2: nat :: f(x_2) == Int.pow(4, x_2) + Int.pow(6, x_2) + Int.pow(9, x_2)) && 0 < m0 && 0 < n0 && m0 <= n0 && ((0 <= m0 && m0 < m) || (m0 == m && 0 <= n0 && n0 < n)) ==> f.requires(Int.pow(2, m0)) && f.requires(Int.pow(2, n0)) && NatDvd(f(Int.pow(2, m0)), f(Int.pow(2, n0))));  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L306 */
             assert 0 <= (k + 1);  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L306 */
             assert 0 <= 2 * (k + 1);  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L306 */

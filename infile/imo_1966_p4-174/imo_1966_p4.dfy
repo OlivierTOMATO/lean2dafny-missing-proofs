@@ -171,19 +171,6 @@ lemma imo_1966_p4(n: nat, x: real)
       // UNCITED-APPLIED Nat.cast_one: cast target unknown (Lean applies it at ℝ and ℤ in this proof; the record does not say which)
     }
     // have h₂ : ∑ k ∈ Finset.Icc (1 : ℕ) (m + (1 : ℕ)), (1 : ℝ) / Real.sin ((2 : ℝ) ^ k * x) = ∑ k ∈ Finset.Icc (1 : ℕ) m, (1   [type from Lean state]
-    assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L174 */
-    assert 0 < n;  /* [IN-FILE CHECK] requires 2 of vc_imo_1966_p4_L174 */
-    assert Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x));  /* [IN-FILE CHECK] requires 3 of vc_imo_1966_p4_L174 */
-    assert 0 <= m;  /* [IN-FILE CHECK] requires 4 of vc_imo_1966_p4_L174 */
-    assert 0 < m;  /* [IN-FILE CHECK] requires 5 of vc_imo_1966_p4_L174 */
-    assert 0 <= 1;  /* [IN-FILE CHECK] requires 6 of vc_imo_1966_p4_L174 */
-    assert Real.sum(IccN(1, m), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m) * x));  /* [IN-FILE CHECK] requires 7 of vc_imo_1966_p4_L174 */
-    assert m + 1 > 0;  /* [IN-FILE CHECK] requires 8 of vc_imo_1966_p4_L174 */
-    assert 1 <= m + 1;  /* [IN-FILE CHECK] requires 9 of vc_imo_1966_p4_L174 */
-    assert ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x))).requires(m + 1);  /* [IN-FILE CHECK] requires 10 of vc_imo_1966_p4_L174 */
-    assert Real.sum(IccN(1, m + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.sum(IccN(1, m), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) + ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))(m + 1);  /* [IN-FILE CHECK] requires 11 of vc_imo_1966_p4_L174 */
-    assert 0 <= m + 1;  /* [IN-FILE CHECK] requires 12 of vc_imo_1966_p4_L174 */
-    vc_imo_1966_p4_L174(m, n, x);  /* [IN-FILE CHECK] the closed lemma for line 174 */
     assert (Real.sum(IccN(1, (m + 1)), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x))))) == (Real.sum(IccN(1, m), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x))))) + Real.div(1.0, Real.sin((Real.pow(2.0, (m + 1)) * x))))) by { // @tac 1867-1915 // @tac 1867-1895
       // [TACTIC: «_<;>_» [ Finset.sum_Icc_succ_top ] rw [ Finset.sum_Icc_succ_top ] <;> simp [ hm ] simp [ hm ] simp [ hm ]]
       // [TACTIC: choice [ Finset.sum_Icc_succ_top ] rw [ Finset.sum_Icc_succ_top ]]
@@ -193,6 +180,15 @@ lemma imo_1966_p4(n: nat, x: real)
       // (`rw` closed `∑ k ∈ Finset.Icc (1 : ℕ) m, (1 : ℝ) / sin ((2 : ℝ) ^ k * x) + (1 : ℝ) / sin ((2 : ℝ) ^ (m + (1 : ℕ))` itself, e.g. by its trailing rfl)
       assert (1 <= (m + 1));  // sub-goal of `simp` (Lean state) // @tac 1906-1915
       // UNCITED-APPLIED internal ×2 [exec 309 1906-1915]: applications made inside the tactic's own automation, not stated — machinery/glue: of_eq_true ×1, Eq.trans ×1
+      assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L174 */
+      assert 0 <= m;  /* [IN-FILE CHECK] requires 4 of vc_imo_1966_p4_L174 */
+      assert 0 < m;  /* [IN-FILE CHECK] requires 5 of vc_imo_1966_p4_L174 */
+      assert 0 <= 1;  /* [IN-FILE CHECK] requires 6 of vc_imo_1966_p4_L174 */
+      assert Real.sum(IccN(1, m), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m) * x));  /* [IN-FILE CHECK] requires 7 of vc_imo_1966_p4_L174 */
+      assert ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x))).requires(m + 1);  /* [IN-FILE CHECK] requires 10 of vc_imo_1966_p4_L174 */
+      assert Real.sum(IccN(1, m + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.sum(IccN(1, m), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) + ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))(m + 1);  /* [IN-FILE CHECK] requires 11 of vc_imo_1966_p4_L174 */
+      assert 0 <= m + 1;  /* [IN-FILE CHECK] requires 12 of vc_imo_1966_p4_L174 */
+      vc_imo_1966_p4_L174(m, n, x);  /* [IN-FILE CHECK] the closed lemma for line 174 */
     }
     // [TACTIC: rwSeq [ h₂ , h ]]
     // UNCITED-APPLIED congrArg(∑ k ∈ Finset.Icc (1 : ℕ) (m + (1 : ℕ)), (1 : ℝ) / sin ((2 : ℝ) ^ k * …, ∑ k ∈ Finset.Icc (1 : ℕ) m, (1 : ℝ) / sin ((2 : ℝ) ^ k * x) + (1 : ℝ)…, fun (_a : ℝ) => _a = (1 : ℝ) / tan x - (1 : ℝ) / tan ((2 : ℝ) ^ (m + …): no library counterpart (not stated) [exec 314 1920-1932]

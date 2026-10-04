@@ -468,12 +468,6 @@ lemma algebra_9onxpypzleqsum2onxpy(x: real, y: real, z: real)
     MulPos((z + x), (x + y));  // cite: mul_pos [applied by the tactic, not named in it]
   }
   // have h₉ : 2 * ( x + y + z ) * ( 1 / ( x + y ) + 1 / ( y + z ) + 1 / ( z + x ) )   [type from Lean state]
-  assert 0.0 < x;  /* [IN-FILE CHECK] requires 1 of vc_algebra_9onxpypzleqsum2onxpy_L471 */
-  assert 0.0 < y;  /* [IN-FILE CHECK] requires 2 of vc_algebra_9onxpypzleqsum2onxpy_L471 */
-  assert 0.0 < z;  /* [IN-FILE CHECK] requires 3 of vc_algebra_9onxpypzleqsum2onxpy_L471 */
-  assert 0.0 < x + y + z;  /* [IN-FILE CHECK] requires 4 of vc_algebra_9onxpypzleqsum2onxpy_L471 */
-  assert 0.0 < (x + y) * (y + z) * (z + x);  /* [IN-FILE CHECK] requires 5 of vc_algebra_9onxpypzleqsum2onxpy_L471 */
-  vc_algebra_9onxpypzleqsum2onxpy_L471(x, y, z);  /* [IN-FILE CHECK] the closed lemma for line 471 */
   assert (((2.0 * ((x + y) + z)) * ((Real.div(1.0, (x + y)) + Real.div(1.0, (y + z))) + Real.div(1.0, (z + x)))) >= 9.0) by { // @tac 840-879 // @tac 884-923 // @tac 928-967 // @tac 972-1025 // @tac 1030-1083 // @tac 1088-1141 // @tac 1146-1196
     // have h₉₁ : 0 < x + y  [type from Lean state]
     assert (0.0 < (x + y)) by { // @tac 871-879
@@ -578,6 +572,7 @@ lemma algebra_9onxpypzleqsum2onxpy(x: real, y: real, z: real)
       }
       // UNCITED-APPLIED congrArg(fun (_a : Prop) => _a): no library counterpart (not stated) [exec 270 1201-1232]
     }
+    vc_algebra_9onxpypzleqsum2onxpy_L471(x, y, z);  /* [IN-FILE CHECK] the closed lemma for line 471 */
   }
   // have h₁₀ : ( 1 / ( x + y ) + 1 / ( y + z ) + 1 / ( z + x ) ) >= 9 / ( 2 * ( x + y  [type from Lean state]
   assert (((Real.div(1.0, (x + y)) + Real.div(1.0, (y + z))) + Real.div(1.0, (z + x))) >= Real.div(9.0, (2.0 * ((x + y) + z)))) by { // @tac 1490-1536 // @tac 1541-1595 // @tac 1600-1642 // @tac 1647-1689 // @tac 1694-1736 // @tac 1802-2669

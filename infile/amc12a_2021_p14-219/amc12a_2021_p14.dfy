@@ -216,12 +216,6 @@ lemma amc12a_2021_p14()
       // UNCITED-APPLIED congrArg(∑ k ∈ Finset.Icc (1 : ℕ) (20 : ℕ), ↑k * logb (5 : ℝ) (3 : ℝ), (∑ k ∈ Finset.Icc (1 : ℕ) (20 : ℕ), ↑k) * logb (5 : ℝ) (3 : ℝ), fun (_a : ℝ) => _a = (210 : ℝ) * logb (5 : ℝ) (3 : ℝ)): no library counterpart (not stated) [exec 873 3445-3457]
       assert ((Real.sum(IccN(1, 20), ((k: nat) => (k as real))) * Real.logb(5.0, 3.0)) == (210.0 * Real.logb(5.0, 3.0))) by {  // sub-goal before `have` (Lean state) // @tac 3462-3589 // @tac 3594-3676 // @tac 3594-3663 // @tac 3594-3644 // @tac 3594-3619 // @tac 3594-3606
         // have h₂₃ : ( /* untranslated bigSum */ ) == 210  [type from Lean state]
-        assert forall k_0_1: nat :: k_0_1 in IccN(1, 20) ==> Real.logb(Real.pow(5.0, k_0_1), Real.pow(3.0, Int.pow(k_0_1, 2))) == (k_0_1 as real) * Real.logb(5.0, 3.0);  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p14_L219 */
-        assert 0 <= 1;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p14_L219 */
-        assert 0 <= 20;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p14_L219 */
-        assert Real.sum(IccN(1, 20), ((k: nat) => Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2))))) == Real.sum(IccN(1, 20), ((v_22_k: nat) => (v_22_k as real) * Real.logb(5.0, 3.0)));  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p14_L219 */
-        assert Real.sum(IccN(1, 20), ((v_22_k: nat) => (v_22_k as real) * Real.logb(5.0, 3.0))) == Real.sum(IccN(1, 20), ((v_1_22_k: nat) => (v_1_22_k as real))) * Real.logb(5.0, 3.0);  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p14_L219 */
-        vc_amc12a_2021_p14_L219();  /* [IN-FILE CHECK] the closed lemma for line 219 */
         assert (Real.sum(IccN(1, 20), ((k: nat) => (k as real))) == 210.0) by { // @tac 3541-3589 // @tac 3541-3575
           // [TACTIC: «_<;>_» [ Finset.sum_Icc_succ_top ] norm_num [ Finset.sum_Icc_succ_top ] <;> rfl rfl]
           // [TACTIC: «Norm_num[_]At___» [ Finset.sum_Icc_succ_top ]]
@@ -269,6 +263,7 @@ lemma amc12a_2021_p14()
           FinsetSumIccSuccTopNat(1, 19, ((x: nat) => (x as real)));  // cite: Finset.sum_Icc_succ_top
           // `norm_num` closed the goal; the rest of the chain did not run
           // UNCITED-APPLIED internal ×68 [exec 921 3541-3575]: applications made inside the tactic's own automation, not stated — Finset.sum_congr ×1, Finset.sum_singleton ×1; machinery/glue: congrArg ×8, Mathlib.Meta.NormNum.isNat_le_true ×8, Mathlib.Meta.NormNum.isNat_ofNat ×8, Mathlib.Meta.NormNum.isNat_add ×8 (+7 more heads, ×34) (cited in this block, not counted here: Finset.Icc_self [Lean recorded ×1], Finset.sum_Icc_succ_top [Lean recorded ×19], Nat.cast_one [Lean recorded ×1])
+          vc_amc12a_2021_p14_L219();  /* [IN-FILE CHECK] the closed lemma for line 219 */
         }
         // [TACTIC: «_<;>_» [ h₂₃ ] rw [ h₂₃ ] <;> ring <;> simp [ Real.logb ] simp [ Real.logb ] simp [ Real.logb ] <;> field_simp field_simp <;> ring]
         // [TACTIC: rwSeq [ h₂₃ ]]

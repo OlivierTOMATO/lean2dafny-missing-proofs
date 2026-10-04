@@ -379,10 +379,6 @@ lemma mathd_numbertheory_618(n: nat, p: nat -> nat)
           assert (p(37) == (tsub((37 * 37), 37) + 41));  // instance of h₀ (Lean state)
           // UNCITED Nat.gcd_eq_right: no Lean instance recorded (arguments unknown), not guessed
           // UNCITED Nat.gcd_eq_left: no Lean instance recorded (arguments unknown), not guessed
-          assert 0 <= 37;  /* [IN-FILE CHECK] requires 1 of vc_mathd_numbertheory_618_L382 */
-          assert forall x_1: nat :: p(x_1) == tsub(x_1 * x_1, x_1) + 41;  /* [IN-FILE CHECK] requires 2 of vc_mathd_numbertheory_618_L382 */
-          assert 37 == 37;  /* [IN-FILE CHECK] requires 3 of vc_mathd_numbertheory_618_L382 */
-          assert 1 < gcd(p(37), 2 * 37);  /* [IN-FILE CHECK] requires 4 of vc_mathd_numbertheory_618_L382 */
           vc_mathd_numbertheory_618_L382(37, n, p);  /* [IN-FILE CHECK] the closed lemma for line 382 */
           assert false;  // sub-goal of `norm_num` (Lean state) // @tac 1612-1692
           // UNCITED-APPLIED internal ×23 [exec 512 1612-1692]: applications made inside the tactic's own automation, not stated — Tactic.NormNum.isNat_gcd ×1, Tactic.NormNum.nat_gcd_helper_1' ×1; machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×5, Eq.trans ×3, Mathlib.Meta.NormNum.IsNat.to_eq ×3, congrArg ×2 (+8 more heads, ×8)

@@ -118,23 +118,6 @@ lemma amc12a_2021_p14()
             // UNCITED Real.logb: no Lean instance recorded (arguments unknown), not guessed
             // `rw` closed the goal; the rest of the chain did not run
           // have h₅₅ : k ^ 2 * Real.log ( 3 ) / (  * Real.log ( 5 ) ) ==  * ( Real.log ( 3 )   [type from Lean state]
-          assert 0 <= k;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p14_L121 */
-          assert 0 <= 1;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p14_L121 */
-          assert 0 <= 20;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p14_L121 */
-          assert k in IccN(1, 20);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p14_L121 */
-          assert 1 <= k;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p14_L121 */
-          assert k <= 20;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2021_p14_L121 */
-          assert k >= 1;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2021_p14_L121 */
-          assert 0 <= 2;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2021_p14_L121 */
-          assert 0 <= Int.pow(k, 2);  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2021_p14_L121 */
-          assert Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2))) == Real.div(Real.log(Real.pow(3.0, Int.pow(k, 2))), Real.log(Real.pow(5.0, k)));  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2021_p14_L121 */
-          assert Real.log(Real.pow(3.0, Int.pow(k, 2))) == (k as real) * (k as real) * Real.log(3.0);  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2021_p14_L121 */
-          assert Real.log(Real.pow(5.0, k)) == (k as real) * Real.log(5.0);  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2021_p14_L121 */
-          assert Real.logb(5.0, 3.0) == Real.div(Real.log(3.0), Real.log(5.0));  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2021_p14_L121 */
-          assert (k as real) != 0.0;  /* [IN-FILE CHECK] requires 14 of vc_amc12a_2021_p14_L121 */
-          assert (k as real) * (k as real) * Real.log(3.0) * Real.log(5.0) == (k as real) * Real.log(3.0) * ((k as real) * Real.log(5.0));  /* [IN-FILE CHECK] requires 15 of vc_amc12a_2021_p14_L121 */
-          assert ((0.0 < (k as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k as real) * Real.log(5.0))) || ((0.0 < (k as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k as real) * Real.log(5.0)) && (!(0.0 < (k as real) && 0.0 < Real.log(5.0)))) || ((0.0 < (k as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k as real) * Real.log(5.0)) && ((k as real) <= 0.0)) || ((0.0 < (k as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k as real) * Real.log(5.0)) && ((k as real) <= 0.0) && (!(0.0 < (k as real) && 0.0 < Real.log(5.0)))) || ((0.0 < (k as real)) && (!(0.0 < (k as real) && 0.0 < Real.log(5.0))) && (0.0 < Real.log(5.0)) && (0.0 < (k as real) * Real.log(5.0))) || ((0.0 < (k as real)) && (!(0.0 < (k as real) && 0.0 < Real.log(5.0)))) || ((0.0 < (k as real)) && (!(0.0 < (k as real) && 0.0 < Real.log(5.0))) && ((k as real) <= 0.0) && (0.0 < Real.log(5.0)) && (0.0 < (k as real) * Real.log(5.0))) || ((0.0 < (k as real)) && (!(0.0 < (k as real) && 0.0 < Real.log(5.0))) && ((k as real) <= 0.0)) || (((k as real) <= 0.0) && (0.0 < (k as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k as real) * Real.log(5.0))) || (((k as real) <= 0.0) && (0.0 < (k as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k as real) * Real.log(5.0)) && (!(0.0 < (k as real) && 0.0 < Real.log(5.0)))) || (((k as real) <= 0.0) && (!(0.0 < (k as real) && 0.0 < Real.log(5.0))) && (0.0 < (k as real)) && (0.0 < Real.log(5.0)) && (0.0 < (k as real) * Real.log(5.0))) || (((k as real) <= 0.0) && (!(0.0 < (k as real) && 0.0 < Real.log(5.0))) && (0.0 < (k as real))) || (((k as real) <= 0.0) && (!(0.0 < (k as real) && 0.0 < Real.log(5.0))));  /* [IN-FILE CHECK] requires 16 of vc_amc12a_2021_p14_L121 */
-          vc_amc12a_2021_p14_L121(k);  /* [IN-FILE CHECK] the closed lemma for line 121 */
           assert (Real.div((((k as real) * (k as real)) * Real.log(3.0)), ((k as real) * Real.log(5.0))) == ((k as real) * Real.div(Real.log(3.0), Real.log(5.0)))) by { // @tac 2006-2094 // @tac 2103-2349 // @tac 2103-2332 // @tac 2103-2296 // @tac 2103-2218 // @tac 2103-2196 // @tac 2103-2179 // @tac 2103-2143 // @tac 2103-2126
             // have h₅₅₁ :  != 0  [type from Lean state]
             assert ((k as real) != 0.0) by { // @tac 2056-2094 // @tac 2056-2074
@@ -155,6 +138,7 @@ lemma amc12a_2021_p14()
             // UNCITED-APPLIED internal ×13 [exec 584 2103-2126]: applications made inside the tactic's own automation, not stated — ne_of_gt ×2, mul_div_assoc' ×1, Mathlib.Meta.Positivity.log_pos_of_isNat ×1, div_mul_eq_mul_div ×1, Nat.cast_pos ×1, lt_of_lt_of_le ×1, Mathlib.Meta.Positivity.pos_of_isNat ×1; machinery/glue: congrArg ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2, Eq.trans ×1 (cited in this block, not counted here: mul_pos [Lean recorded ×1])
             assert (((((k as real) * (k as real)) * Real.log(3.0)) * Real.log(5.0)) == (((k as real) * Real.log(3.0)) * ((k as real) * Real.log(5.0))));  // sub-goal of `ring` (Lean state) // @tac 2139-2143
             // UNCITED-APPLIED internal ×56 [exec 597 2139-2143]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_mul ×6, Mathlib.Tactic.Ring.mul_add ×6, Mathlib.Tactic.Ring.mul_pf_left ×6, Mathlib.Tactic.Ring.mul_congr ×5 (+19 more heads, ×33)
+            vc_amc12a_2021_p14_L121(k);  /* [IN-FILE CHECK] the closed lemma for line 121 */
           }
           // [TACTIC: «_<;>_» [ h₅₅ , h₅₄ ] rw [ h₅₅ , h₅₄ ] <;> ring <;> field_simp field_simp <;> ring]
           // [TACTIC: rwSeq [ h₅₅ , h₅₄ ]]

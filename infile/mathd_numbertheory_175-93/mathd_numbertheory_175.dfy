@@ -90,18 +90,6 @@ lemma mathd_numbertheory_175()
                 assert ((10) > 0);  // precondition of NatModAddDiv (Lean: Nat.mod_add_div)
                 NatModAddDiv(Int.pow((2 * 2 * 2 * 2), 502), 10);  // cite: Nat.mod_add_div
                 // UNCITED-APPLIED congrArg(((2 : ℕ) ^ (4 : ℕ)) ^ (502 : ℕ), ((2 : ℕ) ^ (4 : ℕ)) ^ (502 : ℕ) % (10 : ℕ) + (10 : ℕ) * (((2 : ℕ) ^ (…, fun (_a : ℕ) => _a % (10 : ℕ) = (6 : ℕ)): no library counterpart (not stated) [exec 283 1198-1247]
-                assert forall n_0_0_1: nat :: n_0_0_1 >= 1 ==> Int.pow(6, n_0_0_1) % 10 == 6;  /* [IN-FILE CHECK] requires 1 of vc_mathd_numbertheory_175_L93 */
-                assert 2 * 2 * 2 * 2 % 10 == 6;  /* [IN-FILE CHECK] requires 2 of vc_mathd_numbertheory_175_L93 */
-                assert 0 <= 2010;  /* [IN-FILE CHECK] requires 3 of vc_mathd_numbertheory_175_L93 */
-                assert 0 <= 502;  /* [IN-FILE CHECK] requires 4 of vc_mathd_numbertheory_175_L93 */
-                assert Int.pow(2, 2010) == Int.pow(2 * 2 * 2 * 2, 502) * (2 * 2);  /* [IN-FILE CHECK] requires 5 of vc_mathd_numbertheory_175_L93 */
-                assert Int.pow(2 * 2 * 2 * 2, 502) * (2 * 2) % 10 == Int.pow(2 * 2 * 2 * 2, 502) % 10 * (2 * 2 % 10) % 10;  /* [IN-FILE CHECK] requires 6 of vc_mathd_numbertheory_175_L93 */
-                assert 10 > 0;  /* [IN-FILE CHECK] requires 7 of vc_mathd_numbertheory_175_L93 */
-                assert 0 <= Int.pow(2 * 2 * 2 * 2, 502);  /* [IN-FILE CHECK] requires 8 of vc_mathd_numbertheory_175_L93 */
-                assert 0 <= 10;  /* [IN-FILE CHECK] requires 9 of vc_mathd_numbertheory_175_L93 */
-                assert 10 > 0;  /* [IN-FILE CHECK] requires 10 of vc_mathd_numbertheory_175_L93 */
-                assert Int.pow(2 * 2 * 2 * 2, 502) % 10 + 10 * (Int.pow(2 * 2 * 2 * 2, 502) / 10) == Int.pow(2 * 2 * 2 * 2, 502);  /* [IN-FILE CHECK] requires 11 of vc_mathd_numbertheory_175_L93 */
-                vc_mathd_numbertheory_175_L93();  /* [IN-FILE CHECK] the closed lemma for line 93 */
                 assert ((((Int.pow((2 * 2 * 2 * 2), 502) % 10) + (10 * (Int.pow((2 * 2 * 2 * 2), 502) / 10))) % 10) == 6) by {  // sub-goal before `simp` (Lean state) // @tac 1260-1369 // @tac 1260-1347 // @tac 1260-1322
                   // [TACTIC: «_<;>_» [ h₁ , Nat.pow_mod , Nat.mul_mod , Nat.add_mod , h₅₂₁ ] simp [ h₁ , Nat.pow_mod , Nat.mul_mod , Nat.add_mod , h₅₂₁ ] simp [ h₁ , Nat.pow_mod , Nat.mul_mod , Nat.add_mod , h₅₂₁ ] <;> norm_num norm_num <;> omega omega]
                   // [TACTIC: simp [ h₁ , Nat.pow_mod , Nat.mul_mod , Nat.add_mod , h₅₂₁ ]]
@@ -110,6 +98,13 @@ lemma mathd_numbertheory_175()
                   // UNCITED Nat.add_mod: no Lean instance recorded (arguments unknown), not guessed
                   // `simp` closed the goal; the rest of the chain did not run
                   // UNCITED-APPLIED internal ×2 [exec 320 1260-1322]: applications made inside the tactic's own automation, not stated — machinery/glue: of_eq_true ×1, eq_self ×1
+                  assert forall n_0_0_1: nat :: n_0_0_1 >= 1 ==> Int.pow(6, n_0_0_1) % 10 == 6;  /* [IN-FILE CHECK] requires 1 of vc_mathd_numbertheory_175_L93 */
+                  assert 0 <= 2010;  /* [IN-FILE CHECK] requires 3 of vc_mathd_numbertheory_175_L93 */
+                  assert 0 <= 502;  /* [IN-FILE CHECK] requires 4 of vc_mathd_numbertheory_175_L93 */
+                  assert 0 <= Int.pow(2 * 2 * 2 * 2, 502);  /* [IN-FILE CHECK] requires 8 of vc_mathd_numbertheory_175_L93 */
+                  assert 0 <= 10;  /* [IN-FILE CHECK] requires 9 of vc_mathd_numbertheory_175_L93 */
+                  assert Int.pow(2 * 2 * 2 * 2, 502) % 10 + 10 * (Int.pow(2 * 2 * 2 * 2, 502) / 10) == Int.pow(2 * 2 * 2 * 2, 502);  /* [IN-FILE CHECK] requires 11 of vc_mathd_numbertheory_175_L93 */
+                  vc_mathd_numbertheory_175_L93();  /* [IN-FILE CHECK] the closed lemma for line 93 */
                 }
               }
               // [TACTIC: exact h₅₂₂]

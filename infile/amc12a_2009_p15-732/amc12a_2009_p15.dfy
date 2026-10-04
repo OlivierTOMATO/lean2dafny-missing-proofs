@@ -729,9 +729,6 @@ lemma amc12a_2009_p15(n: nat)
     assert (forall m: nat :: ((Real.sum(IccN(1, (4 * m)), ((x: nat) => ((x as real) * Complex.Re(Complex.pow(Complex.I(), x))))) == (2.0 * (m as real))) && (Real.sum(IccN(1, (4 * m)), ((x: nat) => ((x as real) * Complex.Im(Complex.pow(Complex.I(), x))))) == -((2.0 * (m as real))))));  // hypothesis h_sum_multiple_of_4 after `simp_all` (Lean state) // @tac-hyp 5220-5292
     assert (forall x: nat :: !(((4 * m) + 1) == (4 * x)));  // hypothesis h_contradiction_multiple_of_4 after `simp_all` (Lean state) // @tac-hyp 5220-5292
     assert (forall m: nat :: (((((4.0 * (m as real)) + 1.0) == 0.0) || (Complex.Re(Complex.pow(Complex.I(), ((4 * m) + 1))) == 0.0)) && ((-((2.0 * (m as real))) + (((4.0 * (m as real)) + 1.0) * Complex.Im(Complex.pow(Complex.I(), ((4 * m) + 1))))) == ((2.0 * (m as real)) + 1.0))));  // hypothesis h_sum_n_plus_1 after `simp_all` (Lean state) // @tac-hyp 5220-5292
-    assert forall k_0_1: nat :: true ==> Complex.pow(Complex.I(), k_0_1 % 4) == Complex.pow(Complex.I(), k_0_1);  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2009_p15_L732 */
-    assert 0 <= m_7_2_0;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2009_p15_L732 */
-    assert 2.0 * (m_7_2_0 as real) == 48.0;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2009_p15_L732 */
     vc_amc12a_2009_p15_L732(k, m_11, m_2, m, m_4_0_2, m_5, m_7_0, m_7_2, m_7_2_0, m_7_3, m_7_4, m_7_6, m_7_8, m_8, n, x);  /* [IN-FILE CHECK] the closed lemma for line 732 */
     assert ((-(48.0) + (((4.0 * (m as real)) + 1.0) * Complex.Im(Complex.pow(Complex.I(), ((4 * m) + 1))))) == (48.0 + 1.0));  // hypothesis h_sum_n_plus_1' after `simp_all` (Lean state) // @tac-hyp 5220-5292
     assert ((4 * m) == 96) by {  // sub-goal of `ring_nf` (Lean state) // @tac 5372-5384

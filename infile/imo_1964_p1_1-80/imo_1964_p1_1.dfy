@@ -77,8 +77,6 @@ lemma imo_1964_p1_1(n: nat)
       assert ((Int.pow(2, n) % 7) == (1 % 7));
       // [TACTIC: rwSeq [ ← Nat.mod_add_div n 3 ] at h₃]
       // UNCITED Nat.mod_add_div: named here, no record of its application here; the harvest has no application record for this execution at all (its proof term was not captured), so whether Lean applied it here is unknown: not stated
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1964_p1_1_L80 */
-      assert Int.pow(2, n) % 7 == 1 % 7;  /* [IN-FILE CHECK] requires 2 of vc_imo_1964_p1_1_L80 */
       vc_imo_1964_p1_1_L80(n);  /* [IN-FILE CHECK] the closed lemma for line 80 */
       assert ((Int.pow(2, ((n % 3) + (3 * (n / 3)))) % 7) == (1 % 7));  // hypothesis h₃ after `rw` (Lean state) // @tac-hyp 1173-1209
       // [TACTIC: simp [ pow_add , pow_mul , Nat.pow_mod , Nat.mul_mod , Nat.mod_mod ] at h₃]

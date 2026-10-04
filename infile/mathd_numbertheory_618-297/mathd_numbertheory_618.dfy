@@ -294,21 +294,7 @@ lemma mathd_numbertheory_618(n: nat, p: nat -> nat)
         if (n == 23) && ((23 > 0)) && ((1 < gcd(p(23), p((23 + 1))))) && ((p((23 + 1)) == (p(23) + (2 * 23)))) && ((gcd(p(23), p((23 + 1))) == gcd(p(23), (2 * 23)))) && ((1 < gcd(p(23), (2 * 23)))) && (!(41 <= 23)) && ((23 <= 40)) {  // sub-goal of `norm_num` (Lean state)
           // UNCITED Nat.gcd_eq_right: no Lean instance recorded (arguments unknown), not guessed
           // UNCITED Nat.gcd_eq_left: no Lean instance recorded (arguments unknown), not guessed
-          assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_mathd_numbertheory_618_L297 */
-          assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_mathd_numbertheory_618_L297 */
-          assert n > 0;  /* [IN-FILE CHECK] requires 3 of vc_mathd_numbertheory_618_L297 */
-          assert forall x_1: nat :: p(x_1) == tsub(x_1 * x_1, x_1) + 41;  /* [IN-FILE CHECK] requires 4 of vc_mathd_numbertheory_618_L297 */
-          assert 1 < gcd(p(n), p(n + 1));  /* [IN-FILE CHECK] requires 5 of vc_mathd_numbertheory_618_L297 */
-          assert 0 <= n + 1;  /* [IN-FILE CHECK] requires 6 of vc_mathd_numbertheory_618_L297 */
-          assert p(n + 1) == p(n) + 2 * n;  /* [IN-FILE CHECK] requires 7 of vc_mathd_numbertheory_618_L297 */
-          assert 0 <= 2 * n;  /* [IN-FILE CHECK] requires 8 of vc_mathd_numbertheory_618_L297 */
-          assert gcd(p(n), p(n + 1)) == gcd(p(n), 2 * n);  /* [IN-FILE CHECK] requires 9 of vc_mathd_numbertheory_618_L297 */
-          assert 1 < gcd(p(n), 2 * n);  /* [IN-FILE CHECK] requires 10 of vc_mathd_numbertheory_618_L297 */
-          assert !(41 <= n);  /* [IN-FILE CHECK] requires 11 of vc_mathd_numbertheory_618_L297 */
-          assert n <= 40;  /* [IN-FILE CHECK] requires 12 of vc_mathd_numbertheory_618_L297 */
-          assert forall x_1: nat :: p(x_1) == tsub(x_1 * x_1, x_1) + 41;  /* [IN-FILE CHECK] requires 13 of vc_mathd_numbertheory_618_L297 */
-          assert 1 <= n <= 40;  /* [IN-FILE CHECK] requires 14 of vc_mathd_numbertheory_618_L297 */
-          vc_mathd_numbertheory_618_L297(n, n, p);  /* [IN-FILE CHECK] the closed lemma for line 297 */
+          vc_mathd_numbertheory_618_L297(__outer_n, n_0_0_0_1_0, n, p);  /* [IN-FILE CHECK] the closed lemma for line 297 */
           assert false;  // sub-goal of `norm_num` (Lean state) // @tac 1612-1692
           // UNCITED-APPLIED internal ×23 [exec 470 1612-1692]: applications made inside the tactic's own automation, not stated — Tactic.NormNum.isNat_gcd ×1, Tactic.NormNum.nat_gcd_helper_2' ×1; machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×5, Eq.trans ×3, Mathlib.Meta.NormNum.IsNat.to_eq ×3, congrArg ×2 (+8 more heads, ×8)
         }
@@ -445,8 +431,9 @@ lemma mathd_numbertheory_618(n: nat, p: nat -> nat)
 
 // ===== closed lemma for line 297 (from closed/mathd_numbertheory_618-297.dfy) =====
 
-lemma {:induction false} vc_mathd_numbertheory_618_L297(n: int, n_0_0_0_1_0_1_0: int, p: nat -> nat)
+lemma {:induction false} vc_mathd_numbertheory_618_L297(n: int, n_0_0_0_1_0: int, n_0_0_0_1_0_1_0: int, p: nat -> nat)
   requires 0 <= n
+  requires 0 <= n_0_0_0_1_0
   requires 0 <= n_0_0_0_1_0_1_0
   requires n > 0
   requires forall x_1: nat :: p(x_1) == tsub(x_1 * x_1, x_1) + 41

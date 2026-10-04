@@ -85,9 +85,6 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
             calc {
               (((1 + Int.pow(2, (n + 2))) + (k * Int.pow(2, (n + 3)))) * ((1 + Int.pow(2, (n + 2))) + (k * Int.pow(2, (n + 3)))));
               == {
-                assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L88 */
-                assert 0 <= k;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L88 */
-                vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L88(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 88 */
                 assert ((((1 + Int.pow(2, (n + 2))) + (k * Int.pow(2, (n + 3)))) * ((1 + Int.pow(2, (n + 2))) + (k * Int.pow(2, (n + 3))))) == ((1 + Int.pow(2, (n + 3))) + (((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5)))))) by {  // sub-goal before `ring_nf` (Lean state) // @tac 1686-1904 // @tac 1686-1864 // @tac 1686-1817 // @tac 1686-1698
                   // [TACTIC: «_<;>_» at * <;> simp [ pow_add , pow_mul , mul_assoc , mul_comm , mul_left_comm , Nat.mul_div_cancel_left ] simp [ pow_add , pow_mul , mul_assoc , mul_comm , mul_left_comm , Nat.mul_div_cancel_left ] simp [ pow_add , pow_mul , mul_assoc , mul_comm , mul_left_comm , Nat.mul_div_cancel_left ] <;> ring_nf at * <;> omega omega]
                   // [TACTIC: Ring_nfAt at *]
@@ -96,6 +93,7 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
                   // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := n)
                   // UNCITED-APPLIED internal ×233 [exec 277 1686-1698]: applications made inside the tactic's own automation, not stated — add_zero ×2, mul_one ×1; machinery/glue: congrArg ×8, Mathlib.Tactic.Ring.add_pf_add_gt ×8, Mathlib.Tactic.Ring.add_pf_add_zero ×8, Mathlib.Tactic.Ring.single_pow ×8 (+43 more heads, ×198) (cited in this block, not counted here: pow_one [Lean recorded ×2])
                   // `ring_nf` closed the goal; the rest of the chain did not run
+                  vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L88(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 88 */
                 }
               }
               ((1 + Int.pow(2, (n + 3))) + (((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5)))));

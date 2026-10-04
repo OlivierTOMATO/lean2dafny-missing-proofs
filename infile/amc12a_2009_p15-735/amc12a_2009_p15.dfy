@@ -732,10 +732,6 @@ lemma amc12a_2009_p15(n: nat)
     assert ((-(48.0) + (((4.0 * (m as real)) + 1.0) * Complex.Im(Complex.pow(Complex.I(), ((4 * m) + 1))))) == (48.0 + 1.0));  // hypothesis h_sum_n_plus_1' after `simp_all` (Lean state) // @tac-hyp 5220-5292
     assert ((4 * m) == 96) by {  // sub-goal of `ring_nf` (Lean state) // @tac 5372-5384
       NatPowOne(m);  // cite: pow_one [applied by the tactic, not named in it]
-      assert forall k_0_1: nat :: true ==> Complex.pow(Complex.I(), k_0_1 % 4) == Complex.pow(Complex.I(), k_0_1);  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2009_p15_L735 */
-      assert 0 <= m_7_2_0;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2009_p15_L735 */
-      assert 2.0 * (m_7_2_0 as real) == 48.0;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2009_p15_L735 */
-      assert 0 <= m_7_2_0 * 4;  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2009_p15_L735 */
       vc_amc12a_2009_p15_L735(k, m_11, m_2, m, m_4_0_2, m_5, m_7_0, m_7_2, m_7_2_0, m_7_3, m_7_4, m_7_6, m_7_8, m_8, n, x);  /* [IN-FILE CHECK] the closed lemma for line 735 */
       assert (((-(48.0) + (((m as real) * Complex.Im(Complex.mul(Complex.I(), Complex.pow(Complex.I(), (m * 4))))) * 4.0)) + Complex.Im(Complex.mul(Complex.I(), Complex.pow(Complex.I(), (m * 4))))) == 49.0);  // hypothesis h_sum_n_plus_1' after `ring_nf` (Lean state) // @tac-hyp 5372-5384
       assert (n == (1 + (m * 4)));  // hypothesis hm after `ring_nf` (Lean state) // @tac-hyp 5372-5384

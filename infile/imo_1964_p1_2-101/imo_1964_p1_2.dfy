@@ -98,20 +98,6 @@ lemma imo_1964_p1_2(n: nat)
     if (((Int.pow(2, n) % 7) == 2)) {  // sub-goal of `simp` (Lean state)
       NatAddMod(Int.pow(2, n), 1, 7);  // cite: Nat.add_mod
       // UNCITED Nat.mul_mod: named in this rewriting step; no record of Lean's proof attributes an application of it to this execution (its recorded applications are at other tactics of the proof; a rewrite at a hypothesis is filed under the tactic that later uses the hypothesis, and a conditional / under-binder simp rewrite may be unrecorded), so whether it was applied here is not known; not stated
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1964_p1_2_L101 */
-      assert forall n0: nat :: true && 0 <= n0 && n0 < n ==> !NatDvd(7, Int.pow(2, n0) + 1);  /* [IN-FILE CHECK] requires 2 of vc_imo_1964_p1_2_L101 */
-      assert 0 < 7;  /* [IN-FILE CHECK] requires 3 of vc_imo_1964_p1_2_L101 */
-      assert 0 <= 7;  /* [IN-FILE CHECK] requires 4 of vc_imo_1964_p1_2_L101 */
-      assert 0 <= Int.pow(2, n) + 1;  /* [IN-FILE CHECK] requires 5 of vc_imo_1964_p1_2_L101 */
-      assert 0 < 7;  /* [IN-FILE CHECK] requires 6 of vc_imo_1964_p1_2_L101 */
-      assert ((Int.pow(2, n) + 1) % 7 == 0) == (exists q: nat :: Int.pow(2, n) + 1 == 7 * q);  /* [IN-FILE CHECK] requires 7 of vc_imo_1964_p1_2_L101 */
-      assert 7 != 0;  /* [IN-FILE CHECK] requires 8 of vc_imo_1964_p1_2_L101 */
-      assert Int.pow(2, n) % 7 == 2;  /* [IN-FILE CHECK] requires 9 of vc_imo_1964_p1_2_L101 */
-      assert Int.pow(2, n) % 7 == 1 || Int.pow(2, n) % 7 == 2 || Int.pow(2, n) % 7 == 4;  /* [IN-FILE CHECK] requires 10 of vc_imo_1964_p1_2_L101 */
-      assert 0 <= Int.pow(2, n);  /* [IN-FILE CHECK] requires 11 of vc_imo_1964_p1_2_L101 */
-      assert 0 <= 1;  /* [IN-FILE CHECK] requires 12 of vc_imo_1964_p1_2_L101 */
-      assert NatMod(Int.pow(2, n) + 1, 7) == NatMod(NatMod(Int.pow(2, n), 7) + NatMod(1, 7), 7);  /* [IN-FILE CHECK] requires 13 of vc_imo_1964_p1_2_L101 */
-      assert (Int.pow(2, n) % 7 != 1) || ((Int.pow(2, n) % 7 == 1) && ((Int.pow(2, n) + 1) % 7 != 0));  /* [IN-FILE CHECK] requires 14 of vc_imo_1964_p1_2_L101 */
       vc_imo_1964_p1_2_L101(n);  /* [IN-FILE CHECK] the closed lemma for line 101 */
       assert !(((Int.pow(2, n) + 1) % 7) == 0);  // sub-goal of `simp` (Lean state) // @tac 1084-1118
       // UNCITED-APPLIED internal ×9 [exec 189 1084-1118]: applications made inside the tactic's own automation, not stated — Nat.one_mod ×1; machinery/glue: congrArg ×4, Eq.trans ×2, of_eq_true ×1, congr ×1 (cited in this block, not counted here: Nat.add_mod [Lean recorded ×1])

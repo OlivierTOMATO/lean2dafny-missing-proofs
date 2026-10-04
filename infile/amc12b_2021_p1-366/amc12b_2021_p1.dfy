@@ -363,10 +363,6 @@ lemma amc12b_2021_p1(S: set<int>)
     FinsetExt(S, Icc(-(9), 9));  // cite: Finset.ext
   }
   // have h_finset_card : ( Finset.Icc ( - 9 : ℤ ) 9 ) . card == 19  [type from Lean state]
-  assert forall x_1: int :: (x_1 in S) == ((IntAbs(x_1) as real) < 3.0 * Real.pi());  /* [IN-FILE CHECK] requires 1 of vc_amc12b_2021_p1_L366 */
-  assert 9.0 < 3.0 * Real.pi();  /* [IN-FILE CHECK] requires 2 of vc_amc12b_2021_p1_L366 */
-  assert 3.0 * Real.pi() < 10.0;  /* [IN-FILE CHECK] requires 3 of vc_amc12b_2021_p1_L366 */
-  assert S == Icc(0 - 9, 9);  /* [IN-FILE CHECK] requires 4 of vc_amc12b_2021_p1_L366 */
   vc_amc12b_2021_p1_L366(S);  /* [IN-FILE CHECK] the closed lemma for line 366 */
   assert (|Icc(-(9), 9)| == 19); // @tac 3583-3640 // @tac 3583-3628
     // [TACTIC: «_<;>_» [ Finset.Icc_self , Finset.card_empty ] norm_num [ Finset.Icc_self , Finset.card_empty ] <;> rfl rfl]

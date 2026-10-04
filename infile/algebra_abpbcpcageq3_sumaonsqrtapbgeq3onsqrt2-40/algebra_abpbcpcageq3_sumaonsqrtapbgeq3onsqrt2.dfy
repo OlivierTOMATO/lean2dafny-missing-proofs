@@ -38,8 +38,6 @@ lemma {:isolate_assertions} cert_piece_4(a: real, b: real, c: real)
   requires ((((a + b) + c) - 3.0) < 0.0)
   ensures ((a * (((a + b) + c) - 3.0)) < 0.0)
 {
-  assert 0.0 < a;  /* [IN-FILE CHECK] requires 1 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L40 */
-  assert a + b + c - 3.0 < 0.0;  /* [IN-FILE CHECK] requires 2 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L40 */
   vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L40(a, b, c);  /* [IN-FILE CHECK] the closed lemma for line 40 */
   MulPos(a, -((((a + b) + c) - 3.0))); MulNeg(a, (((a + b) + c) - 3.0)); assert (a) * (-((((a + b) + c) - 3.0))) == -((a) * ((((a + b) + c) - 3.0)));
 }

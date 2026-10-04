@@ -217,12 +217,6 @@ lemma amc12b_2020_p13()
     assert (Real.div(Real.log(6.0), Real.log(3.0)) == (1.0 + Real.div(Real.log(2.0), Real.log(3.0)))) by { // @tac 1489-1501
       // [TACTIC: rwSeq [ h₁₁ ]]
       // UNCITED-APPLIED congrArg(Real.log (6 : ℝ), Real.log (2 : ℝ) + Real.log (3 : ℝ), fun (_a : ℝ) => _a / Real.log (3 : ℝ) = (1 : ℝ) + Real.log (2 : ℝ) / …): no library counterpart (not stated) [exec 271 1489-1501]
-      assert Real.log(6.0) == Real.log(2.0) + Real.log(3.0);  /* [IN-FILE CHECK] requires 1 of vc_amc12b_2020_p13_L220 */
-      assert Real.div(Real.log(6.0), Real.log(2.0)) == 1.0 + Real.div(Real.log(3.0), Real.log(2.0));  /* [IN-FILE CHECK] requires 2 of vc_amc12b_2020_p13_L220 */
-      assert (0 as real) == 0.0;  /* [IN-FILE CHECK] requires 3 of vc_amc12b_2020_p13_L220 */
-      assert (1 as real) == 1.0;  /* [IN-FILE CHECK] requires 4 of vc_amc12b_2020_p13_L220 */
-      assert Real.log(3.0) != 0.0;  /* [IN-FILE CHECK] requires 5 of vc_amc12b_2020_p13_L220 */
-      vc_amc12b_2020_p13_L220();  /* [IN-FILE CHECK] the closed lemma for line 220 */
       assert (Real.div((Real.log(2.0) + Real.log(3.0)), Real.log(3.0)) == (1.0 + Real.div(Real.log(2.0), Real.log(3.0)))) by {  // sub-goal before `field_simp` (Lean state) // @tac 1508-1771 // @tac 1508-1753 // @tac 1508-1634 // @tac 1508-1616
         assert (0.0 < 3.0) by {  // sub-goal of `by` (Lean state) // @tac 1558-1566
           // [TACTIC: «Norm_num[_]At___»]
@@ -245,6 +239,7 @@ lemma amc12b_2020_p13()
         // [TACTIC: «Norm_num[_]At___»]
         assert (0.0 < (3.0)) && ((3.0) != 1.0);  // precondition of RealLogNeZeroOfPosOfNeOne (Lean: Real.log_ne_zero_of_pos_of_ne_one)
         RealLogNeZeroOfPosOfNeOne(3.0);  // cite: Real.log_ne_zero_of_pos_of_ne_one
+        vc_amc12b_2020_p13_L220();  /* [IN-FILE CHECK] the closed lemma for line 220 */
       }
     }
     // [TACTIC: «_<;>_» [ h₁₂ , h₁₃ ] rw [ h₁₂ , h₁₃ ] <;> ring_nf ring_nf <;> field_simp [ Real.log_ne_zero_of_pos_of_ne_one ( by norm_num norm_num : ( 0 : ℝ ) < 2 ) ( by norm_num norm_num : ( 2 : ℝ ) ≠ 1 ) , Real.log_ne_zero_of_pos_of_ne_one ( by norm_num norm_num : ( 0 : ℝ ) < 3 ) ( by norm_num norm_num : ( 3 : ℝ ) ≠ 1 ) ] field_simp [ Real.log_ne_zero_of_pos_of_ne_one ( by norm_num norm_num : ( 0 : ℝ ) < 2 ) ( by norm_num norm_num : ( 2 : ℝ ) ≠ 1 ) , Real.log_ne_zero_of_pos_of_ne_one ( by norm_num norm_num : ( 0 : ℝ ) < 3 ) ( by norm_num norm_num : ( 3 : ℝ ) ≠ 1 ) ] <;> ring_nf ring_nf <;> field_simp [ Real.log_ne_zero_of_pos_of_ne_one ( by norm_num norm_num : ( 0 : ℝ ) < 2 ) ( by norm_num norm_num : ( 2 : ℝ ) ≠ 1 ) , Real.log_ne_zero_of_pos_of_ne_one ( by norm_num norm_num : ( 0 : ℝ ) < 3 ) ( by norm_num norm_num : ( 3 : ℝ ) ≠ 1 ) ] field_simp [ Real.log_ne_zero_of_pos_of_ne_one ( by norm_num norm_num : ( 0 : ℝ ) < 2 ) ( by norm_num norm_num : ( 2 : ℝ ) ≠ 1 ) , Real.log_ne_zero_of_pos_of_ne_one ( by norm_num norm_num : ( 0 : ℝ ) < 3 ) ( by norm_num norm_num : ( 3 : ℝ ) ≠ 1 ) ] <;> ring_nf ring_nf]

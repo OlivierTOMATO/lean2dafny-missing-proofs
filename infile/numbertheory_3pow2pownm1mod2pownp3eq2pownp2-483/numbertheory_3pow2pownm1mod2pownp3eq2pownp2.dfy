@@ -480,24 +480,6 @@ lemma numbertheory_3pow2pownm1mod2pownp3eq2pownp2(n: nat)
         NatCastPowInt(3, Int.pow(2, n));  // cite: Nat.cast_pow [applied by the tactic, not named in it]
         NatCastPowInt(2, (n + 2));  // cite: Nat.cast_pow [applied by the tactic, not named in it]
         NatCastPowInt(2, (n + 3));  // cite: Nat.cast_pow [applied by the tactic, not named in it]
-        assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert 0 < n;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert 0 <= Int.pow(2, n);  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert 0 <= n + 2;  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert 0 <= n + 3;  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert exists k_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1 * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert exists k_1_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_1 * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_1_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_1_0 * Int.pow(2, n + 3));  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert 0 <= k;  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert 0 - 1 + (0 - (Int.pow(3, Int.pow(2, n)) - (1 + Int.pow(2, n + 2) + k * Int.pow(2, n + 3)))) + (Int.pow(3, Int.pow(2, n)) + 1 - (1 + Int.pow(2, n + 2) + k * Int.pow(2, n + 3))) == 0;  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert 0 - 1 + (Int.pow(3, Int.pow(2, n)) - (1 + Int.pow(2, n + 2) + k * Int.pow(2, n + 3))) + (1 + Int.pow(2, n + 2) + k * Int.pow(2, n + 3) + 1 - Int.pow(3, Int.pow(2, n))) == 0;  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert 0 <= 3;  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert Int.pow(3, Int.pow(2, n)) == Int.pow(3, Int.pow(2, n));  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert 0 <= 2;  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert Int.pow(2, n + 2) == Int.pow(2, n + 2);  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert Int.pow(2, n + 3) == Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 17 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
-        assert 0 <= 1 + Int.pow(2, n + 2);  /* [IN-FILE CHECK] requires 18 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483 */
         vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L483(k, n);  /* [IN-FILE CHECK] the closed lemma for line 483 */
         NatCastAddInt((1 + Int.pow(2, (n + 2))), (k * Int.pow(2, (n + 3))));  // cite: Nat.cast_add [applied by the tactic, not named in it]
         NatCastAddInt(1, Int.pow(2, (n + 2)));  // cite: Nat.cast_add [applied by the tactic, not named in it]

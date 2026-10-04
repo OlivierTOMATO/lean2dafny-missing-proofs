@@ -504,12 +504,6 @@ lemma aime_1983_p3(f: real -> real, h1_set: set<real>)
     // have h₆ : f ( x ) == x ^ 2 + ( 18 * x + 30 ) - 2 * Real.sqrt ( ( x ^ 2 + ( 18 *   [type from Lean state]
     assert (f(x) == (((x * x) + ((18.0 * x) + 30.0)) - (2.0 * Real.sqrt(((x * x) + ((18.0 * x) + 45.0)))))) by { // @tac 2407-2416
       // [TACTIC: rwSeq [ h₀ ]]
-      assert forall x_1: real :: f.requires(x_1);  /* [IN-FILE CHECK] requires 1 of vc_aime_1983_p3_L507 */
-      assert forall x_1: real :: f(x_1) == x_1 * x_1 + (18.0 * x_1 + 30.0) - 2.0 * Real.sqrt(x_1 * x_1 + (18.0 * x_1 + 45.0));  /* [IN-FILE CHECK] requires 2 of vc_aime_1983_p3_L507 */
-      assert forall x_3: real :: (x_3 in h1_set) == (f(x_3) == 0.0);  /* [IN-FILE CHECK] requires 3 of vc_aime_1983_p3_L507 */
-      assert f(0.0 - 9.0 + Real.sqrt(61.0)) == 0.0;  /* [IN-FILE CHECK] requires 4 of vc_aime_1983_p3_L507 */
-      assert f(0.0 - 9.0 - Real.sqrt(61.0)) == 0.0;  /* [IN-FILE CHECK] requires 5 of vc_aime_1983_p3_L507 */
-      assert f(x) == 0.0;  /* [IN-FILE CHECK] requires 6 of vc_aime_1983_p3_L507 */
       vc_aime_1983_p3_L507(f, h1_set, x);  /* [IN-FILE CHECK] the closed lemma for line 507 */
       assert (f(x) == (((x * x) + ((18.0 * x) + 30.0)) - (2.0 * Real.sqrt(((x * x) + ((18.0 * x) + 45.0))))));  // instance of h₀ (Lean state)
       // UNCITED-APPLIED congrArg(f x, x ^ (2 : ℕ) + ((18 : ℝ) * x + (30 : ℝ)) - (2 : ℝ) * √(x ^ (2 : ℕ) + (…, fun (_a : ℝ) => _a = x ^ (2 : ℕ) + ((18 : ℝ) * x + (30 : ℝ)) - (2 : ℝ…): no library counterpart (not stated) [exec 702 2407-2416]

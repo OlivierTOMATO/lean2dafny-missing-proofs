@@ -68,11 +68,6 @@ lemma mathd_numbertheory_175()
         // have h₅ : ( ( 2 ^ 4 : ℕ ) ^ 502 * 2 ^ 2 : ℕ ) % 10 == 4  [type from Lean state]
         assert (((Int.pow((2 * 2 * 2 * 2), 502) * (2 * 2)) % 10) == 4) by { // @tac 812-977 // @tac 986-998
           // have h₅₁ : ( ( 2 ^ 4 : ℕ ) ^ 502 * 2 ^ 2 : ℕ ) % 10 == ( ( 2 ^ 4 : ℕ ) ^ 502 % 10  [type from Lean state]
-          assert forall n_0_0_1: nat :: n_0_0_1 >= 1 ==> Int.pow(6, n_0_0_1) % 10 == 6;  /* [IN-FILE CHECK] requires 1 of vc_mathd_numbertheory_175_L71 */
-          assert 2 * 2 * 2 * 2 % 10 == 6;  /* [IN-FILE CHECK] requires 2 of vc_mathd_numbertheory_175_L71 */
-          assert 0 <= 2010;  /* [IN-FILE CHECK] requires 3 of vc_mathd_numbertheory_175_L71 */
-          assert 0 <= 502;  /* [IN-FILE CHECK] requires 4 of vc_mathd_numbertheory_175_L71 */
-          assert Int.pow(2, 2010) == Int.pow(2 * 2 * 2 * 2, 502) * (2 * 2);  /* [IN-FILE CHECK] requires 5 of vc_mathd_numbertheory_175_L71 */
           vc_mathd_numbertheory_175_L71();  /* [IN-FILE CHECK] the closed lemma for line 71 */
           assert (((Int.pow((2 * 2 * 2 * 2), 502) * (2 * 2)) % 10) == (((Int.pow((2 * 2 * 2 * 2), 502) % 10) * ((2 * 2) % 10)) % 10)); // @tac 933-977
             // [TACTIC: simp [ Nat.mul_mod , Nat.pow_mod , Nat.mod_mod ]]

@@ -94,23 +94,6 @@ lemma numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown(m: nat, n: nat, f: nat 
     // UNCITED-APPLIED congrArg(f k, (4 : ℕ) ^ k + (6 : ℕ) ^ k + (9 : ℕ) ^ k, fun (_a : ℕ) => (4 : ℕ) ^ ((2 : ℕ) * k) + (6 : ℕ) ^ ((2 : ℕ) * k) + (…): no library counterpart (not stated) [exec 107 688-703]
     assert (((Int.pow(4, (2 * k)) + Int.pow(6, (2 * k))) + Int.pow(9, (2 * k))) == (((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k)) * tsub(((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k)), (2 * Int.pow(6, k))))) by {  // sub-goal before `have` (Lean state) // @tac 708-857 // @tac 862-1011 // @tac 1016-1165 // @tac 1170-1191
       // have h₃ : 4 ^ ( 2 * k ) == 4 ^ k * 4 ^ k  [type from Lean state]
-      assert 0 <= m;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert 0 <= k;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert forall x_1: nat :: f.requires(x_1);  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert forall x_1: nat :: f(x_1) == Int.pow(4, x_1) + Int.pow(6, x_1) + Int.pow(9, x_1);  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert 0 < m;  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert 0 < n;  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert m <= n;  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert forall m0: int, n0: int :: (forall x_2: nat :: f.requires(x_2)) && (0 <= m0 && 0 <= n0 && (forall x_2: nat :: f(x_2) == Int.pow(4, x_2) + Int.pow(6, x_2) + Int.pow(9, x_2)) && 0 < m0 && 0 < n0 && m0 <= n0 && ((0 <= m0 && m0 < m) || (m0 == m && 0 <= n0 && n0 < n)) ==> f.requires(Int.pow(2, m0)) && f.requires(Int.pow(2, n0)) && NatDvd(f(Int.pow(2, m0)), f(Int.pow(2, n0))));  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert 0 <= k;  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert 0 <= 2 * k;  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert f(2 * k) == Int.pow(4, 2 * k) + Int.pow(6, 2 * k) + Int.pow(9, 2 * k);  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert f(k) == Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k);  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert 2 * k == k + k;  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert 0 <= k + k;  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      assert Int.pow(4, k + k) == Int.pow(4, k) * Int.pow(4, k);  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97 */
-      vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97(f, k, k, m, n);  /* [IN-FILE CHECK] the closed lemma for line 97 */
       assert (Int.pow(4, (2 * k)) == (Int.pow(4, k) * Int.pow(4, k))) by { // @tac 784-823
         assert ((2 * k) == (k + k)) by {  // sub-goal of `by` (Lean state) // @tac 818-822
           // [TACTIC: Ring]
@@ -125,6 +108,7 @@ lemma numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown(m: nat, n: nat, f: nat 
           // `rw` closed the goal; the rest of the chain did not run
           // UNCITED-APPLIED congrArg((4 : ℕ) ^ (k + k), (4 : ℕ) ^ k * (4 : ℕ) ^ k, fun (_a : ℕ) => _a = (4 : ℕ) ^ k * (4 : ℕ) ^ k): no library counterpart (not stated) [exec 200 830-842]
         }
+        vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L97(f, k, k, m, n);  /* [IN-FILE CHECK] the closed lemma for line 97 */
       }
       // have h₄ : 6 ^ ( 2 * k ) == 6 ^ k * 6 ^ k  [type from Lean state]
       assert (Int.pow(6, (2 * k)) == (Int.pow(6, k) * Int.pow(6, k))) by { // @tac 938-977

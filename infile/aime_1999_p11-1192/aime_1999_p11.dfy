@@ -1189,24 +1189,6 @@ lemma aime_1999_p11(m: Rat.rat)
       assert (m == Rat.div(Rat.of_int(175), Rat.of_int(2)));
     }
     // have h_num : m.num == 175  [type from Lean state]
-    assert m.Rational?;  /* [IN-FILE CHECK] requires 1 of vc_aime_1999_p11_L1192 */
-    assert gcd(Int.natAbs(m.num), m.denom) == 1;  /* [IN-FILE CHECK] requires 2 of vc_aime_1999_p11_L1192 */
-    assert Rat.lt(Rat.of_int(0), m);  /* [IN-FILE CHECK] requires 3 of vc_aime_1999_p11_L1192 */
-    assert Rat.of_int(0).num * m.denom < m.num * Rat.of_int(0).denom;  /* [IN-FILE CHECK] requires 4 of vc_aime_1999_p11_L1192 */
-    assert Real.sum(IccN(1, 35), ((k: nat) => Real.sin(5.0 * (k as real) * Real.pi() / 180.0))) == Real.tan(m.to_real() * Real.pi() / 180.0);  /* [IN-FILE CHECK] requires 5 of vc_aime_1999_p11_L1192 */
-    assert Real.div((m.num as real), (m.denom as real)) < 90.0;  /* [IN-FILE CHECK] requires 6 of vc_aime_1999_p11_L1192 */
-    assert 0 <= 1;  /* [IN-FILE CHECK] requires 7 of vc_aime_1999_p11_L1192 */
-    assert 0 <= 35;  /* [IN-FILE CHECK] requires 8 of vc_aime_1999_p11_L1192 */
-    assert 180.0 != 0.0;  /* [IN-FILE CHECK] requires 9 of vc_aime_1999_p11_L1192 */
-    assert Real.sum(IccN(1, 35), ((k: nat) => Real.sin(5.0 * (k as real) * Real.pi() / 180.0))) == Real.div(Real.cos(2.5 * Real.pi() / 180.0), Real.sin(2.5 * Real.pi() / 180.0));  /* [IN-FILE CHECK] requires 10 of vc_aime_1999_p11_L1192 */
-    assert 72.0 != 0.0;  /* [IN-FILE CHECK] requires 11 of vc_aime_1999_p11_L1192 */
-    assert Real.sum(IccN(1, 35), ((k: nat) => Real.sin(5.0 * (k as real) * Real.pi() / 180.0))) == Real.tan(35.0 * Real.pi() / 72.0);  /* [IN-FILE CHECK] requires 12 of vc_aime_1999_p11_L1192 */
-    assert Real.tan(m.to_real() * Real.pi() / 180.0) == Real.tan(35.0 * Real.pi() / 72.0);  /* [IN-FILE CHECK] requires 13 of vc_aime_1999_p11_L1192 */
-    assert m.to_real() * Real.pi() / 180.0 == 35.0 * Real.pi() / 72.0;  /* [IN-FILE CHECK] requires 14 of vc_aime_1999_p11_L1192 */
-    assert Rat.of_int(175).Rational?;  /* [IN-FILE CHECK] requires 15 of vc_aime_1999_p11_L1192 */
-    assert Rat.of_int(2).Rational?;  /* [IN-FILE CHECK] requires 16 of vc_aime_1999_p11_L1192 */
-    assert Rat.div(Rat.of_int(175), Rat.of_int(2)).Rational?;  /* [IN-FILE CHECK] requires 17 of vc_aime_1999_p11_L1192 */
-    assert m == Rat.div(Rat.of_int(175), Rat.of_int(2));  /* [IN-FILE CHECK] requires 18 of vc_aime_1999_p11_L1192 */
     vc_aime_1999_p11_L1192(m);  /* [IN-FILE CHECK] the closed lemma for line 1192 */
     assert (m.num == 175); // @tac 12210-12393 // @tac 12210-12369 // @tac 12210-12310 // @tac 12210-12285 // @tac 12210-12267 // @tac 12210-12222
       // [TACTIC: «_<;>_» [ h_m_val ] rw [ h_m_val ] <;> norm_num [ Rat.num_div_eq_of_coprime ] norm_num [ Rat.num_div_eq_of_coprime ] <;> norm_cast norm_cast norm_cast <;> ( try decide decide ) <;> ( try ring_nf at * <;> norm_num at * <;> aesop ) <;> ( try aesop )]

@@ -1722,19 +1722,6 @@ lemma imo_1984_p2(a: int, b: int)
     }
   }
   // have h₇ : ( a + b ) ^ 7 - a ^ 7 - b ^ 7 == 7 * ( a ^ 6 * b + 3 * a ^ 5 * b ^ 2 +  [type from Lean state]
-  assert 0 < a;  /* [IN-FILE CHECK] requires 1 of vc_imo_1984_p2_L1725 */
-  assert 0 < b;  /* [IN-FILE CHECK] requires 2 of vc_imo_1984_p2_L1725 */
-  assert !IntDvd(7, a);  /* [IN-FILE CHECK] requires 3 of vc_imo_1984_p2_L1725 */
-  assert !IntDvd(7, b);  /* [IN-FILE CHECK] requires 4 of vc_imo_1984_p2_L1725 */
-  assert !IntDvd(7, a + b);  /* [IN-FILE CHECK] requires 5 of vc_imo_1984_p2_L1725 */
-  assert IntDvd(Int.pow(7, 7), Int.pow(a + b, 7) - Int.pow(a, 7) - Int.pow(b, 7));  /* [IN-FILE CHECK] requires 6 of vc_imo_1984_p2_L1725 */
-  assert if Int.pow(7, 7) == 0 then Int.pow(a + b, 7) - Int.pow(a, 7) - Int.pow(b, 7) == 0 else (Int.pow(a + b, 7) - Int.pow(a, 7) - Int.pow(b, 7)) % Int.pow(7, 7) == 0;  /* [IN-FILE CHECK] requires 7 of vc_imo_1984_p2_L1725 */
-  assert !IntDvd(7, a * b * (a + b));  /* [IN-FILE CHECK] requires 8 of vc_imo_1984_p2_L1725 */
-  assert 0 <= 7;  /* [IN-FILE CHECK] requires 9 of vc_imo_1984_p2_L1725 */
-  assert Int.pow(a + b, 7) == Int.pow(a, 7) + 7 * (a * a * a * a * a * a) * b + 21 * (a * a * a * a * a) * (b * b) + 35 * (a * a * a * a) * (b * b * b) + 35 * (a * a * a) * (b * b * b * b) + 21 * (a * a) * (b * b * b * b * b) + 7 * a * (b * b * b * b * b * b) + Int.pow(b, 7);  /* [IN-FILE CHECK] requires 10 of vc_imo_1984_p2_L1725 */
-  assert Int.pow(a, 1) == a;  /* [IN-FILE CHECK] requires 11 of vc_imo_1984_p2_L1725 */
-  assert Int.pow(b, 1) == b;  /* [IN-FILE CHECK] requires 12 of vc_imo_1984_p2_L1725 */
-  vc_imo_1984_p2_L1725(a, b);  /* [IN-FILE CHECK] the closed lemma for line 1725 */
   assert (((Int.pow((a + b), 7) - Int.pow(a, 7)) - Int.pow(b, 7)) == (7 * (((((((a * a * a * a * a * a) * b) + ((3 * (a * a * a * a * a)) * (b * b))) + ((5 * (a * a * a * a)) * (b * b * b))) + ((5 * (a * a * a)) * (b * b * b * b))) + ((3 * (a * a)) * (b * b * b * b * b))) + (a * (b * b * b * b * b * b))))) by { // @tac 2035-2068 // @tac 2035-2054
     // [TACTIC: «_<;>_» at h₆ ⊢ <;> omega omega]
     // [TACTIC: Ring_nfAt at h₆ ⊢]
@@ -1742,6 +1729,7 @@ lemma imo_1984_p2(a: int, b: int)
     IntPowOne(b);  // cite: pow_one [applied by the tactic, not named in it]
     // UNCITED-APPLIED internal ×266 [exec 413 2035-2054]: applications made inside the tactic's own automation, not stated — add_zero ×1; machinery/glue: congrArg ×8, Mathlib.Tactic.Ring.add_pf_add_lt ×8, Mathlib.Tactic.Ring.add_pf_zero_add ×8, Mathlib.Tactic.Ring.cast_pos ×8 (+50 more heads, ×233) (cited in this block, not counted here: pow_one [Lean recorded ×2])
     // `ring_nf` closed the goal; the rest of the chain did not run
+    vc_imo_1984_p2_L1725(a, b);  /* [IN-FILE CHECK] the closed lemma for line 1725 */
   }
   // have h₈ : 7 ^ 7 ∣ 7 * ( a ^ 6 * b + 3 * a ^ 5 * b ^ 2 + 5 * a ^ 4 * b ^ 3 + 5 *   [type from Lean state]
   assert IntDvd(Int.pow(7, 7), (7 * (((((((a * a * a * a * a * a) * b) + ((3 * (a * a * a * a * a)) * (b * b))) + ((5 * (a * a * a * a)) * (b * b * b))) + ((5 * (a * a * a)) * (b * b * b * b))) + ((3 * (a * a)) * (b * b * b * b * b))) + (a * (b * b * b * b * b * b))))) by { // @tac 2248-2284 // @tac 2379-2426

@@ -37,7 +37,6 @@ lemma amc12_2001_p5()
         forall x: nat
           ensures (!(Even(x)) <==> ((x % 2) == 1))  // sub-goal of `ext` (Lean state) // @tac 1338-1606 // @tac 1338-1582 // @tac 1338-1413 // @tac 1338-1381
         {
-          assert 0 <= x;  /* [IN-FILE CHECK] requires 1 of vc_amc12_2001_p5_L38 */
           vc_amc12_2001_p5_L38(x);  /* [IN-FILE CHECK] the closed lemma for line 38 */
           // [TACTIC: «_<;>_» [ Nat.even_iff , Nat.mod_eq_zero_of_dvd ] simp [ Nat.even_iff , Nat.mod_eq_zero_of_dvd ] simp [ Nat.even_iff , Nat.mod_eq_zero_of_dvd ] <;> ( try omega omega ) <;> ( try { cases' mod_two_eq_zero_or_one x with h h <;> simp [ h , Nat.even_iff , Nat.dvd_iff_mod_eq_zero ] simp [ h , Nat.even_iff , Nat.dvd_iff_mod_eq_zero ] simp [ h , Nat.even_iff , Nat.dvd_iff_mod_eq_zero ] <;> omega omega } ) <;> ( try omega omega )]
           // [TACTIC: simp [ Nat.even_iff , Nat.mod_eq_zero_of_dvd ]]

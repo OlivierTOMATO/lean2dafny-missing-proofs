@@ -527,15 +527,6 @@ lemma amc12b_2020_p13()
       // UNCITED-APPLIED congrArg(√(Real.log (3 : ℝ) / Real.log (2 : ℝ) + Real.log (2 : ℝ) / Real.log (…, √((√(Real.log (3 : ℝ) / Real.log (2 : ℝ)) + √(Real.log (2 : ℝ) / Real…, fun (_a : ℝ) => _a = √(Real.log (3 : ℝ) / Real.log (2 : ℝ)) + √(Real.…): no library counterpart (not stated) [exec 1032 6102-6117]
       assert (Real.sqrt(((Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0)))) * (Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0)))))) == (Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0))))) by {  // sub-goal before `have` (Lean state) // @tac 6124-6357 // @tac 6364-6379
         // have h₃₆₃ : Real.sqrt ( ( ( Real.sqrt ( ( Real.log ( 3 ) / Real.log ( 2 ) ) ) + Re  [type from Lean state]
-        assert Real.div(Real.log(6.0), Real.log(2.0)) + Real.div(Real.log(6.0), Real.log(3.0)) == Real.div(Real.log(3.0), Real.log(2.0)) + Real.div(Real.log(2.0), Real.log(3.0)) + 2.0;  /* [IN-FILE CHECK] requires 1 of vc_amc12b_2020_p13_L530 */
-        assert Real.sqrt(Real.div(Real.log(6.0), Real.log(2.0)) + Real.div(Real.log(6.0), Real.log(3.0))) == Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0)) + Real.div(Real.log(2.0), Real.log(3.0)) + 2.0);  /* [IN-FILE CHECK] requires 2 of vc_amc12b_2020_p13_L530 */
-        assert Real.div(Real.log(3.0), Real.log(2.0)) > 0.0;  /* [IN-FILE CHECK] requires 3 of vc_amc12b_2020_p13_L530 */
-        assert Real.div(Real.log(2.0), Real.log(3.0)) > 0.0;  /* [IN-FILE CHECK] requires 4 of vc_amc12b_2020_p13_L530 */
-        assert Real.div(Real.log(3.0), Real.log(2.0)) * Real.div(Real.log(2.0), Real.log(3.0)) == 1.0;  /* [IN-FILE CHECK] requires 5 of vc_amc12b_2020_p13_L530 */
-        assert Real.div(Real.log(3.0), Real.log(2.0)) + Real.div(Real.log(2.0), Real.log(3.0)) + 2.0 == (Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0)))) * (Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0))));  /* [IN-FILE CHECK] requires 6 of vc_amc12b_2020_p13_L530 */
-        assert Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0)) + Real.div(Real.log(2.0), Real.log(3.0)) + 2.0) == Real.sqrt((Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0)))) * (Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0)))));  /* [IN-FILE CHECK] requires 7 of vc_amc12b_2020_p13_L530 */
-        assert Real.sqrt(Real.pow(Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0))), 2)) == Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0)));  /* [IN-FILE CHECK] requires 8 of vc_amc12b_2020_p13_L530 */
-        vc_amc12b_2020_p13_L530();  /* [IN-FILE CHECK] the closed lemma for line 530 */
         assert (Real.sqrt(((Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0)))) * (Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0)))))) == (Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0))))) by { // @tac 6324-6357
           assert (0.0 <= (Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0))))) by {  // sub-goal of `by` (Lean state) // @tac 6345-6355
             // [TACTIC: Positivity]
@@ -554,6 +545,7 @@ lemma amc12b_2020_p13()
           assert (0.0 <= ((Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0))))));  // precondition of RealSqrtSq (Lean: Real.sqrt_sq)
           RealSqrtSq((Real.sqrt(Real.div(Real.log(3.0), Real.log(2.0))) + Real.sqrt(Real.div(Real.log(2.0), Real.log(3.0)))));  // cite: Real.sqrt_sq
           // UNCITED-APPLIED congrArg(√((√(Real.log (3 : ℝ) / Real.log (2 : ℝ)) + √(Real.log (2 : ℝ) / Real…, √(Real.log (3 : ℝ) / Real.log (2 : ℝ)) + √(Real.log (2 : ℝ) / Real.lo…, fun (_a : ℝ) => _a = √(Real.log (3 : ℝ) / Real.log (2 : ℝ)) + √(Real.…): no library counterpart (not stated) [exec 1079 6324-6357]
+          vc_amc12b_2020_p13_L530();  /* [IN-FILE CHECK] the closed lemma for line 530 */
         }
         // [TACTIC: rwSeq [ h₃₆₃ ]]
         // UNCITED-APPLIED congrArg(√((√(Real.log (3 : ℝ) / Real.log (2 : ℝ)) + √(Real.log (2 : ℝ) / Real…, √(Real.log (3 : ℝ) / Real.log (2 : ℝ)) + √(Real.log (2 : ℝ) / Real.lo…, fun (_a : ℝ) => _a = √(Real.log (3 : ℝ) / Real.log (2 : ℝ)) + √(Real.…): no library counterpart (not stated) [exec 1109 6364-6379]

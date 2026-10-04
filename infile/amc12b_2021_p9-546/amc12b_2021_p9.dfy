@@ -543,18 +543,6 @@ lemma amc12b_2021_p9()
           RealLogNeZeroOfPosOfNeOne(2.0);  // cite: Real.log_ne_zero_of_pos_of_ne_one
         }
         // have h₇₆ : ( Real.log ( 80 ) * Real.log ( 40 ) ) / ( Real.log ( 2 ) ) ^ 2 - ( Rea  [type from Lean state]
-        assert Real.log(80.0) == 4.0 * Real.log(2.0) + Real.log(5.0);  /* [IN-FILE CHECK] requires 1 of vc_amc12b_2021_p9_L546 */
-        assert Real.log(40.0) == 3.0 * Real.log(2.0) + Real.log(5.0);  /* [IN-FILE CHECK] requires 2 of vc_amc12b_2021_p9_L546 */
-        assert Real.log(160.0) == 5.0 * Real.log(2.0) + Real.log(5.0);  /* [IN-FILE CHECK] requires 3 of vc_amc12b_2021_p9_L546 */
-        assert Real.log(20.0) == 2.0 * Real.log(2.0) + Real.log(5.0);  /* [IN-FILE CHECK] requires 4 of vc_amc12b_2021_p9_L546 */
-        assert Real.log(80.0) * Real.log(40.0) == 12.0 * (Real.log(2.0) * Real.log(2.0)) + 7.0 * Real.log(2.0) * Real.log(5.0) + Real.log(5.0) * Real.log(5.0);  /* [IN-FILE CHECK] requires 5 of vc_amc12b_2021_p9_L546 */
-        assert Real.log(160.0) * Real.log(20.0) == 10.0 * (Real.log(2.0) * Real.log(2.0)) + 7.0 * Real.log(2.0) * Real.log(5.0) + Real.log(5.0) * Real.log(5.0);  /* [IN-FILE CHECK] requires 6 of vc_amc12b_2021_p9_L546 */
-        assert Real.log(80.0) * Real.log(40.0) - Real.log(160.0) * Real.log(20.0) == 2.0 * (Real.log(2.0) * Real.log(2.0));  /* [IN-FILE CHECK] requires 7 of vc_amc12b_2021_p9_L546 */
-        assert Real.div(Real.div(Real.log(80.0), Real.log(2.0)), Real.div(Real.log(2.0), Real.log(40.0))) == Real.div(Real.log(80.0) * Real.log(40.0), Real.log(2.0) * Real.log(2.0));  /* [IN-FILE CHECK] requires 8 of vc_amc12b_2021_p9_L546 */
-        assert Real.div(Real.div(Real.log(160.0), Real.log(2.0)), Real.div(Real.log(2.0), Real.log(20.0))) == Real.div(Real.log(160.0) * Real.log(20.0), Real.log(2.0) * Real.log(2.0));  /* [IN-FILE CHECK] requires 9 of vc_amc12b_2021_p9_L546 */
-        assert Real.log(2.0) != 0.0;  /* [IN-FILE CHECK] requires 10 of vc_amc12b_2021_p9_L546 */
-        assert ((0.0 < Real.log(2.0)) && (0 <= 2) && (0.0 < Real.pow(Real.log(2.0), 2))) || (Real.log(2.0) <= 0.0);  /* [IN-FILE CHECK] requires 11 of vc_amc12b_2021_p9_L546 */
-        vc_amc12b_2021_p9_L546();  /* [IN-FILE CHECK] the closed lemma for line 546 */
         assert ((Real.div((Real.log(80.0) * Real.log(40.0)), (Real.log(2.0) * Real.log(2.0))) - Real.div((Real.log(160.0) * Real.log(20.0)), (Real.log(2.0) * Real.log(2.0)))) == Real.div(((Real.log(80.0) * Real.log(40.0)) - (Real.log(160.0) * Real.log(20.0))), (Real.log(2.0) * Real.log(2.0)))) by { // @tac 7754-7794 // @tac 7754-7774
           // [TACTIC: «_<;>_» [ h₇₅ ] field_simp [ h₇₅ ] <;> ring_nf ring_nf]
           // [TACTIC: «Field_simp[_]At___» [ h₇₅ ]]
@@ -563,6 +551,7 @@ lemma amc12b_2021_p9()
           // cert: pow_pos piece `(0.0 < (Real.log(2.0) * Real.log(2.0)))` not stated (only `0 < a ^ 2` of an atom a is lowered)
           // `field_simp` closed the goal; the rest of the chain did not run
           // UNCITED-APPLIED internal ×18 [exec 1882 7754-7774]: applications made inside the tactic's own automation, not stated — div_mul_eq_mul_div ×2, IsUnit.mul_div_cancel_right ×2, sub_div' ×1, ne_of_gt ×1, Mathlib.Meta.Positivity.log_pos_of_isNat ×1; machinery/glue: Eq.trans ×4, congrArg ×4, of_eq_true ×1, Mathlib.Meta.NormNum.isNat_ofNat ×1 (+1 more heads, ×1) (cited in this block, not counted here: pow_pos [Lean recorded ×1])
+          vc_amc12b_2021_p9_L546();  /* [IN-FILE CHECK] the closed lemma for line 546 */
         }
         // [TACTIC: rwSeq [ h₇₆ ]]
         // UNCITED-APPLIED congrArg(Real.log (80 : ℝ) * Real.log (40 : ℝ) / Real.log (2 : ℝ) ^ (2 : ℕ) - …, (Real.log (80 : ℝ) * Real.log (40 : ℝ) - Real.log (160 : ℝ) * Real.lo…, fun (_a : ℝ) => _a = (2 : ℝ)): no library counterpart (not stated) [exec 1893 7801-7813]

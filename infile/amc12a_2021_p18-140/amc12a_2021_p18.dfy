@@ -137,13 +137,6 @@ lemma amc12a_2021_p18(f: Rat.rat -> real)
   // have h₃ : f ( 5 ) == 5  [type from Lean state]
   assert (f(Rat.of_int(5)) == 5.0) by { // @tac 1226-1265 // @tac 1270-1466 // @tac 1471-1484
     // have h₃₁ : Nat.Prime ( 5 )  [type from Lean state]
-    assert forall x_1: Rat.rat :: Rat.gt(x_1, Rat.of_int(0)) ==> (forall y_2: Rat.rat :: Rat.gt(y_2, Rat.of_int(0)) ==> f.requires(Rat.mul(x_1, y_2)) && f.requires(x_1) && f.requires(y_2));  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p18_L140 */
-    assert forall x_1: Rat.rat :: Rat.gt(x_1, Rat.of_int(0)) ==> (forall y_2: Rat.rat :: Rat.gt(y_2, Rat.of_int(0)) ==> f(Rat.mul(x_1, y_2)) == f(x_1) + f(y_2));  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p18_L140 */
-    assert forall p_1: nat :: prime(p_1) ==> f.requires(Rat.of_int(p_1));  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p18_L140 */
-    assert forall p_1: nat :: prime(p_1) ==> f(Rat.of_int(p_1)) == (p_1 as real);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p18_L140 */
-    assert Rat.of_int(1).Rational?;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p18_L140 */
-    assert f(Rat.of_int(1)) == 0.0;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2021_p18_L140 */
-    assert 0 <= 5;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2021_p18_L140 */
     vc_amc12a_2021_p18_L140(f);  /* [IN-FILE CHECK] the closed lemma for line 140 */
     assert prime(5); // @tac 1259-1265
       // [TACTIC: decide]

@@ -28,8 +28,6 @@ lemma amc12_2001_p5()
   assert (Int.prod((set x: nat | x in range(10000) && (!Even(x))), ((x: nat) => x)) == NatDiv(factorial(10000), (Int.pow(2, 5000) * factorial(5000)))) by { // @tac 1035-1741 // @tac 1746-1756
     // have h₁ : Finset.prod ( ( Finset.filter ( (  ) , ( Finset.range ( 10000 ) ) ) )   [type from Lean state]
     assert (Int.prod((set x: nat | x in range(10000) && (!Even(x))), ((x: nat) => x)) == NatDiv(factorial(10000), (Int.pow(2, 5000) * factorial(5000)))) by { // @tac 1177-1614
-      assert forall x_1_0_0_0_1: nat :: true ==> !Even(x_1_0_0_0_1) == (x_1_0_0_0_1 % 2 == 1);  /* [IN-FILE CHECK] requires 1 of vc_amc12_2001_p5_L31 */
-      vc_amc12_2001_p5_L31();  /* [IN-FILE CHECK] the closed lemma for line 31 */
       assert ((set x: nat | x in range(10000) && (!Even(x))) == (set x: nat | x in range(10000) && ((x % 2) == 1))) by {  // sub-goal of `by` (Lean state) // @tac 1310-1315
         // [TACTIC: congr]
         // UNCITED-APPLIED Subsingleton.elim: no library counterpart (not stated) [exec 83 1310-1315]
@@ -50,6 +48,8 @@ lemma amc12_2001_p5()
           // NOT APPLIED Nat.dvd_iff_mod_eq_zero: named here, but no record of Lean's proof at this tactic applies it
           // [TACTIC: omega]
         }
+        assert forall x_1_0_0_0_1: nat :: true ==> !Even(x_1_0_0_0_1) == (x_1_0_0_0_1 % 2 == 1);  /* [IN-FILE CHECK] requires 1 of vc_amc12_2001_p5_L31 */
+        vc_amc12_2001_p5_L31();  /* [IN-FILE CHECK] the closed lemma for line 31 */
       }
       // [TACTIC: rwSeq [ show Finset.filter ( fun x => ¬ Even x ) ( Finset.range 10000 ) = Finset.filter ( fun x => x % 2 = 1 ) ( Finset.range 10000 ) by congr ext x simp [ Nat.even_iff , Nat.mod_eq_zero_of_dvd ] simp [ Nat.even_iff , Nat.mod_eq_zero_of_dvd ] simp [ Nat.even_iff , Nat.mod_eq_zero_of_dvd ] <;> ( try omega omega ) <;> ( try { cases' mod_two_eq_zero_or_one x with h h <;> simp [ h , Nat.even_iff , Nat.dvd_iff_mod_eq_zero ] simp [ h , Nat.even_iff , Nat.dvd_iff_mod_eq_zero ] simp [ h , Nat.even_iff , Nat.dvd_iff_mod_eq_zero ] <;> omega omega } ) <;> ( try omega omega ) ]]
       assert (Int.prod((set x: nat | x in range(10000) && ((x % 2) == 1)), ((x: nat) => x)) == NatDiv(factorial(10000), (Int.pow(2, 5000) * factorial(5000)))) by {  // sub-goal before `rfl` (Lean state) // @tac 1738-1741

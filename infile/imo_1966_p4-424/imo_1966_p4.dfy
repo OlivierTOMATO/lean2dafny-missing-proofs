@@ -422,11 +422,8 @@ lemma imo_1966_p4(n: nat, x: real)
   }
   // have h₆ :   [type from Lean state]
   assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L424 */
-  assert 0 < n;  /* [IN-FILE CHECK] requires 2 of vc_imo_1966_p4_L424 */
   assert forall n_2_1: nat :: 0 < n_2_1 ==> Real.sum(IccN(1, n_2_1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, n_2_1) * x));  /* [IN-FILE CHECK] requires 3 of vc_imo_1966_p4_L424 */
   assert 0 <= 1;  /* [IN-FILE CHECK] requires 4 of vc_imo_1966_p4_L424 */
-  assert 0 < 0 ==> Real.sum(IccN(1, 0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, 0) * x)) ==> Real.sum(IccN(1, 0 + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, 0 + 1) * x));  /* [IN-FILE CHECK] requires 5 of vc_imo_1966_p4_L424 */
-  assert 0 < 0 ==> Real.sum(IccN(1, 0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, 0) * x));  /* [IN-FILE CHECK] requires 6 of vc_imo_1966_p4_L424 */
   assert ((0 < 0) && (0 <= 0) && (Real.sum(IccN(1, 0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, 0) * x))) && (0 <= 0 + 1)) || ((0 < 0) && (0 <= 0) && (Real.sum(IccN(1, 0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) != Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, 0) * x)))) || (!(0 < 0));  /* [IN-FILE CHECK] requires 7 of vc_imo_1966_p4_L424 */
   vc_imo_1966_p4_L424(n, x);  /* [IN-FILE CHECK] the closed lemma for line 424 */
   assert (Real.sum(IccN(1, n), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x))))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, n) * x)))));

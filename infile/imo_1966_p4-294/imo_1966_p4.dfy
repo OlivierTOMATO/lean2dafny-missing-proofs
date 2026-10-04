@@ -293,18 +293,13 @@ lemma imo_1966_p4(n: nat, x: real)
                   }
                   assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L294 */
                   assert forall k_1: nat :: 0 < k_1 ==> (forall m_2: int :: x != Real.div((m_2 as real) * Real.pi(), Real.pow(2.0, k_1)));  /* [IN-FILE CHECK] requires 2 of vc_imo_1966_p4_L294 */
-                  assert 0 < n;  /* [IN-FILE CHECK] requires 3 of vc_imo_1966_p4_L294 */
                   assert forall n0: int :: (forall k_3: nat :: 0 < k_3 ==> (forall m_3: int :: true)) && (0 <= n0 && (forall k_3: nat :: 0 < k_3 ==> (forall m_3: int :: x != Real.div((m_3 as real) * Real.pi(), Real.pow(2.0, k_3)))) && 0 < n0 && ((0 <= n0 && n0 < n) || (n0 == n && 0.0 <= x && x <= x - 1.0)) ==> (forall k: int :: true) && Real.sum(IccN(1, n0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, n0) * x)));  /* [IN-FILE CHECK] requires 4 of vc_imo_1966_p4_L294 */
-                  assert Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x));  /* [IN-FILE CHECK] requires 5 of vc_imo_1966_p4_L294 */
                   assert 0 <= m;  /* [IN-FILE CHECK] requires 6 of vc_imo_1966_p4_L294 */
                   assert ((0 < m) && (0 <= 1)) || (m <= 0);  /* [IN-FILE CHECK] requires 7 of vc_imo_1966_p4_L294 */
                   assert 0 < m;  /* [IN-FILE CHECK] requires 8 of vc_imo_1966_p4_L294 */
                   assert Real.sum(IccN(1, m), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m) * x));  /* [IN-FILE CHECK] requires 9 of vc_imo_1966_p4_L294 */
-                  assert m + 1 > 0;  /* [IN-FILE CHECK] requires 10 of vc_imo_1966_p4_L294 */
                   assert 0 <= 1;  /* [IN-FILE CHECK] requires 11 of vc_imo_1966_p4_L294 */
                   assert 0 <= m + 1;  /* [IN-FILE CHECK] requires 12 of vc_imo_1966_p4_L294 */
-                  assert Real.sum(IccN(1, m + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.sum(IccN(1, m), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) + Real.div(1.0, Real.sin(Real.pow(2.0, m + 1) * x));  /* [IN-FILE CHECK] requires 13 of vc_imo_1966_p4_L294 */
-                  assert Real.pow(2.0, m + 1) * x == 2.0 * (Real.pow(2.0, m) * x);  /* [IN-FILE CHECK] requires 14 of vc_imo_1966_p4_L294 */
                   assert Real.tan(Real.pow(2.0, m) * x) == Real.div(Real.sin(Real.pow(2.0, m) * x), Real.cos(Real.pow(2.0, m) * x));  /* [IN-FILE CHECK] requires 15 of vc_imo_1966_p4_L294 */
                   assert Real.tan(2.0 * (Real.pow(2.0, m) * x)) == Real.div(Real.sin(2.0 * (Real.pow(2.0, m) * x)), Real.cos(2.0 * (Real.pow(2.0, m) * x)));  /* [IN-FILE CHECK] requires 16 of vc_imo_1966_p4_L294 */
                   assert Real.sin(2.0 * (Real.pow(2.0, m) * x)) == 2.0 * Real.sin(Real.pow(2.0, m) * x) * Real.cos(Real.pow(2.0, m) * x);  /* [IN-FILE CHECK] requires 17 of vc_imo_1966_p4_L294 */

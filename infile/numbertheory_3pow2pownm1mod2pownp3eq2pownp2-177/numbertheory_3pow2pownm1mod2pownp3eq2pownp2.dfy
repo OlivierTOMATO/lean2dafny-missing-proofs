@@ -174,9 +174,6 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
                   }
                   // have h₁₂ : 2 ^ ( n + 4 ) ∣ 2 * k * 2 ^ ( 2 * n + 5 )  [type from Lean state]
                   assert NatDvd(Int.pow(2, (n + 4)), ((2 * k) * Int.pow(2, ((2 * n) + 5)))) by { // @tac 3148-3314
-                    assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L177 */
-                    assert 0 <= k;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L177 */
-                    vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L177(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 177 */
                     assert NatDvd(Int.pow(2, ((2 * n) + 5)), ((2 * k) * Int.pow(2, ((2 * n) + 5)))) by {  // sub-goal of `by` (Lean state) // @tac 3288-3314
                       assert (((2 * k) * Int.pow(2, ((2 * n) + 5))) == (Int.pow(2, ((2 * n) + 5)) * (2 * k))) by {  // sub-goal of `by` (Lean state) // @tac 3307-3311
                         // [TACTIC: Ring]
@@ -184,6 +181,7 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
                       // [TACTIC: exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩]
                       assert (if ((Int.pow(2, ((2 * n) + 5)) as int)) == 0 then ((((2 * k) * Int.pow(2, ((2 * n) + 5))) as int)) == 0 else ((((2 * k) * Int.pow(2, ((2 * n) + 5))) as int)) % ((Int.pow(2, ((2 * n) + 5)) as int)) == 0);  // goal closed by `exact ⟨…⟩` (Lean state)
                       // UNCITED-APPLIED internal ×72 [exec 528 3288-3314]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_mul ×6, Mathlib.Tactic.Ring.mul_add ×6, Mathlib.Tactic.Ring.zero_mul ×6, Mathlib.Tactic.Ring.mul_pf_right ×5 (+25 more heads, ×49)
+                      vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L177(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 177 */
                     }
                     // [TACTIC: calc_unparsed 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 5 ) 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 5 ) := h₁₁ _ ∣ 2 * k * 2 ^ ( 2 * n + 5 ) _ ∣ 2 * k * 2 ^ ( 2 * n + 5 ) := by exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩ exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩]
                     // GAP: calc chain not lowered (relation outside Dafny calc, e.g. ∣); its step proofs follow, each with its recorded goal; the chain itself is not composed

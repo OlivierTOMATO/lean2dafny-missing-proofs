@@ -387,27 +387,6 @@ lemma numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown(m: nat, n: nat, f: nat 
         }
       }
       // [TACTIC: exact ⟨ f k - 2 * 6 ^ k , by cases k with | zero => simp [ h₀ , pow_zero , Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib ] simp [ h₀ , pow_zero , Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib ] simp [ h₀ , pow_zero , Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib ] | succ k => simp_all [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ] simp_all [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ] simp_all [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ] <;> ring_nf at * <;> norm_num at * <;> omega omega ⟩ ⟨ f k - 2 * 6 ^ k , by cases k with | zero => simp [ h₀ , pow_zero , Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib ] simp [ h₀ , pow_zero , Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib ] simp [ h₀ , pow_zero , Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib ] | succ k => simp_all [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ] simp_all [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ] simp_all [ Nat.mul_sub_left_distrib , Nat.mul_sub_right_distrib , Nat.add_assoc ] <;> ring_nf at * <;> norm_num at * <;> omega omega ⟩]
-      assert 0 <= m;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert 0 <= k;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert 0 <= k_1_1_0_1_0;  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert 0 <= t;  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert forall x_1: nat :: f.requires(x_1);  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert forall x_1: nat :: f(x_1) == Int.pow(4, x_1) + Int.pow(6, x_1) + Int.pow(9, x_1);  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert 0 < m;  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert 0 < n;  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert m <= n;  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert forall m0: int, n0: int :: (forall x_2: nat :: f.requires(x_2)) && (0 <= m0 && 0 <= n0 && (forall x_2: nat :: f(x_2) == Int.pow(4, x_2) + Int.pow(6, x_2) + Int.pow(9, x_2)) && 0 < m0 && 0 < n0 && m0 <= n0 && ((0 <= m0 && m0 < m) || (m0 == m && 0 <= n0 && n0 < n)) ==> f.requires(Int.pow(2, m0)) && f.requires(Int.pow(2, n0)) && NatDvd(f(Int.pow(2, m0)), f(Int.pow(2, n0))));  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert forall k_0_1: nat :: true ==> f.requires(2 * k_0_1) && f.requires(k_0_1) && f.requires(k_0_1);  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert forall k_0_1: nat :: true ==> f(2 * k_0_1) == f(k_0_1) * tsub(f(k_0_1), 2 * Int.pow(6, k_0_1));  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert 0 <= k_1_0;  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert 0 <= 2 * k_1_0;  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert 0 <= 2 * Int.pow(6, k_1_0);  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert f(2 * k_1_0) == f(k_1_0) * tsub(f(k_1_0), 2 * Int.pow(6, k_1_0));  /* [IN-FILE CHECK] requires 17 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert f(k_1_0) * tsub(f(k_1_0), 2 * Int.pow(6, k_1_0)) == f(k_1_0) * tsub(f(k_1_0), 2 * Int.pow(6, k_1_0));  /* [IN-FILE CHECK] requires 18 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert f(k_1_0) != 0;  /* [IN-FILE CHECK] requires 19 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert f(k_1_0) == 0 ==> f.requires(k_1_0) && f.requires(k_1_0);  /* [IN-FILE CHECK] requires 20 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
-      assert f(k_1_0) != 0 ==> f.requires(k_1_0) && f.requires(k_1_0) && f.requires(k_1_0);  /* [IN-FILE CHECK] requires 21 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390 */
       vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L390(f, k, k_1_0, k_1_1_0_1_0, m, n, t);  /* [IN-FILE CHECK] the closed lemma for line 390 */
       assert (if ((f(k) as int)) == 0 then (((f(k) * tsub(f(k), (2 * Int.pow(6, k)))) as int)) == 0 else (((f(k) * tsub(f(k), (2 * Int.pow(6, k)))) as int)) % ((f(k) as int)) == 0);  // goal closed by `exact ⟨…⟩` (Lean state)
     }

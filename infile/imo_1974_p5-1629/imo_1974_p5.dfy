@@ -1626,27 +1626,6 @@ lemma imo_1974_p5(a: real, b: real, c: real, d: real, s: real)
     // UNCITED-APPLIED internal ×30 [exec 1131 5656-5703]: applications made inside the tactic's own automation, not stated — ne_of_gt ×6, add_div' ×3, div_mul_eq_mul_div ×3, div_add' ×3, div_div ×3; machinery/glue: Eq.trans ×6, congrArg ×6 (cited in this block, not counted here: mul_pos [Lean recorded ×2])
     assert (1.0 < Real.div(((((((a * ((a + b) + c)) + (b * ((a + b) + d))) * ((b + c) + d)) + (c * (((a + b) + d) * ((a + b) + c)))) * ((a + c) + d)) + (d * ((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)))), (((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)) * ((a + c) + d)))) by {  // sub-goal before `refine'` (Lean state) // @tac 5708-5731
       // [TACTIC: refine' lt_of_sub_pos _]
-      assert 0.0 < a;  /* [IN-FILE CHECK] requires 1 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < b;  /* [IN-FILE CHECK] requires 2 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < c;  /* [IN-FILE CHECK] requires 3 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < d;  /* [IN-FILE CHECK] requires 4 of vc_imo_1974_p5_L1629 */
-      assert s == Real.div(a, a + b + d) + Real.div(b, a + b + c) + Real.div(c, b + c + d) + Real.div(d, a + c + d);  /* [IN-FILE CHECK] requires 5 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < Real.div(a, a + b + d);  /* [IN-FILE CHECK] requires 6 of vc_imo_1974_p5_L1629 */
-      assert Real.div(a, a + b + d) < 1.0;  /* [IN-FILE CHECK] requires 7 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < Real.div(b, a + b + c);  /* [IN-FILE CHECK] requires 8 of vc_imo_1974_p5_L1629 */
-      assert Real.div(b, a + b + c) < 1.0;  /* [IN-FILE CHECK] requires 9 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < Real.div(c, b + c + d);  /* [IN-FILE CHECK] requires 10 of vc_imo_1974_p5_L1629 */
-      assert Real.div(c, b + c + d) < 1.0;  /* [IN-FILE CHECK] requires 11 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < Real.div(d, a + c + d);  /* [IN-FILE CHECK] requires 12 of vc_imo_1974_p5_L1629 */
-      assert Real.div(d, a + c + d) < 1.0;  /* [IN-FILE CHECK] requires 13 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < s;  /* [IN-FILE CHECK] requires 14 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < a + b + d;  /* [IN-FILE CHECK] requires 15 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < a + b + c;  /* [IN-FILE CHECK] requires 16 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < b + c + d;  /* [IN-FILE CHECK] requires 17 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < a + c + d;  /* [IN-FILE CHECK] requires 18 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < a + b + c + d;  /* [IN-FILE CHECK] requires 19 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < (a + b + d) * (a + b + c);  /* [IN-FILE CHECK] requires 20 of vc_imo_1974_p5_L1629 */
-      assert 0.0 < (a + b + d) * (a + b + c) * (b + c + d);  /* [IN-FILE CHECK] requires 21 of vc_imo_1974_p5_L1629 */
       vc_imo_1974_p5_L1629(a, b, c, d, s);  /* [IN-FILE CHECK] the closed lemma for line 1629 */
       assert (0.0 < (Real.div(((((((a * ((a + b) + c)) + (b * ((a + b) + d))) * ((b + c) + d)) + (c * (((a + b) + d) * ((a + b) + c)))) * ((a + c) + d)) + (d * ((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)))), (((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)) * ((a + c) + d)))) - (1.0));  // precondition of LtOfSubPosReal (Lean: lt_of_sub_pos)
       LtOfSubPosReal(Real.div(((((((a * ((a + b) + c)) + (b * ((a + b) + d))) * ((b + c) + d)) + (c * (((a + b) + d) * ((a + b) + c)))) * ((a + c) + d)) + (d * ((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)))), (((((a + b) + d) * ((a + b) + c)) * ((b + c) + d)) * ((a + c) + d))), 1.0);  // cite: lt_of_sub_pos

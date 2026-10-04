@@ -539,20 +539,6 @@ lemma mathd_algebra_598(a: real, b: real, c: real, d: real)
       // [TACTIC: rwSeq [ h₁₂₁ , h₁₂₂ ]]
       // UNCITED-APPLIED congrArg(Real.log (8 : ℝ), (3 : ℝ) * Real.log (2 : ℝ), fun (_a : ℝ) => _a / Real.log (4 : ℝ) = (3 / 2 : ℝ)): no library counterpart (not stated) [exec 1281 3974-4001]
       // UNCITED-APPLIED congrArg(Real.log (4 : ℝ), (2 : ℝ) * Real.log (2 : ℝ), fun (_a : ℝ) => (3 : ℝ) * Real.log (2 : ℝ) / _a = (3 / 2 : ℝ)): no library counterpart (not stated) [exec 1281 3974-4001]
-      assert Real.rpow(4.0, a) == 5.0;  /* [IN-FILE CHECK] requires 1 of vc_mathd_algebra_598_L542 */
-      assert Real.rpow(5.0, b) == 6.0;  /* [IN-FILE CHECK] requires 2 of vc_mathd_algebra_598_L542 */
-      assert Real.rpow(6.0, c) == 7.0;  /* [IN-FILE CHECK] requires 3 of vc_mathd_algebra_598_L542 */
-      assert Real.rpow(7.0, d) == 8.0;  /* [IN-FILE CHECK] requires 4 of vc_mathd_algebra_598_L542 */
-      assert a == Real.div(Real.log(5.0), Real.log(4.0));  /* [IN-FILE CHECK] requires 5 of vc_mathd_algebra_598_L542 */
-      assert b == Real.div(Real.log(6.0), Real.log(5.0));  /* [IN-FILE CHECK] requires 6 of vc_mathd_algebra_598_L542 */
-      assert c == Real.div(Real.log(7.0), Real.log(6.0));  /* [IN-FILE CHECK] requires 7 of vc_mathd_algebra_598_L542 */
-      assert d == Real.div(Real.log(8.0), Real.log(7.0));  /* [IN-FILE CHECK] requires 8 of vc_mathd_algebra_598_L542 */
-      assert a * b * c * d == Real.div(Real.log(8.0), Real.log(4.0));  /* [IN-FILE CHECK] requires 9 of vc_mathd_algebra_598_L542 */
-      assert Real.log(8.0) == 3.0 * Real.log(2.0);  /* [IN-FILE CHECK] requires 10 of vc_mathd_algebra_598_L542 */
-      assert Real.log(4.0) == 2.0 * Real.log(2.0);  /* [IN-FILE CHECK] requires 11 of vc_mathd_algebra_598_L542 */
-      assert (0 as real) == 0.0;  /* [IN-FILE CHECK] requires 12 of vc_mathd_algebra_598_L542 */
-      assert ((0.0 < 2.0) && (0.0 < 2.0) && (0.0 < Real.log(2.0)) && (0.0 < 2.0) && (0.0 < 2.0 * Real.log(2.0))) || ((0.0 < 2.0) && (!(0.0 < 2.0 && 0.0 < Real.log(2.0)))) || ((!(0.0 < 2.0)) && (0.0 < 2.0) && (0.0 < Real.log(2.0)) && (0.0 < 2.0) && (0.0 < 2.0 * Real.log(2.0))) || ((!(0.0 < 2.0)) && (!(0.0 < 2.0 && 0.0 < Real.log(2.0))));  /* [IN-FILE CHECK] requires 13 of vc_mathd_algebra_598_L542 */
-      vc_mathd_algebra_598_L542(a, b, c, d);  /* [IN-FILE CHECK] the closed lemma for line 542 */
       assert (Real.div((3.0 * Real.log(2.0)), (2.0 * Real.log(2.0))) == (3.0 / 2.0)) by {  // sub-goal before `have` (Lean state) // @tac 4006-4130 // @tac 4135-4223 // @tac 4135-4206 // @tac 4135-4174 // @tac 4135-4158
         // have h₁₂₃ : Real.log ( 2 ) != 0  [type from Lean state]
         assert (Real.log(2.0) != 0.0) by { // @tac 4053-4115 // @tac 4122-4130
@@ -585,6 +571,7 @@ lemma mathd_algebra_598(a: real, b: real, c: real, d: real)
           PowOne(Real.log(2.0));  // cite: pow_one [applied by the tactic, not named in it]
           // UNCITED-APPLIED internal ×49 [exec 1371 4167-4174]: applications made inside the tactic's own automation, not stated — add_zero ×1; machinery/glue: Eq.trans ×5, Mathlib.Tactic.Ring.mul_congr ×4, Mathlib.Tactic.Ring.add_mul ×4, Mathlib.Tactic.Ring.mul_add ×4 (+17 more heads, ×31) (cited in this block, not counted here: pow_one [Lean recorded ×1])
         }
+        vc_mathd_algebra_598_L542(a, b, c, d);  /* [IN-FILE CHECK] the closed lemma for line 542 */
       }
     }
   }

@@ -72,14 +72,6 @@ lemma amc12a_2013_p4()
       // UNCITED-APPLIED congrArg((4 : ℝ) * (2 : ℝ) ^ (2012 : ℕ) - (2 : ℝ) ^ (2012 : ℕ), (3 : ℝ) * (2 : ℝ) ^ (2012 : ℕ), fun (_a : ℝ) => (5 : ℝ) * (2 : ℝ) ^ (2012 : ℕ) / _a = (5 / 3 : ℝ)): no library counterpart (not stated) [exec 205 1345-1360]
       assert (Real.div((5.0 * Real.pow(2.0, 2012)), (3.0 * Real.pow(2.0, 2012))) == (5.0 / 3.0)) by {  // sub-goal before `have` (Lean state) // @tac 1365-1589 // @tac 1594-1644 // @tac 1594-1623 // @tac 1594-1603
         // have h₅ : 5 * 2 ^ 2012 / 3 * 2 ^ 2012 == 5 / 3  [type from Lean state]
-        assert 0 <= 2014;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2013_p4_L75 */
-        assert 0 <= 2012;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2013_p4_L75 */
-        assert Real.pow(2.0, 2014) - Real.pow(2.0, 2012) > 0.0;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2013_p4_L75 */
-        assert Real.pow(2.0, 2014) == 4.0 * Real.pow(2.0, 2012);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2013_p4_L75 */
-        assert 4.0 * Real.pow(2.0, 2012) + Real.pow(2.0, 2012) == 5.0 * Real.pow(2.0, 2012);  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2013_p4_L75 */
-        assert 4.0 * Real.pow(2.0, 2012) - Real.pow(2.0, 2012) == 3.0 * Real.pow(2.0, 2012);  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2013_p4_L75 */
-        assert (0 as real) == 0.0;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2013_p4_L75 */
-        vc_amc12a_2013_p4_L75();  /* [IN-FILE CHECK] the closed lemma for line 75 */
         assert (Real.div((5.0 * Real.pow(2.0, 2012)), (3.0 * Real.pow(2.0, 2012))) == (5.0 / 3.0)) by { // @tac 1465-1516 // @tac 1523-1589 // @tac 1523-1564 // @tac 1523-1540
           // have h₆ : 2 ^ 2012 != 0  [type from Lean state]
           assert (Real.pow(2.0, 2012) != 0.0) by { // @tac 1506-1516
@@ -96,6 +88,7 @@ lemma amc12a_2013_p4()
           // UNCITED-APPLIED internal ×30 [exec 276 1523-1540]: applications made inside the tactic's own automation, not stated — div_mul_eq_mul_div ×1; machinery/glue: Mathlib.Meta.NormNum.IsNatPowT.trans ×8, Mathlib.Meta.NormNum.IsNatPowT.bit1 ×7, Mathlib.Meta.NormNum.isNat_ofNat ×4, Mathlib.Meta.NormNum.IsNatPowT.bit0 ×3 (+6 more heads, ×7) (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
           assert (((5.0 * Real.pow(2.0, 2012)) * 3.0) == (5.0 * (3.0 * Real.pow(2.0, 2012))));  // sub-goal of `ring_nf` (Lean state) // @tac 1557-1564
           // UNCITED-APPLIED internal ×72 [exec 285 1557-1564]: applications made inside the tactic's own automation, not stated — add_zero ×1; machinery/glue: Mathlib.Meta.NormNum.IsNatPowT.trans ×8, Mathlib.Meta.NormNum.IsNatPowT.bit1 ×7, Mathlib.Meta.NormNum.IsNat.of_raw ×5, Mathlib.Tactic.Ring.mul_congr ×4 (+22 more heads, ×47)
+          vc_amc12a_2013_p4_L75();  /* [IN-FILE CHECK] the closed lemma for line 75 */
         }
         // [TACTIC: «_<;>_» [ h₅ ] rw [ h₅ ] <;> ring_nf ring_nf <;> linarith linarith]
         // [TACTIC: rwSeq [ h₅ ]]

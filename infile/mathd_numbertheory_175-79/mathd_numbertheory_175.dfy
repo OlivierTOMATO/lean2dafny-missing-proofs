@@ -76,14 +76,6 @@ lemma mathd_numbertheory_175()
             // UNCITED-APPLIED internal ×2 [exec 198 933-977]: applications made inside the tactic's own automation, not stated — machinery/glue: of_eq_true ×1, eq_self ×1
           // [TACTIC: rwSeq [ h₅₁ ]]
           // UNCITED-APPLIED congrArg(((2 : ℕ) ^ (4 : ℕ)) ^ (502 : ℕ) * (2 : ℕ) ^ (2 : ℕ) % (10 : ℕ), ((2 : ℕ) ^ (4 : ℕ)) ^ (502 : ℕ) % (10 : ℕ) * ((2 : ℕ) ^ (2 : ℕ) % (10…, fun (_a : ℕ) => _a = (4 : ℕ)): no library counterpart (not stated) [exec 203 986-998]
-          assert forall n_0_0_1: nat :: n_0_0_1 >= 1 ==> Int.pow(6, n_0_0_1) % 10 == 6;  /* [IN-FILE CHECK] requires 1 of vc_mathd_numbertheory_175_L79 */
-          assert 2 * 2 * 2 * 2 % 10 == 6;  /* [IN-FILE CHECK] requires 2 of vc_mathd_numbertheory_175_L79 */
-          assert 0 <= 2010;  /* [IN-FILE CHECK] requires 3 of vc_mathd_numbertheory_175_L79 */
-          assert 0 <= 502;  /* [IN-FILE CHECK] requires 4 of vc_mathd_numbertheory_175_L79 */
-          assert Int.pow(2, 2010) == Int.pow(2 * 2 * 2 * 2, 502) * (2 * 2);  /* [IN-FILE CHECK] requires 5 of vc_mathd_numbertheory_175_L79 */
-          assert Int.pow(2 * 2 * 2 * 2, 502) * (2 * 2) % 10 == Int.pow(2 * 2 * 2 * 2, 502) % 10 * (2 * 2 % 10) % 10;  /* [IN-FILE CHECK] requires 6 of vc_mathd_numbertheory_175_L79 */
-          assert 10 != 0;  /* [IN-FILE CHECK] requires 7 of vc_mathd_numbertheory_175_L79 */
-          vc_mathd_numbertheory_175_L79();  /* [IN-FILE CHECK] the closed lemma for line 79 */
           assert ((((Int.pow((2 * 2 * 2 * 2), 502) % 10) * ((2 * 2) % 10)) % 10) == 4) by {  // sub-goal before `have` (Lean state) // @tac 1007-1396 // @tac 1405-1457 // @tac 1466-1526 // @tac 1466-1508 // @tac 1466-1487
             // have h₅₂ : ( 2 ^ 4 : ℕ ) ^ 502 % 10 == 6  [type from Lean state]
             assert ((Int.pow((2 * 2 * 2 * 2), 502) % 10) == 6) by { // @tac 1067-1122 // @tac 1133-1369 // @tac 1380-1396
@@ -120,6 +112,7 @@ lemma mathd_numbertheory_175()
             // `rw` closed the goal; the rest of the chain did not run
             // UNCITED-APPLIED congrArg(((2 : ℕ) ^ (4 : ℕ)) ^ (502 : ℕ) % (10 : ℕ), (6 : ℕ), fun (_a : ℕ) => _a * ((2 : ℕ) ^ (2 : ℕ) % (10 : ℕ)) % (10 : ℕ) = (4 :…): no library counterpart (not stated) [exec 365 1466-1487]
             // UNCITED-APPLIED congrArg((2 : ℕ) ^ (2 : ℕ) % (10 : ℕ), (4 : ℕ), fun (_a : ℕ) => (6 : ℕ) * _a % (10 : ℕ) = (4 : ℕ)): no library counterpart (not stated) [exec 365 1466-1487]
+            vc_mathd_numbertheory_175_L79();  /* [IN-FILE CHECK] the closed lemma for line 79 */
           }
         }
         // [TACTIC: exact h₅]

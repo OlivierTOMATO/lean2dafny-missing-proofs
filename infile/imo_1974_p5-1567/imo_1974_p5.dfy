@@ -1564,23 +1564,6 @@ lemma imo_1974_p5(a: real, b: real, c: real, d: real, s: real)
     NatCastZero();  // cite: Nat.cast_zero [applied by the tactic, not named in it: inside its internal steps (`ring1` exec 1024)]
   }
   // have lower_bound : 1 < s  [type from Lean state]
-  assert 0.0 < a;  /* [IN-FILE CHECK] requires 1 of vc_imo_1974_p5_L1567 */
-  assert 0.0 < b;  /* [IN-FILE CHECK] requires 2 of vc_imo_1974_p5_L1567 */
-  assert 0.0 < c;  /* [IN-FILE CHECK] requires 3 of vc_imo_1974_p5_L1567 */
-  assert 0.0 < d;  /* [IN-FILE CHECK] requires 4 of vc_imo_1974_p5_L1567 */
-  assert s == Real.div(a, a + b + d) + Real.div(b, a + b + c) + Real.div(c, b + c + d) + Real.div(d, a + c + d);  /* [IN-FILE CHECK] requires 5 of vc_imo_1974_p5_L1567 */
-  assert 0.0 < Real.div(a, a + b + d);  /* [IN-FILE CHECK] requires 6 of vc_imo_1974_p5_L1567 */
-  assert Real.div(a, a + b + d) < 1.0;  /* [IN-FILE CHECK] requires 7 of vc_imo_1974_p5_L1567 */
-  assert 0.0 < Real.div(b, a + b + c);  /* [IN-FILE CHECK] requires 8 of vc_imo_1974_p5_L1567 */
-  assert Real.div(b, a + b + c) < 1.0;  /* [IN-FILE CHECK] requires 9 of vc_imo_1974_p5_L1567 */
-  assert 0.0 < Real.div(c, b + c + d);  /* [IN-FILE CHECK] requires 10 of vc_imo_1974_p5_L1567 */
-  assert Real.div(c, b + c + d) < 1.0;  /* [IN-FILE CHECK] requires 11 of vc_imo_1974_p5_L1567 */
-  assert 0.0 < Real.div(d, a + c + d);  /* [IN-FILE CHECK] requires 12 of vc_imo_1974_p5_L1567 */
-  assert Real.div(d, a + c + d) < 1.0;  /* [IN-FILE CHECK] requires 13 of vc_imo_1974_p5_L1567 */
-  assert 0.0 < s;  /* [IN-FILE CHECK] requires 14 of vc_imo_1974_p5_L1567 */
-  assert 0.0 < (a + b + d) * (a + b + c);  /* [IN-FILE CHECK] requires 15 of vc_imo_1974_p5_L1567 */
-  assert 0.0 < (a + b + d) * (a + b + c) * (b + c + d);  /* [IN-FILE CHECK] requires 16 of vc_imo_1974_p5_L1567 */
-  vc_imo_1974_p5_L1567(a, b, c, d, s);  /* [IN-FILE CHECK] the closed lemma for line 1567 */
   assert (1.0 < s) by { // @tac 5355-5395 // @tac 5400-5440 // @tac 5445-5485 // @tac 5490-5530 // @tac 5535-5579 // @tac 5656-5703
     // have h₂ : 0 < a + b + d  [type from Lean state]
     assert (0.0 < ((a + b) + d)) by { // @tac 5387-5395
@@ -1745,6 +1728,7 @@ lemma imo_1974_p5(a: real, b: real, c: real, d: real, s: real)
         }
       }
     }
+    vc_imo_1974_p5_L1567(a, b, c, d, s);  /* [IN-FILE CHECK] the closed lemma for line 1567 */
   }
   // have upper_bound : s < 2  [type from Lean state]
   assert (s < 2.0) by { // @tac 5988-6075 // @tac 6080-6151 // @tac 6156-6227 // @tac 6232-6307 // @tac 6312-6385 // @tac 6390-6516 // @tac 6521-6544

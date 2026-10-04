@@ -935,23 +935,6 @@ lemma aime_1999_p11(m: Rat.rat)
               assert (Real.tan((((m).to_real() * Real.pi()) / 180.0)) == Real.tan(((35.0 * Real.pi()) / 72.0)));
             }
             // have h₁₁ : m * Real.pi / 180 == 35 * Real.pi / 72  [type from Lean state]
-            assert m.Rational?;  /* [IN-FILE CHECK] requires 1 of vc_aime_1999_p11_L938 */
-            assert gcd(Int.natAbs(m.num), m.denom) == 1;  /* [IN-FILE CHECK] requires 2 of vc_aime_1999_p11_L938 */
-            assert Rat.lt(Rat.of_int(0), m);  /* [IN-FILE CHECK] requires 3 of vc_aime_1999_p11_L938 */
-            assert Rat.of_int(0).num * m.denom < m.num * Rat.of_int(0).denom;  /* [IN-FILE CHECK] requires 4 of vc_aime_1999_p11_L938 */
-            assert Real.sum(IccN(1, 35), ((k: nat) => Real.sin(5.0 * (k as real) * Real.pi() / 180.0))) == Real.tan(m.to_real() * Real.pi() / 180.0);  /* [IN-FILE CHECK] requires 5 of vc_aime_1999_p11_L938 */
-            assert Real.div((m.num as real), (m.denom as real)) < 90.0;  /* [IN-FILE CHECK] requires 6 of vc_aime_1999_p11_L938 */
-            assert 0 <= 1;  /* [IN-FILE CHECK] requires 7 of vc_aime_1999_p11_L938 */
-            assert 0 <= 35;  /* [IN-FILE CHECK] requires 8 of vc_aime_1999_p11_L938 */
-            assert 180.0 != 0.0;  /* [IN-FILE CHECK] requires 9 of vc_aime_1999_p11_L938 */
-            assert Real.sum(IccN(1, 35), ((k: nat) => Real.sin(5.0 * (k as real) * Real.pi() / 180.0))) == Real.div(Real.cos(2.5 * Real.pi() / 180.0), Real.sin(2.5 * Real.pi() / 180.0));  /* [IN-FILE CHECK] requires 10 of vc_aime_1999_p11_L938 */
-            assert 72.0 != 0.0;  /* [IN-FILE CHECK] requires 11 of vc_aime_1999_p11_L938 */
-            assert Real.sum(IccN(1, 35), ((k: nat) => Real.sin(5.0 * (k as real) * Real.pi() / 180.0))) == Real.tan(35.0 * Real.pi() / 72.0);  /* [IN-FILE CHECK] requires 12 of vc_aime_1999_p11_L938 */
-            assert Real.tan(m.to_real() * Real.pi() / 180.0) == Real.tan(35.0 * Real.pi() / 72.0);  /* [IN-FILE CHECK] requires 13 of vc_aime_1999_p11_L938 */
-            assert 2.0 != 0.0;  /* [IN-FILE CHECK] requires 14 of vc_aime_1999_p11_L938 */
-            assert 0.0 - Real.pi() / 2.0 < m.to_real() * Real.pi() / 180.0;  /* [IN-FILE CHECK] requires 15 of vc_aime_1999_p11_L938 */
-            assert 0.0 - Real.pi() / 2.0 < 35.0 * Real.pi() / 72.0;  /* [IN-FILE CHECK] requires 16 of vc_aime_1999_p11_L938 */
-            vc_aime_1999_p11_L938(m);  /* [IN-FILE CHECK] the closed lemma for line 938 */
             assert ((((m).to_real() * Real.pi()) / 180.0) == ((35.0 * Real.pi()) / 72.0)) by { // @tac 10530-11017
               assert (-((Real.pi() / 2.0)) < (((m).to_real() * Real.pi()) / 180.0)) by {  // sub-goal of `by` (Lean state) // @tac 10667-10935 // @tac 10950-10958
                 // have h₁₂ :  * Real.pi / 180 > 0  [type from Lean state]
@@ -1097,6 +1080,7 @@ lemma aime_1999_p11(m: Rat.rat)
               // [TACTIC: apply ( injOn_tan.eq_iff ⟨ by have h₁₂ : ( m : ℝ ) * Real.pi / 180 > 0 := by have h₁₃ : ( m : ℝ ) > 0 := by exact_mod_cast h₀ exact_mod_cast h₀ have h₁₃ : ( m : ℝ ) > 0 := by exact_mod_cast h₀ exact_mod_cast h₀ have h₁₄ : 0 < Real.pi := Real.pi_pos have h₁₄ : 0 < Real.pi := Real.pi_pos have h₁₅ : 0 < ( 180 : ℝ ) := by norm_num norm_num have h₁₅ : 0 < ( 180 : ℝ ) := by norm_num norm_num positivity have h₁₂ : ( m : ℝ ) * Real.pi / 180 > 0 := by have h₁₃ : ( m : ℝ ) > 0 := by exact_mod_cast h₀ exact_mod_cast h₀ have h₁₃ : ( m : ℝ ) > 0 := by exact_mod_cast h₀ exact_mod_cast h₀ have h₁₄ : 0 < Real.pi := Real.pi_pos have h₁₄ : 0 < Real.pi := Real.pi_pos have h₁₅ : 0 < ( 180 : ℝ ) := by norm_num norm_num have h₁₅ : 0 < ( 180 : ℝ ) := by norm_num norm_num positivity linarith linarith , by linarith linarith ⟩ ⟨ by have h₁₂ : ( m : ℝ ) * Real.pi / 180 > 0 := by have h₁₃ : ( m : ℝ ) > 0 := by exact_mod_cast h₀ exact_mod_cast h₀ have h₁₃ : ( m : ℝ ) > 0 := by exact_mod_cast h₀ exact_mod_cast h₀ have h₁₄ : 0 < Real.pi := Real.pi_pos have h₁₄ : 0 < Real.pi := Real.pi_pos have h₁₅ : 0 < ( 180 : ℝ ) := by norm_num norm_num have h₁₅ : 0 < ( 180 : ℝ ) := by norm_num norm_num positivity have h₁₂ : ( m : ℝ ) * Real.pi / 180 > 0 := by have h₁₃ : ( m : ℝ ) > 0 := by exact_mod_cast h₀ exact_mod_cast h₀ have h₁₃ : ( m : ℝ ) > 0 := by exact_mod_cast h₀ exact_mod_cast h₀ have h₁₄ : 0 < Real.pi := Real.pi_pos have h₁₄ : 0 < Real.pi := Real.pi_pos have h₁₅ : 0 < ( 180 : ℝ ) := by norm_num norm_num have h₁₅ : 0 < ( 180 : ℝ ) := by norm_num norm_num positivity linarith linarith , by linarith linarith ⟩ ⟨ by linarith linarith , by linarith linarith ⟩ ⟨ by linarith linarith , by linarith linarith ⟩ ) . mp h₁₀]
               // UNCITED injOn_tan.eq_iff: Lean records its application under the generic head Set.InjOn.eq_iff (marked UNCITED-APPLIED at its execution), not matched to this name here; not stated
               // UNCITED-APPLIED Set.InjOn.eq_iff(Set.Ioo (-(π / (2 : ℝ))) (π / (2 : ℝ)), tan, ↑m * π / (180 : ℝ), (35 : ℝ) * π / (72 : ℝ)): library counterpart RealInjOnTanEqIff (Mathlib `injOn_tan.eq_iff`) exists, but the translation of this tactic states no such instance [exec 2335 10530-11017]
+              vc_aime_1999_p11_L938(m);  /* [IN-FILE CHECK] the closed lemma for line 938 */
             }
             // [TACTIC: exact h₁₁]
             assert ((((m).to_real() * Real.pi()) / 180.0) == ((35.0 * Real.pi()) / 72.0));

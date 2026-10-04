@@ -111,26 +111,11 @@ lemma mathd_numbertheory_618(n: nat, p: nat -> nat)
         // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
         // UNCITED-APPLIED congrArg(p n, p n + (0 : ℕ), fun (_a : ℕ) => Nat.gcd _a (_a + (2 : ℕ) * n) = Nat.gcd _a ((2 : ℕ) *…): no library counterpart (not stated) [exec 157 1133-1174]
         // UNCITED-APPLIED congrArg(Nat.gcd (p n + (0 : ℕ)) (p n + (0 : ℕ) + (2 : ℕ) * n), Nat.gcd (p n + (0 : ℕ) + (2 : ℕ) * n) (p n + (0 : ℕ)), fun (_a : ℕ) => _a = Nat.gcd (p n + (0 : ℕ)) ((2 : ℕ) * n)): no library counterpart (not stated) [exec 157 1133-1174]
-        assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_mathd_numbertheory_618_L114 */
-        assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_mathd_numbertheory_618_L114 */
-        assert n > 0;  /* [IN-FILE CHECK] requires 3 of vc_mathd_numbertheory_618_L114 */
-        assert forall x_1: nat :: p.requires(x_1);  /* [IN-FILE CHECK] requires 4 of vc_mathd_numbertheory_618_L114 */
-        assert forall x_1: nat :: p(x_1) == tsub(x_1 * x_1, x_1) + 41;  /* [IN-FILE CHECK] requires 5 of vc_mathd_numbertheory_618_L114 */
-        assert 1 < gcd(p(n), p(n + 1));  /* [IN-FILE CHECK] requires 6 of vc_mathd_numbertheory_618_L114 */
-        assert 0 <= n + 1;  /* [IN-FILE CHECK] requires 7 of vc_mathd_numbertheory_618_L114 */
-        assert p(n + 1) == p(n) + 2 * n;  /* [IN-FILE CHECK] requires 8 of vc_mathd_numbertheory_618_L114 */
-        assert p(n) + 0 == p(n);  /* [IN-FILE CHECK] requires 9 of vc_mathd_numbertheory_618_L114 */
-        assert 0 <= p(n) + 0;  /* [IN-FILE CHECK] requires 10 of vc_mathd_numbertheory_618_L114 */
-        assert 0 <= p(n) + 0 + 2 * n;  /* [IN-FILE CHECK] requires 11 of vc_mathd_numbertheory_618_L114 */
-        assert gcd(p(n) + 0, p(n) + 0 + 2 * n) == gcd(p(n) + 0 + 2 * n, p(n) + 0);  /* [IN-FILE CHECK] requires 12 of vc_mathd_numbertheory_618_L114 */
-        assert 0 <= p(n) + 2 * n;  /* [IN-FILE CHECK] requires 13 of vc_mathd_numbertheory_618_L114 */
-        assert gcd(p(n) + 2 * n, p(n)) == gcd(p(n), p(n) + 2 * n);  /* [IN-FILE CHECK] requires 14 of vc_mathd_numbertheory_618_L114 */
-        assert 0 <= 2 * n;  /* [IN-FILE CHECK] requires 15 of vc_mathd_numbertheory_618_L114 */
-        vc_mathd_numbertheory_618_L114(n, n, p);  /* [IN-FILE CHECK] the closed lemma for line 114 */
         assert (gcd(((p(n) + 0) + (2 * n)), (p(n) + 0)) == gcd((p(n) + 0), (2 * n))) by {  // sub-goal of `simp` (Lean state) // @tac 1185-1233
           // UNCITED Nat.gcd_add_mul_right_right: no Lean instance recorded (arguments unknown), not guessed
           NatGcdComm((p(n) + (2 * n)), p(n));  // cite: Nat.gcd_comm
           // UNCITED-APPLIED internal ×12 [exec 193 1185-1233]: applications made inside the tactic's own automation, not stated — add_zero ×1, Nat.gcd_self_add_right ×1; machinery/glue: Eq.trans ×3, congrArg ×3, congr ×2, of_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.gcd_comm [Lean recorded ×1])
+          vc_mathd_numbertheory_618_L114(__outer_n, n_0_0_0_1_0, n, p);  /* [IN-FILE CHECK] the closed lemma for line 114 */
         }
       }
       // [TACTIC: «_<;>_» [ h₄ ] rw [ h₄ ] <;> simp [ h₀ ] simp [ h₀ ] simp [ h₀ ] <;> ring_nf ring_nf <;> omega omega]
@@ -449,8 +434,9 @@ lemma mathd_numbertheory_618(n: nat, p: nat -> nat)
 lemma {:axiom} NatGcdSelfAddRight(m: nat, n: nat)  // [ADDED DECLARATION]
   ensures gcd(m, m + n) == gcd(m, n)
 
-lemma {:induction false} vc_mathd_numbertheory_618_L114(n: int, n_0_0_0_1_0_1_0: int, p: nat -> nat)
+lemma {:induction false} vc_mathd_numbertheory_618_L114(n: int, n_0_0_0_1_0: int, n_0_0_0_1_0_1_0: int, p: nat -> nat)
   requires 0 <= n
+  requires 0 <= n_0_0_0_1_0
   requires 0 <= n_0_0_0_1_0_1_0
   requires n > 0
   requires forall x_1: nat :: p.requires(x_1)

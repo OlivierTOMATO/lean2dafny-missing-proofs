@@ -59,32 +59,6 @@ lemma {:isolate_assertions} induction_helper_1(u: nat -> Rat.rat, n: nat)
       // GAP: Nat.cast_add: this execution also rewrote the hypotheses h₃, h₄; the harvest for this theorem records only the goal-side application(s) of the tactic (hypothesis-side rewrites are not recorded), so its applications to those hypotheses (if any) are not stated
       // GAP: Nat.cast_one: this execution also rewrote the hypotheses h₃, h₄; the harvest for this theorem records only the goal-side application(s) of the tactic (hypothesis-side rewrites are not recorded), so its applications to those hypotheses (if any) are not stated
       // UNCITED-APPLIED internal ×3 [exec 59 683-763]: applications made inside the tactic's own automation, not stated — machinery/glue: congrArg ×2, Eq.trans ×1 (cited in this block, not counted here: Nat.cast_add [Lean recorded ×1], Nat.cast_one [Lean recorded ×1])
-      assert 0 <= (n + 1);  /* [IN-FILE CHECK] requires 1 of vc_aime_1984_p1_L62 */
-      assert forall n_2: int :: 0 <= n_2 ==> u.requires(n_2 + 1) && u.requires(n_2);  /* [IN-FILE CHECK] requires 2 of vc_aime_1984_p1_L62 */
-      assert forall n_2: int :: 0 <= n_2 ==> u(n_2 + 1) == Rat.add(u(n_2), Rat.of_int(1));  /* [IN-FILE CHECK] requires 3 of vc_aime_1984_p1_L62 */
-      assert Rat.sum(range(98), ((k: nat) => u(k + 1))) == Rat.of_int(137);  /* [IN-FILE CHECK] requires 4 of vc_aime_1984_p1_L62 */
-      assert (n + 1) != 0;  /* [IN-FILE CHECK] requires 5 of vc_aime_1984_p1_L62 */
-      assert 0 <= (n + 1) - 1;  /* [IN-FILE CHECK] requires 6 of vc_aime_1984_p1_L62 */
-      assert 0 <= (n + 1) || (n + 1) - 1 == (n + 1);  /* [IN-FILE CHECK] requires 7 of vc_aime_1984_p1_L62 */
-      assert (n + 1) - 1 < (n + 1);  /* [IN-FILE CHECK] requires 8 of vc_aime_1984_p1_L62 */
-      assert forall n_2: int :: 0 <= n_2 ==> u.requires(n_2 + 1) && u.requires(n_2);  /* [IN-FILE CHECK] requires 9 of vc_aime_1984_p1_L62 */
-      assert forall n_2: int :: 0 <= n_2 ==> u(n_2 + 1) == Rat.add(u(n_2), Rat.of_int(1));  /* [IN-FILE CHECK] requires 10 of vc_aime_1984_p1_L62 */
-      assert u((n + 1) - 1) == Rat.add(u(0), Rat.of_int((n + 1) - 1));  /* [IN-FILE CHECK] requires 11 of vc_aime_1984_p1_L62 */
-      assert n == (n + 1) - 1;  /* [IN-FILE CHECK] requires 12 of vc_aime_1984_p1_L62 */
-      assert 0 <= n + 1;  /* [IN-FILE CHECK] requires 13 of vc_aime_1984_p1_L62 */
-      assert Rat.of_int(1).Rational?;  /* [IN-FILE CHECK] requires 14 of vc_aime_1984_p1_L62 */
-      assert Rat.add(u(n), Rat.of_int(1)).Rational?;  /* [IN-FILE CHECK] requires 15 of vc_aime_1984_p1_L62 */
-      assert u(n + 1) == Rat.add(u(n), Rat.of_int(1));  /* [IN-FILE CHECK] requires 16 of vc_aime_1984_p1_L62 */
-      assert 0 <= n + 1 + 1;  /* [IN-FILE CHECK] requires 17 of vc_aime_1984_p1_L62 */
-      assert Rat.add(u(n + 1), Rat.of_int(1)).Rational?;  /* [IN-FILE CHECK] requires 18 of vc_aime_1984_p1_L62 */
-      assert u(n + 1 + 1) == Rat.add(u(n + 1), Rat.of_int(1));  /* [IN-FILE CHECK] requires 19 of vc_aime_1984_p1_L62 */
-      assert 0 <= 1;  /* [IN-FILE CHECK] requires 20 of vc_aime_1984_p1_L62 */
-      assert Rat.of_int(n + 1) == Rat.add(Rat.of_int(n), Rat.of_int(1));  /* [IN-FILE CHECK] requires 21 of vc_aime_1984_p1_L62 */
-      assert Rat.of_int(1) == Rat.of_int(1);  /* [IN-FILE CHECK] requires 22 of vc_aime_1984_p1_L62 */
-      assert 0 <= 0;  /* [IN-FILE CHECK] requires 23 of vc_aime_1984_p1_L62 */
-      assert Rat.of_int(n).Rational?;  /* [IN-FILE CHECK] requires 24 of vc_aime_1984_p1_L62 */
-      assert Rat.add(Rat.of_int(n), Rat.of_int(1)).Rational?;  /* [IN-FILE CHECK] requires 25 of vc_aime_1984_p1_L62 */
-      assert Rat.add(u(0), Rat.add(Rat.of_int(n), Rat.of_int(1))).Rational?;  /* [IN-FILE CHECK] requires 26 of vc_aime_1984_p1_L62 */
       vc_aime_1984_p1_L62(n + 1, n, u);  /* [IN-FILE CHECK] the closed lemma for line 62 */
       assert (u((n + 1)) == Rat.add(u(0), Rat.add(Rat.of_int(n), Rat.of_int(1))));  // hypothesis h₃ after `simp` (Lean state) // @tac-hyp 683-763
       assert (u((n + 2)) == Rat.add(u((n + 1)), Rat.of_int(1)));  // hypothesis h₄ after `simp` (Lean state) // @tac-hyp 683-763

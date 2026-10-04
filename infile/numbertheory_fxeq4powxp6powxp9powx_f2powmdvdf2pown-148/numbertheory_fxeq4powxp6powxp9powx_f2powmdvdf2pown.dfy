@@ -145,31 +145,6 @@ lemma numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown(m: nat, n: nat, f: nat 
       // UNCITED-APPLIED congrArg((4 : ℕ) ^ ((2 : ℕ) * k), (4 : ℕ) ^ k * (4 : ℕ) ^ k, fun (_a : ℕ) => _a + (6 : ℕ) ^ ((2 : ℕ) * k) + (9 : ℕ) ^ ((2 : ℕ) * k…): no library counterpart (not stated) [exec 415 1170-1191]
       // UNCITED-APPLIED congrArg((6 : ℕ) ^ ((2 : ℕ) * k), (6 : ℕ) ^ k * (6 : ℕ) ^ k, fun (_a : ℕ) => (4 : ℕ) ^ k * (4 : ℕ) ^ k + _a + (9 : ℕ) ^ ((2 : ℕ) *…): no library counterpart (not stated) [exec 415 1170-1191]
       // UNCITED-APPLIED congrArg((9 : ℕ) ^ ((2 : ℕ) * k), (9 : ℕ) ^ k * (9 : ℕ) ^ k, fun (_a : ℕ) => (4 : ℕ) ^ k * (4 : ℕ) ^ k + (6 : ℕ) ^ k * (6 : ℕ) ^ k…): no library counterpart (not stated) [exec 415 1170-1191]
-      assert 0 <= m;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert 0 <= k;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert forall x_1: nat :: f.requires(x_1);  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert forall x_1: nat :: f(x_1) == Int.pow(4, x_1) + Int.pow(6, x_1) + Int.pow(9, x_1);  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert 0 < m;  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert 0 < n;  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert m <= n;  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert forall m0: int, n0: int :: (forall x_2: nat :: f.requires(x_2)) && (0 <= m0 && 0 <= n0 && (forall x_2: nat :: f(x_2) == Int.pow(4, x_2) + Int.pow(6, x_2) + Int.pow(9, x_2)) && 0 < m0 && 0 < n0 && m0 <= n0 && ((0 <= m0 && m0 < m) || (m0 == m && 0 <= n0 && n0 < n)) ==> f.requires(Int.pow(2, m0)) && f.requires(Int.pow(2, n0)) && NatDvd(f(Int.pow(2, m0)), f(Int.pow(2, n0))));  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert 0 <= k;  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert 0 <= 2 * k;  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert f(2 * k) == Int.pow(4, 2 * k) + Int.pow(6, 2 * k) + Int.pow(9, 2 * k);  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert f(k) == Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k);  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert Int.pow(4, 2 * k) == Int.pow(4, k) * Int.pow(4, k);  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert Int.pow(6, 2 * k) == Int.pow(6, k) * Int.pow(6, k);  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert Int.pow(9, 2 * k) == Int.pow(9, k) * Int.pow(9, k);  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert 0 <= (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)) * (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k));  /* [IN-FILE CHECK] requires 17 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert 0 <= 2 * (Int.pow(4, k) * Int.pow(6, k) + Int.pow(4, k) * Int.pow(9, k) + Int.pow(6, k) * Int.pow(9, k));  /* [IN-FILE CHECK] requires 18 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert Int.pow(4, k) * Int.pow(4, k) + Int.pow(6, k) * Int.pow(6, k) + Int.pow(9, k) * Int.pow(9, k) == tsub((Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)) * (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)), 2 * (Int.pow(4, k) * Int.pow(6, k) + Int.pow(4, k) * Int.pow(9, k) + Int.pow(6, k) * Int.pow(9, k)));  /* [IN-FILE CHECK] requires 19 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert Int.pow(4, k) * Int.pow(6, k) + Int.pow(4, k) * Int.pow(9, k) + Int.pow(6, k) * Int.pow(9, k) == Int.pow(6, k) * (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k));  /* [IN-FILE CHECK] requires 20 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert 0 <= 2 * (Int.pow(6, k) * (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)));  /* [IN-FILE CHECK] requires 21 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert 0 <= Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k);  /* [IN-FILE CHECK] requires 22 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert 0 <= 2 * Int.pow(6, k);  /* [IN-FILE CHECK] requires 23 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      assert tsub((Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)) * (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)), 2 * (Int.pow(6, k) * (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)))) == (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)) * tsub(Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k), 2 * Int.pow(6, k));  /* [IN-FILE CHECK] requires 24 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
-      vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148(f, k, k, m, n);  /* [IN-FILE CHECK] the closed lemma for line 148 */
       assert ((((Int.pow(4, k) * Int.pow(4, k)) + (Int.pow(6, k) * Int.pow(6, k))) + (Int.pow(9, k) * Int.pow(9, k))) == (((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k)) * tsub(((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k)), (2 * Int.pow(6, k))))) by {  // sub-goal before `have` (Lean state) // @tac 1196-2067 // @tac 2072-4114 // @tac 4119-4417 // @tac 4119-4134
         // have h₆ : 4 ^ k * 4 ^ k + 6 ^ k * 6 ^ k + 9 ^ k * 9 ^ k == ( 4 ^ k + 6 ^ k + 9 ^  [type from Lean state]
         assert ((((Int.pow(4, k) * Int.pow(4, k)) + (Int.pow(6, k) * Int.pow(6, k))) + (Int.pow(9, k) * Int.pow(9, k))) == tsub((((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k)) * ((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k))), (2 * (((Int.pow(4, k) * Int.pow(6, k)) + (Int.pow(4, k) * Int.pow(9, k))) + (Int.pow(6, k) * Int.pow(9, k)))))) by { // @tac 1516-1842 // @tac 1849-2055 // @tac 2062-2067
@@ -352,6 +327,22 @@ lemma numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown(m: nat, n: nat, f: nat 
           // UNCITED-APPLIED Eq.symm(k, (0 : ℕ)): library counterpart exists, but the translation of this tactic states no such instance [exec 1220 4143-4417]
           // UNCITED-APPLIED Eq.symm(k✝, k + (1 : ℕ)): library counterpart exists, but the translation of this tactic states no such instance [exec 1220 4143-4417]
         }
+        assert 0 <= m;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        assert 0 <= k;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        assert forall x_1: nat :: f.requires(x_1);  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        assert forall x_1: nat :: f(x_1) == Int.pow(4, x_1) + Int.pow(6, x_1) + Int.pow(9, x_1);  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        assert 0 < m;  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        assert 0 < n;  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        assert forall m0: int, n0: int :: (forall x_2: nat :: f.requires(x_2)) && (0 <= m0 && 0 <= n0 && (forall x_2: nat :: f(x_2) == Int.pow(4, x_2) + Int.pow(6, x_2) + Int.pow(9, x_2)) && 0 < m0 && 0 < n0 && m0 <= n0 && ((0 <= m0 && m0 < m) || (m0 == m && 0 <= n0 && n0 < n)) ==> f.requires(Int.pow(2, m0)) && f.requires(Int.pow(2, n0)) && NatDvd(f(Int.pow(2, m0)), f(Int.pow(2, n0))));  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        assert 0 <= k;  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        assert 0 <= 2 * k;  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        assert 0 <= (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)) * (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k));  /* [IN-FILE CHECK] requires 17 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        assert 0 <= 2 * (Int.pow(4, k) * Int.pow(6, k) + Int.pow(4, k) * Int.pow(9, k) + Int.pow(6, k) * Int.pow(9, k));  /* [IN-FILE CHECK] requires 18 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        assert 0 <= 2 * (Int.pow(6, k) * (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)));  /* [IN-FILE CHECK] requires 21 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        assert 0 <= Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k);  /* [IN-FILE CHECK] requires 22 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        assert 0 <= 2 * Int.pow(6, k);  /* [IN-FILE CHECK] requires 23 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148 */
+        vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L148(f, k, k, m, n);  /* [IN-FILE CHECK] the closed lemma for line 148 */
       }
     }
   }

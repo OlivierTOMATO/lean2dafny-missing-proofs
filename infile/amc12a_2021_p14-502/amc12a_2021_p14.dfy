@@ -499,7 +499,6 @@ lemma amc12a_2021_p14()
     // [TACTIC: rwSeq [ h₅₁ , h₅₂ ]]
     // UNCITED-APPLIED congrArg(logb (5 : ℝ) (3 : ℝ), Real.log (3 : ℝ) / Real.log (5 : ℝ), fun (_a : ℝ) => _a * logb (3 : ℝ) (5 : ℝ) = (1 : ℝ)): no library counterpart (not stated) [exec 2299 7177-7198]
     // UNCITED-APPLIED congrArg(logb (3 : ℝ) (5 : ℝ), Real.log (5 : ℝ) / Real.log (3 : ℝ), fun (_a : ℝ) => Real.log (3 : ℝ) / Real.log (5 : ℝ) * _a = (1 : ℝ)): no library counterpart (not stated) [exec 2299 7177-7198]
-    vc_amc12a_2021_p14_L502();  /* [IN-FILE CHECK] the closed lemma for line 502 */
     assert ((Real.div(Real.log(3.0), Real.log(5.0)) * Real.div(Real.log(5.0), Real.log(3.0))) == 1.0) by {  // sub-goal before `have` (Lean state) // @tac 7203-7299 // @tac 7304-7400 // @tac 7405-7498 // @tac 7405-7485 // @tac 7405-7447 // @tac 7405-7434
       // have h₅₃ : Real.log ( 3 ) != 0  [type from Lean state]
       assert (Real.log(3.0) != 0.0) by {
@@ -537,6 +536,7 @@ lemma amc12a_2021_p14()
       // [TACTIC: «Field_simp[_]At___» [ h₅₃ , h₅₄ ]]
       // `field_simp` closed the goal; the rest of the chain did not run
       // UNCITED-APPLIED internal ×14 [exec 2386 7405-7434]: applications made inside the tactic's own automation, not stated — mul_div_assoc' ×1, div_mul_eq_mul_div ×1, IsUnit.mul_div_cancel_right ×1, div_self ×1; machinery/glue: Eq.trans ×4, congrArg ×3, of_eq_true ×1, eq_false ×1 (+1 more heads, ×1)
+      vc_amc12a_2021_p14_L502();  /* [IN-FILE CHECK] the closed lemma for line 502 */
     }
   }
   // have h₆ : (∑ k ∈ Finset.Icc (1 : ℕ) (20 : ℕ), Real.logb ((5 : ℝ) ^ k) ((3 : ℝ) ^ k ^ (2 : ℕ))) * ∑ k ∈ Finset.Icc (1 : ℕ  [type from Lean state]

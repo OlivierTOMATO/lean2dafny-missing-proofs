@@ -1499,32 +1499,6 @@ lemma algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3(a: real, b: real, c
       assert (c <= (4.0 / 3.0));
     }
     // have h₆₅ : a <= 1 / 3  [type from Lean state]
-    assert a <= b;  /* [IN-FILE CHECK] requires 1 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert b <= c;  /* [IN-FILE CHECK] requires 2 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert a + b + c == 2.0;  /* [IN-FILE CHECK] requires 3 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert a * b + b * c + c * a == 1.0;  /* [IN-FILE CHECK] requires 4 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert 0.0 <= a;  /* [IN-FILE CHECK] requires 5 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert 1.0 <= c;  /* [IN-FILE CHECK] requires 6 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert 3.0 != 0.0;  /* [IN-FILE CHECK] requires 7 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert c <= 4.0 / 3.0;  /* [IN-FILE CHECK] requires 8 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert a + b == 2.0 - c;  /* [IN-FILE CHECK] requires 9 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert a * b == (c - 1.0) * (c - 1.0);  /* [IN-FILE CHECK] requires 10 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert c >= 1.0;  /* [IN-FILE CHECK] requires 11 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert (0.0 <= a - 0.0) || (a - 0.0 < 0.0);  /* [IN-FILE CHECK] requires 12 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert ((0.0 <= a - 0.0) && (0.0 <= b - a) && (0.0 <= (a - 0.0) * (b - a)) && ((a - b <= 0.0) || (0.0 < a - b))) || ((!(0.0 <= a - 0.0 && 0.0 <= b - a)) && ((a - b <= 0.0) || (0.0 < a - b)));  /* [IN-FILE CHECK] requires 13 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert ((a - b <= 0.0) && (a + b + c - 2.0 == 0.0) && ((a - b) * (a + b + c - 2.0) == 0.0) && ((b - c <= 0.0) || (0.0 < b - c))) || ((!(a - b <= 0.0 && a + b + c - 2.0 == 0.0)) && ((b - c <= 0.0) || (0.0 < b - c)));  /* [IN-FILE CHECK] requires 14 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert ((b - c <= 0.0) && (a + b + c - 2.0 == 0.0) && ((b - c) * (a + b + c - 2.0) == 0.0) && ((b - c <= 0.0) || (0.0 < b - c))) || ((!(b - c <= 0.0 && a + b + c - 2.0 == 0.0)) && ((b - c <= 0.0) || (0.0 < b - c)));  /* [IN-FILE CHECK] requires 15 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert ((b - c <= 0.0) && (3.0 * c - 1.0 * 4.0 <= 0.0) && (0.0 <= (b - c) * (3.0 * c - 1.0 * 4.0))) || (!(b - c <= 0.0 && 3.0 * c - 1.0 * 4.0 <= 0.0));  /* [IN-FILE CHECK] requires 16 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert 2.0 * (a - b) + (0.0 - 2.0 * (a + b + c - 2.0)) + 6.0 * (a * b - (c - 1.0) * (c - 1.0)) + 2.0 * (1.0 * 1.0 - 3.0 * a) + (0.0 - 3.0 * ((a - 0.0) * (b - a))) + (0.0 - 3.0 * ((a - b) * (a + b + c - 2.0))) + (0.0 - 3.0 * ((b - c) * (a + b + c - 2.0))) + (0.0 - (b - c) * (3.0 * c - 1.0 * 4.0)) == 0.0;  /* [IN-FILE CHECK] requires 17 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert (0.0 <= a - 0.0) == (0.0 <= a);  /* [IN-FILE CHECK] requires 18 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert (0.0 <= b - a) == (a <= b);  /* [IN-FILE CHECK] requires 19 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert (1 as real) == 1.0;  /* [IN-FILE CHECK] requires 20 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert (0 as real) == 0.0;  /* [IN-FILE CHECK] requires 21 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert (0.0 <= a - 0.0) || (a - 0.0 < 0.0);  /* [IN-FILE CHECK] requires 22 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert 0.0 <= a - 0.0;  /* [IN-FILE CHECK] requires 23 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert 0.0 <= b - a;  /* [IN-FILE CHECK] requires 24 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    assert 0.0 <= (a - 0.0) * (b - a);  /* [IN-FILE CHECK] requires 25 of vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502 */
-    vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502(a, b, c);  /* [IN-FILE CHECK] the closed lemma for line 1502 */
     assert (a <= (1.0 / 3.0)) by { // @tac 4620-4887
       // [TACTIC: «Nlinarith[_]At___» [ sq_nonneg ( a - b ) , sq_nonneg ( b - c ) , sq_nonneg ( c - a ) , mul_nonneg ( sub_nonneg.mpr h₃ ) ( sub_nonneg.mpr h₀ . 1 ) , mul_nonneg ( sub_nonneg.mpr h₀ . 1 ) ( sub_nonneg.mpr h₀ . 2 ) , mul_nonneg ( sub_nonneg.mpr h₃ ) ( sub_nonneg.mpr h₀ . 2 ) ]]
       // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 4620-4887 exec 1272)
@@ -1569,6 +1543,7 @@ lemma algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3(a: real, b: real, c
       // UNCITED-APPLIED internal ×268 [exec 1282 4620-4887]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.mul_congr ×8, Mathlib.Tactic.Ring.sub_congr ×8, Mathlib.Tactic.Ring.sub_pf ×8, Mathlib.Tactic.Ring.neg_add ×8 (+44 more heads, ×236) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1], Nat.cast_zero [Lean recorded ×1])
       // UNCITED-APPLIED internal ×14 [exec 1273 4620-4887]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.IsInt.to_isNat ×2, Mathlib.Meta.NormNum.IsRat.to_isInt ×2, Mathlib.Meta.NormNum.IsNat.to_isRat ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2 (+6 more heads, ×6) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
       // UNCITED-APPLIED internal ×5 [exec 1275 4620-4887]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+      vc_algebra_apbpceq2_abpbcpcaeq1_aleq1on3anbleq1ancleq4on3_L1502(a, b, c);  /* [IN-FILE CHECK] the closed lemma for line 1502 */
     }
     // [TACTIC: exact h₆₅]
     assert (a <= (1.0 / 3.0));

@@ -435,11 +435,6 @@ lemma mathd_algebra_756(a: real, b: real)
     // UNCITED-APPLIED congrArg(a, (5 : ℝ), fun (_a : ℝ) => (3 : ℝ) ^ _a = (243 : ℝ)): no library counterpart (not stated) [exec 1017 2832-2847]
     assert (Real.rpow(3.0, 5.0) == 243.0) by {  // sub-goal before `have` (Lean state) // @tac 2852-3051 // @tac 3056-3085 // @tac 3056-3068
       // have h₅₁ : 3 ^ 5 == 243  [type from Lean state]
-      assert Real.rpow(2.0, a) == 32.0;  /* [IN-FILE CHECK] requires 1 of vc_mathd_algebra_756_L438 */
-      assert Real.rpow(a, b) == 125.0;  /* [IN-FILE CHECK] requires 2 of vc_mathd_algebra_756_L438 */
-      assert a > 0.0;  /* [IN-FILE CHECK] requires 3 of vc_mathd_algebra_756_L438 */
-      assert a == 5.0;  /* [IN-FILE CHECK] requires 4 of vc_mathd_algebra_756_L438 */
-      assert b == 3.0;  /* [IN-FILE CHECK] requires 5 of vc_mathd_algebra_756_L438 */
       vc_mathd_algebra_756_L438(a, b);  /* [IN-FILE CHECK] the closed lemma for line 438 */
       assert (Real.rpow(3.0, 5.0) == 243.0); // @tac 2907-3051 // @tac 2907-3026 // @tac 2907-3001 // @tac 2907-2977
       // UNCITED-APPLIED internal ×13 [exec 1076 2907-2977]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×3, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+7 more heads, ×7)

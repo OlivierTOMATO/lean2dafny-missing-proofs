@@ -134,28 +134,13 @@ lemma amc12a_2009_p6(m: real, n: real, p: real, q: real)
                     assert (0.0 <= (2.0));  // precondition of RealRpowMul (Lean: Real.rpow_mul)
                     RealRpowMul(2.0, (2 as real), (m * n));  // cite: Real.rpow_mul
                     // UNCITED-APPLIED congrArg(((2 : ℝ) ^ ↑(2 : ℕ)) ^ (m * n), (2 : ℝ) ^ (↑(2 : ℕ) * (m * n)), fun (_a : ℝ) => _a = (2 : ℝ) ^ ((2 : ℝ) * (m * n))): no library counterpart (not stated) [exec 850 3116-3138]
-                    assert p == Real.rpow(2.0, m);  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2009_p6_L137 */
-                    assert q == Real.rpow(3.0, n);  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2009_p6_L137 */
-                    assert Real.rpow(p, 2.0 * n) == Real.rpow(2.0, m * (2.0 * n));  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2009_p6_L137 */
-                    assert Real.rpow(q, m) == Real.rpow(3.0, n * m);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2009_p6_L137 */
-                    assert Real.rpow(p, 2.0 * n) * Real.rpow(q, m) == Real.rpow(2.0, m * (2.0 * n)) * Real.rpow(3.0, n * m);  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2009_p6_L137 */
-                    assert Real.rpow(2.0, m * (2.0 * n)) == Real.rpow(2.0, 2.0 * (m * n));  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2009_p6_L137 */
-                    assert 4.0 == 2.0 * 2.0;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2009_p6_L137 */
-                    assert 2.0 * 2.0 > 0.0;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2009_p6_L137 */
-                    assert 0 <= 2;  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2009_p6_L137 */
-                    assert Real.rpow(2.0, (2 as real)) == Real.pow(2.0, 2);  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2009_p6_L137 */
-                    assert 0.0 <= 2.0;  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2009_p6_L137 */
-                    assert Real.rpow(2.0, (2 as real) * (m * n)) == Real.rpow(Real.rpow(2.0, (2 as real)), m * n);  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2009_p6_L137 */
-                    assert Real.pow(m, 1) == m;  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2009_p6_L137 */
-                    assert Real.pow(n, 1) == n;  /* [IN-FILE CHECK] requires 14 of vc_amc12a_2009_p6_L137 */
-                    assert Real.pow(Real.rpow(2.0, m * n * 2.0), 1) == Real.rpow(2.0, m * n * 2.0);  /* [IN-FILE CHECK] requires 15 of vc_amc12a_2009_p6_L137 */
-                    vc_amc12a_2009_p6_L137(m, n, p, q);  /* [IN-FILE CHECK] the closed lemma for line 137 */
                     assert (Real.rpow(2.0, ((2 as real) * (m * n))) == Real.rpow(2.0, (2.0 * (m * n)))) by {  // sub-goal of `ring_nf` (Lean state) // @tac 3143-3150
                       PowOne(m);  // cite: pow_one [applied by the tactic, not named in it]
                       PowOne(n);  // cite: pow_one [applied by the tactic, not named in it]
                       PowOne(Real.rpow(2.0, ((m * n) * 2.0)));  // cite: pow_one [applied by the tactic, not named in it]
                       // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (2 : ℝ) ^ (m * n * (2 : ℝ)))
                       // UNCITED-APPLIED internal ×54 [exec 885 3143-3150]: applications made inside the tactic's own automation, not stated — add_zero ×2, mul_one ×1; machinery/glue: Eq.trans ×8, congrArg ×8, congr ×3, Mathlib.Tactic.Ring.mul_congr ×3 (+18 more heads, ×29) (cited in this block, not counted here: pow_one [Lean recorded ×3])
+                      vc_amc12a_2009_p6_L137(m, n, p, q);  /* [IN-FILE CHECK] the closed lemma for line 137 */
                     }
                     assert (0.0 <= 2.0) by {  // sub-goal of `norm_num` (Lean state) // @tac 3143-3150 // @tac 3155-3163
                       NatCastZero();  // cite: Nat.cast_zero [applied by the tactic, not named in it]

@@ -32,19 +32,10 @@ lemma {:isolate_assertions} induction_helper_1(u: nat -> Rat.rat, n: nat)
   decreases n
 {
   if n == 0 {
-    assert 0 <= 0;  /* [IN-FILE CHECK] requires 1 of vc_aime_1984_p1_L35 */
-    assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_aime_1984_p1_L35 */
-    assert forall n_2: int :: 0 <= n_2 ==> u.requires(n_2 + 1) && u.requires(n_2);  /* [IN-FILE CHECK] requires 3 of vc_aime_1984_p1_L35 */
-    assert forall n_2: int :: 0 <= n_2 ==> u(n_2 + 1) == Rat.add(u(n_2), Rat.of_int(1));  /* [IN-FILE CHECK] requires 4 of vc_aime_1984_p1_L35 */
-    assert Rat.sum(range(98), ((k: nat) => u(k + 1))) == Rat.of_int(137);  /* [IN-FILE CHECK] requires 5 of vc_aime_1984_p1_L35 */
-    assert 0 == 0;  /* [IN-FILE CHECK] requires 6 of vc_aime_1984_p1_L35 */
-    assert 0 <= 0;  /* [IN-FILE CHECK] requires 7 of vc_aime_1984_p1_L35 */
-    assert Rat.of_int(0).Rational?;  /* [IN-FILE CHECK] requires 8 of vc_aime_1984_p1_L35 */
-    assert Rat.add(u(0), Rat.of_int(0)).Rational?;  /* [IN-FILE CHECK] requires 9 of vc_aime_1984_p1_L35 */
-    vc_aime_1984_p1_L35(0, n, u);  /* [IN-FILE CHECK] the closed lemma for line 35 */
     assert (u(0) == Rat.add(u(0), Rat.of_int(0))) by {  // sub-goal before `norm_num` (Lean state) // @tac 591-599
       // [TACTIC: «Norm_num[_]At___»]
       // UNCITED-APPLIED internal ×11 [exec 26 591-599]: applications made inside the tactic's own automation, not stated — add_zero ×1; machinery/glue: Eq.trans ×2, congrArg ×2, of_eq_true ×1, Mathlib.Meta.NormNum.IsNat.to_eq ×1 (+4 more heads, ×4)
+      vc_aime_1984_p1_L35(0, n, u);  /* [IN-FILE CHECK] the closed lemma for line 35 */
     }
   } else {
     induction_helper_1(u, n - 1);

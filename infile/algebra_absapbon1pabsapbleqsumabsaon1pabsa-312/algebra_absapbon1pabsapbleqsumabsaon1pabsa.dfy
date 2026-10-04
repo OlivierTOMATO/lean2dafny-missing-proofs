@@ -309,14 +309,6 @@ lemma algebra_absapbon1pabsapbleqsumabsaon1pabsa(a: real, b: real)
         assert (Real.div(abs((a + b)), (1.0 + abs((a + b)))) <= Real.div((abs(a) + abs(b)), (1.0 + (abs(a) + abs(b))))) by { // @tac 2658-2718 // @tac 2658-2668
           // [TACTIC: «_<;>_» h₂ apply h₂ <;> try norm_num norm_num <;> linarith linarith]
           // [TACTIC: choice h₂ apply h₂]
-          assert abs(a + b) <= abs(a) + abs(b);  /* [IN-FILE CHECK] requires 1 of vc_algebra_absapbon1pabsapbleqsumabsaon1pabsa_L312 */
-          assert forall x_1_1: real, y_1_1: real :: 0.0 <= x_1_1 && x_1_1 <= y_1_1 ==> Real.div(x_1_1, 1.0 + x_1_1) <= Real.div(y_1_1, 1.0 + y_1_1);  /* [IN-FILE CHECK] requires 2 of vc_algebra_absapbon1pabsapbleqsumabsaon1pabsa_L312 */
-          assert 0.0 <= abs(a + b);  /* [IN-FILE CHECK] requires 3 of vc_algebra_absapbon1pabsapbleqsumabsaon1pabsa_L312 */
-          assert 0.0 <= abs(a) + abs(b);  /* [IN-FILE CHECK] requires 4 of vc_algebra_absapbon1pabsapbleqsumabsaon1pabsa_L312 */
-          assert 0.0 <= 1.0 + abs(a + b);  /* [IN-FILE CHECK] requires 5 of vc_algebra_absapbon1pabsapbleqsumabsaon1pabsa_L312 */
-          assert 0.0 <= 1.0 + (abs(a) + abs(b));  /* [IN-FILE CHECK] requires 6 of vc_algebra_absapbon1pabsapbleqsumabsaon1pabsa_L312 */
-          assert 0.0 < 1.0 + abs(a + b);  /* [IN-FILE CHECK] requires 7 of vc_algebra_absapbon1pabsapbleqsumabsaon1pabsa_L312 */
-          assert 0.0 < 1.0 + (abs(a) + abs(b));  /* [IN-FILE CHECK] requires 8 of vc_algebra_absapbon1pabsapbleqsumabsaon1pabsa_L312 */
           vc_algebra_absapbon1pabsapbleqsumabsaon1pabsa_L312(a, b);  /* [IN-FILE CHECK] the closed lemma for line 312 */
           assert ((0.0 <= abs((a + b))) ==> ((abs((a + b)) <= (abs(a) + abs(b))) ==> (Real.div(abs((a + b)), (1.0 + abs((a + b)))) <= Real.div((abs(a) + abs(b)), (1.0 + (abs(a) + abs(b)))))));  // instance of h₂ (Lean state: `apply` leaves its premises as goals)
           assert (0.0 <= abs((a + b)));  // sub-goal of `norm_num` (Lean state) // @tac 2687-2718 // @tac 2683-2718 // @tac 2687-2695

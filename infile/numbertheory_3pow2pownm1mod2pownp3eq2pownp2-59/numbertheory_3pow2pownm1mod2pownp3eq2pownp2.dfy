@@ -56,9 +56,6 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
         // UNCITED-APPLIED congrArg((3 : ℕ) ^ (2 : ℕ) ^ n, (1 : ℕ) + (2 : ℕ) ^ (n + (2 : ℕ)) + k * (2 : ℕ) ^ (n + (3 : ℕ)), fun (_a : ℕ) => _a ^ (2 : ℕ) = (1 : ℕ) + (2 : ℕ) ^ (succ n + (2 : ℕ))…): no library counterpart (not stated) [exec 144 1060-1073]
         assert ((((1 + Int.pow(2, (n + 2))) + (k * Int.pow(2, (n + 3)))) * ((1 + Int.pow(2, (n + 2))) + (k * Int.pow(2, (n + 3))))) == ((1 + Int.pow(2, ((n + 1) + 2))) + (NatDiv((((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) * Int.pow(2, ((n + 1) + 3))))) by {  // sub-goal before `have` (Lean state) // @tac 1082-2050 // @tac 2059-2068
           // have h₃ : ( 1 + 2 ^ ( n + 2 ) + k * 2 ^ ( n + 3 ) ) ^ 2 == 1 + 2 ^ ( n + 3 ) + (  [type from Lean state]
-          assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L59 */
-          assert 0 <= k;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L59 */
-          vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L59(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 59 */
           assert ((((1 + Int.pow(2, (n + 2))) + (k * Int.pow(2, (n + 3)))) * ((1 + Int.pow(2, (n + 2))) + (k * Int.pow(2, (n + 3))))) == ((1 + Int.pow(2, (n + 3))) + (((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5)))))) by { // @tac 1258-1292 // @tac 1303-1358 // @tac 1369-1424 // @tac 1435-1490 // @tac 1501-2050
             // have h₄ : n >= 0  [type from Lean state]
             assert (n >= 0) by { // @tac 1284-1292
@@ -106,6 +103,7 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
               }
               ((1 + Int.pow(2, (n + 3))) + (((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5)))));
             }
+            vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L59(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 59 */
           }
           // [TACTIC: rwSeq [ h₃ ]]
           // UNCITED-APPLIED congrArg(((1 : ℕ) + (2 : ℕ) ^ (n + (2 : ℕ)) + k * (2 : ℕ) ^ (n + (3 : ℕ))) ^ (…, (1 : ℕ) + (2 : ℕ) ^ (n + (3 : ℕ)) + ((2 : ℕ) ^ ((2 : ℕ) * n + (4 : ℕ)…, fun (_a : ℕ) => _a = (1 : ℕ) + (2 : ℕ) ^ (succ n + (2 : ℕ)) + ((2 : ℕ…): no library counterpart (not stated) [exec 306 2059-2068]

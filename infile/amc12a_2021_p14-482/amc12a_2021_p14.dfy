@@ -479,10 +479,6 @@ lemma amc12a_2021_p14()
     }
   }
   // have h₅ : Real.logb ( 5 , 3 ) * Real.logb ( 3 , 5 ) == 1  [type from Lean state]
-  assert 0 <= 1;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p14_L482 */
-  assert 0 <= 20;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p14_L482 */
-  assert 0 <= 100;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p14_L482 */
-  vc_amc12a_2021_p14_L482();  /* [IN-FILE CHECK] the closed lemma for line 482 */
   assert ((Real.logb(5.0, 3.0) * Real.logb(3.0, 5.0)) == 1.0) by { // @tac 6871-7019 // @tac 7024-7172 // @tac 7177-7198
     // have h₅₁ : Real.logb ( 5 , 3 ) == Real.log ( 3 ) / Real.log ( 5 )  [type from Lean state]
     assert (Real.logb(5.0, 3.0) == Real.div(Real.log(3.0), Real.log(5.0))); // @tac 6938-7019 // @tac 6938-7004 // @tac 6938-6983 // @tac 6938-6952
@@ -541,6 +537,7 @@ lemma amc12a_2021_p14()
       // `field_simp` closed the goal; the rest of the chain did not run
       // UNCITED-APPLIED internal ×14 [exec 2386 7405-7434]: applications made inside the tactic's own automation, not stated — mul_div_assoc' ×1, div_mul_eq_mul_div ×1, IsUnit.mul_div_cancel_right ×1, div_self ×1; machinery/glue: Eq.trans ×4, congrArg ×3, of_eq_true ×1, eq_false ×1 (+1 more heads, ×1)
     }
+    vc_amc12a_2021_p14_L482();  /* [IN-FILE CHECK] the closed lemma for line 482 */
   }
   // have h₆ : (∑ k ∈ Finset.Icc (1 : ℕ) (20 : ℕ), Real.logb ((5 : ℝ) ^ k) ((3 : ℝ) ^ k ^ (2 : ℕ))) * ∑ k ∈ Finset.Icc (1 : ℕ  [type from Lean state]
   assert ((Real.sum(IccN(1, 20), ((k: nat) => Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2))))) * Real.sum(IccN(1, 100), ((k: nat) => Real.logb(Real.pow(9.0, k), Real.pow(25.0, k))))) == 21000.0) by { // @tac 7650-7765

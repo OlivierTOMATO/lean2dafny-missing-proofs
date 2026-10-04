@@ -398,7 +398,6 @@ lemma imo_1966_p4(n: nat, x: real)
     // [TACTIC: «_<;>_» apply_induction apply apply_induction <;> simp_all simp_all simp_all]
     // [TACTIC: choice apply_induction apply apply_induction]
     assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L400 */
-    assert 0 < n;  /* [IN-FILE CHECK] requires 2 of vc_imo_1966_p4_L400 */
     assert forall n_2_1: nat :: 0 < n_2_1 ==> Real.sum(IccN(1, n_2_1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, n_2_1) * x));  /* [IN-FILE CHECK] requires 3 of vc_imo_1966_p4_L400 */
     assert (0 <= 1) || (n <= 0);  /* [IN-FILE CHECK] requires 4 of vc_imo_1966_p4_L400 */
     vc_imo_1966_p4_L400(n, x);  /* [IN-FILE CHECK] the closed lemma for line 400 */

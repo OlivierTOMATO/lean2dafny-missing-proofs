@@ -126,25 +126,6 @@ lemma numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown(m: nat, n: nat, f: nat 
         }
       }
       // have h₅ : 9 ^ ( 2 * k ) == 9 ^ k * 9 ^ k  [type from Lean state]
-      assert 0 <= m;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert 0 <= k;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert forall x_1: nat :: f.requires(x_1);  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert forall x_1: nat :: f(x_1) == Int.pow(4, x_1) + Int.pow(6, x_1) + Int.pow(9, x_1);  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert 0 < m;  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert 0 < n;  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert m <= n;  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert forall m0: int, n0: int :: (forall x_2: nat :: f.requires(x_2)) && (0 <= m0 && 0 <= n0 && (forall x_2: nat :: f(x_2) == Int.pow(4, x_2) + Int.pow(6, x_2) + Int.pow(9, x_2)) && 0 < m0 && 0 < n0 && m0 <= n0 && ((0 <= m0 && m0 < m) || (m0 == m && 0 <= n0 && n0 < n)) ==> f.requires(Int.pow(2, m0)) && f.requires(Int.pow(2, n0)) && NatDvd(f(Int.pow(2, m0)), f(Int.pow(2, n0))));  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert 0 <= k;  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert 0 <= 2 * k;  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert f(2 * k) == Int.pow(4, 2 * k) + Int.pow(6, 2 * k) + Int.pow(9, 2 * k);  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert f(k) == Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k);  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert Int.pow(4, 2 * k) == Int.pow(4, k) * Int.pow(4, k);  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert Int.pow(6, 2 * k) == Int.pow(6, k) * Int.pow(6, k);  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert 2 * k == k + k;  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert 0 <= k + k;  /* [IN-FILE CHECK] requires 17 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      assert Int.pow(9, k + k) == Int.pow(9, k) * Int.pow(9, k);  /* [IN-FILE CHECK] requires 18 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129 */
-      vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129(f, k, k, m, n);  /* [IN-FILE CHECK] the closed lemma for line 129 */
       assert (Int.pow(9, (2 * k)) == (Int.pow(9, k) * Int.pow(9, k))) by { // @tac 1092-1131
         assert ((2 * k) == (k + k)) by {  // sub-goal of `by` (Lean state) // @tac 1126-1130
           // [TACTIC: Ring]
@@ -159,6 +140,7 @@ lemma numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown(m: nat, n: nat, f: nat 
           // `rw` closed the goal; the rest of the chain did not run
           // UNCITED-APPLIED congrArg((9 : ℕ) ^ (k + k), (9 : ℕ) ^ k * (9 : ℕ) ^ k, fun (_a : ℕ) => _a = (9 : ℕ) ^ k * (9 : ℕ) ^ k): no library counterpart (not stated) [exec 384 1138-1150]
         }
+        vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L129(f, k, k, m, n);  /* [IN-FILE CHECK] the closed lemma for line 129 */
       }
       // [TACTIC: rwSeq [ h₃ , h₄ , h₅ ]]
       // UNCITED-APPLIED congrArg((4 : ℕ) ^ ((2 : ℕ) * k), (4 : ℕ) ^ k * (4 : ℕ) ^ k, fun (_a : ℕ) => _a + (6 : ℕ) ^ ((2 : ℕ) * k) + (9 : ℕ) ^ ((2 : ℕ) * k…): no library counterpart (not stated) [exec 415 1170-1191]

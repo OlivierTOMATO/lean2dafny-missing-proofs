@@ -596,8 +596,6 @@ lemma amc12a_2021_p19(S: set<real>)
         ensures ((x in S) <==> (x in { 0.0, (Real.pi() / 2.0) }))  // sub-goal of `intro` (Lean state) // @tac 729-786
       {
         // [TACTIC: simp only [ Finset.mem_insert , Finset.mem_singleton , h₀ ]]
-        assert forall x_1: real :: (x_1 in S) == (0.0 <= x_1 && x_1 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_1)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_1)));  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p19_L599 */
-        assert ((0.0 <= x) && (x <= Real.pi())) || ((0.0 <= x) && (Real.pi() < x)) || (x < 0.0);  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p19_L599 */
         vc_amc12a_2021_p19_L599(S, x);  /* [IN-FILE CHECK] the closed lemma for line 599 */
         assert ((x in S) <==> ((0.0 <= x) && ((x <= Real.pi()) && (Real.sin(((Real.pi() / 2.0) * Real.cos(x))) == Real.cos(((Real.pi() / 2.0) * Real.sin(x)))))));  // instance of h₀ (Lean state)
         // UNCITED Finset.mem_insert: no Lean instance recorded (arguments unknown), not guessed

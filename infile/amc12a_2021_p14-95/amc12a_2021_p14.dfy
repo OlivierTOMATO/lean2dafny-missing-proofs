@@ -92,22 +92,10 @@ lemma amc12a_2021_p14()
           // [TACTIC: choice [ Real.log_pow ] rw [ Real.log_pow ]]
           RealLogPow(Int.pow(k, 2), 3.0);  // cite: Real.log_pow
           // UNCITED-APPLIED congrArg(Real.log ((3 : ℝ) ^ k ^ (2 : ℕ)), ↑(k ^ (2 : ℕ)) * Real.log (3 : ℝ), fun (_a : ℝ) => _a = ↑k ^ (2 : ℕ) * Real.log (3 : ℝ)): no library counterpart (not stated) [exec 253 1441-1458]
-          assert 0 <= k;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p14_L95 */
-          assert 0 <= 1;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p14_L95 */
-          assert 0 <= 20;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p14_L95 */
-          assert k in IccN(1, 20);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p14_L95 */
-          assert 1 <= k;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p14_L95 */
-          assert k <= 20;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2021_p14_L95 */
-          assert k >= 1;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2021_p14_L95 */
-          assert 0 <= 2;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2021_p14_L95 */
-          assert 0 <= Int.pow(k, 2);  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2021_p14_L95 */
-          assert Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2))) == Real.div(Real.log(Real.pow(3.0, Int.pow(k, 2))), Real.log(Real.pow(5.0, k)));  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2021_p14_L95 */
-          assert Real.log(Real.pow(3.0, Int.pow(k, 2))) == (Int.pow(k, 2) as real) * Real.log(3.0);  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2021_p14_L95 */
-          assert ((k * k) as real) * Real.log(3.0) == ((k * k) as real) * Real.log(3.0);  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2021_p14_L95 */
-          vc_amc12a_2021_p14_L95(k);  /* [IN-FILE CHECK] the closed lemma for line 95 */
           assert ((((k * k) as real) * Real.log(3.0)) == (((k as real) * (k as real)) * Real.log(3.0))) by {  // sub-goal of `norm_cast` (Lean state) // @tac 1471-1480
             assert ((((k * k) as real) * Real.log(3.0)) == (((k * k) as real) * Real.log(3.0)));  // sub-goal of `norm_cast` (Lean state)
             // UNCITED-APPLIED internal ×1 [exec 294 1471-1480]: applications made inside the tactic's own automation, not stated — machinery/glue: congrArg ×1
+            vc_amc12a_2021_p14_L95(k);  /* [IN-FILE CHECK] the closed lemma for line 95 */
           }
         }
         // have h₅₃ : Real.log ( ( 5 ^ k ) ) ==  * Real.log ( 5 )  [type from Lean state]

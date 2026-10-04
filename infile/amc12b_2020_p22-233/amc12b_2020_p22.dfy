@@ -230,10 +230,6 @@ lemma amc12b_2020_p22(t: real)
           // have h₇ : ( 2 ^ t - 3 * t ) * t / ( 2 ^ t ) ^ 2 == ( t / 2 ^ t - 3 * ( t / 2 ^ t  [type from Lean state]
           assert (Real.div(((Real.rpow(2.0, t) - (3.0 * t)) * t), (Real.rpow(2.0, t) * Real.rpow(2.0, t))) == (Real.div(t, Real.rpow(2.0, t)) - (3.0 * (Real.div(t, Real.rpow(2.0, t)) * Real.div(t, Real.rpow(2.0, t)))))) by { // @tac 2799-3100 // @tac 3111-3120
             // have h₈ : ( 2 ^ t - 3 * t ) * t / ( 2 ^ t ) ^ 2 == ( t / 2 ^ t - 3 * ( t / 2 ^ t  [type from Lean state]
-            assert Real.rpow(4.0, t) == Real.rpow(2.0, t) * Real.rpow(2.0, t);  /* [IN-FILE CHECK] requires 1 of vc_amc12b_2020_p22_L233 */
-            assert Real.rpow(4.0, t) > 0.0;  /* [IN-FILE CHECK] requires 2 of vc_amc12b_2020_p22_L233 */
-            assert Real.rpow(2.0, t) > 0.0;  /* [IN-FILE CHECK] requires 3 of vc_amc12b_2020_p22_L233 */
-            vc_amc12b_2020_p22_L233(t);  /* [IN-FILE CHECK] the closed lemma for line 233 */
             assert (Real.div(((Real.rpow(2.0, t) - (3.0 * t)) * t), (Real.rpow(2.0, t) * Real.rpow(2.0, t))) == (Real.div(t, Real.rpow(2.0, t)) - (3.0 * (Real.div(t, Real.rpow(2.0, t)) * Real.div(t, Real.rpow(2.0, t)))))) by { // @tac 2931-3100 // @tac 2931-3076 // @tac 2931-3038 // @tac 2931-3014 // @tac 2931-2976 // @tac 2931-2952
               // [TACTIC: «_<;>_» [ h₆.ne' ] field_simp [ h₆.ne' ] <;> ring_nf ring_nf <;> field_simp [ h₆.ne' ] field_simp [ h₆.ne' ] <;> ring_nf ring_nf <;> field_simp [ h₆.ne' ] field_simp [ h₆.ne' ] <;> ring_nf ring_nf]
               // [TACTIC: choice [ h₆.ne' ] field_simp [ h₆.ne' ]]
@@ -251,6 +247,7 @@ lemma amc12b_2020_p22(t: real)
                 // UNCITED-APPLIED mul_one ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := t)
                 // UNCITED-APPLIED internal ×147 [exec 644 2969-2976]: applications made inside the tactic's own automation, not stated — mul_one ×1, add_zero ×1; machinery/glue: Eq.trans ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_congr ×8, Mathlib.Tactic.Ring.add_mul ×8 (+41 more heads, ×113) (cited in this block, not counted here: pow_one [Lean recorded ×1])
               }
+              vc_amc12b_2020_p22_L233(t);  /* [IN-FILE CHECK] the closed lemma for line 233 */
             }
             // [TACTIC: rwSeq [ h₈ ]]
             // UNCITED-APPLIED congrArg(((2 : ℝ) ^ t - (3 : ℝ) * t) * t / ((2 : ℝ) ^ t) ^ (2 : ℕ), t / (2 : ℝ) ^ t - (3 : ℝ) * (t / (2 : ℝ) ^ t) ^ (2 : ℕ), fun (_a : ℝ) => _a = t / (2 : ℝ) ^ t - (3 : ℝ) * (t / (2 : ℝ) ^ t) ^ …): no library counterpart (not stated) [exec 673 3111-3120]

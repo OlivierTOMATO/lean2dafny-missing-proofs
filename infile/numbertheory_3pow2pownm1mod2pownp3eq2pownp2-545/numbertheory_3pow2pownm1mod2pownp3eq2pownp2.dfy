@@ -543,7 +543,6 @@ lemma numbertheory_3pow2pownm1mod2pownp3eq2pownp2(n: nat)
             assert (NatMod((NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3))) + 0), Int.pow(2, (n + 3))) == NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3)))) by {  // sub-goal before `have` (Lean state) // @tac 8715-8835 // @tac 8844-8853
               // have h₇ : ( 2 ^ ( n + 2 ) % 2 ^ ( n + 3 ) + 0 ) % 2 ^ ( n + 3 ) == 2 ^ ( n + 2 )  [type from Lean state]
               assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
-              assert 0 < n;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
               assert 0 <= Int.pow(2, n);  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
               assert 0 <= n + 2;  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
               assert 0 <= n + 3;  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
@@ -551,17 +550,13 @@ lemma numbertheory_3pow2pownm1mod2pownp3eq2pownp2(n: nat)
               assert exists k_1_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_1 * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
               assert (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_1_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_1_0 * Int.pow(2, n + 3));  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
               assert 0 <= k;  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
-              assert Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
               assert 0 <= Int.pow(3, Int.pow(2, n));  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
               assert 0 <= 1;  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
-              assert tsub(Int.pow(3, Int.pow(2, n)), 1) == Int.pow(2, n + 2) + k * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
               assert 0 <= k * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
               assert 0 <= Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
-              assert NatMod(k * Int.pow(2, n + 3), Int.pow(2, n + 3)) == 0;  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
               assert 0 <= Int.pow(2, n + 2) + k * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 17 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
               assert 0 <= Int.pow(2, n + 2);  /* [IN-FILE CHECK] requires 18 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
               assert 0 <= NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3)) + NatMod(k * Int.pow(2, n + 3), Int.pow(2, n + 3));  /* [IN-FILE CHECK] requires 19 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
-              assert NatMod(Int.pow(2, n + 2) + k * Int.pow(2, n + 3), Int.pow(2, n + 3)) == NatMod(NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3)) + NatMod(k * Int.pow(2, n + 3), Int.pow(2, n + 3)), Int.pow(2, n + 3));  /* [IN-FILE CHECK] requires 20 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
               assert 0 <= NatMod(Int.pow(2, n + 2), Int.pow(2, n + 3)) + 0;  /* [IN-FILE CHECK] requires 21 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545 */
               vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L545(k, n);  /* [IN-FILE CHECK] the closed lemma for line 545 */
               assert (NatMod((NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3))) + 0), Int.pow(2, (n + 3))) == NatMod(Int.pow(2, (n + 2)), Int.pow(2, (n + 3)))); // @tac 8817-8835

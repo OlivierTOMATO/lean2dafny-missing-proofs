@@ -326,22 +326,6 @@ lemma algebra_bleqa_apbon2msqrtableqambsqon8b(a: real, b: real)
           // [TACTIC: exact sq_nonneg ( ( x - y ) )]
           SqNonneg((x - y));  // cite: sq_nonneg
           // `refine` step's recorded applications: the lemma applications Lean's proof term of this step is built from (no linarith run here) (Lean execution 2268-2324 exec 742)
-          assert 0.0 < a;  /* [IN-FILE CHECK] requires 1 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert 0.0 < b;  /* [IN-FILE CHECK] requires 2 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert b <= a;  /* [IN-FILE CHECK] requires 3 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert 0.0 < Real.sqrt(a);  /* [IN-FILE CHECK] requires 4 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert 0.0 < Real.sqrt(b);  /* [IN-FILE CHECK] requires 5 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert Real.sqrt(b) <= Real.sqrt(a);  /* [IN-FILE CHECK] requires 6 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert x == Real.sqrt(a);  /* [IN-FILE CHECK] requires 7 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert 0.0 < x;  /* [IN-FILE CHECK] requires 8 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert Real.sqrt(b) <= x;  /* [IN-FILE CHECK] requires 9 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert y == Real.sqrt(b);  /* [IN-FILE CHECK] requires 10 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert 0.0 < y;  /* [IN-FILE CHECK] requires 11 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert y <= x;  /* [IN-FILE CHECK] requires 12 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert x >= y;  /* [IN-FILE CHECK] requires 13 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert 2.0 != 0.0;  /* [IN-FILE CHECK] requires 14 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert (a + b) / 2.0 - Real.sqrt(a * b) == (x - y) * (x - y) / 2.0;  /* [IN-FILE CHECK] requires 15 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
-          assert Real.div((a - b) * (a - b), 8.0 * b) == Real.div((x - y) * (x - y) * ((x + y) * (x + y)), 8.0 * (y * y));  /* [IN-FILE CHECK] requires 16 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329 */
           vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L329(a, b, x, y);  /* [IN-FILE CHECK] the closed lemma for line 329 */
           SqNonneg((x - y)); assert (0.0 <= ((x - y) * (x - y)));  // cert: sq_nonneg
         }

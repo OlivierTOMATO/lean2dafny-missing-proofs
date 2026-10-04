@@ -87,19 +87,6 @@ lemma amc12a_2021_p14()
       // UNCITED-APPLIED congrArg(logb ((5 : ℝ) ^ k) ((3 : ℝ) ^ k ^ (2 : ℕ)), Real.log ((3 : ℝ) ^ k ^ (2 : ℕ)) / Real.log ((5 : ℝ) ^ k), fun (_a : ℝ) => _a = ↑k * logb (5 : ℝ) (3 : ℝ)): no library counterpart (not stated) [exec 191 1333-1345]
       assert (Real.div(Real.log(Real.pow(3.0, Int.pow(k, 2))), Real.log(Real.pow(5.0, k))) == ((k as real) * Real.logb(5.0, 3.0))) by {  // sub-goal before `have` (Lean state) // @tac 1352-1520 // @tac 1527-1685 // @tac 1692-1713
         // have h₅₂ : Real.log ( ( 3 ^ ( k ^ 2 ) ) ) == k ^ 2 * Real.log ( 3 )  [type from Lean state]
-        assert 0 <= k;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p14_L90 */
-        assert 0 <= 1;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p14_L90 */
-        assert 0 <= 20;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p14_L90 */
-        assert k in IccN(1, 20);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p14_L90 */
-        assert 1 <= k;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p14_L90 */
-        assert k <= 20;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2021_p14_L90 */
-        assert k >= 1;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2021_p14_L90 */
-        assert 0 <= 2;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2021_p14_L90 */
-        assert 0 <= Int.pow(k, 2);  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2021_p14_L90 */
-        assert Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2))) == Real.div(Real.log(Real.pow(3.0, Int.pow(k, 2))), Real.log(Real.pow(5.0, k)));  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2021_p14_L90 */
-        assert Real.log(Real.pow(3.0, Int.pow(k, 2))) == (Int.pow(k, 2) as real) * Real.log(3.0);  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2021_p14_L90 */
-        assert ((k * k) as real) * Real.log(3.0) == (k as real) * (k as real) * Real.log(3.0);  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2021_p14_L90 */
-        vc_amc12a_2021_p14_L90(k);  /* [IN-FILE CHECK] the closed lemma for line 90 */
         assert (Real.log(Real.pow(3.0, Int.pow(k, 2))) == (((k as real) * (k as real)) * Real.log(3.0))) by { // @tac 1441-1520 // @tac 1441-1503 // @tac 1441-1480 // @tac 1441-1458
           // [TACTIC: «_<;>_» [ Real.log_pow ] rw [ Real.log_pow ] <;> norm_cast norm_cast norm_cast <;> field_simp field_simp <;> ring]
           // [TACTIC: choice [ Real.log_pow ] rw [ Real.log_pow ]]
@@ -109,6 +96,14 @@ lemma amc12a_2021_p14()
             assert ((((k * k) as real) * Real.log(3.0)) == (((k * k) as real) * Real.log(3.0)));  // sub-goal of `norm_cast` (Lean state)
             // UNCITED-APPLIED internal ×1 [exec 294 1471-1480]: applications made inside the tactic's own automation, not stated — machinery/glue: congrArg ×1
           }
+          assert 0 <= k;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p14_L90 */
+          assert 0 <= 1;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p14_L90 */
+          assert 0 <= 20;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p14_L90 */
+          assert k in IccN(1, 20);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p14_L90 */
+          assert 0 <= 2;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2021_p14_L90 */
+          assert 0 <= Int.pow(k, 2);  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2021_p14_L90 */
+          assert Real.log(Real.pow(3.0, Int.pow(k, 2))) == (Int.pow(k, 2) as real) * Real.log(3.0);  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2021_p14_L90 */
+          vc_amc12a_2021_p14_L90(k);  /* [IN-FILE CHECK] the closed lemma for line 90 */
         }
         // have h₅₃ : Real.log ( ( 5 ^ k ) ) ==  * Real.log ( 5 )  [type from Lean state]
         assert (Real.log(Real.pow(5.0, k)) == ((k as real) * Real.log(5.0))) by { // @tac 1606-1685 // @tac 1606-1668 // @tac 1606-1645 // @tac 1606-1623

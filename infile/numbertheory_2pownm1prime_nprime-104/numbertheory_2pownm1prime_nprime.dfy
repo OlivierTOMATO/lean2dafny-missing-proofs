@@ -101,14 +101,6 @@ lemma numbertheory_2pownm1prime_nprime(n: nat)
           // have h₅₃ : ∃ m , m ∣ n m ∣ n ∧ m ≠ 1 ∧ m ≠ n  [type from Lean state]
           assert (exists m: nat :: (NatDvd(m, n) && ((m != 1) && (m != n)))) by { // @tac 1125-1198 // @tac 1207-1246
             // have h₅₄ :   [type from Lean state]
-            assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_2pownm1prime_nprime_L104 */
-            assert 0 < n;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_2pownm1prime_nprime_L104 */
-            assert prime(tsub(Int.pow(2, n), 1));  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_2pownm1prime_nprime_L104 */
-            assert forall n0: nat :: 0 < n0 && prime(tsub(Int.pow(2, n0), 1)) && 0 <= n0 && n0 < n ==> prime(n0);  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_2pownm1prime_nprime_L104 */
-            assert !prime(n);  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_2pownm1prime_nprime_L104 */
-            assert 2 <= n;  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_2pownm1prime_nprime_L104 */
-            assert exists m: nat :: 2 <= m && m < n && n % m == 0;  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_2pownm1prime_nprime_L104 */
-            vc_numbertheory_2pownm1prime_nprime_L104(n);  /* [IN-FILE CHECK] the closed lemma for line 104 */
             assert (exists m: nat :: (NatDvd(m, n) && ((2 <= m) && (m < n)))) by {
               assert 2 <= (n) && !prime(n);  // precondition of ExistsDvdOfNotPrime2 (Lean: Nat.exists_dvd_of_not_prime2)
               ExistsDvdOfNotPrime2(n);  // cite: Nat.exists_dvd_of_not_prime2 (proof term)
@@ -118,6 +110,7 @@ lemma numbertheory_2pownm1prime_nprime(n: nat)
                 // UNCITED-APPLIED internal ×29 [exec 212 1174-1179]: applications made inside the tactic's own automation, not stated — le_of_le_of_eq ×2, Int.sub_nonneg_of_le ×2, Int.add_one_le_of_lt ×1, Nat.lt_of_not_le ×1; machinery/glue: Eq.symm ×4, Eq.trans ×3, Lean.Omega.Constraint.addInequality_sat ×2, Lean.Omega.Int.sub_congr ×2 (+11 more heads, ×12)
               }
               // [TACTIC: exact Nat.exists_dvd_of_not_prime2 ( by omega omega , h₅₁ )]
+              vc_numbertheory_2pownm1prime_nprime_L104(n);  /* [IN-FILE CHECK] the closed lemma for line 104 */
             }
             // obtain ⟨m⟩ := h₅₄
             assert exists m: nat :: (NatDvd(m, n) && ((2 <= m) && (m < n)));

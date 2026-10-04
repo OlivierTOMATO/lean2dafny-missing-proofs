@@ -946,22 +946,6 @@ lemma algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2(a: real, b: real, c: real)
           // [TACTIC: «Field_simp[_]At___» [ h₅.ne' ]]
           // UNCITED h₅.ne': a projection of the local hypothesis h₅ handed to the tactic; its fact is not stated here
           // UNCITED-APPLIED internal ×2 [exec 267 1515-1536]: applications made inside the tactic's own automation, not stated — div_pow ×1; machinery/glue: congrArg ×1
-          assert 0.0 < a;  /* [IN-FILE CHECK] requires 1 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          assert 0.0 < b;  /* [IN-FILE CHECK] requires 2 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          assert 0.0 < c;  /* [IN-FILE CHECK] requires 3 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          assert 3.0 <= a * b + b * c + c * a;  /* [IN-FILE CHECK] requires 4 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          assert a + b + c >= 3.0;  /* [IN-FILE CHECK] requires 5 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          assert 0.0 < x;  /* [IN-FILE CHECK] requires 6 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          assert 0.0 < y;  /* [IN-FILE CHECK] requires 7 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          assert 0.0 < x + y;  /* [IN-FILE CHECK] requires 8 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          assert 0.0 < Real.sqrt(2.0);  /* [IN-FILE CHECK] requires 9 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          assert 0.0 < Real.sqrt(2.0) * (x + y);  /* [IN-FILE CHECK] requires 10 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          assert 0.0 < Real.sqrt(2.0) * 2.0;  /* [IN-FILE CHECK] requires 11 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          assert 0.0 <= Real.div(x + y + 2.0, 2.0 * Real.sqrt(2.0));  /* [IN-FILE CHECK] requires 12 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          assert (Real.sqrt(x + y) <= Real.div(x + y + 2.0, 2.0 * Real.sqrt(2.0))) == (x + y <= Real.pow(Real.div(x + y + 2.0, 2.0 * Real.sqrt(2.0)), 2));  /* [IN-FILE CHECK] requires 13 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          assert (x + y <= (x + y + 2.0) * (x + y + 2.0) / (2.0 * Real.sqrt(2.0) * (2.0 * Real.sqrt(2.0)))) == ((x + y) * (2.0 * Real.sqrt(2.0) * (2.0 * Real.sqrt(2.0))) <= (x + y + 2.0) * (x + y + 2.0));  /* [IN-FILE CHECK] requires 14 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          assert (x + y) * (2.0 * Real.sqrt(2.0) * (2.0 * Real.sqrt(2.0))) <= (x + y + 2.0) * (x + y + 2.0);  /* [IN-FILE CHECK] requires 15 of vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949 */
-          vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949(a, b, c, x, y);  /* [IN-FILE CHECK] the closed lemma for line 949 */
           assert ((x + y) <= Real.div((((x + y) + 2.0) * ((x + y) + 2.0)), ((2.0 * Real.sqrt(2.0)) * (2.0 * Real.sqrt(2.0))))) by {  // sub-goal before `rw` (Lean state) // @tac 1545-1576
             assert (0.0 < ((2.0 * Real.sqrt(2.0)) * (2.0 * Real.sqrt(2.0)))) by {  // sub-goal of `by` (Lean state) // @tac 1564-1574
               // [TACTIC: Positivity]
@@ -1016,6 +1000,7 @@ lemma algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2(a: real, b: real, c: real)
               RealSqSqrt((x + y));  // cite: Real.sq_sqrt
             }
             // UNCITED-APPLIED congrArg(fun (_a : Prop) => _a): no library counterpart (not stated) [exec 272 1545-1576]
+            vc_algebra_abpbcpcageq3_sumaonsqrtapbgeq3onsqrt2_L949(a, b, c, x, y);  /* [IN-FILE CHECK] the closed lemma for line 949 */
           }
         }
         // UNCITED-APPLIED congrArg(fun (_a : Prop) => _a): no library counterpart (not stated) [exec 235 1468-1506]

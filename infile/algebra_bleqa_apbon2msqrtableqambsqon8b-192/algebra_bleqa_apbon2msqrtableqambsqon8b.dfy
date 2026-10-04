@@ -189,23 +189,6 @@ lemma algebra_bleqa_apbon2msqrtableqambsqon8b(a: real, b: real)
         assert (0.0 < x);  // hypothesis h₄ at `exact` (Lean state)
       }
       // have h₁₀ : ( a + b ) / 2 - Real.sqrt ( ( a * b ) ) == ( x - y ) ^ 2 / 2  [type from Lean state]
-      assert 0.0 < a;  /* [IN-FILE CHECK] requires 1 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert 0.0 < b;  /* [IN-FILE CHECK] requires 2 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert b <= a;  /* [IN-FILE CHECK] requires 3 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert 0.0 < Real.sqrt(a);  /* [IN-FILE CHECK] requires 4 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert 0.0 < Real.sqrt(b);  /* [IN-FILE CHECK] requires 5 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert Real.sqrt(b) <= Real.sqrt(a);  /* [IN-FILE CHECK] requires 6 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert x == Real.sqrt(a);  /* [IN-FILE CHECK] requires 7 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert 0.0 < x;  /* [IN-FILE CHECK] requires 8 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert Real.sqrt(b) <= x;  /* [IN-FILE CHECK] requires 9 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert y == Real.sqrt(b);  /* [IN-FILE CHECK] requires 10 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert 0.0 < y;  /* [IN-FILE CHECK] requires 11 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert y <= x;  /* [IN-FILE CHECK] requires 12 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert x >= y;  /* [IN-FILE CHECK] requires 13 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert b == y * y;  /* [IN-FILE CHECK] requires 14 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert 2.0 != 0.0;  /* [IN-FILE CHECK] requires 15 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      assert (x * x + y * y) / 2.0 - Real.sqrt(x * x * (y * y)) == (x - y) * (x - y) / 2.0;  /* [IN-FILE CHECK] requires 16 of vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192 */
-      vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192(a, b, x, y);  /* [IN-FILE CHECK] the closed lemma for line 192 */
       assert ((((a + b) / 2.0) - Real.sqrt((a * b))) == (((x - y) * (x - y)) / 2.0)) by { // @tac 859-955 // @tac 960-1056 // @tac 1061-1088
         // have h₁₀₁ : a == x ^ 2  [type from Lean state]
         assert (a == (x * x)) by { // @tac 899-955 // @tac 899-936
@@ -292,6 +275,7 @@ lemma algebra_bleqa_apbon2msqrtableqambsqon8b(a: real, b: real)
           // `rw` closed the goal; the rest of the chain did not run
           // UNCITED-APPLIED congrArg((x ^ (2 : ℕ) + y ^ (2 : ℕ)) / (2 : ℝ) - √(x ^ (2 : ℕ) * y ^ (2 : ℕ)), (x - y) ^ (2 : ℕ) / (2 : ℝ), fun (_a : ℝ) => _a = (x - y) ^ (2 : ℕ) / (2 : ℝ)): no library counterpart (not stated) [exec 430 1454-1469]
         }
+        vc_algebra_bleqa_apbon2msqrtableqambsqon8b_L192(a, b, x, y);  /* [IN-FILE CHECK] the closed lemma for line 192 */
       }
       // have h₁₁ : ( a - b ) ^ 2 / ( 8 * b ) == ( x - y ) ^ 2 * ( x + y ) ^ 2 / ( 8 * y ^  [type from Lean state]
       assert (Real.div(((a - b) * (a - b)), (8.0 * b)) == Real.div((((x - y) * (x - y)) * ((x + y) * (x + y))), (8.0 * (y * y)))) by { // @tac 1572-1668 // @tac 1673-1769 // @tac 1774-1801

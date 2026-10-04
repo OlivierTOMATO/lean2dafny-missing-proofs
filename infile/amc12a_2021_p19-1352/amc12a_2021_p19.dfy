@@ -1349,26 +1349,6 @@ lemma amc12a_2021_p19(S: set<real>)
                                     // [TACTIC: «Norm_num[_]At___» [ h₅₁₆₄ ]]
                                   // UNCITED-APPLIED internal ×6 [exec 1536 7342-7366]: applications made inside the tactic's own automation, not stated — machinery/glue: of_eq_true ×1, Eq.trans ×1, congr ×1, congrArg ×1 (+2 more heads, ×2)
                                   // have h₅₁₆₈ : x == Real.pi / 2  [type from Lean state]
-                                  assert forall x_1: real :: (x_1 in S) == (0.0 <= x_1 && x_1 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_1)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_1)));  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p19_L1352 */
-                                  assert 0.0 <= x;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p19_L1352 */
-                                  assert x <= Real.pi();  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p19_L1352 */
-                                  assert (x in S) == (0.0 <= x && x <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x)) == Real.cos(Real.pi() / 2.0 * Real.sin(x)));  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p19_L1352 */
-                                  assert 2.0 != 0.0;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p19_L1352 */
-                                  assert Real.sin(Real.pi() / 2.0 * Real.cos(x)) == Real.cos(Real.pi() / 2.0 * Real.sin(x));  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2021_p19_L1352 */
-                                  assert Real.sin(Real.pi() / 2.0 * Real.cos(x)) == Real.cos(Real.pi() / 2.0 * (1.0 - Real.cos(x)));  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2021_p19_L1352 */
-                                  assert Real.cos(Real.pi() / 2.0 * (1.0 - Real.cos(x))) == Real.cos(Real.pi() / 2.0 * Real.sin(x));  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2021_p19_L1352 */
-                                  assert Real.pi() / 2.0 * (1.0 - Real.cos(x)) == Real.pi() / 2.0 * Real.sin(x);  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2021_p19_L1352 */
-                                  assert 1.0 - Real.cos(x) == Real.sin(x);  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2021_p19_L1352 */
-                                  assert Real.sin(x) == 1.0 - Real.cos(x);  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2021_p19_L1352 */
-                                  assert Real.sin(x) * Real.sin(x) + Real.cos(x) * Real.cos(x) == 1.0;  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2021_p19_L1352 */
-                                  assert Real.sin(x) >= 0.0;  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2021_p19_L1352 */
-                                  assert (1.0 - Real.cos(x)) * (1.0 - Real.cos(x)) == 1.0 - Real.cos(x) * Real.cos(x);  /* [IN-FILE CHECK] requires 14 of vc_amc12a_2021_p19_L1352 */
-                                  assert Real.cos(x) == 0.0;  /* [IN-FILE CHECK] requires 15 of vc_amc12a_2021_p19_L1352 */
-                                  assert Real.cos(x) == 0.0 || Real.cos(x) == 1.0;  /* [IN-FILE CHECK] requires 16 of vc_amc12a_2021_p19_L1352 */
-                                  assert Real.sin(x) == 1.0;  /* [IN-FILE CHECK] requires 17 of vc_amc12a_2021_p19_L1352 */
-                                  assert Real.cos(x) == Real.cos(Real.pi() / 2.0);  /* [IN-FILE CHECK] requires 18 of vc_amc12a_2021_p19_L1352 */
-                                  assert Real.sin(x) == Real.sin(Real.pi() / 2.0);  /* [IN-FILE CHECK] requires 19 of vc_amc12a_2021_p19_L1352 */
-                                  vc_amc12a_2021_p19_L1352(S, x);  /* [IN-FILE CHECK] the closed lemma for line 1352 */
                                   assert (x == (Real.pi() / 2.0)) by { // @tac 7460-7756 // @tac 7460-7698 // @tac 7460-7628
                                     assert (0.0 <= x) by {  // sub-goal of `by` (Lean state) // @tac 7490-7524
                                       // [TACTIC: «Linarith[_]At___» [ h₂ , h₃ , Real.pi_pos ]]
@@ -1421,6 +1401,7 @@ lemma amc12a_2021_p19(S: set<real>)
                                     // UNCITED-APPLIED Set.InjOn.eq_iff(Set.Icc (0 : ℝ) π, cos, x, π / (2 : ℝ)): library counterpart RealInjOnCosEqIff (Mathlib `injOn_cos.eq_iff`) exists, but the translation of this tactic states no such instance [exec 1563 7460-7628]
                                     assert (Real.cos(x) == Real.cos((Real.pi() / 2.0)));  // sub-goal of `simp_all` (Lean state) // @tac 7659-7698
                                     // UNCITED-APPLIED internal ×6 [exec 1630 7659-7698]: applications made inside the tactic's own automation, not stated — machinery/glue: congrArg ×2, of_eq_true ×1, Eq.trans ×1, congr ×1 (+1 more heads, ×1)
+                                    vc_amc12a_2021_p19_L1352(S, x);  /* [IN-FILE CHECK] the closed lemma for line 1352 */
                                   }
                                   // [TACTIC: exact h₅₁₆₈]
                                   assert (x == (Real.pi() / 2.0));

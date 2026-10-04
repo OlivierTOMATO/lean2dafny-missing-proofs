@@ -24,14 +24,6 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
     if ((1 <= n)) {  // sub-goal before `omega` (Lean state)
       // [TACTIC: omega]
       // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_mathd_numbertheory_175_L27 */
-      assert n != 0;  /* [IN-FILE CHECK] requires 2 of vc_mathd_numbertheory_175_L27 */
-      assert 0 <= n - 1;  /* [IN-FILE CHECK] requires 3 of vc_mathd_numbertheory_175_L27 */
-      assert 0 <= n || n - 1 == n;  /* [IN-FILE CHECK] requires 4 of vc_mathd_numbertheory_175_L27 */
-      assert n - 1 < n;  /* [IN-FILE CHECK] requires 5 of vc_mathd_numbertheory_175_L27 */
-      assert Int.pow(6, n - 1 + 1) % 10 == 6;  /* [IN-FILE CHECK] requires 6 of vc_mathd_numbertheory_175_L27 */
-      assert 1 <= n;  /* [IN-FILE CHECK] requires 7 of vc_mathd_numbertheory_175_L27 */
-      assert 0 <= n + 1;  /* [IN-FILE CHECK] requires 8 of vc_mathd_numbertheory_175_L27 */
       vc_mathd_numbertheory_175_L27(n);  /* [IN-FILE CHECK] the closed lemma for line 27 */
       assert ((Int.pow(6, (n + 1)) % 10) == 6);  // sub-goal before `omega` (Lean state) // @tac 404-409 // @tac 401-409
       // UNCITED-APPLIED internal ×94 [exec 51 404-409]: applications made inside the tactic's own automation, not stated — le_of_le_of_eq ×4, Int.sub_nonneg_of_le ×4, Int.add_one_le_of_lt ×3, Int.ofNat_emod ×2, Int.emod_def ×2, Nat.lt_or_gt_of_ne ×1, Int.sub_eq_zero_of_eq ×1, Int.mul_ediv_self_le ×1, Int.pow_succ ×1, Int.lt_mul_ediv_self_add ×1; machinery/glue: Eq.symm ×16, Eq.trans ×7, Lean.Omega.Int.sub_congr ×6, Lean.Omega.LinearCombo.sub_eval ×6 (+18 more heads, ×39)

@@ -539,14 +539,6 @@ lemma amc12a_2021_p14()
     }
   }
   // have h₆ : (∑ k ∈ Finset.Icc (1 : ℕ) (20 : ℕ), Real.logb ((5 : ℝ) ^ k) ((3 : ℝ) ^ k ^ (2 : ℕ))) * ∑ k ∈ Finset.Icc (1 : ℕ  [type from Lean state]
-  assert forall k_0_1: nat :: k_0_1 in IccN(1, 20) ==> Real.logb(Real.pow(5.0, k_0_1), Real.pow(3.0, Int.pow(k_0_1, 2))) == (k_0_1 as real) * Real.logb(5.0, 3.0);  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p14_L542 */
-  assert 0 <= 1;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p14_L542 */
-  assert 0 <= 20;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p14_L542 */
-  assert forall k_2_1: nat :: k_2_1 in IccN(1, 100) ==> Real.logb(Real.pow(9.0, k_2_1), Real.pow(25.0, k_2_1)) == Real.logb(3.0, 5.0);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p14_L542 */
-  assert 0 <= 100;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p14_L542 */
-  assert Real.sum(IccN(1, 100), ((k: nat) => Real.logb(Real.pow(9.0, k), Real.pow(25.0, k)))) == 100.0 * Real.logb(3.0, 5.0);  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2021_p14_L542 */
-  assert Real.logb(5.0, 3.0) * Real.logb(3.0, 5.0) == 1.0;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2021_p14_L542 */
-  vc_amc12a_2021_p14_L542();  /* [IN-FILE CHECK] the closed lemma for line 542 */
   assert ((Real.sum(IccN(1, 20), ((k: nat) => Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2))))) * Real.sum(IccN(1, 100), ((k: nat) => Real.logb(Real.pow(9.0, k), Real.pow(25.0, k))))) == 21000.0) by { // @tac 7650-7765
     assert (Real.sum(IccN(1, 20), ((k: nat) => Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2))))) == (210.0 * Real.logb(5.0, 3.0))) by {  // sub-goal of `by` (Lean state) // @tac 7748-7764
       // [TACTIC: simpa using h₂]
@@ -610,6 +602,7 @@ lemma amc12a_2021_p14()
         // UNCITED-APPLIED congrArg((210 : ℝ) * logb (5 : ℝ) (3 : ℝ) * ((100 : ℝ) * logb (3 : ℝ) (5 : ℝ)), (21000 : ℝ), fun (_a : ℝ) => _a = (21000 : ℝ)): no library counterpart (not stated) [exec 2592 8386-8398]
       }
     }
+    vc_amc12a_2021_p14_L542();  /* [IN-FILE CHECK] the closed lemma for line 542 */
   }
   // [TACTIC: exact h₆]
   assert ((Real.sum(IccN(1, 20), ((k: nat) => Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2))))) * Real.sum(IccN(1, 100), ((k: nat) => Real.logb(Real.pow(9.0, k), Real.pow(25.0, k))))) == 21000.0);

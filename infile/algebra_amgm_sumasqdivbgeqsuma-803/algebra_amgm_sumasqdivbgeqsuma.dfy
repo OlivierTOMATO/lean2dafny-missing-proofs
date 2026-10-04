@@ -800,8 +800,6 @@ lemma algebra_amgm_sumasqdivbgeqsuma(a: real, b: real, c: real, d: real)
       PowPos(d, 2);  // cite: pow_pos [applied by the tactic, not named in it]
     }
     // have h₄₄ : d ^ 2 / a * a == d ^ 2  [type from Lean state]
-    assert 0.0 < a;  /* [IN-FILE CHECK] requires 1 of vc_algebra_amgm_sumasqdivbgeqsuma_L803 */
-    assert 0.0 < d;  /* [IN-FILE CHECK] requires 2 of vc_algebra_amgm_sumasqdivbgeqsuma_L803 */
     vc_algebra_amgm_sumasqdivbgeqsuma_L803(a, b, c, d);  /* [IN-FILE CHECK] the closed lemma for line 803 */
     assert ((Real.div((d * d), a) * a) == (d * d)); // @tac 2810-2834
       // [TACTIC: «Field_simp[_]At___» [ h₄₁.ne' ]]

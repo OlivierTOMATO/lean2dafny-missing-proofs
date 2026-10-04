@@ -85,8 +85,7 @@ lemma imo_1966_p4(n: nat, x: real)
   requires (0 < n)
   ensures (Real.sum(IccN(1, n), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x))))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, n) * x))))) // @tac 559-1360 // @tac 1363-2656 // @tac 2659-3476 // @tac 3482-3654 // @tac 3660-3677 // @tac 3680-3702 // @tac 3705-3734 // @tac 3737-3767 // @tac 3770-3799 // @tac 3802-3810
 {
-  assert 0 < n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L86 */
-  vc_imo_1966_p4_L86(n, x, x);  /* [IN-FILE CHECK] the closed lemma for line 86 */
+  vc_imo_1966_p4_L86(n, __outer_x, x);  /* [IN-FILE CHECK] the closed lemma for line 86 */
   // have base_case : ( 1 / Real.sin ( ( 2 * x ) ) ) == ( 1 / Real.tan ( x ) ) - ( 1 / Real.  [type from Lean state]
   assert (Real.div(1.0, Real.sin((2.0 * x))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((2.0 * x))))) by { // @tac 653-681
     // [TACTIC: rwSeq [ Real.tan_eq_sin_div_cos ]]

@@ -175,8 +175,6 @@ lemma {:isolate_assertions} cert_piece_20(m: Rat.rat)
   requires ((3.0 - Real.pi()) < 0.0)
   ensures (0.0 < ((((m).to_real() * 2.0) - 175.0) * (3.0 - Real.pi())))
 {
-  assert m.to_real() * 2.0 - 175.0 < 0.0;  /* [IN-FILE CHECK] requires 1 of vc_aime_1999_p11_L177 */
-  assert 3.0 - Real.pi() < 0.0;  /* [IN-FILE CHECK] requires 2 of vc_aime_1999_p11_L177 */
   vc_aime_1999_p11_L177(m);  /* [IN-FILE CHECK] the closed lemma for line 177 */
   MulPos(-((((m).to_real() * 2.0) - 175.0)), -((3.0 - Real.pi()))); MulNeg(-((((m).to_real() * 2.0) - 175.0)), (3.0 - Real.pi())); assert (-((((m).to_real() * 2.0) - 175.0))) * (-((3.0 - Real.pi()))) == -((-((((m).to_real() * 2.0) - 175.0))) * ((3.0 - Real.pi()))); assert (-((((m).to_real() * 2.0) - 175.0))) * ((3.0 - Real.pi())) == -(((((m).to_real() * 2.0) - 175.0)) * ((3.0 - Real.pi())));
 }

@@ -178,8 +178,6 @@ lemma amc12a_2009_p9(a: real, b: real, c: real, f: real -> real)
   {
     // [TACTIC: intro x]
     // [TACTIC: simp only [ h₁ ] at h₀ ⊢]
-    assert forall x_1: real :: f(x_1 + 3.0) == 3.0 * (x_1 * x_1) + 7.0 * x_1 + 4.0;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2009_p9_L181 */
-    assert forall x_3: real :: f(x_3) == a * (x_3 * x_3) + b * x_3 + c;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2009_p9_L181 */
     vc_amc12a_2009_p9_L181(a, b, c, f);  /* [IN-FILE CHECK] the closed lemma for line 181 */
     assert (forall x: real :: ((((a * ((x + 3.0) * (x + 3.0))) + (b * (x + 3.0))) + c) == (((3.0 * (x * x)) + (7.0 * x)) + 4.0)));  // hypothesis h₀ after `simp` (Lean state) // @tac-hyp 654-682
     // [TACTIC: «Linarith[_]At___» [ h₀ x , h₀ ( x + 3 ) , h₀ ( x + 6 ) ]]

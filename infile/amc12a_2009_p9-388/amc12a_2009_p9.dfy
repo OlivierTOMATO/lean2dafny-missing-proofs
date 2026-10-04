@@ -385,23 +385,6 @@ lemma amc12a_2009_p9(a: real, b: real, c: real, f: real -> real)
     assert (forall x: real :: ((((3.0 * (((x * x) + (x * 6.0)) + 9.0)) + (b * (x + 3.0))) + c) == ((((x * x) * 3.0) + (x * 7.0)) + 4.0)));  // hypothesis h₃ after `simp_all` (Lean state) // @tac-hyp 2040-2064
     assert (forall x: real :: ((((((((x * x) * 3.0) + (x * (3.0 * 6.0))) + (3.0 * 9.0)) + (b * x)) + (b * 3.0)) + c) == ((((x * x) * 3.0) + (x * 7.0)) + 4.0)));  // hypothesis h₄ after `simp_all` (Lean state) // @tac-hyp 2040-2064
     assert (forall x: real :: (((((x * x) * 3.0) + (x * ((3.0 * 6.0) + b))) + (((3.0 * 9.0) + (b * 3.0)) + c)) == ((((x * x) * 3.0) + (x * 7.0)) + 4.0)));  // hypothesis h₅ after `simp_all` (Lean state) // @tac-hyp 2040-2064
-    assert forall x_1: real :: f(x_1 + 3.0) == 3.0 * (x_1 * x_1) + 7.0 * x_1 + 4.0;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2009_p9_L388 */
-    assert forall x_3: real :: f(x_3) == a * (x_3 * x_3) + b * x_3 + c;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2009_p9_L388 */
-    assert forall x_0_3: real :: true ==> a * ((x_0_3 + 3.0) * (x_0_3 + 3.0)) + b * (x_0_3 + 3.0) + c == 3.0 * (x_0_3 * x_0_3) + 7.0 * x_0_3 + 4.0;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2009_p9_L388 */
-    assert forall x_1_1: real :: true ==> a * (x_1_1 * x_1_1 + 6.0 * x_1_1 + 9.0) + b * (x_1_1 + 3.0) + c == 3.0 * (x_1_1 * x_1_1) + 7.0 * x_1_1 + 4.0;  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2009_p9_L388 */
-    assert forall x_2_1: real :: true ==> a * (x_2_1 * x_2_1) + 6.0 * a * x_2_1 + 9.0 * a + b * x_2_1 + 3.0 * b + c == 3.0 * (x_2_1 * x_2_1) + 7.0 * x_2_1 + 4.0;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2009_p9_L388 */
-    assert forall x_3_1: real :: true ==> a * (x_3_1 * x_3_1) + (6.0 * a + b) * x_3_1 + (9.0 * a + 3.0 * b + c) == 3.0 * (x_3_1 * x_3_1) + 7.0 * x_3_1 + 4.0;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2009_p9_L388 */
-    assert a == 3.0;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2009_p9_L388 */
-    assert forall x_5_1: real :: 3.0 * ((x_5_1 + 3.0) * (x_5_1 + 3.0)) + b * (x_5_1 + 3.0) + c == x_5_1 * x_5_1 * 3.0 + x_5_1 * 7.0 + 4.0;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2009_p9_L388 */
-    assert forall x_5_3: real :: f(x_5_3) == x_5_3 * x_5_3 * 3.0 + b * x_5_3 + c;  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2009_p9_L388 */
-    assert forall x_5_5: real :: 3.0 * (x_5_5 * x_5_5 + x_5_5 * 6.0 + 9.0) + b * (x_5_5 + 3.0) + c == x_5_5 * x_5_5 * 3.0 + x_5_5 * 7.0 + 4.0;  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2009_p9_L388 */
-    assert forall x_5_7: real :: x_5_7 * x_5_7 * 3.0 + x_5_7 * (3.0 * 6.0) + 3.0 * 9.0 + b * x_5_7 + b * 3.0 + c == x_5_7 * x_5_7 * 3.0 + x_5_7 * 7.0 + 4.0;  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2009_p9_L388 */
-    assert forall x_5_9: real :: x_5_9 * x_5_9 * 3.0 + x_5_9 * (3.0 * 6.0 + b) + (3.0 * 9.0 + b * 3.0 + c) == x_5_9 * x_5_9 * 3.0 + x_5_9 * 7.0 + 4.0;  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2009_p9_L388 */
-    assert 3.0 * 6.0 + b - 7.0 + (0.0 * 0.0 * 3.0 + 0.0 * (3.0 * 6.0 + b) + (3.0 * 9.0 + b * 3.0 + c) - (0.0 * 0.0 * 3.0 + 0.0 * 7.0 + 4.0)) + (0.0 - (1.0 * 1.0 * 3.0 + 1.0 * (3.0 * 6.0 + b) + (3.0 * 9.0 + b * 3.0 + c) - (1.0 * 1.0 * 3.0 + 1.0 * 7.0 + 4.0))) == 0.0;  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2009_p9_L388 */
-    assert 7.0 - (3.0 * 6.0 + b) + (0.0 - (0.0 * 0.0 * 3.0 + 0.0 * (3.0 * 6.0 + b) + (3.0 * 9.0 + b * 3.0 + c) - (0.0 * 0.0 * 3.0 + 0.0 * 7.0 + 4.0))) + (1.0 * 1.0 * 3.0 + 1.0 * (3.0 * 6.0 + b) + (3.0 * 9.0 + b * 3.0 + c) - (1.0 * 1.0 * 3.0 + 1.0 * 7.0 + 4.0)) == 0.0;  /* [IN-FILE CHECK] requires 14 of vc_amc12a_2009_p9_L388 */
-    assert (0 as real) == 0.0;  /* [IN-FILE CHECK] requires 15 of vc_amc12a_2009_p9_L388 */
-    assert (1 as real) == 1.0;  /* [IN-FILE CHECK] requires 16 of vc_amc12a_2009_p9_L388 */
-    vc_amc12a_2009_p9_L388(a, b, c, f);  /* [IN-FILE CHECK] the closed lemma for line 388 */
     assert (((3.0 * 6.0) + b) == 7.0) by {  // sub-goal before `linarith` (Lean state) // @tac 2069-2110
       // [TACTIC: «Linarith[_]At___» [ h₅ 0 , h₅ 1 , h₅ 2 , h₅ 3 ]]
       // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 2069-2110 exec 286)
@@ -415,6 +398,7 @@ lemma amc12a_2009_p9(a: real, b: real, c: real, f: real -> real)
       NatCastOne();  // cite: Nat.cast_one [applied by the tactic, not named in it: inside its internal steps (`ring1` exec 287, 288)]
       // UNCITED-APPLIED mul_comm ×6: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (3 : ℝ), b := x ^ (2 : ℕ)); (a := (6 : ℝ), b := (3 : ℝ)); (a := (3 : ℝ) * (6 : ℝ) + b, b := x); (a := (9 : ℝ), b := (3 : ℝ)); (a := (3 : ℝ), b := b); (a := (7 : ℝ), b := x)
       // UNCITED-APPLIED internal ×186 [exec 287 2069-2110]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_congr ×8, Mathlib.Tactic.Ring.mul_congr ×8, Mathlib.Meta.NormNum.isNat_ofNat ×8, Mathlib.Tactic.Ring.mul_add ×8 (+40 more heads, ×154) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1], Nat.cast_zero [Lean recorded ×1])
+      vc_amc12a_2009_p9_L388(a, b, c, f);  /* [IN-FILE CHECK] the closed lemma for line 388 */
     }
   }
   // have h₈ : 9 * a + 3 * b + c == 4  [type from Lean state]

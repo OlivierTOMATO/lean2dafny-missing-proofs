@@ -447,11 +447,6 @@ lemma numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown(m: nat, n: nat, f: nat 
       assert NatDvd(f(Int.pow(2, m)), f(Int.pow(2, (m + t))));  // instance of h_chain (Lean state)
     }
     // have h₅ : f ( ( 2 ^ ( m + t ) ) ) == f ( ( 2 ^ n ) )  [type from Lean state]
-    assert 0 <= m;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L450 */
-    assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L450 */
-    assert forall x_1: nat :: f.requires(x_1);  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L450 */
-    assert 0 <= t;  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L450 */
-    assert n == m + t;  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L450 */
     vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L450(f, m, n, t);  /* [IN-FILE CHECK] the closed lemma for line 450 */
     assert (f(Int.pow(2, (m + t))) == f(Int.pow(2, n))); // @tac 6113-6163 // @tac 6113-6145 // @tac 6113-6120
     // UNCITED-APPLIED congrArg(n, m + t, fun (_a : ℕ) => f ((2 : ℕ) ^ (m + t)) = f ((2 : ℕ) ^ _a)): no library counterpart (not stated) [exec 1725 6113-6120]

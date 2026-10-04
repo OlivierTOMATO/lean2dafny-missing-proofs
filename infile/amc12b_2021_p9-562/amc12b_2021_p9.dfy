@@ -559,23 +559,12 @@ lemma amc12b_2021_p9()
           assert (Real.div(((Real.log(80.0) * Real.log(40.0)) - (Real.log(160.0) * Real.log(20.0))), (Real.log(2.0) * Real.log(2.0))) == 2.0) by { // @tac 7929-7941
             // [TACTIC: rwSeq [ h₇₄ ]]
             // UNCITED-APPLIED congrArg(Real.log (80 : ℝ) * Real.log (40 : ℝ) - Real.log (160 : ℝ) * Real.log…, (2 : ℝ) * Real.log (2 : ℝ) ^ (2 : ℕ), fun (_a : ℝ) => _a / Real.log (2 : ℝ) ^ (2 : ℕ) = (2 : ℝ)): no library counterpart (not stated) [exec 1940 7929-7941]
-            assert Real.log(80.0) == 4.0 * Real.log(2.0) + Real.log(5.0);  /* [IN-FILE CHECK] requires 1 of vc_amc12b_2021_p9_L562 */
-            assert Real.log(40.0) == 3.0 * Real.log(2.0) + Real.log(5.0);  /* [IN-FILE CHECK] requires 2 of vc_amc12b_2021_p9_L562 */
-            assert Real.log(160.0) == 5.0 * Real.log(2.0) + Real.log(5.0);  /* [IN-FILE CHECK] requires 3 of vc_amc12b_2021_p9_L562 */
-            assert Real.log(20.0) == 2.0 * Real.log(2.0) + Real.log(5.0);  /* [IN-FILE CHECK] requires 4 of vc_amc12b_2021_p9_L562 */
-            assert Real.log(80.0) * Real.log(40.0) == 12.0 * (Real.log(2.0) * Real.log(2.0)) + 7.0 * Real.log(2.0) * Real.log(5.0) + Real.log(5.0) * Real.log(5.0);  /* [IN-FILE CHECK] requires 5 of vc_amc12b_2021_p9_L562 */
-            assert Real.log(160.0) * Real.log(20.0) == 10.0 * (Real.log(2.0) * Real.log(2.0)) + 7.0 * Real.log(2.0) * Real.log(5.0) + Real.log(5.0) * Real.log(5.0);  /* [IN-FILE CHECK] requires 6 of vc_amc12b_2021_p9_L562 */
-            assert Real.log(80.0) * Real.log(40.0) - Real.log(160.0) * Real.log(20.0) == 2.0 * (Real.log(2.0) * Real.log(2.0));  /* [IN-FILE CHECK] requires 7 of vc_amc12b_2021_p9_L562 */
-            assert Real.div(Real.div(Real.log(80.0), Real.log(2.0)), Real.div(Real.log(2.0), Real.log(40.0))) == Real.div(Real.log(80.0) * Real.log(40.0), Real.log(2.0) * Real.log(2.0));  /* [IN-FILE CHECK] requires 8 of vc_amc12b_2021_p9_L562 */
-            assert Real.div(Real.div(Real.log(160.0), Real.log(2.0)), Real.div(Real.log(2.0), Real.log(20.0))) == Real.div(Real.log(160.0) * Real.log(20.0), Real.log(2.0) * Real.log(2.0));  /* [IN-FILE CHECK] requires 9 of vc_amc12b_2021_p9_L562 */
-            assert Real.log(2.0) != 0.0;  /* [IN-FILE CHECK] requires 10 of vc_amc12b_2021_p9_L562 */
-            assert Real.div(Real.log(80.0) * Real.log(40.0), Real.log(2.0) * Real.log(2.0)) - Real.div(Real.log(160.0) * Real.log(20.0), Real.log(2.0) * Real.log(2.0)) == Real.div(Real.log(80.0) * Real.log(40.0) - Real.log(160.0) * Real.log(20.0), Real.log(2.0) * Real.log(2.0));  /* [IN-FILE CHECK] requires 11 of vc_amc12b_2021_p9_L562 */
-            vc_amc12b_2021_p9_L562();  /* [IN-FILE CHECK] the closed lemma for line 562 */
             assert (Real.div((2.0 * (Real.log(2.0) * Real.log(2.0))), (Real.log(2.0) * Real.log(2.0))) == 2.0) by {  // sub-goal before `field_simp` (Lean state) // @tac 7950-8045 // @tac 7950-8023 // @tac 7950-7990 // @tac 7950-7970
               // [TACTIC: «_<;>_» [ h₇₅ ] field_simp [ h₇₅ ] <;> ring_nf ring_nf <;> field_simp [ h₇₅ ] field_simp [ h₇₅ ] <;> nlinarith nlinarith]
               // [TACTIC: «Field_simp[_]At___» [ h₇₅ ]]
               // `field_simp` closed the goal; the rest of the chain did not run
               // UNCITED-APPLIED internal ×6 [exec 1982 7950-7970]: applications made inside the tactic's own automation, not stated — IsUnit.mul_div_cancel_right ×1; machinery/glue: congrArg ×2, of_eq_true ×1, Eq.trans ×1, eq_self ×1
+              vc_amc12b_2021_p9_L562();  /* [IN-FILE CHECK] the closed lemma for line 562 */
             }
           }
           // [TACTIC: rwSeq [ h₇₇ ]]

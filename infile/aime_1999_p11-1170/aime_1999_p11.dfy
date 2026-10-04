@@ -1167,26 +1167,6 @@ lemma aime_1999_p11(m: Rat.rat)
           // UNCITED-APPLIED Eq.symm((Rat.of_int(2)).to_real(), 2.0): its premise is not established here and its conclusion is the same Dafny fact (== is symmetric): a guarded call would state nothing
           // UNCITED-APPLIED Eq.symm((Rat.of_int(175)).to_real(), 175.0): its premise is not established here and its conclusion is the same Dafny fact (== is symmetric): a guarded call would state nothing
           // UNCITED-APPLIED Nat.cast_zero: cast target unknown (Lean applies it at ℚ and ℝ in this proof; the record does not say which)
-          assert m.Rational?;  /* [IN-FILE CHECK] requires 1 of vc_aime_1999_p11_L1170 */
-          assert gcd(Int.natAbs(m.num), m.denom) == 1;  /* [IN-FILE CHECK] requires 2 of vc_aime_1999_p11_L1170 */
-          assert Rat.lt(Rat.of_int(0), m);  /* [IN-FILE CHECK] requires 3 of vc_aime_1999_p11_L1170 */
-          assert Rat.of_int(0).num * m.denom < m.num * Rat.of_int(0).denom;  /* [IN-FILE CHECK] requires 4 of vc_aime_1999_p11_L1170 */
-          assert Real.sum(IccN(1, 35), ((k: nat) => Real.sin(5.0 * (k as real) * Real.pi() / 180.0))) == Real.tan(m.to_real() * Real.pi() / 180.0);  /* [IN-FILE CHECK] requires 5 of vc_aime_1999_p11_L1170 */
-          assert Real.div((m.num as real), (m.denom as real)) < 90.0;  /* [IN-FILE CHECK] requires 6 of vc_aime_1999_p11_L1170 */
-          assert 0 <= 1;  /* [IN-FILE CHECK] requires 7 of vc_aime_1999_p11_L1170 */
-          assert 0 <= 35;  /* [IN-FILE CHECK] requires 8 of vc_aime_1999_p11_L1170 */
-          assert 180.0 != 0.0;  /* [IN-FILE CHECK] requires 9 of vc_aime_1999_p11_L1170 */
-          assert Real.sum(IccN(1, 35), ((k: nat) => Real.sin(5.0 * (k as real) * Real.pi() / 180.0))) == Real.div(Real.cos(2.5 * Real.pi() / 180.0), Real.sin(2.5 * Real.pi() / 180.0));  /* [IN-FILE CHECK] requires 10 of vc_aime_1999_p11_L1170 */
-          assert 72.0 != 0.0;  /* [IN-FILE CHECK] requires 11 of vc_aime_1999_p11_L1170 */
-          assert Real.sum(IccN(1, 35), ((k: nat) => Real.sin(5.0 * (k as real) * Real.pi() / 180.0))) == Real.tan(35.0 * Real.pi() / 72.0);  /* [IN-FILE CHECK] requires 12 of vc_aime_1999_p11_L1170 */
-          assert Real.tan(m.to_real() * Real.pi() / 180.0) == Real.tan(35.0 * Real.pi() / 72.0);  /* [IN-FILE CHECK] requires 13 of vc_aime_1999_p11_L1170 */
-          assert m.to_real() * Real.pi() / 180.0 == 35.0 * Real.pi() / 72.0;  /* [IN-FILE CHECK] requires 14 of vc_aime_1999_p11_L1170 */
-          assert 2.0 != 0.0;  /* [IN-FILE CHECK] requires 15 of vc_aime_1999_p11_L1170 */
-          assert m.to_real() == 175.0 / 2.0;  /* [IN-FILE CHECK] requires 16 of vc_aime_1999_p11_L1170 */
-          assert m.to_real() * 2.0 == 175.0;  /* [IN-FILE CHECK] requires 17 of vc_aime_1999_p11_L1170 */
-          assert Rat.of_int(2).Rational?;  /* [IN-FILE CHECK] requires 18 of vc_aime_1999_p11_L1170 */
-          assert Rat.mul(m, Rat.of_int(2)).Rational?;  /* [IN-FILE CHECK] requires 19 of vc_aime_1999_p11_L1170 */
-          assert Rat.of_int(175).Rational?;  /* [IN-FILE CHECK] requires 20 of vc_aime_1999_p11_L1170 */
           vc_aime_1999_p11_L1170(m);  /* [IN-FILE CHECK] the closed lemma for line 1170 */
           assert (Rat.mul(m, Rat.of_int(2)) == Rat.of_int(175));  // hypothesis h₃ after `norm_cast` (Lean state) // @tac-hyp 11810-11831
           // UNCITED-APPLIED congrArg(↑m * (2 : ℝ), ↑(m * ↑(2 : ℕ)), fun (x : ℝ) => x = ↑(175 : ℕ)): no library counterpart (not stated) [exec 2799 11810-11831]

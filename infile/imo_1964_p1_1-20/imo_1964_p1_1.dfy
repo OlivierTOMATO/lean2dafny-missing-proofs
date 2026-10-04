@@ -17,15 +17,6 @@ lemma imo_1964_p1_1(n: nat)
     // UNCITED Int.ModEq: no Lean instance recorded (arguments unknown), not guessed
     // UNCITED-APPLIED congrArg(fun (_a : Prop) => _a): no library counterpart (not stated) [exec 24 382-396]
     // UNCITED-APPLIED Int.ModEq.eq_1((7 : ℤ), (2 : ℤ) ^ n, (1 : ℤ)): no library counterpart (not stated) [exec 24 382-396]
-    assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1964_p1_1_L20 */
-    assert NatDvd(7, tsub(Int.pow(2, n), 1));  /* [IN-FILE CHECK] requires 2 of vc_imo_1964_p1_1_L20 */
-    assert if 7 == 0 then tsub(Int.pow(2, n), 1) == 0 else tsub(Int.pow(2, n), 1) % 7 == 0;  /* [IN-FILE CHECK] requires 3 of vc_imo_1964_p1_1_L20 */
-    assert forall n0: nat :: NatDvd(7, tsub(Int.pow(2, n0), 1)) && 0 <= n0 && n0 < n ==> NatDvd(3, n0);  /* [IN-FILE CHECK] requires 4 of vc_imo_1964_p1_1_L20 */
-    assert 0 <= Int.pow(2, n);  /* [IN-FILE CHECK] requires 5 of vc_imo_1964_p1_1_L20 */
-    assert 0 <= 1;  /* [IN-FILE CHECK] requires 6 of vc_imo_1964_p1_1_L20 */
-    assert IntDvd(7, tsub(Int.pow(2, n), 1));  /* [IN-FILE CHECK] requires 7 of vc_imo_1964_p1_1_L20 */
-    assert 7 != 0;  /* [IN-FILE CHECK] requires 8 of vc_imo_1964_p1_1_L20 */
-    vc_imo_1964_p1_1_L20(n);  /* [IN-FILE CHECK] the closed lemma for line 20 */
     assert ((Int.pow(2, n) % 7) == (1 % 7)) by {  // sub-goal before `rw` (Lean state) // @tac 473-505 // @tac 566-586
       // [TACTIC: rwSeq [ ← Int.coe_nat_dvd ] at h₀]
       // UNCITED Int.coe_nat_dvd: named here, no record of its application here; the harvest has no application record for this execution at all (its proof term was not captured), so whether Lean applied it here is unknown: not stated
@@ -41,6 +32,7 @@ lemma imo_1964_p1_1(n: nat)
         IntCoeNatDvd(7, tsub(Int.pow(2, n), 1));  // cite: Int.coe_nat_dvd [applied by the tactic, not named in it]
         // UNCITED-APPLIED internal ×101 [exec 83 658-663]: applications made inside the tactic's own automation, not stated — le_of_le_of_eq ×4, Int.sub_nonneg_of_le ×4, Int.add_one_le_of_lt ×3, Int.emod_def ×2, Int.lt_or_gt_of_ne ×1, Int.emod_eq_zero_of_dvd ×1, Nat.cast_pred ×1, Nat.cast_zero ×1, Int.mul_ediv_self_le ×1, Int.lt_mul_ediv_self_add ×1; machinery/glue: Eq.symm ×16, Eq.trans ×7, Lean.Omega.Int.sub_congr ×6, Lean.Omega.LinearCombo.sub_eval ×6 (+23 more heads, ×47) (cited in this block, not counted here: Int.coe_nat_dvd [Lean recorded ×1], Nat.cast_pow [Lean recorded ×1])
       }
+      vc_imo_1964_p1_1_L20(n);  /* [IN-FILE CHECK] the closed lemma for line 20 */
     }
   }
   // have h₂ : orderOf ( 2 ) == 3  [type from Lean state]

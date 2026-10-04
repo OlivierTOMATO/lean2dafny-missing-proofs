@@ -265,20 +265,6 @@ lemma imo_1983_p6(a: real, b: real, c: real)
     SqNonneg((c - a)); assert (0.0 <= ((c - a) * (c - a)));  // cert: sq_nonneg
     if (0.0 < ((a + b) - c)) && (0.0 < ((a + c) - b)) { cert_piece_13(a, b, c); }  // cert: mul_pos
     if (0.0 <= ((b - c) * (b - c))) && (0.0 <= (((a + c) - b) * ((b + c) - a))) { cert_piece_14(a, b, c); }  // cert: mul_nonneg_of_nonpos_of_nonpos
-    assert 0.0 < a;  /* [IN-FILE CHECK] requires 1 of vc_imo_1983_p6_L268 */
-    assert 0.0 < b;  /* [IN-FILE CHECK] requires 2 of vc_imo_1983_p6_L268 */
-    assert 0.0 < c;  /* [IN-FILE CHECK] requires 3 of vc_imo_1983_p6_L268 */
-    assert c < a + b;  /* [IN-FILE CHECK] requires 4 of vc_imo_1983_p6_L268 */
-    assert b < a + c;  /* [IN-FILE CHECK] requires 5 of vc_imo_1983_p6_L268 */
-    assert a < b + c;  /* [IN-FILE CHECK] requires 6 of vc_imo_1983_p6_L268 */
-    assert 0.0 < b + c - a;  /* [IN-FILE CHECK] requires 7 of vc_imo_1983_p6_L268 */
-    assert 0.0 < c + a - b;  /* [IN-FILE CHECK] requires 8 of vc_imo_1983_p6_L268 */
-    assert 0.0 < a + b - c;  /* [IN-FILE CHECK] requires 9 of vc_imo_1983_p6_L268 */
-    assert 0.0 < a * b;  /* [IN-FILE CHECK] requires 10 of vc_imo_1983_p6_L268 */
-    assert 0.0 < b * c;  /* [IN-FILE CHECK] requires 11 of vc_imo_1983_p6_L268 */
-    assert 0.0 < c * a;  /* [IN-FILE CHECK] requires 12 of vc_imo_1983_p6_L268 */
-    assert 0.0 <= (a - b) * (a - b);  /* [IN-FILE CHECK] requires 13 of vc_imo_1983_p6_L268 */
-    assert 0.0 <= (c - a) * (c - a);  /* [IN-FILE CHECK] requires 14 of vc_imo_1983_p6_L268 */
     vc_imo_1983_p6_L268(a, b, c);  /* [IN-FILE CHECK] the closed lemma for line 268 */
     SqNonneg((b - c)); assert (0.0 <= ((b - c) * (b - c)));  // cert: sq_nonneg
     if (0.0 < ((a + c) - b)) && (0.0 < ((b + c) - a)) { cert_piece_15(a, b, c); }  // cert: mul_pos

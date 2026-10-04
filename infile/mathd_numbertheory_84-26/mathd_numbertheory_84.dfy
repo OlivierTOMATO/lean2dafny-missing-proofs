@@ -23,10 +23,6 @@ lemma mathd_numbertheory_84()
     // [TACTIC: «Norm_num[_]At___» [ decimal_eq ]]
     // `norm_num` closed the goal; the rest of the chain did not run
   // have floor_value : Int.floor ( ( 9 / 160 * 100 ) ) == 5  [type from Lean state]
-  assert 9.0 / 160.0 == 0.05625;  /* [IN-FILE CHECK] requires 1 of vc_mathd_numbertheory_84_L26 */
-  assert 9.0 / 160.0 * 100.0 == 5.625;  /* [IN-FILE CHECK] requires 2 of vc_mathd_numbertheory_84_L26 */
-  assert (1 as real) == 1.0;  /* [IN-FILE CHECK] requires 3 of vc_mathd_numbertheory_84_L26 */
-  vc_mathd_numbertheory_84_L26();  /* [IN-FILE CHECK] the closed lemma for line 26 */
   assert (floor(((9.0 / 160.0) * 100.0)) == 5) by { // @tac 896-974 // @tac 896-957 // @tac 896-940
     // [TACTIC: «_<;>_» [ Int.floor_eq_iff , shifted_decimal ] norm_num [ Int.floor_eq_iff , shifted_decimal ] <;> norm_num norm_num <;> linarith linarith]
     // [TACTIC: «Norm_num[_]At___» [ Int.floor_eq_iff , shifted_decimal ]]
@@ -34,6 +30,7 @@ lemma mathd_numbertheory_84()
     NatCastOne();  // cite: Nat.cast_one [applied by the tactic, not named in it]
     // `norm_num` closed the goal; the rest of the chain did not run
     // UNCITED-APPLIED internal ×37 [exec 152 896-940]: applications made inside the tactic's own automation, not stated — and_self ×1; machinery/glue: Mathlib.Meta.NormNum.IsNat.to_isRat ×7, Mathlib.Meta.NormNum.isNat_ofNat ×7, congrArg ×4, Mathlib.Meta.NormNum.isRat_mul ×3 (+11 more heads, ×15) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1])
+    vc_mathd_numbertheory_84_L26();  /* [IN-FILE CHECK] the closed lemma for line 26 */
   }
   // [TACTIC: simpa [ shifted_decimal , floor_value ] using floor_value]
   // UNCITED-APPLIED internal ×1 [exec 165 1084-1138]: applications made inside the tactic's own automation, not stated — machinery/glue: congrArg ×1

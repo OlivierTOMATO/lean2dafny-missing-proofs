@@ -1060,22 +1060,6 @@ lemma amc12a_2021_p19(S: set<real>)
                     if (0.0 <= (Real.cos(x) * Real.cos(x))) && (((1.0 - Real.cos(x)) - Real.sin(x)) == 0.0) { assert (-(((Real.cos(x) * Real.cos(x)) * ((1.0 - Real.cos(x)) - Real.sin(x)))) == 0.0); }  // cert: Linarith.mul_zero_eq
                     SqNonneg(Real.cos(x)); assert (0.0 <= (Real.cos(x) * Real.cos(x)));  // cert: sq_nonneg
                     if (0.0 <= ((1.0 - Real.cos(x)) * (1.0 - Real.cos(x)))) && (((1.0 - Real.cos(x)) - Real.sin(x)) == 0.0) { assert (-((((1.0 - Real.cos(x)) * (1.0 - Real.cos(x))) * ((1.0 - Real.cos(x)) - Real.sin(x)))) == 0.0); }  // cert: Linarith.mul_zero_eq
-                    assert forall x_1: real :: (x_1 in S) == (0.0 <= x_1 && x_1 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_1)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_1)));  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p19_L1063 */
-                    assert ((0.0 <= x) && ((x <= Real.pi()) || (Real.pi() < x))) || (x < 0.0);  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p19_L1063 */
-                    assert (x in S) == (0.0 <= x && x <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x)) == Real.cos(Real.pi() / 2.0 * Real.sin(x)));  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p19_L1063 */
-                    assert ((0.0 <= x) && (((x <= Real.pi()) && (2.0 != 0.0)) || (Real.pi() < x))) || (x < 0.0);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p19_L1063 */
-                    assert 0.0 <= x;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p19_L1063 */
-                    assert x <= Real.pi();  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2021_p19_L1063 */
-                    assert Real.sin(Real.pi() / 2.0 * Real.cos(x)) == Real.cos(Real.pi() / 2.0 * Real.sin(x));  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2021_p19_L1063 */
-                    assert 2.0 != 0.0;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2021_p19_L1063 */
-                    assert Real.sin(Real.pi() / 2.0 * Real.cos(x)) == Real.cos(Real.pi() / 2.0 * (1.0 - Real.cos(x)));  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2021_p19_L1063 */
-                    assert Real.cos(Real.pi() / 2.0 * (1.0 - Real.cos(x))) == Real.cos(Real.pi() / 2.0 * Real.sin(x));  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2021_p19_L1063 */
-                    assert Real.pi() / 2.0 * (1.0 - Real.cos(x)) == Real.pi() / 2.0 * Real.sin(x);  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2021_p19_L1063 */
-                    assert 1.0 - Real.cos(x) == Real.sin(x);  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2021_p19_L1063 */
-                    assert Real.sin(x) == 1.0 - Real.cos(x);  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2021_p19_L1063 */
-                    assert Real.sin(x) * Real.sin(x) + Real.cos(x) * Real.cos(x) == 1.0;  /* [IN-FILE CHECK] requires 14 of vc_amc12a_2021_p19_L1063 */
-                    assert Real.sin(x) >= 0.0;  /* [IN-FILE CHECK] requires 15 of vc_amc12a_2021_p19_L1063 */
-                    assert 0.0 <= Real.cos(x) * Real.cos(x);  /* [IN-FILE CHECK] requires 16 of vc_amc12a_2021_p19_L1063 */
                     vc_amc12a_2021_p19_L1063(S, x);  /* [IN-FILE CHECK] the closed lemma for line 1063 */
                     SqNonneg((1.0 - Real.cos(x))); assert (0.0 <= ((1.0 - Real.cos(x)) * (1.0 - Real.cos(x))));  // cert: sq_nonneg
                     if (((1.0 - Real.cos(x)) - Real.sin(x)) == 0.0) { assert ((((1.0 - Real.cos(x)) - Real.sin(x)) * ((1.0 - Real.cos(x)) - Real.sin(x))) == 0.0); }  // cert: Linarith.zero_mul_eq

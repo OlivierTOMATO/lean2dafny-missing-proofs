@@ -609,41 +609,6 @@ lemma amc12a_2009_p15(n: nat)
     // have h₆ :   [type from Lean state]
     assert (Complex.sum(IccN(1, (4 * 1)), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.sub(Complex.mul(Complex.of_real(2.0), Complex.of_real(1.0)), Complex.mul(Complex.mul(Complex.of_real(2.0), Complex.of_real(1.0)), Complex.I()))) by {
       // [TACTIC: exact h_sum_multiple_of_4 ( 1 )]
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2009_p15_L612 */
-      assert 0 <= m;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2009_p15_L612 */
-      assert 0 < n;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2009_p15_L612 */
-      assert Complex.sum(IccN(1, n), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.add(Complex.of_real(48.0), Complex.mul(Complex.of_real(49.0), Complex.I()));  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2009_p15_L612 */
-      assert forall k_0_1: int :: true;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2009_p15_L612 */
-      assert forall k_0_1: nat :: true ==> Complex.pow(Complex.I(), k_0_1 % 4) == Complex.pow(Complex.I(), k_0_1);  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2009_p15_L612 */
-      assert forall m_1_1: nat :: true ==> (forall v_40_k: int :: true);  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2009_p15_L612 */
-      assert forall m_1_1: nat :: true ==> Complex.sum(IccN(4 * m_1_1 + 1, 4 * m_1_1 + 4), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.sub(Complex.of_real(2.0), Complex.mul(Complex.of_real(2.0), Complex.I()));  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2009_p15_L612 */
-      assert forall m_2_1: nat :: true ==> (forall v_33_k: int :: true);  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2009_p15_L612 */
-      assert forall m_2_1: nat :: true ==> Complex.sum(IccN(1, 4 * m_2_1), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.sub(Complex.mul(Complex.of_real(2.0), Complex.of_real((m_2_1 as real))), Complex.mul(Complex.mul(Complex.of_real(2.0), Complex.of_real((m_2_1 as real))), Complex.I()));  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2009_p15_L612 */
-      assert !(exists m_1: nat :: n == 4 * m_1);  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2009_p15_L612 */
-      assert !(exists m_4: nat :: n == 4 * m_4);  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2009_p15_L612 */
-      assert exists m_7: nat :: n == 4 * m_7 + 1;  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2009_p15_L612 */
-      assert Complex.of_real(2.0).Complex?;  /* [IN-FILE CHECK] requires 14 of vc_amc12a_2009_p15_L612 */
-      assert Complex.I().Complex?;  /* [IN-FILE CHECK] requires 15 of vc_amc12a_2009_p15_L612 */
-      assert Complex.mul(Complex.of_real(2.0), Complex.I()).Complex?;  /* [IN-FILE CHECK] requires 16 of vc_amc12a_2009_p15_L612 */
-      assert Complex.sub(Complex.of_real(2.0), Complex.mul(Complex.of_real(2.0), Complex.I())).Complex?;  /* [IN-FILE CHECK] requires 17 of vc_amc12a_2009_p15_L612 */
-      assert 0 <= 4 * 0 + 1;  /* [IN-FILE CHECK] requires 18 of vc_amc12a_2009_p15_L612 */
-      assert 0 <= 4 * 0 + 4;  /* [IN-FILE CHECK] requires 19 of vc_amc12a_2009_p15_L612 */
-      assert Complex.sum(IccN(4 * 0 + 1, 4 * 0 + 4), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))).Complex?;  /* [IN-FILE CHECK] requires 20 of vc_amc12a_2009_p15_L612 */
-      assert Complex.sum(IccN(4 * 0 + 1, 4 * 0 + 4), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.sub(Complex.of_real(2.0), Complex.mul(Complex.of_real(2.0), Complex.I()));  /* [IN-FILE CHECK] requires 21 of vc_amc12a_2009_p15_L612 */
-      assert 0 <= 1;  /* [IN-FILE CHECK] requires 22 of vc_amc12a_2009_p15_L612 */
-      assert 0 <= 4 * 0;  /* [IN-FILE CHECK] requires 23 of vc_amc12a_2009_p15_L612 */
-      assert Complex.sum(IccN(1, 4 * 0), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))).Complex?;  /* [IN-FILE CHECK] requires 24 of vc_amc12a_2009_p15_L612 */
-      assert Complex.of_real(0.0).Complex?;  /* [IN-FILE CHECK] requires 25 of vc_amc12a_2009_p15_L612 */
-      assert Complex.mul(Complex.of_real(2.0), Complex.of_real(0.0)).Complex?;  /* [IN-FILE CHECK] requires 26 of vc_amc12a_2009_p15_L612 */
-      assert Complex.mul(Complex.mul(Complex.of_real(2.0), Complex.of_real(0.0)), Complex.I()).Complex?;  /* [IN-FILE CHECK] requires 27 of vc_amc12a_2009_p15_L612 */
-      assert Complex.sub(Complex.mul(Complex.of_real(2.0), Complex.of_real(0.0)), Complex.mul(Complex.mul(Complex.of_real(2.0), Complex.of_real(0.0)), Complex.I())).Complex?;  /* [IN-FILE CHECK] requires 28 of vc_amc12a_2009_p15_L612 */
-      assert Complex.sum(IccN(1, 4 * 0), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.sub(Complex.mul(Complex.of_real(2.0), Complex.of_real(0.0)), Complex.mul(Complex.mul(Complex.of_real(2.0), Complex.of_real(0.0)), Complex.I()));  /* [IN-FILE CHECK] requires 29 of vc_amc12a_2009_p15_L612 */
-      assert 0 <= 4 * 1;  /* [IN-FILE CHECK] requires 30 of vc_amc12a_2009_p15_L612 */
-      assert Complex.sum(IccN(1, 4 * 1), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))).Complex?;  /* [IN-FILE CHECK] requires 31 of vc_amc12a_2009_p15_L612 */
-      assert Complex.of_real(1.0).Complex?;  /* [IN-FILE CHECK] requires 32 of vc_amc12a_2009_p15_L612 */
-      assert Complex.mul(Complex.of_real(2.0), Complex.of_real(1.0)).Complex?;  /* [IN-FILE CHECK] requires 33 of vc_amc12a_2009_p15_L612 */
-      assert Complex.mul(Complex.mul(Complex.of_real(2.0), Complex.of_real(1.0)), Complex.I()).Complex?;  /* [IN-FILE CHECK] requires 34 of vc_amc12a_2009_p15_L612 */
-      assert Complex.sub(Complex.mul(Complex.of_real(2.0), Complex.of_real(1.0)), Complex.mul(Complex.mul(Complex.of_real(2.0), Complex.of_real(1.0)), Complex.I())).Complex?;  /* [IN-FILE CHECK] requires 35 of vc_amc12a_2009_p15_L612 */
       vc_amc12a_2009_p15_L612(m, n);  /* [IN-FILE CHECK] the closed lemma for line 612 */
       assert (Complex.sum(IccN(1, (4 * 1)), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.sub(Complex.mul(Complex.of_real(2.0), Complex.of_real(1.0)), Complex.mul(Complex.mul(Complex.of_real(2.0), Complex.of_real(1.0)), Complex.I())));  // instance of h_sum_multiple_of_4 (Lean state)
     }

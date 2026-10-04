@@ -106,9 +106,6 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
           }
           // [TACTIC: rwSeq [ h₃ ]]
           // UNCITED-APPLIED congrArg(((1 : ℕ) + (2 : ℕ) ^ (n + (2 : ℕ)) + k * (2 : ℕ) ^ (n + (3 : ℕ))) ^ (…, (1 : ℕ) + (2 : ℕ) ^ (n + (3 : ℕ)) + ((2 : ℕ) ^ ((2 : ℕ) * n + (4 : ℕ)…, fun (_a : ℕ) => _a = (1 : ℕ) + (2 : ℕ) ^ (succ n + (2 : ℕ)) + ((2 : ℕ…): no library counterpart (not stated) [exec 306 2059-2068]
-          assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109 */
-          assert 0 <= k;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109 */
-          vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 109 */
           assert (((1 + Int.pow(2, (n + 3))) + (((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5))))) == ((1 + Int.pow(2, ((n + 1) + 2))) + (NatDiv((((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) * Int.pow(2, ((n + 1) + 3))))) by {  // sub-goal before `have` (Lean state) // @tac 2077-4423 // @tac 4432-6861 // @tac 6870-7441 // @tac 7450-7547 // @tac 7450-7537 // @tac 7450-7520 // @tac 7450-7459
             // have h₄ : ( 2 ^ ( 2 * n + 4 ) + k * 2 ^ ( n + 4 ) + k ^ 2 * 2 ^ ( 2 * n + 6 ) +   [type from Lean state]
             assert (NatMod((((Int.pow(2, ((2 * n) + 4)) + (k * Int.pow(2, (n + 4)))) + ((k * k) * Int.pow(2, ((2 * n) + 6)))) + ((2 * k) * Int.pow(2, ((2 * n) + 5)))), Int.pow(2, (n + 4))) == 0) by { // @tac 2211-2310 // @tac 2321-2405 // @tac 2416-2730 // @tac 2741-3368 // @tac 3379-3909 // @tac 3920-4399 // @tac 4410-4423
@@ -420,6 +417,7 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
             // [TACTIC: rwSeq [ h₆ ]]
             // `rw` closed the goal; the rest of the chain did not run
             // UNCITED-APPLIED congrArg((1 : ℕ) + (2 : ℕ) ^ (n + (3 : ℕ)) + ((2 : ℕ) ^ ((2 : ℕ) * n + (4 : ℕ)…, (1 : ℕ) + (2 : ℕ) ^ (n + (1 : ℕ) + (2 : ℕ)) + ((2 : ℕ) ^ ((2 : ℕ) * n…, fun (_a : ℕ) => _a = (1 : ℕ) + (2 : ℕ) ^ (succ n + (2 : ℕ)) + ((2 : ℕ…): no library counterpart (not stated) [exec 1050 7450-7459]
+            vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L109(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 109 */
           }
         }
       }

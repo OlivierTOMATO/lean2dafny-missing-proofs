@@ -172,11 +172,11 @@ lemma aime_1984_p1(u: nat -> Rat.rat)
     // have h₆ : ∑ k ∈ Finset.range (98 : ℕ), (u (0 : ℕ) + (↑k + (1 : ℚ))) = (98 : ℚ) * u (0 : ℕ) + ∑ k ∈ Finset.range (98 : ℕ)  [type from Lean state]
     assert (Rat.sum(range(98), ((k: nat) => Rat.add(u(0), Rat.add(Rat.of_int(k), Rat.of_int(1))))) == Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.sum(range(98), ((k: nat) => Rat.add(Rat.of_int(k), Rat.of_int(1)))))) by { // @tac 1369-2029
       // GAP: calc _ ... not rendered: a term does not render at Lean's carrier rat (its step proofs follow unguarded)
-      vc_aime_1984_p1_L175(u);  /* [IN-FILE CHECK] the closed lemma for line 175 */
       assert (Rat.sum(range(98), ((k: nat) => Rat.add(u(0), Rat.add(Rat.of_int(k), Rat.of_int(1))))) == Rat.add(Rat.sum(range(98), ((k: nat) => u(0))), Rat.sum(range(98), ((k: nat) => Rat.add(Rat.of_int(k), Rat.of_int(1)))))) by {  // sub-goal before `rw` (Lean state) // @tac 1817-1844
         // [TACTIC: rwSeq [ Finset.sum_add_distrib ]]
         FinsetSumAddDistribRat(range(98), ((k: nat) => u(0)), ((k: nat) => Rat.add(Rat.of_int(k), Rat.of_int(1))));  // cite: Finset.sum_add_distrib
         // UNCITED-APPLIED congrArg(∑ x ∈ Finset.range (98 : ℕ), (u (0 : ℕ) + (↑x + (1 : ℚ))), ∑ x ∈ Finset.range (98 : ℕ), u (0 : ℕ) + ∑ x ∈ Finset.range (98 : ℕ),…, fun (_a : ℚ) => _a = ∑ k ∈ Finset.range (98 : ℕ), u (0 : ℕ) + ∑ k ∈ F…): no library counterpart (not stated) [exec 266 1817-1844]
+        vc_aime_1984_p1_L175(u);  /* [IN-FILE CHECK] the closed lemma for line 175 */
       }
       assert (Rat.add(Rat.sum(range(98), ((k: nat) => u(0))), Rat.sum(range(98), ((k: nat) => Rat.add(Rat.of_int(k), Rat.of_int(1))))) == Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.sum(range(98), ((k: nat) => Rat.add(Rat.of_int(k), Rat.of_int(1)))))) by {  // sub-goal before `simp` (Lean state) // @tac 1924-2029 // @tac 1924-2010 // @tac 1924-1985 // @tac 1924-1966
         // [TACTIC: «_<;>_» [ Finset.sum_const , Finset.card_range ] simp [ Finset.sum_const , Finset.card_range ] simp [ Finset.sum_const , Finset.card_range ] <;> ring <;> field_simp field_simp <;> ring]

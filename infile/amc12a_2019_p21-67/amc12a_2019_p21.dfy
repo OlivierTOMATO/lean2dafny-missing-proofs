@@ -64,27 +64,6 @@ lemma amc12a_2019_p21(z: Complex.complex)
     assert (Complex.sum(IccN(1, 12), ((k: nat) => Complex.pow(z, (k * k)))) == Complex.add(Complex.add(Complex.mul(Complex.of_real(6.0), z), Complex.mul(Complex.of_real(3.0), Complex.pow(z, 4))), Complex.of_real(3.0)));
   }
   // have h₃ : ∑ k ∈ Finset.Icc (1 : ℤ) (12 : ℤ), (1 : ℂ) / z ^ k ^ (2 : ℕ) = (6 : ℂ) * z ^ (7 : ℕ) + (3 : ℂ) * z ^ (4 : ℕ) +  [type from Lean state]
-  assert z == Complex.div(Complex.add(Complex.of_real(1.0), Complex.I()), Complex.of_real(Real.sqrt(2.0)));  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2019_p21_L67 */
-  assert 0 <= 8;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2019_p21_L67 */
-  assert Complex.pow(z, 8).Complex?;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2019_p21_L67 */
-  assert Complex.of_real(1.0).Complex?;  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2019_p21_L67 */
-  assert Complex.pow(z, 8) == Complex.of_real(1.0);  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2019_p21_L67 */
-  assert Complex.sum(Icc(1, 12), ((k: int) => Complex.zpow(z, k * k))).Complex?;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2019_p21_L67 */
-  assert Complex.of_real(6.0).Complex?;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2019_p21_L67 */
-  assert Complex.mul(Complex.of_real(6.0), z).Complex?;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2019_p21_L67 */
-  assert Complex.of_real(3.0).Complex?;  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2019_p21_L67 */
-  assert 0 <= 4;  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2019_p21_L67 */
-  assert Complex.pow(z, 4).Complex?;  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2019_p21_L67 */
-  assert Complex.mul(Complex.of_real(3.0), Complex.pow(z, 4)).Complex?;  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2019_p21_L67 */
-  assert Complex.add(Complex.mul(Complex.of_real(6.0), z), Complex.mul(Complex.of_real(3.0), Complex.pow(z, 4))).Complex?;  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2019_p21_L67 */
-  assert Complex.add(Complex.add(Complex.mul(Complex.of_real(6.0), z), Complex.mul(Complex.of_real(3.0), Complex.pow(z, 4))), Complex.of_real(3.0)).Complex?;  /* [IN-FILE CHECK] requires 14 of vc_amc12a_2019_p21_L67 */
-  assert Complex.sum(Icc(1, 12), ((k: int) => Complex.zpow(z, k * k))) == Complex.add(Complex.add(Complex.mul(Complex.of_real(6.0), z), Complex.mul(Complex.of_real(3.0), Complex.pow(z, 4))), Complex.of_real(3.0));  /* [IN-FILE CHECK] requires 15 of vc_amc12a_2019_p21_L67 */
-  assert Complex.sum(Icc(1, 12), ((k: int) => Complex.div(Complex.of_real(1.0), Complex.zpow(z, k * k)))).Complex?;  /* [IN-FILE CHECK] requires 16 of vc_amc12a_2019_p21_L67 */
-  assert 0 <= 7;  /* [IN-FILE CHECK] requires 17 of vc_amc12a_2019_p21_L67 */
-  assert Complex.pow(z, 7).Complex?;  /* [IN-FILE CHECK] requires 18 of vc_amc12a_2019_p21_L67 */
-  assert Complex.mul(Complex.of_real(6.0), Complex.pow(z, 7)).Complex?;  /* [IN-FILE CHECK] requires 19 of vc_amc12a_2019_p21_L67 */
-  assert Complex.add(Complex.mul(Complex.of_real(6.0), Complex.pow(z, 7)), Complex.mul(Complex.of_real(3.0), Complex.pow(z, 4))).Complex?;  /* [IN-FILE CHECK] requires 20 of vc_amc12a_2019_p21_L67 */
-  assert Complex.add(Complex.add(Complex.mul(Complex.of_real(6.0), Complex.pow(z, 7)), Complex.mul(Complex.of_real(3.0), Complex.pow(z, 4))), Complex.of_real(3.0)).Complex?;  /* [IN-FILE CHECK] requires 21 of vc_amc12a_2019_p21_L67 */
   vc_amc12a_2019_p21_L67(z);  /* [IN-FILE CHECK] the closed lemma for line 67 */
   assert (Complex.sum(Icc(1, 12), ((k: int) => Complex.div(Complex.of_real(1.0), Complex.zpow(z, (k * k))))) == Complex.add(Complex.add(Complex.mul(Complex.of_real(6.0), Complex.pow(z, 7)), Complex.mul(Complex.of_real(3.0), Complex.pow(z, 4))), Complex.of_real(3.0)));
     // [TACTIC: «_<;>_» [ Complex.ext_iff , Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] simp_all [ Complex.ext_iff , Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] simp_all [ Complex.ext_iff , Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] <;> field_simp [ Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] field_simp [ Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] <;> ring <;> norm_num norm_num <;> simp_all [ Complex.ext_iff , Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] simp_all [ Complex.ext_iff , Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] simp_all [ Complex.ext_iff , Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] <;> field_simp [ Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] field_simp [ Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] <;> ring <;> norm_num norm_num <;> simp_all [ Complex.ext_iff , Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] simp_all [ Complex.ext_iff , Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] simp_all [ Complex.ext_iff , Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] <;> field_simp [ Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] field_simp [ Complex.normSq , Complex.I_sq , pow_succ , mul_assoc , mul_comm , mul_left_comm ] <;> ring <;> norm_num norm_num]

@@ -147,25 +147,6 @@ lemma numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown(m: nat, n: nat, f: nat 
       // UNCITED-APPLIED congrArg((9 : ℕ) ^ ((2 : ℕ) * k), (9 : ℕ) ^ k * (9 : ℕ) ^ k, fun (_a : ℕ) => (4 : ℕ) ^ k * (4 : ℕ) ^ k + (6 : ℕ) ^ k * (6 : ℕ) ^ k…): no library counterpart (not stated) [exec 415 1170-1191]
       assert ((((Int.pow(4, k) * Int.pow(4, k)) + (Int.pow(6, k) * Int.pow(6, k))) + (Int.pow(9, k) * Int.pow(9, k))) == (((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k)) * tsub(((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k)), (2 * Int.pow(6, k))))) by {  // sub-goal before `have` (Lean state) // @tac 1196-2067 // @tac 2072-4114 // @tac 4119-4417 // @tac 4119-4134
         // have h₆ : 4 ^ k * 4 ^ k + 6 ^ k * 6 ^ k + 9 ^ k * 9 ^ k == ( 4 ^ k + 6 ^ k + 9 ^  [type from Lean state]
-        assert 0 <= m;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert 0 <= k;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert forall x_1: nat :: f.requires(x_1);  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert forall x_1: nat :: f(x_1) == Int.pow(4, x_1) + Int.pow(6, x_1) + Int.pow(9, x_1);  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert 0 < m;  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert 0 < n;  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert m <= n;  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert forall m0: int, n0: int :: (forall x_2: nat :: f.requires(x_2)) && (0 <= m0 && 0 <= n0 && (forall x_2: nat :: f(x_2) == Int.pow(4, x_2) + Int.pow(6, x_2) + Int.pow(9, x_2)) && 0 < m0 && 0 < n0 && m0 <= n0 && ((0 <= m0 && m0 < m) || (m0 == m && 0 <= n0 && n0 < n)) ==> f.requires(Int.pow(2, m0)) && f.requires(Int.pow(2, n0)) && NatDvd(f(Int.pow(2, m0)), f(Int.pow(2, n0))));  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert 0 <= k;  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert 0 <= 2 * k;  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert f(2 * k) == Int.pow(4, 2 * k) + Int.pow(6, 2 * k) + Int.pow(9, 2 * k);  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert f(k) == Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k);  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert Int.pow(4, 2 * k) == Int.pow(4, k) * Int.pow(4, k);  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert Int.pow(6, 2 * k) == Int.pow(6, k) * Int.pow(6, k);  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert Int.pow(9, 2 * k) == Int.pow(9, k) * Int.pow(9, k);  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)) * (Int.pow(4, k) + Int.pow(6, k) + Int.pow(9, k)) == Int.pow(4, k) * Int.pow(4, k) + Int.pow(6, k) * Int.pow(6, k) + Int.pow(9, k) * Int.pow(9, k) + 2 * (Int.pow(4, k) * Int.pow(6, k) + Int.pow(4, k) * Int.pow(9, k) + Int.pow(6, k) * Int.pow(9, k));  /* [IN-FILE CHECK] requires 17 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        assert Int.pow(4, k) * Int.pow(6, k) + Int.pow(4, k) * Int.pow(9, k) + Int.pow(6, k) * Int.pow(9, k) == Int.pow(6, k) * (Int.pow(4, k) + Int.pow(9, k)) + Int.pow(4, k) * Int.pow(9, k);  /* [IN-FILE CHECK] requires 18 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150 */
-        vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150(f, k, k, m, n);  /* [IN-FILE CHECK] the closed lemma for line 150 */
         assert ((((Int.pow(4, k) * Int.pow(4, k)) + (Int.pow(6, k) * Int.pow(6, k))) + (Int.pow(9, k) * Int.pow(9, k))) == tsub((((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k)) * ((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k))), (2 * (((Int.pow(4, k) * Int.pow(6, k)) + (Int.pow(4, k) * Int.pow(9, k))) + (Int.pow(6, k) * Int.pow(9, k)))))) by { // @tac 1516-1842 // @tac 1849-2055 // @tac 2062-2067
           // have h₇ : ( 4 ^ k + 6 ^ k + 9 ^ k ) * ( 4 ^ k + 6 ^ k + 9 ^ k ) == 4 ^ k * 4 ^ k  [type from Lean state]
           assert ((((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k)) * ((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k))) == ((((Int.pow(4, k) * Int.pow(4, k)) + (Int.pow(6, k) * Int.pow(6, k))) + (Int.pow(9, k) * Int.pow(9, k))) + (2 * (((Int.pow(4, k) * Int.pow(6, k)) + (Int.pow(4, k) * Int.pow(9, k))) + (Int.pow(6, k) * Int.pow(9, k)))))); // @tac 1838-1842
@@ -178,6 +159,7 @@ lemma numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown(m: nat, n: nat, f: nat 
           // [TACTIC: omega]
           // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
           // UNCITED-APPLIED internal ×66 [exec 502 2062-2067]: applications made inside the tactic's own automation, not stated — Int.ofNat_add ×8, Int.ofNat_mul ×8, Int.sub_eq_zero_of_eq ×7, Int.sub_nonneg_of_le ×3, Int.add_one_le_of_lt ×3, Nat.lt_or_gt_of_ne ×1, Int.ofNat_nonneg ×1; machinery/glue: Eq.symm ×20, Lean.Omega.Int.ofNat_congr ×6, Lean.Omega.Int.ofNat_lt_of_lt ×3, Lean.Omega.Int.ofNat_pow ×3 (+3 more heads, ×3)
+          vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L150(f, k, k, m, n);  /* [IN-FILE CHECK] the closed lemma for line 150 */
         }
         // have h₇ : 4 ^ k * 6 ^ k + 4 ^ k * 9 ^ k + 6 ^ k * 9 ^ k == 6 ^ k * ( 4 ^ k + 6 ^  [type from Lean state]
         assert ((((Int.pow(4, k) * Int.pow(6, k)) + (Int.pow(4, k) * Int.pow(9, k))) + (Int.pow(6, k) * Int.pow(9, k))) == (Int.pow(6, k) * ((Int.pow(4, k) + Int.pow(6, k)) + Int.pow(9, k)))) by { // @tac 2256-2462 // @tac 2469-4102 // @tac 4109-4114

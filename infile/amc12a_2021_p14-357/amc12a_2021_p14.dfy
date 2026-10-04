@@ -354,16 +354,6 @@ lemma amc12a_2021_p14()
         // [TACTIC: rwSeq [ h₃₄ , h₃₅ ]]
         // UNCITED-APPLIED congrArg(Real.log (25 : ℝ), (2 : ℝ) * Real.log (5 : ℝ), fun (_a : ℝ) => ↑k * _a / (↑k * Real.log (9 : ℝ)) = logb (3 : ℝ) (5 :…): no library counterpart (not stated) [exec 1629 4972-4993]
         // UNCITED-APPLIED congrArg(Real.log (9 : ℝ), (2 : ℝ) * Real.log (3 : ℝ), fun (_a : ℝ) => ↑k * ((2 : ℝ) * Real.log (5 : ℝ)) / (↑k * _a) = logb …): no library counterpart (not stated) [exec 1629 4972-4993]
-        assert 0 <= 1;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p14_L357 */
-        assert 0 <= 20;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p14_L357 */
-        assert 0 <= k;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p14_L357 */
-        assert 0 <= 100;  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p14_L357 */
-        assert k in IccN(1, 100);  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p14_L357 */
-        assert Real.log(25.0) == 2.0 * Real.log(5.0);  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2021_p14_L357 */
-        assert Real.log(9.0) == 2.0 * Real.log(3.0);  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2021_p14_L357 */
-        assert (k as real) != 0.0;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2021_p14_L357 */
-        assert (k as real) * (2.0 * Real.log(5.0)) * Real.log(3.0) == Real.log(5.0) * ((k as real) * (2.0 * Real.log(3.0)));  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2021_p14_L357 */
-        vc_amc12a_2021_p14_L357(k);  /* [IN-FILE CHECK] the closed lemma for line 357 */
         assert (Real.div(((k as real) * (2.0 * Real.log(5.0))), ((k as real) * (2.0 * Real.log(3.0)))) == Real.logb(3.0, 5.0)) by {  // sub-goal before `have` (Lean state) // @tac 4998-5304 // @tac 5309-5354 // @tac 5359-5480 // @tac 5485-5606 // @tac 5611-6106 // @tac 5611-6090 // @tac 5611-5980 // @tac 5611-5964 // @tac 5611-5854 // @tac 5611-5838 // @tac 5611-5728 // @tac 5611-5712
           // have h₃₆ :  != 0  [type from Lean state]
           assert ((k as real) != 0.0) by { // @tac 5041-5304 // @tac 5041-5249 // @tac 5041-5164 // @tac 5041-5112 // @tac 5041-5087 // @tac 5041-5059
@@ -448,6 +438,7 @@ lemma amc12a_2021_p14()
             PowOne(Real.log(3.0));  // cite: pow_one [applied by the tactic, not named in it]
             // UNCITED-APPLIED internal ×75 [exec 1870 5721-5728]: applications made inside the tactic's own automation, not stated — add_zero ×1; machinery/glue: Eq.trans ×8, congrArg ×8, Mathlib.Tactic.Ring.mul_congr ×6, Mathlib.Tactic.Ring.add_mul ×6 (+16 more heads, ×46) (cited in this block, not counted here: pow_one [Lean recorded ×3])
           }
+          vc_amc12a_2021_p14_L357(k);  /* [IN-FILE CHECK] the closed lemma for line 357 */
         }
       }
     }

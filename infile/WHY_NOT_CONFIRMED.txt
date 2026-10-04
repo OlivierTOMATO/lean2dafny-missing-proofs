@@ -1,30 +1,22 @@
 === PRE_FAIL (121)
-59 | OOR only: hypotheses are facts of the context, re-checking them there exhausts the budget (standalone check had them as requires, no context)
-       numbertheory_3pow2pownm1mod2pownp3eq2pownp2-314 | (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k_1_0_2
+44 | OOR only: hypotheses are facts of the context, re-checking them there exhausts the budget (standalone check had them as requires, no context)
        imo_1965_p1-1269 | ((0.0 <= Real.cos(2.0 * x)) && (((0.0 <= Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.
-       numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-247 | Int.pow(3, k_0_0 + k_0_0) == Int.pow(3, k_0_0) * Int.pow(3, k_0_0)
-27 | FAIL, fact never stated in the file as such: a Z3-side derived fact (normalized, or from an earlier lemma postcondition with args renamed)
-       amc12a_2009_p6-28 | Real.rpow(2.0, m * (2.0 * n)) == Real.rpow(Real.rpow(2.0, m), 2.0 * n)
-       algebra_bleqa_apbon2msqrtableqambsqon8b-192 | (x * x + y_5_0 * y_5_0) / 2.0 - Real.sqrt(x * x * (y_5_0 * y_5_0)) == (x - y_5_0) * (x - y
-       numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown-113 | Int.pow(6, k_0_0 + k_0_0) == Int.pow(6, k_0_0) * Int.pow(6, k_0_0)
-12 | FAIL although the same fact is stated earlier in the file: the re-stated assert does not verify at the insertion point (variable mapping or scope of the earlier statement; not an extraction artefact: the query had it)
+       amc12a_2021_p14-90 | Real.log(Real.pow(3.0, Int.pow(k_0_0, 2))) == (Int.pow(k_0_0, 2) as real) * Real.log(3.0)
+       imo_1965_p1-1282 | ((0.0 <= Real.cos(2.0 * x)) && (((0.0 <= Real.sqrt(1.0 + Real.sin(2.0 * x)) - Real.sqrt(1.
+16 | FAIL, fact never stated in the file as such: a Z3-side derived fact (normalized, or from an earlier lemma postcondition with args renamed)
+       amc12a_2009_p15-693 | IccN(5, 5) ==
+       amc12a_2009_p15-107 | IccN(4 * n_1_1_1_0 + 1, 4 * n_1_1_1_0 + 1) ==
+       amc12a_2009_p15-694 | IccN(5, 5) ==
+8 | FAIL although the same fact is stated earlier in the file: the re-stated assert does not verify at the insertion point (variable mapping or scope of the earlier statement; not an extraction artefact: the query had it)
        amc12a_2003_p25-91 | forall x_1: real :: f(x_1) == Real.sqrt(a * (x_1 * x_1) + b * x_1)
-       amc12a_2017_p7-74 | Odd(n_1_0_0)
-       imo_1966_p4-273 | forall n0: int :: (forall k_3: nat :: 0 < k_3 ==> (forall m_3: int :: true)) && (0 <= n0 &
-7 | call OOR (hypotheses individually ok; the call precondition as a whole runs out of resource)
-       aime_1984_p1-192 | 
-       numbertheory_3pow2pownm1mod2pownp3eq2pownp2-390 | 
-       numbertheory_3pow2pownm1mod2pownp3eq2pownp2-182 | 
-3 | FAIL on a hypothesis about a guessed shadow name (n_1_0 -> n): the check used the wrong variable, inconclusive
-       amc12a_2017_p7-54 | n != 0
-       amc12a_2017_p7-48 | n != 0
-       imo_1966_p4-37 | forall n0: int :: (forall k_5: nat :: 0 < k_5 ==> (forall m_5: int :: true)) && ((forall k
+       amc12a_2003_p25-60 | forall x_1: real :: f(x_1) == Real.sqrt(a * (x_1 * x_1) + b * x_1)
+       algebra_apbon2pownleqapownpbpowon2-302 | Real.pow((a + b) / 2.0, n) * ((a + b) / 2.0) <= (Real.pow(a, n) + Real.pow(b, n)) / 2.0 * 
 === LINE_FAIL (58)
-15 | OOR with the exact statement available (standalone lemma was verified outside the heavy context; in context Z3 exhausts the budget before using it)
+14 | OOR with the exact statement available (standalone lemma was verified outside the heavy context; in context Z3 exhausts the budget before using it)
        imo_1966_p4-196 | line: (Real.div(1.0, Real.sin((2.0 * (Real.pow(2.0, m) * x)))) == (Real.div( | ensures: Real.div(1.0, Real.sin(2.0 * (Real.pow(2.0, m_1_0) * x))) ==
        imo_1966_p4-233 | line: ((Real.div(1.0, Real.cos((Real.pow(2.0, m) * x))) * (Real.div(1.0, Rea | ensures: Real.div(1.0, Real.cos(Real.pow(2.0, m_1_0) * x)) * (Real.di
        imo_1966_p4-204 | line: ((Real.div(1.0, Real.cos((Real.pow(2.0, m) * x))) * (Real.div(1.0, Rea | ensures: Real.div(1.0, Real.cos(Real.pow(2.0, m_1_0) * x)) * (Real.di
-8 | OOR, lemma states a reformulated version (standalone lemma was verified outside the heavy context; in context Z3 exhausts the budget before using it)
+10 | OOR, lemma states a reformulated version (standalone lemma was verified outside the heavy context; in context Z3 exhausts the budget before using it)
        amc12a_2009_p15-741 | line: (forall m: nat :: (((((((((4 * m) + 1) as real) * Complex.Re(Complex.p | ensures: forall m_7_1_0_1: nat :: ((4 * m_7_1_0_1 + 1) as real) * Com
        amc12a_2009_p15-728 | line: (forall m: nat :: ((((((((4.0 * (m as real)) + 1.0) * Complex.Re(Compl | ensures: forall m_7_5: nat :: (4.0 * (m_7_5 as real) + 1.0) * Complex
        amc12_2001_p5-38 | line: ensures (!(Even(x)) <==> ((x % 2) == 1)) | ensures: !Even(x_1_0_0_0_0) == (x_1_0_0_0_0 % 2 == 1)
@@ -36,7 +28,5 @@
        amc12a_2003_p25-28 | line: (true <==> (exists x: real :: (true && (Real.sqrt(((a * (x * x)) + (b  | ensures: true == (exists x_21: real :: Real.sqrt(a * (x_21 * x_21) + 
        amc12a_2003_p25-34 | line: (true <==> (exists x: real :: (true && (Real.sqrt(((a * (x * x)) + (b  | ensures: true == (exists x_25: real :: Real.sqrt(a * (x_25 * x_25) + 
        amc12a_2009_p15-586 | line: ensures (Complex.sum(IccN(1, ((4 * m) + 1)), ((k: nat) => Complex.mul( | ensures: (Complex.sum(IccN(1, ((4 * m_11) + 1)), ((k_6_30: nat) => Co
-1 | the line is a lemma call whose precondition still fails (the closed lemma targeted the wrong obligation of that line)
-       algebra_bleqa_apbon2msqrtableqambsqon8b-231 | line: LeOfLt(0.0, ((x * x) * (y * y))) | ensures: 0.0 < x * x * (y_5_0 * y_5_0)
 1 | cannot establish the existence of LHS values that satisfy th
        amc12a_2003_p25-82 | line: var x_1: real :| Real.sqrt(((a * (x_1 * x_1)) + (b * x_1))) == 2.0 | ensures: (true && Real.sqrt(a * (0.0 * 0.0) + b * 0.0) == 2.0) || (ex

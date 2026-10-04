@@ -280,47 +280,12 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
                     NatPowDvdPow(2, (n + 4), ((2 * n) + 6));  // cite: pow_dvd_pow
                   }
                   // have h₁₁ : 2 ^ ( n + 4 ) ∣ k ^ 2 * 2 ^ ( 2 * n + 6 )  [type from Lean state]
-                  assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert n != 0;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= n - 1;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= n || n - 1 == n;  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert n - 1 < n;  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert exists k_1: nat :: Int.pow(3, Int.pow(2, n - 1 + 1)) == 1 + Int.pow(2, n - 1 + 1 + 2) + k_1 * Int.pow(2, n - 1 + 1 + 3);  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 + 1 <= n;  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= Int.pow(2, n);  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= n + 2;  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= n + 3;  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert exists k_1_0_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_1 * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_0_1_0_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_0_1_0_0 * Int.pow(2, n + 3));  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= k;  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k * Int.pow(2, n + 3);  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= n + 1;  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= Int.pow(2, n + 1);  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert Int.pow(3, Int.pow(2, n + 1)) == Int.pow(3, Int.pow(2, n)) * Int.pow(3, Int.pow(2, n));  /* [IN-FILE CHECK] requires 17 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= 2 * n + 4;  /* [IN-FILE CHECK] requires 18 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= n + 4;  /* [IN-FILE CHECK] requires 19 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= 2 * n + 6;  /* [IN-FILE CHECK] requires 20 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= 2 * n + 5;  /* [IN-FILE CHECK] requires 21 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert (1 + Int.pow(2, n + 2) + k * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k * Int.pow(2, n + 3)) == 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k * Int.pow(2, n + 4) + k * k * Int.pow(2, 2 * n + 6) + 2 * k * Int.pow(2, 2 * n + 5));  /* [IN-FILE CHECK] requires 22 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= Int.pow(2, 2 * n + 4) + k * Int.pow(2, n + 4) + k * k * Int.pow(2, 2 * n + 6) + 2 * k * Int.pow(2, 2 * n + 5);  /* [IN-FILE CHECK] requires 23 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= Int.pow(2, n + 4);  /* [IN-FILE CHECK] requires 24 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert NatMod(Int.pow(2, 2 * n + 4) + k * Int.pow(2, n + 4) + k * k * Int.pow(2, 2 * n + 6) + 2 * k * Int.pow(2, 2 * n + 5), Int.pow(2, n + 4)) == 0;  /* [IN-FILE CHECK] requires 25 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= Int.pow(2, 2 * n + 4);  /* [IN-FILE CHECK] requires 26 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert NatDvd(Int.pow(2, n + 4), Int.pow(2, 2 * n + 4));  /* [IN-FILE CHECK] requires 27 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= k * Int.pow(2, n + 4);  /* [IN-FILE CHECK] requires 28 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert NatDvd(Int.pow(2, n + 4), k * Int.pow(2, n + 4));  /* [IN-FILE CHECK] requires 29 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= Int.pow(2, 2 * n + 6);  /* [IN-FILE CHECK] requires 30 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert 0 <= k * k;  /* [IN-FILE CHECK] requires 31 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert NatDvd(Int.pow(2, n + 4), Int.pow(2, 2 * n + 6)) || (Int.pow(2, n + 4) == 0 ==> Int.pow(2, 2 * n + 6) == 0);  /* [IN-FILE CHECK] requires 32 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert NatDvd(Int.pow(2, n + 4), Int.pow(2, 2 * n + 6)) || (Int.pow(2, n + 4) != 0 ==> Int.pow(2, 2 * n + 6) % Int.pow(2, n + 4) == 0);  /* [IN-FILE CHECK] requires 33 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert NatDvd(Int.pow(2, n + 4), k * k * Int.pow(2, 2 * n + 6));  /* [IN-FILE CHECK] requires 34 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  assert if Int.pow(2, n + 4) == 0 then k * k * Int.pow(2, 2 * n + 6) == 0 else k * k * Int.pow(2, 2 * n + 6) % Int.pow(2, n + 4) == 0;  /* [IN-FILE CHECK] requires 35 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283 */
-                  vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 283 */
                   assert NatDvd(Int.pow(2, (n + 4)), ((k * k) * Int.pow(2, ((2 * n) + 6)))) by { // @tac 5287-5323
                     // [TACTIC: exact dvd_mul_of_dvd_right h₁₀ _]
                     assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 6)));
                     assert (NatDvd((Int.pow(2, (n + 4))), (Int.pow(2, ((2 * n) + 6)))));  // precondition of NatDvdMulOfDvdRight (Lean: dvd_mul_of_dvd_right)
                     NatDvdMulOfDvdRight(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 6)), (k * k));  // cite: dvd_mul_of_dvd_right
+                    vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L283(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 283 */
                   }
                   // [TACTIC: exact h₁₁]
                   assert NatDvd(Int.pow(2, (n + 4)), ((k * k) * Int.pow(2, ((2 * n) + 6))));

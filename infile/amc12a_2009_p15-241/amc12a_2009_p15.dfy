@@ -238,36 +238,7 @@ lemma amc12a_2009_p15(n: nat)
     // GAP: pow_two: this execution also rewrote the hypotheses h_periodicity; the harvest for this theorem records only the goal-side application(s) of the tactic (hypothesis-side rewrites are not recorded), so its applications to those hypotheses (if any) are not stated
     // GAP: pow_three: this execution also rewrote the hypotheses h_periodicity; the harvest for this theorem records only the goal-side application(s) of the tactic (hypothesis-side rewrites are not recorded), so its applications to those hypotheses (if any) are not stated
     // UNCITED-APPLIED internal ×64 [exec 182 955-1075]: applications made inside the tactic's own automation, not stated — mul_one ×8, Nat.cast_add ×6, add_zero ×6, mul_neg ×5, neg_add_rev ×4, neg_mul ×2, sub_zero ×2, Finset.sum_congr ×1, Finset.sum_singleton ×1, Nat.cast_mul ×1, Nat.cast_one ×1, one_pow ×1, one_mul ×1, neg_neg ×1, sub_self ×1, zero_add ×1, neg_zero ×1, zero_sub ×1; machinery/glue: congrArg ×8, congr ×8, Eq.trans ×3, of_eq_true ×1 (cited in this block, not counted here: Finset.Icc_self [Lean recorded ×1], Finset.sum_Icc_succ_top [Lean recorded ×3], pow_add [Lean recorded ×6], pow_mul [Lean recorded ×1], pow_one [Lean recorded ×1], pow_three [Lean recorded ×1], pow_two [Lean recorded ×1])
-    assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2009_p15_L241 */
-    assert 0 <= m;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2009_p15_L241 */
-    assert 0 <= m_4_0_2;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2009_p15_L241 */
-    assert 0 <= m_7_2;  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2009_p15_L241 */
-    assert 0 <= m_11;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2009_p15_L241 */
-    assert 0 < n;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2009_p15_L241 */
-    assert Complex.sum(IccN(1, n), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.add(Complex.of_real(48.0), Complex.mul(Complex.of_real(49.0), Complex.I()));  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2009_p15_L241 */
-    assert forall k_0_1: int :: true;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2009_p15_L241 */
-    assert forall k_0_1: nat :: true ==> Complex.pow(Complex.I(), k_0_1 % 4) == Complex.pow(Complex.I(), k_0_1);  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2009_p15_L241 */
-    assert 0 <= m_1_0;  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2009_p15_L241 */
-    assert Complex.I().Complex?;  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2009_p15_L241 */
-    assert 0 <= 4 * m_1_0;  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2009_p15_L241 */
-    assert 0 <= 1;  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2009_p15_L241 */
-    assert Complex.pow(Complex.I(), 4 * m_1_0 + 1) == Complex.mul(Complex.pow(Complex.I(), 4 * m_1_0), Complex.pow(Complex.I(), 1));  /* [IN-FILE CHECK] requires 14 of vc_amc12a_2009_p15_L241 */
-    assert 0 <= 4 * m_1_0 + 1;  /* [IN-FILE CHECK] requires 15 of vc_amc12a_2009_p15_L241 */
-    assert Complex.pow(Complex.I(), 4 * m_1_0 + 1 + 1) == Complex.mul(Complex.pow(Complex.I(), 4 * m_1_0 + 1), Complex.pow(Complex.I(), 1));  /* [IN-FILE CHECK] requires 16 of vc_amc12a_2009_p15_L241 */
-    assert 0 <= 4 * m_1_0 + 2;  /* [IN-FILE CHECK] requires 17 of vc_amc12a_2009_p15_L241 */
-    assert Complex.pow(Complex.I(), 4 * m_1_0 + 2 + 1) == Complex.mul(Complex.pow(Complex.I(), 4 * m_1_0 + 2), Complex.pow(Complex.I(), 1));  /* [IN-FILE CHECK] requires 18 of vc_amc12a_2009_p15_L241 */
-    assert 0 <= 2;  /* [IN-FILE CHECK] requires 19 of vc_amc12a_2009_p15_L241 */
-    assert Complex.pow(Complex.I(), 4 * m_1_0 + 2) == Complex.mul(Complex.pow(Complex.I(), 4 * m_1_0), Complex.pow(Complex.I(), 2));  /* [IN-FILE CHECK] requires 20 of vc_amc12a_2009_p15_L241 */
-    assert 0 <= 4 * m_1_0 + 3;  /* [IN-FILE CHECK] requires 21 of vc_amc12a_2009_p15_L241 */
-    assert Complex.pow(Complex.I(), 4 * m_1_0 + 3 + 1) == Complex.mul(Complex.pow(Complex.I(), 4 * m_1_0 + 3), Complex.pow(Complex.I(), 1));  /* [IN-FILE CHECK] requires 22 of vc_amc12a_2009_p15_L241 */
-    assert 0 <= 3;  /* [IN-FILE CHECK] requires 23 of vc_amc12a_2009_p15_L241 */
-    assert Complex.pow(Complex.I(), 4 * m_1_0 + 3) == Complex.mul(Complex.pow(Complex.I(), 4 * m_1_0), Complex.pow(Complex.I(), 3));  /* [IN-FILE CHECK] requires 24 of vc_amc12a_2009_p15_L241 */
-    assert 0 <= 4;  /* [IN-FILE CHECK] requires 25 of vc_amc12a_2009_p15_L241 */
-    assert Complex.pow(Complex.I(), 4 * m_1_0) == Complex.pow(Complex.pow(Complex.I(), 4), m_1_0);  /* [IN-FILE CHECK] requires 26 of vc_amc12a_2009_p15_L241 */
-    assert Complex.pow(Complex.I(), 2) == Complex.mul(Complex.I(), Complex.I());  /* [IN-FILE CHECK] requires 27 of vc_amc12a_2009_p15_L241 */
-    assert Complex.pow(Complex.I(), 3) == Complex.mul(Complex.I(), Complex.mul(Complex.I(), Complex.I()));  /* [IN-FILE CHECK] requires 28 of vc_amc12a_2009_p15_L241 */
-    assert IccN(4 * m_1_0 + 1, 4 * m_1_0 + 1) ==;  /* [IN-FILE CHECK] requires 29 of vc_amc12a_2009_p15_L241 */
-    vc_amc12a_2009_p15_L241(m_11, m_1_0, m, m_4_0_2, m_7_2, n);  /* [IN-FILE CHECK] the closed lemma for line 241 */
+    vc_amc12a_2009_p15_L241(m, n);  /* [IN-FILE CHECK] the closed lemma for line 241 */
     assert ((Real.sum(IccN(1, n), ((x: nat) => ((x as real) * Complex.Re(Complex.pow(Complex.I(), x))))) == 48.0) && (Real.sum(IccN(1, n), ((x: nat) => ((x as real) * Complex.Im(Complex.pow(Complex.I(), x))))) == 49.0));  // hypothesis h₁ after `simp_all` (Lean state) // @tac-hyp 955-1075
     assert (forall k: nat :: ((Complex.Re(Complex.pow(Complex.I(), (k % 4))) == Complex.Re(Complex.pow(Complex.I(), k))) && (Complex.Im(Complex.pow(Complex.I(), (k % 4))) == Complex.Im(Complex.pow(Complex.I(), k)))));  // hypothesis h_periodicity after `simp_all` (Lean state) // @tac-hyp 955-1075
     assert ((((-(1.0) + (-(1.0) + -((4.0 * (m as real))))) + (((4.0 * (m as real)) + 3.0) + 1.0)) == 2.0) && ((((4.0 * (m as real)) + 1.0) + (-(1.0) + (-(2.0) + -((4.0 * (m as real)))))) == -(2.0))) by {  // sub-goal of `ring_nf` (Lean state) // @tac 1084-1091
@@ -812,35 +783,18 @@ lemma amc12a_2009_p15(n: nat)
 
 // ===== closed lemma for line 241 (from closed/amc12a_2009_p15-241.dfy) =====
 
-lemma {:induction false} vc_amc12a_2009_p15_L241(m_11: int, m_1_0: int, m_3_0_2: int, m_4_0_2: int, m_7_2: int, n: nat)
+lemma {:induction false} vc_amc12a_2009_p15_L241(m_3_0_2: int, n: nat)
   requires 0 <= n
   requires 0 <= m_3_0_2
-  requires 0 <= m_4_0_2
-  requires 0 <= m_7_2
-  requires 0 <= m_11
   requires 0 < n
   requires Complex.sum(IccN(1, n), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.add(Complex.of_real(48.0), Complex.mul(Complex.of_real(49.0), Complex.I()))
   requires forall k_0_1: int :: true
   requires forall k_0_1: nat :: true ==> Complex.pow(Complex.I(), k_0_1 % 4) == Complex.pow(Complex.I(), k_0_1)
-  requires 0 <= m_1_0
   requires Complex.I().Complex?
-  requires 0 <= 4 * m_1_0
   requires 0 <= 1
-  requires Complex.pow(Complex.I(), 4 * m_1_0 + 1) == Complex.mul(Complex.pow(Complex.I(), 4 * m_1_0), Complex.pow(Complex.I(), 1))
-  requires 0 <= 4 * m_1_0 + 1
-  requires Complex.pow(Complex.I(), 4 * m_1_0 + 1 + 1) == Complex.mul(Complex.pow(Complex.I(), 4 * m_1_0 + 1), Complex.pow(Complex.I(), 1))
-  requires 0 <= 4 * m_1_0 + 2
-  requires Complex.pow(Complex.I(), 4 * m_1_0 + 2 + 1) == Complex.mul(Complex.pow(Complex.I(), 4 * m_1_0 + 2), Complex.pow(Complex.I(), 1))
   requires 0 <= 2
-  requires Complex.pow(Complex.I(), 4 * m_1_0 + 2) == Complex.mul(Complex.pow(Complex.I(), 4 * m_1_0), Complex.pow(Complex.I(), 2))
-  requires 0 <= 4 * m_1_0 + 3
-  requires Complex.pow(Complex.I(), 4 * m_1_0 + 3 + 1) == Complex.mul(Complex.pow(Complex.I(), 4 * m_1_0 + 3), Complex.pow(Complex.I(), 1))
   requires 0 <= 3
-  requires Complex.pow(Complex.I(), 4 * m_1_0 + 3) == Complex.mul(Complex.pow(Complex.I(), 4 * m_1_0), Complex.pow(Complex.I(), 3))
   requires 0 <= 4
-  requires Complex.pow(Complex.I(), 4 * m_1_0) == Complex.pow(Complex.pow(Complex.I(), 4), m_1_0)
   requires Complex.pow(Complex.I(), 2) == Complex.mul(Complex.I(), Complex.I())
-  requires Complex.pow(Complex.I(), 3) == Complex.mul(Complex.I(), Complex.mul(Complex.I(), Complex.I()))
-  requires IccN(4 * m_1_0 + 1, 4 * m_1_0 + 1) == 
-{ }
+  requires Complex.pow(Complex.I(), 3) == Complex.mul(Complex.I(), Complex.mul(Complex.I(), Complex.I())){ }
 

@@ -1341,23 +1341,6 @@ lemma amc12a_2021_p19(S: set<real>)
                                 // have h₅₁₆₅ : x == Real.pi / 2  [type from Lean state]
                                 assert (x == (Real.pi() / 2.0)) by { // @tac 7115-7228 // @tac 7253-7366 // @tac 7391-7756 // @tac 7781-7800
                                   // have h₅₁₆₆ : Real.cos ( x ) == Real.cos ( ( Real.pi / 2 ) )  [type from Lean state]
-                                  assert forall x_1: real :: (x_1 in S) == (0.0 <= x_1 && x_1 <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x_1)) == Real.cos(Real.pi() / 2.0 * Real.sin(x_1)));  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p19_L1344 */
-                                  assert 0.0 <= x;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p19_L1344 */
-                                  assert x <= Real.pi();  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p19_L1344 */
-                                  assert (x in S) == (0.0 <= x && x <= Real.pi() && Real.sin(Real.pi() / 2.0 * Real.cos(x)) == Real.cos(Real.pi() / 2.0 * Real.sin(x)));  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p19_L1344 */
-                                  assert 2.0 != 0.0;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p19_L1344 */
-                                  assert Real.sin(Real.pi() / 2.0 * Real.cos(x)) == Real.cos(Real.pi() / 2.0 * Real.sin(x));  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2021_p19_L1344 */
-                                  assert Real.sin(Real.pi() / 2.0 * Real.cos(x)) == Real.cos(Real.pi() / 2.0 * (1.0 - Real.cos(x)));  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2021_p19_L1344 */
-                                  assert Real.cos(Real.pi() / 2.0 * (1.0 - Real.cos(x))) == Real.cos(Real.pi() / 2.0 * Real.sin(x));  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2021_p19_L1344 */
-                                  assert Real.pi() / 2.0 * (1.0 - Real.cos(x)) == Real.pi() / 2.0 * Real.sin(x);  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2021_p19_L1344 */
-                                  assert 1.0 - Real.cos(x) == Real.sin(x);  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2021_p19_L1344 */
-                                  assert Real.sin(x) == 1.0 - Real.cos(x);  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2021_p19_L1344 */
-                                  assert Real.sin(x) * Real.sin(x) + Real.cos(x) * Real.cos(x) == 1.0;  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2021_p19_L1344 */
-                                  assert Real.sin(x) >= 0.0;  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2021_p19_L1344 */
-                                  assert (1.0 - Real.cos(x)) * (1.0 - Real.cos(x)) == 1.0 - Real.cos(x) * Real.cos(x);  /* [IN-FILE CHECK] requires 14 of vc_amc12a_2021_p19_L1344 */
-                                  assert Real.cos(x) == 0.0;  /* [IN-FILE CHECK] requires 15 of vc_amc12a_2021_p19_L1344 */
-                                  assert Real.cos(x) == 0.0 || Real.cos(x) == 1.0;  /* [IN-FILE CHECK] requires 16 of vc_amc12a_2021_p19_L1344 */
-                                  assert Real.sin(x) == 1.0;  /* [IN-FILE CHECK] requires 17 of vc_amc12a_2021_p19_L1344 */
                                   vc_amc12a_2021_p19_L1344(S, x);  /* [IN-FILE CHECK] the closed lemma for line 1344 */
                                   assert (Real.cos(x) == Real.cos((Real.pi() / 2.0))); // @tac 7204-7228
                                     // [TACTIC: «Norm_num[_]At___» [ h₅₁₆₃ ]]

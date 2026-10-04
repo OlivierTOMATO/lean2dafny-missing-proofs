@@ -444,31 +444,6 @@ lemma numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown(m: nat, n: nat, f: nat 
     // have h₄ : f ( 2 ^ m ) ∣ f ( 2 ^ ( m + t ) )  [type from Lean state]
     assert NatDvd(f(Int.pow(2, m)), f(Int.pow(2, (m + t)))) by {
       // [TACTIC: exact h_chain ( t )]
-      assert 0 <= m;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert 0 <= k;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert 0 <= k_1_1_0_1_0;  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert 0 <= t_3_5;  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert forall x_1: nat :: f.requires(x_1);  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert forall x_1: nat :: f(x_1) == Int.pow(4, x_1) + Int.pow(6, x_1) + Int.pow(9, x_1);  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert 0 < m;  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert 0 < n;  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert m <= n;  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert forall m0: int, n0: int :: (forall x_2: nat :: f.requires(x_2)) && (0 <= m0 && 0 <= n0 && (forall x_2: nat :: f(x_2) == Int.pow(4, x_2) + Int.pow(6, x_2) + Int.pow(9, x_2)) && 0 < m0 && 0 < n0 && m0 <= n0 && ((0 <= m0 && m0 < m) || (m0 == m && 0 <= n0 && n0 < n)) ==> f.requires(Int.pow(2, m0)) && f.requires(Int.pow(2, n0)) && NatDvd(f(Int.pow(2, m0)), f(Int.pow(2, n0))));  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert forall k_0_1: nat :: true ==> f.requires(2 * k_0_1) && f.requires(k_0_1) && f.requires(k_0_1);  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert forall k_0_1: nat :: true ==> f(2 * k_0_1) == f(k_0_1) * tsub(f(k_0_1), 2 * Int.pow(6, k_0_1));  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert forall k_1_1: nat :: true ==> f.requires(k_1_1) && f.requires(2 * k_1_1);  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert forall k_1_1: nat :: true ==> NatDvd(f(k_1_1), f(2 * k_1_1));  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert forall t_2_3: nat :: true ==> f.requires(Int.pow(2, m)) && f.requires(Int.pow(2, m + t_2_3));  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert forall t_2_3: nat :: true ==> NatDvd(f(Int.pow(2, m)), f(Int.pow(2, m + t_2_3)));  /* [IN-FILE CHECK] requires 17 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert exists t_3_1: nat :: n == m + t_3_1;  /* [IN-FILE CHECK] requires 18 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert exists t_3_4: nat :: n == m + t_3_4;  /* [IN-FILE CHECK] requires 19 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert (0 <= n - m && n == m + (n - m)) || (0 <= 0 && n == m + 0) || (0 <= 0 && n == m + 0) || (exists as_t3_0_3_0: nat :: n == m + as_t3_0_3_0);  /* [IN-FILE CHECK] requires 20 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert 0 <= t;  /* [IN-FILE CHECK] requires 21 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert n == m + t;  /* [IN-FILE CHECK] requires 22 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert 0 <= Int.pow(2, m);  /* [IN-FILE CHECK] requires 23 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert 0 <= m + t;  /* [IN-FILE CHECK] requires 24 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
-      assert 0 <= Int.pow(2, m + t);  /* [IN-FILE CHECK] requires 25 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447 */
       vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447(f, k, k_1_1_0_1_0, m, n, t_3_2, t_3_3, t_3_5, t, t_3_6);  /* [IN-FILE CHECK] the closed lemma for line 447 */
       assert NatDvd(f(Int.pow(2, m)), f(Int.pow(2, (m + t))));  // instance of h_chain (Lean state)
     }

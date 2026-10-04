@@ -566,33 +566,6 @@ lemma amc12b_2020_p21(S: set<nat>)
                         RealSqrtNonneg((n as real));  // cite: Real.sqrt_nonneg
                       }
                       // have h₁₁ : k + 15 ^ 2 <=   [type from Lean state]
-                      assert forall n_1: int :: 0 <= n_1 ==> (n_1 in S) == (0 < n_1 && ((n_1 as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n_1 as real))) as real));  /* [IN-FILE CHECK] requires 1 of vc_amc12b_2020_p21_L569 */
-                      assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_amc12b_2020_p21_L569 */
-                      assert (0 < n) || (n <= 0);  /* [IN-FILE CHECK] requires 3 of vc_amc12b_2020_p21_L569 */
-                      assert (n in S) == (0 < n && ((n as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n as real))) as real));  /* [IN-FILE CHECK] requires 4 of vc_amc12b_2020_p21_L569 */
-                      assert ((0 < n) && (70.0 != 0.0)) || (n <= 0);  /* [IN-FILE CHECK] requires 5 of vc_amc12b_2020_p21_L569 */
-                      assert 0 < n;  /* [IN-FILE CHECK] requires 6 of vc_amc12b_2020_p21_L569 */
-                      assert ((n as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n as real))) as real);  /* [IN-FILE CHECK] requires 7 of vc_amc12b_2020_p21_L569 */
-                      assert 70 != 0;  /* [IN-FILE CHECK] requires 8 of vc_amc12b_2020_p21_L569 */
-                      assert (n + 1000) % 70 == 0;  /* [IN-FILE CHECK] requires 9 of vc_amc12b_2020_p21_L569 */
-                      assert n % 70 == 50;  /* [IN-FILE CHECK] requires 10 of vc_amc12b_2020_p21_L569 */
-                      assert (0 <= k) || (k < 0);  /* [IN-FILE CHECK] requires 11 of vc_amc12b_2020_p21_L569 */
-                      assert exists k_0_0_0_0_0_0_0_0_1: nat :: n == 70 * k_0_0_0_0_0_0_0_0_1 + 50;  /* [IN-FILE CHECK] requires 12 of vc_amc12b_2020_p21_L569 */
-                      assert exists k_0_0_0_0_0_0_0_0_4: nat :: n == 70 * k_0_0_0_0_0_0_0_0_4 + 50;  /* [IN-FILE CHECK] requires 13 of vc_amc12b_2020_p21_L569 */
-                      assert (0 <= 0 && n == 70 * 0 + 50) || (0 <= 0 && n == 70 * 0 + 50) || (exists as_k0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0: nat :: n == 70 * as_k0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0 + 50);  /* [IN-FILE CHECK] requires 14 of vc_amc12b_2020_p21_L569 */
-                      assert 0 <= k;  /* [IN-FILE CHECK] requires 15 of vc_amc12b_2020_p21_L569 */
-                      assert n == 70 * k + 50;  /* [IN-FILE CHECK] requires 16 of vc_amc12b_2020_p21_L569 */
-                      assert k + 15 == floor(Real.sqrt((n as real)));  /* [IN-FILE CHECK] requires 17 of vc_amc12b_2020_p21_L569 */
-                      assert (k as real) + 15.0 <= Real.sqrt((n as real));  /* [IN-FILE CHECK] requires 18 of vc_amc12b_2020_p21_L569 */
-                      assert 0.0 <= Real.sqrt((n as real));  /* [IN-FILE CHECK] requires 19 of vc_amc12b_2020_p21_L569 */
-                      assert 0.0 <= (n as real);  /* [IN-FILE CHECK] requires 20 of vc_amc12b_2020_p21_L569 */
-                      assert (0.0 <= (k as real)) || ((k as real) < 0.0);  /* [IN-FILE CHECK] requires 21 of vc_amc12b_2020_p21_L569 */
-                      assert ((0.0 <= (k as real)) && ((k as real) + 15.0 - Real.sqrt((n as real)) <= 0.0) && ((k as real) * ((k as real) + 15.0 - Real.sqrt((n as real))) <= 0.0)) || (!(0.0 <= (k as real) && (k as real) + 15.0 - Real.sqrt((n as real)) <= 0.0));  /* [IN-FILE CHECK] requires 22 of vc_amc12b_2020_p21_L569 */
-                      assert (((k as real) + 15.0 - Real.sqrt((n as real)) <= 0.0) && (0.0 <= ((k as real) + 15.0 - Real.sqrt((n as real))) * ((k as real) + 15.0 - Real.sqrt((n as real))))) || (0.0 < (k as real) + 15.0 - Real.sqrt((n as real)));  /* [IN-FILE CHECK] requires 23 of vc_amc12b_2020_p21_L569 */
-                      assert 30.0 * ((k as real) + 15.0 - Real.sqrt((n as real))) + ((n as real) - ((k as real) + 15.0) * ((k as real) + 15.0)) + (Real.sqrt((n as real)) * Real.sqrt((n as real)) - (n as real)) + 2.0 * ((k as real) * ((k as real) + 15.0 - Real.sqrt((n as real)))) + (0.0 - ((k as real) + 15.0 - Real.sqrt((n as real))) * ((k as real) + 15.0 - Real.sqrt((n as real)))) == 0.0;  /* [IN-FILE CHECK] requires 24 of vc_amc12b_2020_p21_L569 */
-                      assert ((0.0 < (n as real)) && (0.0 < (n as real)) && (0.0 <= (n as real))) || ((n as real) <= 0.0);  /* [IN-FILE CHECK] requires 25 of vc_amc12b_2020_p21_L569 */
-                      assert Real.sqrt((n as real)) * Real.sqrt((n as real)) == (n as real);  /* [IN-FILE CHECK] requires 26 of vc_amc12b_2020_p21_L569 */
-                      vc_amc12b_2020_p21_L569(S, k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 569 */
                       assert ((((k as real) + 15.0) * ((k as real) + 15.0)) <= (n as real)) by { // @tac 3825-3889
                         assert (0.0 <= (n as real)) by {  // sub-goal of `by` (Lean state) // @tac 3853-3863
                           // [TACTIC: Positivity]
@@ -614,6 +587,7 @@ lemma amc12b_2020_p21(S: set<nat>)
                         if ((0.0) < ((n as real))) { LeOfLt(0.0, (n as real)); }  // cite: le_of_lt [applied by the tactic, not named in it]
                         assert (0.0 <= ((n as real)));  // precondition of RealSqSqrt (Lean: Real.sq_sqrt)
                         RealSqSqrt((n as real));  // cite: Real.sq_sqrt
+                        vc_amc12b_2020_p21_L569(S, k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 569 */
                       }
                       // [TACTIC: exact h₁₁]
                       assert ((((k as real) + 15.0) * ((k as real) + 15.0)) <= (n as real));

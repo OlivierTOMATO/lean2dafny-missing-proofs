@@ -51,28 +51,7 @@ lemma {:isolate_assertions} induction_helper_1(n: nat, x: real)
           FinsetIccSelfNat(1);  // cite: Finset.Icc_self [applied by the tactic, not named in it]
           // UNCITED-APPLIED Finset.sum_singleton: recorded instance not expressible here (sort/type/scope), not guessed
           PowOne(2.0);  // cite: pow_one [applied by the tactic, not named in it]
-          assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L54 */
-          assert 0 <= n_1_0;  /* [IN-FILE CHECK] requires 2 of vc_imo_1966_p4_L54 */
-          assert 0 <= n;  /* [IN-FILE CHECK] requires 3 of vc_imo_1966_p4_L54 */
-          assert forall k_1: nat :: 0 < k_1 ==> (forall m_2: int :: x != Real.div((m_2 as real) * Real.pi(), Real.pow(2.0, k_1)));  /* [IN-FILE CHECK] requires 4 of vc_imo_1966_p4_L54 */
-          assert Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x));  /* [IN-FILE CHECK] requires 5 of vc_imo_1966_p4_L54 */
-          assert forall m_4: nat :: 0 < m_4 ==> Real.sum(IccN(1, m_4), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_4) * x)) ==> Real.sum(IccN(1, m_4 + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_4 + 1) * x));  /* [IN-FILE CHECK] requires 6 of vc_imo_1966_p4_L54 */
-          assert forall n0: int :: (forall k_5: nat :: 0 < k_5 ==> (forall m_5: int :: true)) && ((forall k_5: nat :: 0 < k_5 ==> (forall m_5: int :: x != Real.div((m_5 as real) * Real.pi(), Real.pow(2.0, k_5)))) ==> Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x)) ==> (forall m_6: nat :: 0 < m_6 ==> (forall k: int :: true) && (Real.sum(IccN(1, m_6), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_6) * x)) ==> (forall k: int :: true)))) && (0 <= n0 && (forall k_5: nat :: 0 < k_5 ==> (forall m_5: int :: x != Real.div((m_5 as real) * Real.pi(), Real.pow(2.0, k_5)))) && Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x)) && (forall m_6: nat :: 0 < m_6 ==> Real.sum(IccN(1, m_6), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_6) * x)) ==> Real.sum(IccN(1, m_6 + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_6 + 1) * x))) && 0 <= n0 && n0 < n ==> (0 < n0 ==> (forall k: int :: true)) && (0 < n0 ==> Real.sum(IccN(1, n0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, n0) * x))));  /* [IN-FILE CHECK] requires 7 of vc_imo_1966_p4_L54 */
-          assert n != 0;  /* [IN-FILE CHECK] requires 8 of vc_imo_1966_p4_L54 */
-          assert 0 <= n - 1;  /* [IN-FILE CHECK] requires 9 of vc_imo_1966_p4_L54 */
-          assert 0 <= n || n - 1 == n;  /* [IN-FILE CHECK] requires 10 of vc_imo_1966_p4_L54 */
-          assert n - 1 < n;  /* [IN-FILE CHECK] requires 11 of vc_imo_1966_p4_L54 */
-          assert forall k_1: nat :: 0 < k_1 ==> (forall m_2: int :: x != Real.div((m_2 as real) * Real.pi(), Real.pow(2.0, k_1)));  /* [IN-FILE CHECK] requires 12 of vc_imo_1966_p4_L54 */
-          assert forall m_4: nat :: 0 < m_4 ==> Real.sum(IccN(1, m_4), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_4) * x)) ==> Real.sum(IccN(1, m_4 + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_4 + 1) * x));  /* [IN-FILE CHECK] requires 13 of vc_imo_1966_p4_L54 */
-          assert 0 < n - 1 ==> Real.sum(IccN(1, n - 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, n - 1) * x));  /* [IN-FILE CHECK] requires 14 of vc_imo_1966_p4_L54 */
-          assert (n - 1) == n - 1;  /* [IN-FILE CHECK] requires 15 of vc_imo_1966_p4_L54 */
-          assert 0 < (n - 1) + 1;  /* [IN-FILE CHECK] requires 16 of vc_imo_1966_p4_L54 */
-          assert (n - 1) == 0;  /* [IN-FILE CHECK] requires 17 of vc_imo_1966_p4_L54 */
-          assert 0 <= 1;  /* [IN-FILE CHECK] requires 18 of vc_imo_1966_p4_L54 */
-          assert 0 < 0 ==> Real.sum(IccN(1, 0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, 0) * x));  /* [IN-FILE CHECK] requires 19 of vc_imo_1966_p4_L54 */
-          assert 0 < 0 + 1;  /* [IN-FILE CHECK] requires 20 of vc_imo_1966_p4_L54 */
-          assert IccN(1, 1) ==;  /* [IN-FILE CHECK] requires 21 of vc_imo_1966_p4_L54 */
-          vc_imo_1966_p4_L54(n, n_1_0, n - 1, n, x);  /* [IN-FILE CHECK] the closed lemma for line 54 */
+          vc_imo_1966_p4_L54(0, n, x);  /* [IN-FILE CHECK] the closed lemma for line 54 */
           assert (Real.sum(IccN(1, (0 + 1)), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x))))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, (0 + 1)) * x)))));  // sub-goal before `simp_all` (Lean state) // @tac 3125-3201
           // UNCITED-APPLIED internal ×27 [exec 732 3125-3201]: applications made inside the tactic's own automation, not stated — one_div ×4, Finset.sum_congr ×1, zero_add ×1, Finset.sum_singleton ×1; machinery/glue: Eq.trans ×7, congrArg ×7, congr ×4, of_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Finset.Icc_self [Lean recorded ×1], pow_one [Lean recorded ×1])
         }
@@ -454,22 +433,13 @@ lemma imo_1966_p4(n: nat, x: real)
 
 // ===== closed lemma for line 54 (from closed/imo_1966_p4-54.dfy) =====
 
-lemma {:induction false} vc_imo_1966_p4_L54(n: int, n_1_0: int, n_1_0_0: int, n_1_0_1_0: int, x: real)
-  requires 0 <= n
-  requires 0 <= n_1_0
+lemma {:induction false} vc_imo_1966_p4_L54(n_1_0_0: int, n_1_0_1_0: int, x: real)
   requires 0 <= n_1_0_1_0
   requires forall k_1: nat :: 0 < k_1 ==> (forall m_2: int :: x != Real.div((m_2 as real) * Real.pi(), Real.pow(2.0, k_1)))
   requires Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x))
   requires forall m_4: nat :: 0 < m_4 ==> Real.sum(IccN(1, m_4), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_4) * x)) ==> Real.sum(IccN(1, m_4 + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_4 + 1) * x))
-  requires forall n0: int :: (forall k_5: nat :: 0 < k_5 ==> (forall m_5: int :: true)) && ((forall k_5: nat :: 0 < k_5 ==> (forall m_5: int :: x != Real.div((m_5 as real) * Real.pi(), Real.pow(2.0, k_5)))) ==> Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x)) ==> (forall m_6: nat :: 0 < m_6 ==> (forall k: int :: true) && (Real.sum(IccN(1, m_6), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_6) * x)) ==> (forall k: int :: true)))) && (0 <= n0 && (forall k_5: nat :: 0 < k_5 ==> (forall m_5: int :: x != Real.div((m_5 as real) * Real.pi(), Real.pow(2.0, k_5)))) && Real.div(1.0, Real.sin(2.0 * x)) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(2.0 * x)) && (forall m_6: nat :: 0 < m_6 ==> Real.sum(IccN(1, m_6), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_6) * x)) ==> Real.sum(IccN(1, m_6 + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_6 + 1) * x))) && 0 <= n0 && n0 < n ==> (0 < n0 ==> (forall k: int :: true)) && (0 < n0 ==> Real.sum(IccN(1, n0), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, n0) * x))))
-  requires n != 0
-  requires 0 <= n - 1
-  requires 0 <= n || n - 1 == n
-  requires n - 1 < n
   requires forall k_1: nat :: 0 < k_1 ==> (forall m_2: int :: x != Real.div((m_2 as real) * Real.pi(), Real.pow(2.0, k_1)))
   requires forall m_4: nat :: 0 < m_4 ==> Real.sum(IccN(1, m_4), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_4) * x)) ==> Real.sum(IccN(1, m_4 + 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, m_4 + 1) * x))
-  requires 0 < n - 1 ==> Real.sum(IccN(1, n - 1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, n - 1) * x))
-  requires n_1_0_0 == n - 1
   requires 0 < n_1_0_0 + 1
   requires n_1_0_0 == 0
   requires 0 <= 1

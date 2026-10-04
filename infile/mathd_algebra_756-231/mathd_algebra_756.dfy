@@ -228,11 +228,6 @@ lemma mathd_algebra_756(a: real, b: real)
       // [TACTIC: «_<;>_» [ Real.log_rpow ( by norm_num norm_num : ( 2 : ℝ ) > 0 ) ] at h₄ rw [ Real.log_rpow ( by norm_num norm_num : ( 2 : ℝ ) > 0 ) ] at h₄ <;> simp_all [ Real.log_pow ] simp_all [ Real.log_pow ] simp_all [ Real.log_pow ] <;> ring_nf at * <;> linarith linarith]
       // [TACTIC: choice [ Real.log_rpow ( by norm_num norm_num : ( 2 : ℝ ) > 0 ) ] at h₄ rw [ Real.log_rpow ( by norm_num norm_num : ( 2 : ℝ ) > 0 ) ] at h₄]
       // UNCITED Real.log_rpow: named here, no record of its application here; the harvest has no application record for this execution at all (its proof term was not captured), so whether Lean applied it here is unknown: not stated
-      assert Real.rpow(2.0, a) == 32.0;  /* [IN-FILE CHECK] requires 1 of vc_mathd_algebra_756_L231 */
-      assert Real.rpow(a, b) == 125.0;  /* [IN-FILE CHECK] requires 2 of vc_mathd_algebra_756_L231 */
-      assert a > 0.0;  /* [IN-FILE CHECK] requires 3 of vc_mathd_algebra_756_L231 */
-      assert Real.log(Real.rpow(2.0, a)) == Real.log(32.0);  /* [IN-FILE CHECK] requires 4 of vc_mathd_algebra_756_L231 */
-      assert 2.0 > 0.0;  /* [IN-FILE CHECK] requires 5 of vc_mathd_algebra_756_L231 */
       vc_mathd_algebra_756_L231(a, b);  /* [IN-FILE CHECK] the closed lemma for line 231 */
       assert ((a * Real.log(2.0)) == Real.log(32.0));  // hypothesis h₄ after `rw` (Lean state) // @tac-hyp 972-1028
       // UNCITED Real.log_pow: named here, no record of its application here; this execution also rewrote hypotheses, whose proofs the harvest does not capture, so whether Lean applied it here is unknown: not stated

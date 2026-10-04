@@ -459,29 +459,6 @@ lemma algebra_sum1onsqrt2to1onsqrt10000lt198()
             // UNCITED-APPLIED congrArg(√↑k - √(↑k - (1 : ℝ)), (1 : ℝ) / (√↑k + √(↑k - (1 : ℝ))), fun (_a : ℝ) => (1 : ℝ) / √↑k < (2 : ℝ) * _a): no library counterpart (not stated) [exec 403 2816-2831]
             assert (Real.div(1.0, Real.sqrt((k as real))) < (2.0 * Real.div(1.0, (Real.sqrt((k as real)) + Real.sqrt(((k as real) - 1.0)))))) by {  // sub-goal before `have` (Lean state) // @tac 2844-3454 // @tac 3467-3475
               // have h₁₁₀ : 1 / Real.sqrt ( k ) < 2 * ( 1 / ( Real.sqrt ( k ) + Real.sqrt ( (  - 1  [type from Lean state]
-              assert 0 <= k;  /* [IN-FILE CHECK] requires 1 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert 0 <= 2;  /* [IN-FILE CHECK] requires 2 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert 0 <= 10000;  /* [IN-FILE CHECK] requires 3 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert k in IccN(2, 10000);  /* [IN-FILE CHECK] requires 4 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert 2 <= k;  /* [IN-FILE CHECK] requires 5 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert k <= 10000;  /* [IN-FILE CHECK] requires 6 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert (k as real) >= 2.0;  /* [IN-FILE CHECK] requires 7 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert (k as real) <= 10000.0;  /* [IN-FILE CHECK] requires 8 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert (k as real) - 1.0 >= 1.0;  /* [IN-FILE CHECK] requires 9 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert Real.sqrt((k as real)) >= 0.0;  /* [IN-FILE CHECK] requires 10 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert Real.sqrt((k as real) - 1.0) >= 0.0;  /* [IN-FILE CHECK] requires 11 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert Real.sqrt((k as real)) > 0.0;  /* [IN-FILE CHECK] requires 12 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert Real.sqrt((k as real) - 1.0) > 0.0;  /* [IN-FILE CHECK] requires 13 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert Real.sqrt((k as real)) > Real.sqrt((k as real) - 1.0);  /* [IN-FILE CHECK] requires 14 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert Real.sqrt((k as real)) - Real.sqrt((k as real) - 1.0) > 0.0;  /* [IN-FILE CHECK] requires 15 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert 2.0 * (Real.sqrt((k as real)) - Real.sqrt((k as real) - 1.0)) > 0.0;  /* [IN-FILE CHECK] requires 16 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert (Real.sqrt((k as real)) - Real.sqrt((k as real) - 1.0)) * (Real.sqrt((k as real)) + Real.sqrt((k as real) - 1.0)) == 1.0;  /* [IN-FILE CHECK] requires 17 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert Real.sqrt((k as real)) + Real.sqrt((k as real) - 1.0) > 0.0;  /* [IN-FILE CHECK] requires 18 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert Real.sqrt((k as real)) - Real.sqrt((k as real) - 1.0) == Real.div(1.0, Real.sqrt((k as real)) + Real.sqrt((k as real) - 1.0));  /* [IN-FILE CHECK] requires 19 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert 0.0 < Real.sqrt((k as real)) + Real.sqrt((k as real) - 1.0);  /* [IN-FILE CHECK] requires 20 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert 0.0 < Real.sqrt((k as real)) * (Real.sqrt((k as real)) + Real.sqrt((k as real) - 1.0));  /* [IN-FILE CHECK] requires 21 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              assert Real.div(1.0, Real.sqrt((k as real))) < Real.div(2.0, Real.sqrt((k as real)) + Real.sqrt((k as real) - 1.0));  /* [IN-FILE CHECK] requires 22 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462 */
-              vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462(k);  /* [IN-FILE CHECK] the closed lemma for line 462 */
               assert (Real.div(1.0, Real.sqrt((k as real))) < (2.0 * Real.div(1.0, (Real.sqrt((k as real)) + Real.sqrt(((k as real) - 1.0)))))) by { // @tac 2960-3038 // @tac 3053-3147 // @tac 3162-3189
                 // have h₁₁₁ : 0 < Real.sqrt ( k ) + Real.sqrt ( (  - 1 ) )  [type from Lean state]
                 assert (0.0 < (Real.sqrt((k as real)) + Real.sqrt(((k as real) - 1.0)))) by { // @tac 3028-3038
@@ -537,6 +514,7 @@ lemma algebra_sum1onsqrt2to1onsqrt10000lt198()
                   }
                   // UNCITED-APPLIED congrArg(fun (_a : Prop) => _a): no library counterpart (not stated) [exec 485 3204-3255]
                 }
+                vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L462(k);  /* [IN-FILE CHECK] the closed lemma for line 462 */
               }
               // [TACTIC: «Linarith[_]At___»]
               // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 3467-3475 exec 537)

@@ -201,7 +201,6 @@ lemma imo_1966_p4(n: nat, x: real)
           RealCosTwoMul((Real.pow(2.0, m) * x));  // cite: Real.cos_two_mul
           // UNCITED mul_assoc: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances here: (a := (2 : ℝ), b := sin ((2 : ℝ) ^ m * x), c := cos ((2 : ℝ) ^ m * x)); (a := (cos ((2 : ℝ) ^ m * x))⁻¹, b := (sin ((2 : ℝ) ^ m * x))⁻¹, c := (2 : ℝ)⁻¹)
           // UNCITED-APPLIED internal ×27 [exec 398 2110-2187]: applications made inside the tactic's own automation, not stated — one_div ×3, mul_assoc ×2, mul_inv_rev ×2, inv_div ×2; machinery/glue: Eq.trans ×8, congrArg ×7, congr ×3 (cited in this block, not counted here: Real.cos_two_mul [Lean recorded ×1], Real.sin_two_mul [Lean recorded ×1], Real.tan_eq_sin_div_cos [Lean recorded ×2])
-          vc_imo_1966_p4_L204(m, n, x);  /* [IN-FILE CHECK] the closed lemma for line 204 */
           assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m) * x)), Real.sin((Real.pow(2.0, m) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m) * x)) * Real.cos((Real.pow(2.0, m) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m) * x)) * Real.cos((Real.pow(2.0, m) * x))))))) by {  // sub-goal before `by_cases` (Lean state) // @tac 2194-2624 // @tac 2194-2525 // @tac 2194-2507 // @tac 2194-2461 // @tac 2194-2443 // @tac 2194-2391 // @tac 2194-2339 // @tac 2194-2279 // @tac 2194-2234
             // [TACTIC: «_<;>_» hcos : Real.cos ( 2 ^ m * x ) = 0 <;> by_cases hsin : Real.sin ( 2 ^ m * x ) = 0 <;> by_cases hcos' : Real.cos ( 2 ^ ( m + 1 ) * x ) = 0 <;> by_cases hsin' : Real.sin ( 2 ^ ( m + 1 ) * x ) = 0 <;> field_simp [ hcos , hsin , hcos' , hsin' ] field_simp [ hcos , hsin , hcos' , hsin' ] <;> ring_nf ring_nf <;> simp_all [ Real.cos_sq , Real.sin_sq ] simp_all [ Real.cos_sq , Real.sin_sq ] simp_all [ Real.cos_sq , Real.sin_sq ] <;> ring_nf ring_nf <;> nlinarith [ Real.sin_sq_add_cos_sq ( 2 ^ m * x ) , Real.sin_sq_add_cos_sq ( 2 ^ ( m + 1 ) * x ) ] nlinarith [ Real.sin_sq_add_cos_sq ( 2 ^ m * x ) , Real.sin_sq_add_cos_sq ( 2 ^ ( m + 1 ) * x ) ]]
             // [TACTIC: «By_cases_:_» hcos : Real.cos ( 2 ^ m * x ) = 0]
@@ -371,6 +370,7 @@ lemma imo_1966_p4(n: nat, x: real)
               }
               assert ((Real.div(1.0, Real.cos((Real.pow(2.0, m) * x))) * (Real.div(1.0, Real.sin((Real.pow(2.0, m) * x))) * (1.0 / 2.0))) == (Real.div(Real.cos((Real.pow(2.0, m) * x)), Real.sin((Real.pow(2.0, m) * x))) - Real.div(((2.0 * (Real.cos((Real.pow(2.0, m) * x)) * Real.cos((Real.pow(2.0, m) * x)))) - 1.0), (2.0 * (Real.sin((Real.pow(2.0, m) * x)) * Real.cos((Real.pow(2.0, m) * x)))))));  // sub-goal of `by_cases` (Lean state) // @tac 2239-2279
             }
+            vc_imo_1966_p4_L204(m, n, x);  /* [IN-FILE CHECK] the closed lemma for line 204 */
           }
         }
       }

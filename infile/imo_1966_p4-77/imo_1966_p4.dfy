@@ -74,17 +74,7 @@ lemma {:isolate_assertions} induction_helper_1(n: nat, x: real)
           // UNCITED-APPLIED internal ×35 [exec 741 3304-3386]: applications made inside the tactic's own automation, not stated — one_div ×8, implies_congr_ctx ×1, or_true ×1, true_implies ×1; machinery/glue: congr ×8, congrArg ×8, Eq.trans ×5, eq_self ×2 (+1 more heads, ×1) (cited in this block, not counted here: Finset.sum_Icc_succ_top [Lean recorded ×3], Finset.sum_congr [Lean recorded ×4])
         }
       }
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L77 */
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_imo_1966_p4_L77 */
-      assert n != 0;  /* [IN-FILE CHECK] requires 3 of vc_imo_1966_p4_L77 */
-      assert 0 <= n - 1;  /* [IN-FILE CHECK] requires 4 of vc_imo_1966_p4_L77 */
-      assert 0 <= n || n - 1 == n;  /* [IN-FILE CHECK] requires 5 of vc_imo_1966_p4_L77 */
-      assert n - 1 < n;  /* [IN-FILE CHECK] requires 6 of vc_imo_1966_p4_L77 */
-      assert (n - 1) == n - 1;  /* [IN-FILE CHECK] requires 7 of vc_imo_1966_p4_L77 */
-      assert 0 < (n - 1) + 1;  /* [IN-FILE CHECK] requires 8 of vc_imo_1966_p4_L77 */
-      assert 0 <= 1;  /* [IN-FILE CHECK] requires 9 of vc_imo_1966_p4_L77 */
-      assert 0 <= (n - 1) + 1;  /* [IN-FILE CHECK] requires 10 of vc_imo_1966_p4_L77 */
-      vc_imo_1966_p4_L77(n, n - 1, n, x);  /* [IN-FILE CHECK] the closed lemma for line 77 */
+      vc_imo_1966_p4_L77(n_1_0_0, n, x);  /* [IN-FILE CHECK] the closed lemma for line 77 */
       assert (Real.sum(IccN(1, (n + 1)), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x))))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, (n + 1)) * x)))));  // sub-goal before `cases` (Lean state) // @tac 3060-3476
     }
   }
@@ -585,14 +575,8 @@ lemma {:induction false} SumIdentity(n: nat, x: real)  // [ADDED DECLARATION]
   if n == 0 { BaseAll1(n, x); } else { SumIdentityRec(n, x); }
 }
 // ---- end helpers ----
-lemma {:induction false} vc_imo_1966_p4_L77(n: int, n_1_0_0: int, n_1_0_1_0: int, x: real)
-  requires 0 <= n
+lemma {:induction false} vc_imo_1966_p4_L77(n_1_0_0: int, n_1_0_1_0: int, x: real)
   requires 0 <= n_1_0_1_0
-  requires n != 0
-  requires 0 <= n - 1
-  requires 0 <= n || n - 1 == n
-  requires n - 1 < n
-  requires n_1_0_0 == n - 1
   requires 0 < n_1_0_0 + 1
   requires 0 <= 1
   requires 0 <= n_1_0_0 + 1

@@ -127,24 +127,6 @@ lemma mathd_algebra_342(a: real, d: real)
   // have h₂ : 5 * a + 10 * d == 70  [type from Lean state]
   assert (((5.0 * a) + (10.0 * d)) == 70.0) by { // @tac 516-816 // @tac 821-841 // @tac 846-854
     // have h₂₁ : ∑ k ∈ Finset.range (5 : ℕ), (a + ↑k * d) = (5 : ℝ) * a + (10 : ℝ) * d  [type from Lean state]
-    assert Real.sum(range(5), ((k: nat) => a + (k as real) * d)) == 70.0;  /* [IN-FILE CHECK] requires 1 of vc_mathd_algebra_342_L130 */
-    assert Real.sum(range(10), ((k: nat) => a + (k as real) * d)) == 210.0;  /* [IN-FILE CHECK] requires 2 of vc_mathd_algebra_342_L130 */
-    assert 0 <= 4;  /* [IN-FILE CHECK] requires 3 of vc_mathd_algebra_342_L130 */
-    assert ((k: nat) => a + (k as real) * d).requires(4);  /* [IN-FILE CHECK] requires 4 of vc_mathd_algebra_342_L130 */
-    assert Real.sum(range(4 + 1), ((k: nat) => a + (k as real) * d)) == Real.sum(range(4), ((k: nat) => a + (k as real) * d)) + ((k: nat) => a + (k as real) * d)(4);  /* [IN-FILE CHECK] requires 5 of vc_mathd_algebra_342_L130 */
-    assert 0 <= 3;  /* [IN-FILE CHECK] requires 6 of vc_mathd_algebra_342_L130 */
-    assert ((k: nat) => a + (k as real) * d).requires(3);  /* [IN-FILE CHECK] requires 7 of vc_mathd_algebra_342_L130 */
-    assert Real.sum(range(3 + 1), ((k: nat) => a + (k as real) * d)) == Real.sum(range(3), ((k: nat) => a + (k as real) * d)) + ((k: nat) => a + (k as real) * d)(3);  /* [IN-FILE CHECK] requires 8 of vc_mathd_algebra_342_L130 */
-    assert 0 <= 2;  /* [IN-FILE CHECK] requires 9 of vc_mathd_algebra_342_L130 */
-    assert ((k: nat) => a + (k as real) * d).requires(2);  /* [IN-FILE CHECK] requires 10 of vc_mathd_algebra_342_L130 */
-    assert Real.sum(range(2 + 1), ((k: nat) => a + (k as real) * d)) == Real.sum(range(2), ((k: nat) => a + (k as real) * d)) + ((k: nat) => a + (k as real) * d)(2);  /* [IN-FILE CHECK] requires 11 of vc_mathd_algebra_342_L130 */
-    assert 0 <= 1;  /* [IN-FILE CHECK] requires 12 of vc_mathd_algebra_342_L130 */
-    assert ((k: nat) => a + (k as real) * d).requires(1);  /* [IN-FILE CHECK] requires 13 of vc_mathd_algebra_342_L130 */
-    assert Real.sum(range(1 + 1), ((k: nat) => a + (k as real) * d)) == Real.sum(range(1), ((k: nat) => a + (k as real) * d)) + ((k: nat) => a + (k as real) * d)(1);  /* [IN-FILE CHECK] requires 14 of vc_mathd_algebra_342_L130 */
-    assert (0 as real) == 0.0;  /* [IN-FILE CHECK] requires 15 of vc_mathd_algebra_342_L130 */
-    assert (1 as real) == 1.0;  /* [IN-FILE CHECK] requires 16 of vc_mathd_algebra_342_L130 */
-    assert 0 <= 5;  /* [IN-FILE CHECK] requires 17 of vc_mathd_algebra_342_L130 */
-    vc_mathd_algebra_342_L130(a, d);  /* [IN-FILE CHECK] the closed lemma for line 130 */
     assert (Real.sum(range(5), ((k: nat) => (a + ((k as real) * d)))) == ((5.0 * a) + (10.0 * d))) by { // @tac 605-816 // @tac 605-797 // @tac 605-778 // @tac 605-760
       // [TACTIC: «_<;>_» [ Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ ] norm_num [ Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ ] <;> ring_nf ring_nf <;> norm_num norm_num <;> linarith linarith]
       // [TACTIC: choice [ Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ ] norm_num [ Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ , Finset.sum_range_succ ]]
@@ -161,6 +143,7 @@ lemma mathd_algebra_342(a: real, d: real)
         PowOne(d);  // cite: pow_one [applied by the tactic, not named in it]
         // UNCITED-APPLIED internal ×118 [exec 60 771-778]: applications made inside the tactic's own automation, not stated — add_zero ×1; machinery/glue: Mathlib.Tactic.Ring.add_congr ×8, Mathlib.Tactic.Ring.add_pf_add_overlap ×7, Mathlib.Tactic.Ring.add_overlap_pf ×7, Mathlib.Meta.NormNum.IsNat.to_raw_eq ×7 (+21 more heads, ×88) (cited in this block, not counted here: pow_one [Lean recorded ×2])
       }
+      vc_mathd_algebra_342_L130(a, d);  /* [IN-FILE CHECK] the closed lemma for line 130 */
     }
     // [TACTIC: rwSeq [ h₂₁ ] at h₀]
     assert (((5.0 * a) + (10.0 * d)) == 70.0);  // hypothesis h₀ after `rw` (Lean state) // @tac-hyp 821-841

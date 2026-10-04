@@ -88,28 +88,6 @@ lemma amc12a_2003_p25(a: real, b: real, f: real -> real)
       // UNCITED-APPLIED true_iff: no library counterpart (not stated) [exec 106 1108-1129]
       // obtain ⟨x, hx⟩ := h₈
       assert exists x_2: real {:trigger Real.sqrt(((a * (x_2 * x_2)) + (b * x_2)))} :: Real.sqrt(((a * (x_2 * x_2)) + (b * x_2))) == -2.0;  // cert: type of h₈
-      assert 0.0 < b;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2003_p25_L91 */
-      assert forall x_1: real :: f(x_1) == Real.sqrt(a * (x_1 * x_1) + b * x_1);  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2003_p25_L91 */
-      assert (iset y_2: real | 0.0 <= f(y_2)) == (iset y_3: real | exists x_1_4: real :: 0.0 <= f(x_1_4) && y_3 == f(x_1_4));  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2003_p25_L91 */
-      assert forall x_19: real :: true == (exists x_1_17: real :: Real.sqrt(a * (x_1_17 * x_1_17) + b * x_1_17) == x_19);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2003_p25_L91 */
-      assert true == (exists x_21: real :: Real.sqrt(a * (x_21 * x_21) + b * x_21) == 0.0);  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2003_p25_L91 */
-      assert true == (exists x_23: real :: Real.sqrt(a * (x_23 * x_23) + b * x_23) == 1.0);  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2003_p25_L91 */
-      assert true == (exists x_25: real :: Real.sqrt(a * (x_25 * x_25) + b * x_25) == 0.0 - 1.0);  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2003_p25_L91 */
-      assert true == (exists x_27: real :: Real.sqrt(a * (x_27 * x_27) + b * x_27) == 2.0);  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2003_p25_L91 */
-      assert true == (exists x_29: real :: Real.sqrt(a * (x_29 * x_29) + b * x_29) == 0.0 - 2.0);  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2003_p25_L91 */
-      assert exists x_31: real :: Real.sqrt(a * (x_31 * x_31) + b * x_31) == 0.0;  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2003_p25_L91 */
-      assert exists x_33: real :: a * (x_33 * x_33) + b * x_33 == 1.0;  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2003_p25_L91 */
-      assert exists x_35: real :: Real.sqrt(a * (x_35 * x_35) + b * x_35) == 0.0 - 1.0;  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2003_p25_L91 */
-      assert exists x_37: real :: Real.sqrt(a * (x_37 * x_37) + b * x_37) == 2.0;  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2003_p25_L91 */
-      assert exists x_39: real :: Real.sqrt(a * (x_39 * x_39) + b * x_39) == 0.0 - 2.0;  /* [IN-FILE CHECK] requires 14 of vc_amc12a_2003_p25_L91 */
-      assert exists x_41: real :: a * (x_41 * x_41) + b * x_41 == 1.0;  /* [IN-FILE CHECK] requires 15 of vc_amc12a_2003_p25_L91 */
-      assert exists x_44: real :: Real.sqrt(a * (x_44 * x_44) + b * x_44) == 0.0 - 1.0;  /* [IN-FILE CHECK] requires 16 of vc_amc12a_2003_p25_L91 */
-      assert exists x_47: real :: Real.sqrt(a * (x_47 * x_47) + b * x_47) == 0.0;  /* [IN-FILE CHECK] requires 17 of vc_amc12a_2003_p25_L91 */
-      assert (true && Real.sqrt(a * (0.0 * 0.0) + b * 0.0) == 0.0) || (exists as_x0: real :: Real.sqrt(a * (as_x0 * as_x0) + b * as_x0) == 0.0);  /* [IN-FILE CHECK] requires 18 of vc_amc12a_2003_p25_L91 */
-      assert exists x_1_3_1: real :: Real.sqrt(a * (x_1_3_1 * x_1_3_1) + b * x_1_3_1) == 2.0;  /* [IN-FILE CHECK] requires 19 of vc_amc12a_2003_p25_L91 */
-      assert (true && Real.sqrt(a * (0.0 * 0.0) + b * 0.0) == 2.0) || (exists as_x_13_0_3_0: real :: Real.sqrt(a * (as_x_13_0_3_0 * as_x_13_0_3_0) + b * as_x_13_0_3_0) == 2.0);  /* [IN-FILE CHECK] requires 20 of vc_amc12a_2003_p25_L91 */
-      assert Real.sqrt(a * (x * x) + b * x) == 2.0;  /* [IN-FILE CHECK] requires 21 of vc_amc12a_2003_p25_L91 */
-      assert exists x_2_3_0_1: real :: Real.sqrt(a * (x_2_3_0_1 * x_2_3_0_1) + b * x_2_3_0_1) == 0.0 - 2.0;  /* [IN-FILE CHECK] requires 22 of vc_amc12a_2003_p25_L91 */
       vc_amc12a_2003_p25_L91(a, b, f, x);  /* [IN-FILE CHECK] the closed lemma for line 91 */
       var x_2: real :| Real.sqrt(((a * (x_2 * x_2)) + (b * x_2))) == -2.0;
       if ((Real.sqrt(((a * (x_2 * x_2)) + (b * x_2))) == -(2.0))) {  // sub-goal before `nlinarith` (Lean state)

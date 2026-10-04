@@ -64,28 +64,7 @@ lemma {:isolate_assertions} induction_helper_1(f: nat -> real, n: nat)
         // UNCITED parity_simps: named here, no record of its application here; this execution also rewrote hypotheses, whose proofs the harvest does not capture, so whether Lean applied it here is unknown: not stated
         assert (forall n: nat :: ((1 < n) ==> (Even(n) ==> (f(n) == (f(tsub(n, 1)) + 1.0)))));  // hypothesis h₁ after `simp_all` (Lean state) // @tac-hyp 1180-1272
         assert (forall n: nat :: ((1 < n) ==> (!(Even(n)) ==> (f(n) == (f(tsub(n, 2)) + 2.0)))));  // hypothesis h₂ after `simp_all` (Lean state) // @tac-hyp 1180-1272
-        assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2017_p7_L67 */
-        assert f(1) == 2.0;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2017_p7_L67 */
-        assert forall n_2: nat :: 1 < n_2 && Even(n_2) ==> f(n_2) == f(tsub(n_2, 1)) + 1.0;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2017_p7_L67 */
-        assert forall n_4: nat :: 1 < n_4 && Odd(n_4) ==> f(n_4) == f(tsub(n_4, 2)) + 2.0;  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2017_p7_L67 */
-        assert n + 1 + 1 > 1;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2017_p7_L67 */
-        assert n != 0;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2017_p7_L67 */
-        assert 0 <= 1;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2017_p7_L67 */
-        assert 0 <= n - 1;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2017_p7_L67 */
-        assert (n - 1) == n - 1;  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2017_p7_L67 */
-        assert (((n - 1) + 1 + 1 > 1) && (0 <= (n - 1) + 1 + 1) && (((n - 1) + 1 + 1 > 1 ==> f((n - 1) + 1 + 1) == (((n - 1) + 1 + 1) as real) + 1.0) || (!((n - 1) + 1 + 1 > 1 ==> f((n - 1) + 1 + 1) == (((n - 1) + 1 + 1) as real) + 1.0)))) || ((1 >= (n - 1) + 1 + 1) && (((n - 1) + 1 + 1 > 1 ==> f((n - 1) + 1 + 1) == (((n - 1) + 1 + 1) as real) + 1.0) || (!((n - 1) + 1 + 1 > 1 ==> f((n - 1) + 1 + 1) == (((n - 1) + 1 + 1) as real) + 1.0))));  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2017_p7_L67 */
-        assert (n - 1) + 1 + 1 > 1 ==> f((n - 1) + 1 + 1) == (((n - 1) + 1 + 1) as real) + 1.0;  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2017_p7_L67 */
-        assert (n - 1) + 1 + 1 + 1 > 1;  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2017_p7_L67 */
-        assert Even((n - 1)) || Odd((n - 1));  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2017_p7_L67 */
-        assert Odd((n - 1));  /* [IN-FILE CHECK] requires 14 of vc_amc12a_2017_p7_L67 */
-        assert 0 <= 3;  /* [IN-FILE CHECK] requires 15 of vc_amc12a_2017_p7_L67 */
-        assert (((n - 1) + 3) as real) == ((n - 1) as real) + (3 as real);  /* [IN-FILE CHECK] requires 16 of vc_amc12a_2017_p7_L67 */
-        assert 0 <= 2;  /* [IN-FILE CHECK] requires 17 of vc_amc12a_2017_p7_L67 */
-        assert (((n - 1) + 2) as real) == ((n - 1) as real) + (2 as real);  /* [IN-FILE CHECK] requires 18 of vc_amc12a_2017_p7_L67 */
-        assert ((0 <= n) && (((1 < n) && (((Even(n)) && (0 <= 1)) || (!Even(n)))) || (n <= 1))) || (n < 0);  /* [IN-FILE CHECK] requires 19 of vc_amc12a_2017_p7_L67 */
-        assert forall n_1_1_1_1: nat :: 1 < n_1_1_1_1 ==> Even(n_1_1_1_1) ==> f(n_1_1_1_1) == f(tsub(n_1_1_1_1, 1)) + 1.0;  /* [IN-FILE CHECK] requires 20 of vc_amc12a_2017_p7_L67 */
-        assert forall n_1_1_1_3: nat :: 1 < n_1_1_1_3 ==> !Even(n_1_1_1_3) ==> f(n_1_1_1_3) == f(tsub(n_1_1_1_3, 2)) + 2.0;  /* [IN-FILE CHECK] requires 21 of vc_amc12a_2017_p7_L67 */
-        vc_amc12a_2017_p7_L67(f, n, n - 1, n);  /* [IN-FILE CHECK] the closed lemma for line 67 */
+        vc_amc12a_2017_p7_L67(f, __outer_n, n_1_0, __outer_n - 1, n, n_1_1_1_2);  /* [IN-FILE CHECK] the closed lemma for line 67 */
         assert ((f(n) + 2.0) == (((n as real) + 2.0) + 1.0));  // hypothesis ih after `simp_all` (Lean state) // @tac-hyp 1180-1272
         assert !(Even(n));  // hypothesis h after `simp_all` (Lean state) // @tac-hyp 1180-1272
         assert ((((n as real) + 2.0) + 1.0) == ((n as real) + 3.0)) by {  // sub-goal of `linarith` (Lean state) // @tac 1283-1291
@@ -223,8 +202,9 @@ lemma amc12a_2017_p7(f: nat -> real)
 
 // ===== closed lemma for line 67 (from closed/amc12a_2017_p7-67.dfy) =====
 
-lemma {:induction false} vc_amc12a_2017_p7_L67(f: nat -> real, n: nat, n_1_0_0: int, n_1_1_1_0: int)
+lemma {:induction false} vc_amc12a_2017_p7_L67(f: nat -> real, n: nat, n_1_0: int, n_1_0_0: int, n_1_1_1_0: int, n_1_1_1_2: int)
   requires 0 <= n
+  requires 0 <= n_1_0
   requires f(1) == 2.0
   requires forall n_2: nat :: 1 < n_2 && Even(n_2) ==> f(n_2) == f(tsub(n_2, 1)) + 1.0
   requires forall n_4: nat :: 1 < n_4 && Odd(n_4) ==> f(n_4) == f(tsub(n_4, 2)) + 2.0
@@ -244,6 +224,7 @@ lemma {:induction false} vc_amc12a_2017_p7_L67(f: nat -> real, n: nat, n_1_0_0: 
   requires ((n_1_0_0 + 2) as real) == (n_1_0_0 as real) + (2 as real)
   requires ((0 <= n_1_1_1_0) && (((1 < n_1_1_1_0) && (((Even(n_1_1_1_0)) && (0 <= 1)) || (!Even(n_1_1_1_0)))) || (n_1_1_1_0 <= 1))) || (n_1_1_1_0 < 0)
   requires forall n_1_1_1_1: nat :: 1 < n_1_1_1_1 ==> Even(n_1_1_1_1) ==> f(n_1_1_1_1) == f(tsub(n_1_1_1_1, 1)) + 1.0
+  requires ((0 <= n_1_1_1_2) && (((1 < n_1_1_1_2) && (((!Even(n_1_1_1_2)) && (0 <= 2)) || (Even(n_1_1_1_2)))) || (n_1_1_1_2 <= 1))) || (n_1_1_1_2 < 0)
   requires forall n_1_1_1_3: nat :: 1 < n_1_1_1_3 ==> !Even(n_1_1_1_3) ==> f(n_1_1_1_3) == f(tsub(n_1_1_1_3, 2)) + 2.0
   ensures   f(n_1_0_0) + 2.0 == (n_1_0_0 as real) + 2.0 + 1.0
 {

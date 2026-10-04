@@ -180,27 +180,6 @@ lemma amc12a_2009_p15(n: nat)
       assert ((4) > 0);  // precondition of NatModAddDiv (Lean: Nat.mod_add_div)
       NatModAddDiv(n, 4);  // cite: Nat.mod_add_div
       // UNCITED-APPLIED congrArg(n, n % (4 : ℕ) + (4 : ℕ) * (n / (4 : ℕ)), fun (_a : ℕ) => Complex.I ^ _a = Complex.I ^ (_a % (4 : ℕ))): no library counterpart (not stated) [exec 42 677-705]
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2009_p15_L183 */
-      assert 0 < n;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2009_p15_L183 */
-      assert Complex.sum(IccN(1, n), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.add(Complex.of_real(48.0), Complex.mul(Complex.of_real(49.0), Complex.I()));  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2009_p15_L183 */
-      assert 0 <= k;  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2009_p15_L183 */
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2009_p15_L183 */
-      assert 4 > 0;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2009_p15_L183 */
-      assert 0 <= 4;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2009_p15_L183 */
-      assert 4 > 0;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2009_p15_L183 */
-      assert n % 4 + 4 * (n / 4) == n;  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2009_p15_L183 */
-      assert Complex.I().Complex?;  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2009_p15_L183 */
-      assert 4 != 0;  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2009_p15_L183 */
-      assert 0 <= n % 4;  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2009_p15_L183 */
-      assert 0 <= 4 * (n / 4);  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2009_p15_L183 */
-      assert Complex.pow(Complex.I(), n % 4 + 4 * (n / 4)) == Complex.mul(Complex.pow(Complex.I(), n % 4), Complex.pow(Complex.I(), 4 * (n / 4)));  /* [IN-FILE CHECK] requires 14 of vc_amc12a_2009_p15_L183 */
-      assert 0 <= n / 4;  /* [IN-FILE CHECK] requires 15 of vc_amc12a_2009_p15_L183 */
-      assert Complex.pow(Complex.I(), 4 * (n / 4)) == Complex.pow(Complex.pow(Complex.I(), 4), n / 4);  /* [IN-FILE CHECK] requires 16 of vc_amc12a_2009_p15_L183 */
-      assert 0 <= n % 4 + 4 * (n / 4);  /* [IN-FILE CHECK] requires 17 of vc_amc12a_2009_p15_L183 */
-      assert Complex.pow(Complex.I(), n % 4 + 4 * (n / 4)).Complex?;  /* [IN-FILE CHECK] requires 18 of vc_amc12a_2009_p15_L183 */
-      assert 0 <= (n % 4 + 4 * (n / 4)) % 4;  /* [IN-FILE CHECK] requires 19 of vc_amc12a_2009_p15_L183 */
-      assert Complex.pow(Complex.I(), (n % 4 + 4 * (n / 4)) % 4).Complex?;  /* [IN-FILE CHECK] requires 20 of vc_amc12a_2009_p15_L183 */
-      vc_amc12a_2009_p15_L183(k, n, n);  /* [IN-FILE CHECK] the closed lemma for line 183 */
       assert (Complex.pow(Complex.I(), ((n % 4) + (4 * (n / 4)))) == Complex.pow(Complex.I(), (((n % 4) + (4 * (n / 4))) % 4))) by {  // sub-goal before `simp` (Lean state) // @tac 712-788
         // [TACTIC: simp [ pow_add , pow_mul , Complex.I_mul_I , mul_assoc , mul_comm , mul_left_comm ]]
         ComplexPowAdd(Complex.I(), (n % 4), (4 * (n / 4)));  // cite: pow_add
@@ -211,6 +190,7 @@ lemma amc12a_2009_p15(n: nat)
         // UNCITED mul_left_comm: no Lean instance recorded (arguments unknown), not guessed
         // SORT_GAP: one_pow is used at carrier complex; library OnePowReal/OnePowInt/OnePowNat is not over complex (no faithful counterpart, not cited)
         // UNCITED-APPLIED internal ×19 [exec 69 712-788]: applications made inside the tactic's own automation, not stated — one_pow ×1, mul_comm ×1, one_mul ×1, Nat.add_mul_mod_self_left ×1, Nat.mod_mod_of_dvd ×1; machinery/glue: Eq.trans ×7, congrArg ×4, of_eq_true ×1, congr ×1 (+1 more heads, ×1) (cited in this block, not counted here: pow_add [Lean recorded ×1], pow_mul [Lean recorded ×1])
+        vc_amc12a_2009_p15_L183(k, m_11, m, m_4_0_2, m_7_2, __outer_n, n);  /* [IN-FILE CHECK] the closed lemma for line 183 */
       }
     }
     // [TACTIC: rwSeq [ h₂ k ]]
@@ -826,8 +806,12 @@ lemma S_L183(r: nat, q: nat)  // [ADDED DECLARATION]
   assert Complex.mul(a, Complex.of_real(1.0)) == a;
 }
 
-lemma {:induction false} vc_amc12a_2009_p15_L183(k_0_0: int, n: int, n_0_0_0: int)
+lemma {:induction false} vc_amc12a_2009_p15_L183(k_0_0: int, m_11: int, m_3_0_2: int, m_4_0_2: int, m_7_2: int, n: int, n_0_0_0: int)
   requires 0 <= n
+  requires 0 <= m_3_0_2
+  requires 0 <= m_4_0_2
+  requires 0 <= m_7_2
+  requires 0 <= m_11
   requires 0 < n
   requires Complex.sum(IccN(1, n), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.add(Complex.of_real(48.0), Complex.mul(Complex.of_real(49.0), Complex.I()))
   requires 0 <= k_0_0

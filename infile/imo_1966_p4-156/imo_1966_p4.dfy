@@ -155,7 +155,6 @@ lemma imo_1966_p4(n: nat, x: real)
   forall m: nat | (0 < m) && (Real.sum(IccN(1, m), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x))))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, m) * x))))) // @tac 1643-1655
     ensures (Real.sum(IccN(1, (m + 1)), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x))))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, (m + 1)) * x))))) // @tac 1660-1697 // @tac 1702-1915 // @tac 1920-1932
   {
-    assert 0 < n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L156 */
     vc_imo_1966_p4_L156(m, n, x);  /* [IN-FILE CHECK] the closed lemma for line 156 */
     // [TACTIC: intro m hm h]
     // have h₁' : m + 1 > 0  [type from Lean state]

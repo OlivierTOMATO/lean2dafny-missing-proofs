@@ -194,11 +194,6 @@ lemma amc12b_2020_p13()
     assert (Real.div(Real.log(6.0), Real.log(2.0)) == (1.0 + Real.div(Real.log(3.0), Real.log(2.0)))) by { // @tac 1121-1133
       // [TACTIC: rwSeq [ h₁₁ ]]
       // UNCITED-APPLIED congrArg(Real.log (6 : ℝ), Real.log (2 : ℝ) + Real.log (3 : ℝ), fun (_a : ℝ) => _a / Real.log (2 : ℝ) = (1 : ℝ) + Real.log (3 : ℝ) / …): no library counterpart (not stated) [exec 180 1121-1133]
-      assert Real.log(6.0) == Real.log(2.0) + Real.log(3.0);  /* [IN-FILE CHECK] requires 1 of vc_amc12b_2020_p13_L197 */
-      assert (0 as real) == 0.0;  /* [IN-FILE CHECK] requires 2 of vc_amc12b_2020_p13_L197 */
-      assert (1 as real) == 1.0;  /* [IN-FILE CHECK] requires 3 of vc_amc12b_2020_p13_L197 */
-      assert Real.log(2.0) != 0.0;  /* [IN-FILE CHECK] requires 4 of vc_amc12b_2020_p13_L197 */
-      vc_amc12b_2020_p13_L197();  /* [IN-FILE CHECK] the closed lemma for line 197 */
       assert (Real.div((Real.log(2.0) + Real.log(3.0)), Real.log(2.0)) == (1.0 + Real.div(Real.log(3.0), Real.log(2.0)))) by {  // sub-goal before `field_simp` (Lean state) // @tac 1140-1403 // @tac 1140-1385 // @tac 1140-1266 // @tac 1140-1248
         assert (0.0 < 2.0) by {  // sub-goal of `by` (Lean state) // @tac 1190-1198
           // [TACTIC: «Norm_num[_]At___»]
@@ -216,6 +211,7 @@ lemma amc12b_2020_p13()
         assert (0.0 < (2.0)) && ((2.0) != 1.0);  // precondition of RealLogNeZeroOfPosOfNeOne (Lean: Real.log_ne_zero_of_pos_of_ne_one)
         RealLogNeZeroOfPosOfNeOne(2.0);  // cite: Real.log_ne_zero_of_pos_of_ne_one
         // UNCITED-APPLIED internal ×22 [exec 222 1140-1248]: applications made inside the tactic's own automation, not stated — add_div' ×1, ne_of_gt ×1, Mathlib.Meta.Positivity.log_pos_of_isNat ×1, one_mul ×1, div_mul_eq_mul_div ×1, IsUnit.mul_div_cancel_right ×1; machinery/glue: congrArg ×4, Eq.trans ×3, Mathlib.Meta.NormNum.isNat_ofNat ×3, of_eq_true ×1 (+5 more heads, ×5) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1], Nat.cast_zero [Lean recorded ×1], Real.log_ne_zero_of_pos_of_ne_one [Lean recorded ×1])
+        vc_amc12b_2020_p13_L197();  /* [IN-FILE CHECK] the closed lemma for line 197 */
       }
     }
     // have h₁₃ : Real.log ( 6 ) / Real.log ( 3 ) == 1 + Real.log ( 2 ) / Real.log ( 3 )  [type from Lean state]

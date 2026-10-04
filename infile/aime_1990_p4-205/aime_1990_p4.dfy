@@ -202,15 +202,6 @@ lemma aime_1990_p4(x: real)
           NatCastZero();  // cite: Nat.cast_zero [applied by the tactic, not named in it: inside its internal steps (`ring1` exec 226, 227)]
         }
         // have h₅₄ : x - 13 == 0 || x + 3 == 0  [type from Lean state]
-        assert 0.0 < x;  /* [IN-FILE CHECK] requires 1 of vc_aime_1990_p4_L205 */
-        assert x * x - 10.0 * x - 29.0 != 0.0;  /* [IN-FILE CHECK] requires 2 of vc_aime_1990_p4_L205 */
-        assert x * x - 10.0 * x - 45.0 != 0.0;  /* [IN-FILE CHECK] requires 3 of vc_aime_1990_p4_L205 */
-        assert x * x - 10.0 * x - 69.0 != 0.0;  /* [IN-FILE CHECK] requires 4 of vc_aime_1990_p4_L205 */
-        assert Real.div(1.0, x * x - 10.0 * x - 29.0) + Real.div(1.0, x * x - 10.0 * x - 45.0) - Real.div(2.0, x * x - 10.0 * x - 69.0) == 0.0;  /* [IN-FILE CHECK] requires 5 of vc_aime_1990_p4_L205 */
-        assert x * x - 10.0 * x == 39.0;  /* [IN-FILE CHECK] requires 6 of vc_aime_1990_p4_L205 */
-        assert x * x - 10.0 * x - 39.0 == 0.0;  /* [IN-FILE CHECK] requires 7 of vc_aime_1990_p4_L205 */
-        assert (x - 13.0) * (x + 3.0) == 0.0;  /* [IN-FILE CHECK] requires 8 of vc_aime_1990_p4_L205 */
-        assert (x - 13.0 != 0.0) || (x - 13.0 == 0.0);  /* [IN-FILE CHECK] requires 9 of vc_aime_1990_p4_L205 */
         vc_aime_1990_p4_L205(x);  /* [IN-FILE CHECK] the closed lemma for line 205 */
         assert (((x - 13.0) == 0.0) || ((x + 3.0) == 0.0)); // @tac 1977-2024
           // [TACTIC: apply eq_zero_or_eq_zero_of_mul_eq_zero h₅₃]

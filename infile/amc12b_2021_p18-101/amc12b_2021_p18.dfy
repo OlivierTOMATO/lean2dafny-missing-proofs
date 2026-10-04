@@ -99,7 +99,6 @@ lemma {:isolate_assertions} cert_piece_11(z: Complex.complex)
   requires ((6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z)))) < 0.0)
   ensures (0.0 < ((6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z)))) * (6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z))))))
 {
-  assert 6.0 - (Complex.Re(z) * Complex.Re(z) + Complex.Im(z) * Complex.Im(z)) < 0.0;  /* [IN-FILE CHECK] requires 1 of vc_amc12b_2021_p18_L101 */
   vc_amc12b_2021_p18_L101(z);  /* [IN-FILE CHECK] the closed lemma for line 101 */
   MulPos(-((6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z))))), -((6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z)))))); MulNeg(-((6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z))))), (6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z))))); assert (-((6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z)))))) * (-((6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z)))))) == -((-((6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z)))))) * ((6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z)))))); assert (-((6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z)))))) * ((6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z))))) == -(((6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z))))) * ((6.0 - ((Complex.Re(z) * Complex.Re(z)) + (Complex.Im(z) * Complex.Im(z))))));
 }

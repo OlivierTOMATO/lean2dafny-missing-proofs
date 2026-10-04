@@ -24,19 +24,6 @@ lemma imo_1964_p1_1(n: nat)
       // [TACTIC: «Norm_num[_]At___» at h₀ ⊢]
       // UNCITED-APPLIED internal ×6 [exec 82 566-586]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, congrArg ×1, Mathlib.Meta.NormNum.IsNat.to_eq ×1, Mathlib.Meta.NormNum.isInt_emod ×1 (+1 more heads, ×1)
       assert IntDvd(7, (Int.pow(2, n) - 1));  // hypothesis h₀ after `norm_num` (Lean state) // @tac-hyp 566-586
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1964_p1_1_L27 */
-      assert NatDvd(7, tsub(Int.pow(2, n), 1));  /* [IN-FILE CHECK] requires 2 of vc_imo_1964_p1_1_L27 */
-      assert if 7 == 0 then tsub(Int.pow(2, n), 1) == 0 else tsub(Int.pow(2, n), 1) % 7 == 0;  /* [IN-FILE CHECK] requires 3 of vc_imo_1964_p1_1_L27 */
-      assert forall n0: nat :: NatDvd(7, tsub(Int.pow(2, n0), 1)) && 0 <= n0 && n0 < n ==> NatDvd(3, n0);  /* [IN-FILE CHECK] requires 4 of vc_imo_1964_p1_1_L27 */
-      assert 0 <= Int.pow(2, n);  /* [IN-FILE CHECK] requires 5 of vc_imo_1964_p1_1_L27 */
-      assert 0 <= 1;  /* [IN-FILE CHECK] requires 6 of vc_imo_1964_p1_1_L27 */
-      assert IntDvd(7, tsub(Int.pow(2, n), 1));  /* [IN-FILE CHECK] requires 7 of vc_imo_1964_p1_1_L27 */
-      assert IntDvd(7, Int.pow(2, n) - 1);  /* [IN-FILE CHECK] requires 8 of vc_imo_1964_p1_1_L27 */
-      assert 0 <= 2;  /* [IN-FILE CHECK] requires 9 of vc_imo_1964_p1_1_L27 */
-      assert Int.pow(2, n) == Int.pow(2, n);  /* [IN-FILE CHECK] requires 10 of vc_imo_1964_p1_1_L27 */
-      assert 0 <= 7;  /* [IN-FILE CHECK] requires 11 of vc_imo_1964_p1_1_L27 */
-      assert (exists k: int :: tsub(Int.pow(2, n), 1) == 7 * k) == (exists k_1: nat :: tsub(Int.pow(2, n), 1) == 7 * k_1);  /* [IN-FILE CHECK] requires 12 of vc_imo_1964_p1_1_L27 */
-      vc_imo_1964_p1_1_L27(n);  /* [IN-FILE CHECK] the closed lemma for line 27 */
       assert ((Int.pow(2, n) % 7) == 1) by {  // sub-goal before `omega` (Lean state) // @tac 658-663
         // [TACTIC: omega]
         // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
@@ -44,6 +31,7 @@ lemma imo_1964_p1_1(n: nat)
         NatCastPowInt(2, n);  // cite: Nat.cast_pow [applied by the tactic, not named in it]
         IntCoeNatDvd(7, tsub(Int.pow(2, n), 1));  // cite: Int.coe_nat_dvd [applied by the tactic, not named in it]
         // UNCITED-APPLIED internal ×101 [exec 83 658-663]: applications made inside the tactic's own automation, not stated — le_of_le_of_eq ×4, Int.sub_nonneg_of_le ×4, Int.add_one_le_of_lt ×3, Int.emod_def ×2, Int.lt_or_gt_of_ne ×1, Int.emod_eq_zero_of_dvd ×1, Nat.cast_pred ×1, Nat.cast_zero ×1, Int.mul_ediv_self_le ×1, Int.lt_mul_ediv_self_add ×1; machinery/glue: Eq.symm ×16, Eq.trans ×7, Lean.Omega.Int.sub_congr ×6, Lean.Omega.LinearCombo.sub_eval ×6 (+23 more heads, ×47) (cited in this block, not counted here: Int.coe_nat_dvd [Lean recorded ×1], Nat.cast_pow [Lean recorded ×1])
+        vc_imo_1964_p1_1_L27(n);  /* [IN-FILE CHECK] the closed lemma for line 27 */
       }
     }
   }

@@ -164,13 +164,6 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
 {
   if n == 1 {
     // base: P(2) — Lean base case
-    assert 0 <= 1;  /* [IN-FILE CHECK] requires 1 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L167 */
-    assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L167 */
-    assert forall k_1: int :: 0 <= k_1 ==> k_1 in IccN(2, 10000) ==> Real.div(1.0, Real.sqrt((k_1 as real))) < 2.0 * (Real.sqrt((k_1 as real)) - Real.sqrt((k_1 as real) - 1.0));  /* [IN-FILE CHECK] requires 3 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L167 */
-    assert 1 >= 1;  /* [IN-FILE CHECK] requires 4 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L167 */
-    assert 1 == 1;  /* [IN-FILE CHECK] requires 5 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L167 */
-    assert 0 <= 2;  /* [IN-FILE CHECK] requires 6 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L167 */
-    vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L167(1, n);  /* [IN-FILE CHECK] the closed lemma for line 167 */
     assert (Real.sum(IccN(2, 2), ((k: nat) => (2.0 * (Real.sqrt((k as real)) - Real.sqrt(((k as real) - 1.0)))))) == (2.0 * (Real.sqrt((2 as real)) - Real.sqrt(1.0)))) by {  // sub-goal before `norm_num` (Lean state) // @tac 4396-4430 // @tac 4393-4430
       // [TACTIC: «Norm_num[_]At___» [ Finset.sum_Icc_succ_top ]]
       // UNCITED Finset.sum_Icc_succ_top: named in this rewriting step; no record of Lean's proof attributes an application of it to this execution (its recorded applications are at other tactics of the proof; a rewrite at a hypothesis is filed under the tactic that later uses the hypothesis, and a conditional / under-binder simp rewrite may be unrecorded), so whether it was applied here is not known; not stated
@@ -179,6 +172,7 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
       // UNCITED-APPLIED Finset.sum_singleton: recorded instance not expressible here (sort/type/scope), not guessed
       NatCastOne();  // cite: Nat.cast_one [applied by the tactic, not named in it]
       // UNCITED-APPLIED internal ×26 [exec 628 4396-4430]: applications made inside the tactic's own automation, not stated — Finset.sum_congr ×1, Finset.sum_singleton ×1; machinery/glue: congrArg ×5, Eq.trans ×4, congr ×3, Mathlib.Meta.NormNum.IsNat.to_eq ×2 (+8 more heads, ×10) (cited in this block, not counted here: Finset.Icc_self [Lean recorded ×1], Nat.cast_one [Lean recorded ×1])
+      vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L167(1, n);  /* [IN-FILE CHECK] the closed lemma for line 167 */
     }
   } else {
     induction_helper_1(n - 1);   // IH: P(n)

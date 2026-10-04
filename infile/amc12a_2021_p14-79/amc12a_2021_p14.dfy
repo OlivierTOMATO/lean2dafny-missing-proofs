@@ -76,15 +76,6 @@ lemma amc12a_2021_p14()
     // have h₅ : Real.logb ( ( 5 ^ k ) , ( 3 ^ ( k ^ 2 ) ) ) ==  * Real.logb ( 5 , 3 )  [type from Lean state]
     assert (Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2))) == ((k as real) * Real.logb(5.0, 3.0))) by { // @tac 1102-1326 // @tac 1333-1345
       // have h₅₁ : Real.logb ( ( 5 ^ k ) , ( 3 ^ ( k ^ 2 ) ) ) == Real.log ( ( 3 ^ ( k ^   [type from Lean state]
-      assert 0 <= k;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p14_L79 */
-      assert 0 <= 1;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p14_L79 */
-      assert 0 <= 20;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p14_L79 */
-      assert k in IccN(1, 20);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p14_L79 */
-      assert 1 <= k;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p14_L79 */
-      assert k <= 20;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2021_p14_L79 */
-      assert k >= 1;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2021_p14_L79 */
-      assert 0 <= 2;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2021_p14_L79 */
-      assert 0 <= Int.pow(k, 2);  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2021_p14_L79 */
       vc_amc12a_2021_p14_L79(k);  /* [IN-FILE CHECK] the closed lemma for line 79 */
       assert (Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2))) == Real.div(Real.log(Real.pow(3.0, Int.pow(k, 2))), Real.log(Real.pow(5.0, k)))); // @tac 1239-1326 // @tac 1239-1309 // @tac 1239-1286 // @tac 1239-1253
       // UNCITED-APPLIED congrArg(logb ((5 : ℝ) ^ k) ((3 : ℝ) ^ k ^ (2 : ℕ)), Real.log ((3 : ℝ) ^ k ^ (2 : ℕ)) / Real.log ((5 : ℝ) ^ k), fun (_a : ℝ) => _a = Real.log ((3 : ℝ) ^ k ^ (2 : ℕ)) / Real.log ((5 …): no library counterpart (not stated) [exec 148 1239-1253]

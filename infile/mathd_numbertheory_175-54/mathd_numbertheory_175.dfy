@@ -51,10 +51,6 @@ lemma mathd_numbertheory_175()
     // have h₃ : ( 2 ^ 2010 : ℕ ) % 10 == 4  [type from Lean state]
     assert ((Int.pow(2, 2010) % 10) == 4) by { // @tac 518-718 // @tac 725-734
       // have h₄ : 2 ^ 2010 == ( 2 ^ 4 ) ^ 502 * 2 ^ 2  [type from Lean state]
-      assert forall n_0_0_1: nat :: n_0_0_1 >= 1 ==> Int.pow(6, n_0_0_1) % 10 == 6;  /* [IN-FILE CHECK] requires 1 of vc_mathd_numbertheory_175_L54 */
-      assert 2 * 2 * 2 * 2 % 10 == 6;  /* [IN-FILE CHECK] requires 2 of vc_mathd_numbertheory_175_L54 */
-      assert 0 <= 2010;  /* [IN-FILE CHECK] requires 3 of vc_mathd_numbertheory_175_L54 */
-      assert 0 <= 502;  /* [IN-FILE CHECK] requires 4 of vc_mathd_numbertheory_175_L54 */
       vc_mathd_numbertheory_175_L54();  /* [IN-FILE CHECK] the closed lemma for line 54 */
       assert (Int.pow(2, 2010) == (Int.pow((2 * 2 * 2 * 2), 502) * (2 * 2))); // @tac 585-718 // @tac 585-702 // @tac 585-676 // @tac 585-651
       // UNCITED-APPLIED internal ×39 [exec 116 585-651]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.IsNatPowT.trans ×8, Mathlib.Meta.NormNum.IsNatPowT.bit1 ×8, Mathlib.Meta.NormNum.IsNatPowT.bit0 ×7, Mathlib.Meta.NormNum.isNat_pow ×4 (+6 more heads, ×12)

@@ -165,10 +165,6 @@ lemma amc12a_2021_p14()
           // UNCITED-APPLIED congrArg(logb ((5 : ℝ) ^ k) ((3 : ℝ) ^ k ^ (2 : ℕ)), ↑k * logb (5 : ℝ) (3 : ℝ), fun (_a : ℝ) => _a = ↑k * logb (5 : ℝ) (3 : ℝ)): no library counterpart (not stated) [exec 736 2802-2816]
         }
       }
-      assert forall k_0_1: nat :: k_0_1 in IccN(1, 20) ==> Real.logb(Real.pow(5.0, k_0_1), Real.pow(3.0, Int.pow(k_0_1, 2))) == (k_0_1 as real) * Real.logb(5.0, 3.0);  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p14_L168 */
-      assert forall x_1_0_1: nat :: x_1_0_1 in IccN(1, 20) ==> Real.logb(Real.pow(5.0, x_1_0_1), Real.pow(3.0, Int.pow(x_1_0_1, 2))) == (x_1_0_1 as real) * Real.logb(5.0, 3.0);  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p14_L168 */
-      assert forall x_1_0_4: int :: 0 <= x_1_0_4 ==> x_1_0_4 in IccN(1, 20) ==> (forall v_0_5_k: int :: true) && ((k: nat) => Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2)))).requires(x_1_0_4) && ((v_22_k: nat) => (v_22_k as real) * Real.logb(5.0, 3.0)).requires(x_1_0_4);  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p14_L168 */
-      assert forall x_1_0_4: int :: 0 <= x_1_0_4 ==> x_1_0_4 in IccN(1, 20) ==> (forall v_0_9_k: int :: true) && ((k: nat) => Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2)))).requires(x_1_0_4) && ((v_22_k: nat) => (v_22_k as real) * Real.logb(5.0, 3.0)).requires(x_1_0_4);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p14_L168 */
       vc_amc12a_2021_p14_L168();  /* [IN-FILE CHECK] the closed lemma for line 168 */
       assert (forall x :: x in (IccN(1, 20)) ==> (((k: nat) => Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2)))))(x) == (((k: nat) => ((k as real) * Real.logb(5.0, 3.0))))(x));  // precondition of FinsetSumApply (Lean: Finset.sum_congr; `apply`: proved by the steps above)
       FinsetSumApply(IccN(1, 20), ((k: nat) => Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2)))), ((k: nat) => ((k as real) * Real.logb(5.0, 3.0))));  // cite: Finset.sum_congr

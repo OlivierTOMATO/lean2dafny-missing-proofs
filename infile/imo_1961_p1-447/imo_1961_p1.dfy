@@ -444,26 +444,13 @@ lemma imo_1961_p1(x: real, y: real, z: real, a: real, b: real)
   // have h₁₂ : a ^ 2 < 3 * b ^ 2  [type from Lean state]
   assert ((a * a) < (3.0 * (b * b))) by { // @tac 2844-2902 // @tac 2933-2991 // @tac 3022-3080 // @tac 3111-3178
     // have h₁₂ :   [type from Lean state]
-    assert 0.0 < x;  /* [IN-FILE CHECK] requires 1 of vc_imo_1961_p1_L447 */
-    assert 0.0 < y;  /* [IN-FILE CHECK] requires 2 of vc_imo_1961_p1_L447 */
-    assert 0.0 < z;  /* [IN-FILE CHECK] requires 3 of vc_imo_1961_p1_L447 */
-    assert y != z;  /* [IN-FILE CHECK] requires 4 of vc_imo_1961_p1_L447 */
-    assert z != x;  /* [IN-FILE CHECK] requires 5 of vc_imo_1961_p1_L447 */
-    assert x + y + z == a;  /* [IN-FILE CHECK] requires 6 of vc_imo_1961_p1_L447 */
-    assert x * x + y * y + z * z == b * b;  /* [IN-FILE CHECK] requires 7 of vc_imo_1961_p1_L447 */
-    assert x * y == z * z;  /* [IN-FILE CHECK] requires 8 of vc_imo_1961_p1_L447 */
-    assert z == Real.sqrt(x * y);  /* [IN-FILE CHECK] requires 9 of vc_imo_1961_p1_L447 */
-    assert x + y + Real.sqrt(x * y) == a;  /* [IN-FILE CHECK] requires 10 of vc_imo_1961_p1_L447 */
-    assert x * x + y * y + x * y == b * b;  /* [IN-FILE CHECK] requires 11 of vc_imo_1961_p1_L447 */
-    assert a > 0.0;  /* [IN-FILE CHECK] requires 12 of vc_imo_1961_p1_L447 */
-    assert b * b < a * a;  /* [IN-FILE CHECK] requires 13 of vc_imo_1961_p1_L447 */
-    vc_imo_1961_p1_L447(a, b, x, y, z);  /* [IN-FILE CHECK] the closed lemma for line 447 */
     assert (0.0 < ((x - y) * (x - y))) by {
       // [TACTIC: exact sq_pos_of_ne_zero ( ( sub_ne_zero_of_ne ( h₁ ) ) )]
       assert ((x) != (y));  // precondition of SubNeZeroOfNe (Lean: sub_ne_zero_of_ne)
       SubNeZeroOfNe(x, y);  // cite: sub_ne_zero_of_ne
       assert (((x - y)) != 0.0);  // precondition of SqPosOfNeZero (Lean: sq_pos_of_ne_zero)
       SqPosOfNeZero((x - y));  // cite: sq_pos_of_ne_zero
+      vc_imo_1961_p1_L447(a, b, x, y, z);  /* [IN-FILE CHECK] the closed lemma for line 447 */
     }
     // have h₁₃ :   [type from Lean state]
     assert (0.0 < ((y - z) * (y - z))) by {

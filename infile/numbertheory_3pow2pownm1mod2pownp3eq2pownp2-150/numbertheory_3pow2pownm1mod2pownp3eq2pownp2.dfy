@@ -147,8 +147,6 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
                   // [TACTIC: exact dvd_mul_of_dvd_right h₈ _]
                   assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 6)));
                   assert (NatDvd((Int.pow(2, (n + 4))), (Int.pow(2, ((2 * n) + 6)))));  // precondition of NatDvdMulOfDvdRight (Lean: dvd_mul_of_dvd_right)
-                  assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L150 */
-                  assert 0 <= k;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L150 */
                   vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L150(k, n);  /* [IN-FILE CHECK] the closed lemma for line 150 */
                   NatDvdMulOfDvdRight(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 6)), (k * k));  // cite: dvd_mul_of_dvd_right
                 }

@@ -143,14 +143,12 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
                   NatPowDvdPow(2, (n + 4), ((2 * n) + 6));  // cite: pow_dvd_pow
                 }
                 // have h₉ : 2 ^ ( n + 4 ) ∣ k ^ 2 * 2 ^ ( 2 * n + 6 )  [type from Lean state]
-                assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L146 */
-                assert 0 <= k;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L146 */
-                vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L146(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 146 */
                 assert NatDvd(Int.pow(2, (n + 4)), ((k * k) * Int.pow(2, ((2 * n) + 6)))) by { // @tac 2674-2707
                   // [TACTIC: exact dvd_mul_of_dvd_right h₈ _]
                   assert NatDvd(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 6)));
                   assert (NatDvd((Int.pow(2, (n + 4))), (Int.pow(2, ((2 * n) + 6)))));  // precondition of NatDvdMulOfDvdRight (Lean: dvd_mul_of_dvd_right)
                   NatDvdMulOfDvdRight(Int.pow(2, (n + 4)), Int.pow(2, ((2 * n) + 6)), (k * k));  // cite: dvd_mul_of_dvd_right
+                  vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L146(k, k, n);  /* [IN-FILE CHECK] the closed lemma for line 146 */
                 }
                 // [TACTIC: exact h₉]
                 assert NatDvd(Int.pow(2, (n + 4)), ((k * k) * Int.pow(2, ((2 * n) + 6))));

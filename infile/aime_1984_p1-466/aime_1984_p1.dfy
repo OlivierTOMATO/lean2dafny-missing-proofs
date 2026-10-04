@@ -463,11 +463,11 @@ lemma aime_1984_p1(u: nat -> Rat.rat)
       // have h₆ : ∑ k ∈ Finset.range (49 : ℕ), (u (0 : ℕ) + (2 : ℚ) * (↑k + (1 : ℚ))) = (49 : ℚ) * u (0 : ℕ) + ∑ k ∈ Finset.rang  [type from Lean state]
       assert (Rat.sum(range(49), ((k: nat) => Rat.add(u(0), Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(k), Rat.of_int(1)))))) == Rat.add(Rat.mul(Rat.of_int(49), u(0)), Rat.sum(range(49), ((k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(k), Rat.of_int(1))))))) by { // @tac 2987-3359
         // GAP: calc _ ... not rendered: a term does not render at Lean's carrier rat (its step proofs follow unguarded)
-        vc_aime_1984_p1_L466(u);  /* [IN-FILE CHECK] the closed lemma for line 466 */
         assert (Rat.sum(range(49), ((k: nat) => Rat.add(u(0), Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(k), Rat.of_int(1)))))) == Rat.add(Rat.sum(range(49), ((k: nat) => u(0))), Rat.sum(range(49), ((k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(k), Rat.of_int(1))))))) by {  // sub-goal before `rw` (Lean state) // @tac 3185-3212
           // [TACTIC: rwSeq [ Finset.sum_add_distrib ]]
           FinsetSumAddDistribRat(range(49), ((k: nat) => u(0)), ((k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(k), Rat.of_int(1)))));  // cite: Finset.sum_add_distrib
           // UNCITED-APPLIED congrArg(∑ x ∈ Finset.range (49 : ℕ), (u (0 : ℕ) + (2 : ℚ) * (↑x + (1 : ℚ))), ∑ x ∈ Finset.range (49 : ℕ), u (0 : ℕ) + ∑ x ∈ Finset.range (49 : ℕ),…, fun (_a : ℚ) => _a = ∑ k ∈ Finset.range (49 : ℕ), u (0 : ℕ) + ∑ k ∈ F…): no library counterpart (not stated) [exec 645 3185-3212]
+          vc_aime_1984_p1_L466(u);  /* [IN-FILE CHECK] the closed lemma for line 466 */
         }
         assert (Rat.add(Rat.sum(range(49), ((k: nat) => u(0))), Rat.sum(range(49), ((k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(k), Rat.of_int(1)))))) == Rat.add(Rat.mul(Rat.of_int(49), u(0)), Rat.sum(range(49), ((k: nat) => Rat.mul(Rat.of_int(2), Rat.add(Rat.of_int(k), Rat.of_int(1))))))) by {  // sub-goal before `simp` (Lean state) // @tac 3298-3359 // @tac 3298-3340
           // [TACTIC: «_<;>_» [ Finset.sum_const , Finset.card_range ] simp [ Finset.sum_const , Finset.card_range ] simp [ Finset.sum_const , Finset.card_range ] <;> ring]

@@ -25,17 +25,6 @@ lemma {:isolate_assertions} induction_helper_1(f: nat -> real, n: nat)
       // UNCITED Nat.add_comm: named here, no record of its application here; this execution also rewrote hypotheses, whose proofs the harvest does not capture, so whether Lean applied it here is unknown: not stated
       // UNCITED Nat.add_left_comm: named here, no record of its application here; this execution also rewrote hypotheses, whose proofs the harvest does not capture, so whether Lean applied it here is unknown: not stated
       // UNCITED-APPLIED zero_add ×1: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := (1 : ℕ))
-      assert 0 <= 0;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2017_p7_L28 */
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2017_p7_L28 */
-      assert f(1) == 2.0;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2017_p7_L28 */
-      assert forall n_2: nat :: 1 < n_2 ==> Even(n_2) ==> f.requires(n_2) && f.requires(tsub(n_2, 1));  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2017_p7_L28 */
-      assert forall n_2: nat :: 1 < n_2 && Even(n_2) ==> f(n_2) == f(tsub(n_2, 1)) + 1.0;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2017_p7_L28 */
-      assert forall n_4: nat :: 1 < n_4 ==> Odd(n_4) ==> f.requires(n_4) && f.requires(tsub(n_4, 2));  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2017_p7_L28 */
-      assert forall n_4: nat :: 1 < n_4 && Odd(n_4) ==> f(n_4) == f(tsub(n_4, 2)) + 2.0;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2017_p7_L28 */
-      assert 0 + 1 + 1 > 1;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2017_p7_L28 */
-      assert 0 == 0;  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2017_p7_L28 */
-      assert 0 + 1 + 1 > 1;  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2017_p7_L28 */
-      assert 0 <= 0 + 1 + 1;  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2017_p7_L28 */
       vc_amc12a_2017_p7_L28(f, 0, n);  /* [IN-FILE CHECK] the closed lemma for line 28 */
       assert (f(((0 + 1) + 1)) == ((((0 + 1) + 1) as real) + 1.0));  // sub-goal before `simp_all` (Lean state) // @tac 1038-1116
       // UNCITED-APPLIED internal ×12 [exec 70 1038-1116]: applications made inside the tactic's own automation, not stated — zero_add ×1; machinery/glue: congrArg ×4, Eq.trans ×3, of_eq_true ×1, congr ×1 (+2 more heads, ×2)

@@ -210,37 +210,7 @@ lemma {:isolate_assertions} induction_helper_1(n: nat)
               // GAP: Nat.cast_succ: this execution also rewrote the hypotheses h₁, IH; the harvest for this theorem records only the goal-side application(s) of the tactic (hypothesis-side rewrites are not recorded), so its applications to those hypotheses (if any) are not stated
               // UNCITED-APPLIED internal ×25 [exec 686 4624-4716]: applications made inside the tactic's own automation, not stated — add_sub_cancel_right ×2; machinery/glue: congrArg ×8, congr ×7, Eq.trans ×7, of_eq_true ×1 (cited in this block, not counted here: Finset.sum_Icc_succ_top [Lean recorded ×2], Nat.cast_succ [Lean recorded ×3])
               assert (forall k: nat :: ((2 <= k) ==> ((k <= 10000) ==> (Real.div(1.0, Real.sqrt((k as real))) < (2.0 * (Real.sqrt((k as real)) - Real.sqrt(((k as real) - 1.0))))))));  // hypothesis h₁ after `simp_all` (Lean state) // @tac-hyp 4624-4716
-              assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert 0 <= n_1_0_1_0;  /* [IN-FILE CHECK] requires 2 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert 0 <= n_1_0_1_0_1_0;  /* [IN-FILE CHECK] requires 3 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert forall k_1: int :: 0 <= k_1 ==> k_1 in IccN(2, 10000) ==> Real.div(1.0, Real.sqrt((k_1 as real))) < 2.0 * (Real.sqrt((k_1 as real)) - Real.sqrt((k_1 as real) - 1.0));  /* [IN-FILE CHECK] requires 4 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert n >= 1;  /* [IN-FILE CHECK] requires 5 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert n != 1;  /* [IN-FILE CHECK] requires 6 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert 0 <= n - 1;  /* [IN-FILE CHECK] requires 7 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert 0 <= n || n - 1 == n;  /* [IN-FILE CHECK] requires 8 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert n - 1 < n;  /* [IN-FILE CHECK] requires 9 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert forall k_1: int :: 0 <= k_1 ==> k_1 in IccN(2, 10000) ==> Real.div(1.0, Real.sqrt((k_1 as real))) < 2.0 * (Real.sqrt((k_1 as real)) - Real.sqrt((k_1 as real) - 1.0));  /* [IN-FILE CHECK] requires 10 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert n - 1 >= 1;  /* [IN-FILE CHECK] requires 11 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert Real.sum(IccN(2, n - 1 + 1), ((k: nat) => 2.0 * (Real.sqrt((k as real)) - Real.sqrt((k as real) - 1.0)))) == 2.0 * (Real.sqrt(((n - 1 + 1) as real)) - Real.sqrt(1.0));  /* [IN-FILE CHECK] requires 12 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert 2 <= n;  /* [IN-FILE CHECK] requires 13 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert n != 0;  /* [IN-FILE CHECK] requires 14 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert (n - 1) == n - 1;  /* [IN-FILE CHECK] requires 15 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert 2 <= (n - 1) + 1;  /* [IN-FILE CHECK] requires 16 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert 0 <= 2;  /* [IN-FILE CHECK] requires 17 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert Real.sum(IccN(2, (n - 1) + 1), ((k: nat) => 2.0 * (Real.sqrt((k as real)) - Real.sqrt((k as real) - 1.0)))) == 2.0 * (Real.sqrt((((n - 1) + 1) as real)) - Real.sqrt(1.0));  /* [IN-FILE CHECK] requires 18 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert (n - 1) != 0;  /* [IN-FILE CHECK] requires 19 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert 0 <= (n - 1) - 1;  /* [IN-FILE CHECK] requires 20 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert n == (n - 1) - 1;  /* [IN-FILE CHECK] requires 21 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert 2 <= n + 1 + 1;  /* [IN-FILE CHECK] requires 22 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert Real.sum(IccN(2, n + 1 + 1), ((k: nat) => 2.0 * (Real.sqrt((k as real)) - Real.sqrt((k as real) - 1.0)))) == 2.0 * (Real.sqrt(((n + 1 + 1) as real)) - Real.sqrt(1.0));  /* [IN-FILE CHECK] requires 23 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert 0 <= n + 1;  /* [IN-FILE CHECK] requires 24 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert ((n + 1 + 1) as real) == ((n + 1) as real) + 1.0;  /* [IN-FILE CHECK] requires 25 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert ((n + 1) as real) == (n as real) + 1.0;  /* [IN-FILE CHECK] requires 26 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert 0 <= n + 2;  /* [IN-FILE CHECK] requires 27 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert ((n + 2 + 1) as real) == ((n + 2) as real) + 1.0;  /* [IN-FILE CHECK] requires 28 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert forall k_1_0_1_0_1_0_1: nat :: 2 <= k_1_0_1_0_1_0_1 ==> k_1_0_1_0_1_0_1 <= 10000 ==> Real.div(1.0, Real.sqrt((k_1_0_1_0_1_0_1 as real))) < 2.0 * (Real.sqrt((k_1_0_1_0_1_0_1 as real)) - Real.sqrt((k_1_0_1_0_1_0_1 as real) - 1.0));  /* [IN-FILE CHECK] requires 29 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              assert ((0 <= (n - 1) + 1) && (0 <= n + 1 + 1) && (0 <= k) && (2 <= k) && (k <= 10000)) || ((0 <= (n - 1) + 1) && (0 <= n + 1 + 1) && (0 <= k) && (2 <= k) && (10000 < k)) || ((0 <= (n - 1) + 1) && (0 <= n + 1 + 1) && (0 <= k) && (k < 2)) || ((0 <= (n - 1) + 1) && (0 <= n + 1 + 1) && (k < 0)) || ((0 <= (n - 1) + 1) && (n + 1 + 1 < 2) && (0 <= k) && (2 <= k) && (k <= 10000)) || ((0 <= (n - 1) + 1) && (n + 1 + 1 < 2) && (0 <= k) && (2 <= k) && (10000 < k)) || ((0 <= (n - 1) + 1) && (n + 1 + 1 < 2) && (0 <= k) && (k < 2)) || ((0 <= (n - 1) + 1) && (n + 1 + 1 < 2) && (k < 0)) || (((n - 1) + 1 < 2) && (0 <= n + 1 + 1) && (0 <= k) && (2 <= k) && (k <= 10000)) || (((n - 1) + 1 < 2) && (0 <= n + 1 + 1) && (0 <= k) && (2 <= k) && (10000 < k)) || (((n - 1) + 1 < 2) && (0 <= n + 1 + 1) && (0 <= k) && (k < 2)) || (((n - 1) + 1 < 2) && (0 <= n + 1 + 1) && (k < 0)) || (((n - 1) + 1 < 2) && (n + 1 + 1 < 2) && (0 <= k) && (2 <= k) && (k <= 10000)) || (((n - 1) + 1 < 2) && (n + 1 + 1 < 2) && (0 <= k) && (2 <= k) && (10000 < k)) || (((n - 1) + 1 < 2) && (n + 1 + 1 < 2) && (0 <= k) && (k < 2)) || (((n - 1) + 1 < 2) && (n + 1 + 1 < 2) && (k < 0));  /* [IN-FILE CHECK] requires 30 of vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213 */
-              vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213(k, n, n_1_0_1_0, n - 1, n_1_0_1_0_1_0, n);  /* [IN-FILE CHECK] the closed lemma for line 213 */
+              vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213(n + 1, n);  /* [IN-FILE CHECK] the closed lemma for line 213 */
               assert ((Real.sum(IccN(2, (n + 1)), ((k: nat) => (2.0 * (Real.sqrt((k as real)) - Real.sqrt(((k as real) - 1.0)))))) + (2.0 * (Real.sqrt((((n as real) + 1.0) + 1.0)) - Real.sqrt(((n as real) + 1.0))))) == (2.0 * (Real.sqrt((((n as real) + 1.0) + 1.0)) - 1.0)));  // hypothesis IH after `simp_all` (Lean state) // @tac-hyp 4624-4716
               assert (((2.0 * (Real.sqrt((((n as real) + 1.0) + 1.0)) - 1.0)) + (2.0 * (Real.sqrt(((((n as real) + 1.0) + 1.0) + 1.0)) - Real.sqrt((((n as real) + 1.0) + 1.0))))) == (2.0 * (Real.sqrt(((((n as real) + 1.0) + 1.0) + 1.0)) - 1.0))) by {  // sub-goal of `ring_nf` (Lean state) // @tac 4737-4749
                 NatCastOne();  // cite: Nat.cast_one [applied by the tactic, not named in it]
@@ -746,22 +716,9 @@ lemma algebra_sum1onsqrt2to1onsqrt10000lt198()
 
 // ===== closed lemma for line 213 (from closed/algebra_sum1onsqrt2to1onsqrt10000lt198-213.dfy) =====
 
-lemma {:induction false} vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213(k_1_0_1_0_1_0_0: int, n: int, n_1_0_1_0: int, n_1_0_1_0_0: int, n_1_0_1_0_1_0: int, n_1_0_1_0_1_0_0: int)
-  requires 0 <= n
-  requires 0 <= n_1_0_1_0
-  requires 0 <= n_1_0_1_0_1_0
+lemma {:induction false} vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213(n_1_0_1_0_0: int, n_1_0_1_0_1_0_0: int)
   requires forall k_1: int :: 0 <= k_1 ==> k_1 in IccN(2, 10000) ==> Real.div(1.0, Real.sqrt((k_1 as real))) < 2.0 * (Real.sqrt((k_1 as real)) - Real.sqrt((k_1 as real) - 1.0))
-  requires n >= 1
-  requires n != 1
-  requires 0 <= n - 1
-  requires 0 <= n || n - 1 == n
-  requires n - 1 < n
   requires forall k_1: int :: 0 <= k_1 ==> k_1 in IccN(2, 10000) ==> Real.div(1.0, Real.sqrt((k_1 as real))) < 2.0 * (Real.sqrt((k_1 as real)) - Real.sqrt((k_1 as real) - 1.0))
-  requires n - 1 >= 1
-  requires Real.sum(IccN(2, n - 1 + 1), ((k: nat) => 2.0 * (Real.sqrt((k as real)) - Real.sqrt((k as real) - 1.0)))) == 2.0 * (Real.sqrt(((n - 1 + 1) as real)) - Real.sqrt(1.0))
-  requires 2 <= n
-  requires n != 0
-  requires n_1_0_1_0_0 == n - 1
   requires 2 <= n_1_0_1_0_0 + 1
   requires 0 <= 2
   requires Real.sum(IccN(2, n_1_0_1_0_0 + 1), ((k: nat) => 2.0 * (Real.sqrt((k as real)) - Real.sqrt((k as real) - 1.0)))) == 2.0 * (Real.sqrt(((n_1_0_1_0_0 + 1) as real)) - Real.sqrt(1.0))
@@ -776,7 +733,6 @@ lemma {:induction false} vc_algebra_sum1onsqrt2to1onsqrt10000lt198_L213(k_1_0_1_
   requires 0 <= n_1_0_1_0_1_0_0 + 2
   requires ((n_1_0_1_0_1_0_0 + 2 + 1) as real) == ((n_1_0_1_0_1_0_0 + 2) as real) + 1.0
   requires forall k_1_0_1_0_1_0_1: nat :: 2 <= k_1_0_1_0_1_0_1 ==> k_1_0_1_0_1_0_1 <= 10000 ==> Real.div(1.0, Real.sqrt((k_1_0_1_0_1_0_1 as real))) < 2.0 * (Real.sqrt((k_1_0_1_0_1_0_1 as real)) - Real.sqrt((k_1_0_1_0_1_0_1 as real) - 1.0))
-  requires ((0 <= n_1_0_1_0_0 + 1) && (0 <= n_1_0_1_0_1_0_0 + 1 + 1) && (0 <= k_1_0_1_0_1_0_0) && (2 <= k_1_0_1_0_1_0_0) && (k_1_0_1_0_1_0_0 <= 10000)) || ((0 <= n_1_0_1_0_0 + 1) && (0 <= n_1_0_1_0_1_0_0 + 1 + 1) && (0 <= k_1_0_1_0_1_0_0) && (2 <= k_1_0_1_0_1_0_0) && (10000 < k_1_0_1_0_1_0_0)) || ((0 <= n_1_0_1_0_0 + 1) && (0 <= n_1_0_1_0_1_0_0 + 1 + 1) && (0 <= k_1_0_1_0_1_0_0) && (k_1_0_1_0_1_0_0 < 2)) || ((0 <= n_1_0_1_0_0 + 1) && (0 <= n_1_0_1_0_1_0_0 + 1 + 1) && (k_1_0_1_0_1_0_0 < 0)) || ((0 <= n_1_0_1_0_0 + 1) && (n_1_0_1_0_1_0_0 + 1 + 1 < 2) && (0 <= k_1_0_1_0_1_0_0) && (2 <= k_1_0_1_0_1_0_0) && (k_1_0_1_0_1_0_0 <= 10000)) || ((0 <= n_1_0_1_0_0 + 1) && (n_1_0_1_0_1_0_0 + 1 + 1 < 2) && (0 <= k_1_0_1_0_1_0_0) && (2 <= k_1_0_1_0_1_0_0) && (10000 < k_1_0_1_0_1_0_0)) || ((0 <= n_1_0_1_0_0 + 1) && (n_1_0_1_0_1_0_0 + 1 + 1 < 2) && (0 <= k_1_0_1_0_1_0_0) && (k_1_0_1_0_1_0_0 < 2)) || ((0 <= n_1_0_1_0_0 + 1) && (n_1_0_1_0_1_0_0 + 1 + 1 < 2) && (k_1_0_1_0_1_0_0 < 0)) || ((n_1_0_1_0_0 + 1 < 2) && (0 <= n_1_0_1_0_1_0_0 + 1 + 1) && (0 <= k_1_0_1_0_1_0_0) && (2 <= k_1_0_1_0_1_0_0) && (k_1_0_1_0_1_0_0 <= 10000)) || ((n_1_0_1_0_0 + 1 < 2) && (0 <= n_1_0_1_0_1_0_0 + 1 + 1) && (0 <= k_1_0_1_0_1_0_0) && (2 <= k_1_0_1_0_1_0_0) && (10000 < k_1_0_1_0_1_0_0)) || ((n_1_0_1_0_0 + 1 < 2) && (0 <= n_1_0_1_0_1_0_0 + 1 + 1) && (0 <= k_1_0_1_0_1_0_0) && (k_1_0_1_0_1_0_0 < 2)) || ((n_1_0_1_0_0 + 1 < 2) && (0 <= n_1_0_1_0_1_0_0 + 1 + 1) && (k_1_0_1_0_1_0_0 < 0)) || ((n_1_0_1_0_0 + 1 < 2) && (n_1_0_1_0_1_0_0 + 1 + 1 < 2) && (0 <= k_1_0_1_0_1_0_0) && (2 <= k_1_0_1_0_1_0_0) && (k_1_0_1_0_1_0_0 <= 10000)) || ((n_1_0_1_0_0 + 1 < 2) && (n_1_0_1_0_1_0_0 + 1 + 1 < 2) && (0 <= k_1_0_1_0_1_0_0) && (2 <= k_1_0_1_0_1_0_0) && (10000 < k_1_0_1_0_1_0_0)) || ((n_1_0_1_0_0 + 1 < 2) && (n_1_0_1_0_1_0_0 + 1 + 1 < 2) && (0 <= k_1_0_1_0_1_0_0) && (k_1_0_1_0_1_0_0 < 2)) || ((n_1_0_1_0_0 + 1 < 2) && (n_1_0_1_0_1_0_0 + 1 + 1 < 2) && (k_1_0_1_0_1_0_0 < 0))
   ensures   Real.sum(IccN(2, n_1_0_1_0_1_0_0 + 1), ((k: nat) => 2.0 * (Real.sqrt((k as real)) - Real.sqrt((k as real) - 1.0)))) + 2.0 * (Real.sqrt((n_1_0_1_0_1_0_0 as real) + 1.0 + 1.0) - Real.sqrt((n_1_0_1_0_1_0_0 as real) + 1.0)) == 2.0 * (Real.sqrt((n_1_0_1_0_1_0_0 as real) + 1.0 + 1.0) - 1.0)
 {
   FinsetSumIccSuccTopNat(2, n_1_0_1_0_1_0_0 + 1, ((k: nat) => 2.0 * (Real.sqrt((k as real)) - Real.sqrt((k as real) - 1.0))));  // [ADDED]

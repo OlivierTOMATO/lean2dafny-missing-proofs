@@ -405,8 +405,6 @@ lemma aime_1984_p1(u: nat -> Rat.rat)
       // UNCITED-APPLIED internal ×68 [exec 433 2308-2316]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.IsInt.of_raw ×5, Mathlib.Meta.NormNum.isNat_ofNat ×4, Mathlib.Meta.NormNum.IsInt.to_raw_eq ×4, Mathlib.Meta.NormNum.IsNat.to_isInt ×4 (+29 more heads, ×51)
     }
     // have h₉ : u ( 0 ) == - 2357 / 49  [type from Lean state]
-    assert Rat.add(Rat.mul(Rat.of_int(98), u(0)), Rat.of_int(4851)) == Rat.of_int(137);  /* [IN-FILE CHECK] requires 1 of vc_aime_1984_p1_L408 */
-    vc_aime_1984_p1_L408(u);  /* [IN-FILE CHECK] the closed lemma for line 408 */
     assert (u(0) == Rat.div(Rat.neg(Rat.of_int(2357)), Rat.of_int(49))) by { // @tac 2370-2378
       // [TACTIC: «Linarith[_]At___»]
       // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 2370-2378 exec 450)
@@ -427,6 +425,7 @@ lemma aime_1984_p1(u: nat -> Rat.rat)
       // UNCITED-APPLIED internal ×6 [exec 457 2370-2378]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_eq_true ×1 (+1 more heads, ×1)
       // UNCITED-APPLIED internal ×5 [exec 458 2370-2378]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1
       // UNCITED-APPLIED internal ×5 [exec 460 2370-2378]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1
+      vc_aime_1984_p1_L408(u);  /* [IN-FILE CHECK] the closed lemma for line 408 */
     }
     // [TACTIC: exact h₉]
     assert (u(0) == Rat.div(Rat.neg(Rat.of_int(2357)), Rat.of_int(49)));

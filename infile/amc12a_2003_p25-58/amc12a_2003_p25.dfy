@@ -55,29 +55,13 @@ lemma amc12a_2003_p25(a: real, b: real, f: real -> real)
   }
   // [TACTIC: simp at h₉]
   // have h₁₀ :   [type from Lean state]
-  assert 0.0 < b;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2003_p25_L58 */
-  assert forall x_1: real :: f(x_1) == Real.sqrt(a * (x_1 * x_1) + b * x_1);  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2003_p25_L58 */
-  assert (iset y_2: real | 0.0 <= f(y_2)) == (iset y_3: real | exists x_1_4: real :: 0.0 <= f(x_1_4) && y_3 == f(x_1_4));  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2003_p25_L58 */
-  assert forall x_19: real :: true == (exists x_1_17: real :: Real.sqrt(a * (x_1_17 * x_1_17) + b * x_1_17) == x_19);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2003_p25_L58 */
-  assert true == (exists x_21: real :: Real.sqrt(a * (x_21 * x_21) + b * x_21) == 0.0);  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2003_p25_L58 */
-  assert true == (exists x_23: real :: Real.sqrt(a * (x_23 * x_23) + b * x_23) == 1.0);  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2003_p25_L58 */
-  assert true == (exists x_25: real :: Real.sqrt(a * (x_25 * x_25) + b * x_25) == 0.0 - 1.0);  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2003_p25_L58 */
-  assert true == (exists x_27: real :: Real.sqrt(a * (x_27 * x_27) + b * x_27) == 2.0);  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2003_p25_L58 */
-  assert true == (exists x_29: real :: Real.sqrt(a * (x_29 * x_29) + b * x_29) == 0.0 - 2.0);  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2003_p25_L58 */
-  assert exists x_31: real :: Real.sqrt(a * (x_31 * x_31) + b * x_31) == 0.0;  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2003_p25_L58 */
-  assert exists x_33: real :: a * (x_33 * x_33) + b * x_33 == 1.0;  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2003_p25_L58 */
-  assert exists x_35: real :: Real.sqrt(a * (x_35 * x_35) + b * x_35) == 0.0 - 1.0;  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2003_p25_L58 */
-  assert exists x_37: real :: Real.sqrt(a * (x_37 * x_37) + b * x_37) == 2.0;  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2003_p25_L58 */
-  assert exists x_39: real :: Real.sqrt(a * (x_39 * x_39) + b * x_39) == 0.0 - 2.0;  /* [IN-FILE CHECK] requires 14 of vc_amc12a_2003_p25_L58 */
-  assert exists x_41: real :: a * (x_41 * x_41) + b * x_41 == 1.0;  /* [IN-FILE CHECK] requires 15 of vc_amc12a_2003_p25_L58 */
-  assert exists x_2_1: real :: Real.sqrt(a * (x_2_1 * x_2_1) + b * x_2_1) == 0.0 - 1.0;  /* [IN-FILE CHECK] requires 16 of vc_amc12a_2003_p25_L58 */
-  vc_amc12a_2003_p25_L58(a, b, f);  /* [IN-FILE CHECK] the closed lemma for line 58 */
   assert (exists x: real :: (Real.sqrt(((a * (x * x)) + (b * x))) == -(1.0))) by {
     // [TACTIC: exact h₆]
     assert (exists x: real :: (Real.sqrt(((a * (x * x)) + (b * x))) == -(1.0)));  // hypothesis h₆ at `exact` (Lean state)
     // UNCITED-APPLIED funext(fun (x : ℝ) => Prop, fun (x : ℝ) => True ∧ √(a * x ^ (2 : ℕ) + b * x) = (-1 : ℝ), fun (x : ℝ) => √(a * x ^ (2 : ℕ) + b * x) = (-1 : ℝ)): no library counterpart (not stated) [exec 100 1019-1039]
     // UNCITED-APPLIED true_and: no library counterpart (not stated) [exec 100 1019-1039]
     // UNCITED-APPLIED true_iff: no library counterpart (not stated) [exec 100 1019-1039]
+    vc_amc12a_2003_p25_L58(a, b, f);  /* [IN-FILE CHECK] the closed lemma for line 58 */
   }
   // [TACTIC: simp at h₁₀]
   // UNCITED-APPLIED Eq.trans: no library counterpart (not stated) [exec 104 1060-1081]

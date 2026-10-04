@@ -38,8 +38,6 @@ lemma amc12a_2019_p21(z: Complex.complex)
       assert (Complex.pow(z, 8) == Complex.of_real(1.0));
     }
     // have h₄ : ∑ k ∈ Finset.Icc (1 : ℕ) (12 : ℕ), z ^ k ^ (2 : ℕ) = (6 : ℂ) * z + (3 : ℂ) * z ^ (4 : ℕ) + (3 : ℂ)  [type from Lean state]
-    assert Complex.pow(z, 8) == Complex.of_real(1.0);  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2019_p21_L41 */
-    vc_amc12a_2019_p21_L41(z);  /* [IN-FILE CHECK] the closed lemma for line 41 */
     assert (Complex.sum(IccN(1, 12), ((k: nat) => Complex.pow(z, (k * k)))) == Complex.add(Complex.add(Complex.mul(Complex.of_real(6.0), z), Complex.mul(Complex.of_real(3.0), Complex.pow(z, 4))), Complex.of_real(3.0))) by {
       // have h₅ : z ^ 2 == z ^ 2  [type from Lean state]
       assert (Complex.pow(z, 2) == Complex.pow(z, 2));
@@ -61,6 +59,7 @@ lemma amc12a_2019_p21(z: Complex.complex)
       // UNCITED mul_add: no Lean instance recorded (arguments unknown), not guessed
       // UNCITED mul_comm: no Lean instance recorded (arguments unknown), not guessed
       // UNCITED mul_left_comm: no Lean instance recorded (arguments unknown), not guessed
+      vc_amc12a_2019_p21_L41(z);  /* [IN-FILE CHECK] the closed lemma for line 41 */
     }
     // [TACTIC: exact h₄]
     assert (Complex.sum(IccN(1, 12), ((k: nat) => Complex.pow(z, (k * k)))) == Complex.add(Complex.add(Complex.mul(Complex.of_real(6.0), z), Complex.mul(Complex.of_real(3.0), Complex.pow(z, 4))), Complex.of_real(3.0)));

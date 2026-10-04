@@ -222,21 +222,6 @@ lemma amc12a_2021_p18(f: Rat.rat -> real)
       assert (f(Rat.mul(Rat.div(Rat.of_int(25), Rat.of_int(11)), Rat.of_int(11))) == (f(Rat.div(Rat.of_int(25), Rat.of_int(11))) + f(Rat.of_int(11))));  // instance of h₀ (Lean state)
     }
     // have h₆₂ : f ( ( 25 / 11 * 11 ) ) == f ( 25 )  [type from Lean state]
-    assert forall x_1: Rat.rat :: Rat.gt(x_1, Rat.of_int(0)) ==> (forall y_2: Rat.rat :: Rat.gt(y_2, Rat.of_int(0)) ==> f.requires(Rat.mul(x_1, y_2)) && f.requires(x_1) && f.requires(y_2));  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p18_L225 */
-    assert forall x_1: Rat.rat :: Rat.gt(x_1, Rat.of_int(0)) ==> (forall y_2: Rat.rat :: Rat.gt(y_2, Rat.of_int(0)) ==> f(Rat.mul(x_1, y_2)) == f(x_1) + f(y_2));  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p18_L225 */
-    assert forall p_1: nat :: prime(p_1) ==> f.requires(Rat.of_int(p_1));  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p18_L225 */
-    assert forall p_1: nat :: prime(p_1) ==> f(Rat.of_int(p_1)) == (p_1 as real);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p18_L225 */
-    assert Rat.of_int(1).Rational?;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p18_L225 */
-    assert f(Rat.of_int(1)) == 0.0;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2021_p18_L225 */
-    assert Rat.of_int(5).Rational?;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2021_p18_L225 */
-    assert f(Rat.of_int(5)) == 5.0;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2021_p18_L225 */
-    assert Rat.of_int(25).Rational?;  /* [IN-FILE CHECK] requires 9 of vc_amc12a_2021_p18_L225 */
-    assert f(Rat.of_int(25)) == 10.0;  /* [IN-FILE CHECK] requires 10 of vc_amc12a_2021_p18_L225 */
-    assert Rat.of_int(11).Rational?;  /* [IN-FILE CHECK] requires 11 of vc_amc12a_2021_p18_L225 */
-    assert f(Rat.of_int(11)) == 11.0;  /* [IN-FILE CHECK] requires 12 of vc_amc12a_2021_p18_L225 */
-    assert Rat.div(Rat.of_int(25), Rat.of_int(11)).Rational?;  /* [IN-FILE CHECK] requires 13 of vc_amc12a_2021_p18_L225 */
-    assert Rat.mul(Rat.div(Rat.of_int(25), Rat.of_int(11)), Rat.of_int(11)).Rational?;  /* [IN-FILE CHECK] requires 14 of vc_amc12a_2021_p18_L225 */
-    assert f(Rat.mul(Rat.div(Rat.of_int(25), Rat.of_int(11)), Rat.of_int(11))) == f(Rat.div(Rat.of_int(25), Rat.of_int(11))) + f(Rat.of_int(11));  /* [IN-FILE CHECK] requires 15 of vc_amc12a_2021_p18_L225 */
     vc_amc12a_2021_p18_L225(f);  /* [IN-FILE CHECK] the closed lemma for line 225 */
     assert (f(Rat.mul(Rat.div(Rat.of_int(25), Rat.of_int(11)), Rat.of_int(11))) == f(Rat.of_int(25))); // @tac 2344-2352
       // [TACTIC: «Norm_num[_]At___»]

@@ -194,17 +194,13 @@ lemma amc12a_2021_p14()
           }
           Real.sum(IccN(1, 20), ((k: nat) => (Real.logb(5.0, 3.0) * (k as real))));
           == {
-            assert forall k_0_1: nat :: k_0_1 in IccN(1, 20) ==> Real.logb(Real.pow(5.0, k_0_1), Real.pow(3.0, Int.pow(k_0_1, 2))) == (k_0_1 as real) * Real.logb(5.0, 3.0);  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p14_L197 */
-            assert 0 <= 1;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p14_L197 */
-            assert 0 <= 20;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p14_L197 */
-            assert Real.sum(IccN(1, 20), ((k: nat) => Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2))))) == Real.sum(IccN(1, 20), ((v_22_k: nat) => (v_22_k as real) * Real.logb(5.0, 3.0)));  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p14_L197 */
-            vc_amc12a_2021_p14_L197();  /* [IN-FILE CHECK] the closed lemma for line 197 */
             assert (Real.sum(IccN(1, 20), ((k: nat) => (Real.logb(5.0, 3.0) * (k as real)))) == (Real.logb(5.0, 3.0) * Real.sum(IccN(1, 20), ((k: nat) => (k as real))))) by {  // sub-goal before `rw` (Lean state) // @tac 3296-3345 // @tac 3296-3315
               // [TACTIC: «_<;>_» [ Finset.mul_sum ] rw [ Finset.mul_sum ] <;> simp [ mul_comm ] simp [ mul_comm ] simp [ mul_comm ]]
               // [TACTIC: rwSeq [ Finset.mul_sum ]]
               // UNCITED Finset.mul_sum: recorded instance not expressible here (sort/type/scope), not guessed
               // `rw` closed the goal; the rest of the chain did not run
               // UNCITED-APPLIED congrArg(logb (5 : ℝ) (3 : ℝ) * ∑ i ∈ Finset.Icc (1 : ℕ) (20 : ℕ), ↑i, ∑ i ∈ Finset.Icc (1 : ℕ) (20 : ℕ), logb (5 : ℝ) (3 : ℝ) * ↑i, fun (_a : ℝ) => ∑ k ∈ Finset.Icc (1 : ℕ) (20 : ℕ), logb (5 : ℝ) (3 : …): no library counterpart (not stated) [exec 833 3296-3315]
+              vc_amc12a_2021_p14_L197();  /* [IN-FILE CHECK] the closed lemma for line 197 */
             }
           }
           (Real.logb(5.0, 3.0) * Real.sum(IccN(1, 20), ((k: nat) => (k as real))));

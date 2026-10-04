@@ -1044,8 +1044,6 @@ lemma {:isolate_assertions} cert_piece_107(a: real, b: real, c: real, d: real, s
   requires (0.0 < (b * d))
   ensures (0.0 < ((a * b) * (b * d)))
 {
-  assert 0.0 < a * b;  /* [IN-FILE CHECK] requires 1 of vc_imo_1974_p5_L1046 */
-  assert 0.0 < b * d;  /* [IN-FILE CHECK] requires 2 of vc_imo_1974_p5_L1046 */
   vc_imo_1974_p5_L1046(a, b, d);  /* [IN-FILE CHECK] the closed lemma for line 1046 */
   MulPos((a * b), (b * d));
 }

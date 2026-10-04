@@ -15,10 +15,6 @@ lemma amc12a_2019_p21(z: Complex.complex)
 {
   // GAP: tactic states unavailable: the goal-state harvest has no file for this theorem (the repository cache used instead records haves only); no tactic step's goal or hypothesis change is stated (`@tac` / `@tac-hyp`), only the haves
   // have h₁ : z ^ 8 == 1  [type from Lean state]
-  assert z == Complex.div(Complex.add(Complex.of_real(1.0), Complex.I()), Complex.of_real(Real.sqrt(2.0)));  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2019_p21_L18 */
-  assert 0 <= 8;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2019_p21_L18 */
-  assert Complex.pow(z, 8).Complex?;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2019_p21_L18 */
-  assert Complex.of_real(1.0).Complex?;  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2019_p21_L18 */
   vc_amc12a_2019_p21_L18(z);  /* [IN-FILE CHECK] the closed lemma for line 18 */
   assert (Complex.pow(z, 8) == Complex.of_real(1.0));
     // [TACTIC: rwSeq [ h₀ ]]

@@ -310,16 +310,6 @@ lemma mathd_algebra_156(x: real, y: real, f: real -> real, g: real -> real)
       }
     }
     // have h₈₃ : y ^ 2 - 2 == 0 || y ^ 2 - 3 == 0  [type from Lean state]
-    assert forall t_1: real :: f(t_1) == t_1 * t_1 * t_1 * t_1;  /* [IN-FILE CHECK] requires 1 of vc_mathd_algebra_156_L313 */
-    assert forall t_3: real :: g(t_3) == 5.0 * (t_3 * t_3) - 6.0;  /* [IN-FILE CHECK] requires 2 of vc_mathd_algebra_156_L313 */
-    assert f(x) == g(x);  /* [IN-FILE CHECK] requires 3 of vc_mathd_algebra_156_L313 */
-    assert f(y) == g(y);  /* [IN-FILE CHECK] requires 4 of vc_mathd_algebra_156_L313 */
-    assert x * x < y * y;  /* [IN-FILE CHECK] requires 5 of vc_mathd_algebra_156_L313 */
-    assert x * x * x * x - 5.0 * (x * x) + 6.0 == 0.0;  /* [IN-FILE CHECK] requires 6 of vc_mathd_algebra_156_L313 */
-    assert y * y * y * y - 5.0 * (y * y) + 6.0 == 0.0;  /* [IN-FILE CHECK] requires 7 of vc_mathd_algebra_156_L313 */
-    assert x * x == 2.0 || x * x == 3.0;  /* [IN-FILE CHECK] requires 8 of vc_mathd_algebra_156_L313 */
-    assert (y * y - 2.0) * (y * y - 3.0) == 0.0;  /* [IN-FILE CHECK] requires 9 of vc_mathd_algebra_156_L313 */
-    assert ((x * x != 2.0) && (y * y - 2.0 != 0.0)) || ((x * x != 2.0) && (y * y - 2.0 == 0.0)) || ((x * x == 2.0) && (y * y - 2.0 != 0.0)) || ((x * x == 2.0) && (y * y - 2.0 == 0.0));  /* [IN-FILE CHECK] requires 10 of vc_mathd_algebra_156_L313 */
     vc_mathd_algebra_156_L313(f, g, x, y);  /* [IN-FILE CHECK] the closed lemma for line 313 */
     assert ((((y * y) - 2.0) == 0.0) || (((y * y) - 3.0) == 0.0)); // @tac 1822-1869
       // [TACTIC: apply eq_zero_or_eq_zero_of_mul_eq_zero h₈₂]

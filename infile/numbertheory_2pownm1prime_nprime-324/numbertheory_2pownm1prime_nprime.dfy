@@ -321,33 +321,6 @@ lemma numbertheory_2pownm1prime_nprime(n: nat)
             // have h₁₂₂ : 2 ^ m - 1 > 1  [type from Lean state]
             assert (tsub(Int.pow(2, m), 1) > 1) by { // @tac 3035-3121 // @tac 3130-3193 // @tac 3202-3248 // @tac 3257-3312 // @tac 3321-3326
               // have h₁₂₃ : 2 ^ m >= 2 ^ 2  [type from Lean state]
-              assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert 0 <= m;  /* [IN-FILE CHECK] requires 2 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert 0 <= m_1_0_0_5;  /* [IN-FILE CHECK] requires 3 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert 0 <= k;  /* [IN-FILE CHECK] requires 4 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert 0 < n;  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert prime(tsub(Int.pow(2, n), 1));  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert forall n0: nat :: 0 < n0 && prime(tsub(Int.pow(2, n0), 1)) && 0 <= n0 && n0 < n ==> prime(n0);  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert n >= 2;  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert !prime(n);  /* [IN-FILE CHECK] requires 9 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert ((0 <= m_1_0_0_2) && (((NatDvd(m_1_0_0_2, n)) && ((m_1_0_0_2 != 1) || (m_1_0_0_2 == 1))) || (!NatDvd(m_1_0_0_2, n)))) || (m_1_0_0_2 < 0);  /* [IN-FILE CHECK] requires 10 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert exists m_1_0_0_1: nat :: NatDvd(m_1_0_0_1, n) && m_1_0_0_1 != 1 && m_1_0_0_1 != n;  /* [IN-FILE CHECK] requires 11 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert ((0 <= m_1_0_0_3) && (((NatDvd(m_1_0_0_3, n)) && ((m_1_0_0_3 != 1) || (m_1_0_0_3 == 1))) || (!NatDvd(m_1_0_0_3, n)))) || (m_1_0_0_3 < 0);  /* [IN-FILE CHECK] requires 12 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert exists m_1_0_0_4: nat :: NatDvd(m_1_0_0_4, n) && m_1_0_0_4 != 1 && m_1_0_0_4 != n;  /* [IN-FILE CHECK] requires 13 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert ((0 <= m_1_0_0_6) && (((NatDvd(m_1_0_0_6, n)) && ((m_1_0_0_6 != 1) || (m_1_0_0_6 == 1))) || (!NatDvd(m_1_0_0_6, n)))) || (m_1_0_0_6 < 0);  /* [IN-FILE CHECK] requires 14 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert (0 <= 0 && NatDvd(0, n) && 0 != 1 && 0 != n) || (0 <= 0 && NatDvd(0, n) && 0 != 1 && 0 != n) || (exists as_m1_0_0_0_1_0_0_0: nat :: NatDvd(as_m1_0_0_0_1_0_0_0, n) && as_m1_0_0_0_1_0_0_0 != 1 && as_m1_0_0_0_1_0_0_0 != n);  /* [IN-FILE CHECK] requires 15 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert 0 <= m_1_0_0_5_0;  /* [IN-FILE CHECK] requires 16 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert NatDvd(m_1_0_0_5_0, n);  /* [IN-FILE CHECK] requires 17 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert m_1_0_0_5_0 != 1;  /* [IN-FILE CHECK] requires 18 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert m_1_0_0_5_0 != n;  /* [IN-FILE CHECK] requires 19 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert ((NatDvd(m_1_0_0_5_0, n)) && (((NatDvd(m_1_0_0_5_0, n)) && (m_1_0_0_5_0 != 1)) || (!(NatDvd(m_1_0_0_5_0, n) && m_1_0_0_5_0 != 1)))) || ((!NatDvd(m_1_0_0_5_0, n)) && (((NatDvd(m_1_0_0_5_0, n)) && (m_1_0_0_5_0 != 1)) || (!(NatDvd(m_1_0_0_5_0, n) && m_1_0_0_5_0 != 1))));  /* [IN-FILE CHECK] requires 20 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert m_1_0_0_5_0 >= 2;  /* [IN-FILE CHECK] requires 21 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert m_1_0_0_5_0 < n;  /* [IN-FILE CHECK] requires 22 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert 0 <= Int.pow(2, m_1_0_0_5_0);  /* [IN-FILE CHECK] requires 23 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert 0 <= 1;  /* [IN-FILE CHECK] requires 24 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert 0 <= Int.pow(2, n);  /* [IN-FILE CHECK] requires 25 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              assert NatDvd(tsub(Int.pow(2, m_1_0_0_5_0), 1), tsub(Int.pow(2, n), 1));  /* [IN-FILE CHECK] requires 26 of vc_numbertheory_2pownm1prime_nprime_L324 */
-              vc_numbertheory_2pownm1prime_nprime_L324(k, m, m_1_0_0_2, m_1_0_0_3, m_1_0_0_5, m_1_0_0_5_0, m_1_0_0_6, n);  /* [IN-FILE CHECK] the closed lemma for line 324 */
               assert (Int.pow(2, m) >= (2 * 2)) by {
                 assert (2 > 0) by {  // sub-goal of `by` (Lean state) // @tac 3103-3109
                   // [TACTIC: decide]
@@ -355,6 +328,7 @@ lemma numbertheory_2pownm1prime_nprime(n: nat)
                 }
                 // [TACTIC: exact Nat.pow_le_pow_of_le_right ( ( by decide decide ) , h₁₂₁ )]
                 // UNCITED Nat.pow_le_pow_of_le_right: applied by `exact` here; no library counterpart, its instance is not stated
+                vc_numbertheory_2pownm1prime_nprime_L324(k, m, m_1_0_0_2, m_1_0_0_3, m_1_0_0_5, m_1_0_0_5_0, m_1_0_0_6, n);  /* [IN-FILE CHECK] the closed lemma for line 324 */
               }
               // have h₁₂₄ : 2 ^ m - 1 >= 2 ^ 2 - 1  [type from Lean state]
               assert (tsub(Int.pow(2, m), 1) >= tsub((2 * 2), 1)); // @tac 3188-3193

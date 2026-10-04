@@ -118,9 +118,6 @@ lemma imo_1964_p1_1(n: nat)
           NatPowMod(2, (n % 3), 7);  // cite: Nat.pow_mod
           // GAP: Nat.pow_mod: this execution also rewrote the hypotheses h₃; the harvest for this theorem records only the goal-side application(s) of the tactic (hypothesis-side rewrites are not recorded), so its applications to those hypotheses (if any) are not stated
           // GAP: Nat.mul_mod: this execution also rewrote the hypotheses h₃; the harvest for this theorem records only the goal-side application(s) of the tactic (hypothesis-side rewrites are not recorded), so its applications to those hypotheses (if any) are not stated
-          assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1964_p1_1_L121 */
-          assert Int.pow(2 % 7, n % 3) % 7 == 1;  /* [IN-FILE CHECK] requires 2 of vc_imo_1964_p1_1_L121 */
-          assert n % 3 == 1;  /* [IN-FILE CHECK] requires 3 of vc_imo_1964_p1_1_L121 */
           vc_imo_1964_p1_1_L121(n);  /* [IN-FILE CHECK] the closed lemma for line 121 */
           assert ((n % 3) == 0);  // sub-goal of `simp` (Lean state) // @tac 1592-1653
           // UNCITED-APPLIED internal ×22 [exec 366 1592-1653]: applications made inside the tactic's own automation, not stated — Nat.one_mod ×1, mul_one ×1, Nat.mod_mod_of_dvd ×1; machinery/glue: congrArg ×8, Eq.trans ×7, congr ×2, of_eq_true ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.mod_add_div [Lean recorded ×1], Nat.mul_mod [Lean recorded ×1], Nat.pow_mod [Lean recorded ×2], one_pow [Lean recorded ×1], pow_add [Lean recorded ×1], pow_mul [Lean recorded ×1], pow_one [Lean recorded ×1])

@@ -460,28 +460,13 @@ lemma imo_1961_p1(x: real, y: real, z: real, a: real, b: real)
       SqPosOfNeZero((y - z));  // cite: sq_pos_of_ne_zero
     }
     // have h₁₄ :   [type from Lean state]
-    assert 0.0 < x;  /* [IN-FILE CHECK] requires 1 of vc_imo_1961_p1_L463 */
-    assert 0.0 < y;  /* [IN-FILE CHECK] requires 2 of vc_imo_1961_p1_L463 */
-    assert 0.0 < z;  /* [IN-FILE CHECK] requires 3 of vc_imo_1961_p1_L463 */
-    assert x != y;  /* [IN-FILE CHECK] requires 4 of vc_imo_1961_p1_L463 */
-    assert y != z;  /* [IN-FILE CHECK] requires 5 of vc_imo_1961_p1_L463 */
-    assert x + y + z == a;  /* [IN-FILE CHECK] requires 6 of vc_imo_1961_p1_L463 */
-    assert x * x + y * y + z * z == b * b;  /* [IN-FILE CHECK] requires 7 of vc_imo_1961_p1_L463 */
-    assert x * y == z * z;  /* [IN-FILE CHECK] requires 8 of vc_imo_1961_p1_L463 */
-    assert z == Real.sqrt(x * y);  /* [IN-FILE CHECK] requires 9 of vc_imo_1961_p1_L463 */
-    assert x + y + Real.sqrt(x * y) == a;  /* [IN-FILE CHECK] requires 10 of vc_imo_1961_p1_L463 */
-    assert x * x + y * y + x * y == b * b;  /* [IN-FILE CHECK] requires 11 of vc_imo_1961_p1_L463 */
-    assert a > 0.0;  /* [IN-FILE CHECK] requires 12 of vc_imo_1961_p1_L463 */
-    assert b * b < a * a;  /* [IN-FILE CHECK] requires 13 of vc_imo_1961_p1_L463 */
-    assert 0.0 < (x - y) * (x - y);  /* [IN-FILE CHECK] requires 14 of vc_imo_1961_p1_L463 */
-    assert 0.0 < (y - z) * (y - z);  /* [IN-FILE CHECK] requires 15 of vc_imo_1961_p1_L463 */
-    vc_imo_1961_p1_L463(a, b, x, y, z);  /* [IN-FILE CHECK] the closed lemma for line 463 */
     assert (0.0 < ((z - x) * (z - x))) by {
       // [TACTIC: exact sq_pos_of_ne_zero ( ( sub_ne_zero_of_ne ( h₃ ) ) )]
       assert ((z) != (x));  // precondition of SubNeZeroOfNe (Lean: sub_ne_zero_of_ne)
       SubNeZeroOfNe(z, x);  // cite: sub_ne_zero_of_ne
       assert (((z - x)) != 0.0);  // precondition of SqPosOfNeZero (Lean: sq_pos_of_ne_zero)
       SqPosOfNeZero((z - x));  // cite: sq_pos_of_ne_zero
+      vc_imo_1961_p1_L463(a, b, x, y, z);  /* [IN-FILE CHECK] the closed lemma for line 463 */
     }
     // [TACTIC: «Nlinarith[_]At___» [ sq_nonneg ( x - y ) , sq_nonneg ( y - z ) , sq_nonneg ( z - x ) ]]
     // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 3111-3178 exec 444)

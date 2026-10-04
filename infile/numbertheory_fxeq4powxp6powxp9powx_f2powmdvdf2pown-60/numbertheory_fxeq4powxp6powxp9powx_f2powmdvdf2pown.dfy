@@ -64,7 +64,6 @@ lemma {:isolate_assertions} induction_helper_1(m: nat, n: nat, f: nat -> nat, t:
       assert 0 <= (t + 1) - 1;  /* [IN-FILE CHECK] requires 5 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L60 */
       assert NatDvd(f(Int.pow(2, m)), f(Int.pow(2, m + ((t + 1) - 1))));  /* [IN-FILE CHECK] requires 6 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L60 */
       assert t == (t + 1) - 1;  /* [IN-FILE CHECK] requires 7 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L60 */
-      assert NatDvd(f(Int.pow(2, m + t)), f(Int.pow(2, m + (t + 1))));  /* [IN-FILE CHECK] requires 8 of vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L60 */
       vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L60(f, m, n, t + 1, t);  /* [IN-FILE CHECK] the closed lemma for line 60 */
       assert (NatDvd((f(Int.pow(2, m))), (f(Int.pow(2, (m + t)))))) && (NatDvd((f(Int.pow(2, (m + t)))), (f(Int.pow(2, (m + (t + 1)))))));  // precondition of NatDvdTrans (Lean: dvd_trans)
       NatDvdTrans(f(Int.pow(2, m)), f(Int.pow(2, (m + t))), f(Int.pow(2, (m + (t + 1)))));  // cite: dvd_trans

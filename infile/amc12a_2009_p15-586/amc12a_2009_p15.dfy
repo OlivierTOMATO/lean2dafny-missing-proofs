@@ -585,8 +585,6 @@ lemma amc12a_2009_p15(n: nat)
   forall m: nat // @tac 4581-4588
     ensures (Complex.sum(IccN(1, ((4 * m) + 1)), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.add(Complex.mul(Complex.of_real(2.0), Complex.of_real((m as real))), Complex.mul(Complex.add(Complex.mul(Complex.of_real(2.0), Complex.of_real((m as real))), Complex.of_real(1.0)), Complex.I()))) // @tac 4593-4624 // @tac 4629-4660 // @tac 4665-4699 // @tac 4704-4738 // @tac 4743-4777 // @tac 4782-4816 // @tac 4821-4852 // @tac 4857-4888 // @tac 4893-4927 // @tac 4932-5094 // @tac 4932-5077
   {
-    assert 0 < n;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2009_p15_L586 */
-    assert Complex.sum(IccN(1, n), ((k: nat) => Complex.mul(Complex.of_real((k as real)), Complex.pow(Complex.I(), k)))) == Complex.add(Complex.of_real(48.0), Complex.mul(Complex.of_real(49.0), Complex.I()));  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2009_p15_L586 */
     vc_amc12a_2009_p15_L586(m, m, n);  /* [IN-FILE CHECK] the closed lemma for line 586 */
     // [TACTIC: intro m]
     // have h₂ :   [type from Lean state]

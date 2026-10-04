@@ -695,23 +695,6 @@ lemma amc12b_2020_p21(S: set<nat>)
                     assert (n < ((k + 16) * (k + 16))) by { // @tac 4970-5080 // @tac 4970-5060 // @tac 4970-5029 // @tac 4970-4991
                       // [TACTIC: «_<;>_» at h₉ ⊢ norm_cast at h₉ ⊢ <;> ( try ring_nf at h₉ ⊢ ) <;> ( try norm_num at h₉ ⊢ ) <;> ( try nlinarith nlinarith )]
                       // [TACTIC: Norm_cast at h₉ ⊢]
-                      assert forall n_1: int :: 0 <= n_1 ==> (n_1 in S) == (0 < n_1 && ((n_1 as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n_1 as real))) as real));  /* [IN-FILE CHECK] requires 1 of vc_amc12b_2020_p21_L698 */
-                      assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_amc12b_2020_p21_L698 */
-                      assert 0 < n;  /* [IN-FILE CHECK] requires 3 of vc_amc12b_2020_p21_L698 */
-                      assert (n in S) == (0 < n && ((n as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n as real))) as real));  /* [IN-FILE CHECK] requires 4 of vc_amc12b_2020_p21_L698 */
-                      assert ((n as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n as real))) as real);  /* [IN-FILE CHECK] requires 5 of vc_amc12b_2020_p21_L698 */
-                      assert 70 != 0;  /* [IN-FILE CHECK] requires 6 of vc_amc12b_2020_p21_L698 */
-                      assert (n + 1000) % 70 == 0;  /* [IN-FILE CHECK] requires 7 of vc_amc12b_2020_p21_L698 */
-                      assert n % 70 == 50;  /* [IN-FILE CHECK] requires 8 of vc_amc12b_2020_p21_L698 */
-                      assert exists k_0_0_0_0_0_0_0_0_1: nat :: n == 70 * k_0_0_0_0_0_0_0_0_1 + 50;  /* [IN-FILE CHECK] requires 9 of vc_amc12b_2020_p21_L698 */
-                      assert exists k_0_0_0_0_0_0_0_0_4: nat :: n == 70 * k_0_0_0_0_0_0_0_0_4 + 50;  /* [IN-FILE CHECK] requires 10 of vc_amc12b_2020_p21_L698 */
-                      assert (0 <= 0 && n == 70 * 0 + 50) || (0 <= 0 && n == 70 * 0 + 50) || (exists as_k0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0: nat :: n == 70 * as_k0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0 + 50);  /* [IN-FILE CHECK] requires 11 of vc_amc12b_2020_p21_L698 */
-                      assert 0 <= k;  /* [IN-FILE CHECK] requires 12 of vc_amc12b_2020_p21_L698 */
-                      assert n == 70 * k + 50;  /* [IN-FILE CHECK] requires 13 of vc_amc12b_2020_p21_L698 */
-                      assert k + 15 == floor(Real.sqrt((n as real)));  /* [IN-FILE CHECK] requires 14 of vc_amc12b_2020_p21_L698 */
-                      assert ((k as real) + 15.0) * ((k as real) + 15.0) <= (n as real);  /* [IN-FILE CHECK] requires 15 of vc_amc12b_2020_p21_L698 */
-                      assert (n as real) < ((k as real) + 16.0) * ((k as real) + 16.0);  /* [IN-FILE CHECK] requires 16 of vc_amc12b_2020_p21_L698 */
-                      assert (k + 15) * (k + 15) <= n;  /* [IN-FILE CHECK] requires 17 of vc_amc12b_2020_p21_L698 */
                       vc_amc12b_2020_p21_L698(S, k, n);  /* [IN-FILE CHECK] the closed lemma for line 698 */
                       assert (n < ((k + 16) * (k + 16)));  // hypothesis h₉ after `norm_cast` (Lean state) // @tac-hyp 4970-4991
                       // `norm_cast` closed the goal; the rest of the chain did not run

@@ -394,10 +394,6 @@ lemma imo_1966_p4(n: nat, x: real)
     induction_helper_1(n, x);
   }
   // have final_conclusion : ∑ k ∈ Finset.Icc (1 : ℕ) n, (1 : ℝ) / Real.sin ((2 : ℝ) ^ k * x) = (1 : ℝ) / Real.tan x - (1 : ℝ) / Real.tan (  [type from Lean state]
-  assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L397 */
-  assert forall n_2_1: nat :: 0 < n_2_1 ==> Real.sum(IccN(1, n_2_1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, n_2_1) * x));  /* [IN-FILE CHECK] requires 2 of vc_imo_1966_p4_L397 */
-  assert 0 <= 1;  /* [IN-FILE CHECK] requires 3 of vc_imo_1966_p4_L397 */
-  vc_imo_1966_p4_L397(n, x);  /* [IN-FILE CHECK] the closed lemma for line 397 */
   assert (Real.sum(IccN(1, n), ((k: nat) => Real.div(1.0, Real.sin((Real.pow(2.0, k) * x))))) == (Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan((Real.pow(2.0, n) * x))))) by { // @tac 3616-3654 // @tac 3616-3637
     // [TACTIC: «_<;>_» apply_induction apply apply_induction <;> simp_all simp_all simp_all]
     // [TACTIC: choice apply_induction apply apply_induction]
@@ -405,6 +401,10 @@ lemma imo_1966_p4(n: nat, x: real)
     assert (0 < n);  // sub-goal of `simp_all` (Lean state) // @tac 3646-3654
     // UNCITED-APPLIED internal ×2 [exec 778 3646-3654]: applications made inside the tactic's own automation, not stated — machinery/glue: of_eq_true ×1, eq_true ×1
     // UNCITED-APPLIED instance of apply_induction: `∑ k ∈ Finset.Icc (1 : ℕ) n, (1 : ℝ) / Real.sin ((2 : ℝ) ^ k * x) = (1 : ℝ) / Real.tan x - (1 : ℝ) / Real.tan ((2 : ℝ) ^ n * x)` — Lean's proof of final_conclusion applies it (by a tactic that does not name it, or one whose instance could not be rendered in scope here); not stated
+    assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1966_p4_L397 */
+    assert forall n_2_1: nat :: 0 < n_2_1 ==> Real.sum(IccN(1, n_2_1), ((k: nat) => Real.div(1.0, Real.sin(Real.pow(2.0, k) * x)))) == Real.div(1.0, Real.tan(x)) - Real.div(1.0, Real.tan(Real.pow(2.0, n_2_1) * x));  /* [IN-FILE CHECK] requires 2 of vc_imo_1966_p4_L397 */
+    assert 0 <= 1;  /* [IN-FILE CHECK] requires 3 of vc_imo_1966_p4_L397 */
+    vc_imo_1966_p4_L397(n, x);  /* [IN-FILE CHECK] the closed lemma for line 397 */
   }
   // have h₂ :   [type from Lean state]
   assert (0 < n) by {

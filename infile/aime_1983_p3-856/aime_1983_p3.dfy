@@ -853,14 +853,6 @@ lemma aime_1983_p3(f: real -> real, h1_set: set<real>)
       // have h₆₁ : ∏ x ∈ {(-9 : ℝ) + √(61 : ℝ), (-9 : ℝ) - √(61 : ℝ)}, x = (20 : ℝ)  [type from Lean state]
       assert (Real.prod({ (-(9.0) + Real.sqrt(61.0)), (-(9.0) - Real.sqrt(61.0)) }, ((x: real) => x)) == 20.0) by { // @tac 5206-5667 // @tac 5674-5686
         // have h₆₂ : ∏ x ∈ {(-9 : ℝ) + √(61 : ℝ), (-9 : ℝ) - √(61 : ℝ)}, x = ((-9 : ℝ) + √(61 : ℝ)) * ((-9 : ℝ) - √(61 : ℝ))  [type from Lean state]
-        assert forall x_1: real :: f.requires(x_1);  /* [IN-FILE CHECK] requires 1 of vc_aime_1983_p3_L856 */
-        assert forall x_1: real :: f(x_1) == x_1 * x_1 + (18.0 * x_1 + 30.0) - 2.0 * Real.sqrt(x_1 * x_1 + (18.0 * x_1 + 45.0));  /* [IN-FILE CHECK] requires 2 of vc_aime_1983_p3_L856 */
-        assert forall x_3: real :: (x_3 in h1_set) == (f(x_3) == 0.0);  /* [IN-FILE CHECK] requires 3 of vc_aime_1983_p3_L856 */
-        assert f(0.0 - 9.0 + Real.sqrt(61.0)) == 0.0;  /* [IN-FILE CHECK] requires 4 of vc_aime_1983_p3_L856 */
-        assert f(0.0 - 9.0 - Real.sqrt(61.0)) == 0.0;  /* [IN-FILE CHECK] requires 5 of vc_aime_1983_p3_L856 */
-        assert forall x_2_1: real :: f.requires(x_2_1);  /* [IN-FILE CHECK] requires 6 of vc_aime_1983_p3_L856 */
-        assert forall x_2_1: real :: f(x_2_1) == 0.0 ==> x_2_1 == 0.0 - 9.0 + Real.sqrt(61.0) || x_2_1 == 0.0 - 9.0 - Real.sqrt(61.0);  /* [IN-FILE CHECK] requires 7 of vc_aime_1983_p3_L856 */
-        vc_aime_1983_p3_L856(f, h1_set);  /* [IN-FILE CHECK] the closed lemma for line 856 */
         assert (Real.prod({ (-(9.0) + Real.sqrt(61.0)), (-(9.0) - Real.sqrt(61.0)) }, ((x: real) => x)) == ((-(9.0) + Real.sqrt(61.0)) * (-(9.0) - Real.sqrt(61.0)))) by { // @tac 5349-5667 // @tac 5349-5581 // @tac 5349-5560 // @tac 5349-5532
           assert ((-(9.0) + Real.sqrt(61.0)) != (-(9.0) - Real.sqrt(61.0))) by {  // sub-goal of `by` (Lean state) // @tac 5439-5446
             // intro h (hypothesis and goal from the Lean state)
@@ -890,6 +882,7 @@ lemma aime_1983_p3(f: real -> real, h1_set: set<real>)
           assert (0.0 <= (61.0));  // precondition of RealSqSqrt (Lean: Real.sq_sqrt)
           RealSqSqrt(61.0);  // cite: Real.sq_sqrt
           // UNCITED-APPLIED internal ×168 [exec 1429 5349-5532]: applications made inside the tactic's own automation, not stated — sub_eq_zero_of_eq ×2, Finset.prod_pair ×1, neg_neg_of_pos ×1, zero_lt_one ×1, neg_eq_zero ×1; machinery/glue: Mathlib.Tactic.Ring.neg_add ×8, Mathlib.Meta.NormNum.isInt_mul ×8, Mathlib.Meta.NormNum.isNat_ofNat ×7, Mathlib.Meta.NormNum.IsNat.to_raw_eq ×7 (+54 more heads, ×132) (cited in this block, not counted here: Nat.cast_one [Lean recorded ×1], Nat.cast_zero [Lean recorded ×2], Real.sq_sqrt [Lean recorded ×1])
+          vc_aime_1983_p3_L856(f, h1_set);  /* [IN-FILE CHECK] the closed lemma for line 856 */
         }
         // [TACTIC: rwSeq [ h₆₂ ]]
         // UNCITED-APPLIED congrArg(∏ x ∈ {(-9 : ℝ) + √(61 : ℝ), (-9 : ℝ) - √(61 : ℝ)}, x, ((-9 : ℝ) + √(61 : ℝ)) * ((-9 : ℝ) - √(61 : ℝ)), fun (_a : ℝ) => _a = (20 : ℝ)): no library counterpart (not stated) [exec 1466 5674-5686]

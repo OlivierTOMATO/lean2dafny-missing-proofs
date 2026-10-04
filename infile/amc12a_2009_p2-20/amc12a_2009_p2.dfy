@@ -17,14 +17,6 @@ lemma amc12a_2009_p2()
     // [TACTIC: «Norm_num[_]At___»]
     // `norm_num` closed the goal; the rest of the chain did not run
   // have step2 : 1 + 1 / ( 1 + 1 ) == 3 / 2  [type from Lean state]
-  assert 1 + 1 == 2;  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2009_p2_L20 */
-  assert Rat.of_int(1).Rational?;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2009_p2_L20 */
-  assert Rat.add(Rat.of_int(1), Rat.of_int(1)).Rational?;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2009_p2_L20 */
-  assert Rat.div(Rat.of_int(1), Rat.add(Rat.of_int(1), Rat.of_int(1))).Rational?;  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2009_p2_L20 */
-  assert Rat.add(Rat.of_int(1), Rat.div(Rat.of_int(1), Rat.add(Rat.of_int(1), Rat.of_int(1)))).Rational?;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2009_p2_L20 */
-  assert Rat.of_int(3).Rational?;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2009_p2_L20 */
-  assert Rat.of_int(2).Rational?;  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2009_p2_L20 */
-  assert Rat.div(Rat.of_int(3), Rat.of_int(2)).Rational?;  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2009_p2_L20 */
   vc_amc12a_2009_p2_L20();  /* [IN-FILE CHECK] the closed lemma for line 20 */
   assert (Rat.add(Rat.of_int(1), Rat.div(Rat.of_int(1), Rat.add(Rat.of_int(1), Rat.of_int(1)))) == Rat.div(Rat.of_int(3), Rat.of_int(2))); // @tac 911-1199 // @tac 911-1118 // @tac 911-1029 // @tac 911-927
   // UNCITED-APPLIED internal ×18 [exec 96 911-927]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.IsNat.to_isRat ×4, Mathlib.Meta.NormNum.isNat_ofNat ×3, Mathlib.Meta.NormNum.isRat_div ×2, Mathlib.Meta.NormNum.isRat_mul ×2 (+6 more heads, ×7)

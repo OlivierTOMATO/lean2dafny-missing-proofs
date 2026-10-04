@@ -104,14 +104,6 @@ lemma mathd_numbertheory_175()
               assert ((Int.pow((2 * 2 * 2 * 2), 502) % 10) == 6);
             }
             // have h₅₃ : ( 2 ^ 2 : ℕ ) % 10 == 4  [type from Lean state]
-            assert forall n_0_0_1: nat :: n_0_0_1 >= 1 ==> Int.pow(6, n_0_0_1) % 10 == 6;  /* [IN-FILE CHECK] requires 1 of vc_mathd_numbertheory_175_L107 */
-            assert 2 * 2 * 2 * 2 % 10 == 6;  /* [IN-FILE CHECK] requires 2 of vc_mathd_numbertheory_175_L107 */
-            assert 0 <= 2010;  /* [IN-FILE CHECK] requires 3 of vc_mathd_numbertheory_175_L107 */
-            assert 0 <= 502;  /* [IN-FILE CHECK] requires 4 of vc_mathd_numbertheory_175_L107 */
-            assert Int.pow(2, 2010) == Int.pow(2 * 2 * 2 * 2, 502) * (2 * 2);  /* [IN-FILE CHECK] requires 5 of vc_mathd_numbertheory_175_L107 */
-            assert Int.pow(2 * 2 * 2 * 2, 502) * (2 * 2) % 10 == Int.pow(2 * 2 * 2 * 2, 502) % 10 * (2 * 2 % 10) % 10;  /* [IN-FILE CHECK] requires 6 of vc_mathd_numbertheory_175_L107 */
-            assert 10 != 0;  /* [IN-FILE CHECK] requires 7 of vc_mathd_numbertheory_175_L107 */
-            assert Int.pow(2 * 2 * 2 * 2, 502) % 10 == 6;  /* [IN-FILE CHECK] requires 8 of vc_mathd_numbertheory_175_L107 */
             vc_mathd_numbertheory_175_L107();  /* [IN-FILE CHECK] the closed lemma for line 107 */
             assert (((2 * 2) % 10) == 4); // @tac 1449-1457
               // [TACTIC: «Norm_num[_]At___»]

@@ -25,11 +25,6 @@ lemma amc12a_2009_p6(m: real, n: real, p: real, q: real)
         RealRpowPosOfPos(2.0, m);  // cite: Real.rpow_pos_of_pos [applied by the tactic, not named in it]
       }
       // have h₂₂ : 2 ^ m ^ 2 * n == 2 ^ ( m * ( 2 * n ) )  [type from Lean state]
-      assert p == Real.rpow(2.0, m);  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2009_p6_L28 */
-      assert q == Real.rpow(3.0, n);  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2009_p6_L28 */
-      assert Real.rpow(2.0, m) > 0.0;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2009_p6_L28 */
-      assert Real.rpow(2.0, m * (2.0 * n)) == Real.rpow(Real.rpow(2.0, m), 2.0 * n);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2009_p6_L28 */
-      vc_amc12a_2009_p6_L28(m, n, p, q);  /* [IN-FILE CHECK] the closed lemma for line 28 */
       assert (Real.rpow(Real.rpow(2.0, m), (2.0 * n)) == Real.rpow(2.0, (m * (2.0 * n)))) by { // @tac 761-821 // @tac 761-808 // @tac 761-795 // @tac 761-783
         // [TACTIC: «_<;>_» [ ← Real.rpow_mul ] rw [ ← Real.rpow_mul ] <;> ring_nf ring_nf <;> norm_num norm_num <;> linarith linarith]
         // [TACTIC: choice [ ← Real.rpow_mul ] rw [ ← Real.rpow_mul ]]
@@ -42,6 +37,7 @@ lemma amc12a_2009_p6(m: real, n: real, p: real, q: real)
           NatCastZero();  // cite: Nat.cast_zero [applied by the tactic, not named in it]
           // UNCITED-APPLIED internal ×5 [exec 141 800-808]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_le_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
         }
+        vc_amc12a_2009_p6_L28(m, n, p, q);  /* [IN-FILE CHECK] the closed lemma for line 28 */
       }
       // [TACTIC: «_<;>_» [ h₂₂ ] rw [ h₂₂ ] <;> simp [ h₀ , h₁ , Real.rpow_mul , Real.rpow_add , Real.rpow_neg , Real.rpow_sub , Real.rpow_mul , Real.rpow_add , Real.rpow_neg , Real.rpow_sub ] simp [ h₀ , h₁ , Real.rpow_mul , Real.rpow_add , Real.rpow_neg , Real.rpow_sub , Real.rpow_mul , Real.rpow_add , Real.rpow_neg , Real.rpow_sub ] simp [ h₀ , h₁ , Real.rpow_mul , Real.rpow_add , Real.rpow_neg , Real.rpow_sub , Real.rpow_mul , Real.rpow_add , Real.rpow_neg , Real.rpow_sub ] <;> ring_nf at * <;> simp_all [ Real.rpow_mul , Real.rpow_add , Real.rpow_neg , Real.rpow_sub ] simp_all [ Real.rpow_mul , Real.rpow_add , Real.rpow_neg , Real.rpow_sub ] simp_all [ Real.rpow_mul , Real.rpow_add , Real.rpow_neg , Real.rpow_sub ] <;> norm_num at * <;> linarith linarith]
       // [TACTIC: rwSeq [ h₂₂ ]]

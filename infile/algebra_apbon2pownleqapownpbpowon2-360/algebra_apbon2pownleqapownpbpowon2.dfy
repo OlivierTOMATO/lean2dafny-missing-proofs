@@ -357,32 +357,6 @@ lemma {:isolate_assertions} induction_helper_1(a: real, b: real, n: nat)
         // have h₆₈ : ( ( a + b ) / 2 ) ^ ( n + 1 ) <= ( a ^ ( n + 1 ) + b ^ ( n + 1 ) ) / 2  [type from Lean state]
         assert (Real.pow(((a + b) / 2.0), (n + 1)) <= ((Real.pow(a, (n + 1)) + Real.pow(b, (n + 1))) / 2.0)) by { // @tac 3234-3355 // @tac 3366-3500 // @tac 3511-3612 // @tac 3623-3636
           // have h₆₉ : ( ( a + b ) / 2 ) ^ ( n + 1 ) <= ( a ^ n * a + a ^ n * b + b ^ n * a +  [type from Lean state]
-          assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert 0.0 < a;  /* [IN-FILE CHECK] requires 2 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert 0.0 < b;  /* [IN-FILE CHECK] requires 3 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert 0.0 < (a + b) / 2.0;  /* [IN-FILE CHECK] requires 4 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert forall k_1: nat :: (a - b) * (Real.pow(a, k_1) - Real.pow(b, k_1)) >= 0.0;  /* [IN-FILE CHECK] requires 5 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert n != 0;  /* [IN-FILE CHECK] requires 6 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert 0 <= n - 1;  /* [IN-FILE CHECK] requires 7 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert 0 <= n || n - 1 == n;  /* [IN-FILE CHECK] requires 8 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert n - 1 < n;  /* [IN-FILE CHECK] requires 9 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert forall k_1: nat :: (a - b) * (Real.pow(a, k_1) - Real.pow(b, k_1)) >= 0.0;  /* [IN-FILE CHECK] requires 10 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert Real.pow((a + b) / 2.0, n - 1 + 1) <= (Real.pow(a, n - 1 + 1) + Real.pow(b, n - 1 + 1)) / 2.0;  /* [IN-FILE CHECK] requires 11 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert 0 + 1 <= n;  /* [IN-FILE CHECK] requires 12 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert (a - b) * (Real.pow(a, n) - Real.pow(b, n)) >= 0.0;  /* [IN-FILE CHECK] requires 13 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert 2.0 != 0.0;  /* [IN-FILE CHECK] requires 14 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert (a + b) / 2.0 > 0.0;  /* [IN-FILE CHECK] requires 15 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert 0 <= n + 1;  /* [IN-FILE CHECK] requires 16 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert Real.pow((a + b) / 2.0, n + 1) == Real.pow((a + b) / 2.0, n) * ((a + b) / 2.0);  /* [IN-FILE CHECK] requires 17 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert Real.pow((a + b) / 2.0, n) * ((a + b) / 2.0) <= (Real.pow(a, n) + Real.pow(b, n)) / 2.0 * ((a + b) / 2.0);  /* [IN-FILE CHECK] requires 18 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert 4.0 != 0.0;  /* [IN-FILE CHECK] requires 19 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert (Real.pow(a, n) + Real.pow(b, n)) / 2.0 * ((a + b) / 2.0) == (Real.pow(a, n) * a + Real.pow(a, n) * b + Real.pow(b, n) * a + Real.pow(b, n) * b) / 4.0;  /* [IN-FILE CHECK] requires 20 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert Real.pow((a + b) / 2.0, n) * ((a + b) / 2.0) <= (Real.pow(a, n) * a + Real.pow(a, n) * b + Real.pow(b, n) * a + Real.pow(b, n) * b) / 4.0;  /* [IN-FILE CHECK] requires 21 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert (Real.pow(a, n + 1) + Real.pow(b, n + 1)) / 2.0 >= (Real.pow(a, n) * a + Real.pow(a, n) * b + Real.pow(b, n) * a + Real.pow(b, n) * b) / 4.0;  /* [IN-FILE CHECK] requires 22 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert 2.0 * (2.0 * Real.pow((a + b) / 2.0, n + 1) - 1.0 * Real.pow((a + b) / 2.0, n) * (1.0 * a + 1.0 * b)) + (1.0 * Real.pow((a + b) / 2.0, n) * (2.0 * a + 2.0 * b) - (1.0 * Real.pow(a, n) * (1.0 * a) + 1.0 * Real.pow(a, n) * (1.0 * b) + 1.0 * Real.pow(b, n) * (1.0 * a) + 1.0 * Real.pow(b, n) * (1.0 * b))) + (1.0 * Real.pow(a, n) * (1.0 * a) + 1.0 * Real.pow(a, n) * (1.0 * b) + 1.0 * Real.pow(b, n) * (1.0 * a) + 1.0 * Real.pow(b, n) * (1.0 * b) - 4.0 * Real.pow((a + b) / 2.0, n + 1)) == 0.0;  /* [IN-FILE CHECK] requires 23 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert (1 as real) == 1.0;  /* [IN-FILE CHECK] requires 24 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          assert (0 as real) == 0.0;  /* [IN-FILE CHECK] requires 25 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
-          vc_algebra_apbon2pownleqapownpbpowon2_L360(a, b, n);  /* [IN-FILE CHECK] the closed lemma for line 360 */
           assert (Real.pow(((a + b) / 2.0), (n + 1)) <= (((((Real.pow(a, n) * a) + (Real.pow(a, n) * b)) + (Real.pow(b, n) * a)) + (Real.pow(b, n) * b)) / 4.0)) by { // @tac 3347-3355
             // [TACTIC: «Linarith[_]At___»]
             // (n)linarith certificate: Lean's product pieces and the identity it closed with (Lean execution 3347-3355 exec 836)
@@ -418,6 +392,22 @@ lemma {:isolate_assertions} induction_helper_1(a: real, b: real, n: nat)
             NatCastOne();  // cite: Nat.cast_one [applied by the tactic, not named in it: inside its internal steps (`normNum` exec 837, 838, 839, 840, 841, 842 … / `ring1` exec 888)]
             NatCastZero();  // cite: Nat.cast_zero [applied by the tactic, not named in it: inside its internal steps (`normNum` exec 843, 852, 878, 881 / `ring1` exec 888)]
             // UNCITED-APPLIED internal ×5 [exec 843 3347-3355]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, of_eq_true ×1, eq_true ×1, Mathlib.Meta.NormNum.isNat_lt_true ×1 (cited in this block, not counted here: Nat.cast_zero [Lean recorded ×1])
+            assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            assert forall k_1: nat :: (a - b) * (Real.pow(a, k_1) - Real.pow(b, k_1)) >= 0.0;  /* [IN-FILE CHECK] requires 5 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            assert n != 0;  /* [IN-FILE CHECK] requires 6 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            assert 0 <= n - 1;  /* [IN-FILE CHECK] requires 7 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            assert 0 <= n || n - 1 == n;  /* [IN-FILE CHECK] requires 8 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            assert n - 1 < n;  /* [IN-FILE CHECK] requires 9 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            assert forall k_1: nat :: (a - b) * (Real.pow(a, k_1) - Real.pow(b, k_1)) >= 0.0;  /* [IN-FILE CHECK] requires 5 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            assert Real.pow((a + b) / 2.0, n - 1 + 1) <= (Real.pow(a, n - 1 + 1) + Real.pow(b, n - 1 + 1)) / 2.0;  /* [IN-FILE CHECK] requires 11 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            assert 0 + 1 <= n;  /* [IN-FILE CHECK] requires 12 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            assert 2.0 != 0.0;  /* [IN-FILE CHECK] requires 14 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            assert 0 <= n + 1;  /* [IN-FILE CHECK] requires 16 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            assert 4.0 != 0.0;  /* [IN-FILE CHECK] requires 19 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            assert 2.0 * (2.0 * Real.pow((a + b) / 2.0, n + 1) - 1.0 * Real.pow((a + b) / 2.0, n) * (1.0 * a + 1.0 * b)) + (1.0 * Real.pow((a + b) / 2.0, n) * (2.0 * a + 2.0 * b) - (1.0 * Real.pow(a, n) * (1.0 * a) + 1.0 * Real.pow(a, n) * (1.0 * b) + 1.0 * Real.pow(b, n) * (1.0 * a) + 1.0 * Real.pow(b, n) * (1.0 * b))) + (1.0 * Real.pow(a, n) * (1.0 * a) + 1.0 * Real.pow(a, n) * (1.0 * b) + 1.0 * Real.pow(b, n) * (1.0 * a) + 1.0 * Real.pow(b, n) * (1.0 * b) - 4.0 * Real.pow((a + b) / 2.0, n + 1)) == 0.0;  /* [IN-FILE CHECK] requires 23 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            assert (1 as real) == 1.0;  /* [IN-FILE CHECK] requires 24 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            assert (0 as real) == 0.0;  /* [IN-FILE CHECK] requires 25 of vc_algebra_apbon2pownleqapownpbpowon2_L360 */
+            vc_algebra_apbon2pownleqapownpbpowon2_L360(a, b, n);  /* [IN-FILE CHECK] the closed lemma for line 360 */
           }
           // have h₇₀ : ( a ^ ( n + 1 ) + b ^ ( n + 1 ) ) / 2 >= ( a ^ n * a + a ^ n * b + b ^  [type from Lean state]
           assert (((Real.pow(a, (n + 1)) + Real.pow(b, (n + 1))) / 2.0) >= (((((Real.pow(a, n) * a) + (Real.pow(a, n) * b)) + (Real.pow(b, n) * a)) + (Real.pow(b, n) * b)) / 4.0)) by { // @tac 3487-3500

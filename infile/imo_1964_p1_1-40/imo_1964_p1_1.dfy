@@ -37,8 +37,6 @@ lemma imo_1964_p1_1(n: nat)
   // have h₂ : orderOf ( 2 ) == 3  [type from Lean state]
   assert (orderOf(2, 7) == 3) by { // @tac 768-915 // @tac 978-994
     // have h₂ : orderOf ( 2 ) == 3  [type from Lean state]
-    assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1964_p1_1_L40 */
-    vc_imo_1964_p1_1_L40(n);  /* [IN-FILE CHECK] the closed lemma for line 40 */
     assert (orderOf(2, 7) == 3) by { // @tac 885-915 // @tac 885-904
       // [TACTIC: «_<;>_» [ orderOf_eq_iff ] rw [ orderOf_eq_iff ] <;> decide decide]
       // [TACTIC: choice [ orderOf_eq_iff ] rw [ orderOf_eq_iff ]]
@@ -48,6 +46,7 @@ lemma imo_1964_p1_1(n: nat)
       assert (0 < 3);  // sub-goal of `decide` (Lean state) // @tac 909-915
       // UNCITED-APPLIED internal ×1 [exec 160 909-915]: applications made inside the tactic's own automation, not stated — machinery/glue: of_decide_eq_true ×1
       // UNCITED-APPLIED internal ×1 [exec 163 909-915]: applications made inside the tactic's own automation, not stated — machinery/glue: of_decide_eq_true ×1
+      vc_imo_1964_p1_1_L40(n);  /* [IN-FILE CHECK] the closed lemma for line 40 */
     }
     // [TACTIC: simpa using h₂]
   }

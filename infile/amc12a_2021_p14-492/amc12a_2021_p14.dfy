@@ -489,14 +489,6 @@ lemma amc12a_2021_p14()
       // UNCITED Real.logb: no Lean instance recorded (arguments unknown), not guessed
       // `rw` closed the goal; the rest of the chain did not run
     // have h₅₂ : Real.logb ( 3 , 5 ) == Real.log ( 5 ) / Real.log ( 3 )  [type from Lean state]
-    assert forall k_0_1: nat :: k_0_1 in IccN(1, 20) ==> Real.logb(Real.pow(5.0, k_0_1), Real.pow(3.0, Int.pow(k_0_1, 2))) == (k_0_1 as real) * Real.logb(5.0, 3.0);  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p14_L492 */
-    assert 0 <= 1;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p14_L492 */
-    assert 0 <= 20;  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p14_L492 */
-    assert Real.sum(IccN(1, 20), ((k: nat) => Real.logb(Real.pow(5.0, k), Real.pow(3.0, Int.pow(k, 2))))) == 210.0 * Real.logb(5.0, 3.0);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p14_L492 */
-    assert forall k_2_1: nat :: k_2_1 in IccN(1, 100) ==> Real.logb(Real.pow(9.0, k_2_1), Real.pow(25.0, k_2_1)) == Real.logb(3.0, 5.0);  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p14_L492 */
-    assert 0 <= 100;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2021_p14_L492 */
-    assert Real.sum(IccN(1, 100), ((k: nat) => Real.logb(Real.pow(9.0, k), Real.pow(25.0, k)))) == 100.0 * Real.logb(3.0, 5.0);  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2021_p14_L492 */
-    assert Real.logb(5.0, 3.0) == Real.div(Real.log(3.0), Real.log(5.0));  /* [IN-FILE CHECK] requires 8 of vc_amc12a_2021_p14_L492 */
     vc_amc12a_2021_p14_L492();  /* [IN-FILE CHECK] the closed lemma for line 492 */
     assert (Real.logb(3.0, 5.0) == Real.div(Real.log(5.0), Real.log(3.0))); // @tac 7091-7172 // @tac 7091-7157 // @tac 7091-7136 // @tac 7091-7105
     // UNCITED-APPLIED congrArg(logb (3 : ℝ) (5 : ℝ), Real.log (5 : ℝ) / Real.log (3 : ℝ), fun (_a : ℝ) => _a = Real.log (5 : ℝ) / Real.log (3 : ℝ)): no library counterpart (not stated) [exec 2256 7091-7105]

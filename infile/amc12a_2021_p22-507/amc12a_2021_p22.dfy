@@ -505,8 +505,6 @@ lemma {:isolate_assertions} cert_piece_62(a: real, b: real, c: real, f: real -> 
   requires (0.0 < (((((1.0 * 8.0) * (1.0 * ((1.0 * Real.cos((Real.pi() / 7.0))) * (1.0 * Real.cos((Real.pi() / 7.0))) * (1.0 * Real.cos((Real.pi() / 7.0)))))) - ((1.0 * 4.0) * (1.0 * ((1.0 * Real.cos((Real.pi() / 7.0))) * (1.0 * Real.cos((Real.pi() / 7.0))))))) - ((1.0 * 4.0) * (1.0 * Real.cos((Real.pi() / 7.0))))) + (1.0 * 1.0)))
   ensures (0.0 < ((1.0 * Real.cos((Real.pi() / 7.0))) * (((((1.0 * 8.0) * (1.0 * ((1.0 * Real.cos((Real.pi() / 7.0))) * (1.0 * Real.cos((Real.pi() / 7.0))) * (1.0 * Real.cos((Real.pi() / 7.0)))))) - ((1.0 * 4.0) * (1.0 * ((1.0 * Real.cos((Real.pi() / 7.0))) * (1.0 * Real.cos((Real.pi() / 7.0))))))) - ((1.0 * 4.0) * (1.0 * Real.cos((Real.pi() / 7.0))))) + (1.0 * 1.0))))
 {
-  assert 0.0 < 1.0 * Real.cos(Real.pi() / 7.0);  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p22_L507 */
-  assert 0.0 < 1.0 * 8.0 * (1.0 * (1.0 * Real.cos(Real.pi() / 7.0) * (1.0 * Real.cos(Real.pi() / 7.0)) * (1.0 * Real.cos(Real.pi() / 7.0)))) - 1.0 * 4.0 * (1.0 * (1.0 * Real.cos(Real.pi() / 7.0) * (1.0 * Real.cos(Real.pi() / 7.0)))) - 1.0 * 4.0 * (1.0 * Real.cos(Real.pi() / 7.0)) + 1.0 * 1.0;  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p22_L507 */
   vc_amc12a_2021_p22_L507();  /* [IN-FILE CHECK] the closed lemma for line 507 */
   MulPos((1.0 * Real.cos((Real.pi() / 7.0))), (((((1.0 * 8.0) * (1.0 * ((1.0 * Real.cos((Real.pi() / 7.0))) * (1.0 * Real.cos((Real.pi() / 7.0))) * (1.0 * Real.cos((Real.pi() / 7.0)))))) - ((1.0 * 4.0) * (1.0 * ((1.0 * Real.cos((Real.pi() / 7.0))) * (1.0 * Real.cos((Real.pi() / 7.0))))))) - ((1.0 * 4.0) * (1.0 * Real.cos((Real.pi() / 7.0))))) + (1.0 * 1.0)));
 }

@@ -1054,34 +1054,6 @@ lemma aime_1983_p1(x: nat, y: nat, z: nat, w: nat)
     // [TACTIC: rwSeq [ h₃ , h₄ ]]
     // UNCITED-APPLIED congrArg(Real.log ↑w, (24 : ℝ) * Real.log ↑x, fun (_a : ℝ) => _a / Real.log ↑z = (60 : ℝ)): no library counterpart (not stated) [exec 1928 7108-7123]
     // UNCITED-APPLIED congrArg(Real.log ↑z, (2 / 5 : ℝ) * Real.log ↑x, fun (_a : ℝ) => (24 : ℝ) * Real.log ↑x / _a = (60 : ℝ)): no library counterpart (not stated) [exec 1928 7108-7123]
-    assert 0 <= x;  /* [IN-FILE CHECK] requires 1 of vc_aime_1983_p1_L1057 */
-    assert 0 <= y;  /* [IN-FILE CHECK] requires 2 of vc_aime_1983_p1_L1057 */
-    assert 0 <= z;  /* [IN-FILE CHECK] requires 3 of vc_aime_1983_p1_L1057 */
-    assert 0 <= w;  /* [IN-FILE CHECK] requires 4 of vc_aime_1983_p1_L1057 */
-    assert 1 < x;  /* [IN-FILE CHECK] requires 5 of vc_aime_1983_p1_L1057 */
-    assert 1 < y;  /* [IN-FILE CHECK] requires 6 of vc_aime_1983_p1_L1057 */
-    assert 1 < z;  /* [IN-FILE CHECK] requires 7 of vc_aime_1983_p1_L1057 */
-    assert Real.div(Real.log((w as real)), Real.log((x as real))) == 24.0;  /* [IN-FILE CHECK] requires 8 of vc_aime_1983_p1_L1057 */
-    assert Real.div(Real.log((w as real)), Real.log((y as real))) == 40.0;  /* [IN-FILE CHECK] requires 9 of vc_aime_1983_p1_L1057 */
-    assert Real.div(Real.log((w as real)), Real.log((x as real) * (y as real) * (z as real))) == 12.0;  /* [IN-FILE CHECK] requires 10 of vc_aime_1983_p1_L1057 */
-    assert (x as real) > 1.0;  /* [IN-FILE CHECK] requires 11 of vc_aime_1983_p1_L1057 */
-    assert (y as real) > 1.0;  /* [IN-FILE CHECK] requires 12 of vc_aime_1983_p1_L1057 */
-    assert (z as real) > 1.0;  /* [IN-FILE CHECK] requires 13 of vc_aime_1983_p1_L1057 */
-    assert (x as real) * (y as real) * (z as real) > 1.0;  /* [IN-FILE CHECK] requires 14 of vc_aime_1983_p1_L1057 */
-    assert Real.log((x as real)) > 0.0;  /* [IN-FILE CHECK] requires 15 of vc_aime_1983_p1_L1057 */
-    assert Real.log((y as real)) > 0.0;  /* [IN-FILE CHECK] requires 16 of vc_aime_1983_p1_L1057 */
-    assert Real.log((z as real)) > 0.0;  /* [IN-FILE CHECK] requires 17 of vc_aime_1983_p1_L1057 */
-    assert Real.log((x as real) * (y as real) * (z as real)) > 0.0;  /* [IN-FILE CHECK] requires 18 of vc_aime_1983_p1_L1057 */
-    assert Real.log((w as real)) > 0.0;  /* [IN-FILE CHECK] requires 19 of vc_aime_1983_p1_L1057 */
-    assert Real.log((w as real)) == 24.0 * Real.log((x as real));  /* [IN-FILE CHECK] requires 20 of vc_aime_1983_p1_L1057 */
-    assert Real.log((w as real)) == 40.0 * Real.log((y as real));  /* [IN-FILE CHECK] requires 21 of vc_aime_1983_p1_L1057 */
-    assert 3.0 * Real.log((x as real)) == 5.0 * Real.log((y as real));  /* [IN-FILE CHECK] requires 22 of vc_aime_1983_p1_L1057 */
-    assert Real.log((w as real)) == 12.0 * (Real.log((x as real)) + Real.log((y as real)) + Real.log((z as real)));  /* [IN-FILE CHECK] requires 23 of vc_aime_1983_p1_L1057 */
-    assert Real.log((x as real)) == Real.log((y as real)) + Real.log((z as real));  /* [IN-FILE CHECK] requires 24 of vc_aime_1983_p1_L1057 */
-    assert 5.0 != 0.0;  /* [IN-FILE CHECK] requires 25 of vc_aime_1983_p1_L1057 */
-    assert Real.log((z as real)) == 2.0 / 5.0 * Real.log((x as real));  /* [IN-FILE CHECK] requires 26 of vc_aime_1983_p1_L1057 */
-    assert ((0.0 < 2.0) && (0.0 < 2.0) && (0.0 < Real.log((x as real))) && (0.0 < 2.0) && (0.0 < 2.0 * Real.log((x as real)))) || ((0.0 < 2.0) && (!(0.0 < 2.0 && 0.0 < Real.log((x as real))))) || ((!(0.0 < 2.0)) && (0.0 < 2.0) && (0.0 < Real.log((x as real))) && (0.0 < 2.0) && (0.0 < 2.0 * Real.log((x as real)))) || ((!(0.0 < 2.0)) && (!(0.0 < 2.0 && 0.0 < Real.log((x as real)))));  /* [IN-FILE CHECK] requires 27 of vc_aime_1983_p1_L1057 */
-    vc_aime_1983_p1_L1057(w, x, y, z);  /* [IN-FILE CHECK] the closed lemma for line 1057 */
     assert (Real.div((24.0 * Real.log((x as real))), ((2.0 / 5.0) * Real.log((x as real)))) == 60.0) by {  // sub-goal before `have` (Lean state) // @tac 7128-7187 // @tac 7192-7291 // @tac 7192-7251 // @tac 7192-7225 // @tac 7192-7209
       // have h₅ : Real.log != 0  [type from Lean state]
       assert (Real.log((x as real)) != 0.0) by { // @tac 7171-7187
@@ -1102,6 +1074,7 @@ lemma aime_1983_p1(x: nat, y: nat, z: nat, w: nat)
         PowOne(Real.log((x as real)));  // cite: pow_one [applied by the tactic, not named in it]
         // UNCITED-APPLIED internal ×58 [exec 2006 7218-7225]: applications made inside the tactic's own automation, not stated — add_zero ×1; machinery/glue: Eq.trans ×5, Mathlib.Tactic.Ring.mul_congr ×4, Mathlib.Tactic.Ring.cast_pos ×4, Mathlib.Meta.NormNum.isNat_ofNat ×4 (+17 more heads, ×40) (cited in this block, not counted here: pow_one [Lean recorded ×1])
       }
+      vc_aime_1983_p1_L1057(w, x, y, z);  /* [IN-FILE CHECK] the closed lemma for line 1057 */
     }
   }
   // [TACTIC: simpa using hgoal]

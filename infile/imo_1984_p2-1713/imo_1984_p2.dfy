@@ -1710,18 +1710,6 @@ lemma imo_1984_p2(a: int, b: int)
       // [TACTIC: rwSeq [ add_comm ]]
       // UNCITED add_comm: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances here: (a := b, b := a)
       // UNCITED-APPLIED congrArg(b + a, a + b, fun (_a : ℤ) => _a ^ (7 : ℕ) = a ^ (7 : ℕ) + (7 : ℤ) * a ^ (6 : ℕ) * …): no library counterpart (not stated) [exec 331 1611-1624]
-      assert 0 < a;  /* [IN-FILE CHECK] requires 1 of vc_imo_1984_p2_L1713 */
-      assert 0 < b;  /* [IN-FILE CHECK] requires 2 of vc_imo_1984_p2_L1713 */
-      assert !IntDvd(7, a);  /* [IN-FILE CHECK] requires 3 of vc_imo_1984_p2_L1713 */
-      assert !IntDvd(7, b);  /* [IN-FILE CHECK] requires 4 of vc_imo_1984_p2_L1713 */
-      assert !IntDvd(7, a + b);  /* [IN-FILE CHECK] requires 5 of vc_imo_1984_p2_L1713 */
-      assert IntDvd(Int.pow(7, 7), Int.pow(a + b, 7) - Int.pow(a, 7) - Int.pow(b, 7));  /* [IN-FILE CHECK] requires 6 of vc_imo_1984_p2_L1713 */
-      assert if Int.pow(7, 7) == 0 then Int.pow(a + b, 7) - Int.pow(a, 7) - Int.pow(b, 7) == 0 else (Int.pow(a + b, 7) - Int.pow(a, 7) - Int.pow(b, 7)) % Int.pow(7, 7) == 0;  /* [IN-FILE CHECK] requires 7 of vc_imo_1984_p2_L1713 */
-      assert !IntDvd(7, a * b * (a + b));  /* [IN-FILE CHECK] requires 8 of vc_imo_1984_p2_L1713 */
-      assert Int.pow(a, 1) == a;  /* [IN-FILE CHECK] requires 9 of vc_imo_1984_p2_L1713 */
-      assert Int.pow(b, 1) == b;  /* [IN-FILE CHECK] requires 10 of vc_imo_1984_p2_L1713 */
-      assert 0 <= 7;  /* [IN-FILE CHECK] requires 11 of vc_imo_1984_p2_L1713 */
-      vc_imo_1984_p2_L1713(a, b);  /* [IN-FILE CHECK] the closed lemma for line 1713 */
       assert (Int.pow((a + b), 7) == (((((((Int.pow(a, 7) + ((7 * (a * a * a * a * a * a)) * b)) + ((21 * (a * a * a * a * a)) * (b * b))) + ((35 * (a * a * a * a)) * (b * b * b))) + ((35 * (a * a * a)) * (b * b * b * b))) + ((21 * (a * a)) * (b * b * b * b * b))) + ((7 * a) * (b * b * b * b * b * b))) + Int.pow(b, 7))) by {  // sub-goal before `ring_nf` (Lean state) // @tac 1705-1917 // @tac 1705-1829 // @tac 1705-1773 // @tac 1705-1712
         // [TACTIC: «_<;>_» ring_nf <;> norm_num norm_num <;> simp_all simp_all simp_all <;> omega omega]
         // [TACTIC: Ring_nfAt]
@@ -1730,6 +1718,7 @@ lemma imo_1984_p2(a: int, b: int)
         // UNCITED-APPLIED mul_one ×2: a commutative-ring identity (native in Dafny's arithmetic), not stated — Lean's instances: (a := a ^ (7 : ℕ)); (a := b ^ (7 : ℕ))
         // `ring_nf` closed the goal; the rest of the chain did not run
         // UNCITED-APPLIED internal ×247 [exec 373 1705-1712]: applications made inside the tactic's own automation, not stated — mul_one ×2, add_zero ×1; machinery/glue: Mathlib.Tactic.Ring.add_pf_add_lt ×8, Mathlib.Tactic.Ring.add_pf_zero_add ×8, Mathlib.Tactic.Ring.cast_pos ×8, Mathlib.Meta.NormNum.isNat_ofNat ×8 (+37 more heads, ×212) (cited in this block, not counted here: pow_one [Lean recorded ×2])
+        vc_imo_1984_p2_L1713(a, b);  /* [IN-FILE CHECK] the closed lemma for line 1713 */
       }
     }
   }

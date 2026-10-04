@@ -102,13 +102,6 @@ lemma amc12a_2021_p18(f: Rat.rat -> real)
       assert (f(Rat.mul(Rat.of_int(1), Rat.of_int(1))) == (f(Rat.of_int(1)) + f(Rat.of_int(1))));
     }
     // have h₂₃ : f ( 1 * 1 ) == f ( 1 )  [type from Lean state]
-    assert forall x_1: Rat.rat :: Rat.gt(x_1, Rat.of_int(0)) ==> (forall y_2: Rat.rat :: Rat.gt(y_2, Rat.of_int(0)) ==> f.requires(Rat.mul(x_1, y_2)) && f.requires(x_1) && f.requires(y_2));  /* [IN-FILE CHECK] requires 1 of vc_amc12a_2021_p18_L105 */
-    assert forall x_1: Rat.rat :: Rat.gt(x_1, Rat.of_int(0)) ==> (forall y_2: Rat.rat :: Rat.gt(y_2, Rat.of_int(0)) ==> f(Rat.mul(x_1, y_2)) == f(x_1) + f(y_2));  /* [IN-FILE CHECK] requires 2 of vc_amc12a_2021_p18_L105 */
-    assert forall p_1: nat :: prime(p_1) ==> f.requires(Rat.of_int(p_1));  /* [IN-FILE CHECK] requires 3 of vc_amc12a_2021_p18_L105 */
-    assert forall p_1: nat :: prime(p_1) ==> f(Rat.of_int(p_1)) == (p_1 as real);  /* [IN-FILE CHECK] requires 4 of vc_amc12a_2021_p18_L105 */
-    assert Rat.of_int(1).Rational?;  /* [IN-FILE CHECK] requires 5 of vc_amc12a_2021_p18_L105 */
-    assert Rat.mul(Rat.of_int(1), Rat.of_int(1)).Rational?;  /* [IN-FILE CHECK] requires 6 of vc_amc12a_2021_p18_L105 */
-    assert f(Rat.mul(Rat.of_int(1), Rat.of_int(1))) == f(Rat.of_int(1)) + f(Rat.of_int(1));  /* [IN-FILE CHECK] requires 7 of vc_amc12a_2021_p18_L105 */
     vc_amc12a_2021_p18_L105(f);  /* [IN-FILE CHECK] the closed lemma for line 105 */
     assert (f(Rat.mul(Rat.of_int(1), Rat.of_int(1))) == f(Rat.of_int(1))); // @tac 1056-1064
       // [TACTIC: «Norm_num[_]At___»]

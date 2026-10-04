@@ -1242,27 +1242,13 @@ lemma amc12b_2020_p21(S: set<nat>)
                         assert (((20 as real) <= Real.sqrt(400.0)) && (Real.sqrt(400.0) < ((20 as real) + 1.0))) by {  // sub-goal before `constructor` (Lean state) // @tac 10912-10923
                           // [TACTIC: constructor]
                           // `constructor`: 2 cases (Lean states); 2 branch bodies
-                          assert forall n_1: int :: 0 <= n_1 ==> (n_1 in S) == (0 < n_1 && ((n_1 as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n_1 as real))) as real));  /* [IN-FILE CHECK] requires 1 of vc_amc12b_2020_p21_L1245 */
-                          assert 0 <= n;  /* [IN-FILE CHECK] requires 2 of vc_amc12b_2020_p21_L1245 */
-                          assert (0 < n) || (n <= 0);  /* [IN-FILE CHECK] requires 3 of vc_amc12b_2020_p21_L1245 */
-                          assert (n in S) == (0 < n && ((n as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n as real))) as real));  /* [IN-FILE CHECK] requires 4 of vc_amc12b_2020_p21_L1245 */
-                          assert ((0 < n) && (70.0 != 0.0) && (((0 < n) && (((n as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n as real))) as real)) && (((n != 400) && (((n != 470) && (((n != 2290) && (((n != 2360) && ((n != 2430) || (n == 2430))) || (n == 2360))) || (n == 2290))) || (n == 470))) || (n == 400))) || (!(0 < n && ((n as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n as real))) as real))))) || ((n <= 0) && (((0 < n) && (((n as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n as real))) as real)) && (((n != 400) && (((n != 470) && (((n != 2290) && (((n != 2360) && ((n != 2430) || (n == 2430))) || (n == 2360))) || (n == 2290))) || (n == 470))) || (n == 400))) || (!(0 < n && ((n as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n as real))) as real)))));  /* [IN-FILE CHECK] requires 5 of vc_amc12b_2020_p21_L1245 */
-                          assert 0 < n && ((n as real) + 1000.0) / 70.0 == (floor(Real.sqrt((n as real))) as real) ==> n == 400 || n == 470 || n == 2290 || n == 2360 || n == 2430 || n == 2500;  /* [IN-FILE CHECK] requires 6 of vc_amc12b_2020_p21_L1245 */
-                          assert ((n != 400) && (((n != 470) && (((n != 2290) && (((n != 2360) && ((n != 2430) || (n == 2430))) || (n == 2360))) || (n == 2290))) || (n == 470))) || (n == 400);  /* [IN-FILE CHECK] requires 7 of vc_amc12b_2020_p21_L1245 */
-                          assert n == 400 || n == 470 || n == 2290 || n == 2360 || n == 2430 || n == 2500;  /* [IN-FILE CHECK] requires 8 of vc_amc12b_2020_p21_L1245 */
-                          assert ((n != 400) && (((n != 470) && (((n != 2290) && (((n != 2360) && ((n != 2430) || (n == 2430))) || (n == 2360))) || (n == 2290))) || (n == 470))) || (n == 400);  /* [IN-FILE CHECK] requires 9 of vc_amc12b_2020_p21_L1245 */
-                          assert ((n == 400) && (((400 != 400) && (((400 != 470) && (((400 != 2290) && (((400 != 2360) && ((400 != 2430) || (400 == 2430))) || (400 == 2360))) || (400 == 2290))) || (400 == 470))) || (400 == 400))) || (n != 400);  /* [IN-FILE CHECK] requires 10 of vc_amc12b_2020_p21_L1245 */
-                          assert n == 400;  /* [IN-FILE CHECK] requires 11 of vc_amc12b_2020_p21_L1245 */
-                          assert 400 == 400 || 400 == 470 || 400 == 2290 || 400 == 2360 || 400 == 2430 || 400 == 2500;  /* [IN-FILE CHECK] requires 12 of vc_amc12b_2020_p21_L1245 */
-                          assert 0 < 400;  /* [IN-FILE CHECK] requires 13 of vc_amc12b_2020_p21_L1245 */
-                          assert (floor(Real.sqrt(400.0)) == 20) == ((20 as real) <= Real.sqrt(400.0) && Real.sqrt(400.0) < (20 as real) + 1.0);  /* [IN-FILE CHECK] requires 14 of vc_amc12b_2020_p21_L1245 */
-                          vc_amc12b_2020_p21_L1245(S, n);  /* [IN-FILE CHECK] the closed lemma for line 1245 */
                           assert ((20 as real) <= Real.sqrt(400.0)) by {  // sub-goal of `constructor` (Lean state) // @tac 10983-11020 // @tac 10936-11020
                             // [TACTIC: «Norm_num[_]At___» [ Real.le_sqrt , Real.sqrt_lt ]]
                             // UNCITED Real.le_sqrt: no Lean instance recorded (arguments unknown), not guessed
                             // UNCITED Real.sqrt_lt: no Lean instance recorded (arguments unknown), not guessed
                             // UNCITED-APPLIED Nat.cast_zero: cast target unknown (Lean applies it at ℝ and ℤ in this proof; the record does not say which)
                             // UNCITED-APPLIED internal ×18 [exec 2150 10983-11020]: applications made inside the tactic's own automation, not stated — Nat.cast_zero ×1; machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×5, Mathlib.Meta.NormNum.isNat_le_true ×3, of_eq_true ×1, Eq.trans ×1 (+7 more heads, ×7)
+                            vc_amc12b_2020_p21_L1245(S, n);  /* [IN-FILE CHECK] the closed lemma for line 1245 */
                           }
                           assert (Real.sqrt(400.0) < ((20 as real) + 1.0)) by {  // sub-goal of `constructor` (Lean state) // @tac 11082-11235 // @tac 11082-11119 // @tac 11033-11235
                             // [TACTIC: «_<;>_» [ Real.le_sqrt , Real.sqrt_lt ] norm_num [ Real.le_sqrt , Real.sqrt_lt ] <;> nlinarith [ Real.sqrt_nonneg 400 , Real.sq_sqrt ( show 0 ≤ ( 400 : ℝ ) by norm_num norm_num ) ] nlinarith [ Real.sqrt_nonneg 400 , Real.sq_sqrt ( show 0 ≤ ( 400 : ℝ ) by norm_num norm_num ) ]]

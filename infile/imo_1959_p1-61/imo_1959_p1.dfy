@@ -58,25 +58,13 @@ lemma imo_1959_p1(n: nat)
         // [TACTIC: «_<;>_» [ show 14 * n + 3 = 2 * ( 7 * n + 1 ) + 1 by ring_nf ring_nf <;> omega omega ] rw [ show 14 * n + 3 = 2 * ( 7 * n + 1 ) + 1 by ring_nf ring_nf <;> omega omega ] <;> simp [ Nat.gcd_comm , Nat.gcd_add_mul_right_right , Nat.gcd_assoc ] simp [ Nat.gcd_comm , Nat.gcd_add_mul_right_right , Nat.gcd_assoc ] simp [ Nat.gcd_comm , Nat.gcd_add_mul_right_right , Nat.gcd_assoc ] <;> ring_nf at * <;> omega omega]
         // [TACTIC: choice [ show 14 * n + 3 = 2 * ( 7 * n + 1 ) + 1 by ring_nf ring_nf <;> omega omega ] rw [ show 14 * n + 3 = 2 * ( 7 * n + 1 ) + 1 by ring_nf ring_nf <;> omega omega ]]
         // UNCITED-APPLIED congrArg((14 : ℕ) * n + (3 : ℕ), (2 : ℕ) * ((7 : ℕ) * n + (1 : ℕ)) + (1 : ℕ), fun (_a : ℕ) => Nat.gcd _a ((7 : ℕ) * n + (1 : ℕ)) = Nat.gcd ((7 : ℕ)…): no library counterpart (not stated) [exec 229 1090-1173]
-        assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1959_p1_L61 */
-        assert 0 < n;  /* [IN-FILE CHECK] requires 2 of vc_imo_1959_p1_L61 */
-        assert forall n0: nat :: 0 < n0 && 0 <= n0 && n0 < n ==> gcd(21 * n0 + 4, 14 * n0 + 3) == 1;  /* [IN-FILE CHECK] requires 3 of vc_imo_1959_p1_L61 */
-        assert 0 <= 21 * n + 4;  /* [IN-FILE CHECK] requires 4 of vc_imo_1959_p1_L61 */
-        assert 0 <= 14 * n + 3;  /* [IN-FILE CHECK] requires 5 of vc_imo_1959_p1_L61 */
-        assert 0 <= 7 * n + 1;  /* [IN-FILE CHECK] requires 6 of vc_imo_1959_p1_L61 */
-        assert gcd(21 * n + 4, 14 * n + 3) == gcd(14 * n + 3, 7 * n + 1);  /* [IN-FILE CHECK] requires 7 of vc_imo_1959_p1_L61 */
-        assert 14 * n + 3 == 2 * (7 * n + 1) + 1;  /* [IN-FILE CHECK] requires 8 of vc_imo_1959_p1_L61 */
-        assert 0 <= 2 * (7 * n + 1) + 1;  /* [IN-FILE CHECK] requires 9 of vc_imo_1959_p1_L61 */
-        assert gcd(2 * (7 * n + 1) + 1, 7 * n + 1) == gcd(7 * n + 1, 2 * (7 * n + 1) + 1);  /* [IN-FILE CHECK] requires 10 of vc_imo_1959_p1_L61 */
-        assert 0 <= 1;  /* [IN-FILE CHECK] requires 11 of vc_imo_1959_p1_L61 */
-        assert gcd(7 * n + 1, 1) == gcd(1, 7 * n + 1);  /* [IN-FILE CHECK] requires 12 of vc_imo_1959_p1_L61 */
-        vc_imo_1959_p1_L61(n);  /* [IN-FILE CHECK] the closed lemma for line 61 */
         assert (gcd(((2 * ((7 * n) + 1)) + 1), ((7 * n) + 1)) == gcd(((7 * n) + 1), 1)) by {  // sub-goal of `simp` (Lean state) // @tac 1186-1249
           NatGcdComm(((2 * ((7 * n) + 1)) + 1), ((7 * n) + 1));  // cite: Nat.gcd_comm
           NatGcdComm(((7 * n) + 1), 1);  // cite: Nat.gcd_comm
           // UNCITED Nat.gcd_add_mul_right_right: no Lean instance recorded (arguments unknown), not guessed
           // UNCITED Nat.gcd_assoc: no Lean instance recorded (arguments unknown), not guessed
           // UNCITED-APPLIED internal ×12 [exec 280 1186-1249]: applications made inside the tactic's own automation, not stated — Nat.gcd_mul_right_add_right ×1, Nat.gcd_add_self_right ×1, Nat.gcd_one_left ×1; machinery/glue: Eq.trans ×5, of_eq_true ×1, congr ×1, congrArg ×1 (+1 more heads, ×1) (cited in this block, not counted here: Nat.gcd_comm [Lean recorded ×2])
+          vc_imo_1959_p1_L61(n);  /* [IN-FILE CHECK] the closed lemma for line 61 */
         }
       }
       // [TACTIC: exact h₂₁₁]

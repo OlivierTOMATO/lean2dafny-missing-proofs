@@ -84,8 +84,6 @@ lemma imo_1964_p1_1(n: nat)
       // UNCITED Nat.pow_mod: named here, no record of its application here; the harvest has no application record for this execution at all (its proof term was not captured), so whether Lean applied it here is unknown: not stated
       // UNCITED Nat.mul_mod: named here, no record of its application here; the harvest has no application record for this execution at all (its proof term was not captured), so whether Lean applied it here is unknown: not stated
       // UNCITED Nat.mod_mod: no Lean instance recorded (arguments unknown), not guessed
-      assert 0 <= n;  /* [IN-FILE CHECK] requires 1 of vc_imo_1964_p1_1_L87 */
-      assert Int.pow(2, n % 3 + 3 * (n / 3)) % 7 == 1 % 7;  /* [IN-FILE CHECK] requires 2 of vc_imo_1964_p1_1_L87 */
       vc_imo_1964_p1_1_L87(n);  /* [IN-FILE CHECK] the closed lemma for line 87 */
       assert ((Int.pow((2 % 7), (n % 3)) % 7) == 1);  // hypothesis h₃ after `simp` (Lean state) // @tac-hyp 1257-1327
       // have h₄ : n % 3 == 0  [type from Lean state]

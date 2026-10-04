@@ -61,19 +61,6 @@ lemma {:isolate_assertions} contrapose_helper_1(a: int, b: int)
   requires ((a + b) < 19)  // h₈ (after `contrapose!`)
   ensures !(IntDvd(Int.pow(7, 7), (7 * (((((((a * a * a * a * a * a) * b) + ((3 * (a * a * a * a * a)) * (b * b))) + ((5 * (a * a * a * a)) * (b * b * b))) + ((5 * (a * a * a)) * (b * b * b * b))) + ((3 * (a * a)) * (b * b * b * b * b))) + (a * (b * b * b * b * b * b))))))  // goal after `contrapose!` at 2467-2483 (Lean state)
 {
-  assert 0 < a;  /* [IN-FILE CHECK] requires 1 of vc_imo_1984_p2_L64 */
-  assert 0 < b;  /* [IN-FILE CHECK] requires 2 of vc_imo_1984_p2_L64 */
-  assert !IntDvd(7, a);  /* [IN-FILE CHECK] requires 3 of vc_imo_1984_p2_L64 */
-  assert !IntDvd(7, b);  /* [IN-FILE CHECK] requires 4 of vc_imo_1984_p2_L64 */
-  assert !IntDvd(7, a + b);  /* [IN-FILE CHECK] requires 5 of vc_imo_1984_p2_L64 */
-  assert IntDvd(Int.pow(7, 7), Int.pow(a + b, 7) - Int.pow(a, 7) - Int.pow(b, 7));  /* [IN-FILE CHECK] requires 6 of vc_imo_1984_p2_L64 */
-  assert if Int.pow(7, 7) == 0 then Int.pow(a + b, 7) - Int.pow(a, 7) - Int.pow(b, 7) == 0 else (Int.pow(a + b, 7) - Int.pow(a, 7) - Int.pow(b, 7)) % Int.pow(7, 7) == 0;  /* [IN-FILE CHECK] requires 7 of vc_imo_1984_p2_L64 */
-  assert !IntDvd(7, a * b * (a + b));  /* [IN-FILE CHECK] requires 8 of vc_imo_1984_p2_L64 */
-  assert Int.pow(a + b, 7) == Int.pow(a, 7) + 7 * (a * a * a * a * a * a) * b + 21 * (a * a * a * a * a) * (b * b) + 35 * (a * a * a * a) * (b * b * b) + 35 * (a * a * a) * (b * b * b * b) + 21 * (a * a) * (b * b * b * b * b) + 7 * a * (b * b * b * b * b * b) + Int.pow(b, 7);  /* [IN-FILE CHECK] requires 9 of vc_imo_1984_p2_L64 */
-  assert Int.pow(a + b, 7) - Int.pow(a, 7) - Int.pow(b, 7) == 7 * (a * a * a * a * a * a * b + 3 * (a * a * a * a * a) * (b * b) + 5 * (a * a * a * a) * (b * b * b) + 5 * (a * a * a) * (b * b * b * b) + 3 * (a * a) * (b * b * b * b * b) + a * (b * b * b * b * b * b));  /* [IN-FILE CHECK] requires 10 of vc_imo_1984_p2_L64 */
-  assert a + b < 19;  /* [IN-FILE CHECK] requires 11 of vc_imo_1984_p2_L64 */
-  assert 0 <= 7;  /* [IN-FILE CHECK] requires 12 of vc_imo_1984_p2_L64 */
-  vc_imo_1984_p2_L64(a, b);  /* [IN-FILE CHECK] the closed lemma for line 64 */
   assert !(IntDvd(Int.pow(7, 7), (7 * (((((((a * a * a * a * a * a) * b) + ((3 * (a * a * a * a * a)) * (b * b))) + ((5 * (a * a * a * a)) * (b * b * b))) + ((5 * (a * a * a)) * (b * b * b * b))) + ((3 * (a * a)) * (b * b * b * b * b))) + (a * (b * b * b * b * b * b)))))) by {  // sub-goal before `have` (Lean state) // @tac 2488-2527 // @tac 2532-2570 // @tac 2575-2613 // @tac 2618-2655 // @tac 2660-2697 // @tac 2702-2800 // @tac 2702-2764 // @tac 2702-2739 // @tac 2702-2718
     // have h₉ : a + b <= 18  [type from Lean state]
     assert ((a + b) <= 18) by { // @tac 2519-2527
@@ -1175,6 +1162,7 @@ lemma {:isolate_assertions} contrapose_helper_1(a: int, b: int)
     // UNCITED-APPLIED internal ×5 [exec 1622 2744-2764]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Meta.NormNum.isNat_ofNat ×2, eq_false ×1, Mathlib.Meta.NormNum.isNat_lt_false ×1, Mathlib.Meta.NormNum.isNat_add ×1
     // UNCITED-APPLIED Eq.symm: recorded instance not expressible here (sort/type/scope), not guessed
     // UNCITED-APPLIED internal ×40 [exec 644 2723-2739]: applications made inside the tactic's own automation, not stated — le_antisymm ×8, Int.le_sub_one_of_not_le ×8; machinery/glue: Eq.symm ×18, Mathlib.Meta.NormNum.IsNat.to_raw_eq ×2, Mathlib.Meta.NormNum.isNat_ofNat ×2, Mathlib.Tactic.IntervalCases.of_le_right ×1 (+1 more heads, ×1)
+    vc_imo_1984_p2_L64(a, b);  /* [IN-FILE CHECK] the closed lemma for line 64 */
   }
 }
 
