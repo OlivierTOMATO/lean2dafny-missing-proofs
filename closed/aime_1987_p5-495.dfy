@@ -2,16 +2,20 @@
 // failing Dafny line: assert IntDvd(((3 * (x * x)) + 1), 507) by {
 // Lean step: have h₂₂₃ : (30 * x ^ 2 + 517 : ℤ) = 10 * (3 * x ^ 2 + 1) + 507 := by ring
 // hypotheses: 3 facts Z3 had at the line (goal itself removed: 0; the block's own asserts removed: 2); nothing assumed beyond the facts in scope
-// how it closes: own-lemma — nothing: the file's own proof body, hypotheses = facts in scope minus the goal and minus the block's own asserts
-// Dafny: finished with 4 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: K4K5 — K4 + K5 together
+// Dafny: finished with 10 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/aime_1987_p5.dfy"
 lemma {:induction false} vc_aime_1987_p5_L495(x: int, y: int)
   requires y * y + 3 * (x * x * (y * y)) == 30 * (x * x) + 517
   requires x != 0
   requires IntDvd(3 * (x * x) + 1, 30 * (x * x) + 517)
-  ensures   (IntDvd(3 * (x * x) + 1, 507) || (3 * (x * x) + 1 == 0 ==> 507 == 0))
+  ensures  (IntDvd(3 * (x * x) + 1, 507) || (3 * (x * x) + 1 == 0 ==> 507 == 0)) && (IntDvd(3 * (x * x) + 1, 507) || (3 * (x * x) + 1 != 0 ==> 507 % (3 * (x * x) + 1) == 0))
 {
+  IntDvdIffEmodEqZero(3 * (x * x) + 1, 10 * (3 * (x * x) + 1) + 507);  // K4: ∣ is ∃ by definition  // [ADDED]
+  IntDvdIffEmodEqZero(3 * (x * x) + 1, 507);  // K4  // [ADDED]
+  assert 10 * (3 * (x * x) + 1) == (3 * (x * x) + 1) * 10;  // dvd_add_right precondition a ∣ 10*a (witness 10)  // [ADDED]
+  DvdAddRight(3 * (x * x) + 1, 10 * (3 * (x * x) + 1), 507);  // K5: Mathlib dvd_add_right named in Lean simp set  // [ADDED]
         // have h₂₂₃ : 30 * x ^ 2 + 517 == 10 * ( 3 * x ^ 2 + 1 ) + 507  [type from Lean state]
         assert (((30 * (x * x)) + 517) == ((10 * ((3 * (x * x)) + 1)) + 507)); // @tac 1467-1471
           // [TACTIC: Ring]

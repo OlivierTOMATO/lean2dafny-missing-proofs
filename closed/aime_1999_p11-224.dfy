@@ -4,9 +4,9 @@
 // hypotheses: 8 facts Z3 had at the line; nothing assumed beyond the facts in scope
 // how it closes: K1 — FinsetMulSumPointwise(IccN(1,35), k=>sin(5kπ/180), k=>2sin(2.5π/180)·sin(5kπ/180), 2sin(2.5π/180)) — Lean's recorded Finset.mul_sum instance via existing library lemma
 // Dafny: finished with 21 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
-// NOTE: uses a MODIFIED library copy: see alt/aime_1999_p11-224/LIBRARY_CHANGES.diff
+// NOTE: alt copy was broken (held the library, not the theorem); re-pointed at the stock theorem file: see alt/aime_1999_p11-224/LIBRARY_CHANGES.diff
 
-include "alt/aime_1999_p11-224/out/aime_1999_p11.dfy"
+include "../dafny/aime_1999_p11.dfy"
 lemma {:induction false} vc_aime_1999_p11_L224(m: Rat.rat)
   requires m.Rational?
   requires gcd(Int.natAbs(m.num), m.denom) == 1

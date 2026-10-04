@@ -4,9 +4,9 @@
 // hypotheses: 24 facts Z3 had at the line; nothing assumed beyond the facts in scope
 // how it closes: K2 — assert s == Real.div(((a * (a + b + c) + b * (a + b + d)) * (b + c + d) + c * ((a + b + d) * (a + b + c))) * (a + c + d) + d * ((a + b + d) * (a + b + c) * (b + c + d)), (a + b + d) * (a + b + c) * (b + c + d) * (a + c + d));  (field_simp's normal form: Lean's after-hyp of exec 1254)
 // Dafny: finished with 2 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
-// NOTE: uses a MODIFIED library copy: see alt/imo_1974_p5-1801/LIBRARY_CHANGES.diff
+// NOTE: alt copy was broken (held the library, not the theorem); re-pointed at the stock theorem file: see alt/imo_1974_p5-1801/LIBRARY_CHANGES.diff
 
-include "alt/imo_1974_p5-1801/out/imo_1974_p5.dfy"
+include "../dafny/imo_1974_p5.dfy"
 lemma {:induction false} vc_imo_1974_p5_L1801(a: real, b: real, c: real, d: real, s: real)
   requires 0.0 < a
   requires 0.0 < b

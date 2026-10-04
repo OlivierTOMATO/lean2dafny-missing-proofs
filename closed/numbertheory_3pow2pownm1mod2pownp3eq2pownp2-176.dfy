@@ -1,21 +1,57 @@
-// CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-176: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 176 (OOR: Verification out of resource (induction_helper_1))
+// NOT CLOSED — failing line numbertheory_3pow2pownm1mod2pownp3eq2pownp2-176: theorem numbertheory_3pow2pownm1mod2pownp3eq2pownp2, Dafny line 176 (OOR: Verification out of resource (induction_helper_1))
 // failing Dafny line: assert NatDvd(Int.pow(2, (n + 4)), ((2 * k) * Int.pow(2, ((2 * n) + 5)))) by {
 // Lean step: calc
-// hypotheses: 1 of the 34 facts Z3 had at the line kept (0 <= k_1_0_2_0, plus n: nat); the other facts dropped (none added); the goal is a standalone fact about n, k_1_0_2_0 and powers of 2
-// how it closes: pass2 — dropped all hypotheses but 0<=k; body replaced: NatPowDvdPow(2,n+4,2n+5) + NatDvdMulOfDvdRight(.., 2k)
-// Dafny: finished with 32 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
-// NOTE: uses a MODIFIED library copy (opaque Int.pow: recursive ensures removed): see alt/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-176/LIBRARY_CHANGES.diff
+// hypotheses: 34 facts Z3 had at the line; nothing assumed beyond the facts in scope
+// not closed: tried H0=oor; this file is the honest base attempt
+// Dafny: finished with 88 verified, 0 errors, 3 out of resource  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-include "alt/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-176/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
+include "../dafny/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L176(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
   requires 0 <= n
+  requires 0 <= k_1_0_2
+  requires n != 0
+  requires 0 <= n - 1
+  requires 0 <= n || n - 1 == n
+  requires n - 1 < n
+  requires exists k_1: nat :: Int.pow(3, Int.pow(2, n - 1 + 1)) == 1 + Int.pow(2, n - 1 + 1 + 2) + k_1 * Int.pow(2, n - 1 + 1 + 3)
+  requires 0 + 1 <= n
+  requires 0 <= Int.pow(2, n)
+  requires 0 <= n + 2
+  requires 0 <= n + 3
+  requires exists k_1_0_1: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_1 * Int.pow(2, n + 3)
+  requires (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (0 <= 0 && Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + 0 * Int.pow(2, n + 3)) || (exists as_k1_0_0_1_0_0: nat :: Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + as_k1_0_0_1_0_0 * Int.pow(2, n + 3))
   requires 0 <= k_1_0_2_0
-  ensures   ((((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))) ==> (NatDvd(Int.pow(2, n + 4), 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) || (Int.pow(2, n + 4) == 0 ==> 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) == 0)))
+  requires Int.pow(3, Int.pow(2, n)) == 1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)
+  requires 0 <= n + 1
+  requires 0 <= Int.pow(2, n + 1)
+  requires Int.pow(3, Int.pow(2, n + 1)) == Int.pow(3, Int.pow(2, n)) * Int.pow(3, Int.pow(2, n))
+  requires 0 <= 2 * n + 4
+  requires 0 <= n + 4
+  requires 0 <= 2 * n + 6
+  requires 0 <= 2 * n + 5
+  requires (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) * (1 + Int.pow(2, n + 2) + k_1_0_2_0 * Int.pow(2, n + 3)) == 1 + Int.pow(2, n + 3) + (Int.pow(2, 2 * n + 4) + k_1_0_2_0 * Int.pow(2, n + 4) + k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6) + 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5))
+  requires 0 <= Int.pow(2, n + 4)
+  requires 0 <= Int.pow(2, 2 * n + 4)
+  requires NatDvd(Int.pow(2, n + 4), Int.pow(2, 2 * n + 4))
+  requires 0 <= k_1_0_2_0 * Int.pow(2, n + 4)
+  requires NatDvd(Int.pow(2, n + 4), k_1_0_2_0 * Int.pow(2, n + 4))
+  requires 0 <= k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6)
+  requires NatDvd(Int.pow(2, n + 4), k_1_0_2_0 * k_1_0_2_0 * Int.pow(2, 2 * n + 6))
+  requires 0 <= Int.pow(2, 2 * n + 5)
+  requires NatDvd(Int.pow(2, n + 4), Int.pow(2, 2 * n + 5))
+  requires 0 <= 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)
+  requires NatDvd(Int.pow(2, 2 * n + 5), 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5))
+  ensures  ((((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))) ==> (NatDvd(Int.pow(2, n + 4), 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) || (Int.pow(2, n + 4) == 0 ==> 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) == 0))) && ((((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))) ==> (NatDvd(Int.pow(2, n + 4), 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5)) || (Int.pow(2, n + 4) != 0 ==> 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5) % Int.pow(2, n + 4) == 0)))
 {
-  // pass2: only the 2k * 2^(2n+5) piece is needed; through library lemmas only
-  assert 0 < Int.pow(2, n + 4);                                   // Int.pow ensures: b > 0 ==> p > 0  // [ADDED]
-  NatPowDvdPow(2, n + 4, 2 * n + 5);  // [ADDED]
-  assert NatDvd(Int.pow(2, n + 4), Int.pow(2, 2 * n + 5));  // [ADDED]
-  NatDvdMulOfDvdRight(Int.pow(2, n + 4), Int.pow(2, 2 * n + 5), 2 * k_1_0_2_0);  // [ADDED]
-  assert NatDvd(Int.pow(2, n + 4), 2 * k_1_0_2_0 * Int.pow(2, 2 * n + 5));  // [ADDED]
+                    assert NatDvd(Int.pow(2, ((2 * n) + 5)), ((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5)))) by {  // sub-goal of `by` (Lean state) // @tac 3288-3314
+                      assert (((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) == (Int.pow(2, ((2 * n) + 5)) * (2 * k_1_0_0))) by {  // sub-goal of `by` (Lean state) // @tac 3307-3311
+                        // [TACTIC: Ring]
+                      }
+                      // [TACTIC: exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩]
+                      assert (if ((Int.pow(2, ((2 * n) + 5)) as int)) == 0 then ((((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) as int)) == 0 else ((((2 * k_1_0_0) * Int.pow(2, ((2 * n) + 5))) as int)) % ((Int.pow(2, ((2 * n) + 5)) as int)) == 0);  // goal closed by `exact ⟨…⟩` (Lean state)
+                      // UNCITED-APPLIED internal ×72 [exec 528 3288-3314]: applications made inside the tactic's own automation, not stated — machinery/glue: Mathlib.Tactic.Ring.add_mul ×6, Mathlib.Tactic.Ring.mul_add ×6, Mathlib.Tactic.Ring.zero_mul ×6, Mathlib.Tactic.Ring.mul_pf_right ×5 (+25 more heads, ×49)
+                    }
+                    // [TACTIC: calc_unparsed 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 5 ) 2 ^ ( n + 4 ) ∣ 2 ^ ( 2 * n + 5 ) := h₁₁ _ ∣ 2 * k * 2 ^ ( 2 * n + 5 ) _ ∣ 2 * k * 2 ^ ( 2 * n + 5 ) := by exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩ exact ⟨ 2 * k , by ring ⟩ ⟨ 2 * k , by ring ⟩]
+                    // GAP: calc chain not lowered (relation outside Dafny calc, e.g. ∣); its step proofs follow, each with its recorded goal; the chain itself is not composed
 }
+

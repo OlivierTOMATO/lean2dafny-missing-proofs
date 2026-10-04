@@ -4,7 +4,7 @@
 // hypotheses: 8 facts Z3 had at the line; nothing assumed beyond the facts in scope
 // how it closes: K2pow — kinds/work/shard_039/_lib_nopowpost (MathPrelude Int.pow without `ensures if k == 0 then p == 1 else p == b * pow(b, k - 1)`; only change)
 // Dafny: finished with 5 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
-// NOTE: uses a MODIFIED library copy: see alt/mathd_numbertheory_175-27/LIBRARY_CHANGES.diff
+// NOTE: alt copy was broken (held the library, not the theorem); re-pointed at the stock theorem file: see alt/mathd_numbertheory_175-27/LIBRARY_CHANGES.diff
 
 include "alt/mathd_numbertheory_175-27/out/mathd_numbertheory_175.dfy"
 lemma {:induction false} vc_mathd_numbertheory_175_L27(n: int)

@@ -3,7 +3,7 @@
 // Lean step: apply pow_dvd_pow 2
 // hypotheses: 28 facts Z3 had at the line (goal itself removed: 0; the block's own asserts removed: 1); nothing assumed beyond the facts in scope
 // how it closes: own-lemma — nothing: the file's own proof body, hypotheses = facts in scope minus the goal and minus the block's own asserts
-// Dafny: finished with 57 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// Dafny: finished with 66 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L113(k_1_0_0: int, k_1_0_2: int, k_1_0_2_0: int, k_1_0_3: int, n: nat)
@@ -35,7 +35,7 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L113(k_1
   requires if Int.pow(2, n + 4) == 0 then Int.pow(2, 2 * n + 4) == 0 else Int.pow(2, 2 * n + 4) % Int.pow(2, n + 4) == 0
   requires 0 <= Int.pow(2, n + 4)
   requires 0 <= Int.pow(2, 2 * n + 4)
-  ensures   ((((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))) ==> (NatDvd(Int.pow(2, n + 4), Int.pow(2, 2 * n + 4)) || (Int.pow(2, n + 4) == 0 ==> Int.pow(2, 2 * n + 4) == 0)))
+  ensures  ((((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))) ==> (NatDvd(Int.pow(2, n + 4), Int.pow(2, 2 * n + 4)) || (Int.pow(2, n + 4) == 0 ==> Int.pow(2, 2 * n + 4) == 0))) && ((((0 <= k_1_0_0) && (0 <= k_1_0_3)) || ((0 <= k_1_0_0) && (k_1_0_3 < 0)) || ((k_1_0_0 < 0) && (0 <= k_1_0_3)) || ((k_1_0_0 < 0) && (k_1_0_3 < 0))) ==> (NatDvd(Int.pow(2, n + 4), Int.pow(2, 2 * n + 4)) || (Int.pow(2, n + 4) != 0 ==> Int.pow(2, 2 * n + 4) % Int.pow(2, n + 4) == 0)))
 {
                 // [TACTIC: apply pow_dvd_pow 2]
                 assert ((n + 4) <= ((2 * n) + 4)) by {  // sub-goal before `omega` (Lean state) // @tac 2305-2310

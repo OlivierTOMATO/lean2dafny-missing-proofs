@@ -3,13 +3,13 @@
 // Lean step: use y ^ 2
 // hypotheses: 2 facts Z3 had at the line (goal itself removed: 0; the block's own asserts removed: 1); nothing assumed beyond the facts in scope
 // how it closes: own-lemma — nothing: the file's own proof body, hypotheses = facts in scope minus the goal and minus the block's own asserts
-// Dafny: finished with 7 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// Dafny: finished with 9 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/aime_1987_p5.dfy"
 lemma {:induction false} vc_aime_1987_p5_L452(x: int, y: int)
   requires y * y + 3 * (x * x * (y * y)) == 30 * (x * x) + 517
   requires x != 0
-  ensures   (IntDvd(3 * (x * x) + 1, 30 * (x * x) + 517) || (3 * (x * x) + 1 == 0 ==> 30 * (x * x) + 517 == 0))
+  ensures  (IntDvd(3 * (x * x) + 1, 30 * (x * x) + 517) || (3 * (x * x) + 1 == 0 ==> 30 * (x * x) + 517 == 0)) && (IntDvd(3 * (x * x) + 1, 30 * (x * x) + 517) || (3 * (x * x) + 1 != 0 ==> (30 * (x * x) + 517) % (3 * (x * x) + 1) == 0))
 {
       // [TACTIC: Use y ^ 2]
       assert (((30 * (x * x)) + 517) == (((3 * (x * x)) + 1) * (y * y))) by {  // sub-goal of `use` (Lean state) // @tac 972-1044 // @tac 1051-1172 // @tac 1179-1187

@@ -4,9 +4,9 @@
 // hypotheses: 0 facts Z3 had at the line; nothing assumed beyond the facts in scope
 // how it closes: K2c — K2b with monomials written as atoms (-9 * (p * q * r) instead of -9 * p * q * r)
 // Dafny: finished with 9 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
-// NOTE: uses a MODIFIED library copy: see alt/imo_1992_p1-1593/LIBRARY_CHANGES.diff
+// NOTE: alt copy was broken (held the library, not the theorem); re-pointed at the stock theorem file: see alt/imo_1992_p1-1593/LIBRARY_CHANGES.diff
 
-include "alt/imo_1992_p1-1593/out/imo_1992_p1.dfy"
+include "../dafny/imo_1992_p1.dfy"
 lemma {:induction false} vc_imo_1992_p1_L1593_nf4(p: int, q: int, r: int)
   ensures 9 * (p * q * r - 1 - 2 * ((p - 1) * (q - 1) * (r - 1))) == -9 * (p * q * r) + 18 * (p * q) + 18 * (p * r) + -18 * p + 18 * (q * r) + -18 * q + -18 * r + 9
 { }

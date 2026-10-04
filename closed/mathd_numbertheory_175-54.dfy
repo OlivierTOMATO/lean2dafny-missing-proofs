@@ -4,9 +4,9 @@
 // hypotheses: 4 facts Z3 had at the line; nothing assumed beyond the facts in scope
 // how it closes: cite_opaque — 
 // Dafny: finished with 15 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
-// NOTE: uses a MODIFIED library copy: see alt/mathd_numbertheory_175-54/LIBRARY_CHANGES.diff
+// NOTE: alt copy was broken (held the library, not the theorem); re-pointed at the stock theorem file: see alt/mathd_numbertheory_175-54/LIBRARY_CHANGES.diff
 
-include "alt/mathd_numbertheory_175-54/out/mathd_numbertheory_175.dfy"
+include "../dafny/mathd_numbertheory_175.dfy"
 lemma {:induction false} vc_mathd_numbertheory_175_L54()
   requires forall n_0_0_1: nat :: n_0_0_1 >= 1 ==> Int.pow(6, n_0_0_1) % 10 == 6
   requires 2 * 2 * 2 * 2 % 10 == 6

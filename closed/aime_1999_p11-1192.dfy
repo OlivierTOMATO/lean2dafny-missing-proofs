@@ -4,9 +4,9 @@
 // hypotheses: 18 facts Z3 had at the line; nothing assumed beyond the facts in scope
 // how it closes: K5 — RatNumDivEqOfCoprime(175, 2) — the norm_num hint lemma Rat.num_div_eq_of_coprime (existing library counterpart)
 // Dafny: finished with 23 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
-// NOTE: uses a MODIFIED library copy: see alt/aime_1999_p11-1192/LIBRARY_CHANGES.diff
+// NOTE: alt copy was broken (held the library, not the theorem); re-pointed at the stock theorem file: see alt/aime_1999_p11-1192/LIBRARY_CHANGES.diff
 
-include "alt/aime_1999_p11-1192/out/aime_1999_p11.dfy"
+include "../dafny/aime_1999_p11.dfy"
 lemma {:induction false} vc_aime_1999_p11_L1192(m: Rat.rat)
   requires m.Rational?
   requires gcd(Int.natAbs(m.num), m.denom) == 1

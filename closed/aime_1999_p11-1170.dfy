@@ -4,9 +4,9 @@
 // hypotheses: 20 facts Z3 had at the line; nothing assumed beyond the facts in scope
 // how it closes: K4 — lemma {:axiom} RatCastInj(a: Rat.rat, b: Rat.rat) ensures a.to_real() == b.to_real() <==> a == b  (Mathlib Rat.cast_inj, added to work copy); call RatCastInj(Rat.mul(m, of_int 2), of_int 175)
 // Dafny: finished with 20 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
-// NOTE: uses a MODIFIED library copy: see alt/aime_1999_p11-1170/LIBRARY_CHANGES.diff
+// NOTE: alt copy was broken (held the library, not the theorem); re-pointed at the stock theorem file: see alt/aime_1999_p11-1170/LIBRARY_CHANGES.diff
 
-include "alt/aime_1999_p11-1170/out/aime_1999_p11.dfy"
+include "../dafny/aime_1999_p11.dfy"
 lemma {:axiom} RatCastInj(a: Rat.rat, b: Rat.rat)  // [ADDED DECLARATION]
   ensures a.to_real() == b.to_real() <==> a == b
 

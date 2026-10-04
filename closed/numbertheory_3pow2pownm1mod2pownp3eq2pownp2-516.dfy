@@ -2,11 +2,14 @@
 // failing Dafny line: assert NatDvd(Int.pow(2, (n + 3)), (k * Int.pow(2, (n + 3)))) by {
 // Lean step: use k
 // hypotheses: 16 facts Z3 had at the line; nothing assumed beyond the facts in scope
-// how it closes: K2pow — library copy with MathPrelude Int.pow recursive ensures `if k == 0 then p == 1 else p == b * pow(b, k - 1)` removed (only change; kinds/work/shard_050/powlib)
-// Dafny: finished with 32 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
-// NOTE: uses a MODIFIED library copy: see alt/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-516/LIBRARY_CHANGES.diff
+// how it closes: K1K4 — 
+// Dafny: finished with 75 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
-include "alt/numbertheory_3pow2pownm1mod2pownp3eq2pownp2-516/out/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
+include "../dafny/numbertheory_3pow2pownm1mod2pownp3eq2pownp2.dfy"
+lemma {:axiom} NatDvdIntro(k: nat, a: nat, b: nat)  // [ADDED DECLARATION]
+  requires a * k == b
+  ensures NatDvd(a, b)
+
 lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516(k_1_0: int, k_1_2: int, k_1_2_0: int, k_1_3: int, k_2: int, n: nat)
   requires 0 <= n
   requires 0 <= k_1_2
@@ -24,9 +27,11 @@ lemma {:induction false} vc_numbertheory_3pow2pownm1mod2pownp3eq2pownp2_L516(k_1
   requires tsub(Int.pow(3, Int.pow(2, n)), 1) == Int.pow(2, n + 2) + k_1_2_0 * Int.pow(2, n + 3)
   requires k_1_2_0 * Int.pow(2, n + 3) == Int.pow(2, n + 3) * k_1_2_0
   requires 0 <= Int.pow(2, n + 3)
-  ensures   ((((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3)) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0)) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3)) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0)) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3)) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0)) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3)) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0))) ==> (0 <= k_1_2_0 * Int.pow(2, n + 3)))
+  ensures  ((((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3)) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0)) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3)) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0)) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3)) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0)) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3)) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0))) ==> (0 <= k_1_2_0 * Int.pow(2, n + 3))) && ((((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3)))) ==> (NatDvd(Int.pow(2, n + 3), k_1_2_0 * Int.pow(2, n + 3)) || (Int.pow(2, n + 3) == 0 ==> k_1_2_0 * Int.pow(2, n + 3) == 0))) && ((((0 <= k_2) && (0 <= k_1_0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((0 <= k_2) && (0 <= k_1_0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((0 <= k_2) && (k_1_0 < 0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((0 <= k_2) && (k_1_0 < 0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (0 <= k_1_0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (0 <= k_1_0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (k_1_0 < 0) && (0 <= k_1_3) && (0 <= k_1_2_0 * Int.pow(2, n + 3))) || ((k_2 < 0) && (k_1_0 < 0) && (k_1_3 < 0) && (0 <= k_1_2_0 * Int.pow(2, n + 3)))) ==> (NatDvd(Int.pow(2, n + 3), k_1_2_0 * Int.pow(2, n + 3)) || (Int.pow(2, n + 3) != 0 ==> k_1_2_0 * Int.pow(2, n + 3) % Int.pow(2, n + 3) == 0)))
 {
-
+  assert 0 <= Int.pow(2, n + 3);  // [ADDED]
+  MulNonnegInt(k_1_2_0, Int.pow(2, n + 3));  // [ADDED]
+  NatDvdIntro(k_1_2_0, Int.pow(2, n + 3), k_1_2_0 * Int.pow(2, n + 3));  // [ADDED]
               // [TACTIC: «_<;>_» k <;> ring]
               // [TACTIC: Use k]
               assert ((k_1_0 * Int.pow(2, (n + 3))) == (Int.pow(2, (n + 3)) * k_1_0));  // sub-goal of `ring` (Lean state) // @tac 8383-8387

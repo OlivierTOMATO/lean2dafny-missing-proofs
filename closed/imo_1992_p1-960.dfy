@@ -4,9 +4,9 @@
 // hypotheses: 0 facts Z3 had at the line; nothing assumed beyond the facts in scope
 // how it closes: K2b — same normal forms as separate context-free helper lemmas, called in the body
 // Dafny: finished with 8 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
-// NOTE: uses a MODIFIED library copy: see alt/imo_1992_p1-960/LIBRARY_CHANGES.diff
+// NOTE: alt copy was broken (held the library, not the theorem); re-pointed at the stock theorem file: see alt/imo_1992_p1-960/LIBRARY_CHANGES.diff
 
-include "alt/imo_1992_p1-960/out/imo_1992_p1.dfy"
+include "../dafny/imo_1992_p1.dfy"
 lemma {:induction false} vc_imo_1992_p1_L960_nf6(p: int, q: int, r: int)
   ensures (p - 1) * (q - 1) * (r - 1) == p * q * r - (p * q) - (p * r) + p - (q * r) + q + r + -1
 { }

@@ -3,7 +3,7 @@
 // Lean step: simp_all [Int.ModEq, Nat.ModEq]
 // hypotheses: 14 facts Z3 had at the line (goal itself removed: 0; the block's own asserts removed: 2); nothing assumed beyond the facts in scope
 // how it closes: own-lemma — nothing: the file's own proof body, hypotheses = facts in scope minus the goal and minus the block's own asserts
-// Dafny: finished with 35 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// Dafny: finished with 43 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/imo_1964_p1_1.dfy"
 lemma {:induction false} vc_imo_1964_p1_1_L152(n: nat)
@@ -21,7 +21,7 @@ lemma {:induction false} vc_imo_1964_p1_1_L152(n: nat)
   requires NatDvd(3, n) || (3 != 0 ==> n % 3 == 0)
   requires NatMod(n, 3) == 0
   requires 0 <= n % 3 + 3 * (n / 3)
-  ensures   (NatDvd(3, n % 3 + 3 * (n / 3)) || (3 == 0 ==> n % 3 + 3 * (n / 3) == 0))
+  ensures  (NatDvd(3, n % 3 + 3 * (n / 3)) || (3 == 0 ==> n % 3 + 3 * (n / 3) == 0)) && (NatDvd(3, n % 3 + 3 * (n / 3)) || (3 != 0 ==> (n % 3 + 3 * (n / 3)) % 3 == 0))
 {
     // [TACTIC: «_<;>_» [ Int.ModEq , Nat.ModEq ] simp_all [ Int.ModEq , Nat.ModEq ] simp_all [ Int.ModEq , Nat.ModEq ] <;> omega omega]
     // [TACTIC: choice [ Int.ModEq , Nat.ModEq ] simp_all [ Int.ModEq , Nat.ModEq ] simp_all [ Int.ModEq , Nat.ModEq ]]

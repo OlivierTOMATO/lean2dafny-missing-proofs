@@ -4,9 +4,9 @@
 // hypotheses: 9 facts Z3 had at the line; nothing assumed beyond the facts in scope
 // how it closes: K4 — RatCastInjective(u(0), Rat.add(u(0), Rat.of_int(0))) [Mathlib Rat.cast_injective]
 // Dafny: finished with 13 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
-// NOTE: uses a MODIFIED library copy: see alt/aime_1984_p1-35/LIBRARY_CHANGES.diff
+// NOTE: alt copy was broken (held the library, not the theorem); re-pointed at the stock theorem file: see alt/aime_1984_p1-35/LIBRARY_CHANGES.diff
 
-include "alt/aime_1984_p1-35/out/aime_1984_p1.dfy"
+include "../dafny/aime_1984_p1.dfy"
 lemma {:axiom} RatCastInjective(a: Rat.rat, b: Rat.rat)  // [ADDED DECLARATION]
   requires a.to_real() == b.to_real()
   ensures a == b

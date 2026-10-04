@@ -2,8 +2,8 @@
 // failing Dafny line: assert NatDvd(f(Int.pow(2, m)), f(Int.pow(2, (m + t))));
 // Lean step: h_chain
 // hypotheses: 24 facts Z3 had at the line; nothing assumed beyond the facts in scope
-// how it closes: own-lemma — nothing: the file's own proof body, hypotheses = facts in scope minus the goal and minus the block's own asserts
-// Dafny: finished with 37 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: K1 — induction_helper_1(m, n, f, t_2_0);  // h₃ t at Lean's argument (Lean's h₃ is proved by induction on t) [K1.dfy]
+// Dafny: finished with 55 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
 lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L408(f: nat -> nat, k_0_2_3_2_1_0: int, k_1_1_0_1_0: int, m: nat, n: int, t_2_0: int, t_2_1: int, t_3_5: int)
@@ -31,6 +31,8 @@ lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L
   requires forall t_2_2: nat :: NatDvd(f(Int.pow(2, m)), f(Int.pow(2, m + t_2_2)))
   requires 0 <= m + t_2_0
   requires 0 <= Int.pow(2, m + t_2_0)
-  ensures   ((((0 <= t_2_1) && (0 <= m + t_2_1) && (0 <= Int.pow(2, m + t_2_1))) || (t_2_1 < 0)) ==> (NatDvd(f(Int.pow(2, m)), f(Int.pow(2, m + t_2_0))) || (f(Int.pow(2, m)) == 0 ==> f(Int.pow(2, m + t_2_0)) == 0)))
-{ }
+  ensures  ((((0 <= t_2_1) && (0 <= m + t_2_1) && (0 <= Int.pow(2, m + t_2_1))) || (t_2_1 < 0)) ==> (NatDvd(f(Int.pow(2, m)), f(Int.pow(2, m + t_2_0))) || (f(Int.pow(2, m)) == 0 ==> f(Int.pow(2, m + t_2_0)) == 0))) && ((((0 <= t_2_1) && (0 <= m + t_2_1) && (0 <= Int.pow(2, m + t_2_1))) || (t_2_1 < 0)) ==> (NatDvd(f(Int.pow(2, m)), f(Int.pow(2, m + t_2_0))) || (f(Int.pow(2, m)) != 0 ==> f(Int.pow(2, m + t_2_0)) % f(Int.pow(2, m)) == 0)))
+{
+  induction_helper_1(m, n, f, t_2_0);  // h₃ t: Lean inst record (h_chain, exact h₃ t)  // [ADDED]
+}
 

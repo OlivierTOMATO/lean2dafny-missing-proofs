@@ -2,8 +2,8 @@
 // failing Dafny line: assert NatDvd(f(Int.pow(2, m)), f(Int.pow(2, (m + t))));
 // Lean step: h₄
 // hypotheses: 25 facts Z3 had at the line; nothing assumed beyond the facts in scope
-// how it closes: own-lemma — nothing: the file's own proof body, hypotheses = facts in scope minus the goal and minus the block's own asserts
-// Dafny: finished with 27 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
+// how it closes: K1 — induction_helper_1(m, n, f, t_3_5_0);  // h_chain t at Lean's argument (h_chain := h₃ := induction) [K1.dfy]
+// Dafny: finished with 44 verified, 0 errors  (flags: dafny verify --isolate-assertions --resource-limit 1000000 --allow-warnings --cores 1, timeout 30 s)
 
 include "../dafny/numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown.dfy"
 lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L447(f: nat -> nat, k_0_2_3_2_1_0: int, k_1_1_0_1_0: int, m: nat, n: int, t_3_2: int, t_3_3: int, t_3_5: int, t_3_5_0: int, t_3_6: int)
@@ -32,6 +32,8 @@ lemma {:induction false} vc_numbertheory_fxeq4powxp6powxp9powx_f2powmdvdf2pown_L
   requires 0 <= Int.pow(2, m)
   requires 0 <= m + t_3_5_0
   requires 0 <= Int.pow(2, m + t_3_5_0)
-  ensures   ((((0 <= t_3_2) && (0 <= t_3_3) && (0 <= t_3_6)) || ((0 <= t_3_2) && (0 <= t_3_3) && (t_3_6 < 0)) || ((0 <= t_3_2) && (t_3_3 < 0) && (0 <= t_3_6)) || ((0 <= t_3_2) && (t_3_3 < 0) && (t_3_6 < 0)) || ((t_3_2 < 0) && (0 <= t_3_3) && (0 <= t_3_6)) || ((t_3_2 < 0) && (0 <= t_3_3) && (t_3_6 < 0)) || ((t_3_2 < 0) && (t_3_3 < 0) && (0 <= t_3_6)) || ((t_3_2 < 0) && (t_3_3 < 0) && (t_3_6 < 0))) ==> (NatDvd(f(Int.pow(2, m)), f(Int.pow(2, m + t_3_5_0))) || (f(Int.pow(2, m)) == 0 ==> f(Int.pow(2, m + t_3_5_0)) == 0)))
-{ }
+  ensures  ((((0 <= t_3_2) && (0 <= t_3_3) && (0 <= t_3_6)) || ((0 <= t_3_2) && (0 <= t_3_3) && (t_3_6 < 0)) || ((0 <= t_3_2) && (t_3_3 < 0) && (0 <= t_3_6)) || ((0 <= t_3_2) && (t_3_3 < 0) && (t_3_6 < 0)) || ((t_3_2 < 0) && (0 <= t_3_3) && (0 <= t_3_6)) || ((t_3_2 < 0) && (0 <= t_3_3) && (t_3_6 < 0)) || ((t_3_2 < 0) && (t_3_3 < 0) && (0 <= t_3_6)) || ((t_3_2 < 0) && (t_3_3 < 0) && (t_3_6 < 0))) ==> (NatDvd(f(Int.pow(2, m)), f(Int.pow(2, m + t_3_5_0))) || (f(Int.pow(2, m)) == 0 ==> f(Int.pow(2, m + t_3_5_0)) == 0))) && ((((0 <= t_3_2) && (0 <= t_3_3) && (0 <= t_3_6)) || ((0 <= t_3_2) && (0 <= t_3_3) && (t_3_6 < 0)) || ((0 <= t_3_2) && (t_3_3 < 0) && (0 <= t_3_6)) || ((0 <= t_3_2) && (t_3_3 < 0) && (t_3_6 < 0)) || ((t_3_2 < 0) && (0 <= t_3_3) && (0 <= t_3_6)) || ((t_3_2 < 0) && (0 <= t_3_3) && (t_3_6 < 0)) || ((t_3_2 < 0) && (t_3_3 < 0) && (0 <= t_3_6)) || ((t_3_2 < 0) && (t_3_3 < 0) && (t_3_6 < 0))) ==> (NatDvd(f(Int.pow(2, m)), f(Int.pow(2, m + t_3_5_0))) || (f(Int.pow(2, m)) != 0 ==> f(Int.pow(2, m + t_3_5_0)) % f(Int.pow(2, m)) == 0)))
+{
+  induction_helper_1(m, n, f, t_3_5_0);  // h_chain t: Lean inst record (h_final.h₄)  // [ADDED]
+}
 
